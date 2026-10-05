@@ -10,7 +10,7 @@ Repository/workspace, relevant revision or baseline, intended local edits, compl
 
 ## Decisions and context
 
-Accepted choices, relevant authoritative artifacts, changed assumptions, and unresolved questions. Include only history that affects continuation.
+Accepted choices, relevant authoritative artifacts and versions, changed assumptions, and unresolved questions. Include a small file/symbol map when it avoids rediscovery, and only history that affects continuation. Keep temporary work state out of permanent contributor rules.
 
 ## Verification
 
@@ -18,4 +18,4 @@ Commands or observed behavior, exit/result, what they establish, and failed/unav
 
 ## Next action
 
-The next runnable step, its prerequisites and owner where known, remaining dependency order, and the exact blocker if it cannot run.
+The next runnable step, its prerequisites and owner where known, remaining dependency order, and the exact blocker if it cannot run. On receipt, reload applicable instructions and compare the summary with current source, workspace, task state, and pending operations before resuming.
