@@ -1,0 +1,28 @@
+---
+name: write-spec
+description: "Write or revise a software specification from agreed intent, including behavior, constraints, scenarios, non-goals, and observable acceptance criteria. Use before decomposition when requirements need definition."
+---
+
+# Write spec
+
+Produce the smallest specification that makes the selected change unambiguous. A feature brief and a product specification share this outcome; match depth to uncertainty and risk.
+
+## Establish the contract
+
+Reuse the user's brief, accepted decisions, flows, and relevant research. Inspect current behavior and affected consumers for an existing system. For new software, establish actors, useful outcomes, available foundations, and constraints without inventing demand or an existing architecture.
+
+Separate current behavior, desired behavior, assumptions, and unresolved decisions. Discover factual answers from the repository before questioning the user. Resolve choices that affect scope or acceptance; keep nonblocking unknowns explicit. A spec must not hide a product decision inside a technical recommendation.
+
+## Define behavior
+
+Describe the primary scenarios and the failure, boundary, recovery, permission, and compatibility scenarios that could materially change the result. Cover data ownership and lifecycle, interfaces or integrations, UI states, and measurable operational requirements where relevant. Include rollout or migration constraints when users or stored data already exist.
+
+Give acceptance criteria stable IDs and observable outcomes. Tie each criterion to the intended behavior and a plausible verification method. Avoid subjective criteria such as “fast” or “user friendly” without a context and signal. Mark provisional thresholds as decisions rather than facts.
+
+Load [the specification template](references/spec.template.md) when a durable structured spec is needed. Update an existing authoritative specification instead of creating a competing document. Do not fill sections that have no purpose for this change.
+
+## Finish and continue
+
+Check that scenarios and criteria agree, non-goals bound the scope, and no blocking choice is presented as settled. The result identifies the source context, decisions, and remaining questions. It does not silently create a task queue, select every technology, or start implementation.
+
+Next: `design-architecture` for unresolved technical choices; `plan-phases` for a multi-stage outcome; `create-tasks` for sufficiently agreed work. Continue those actions when they are part of the authorized request, carrying the same accepted specification forward.
