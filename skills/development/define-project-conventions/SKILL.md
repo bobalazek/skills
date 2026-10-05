@@ -23,6 +23,10 @@ Distinguish rules already enforced by the formatter, linter, types, schemas, or 
 
 Update existing standards instead of creating competing documents. Mark unresolved proposals and their decision owner. Changing a convention does not authorize mass reformatting, renaming, or migration; state an incremental adoption route when existing code differs.
 
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+
 ## Completion
 
 A contributor can apply the rules to representative code, find exceptions, and run the relevant checks. Verify examples and commands against the repository. Link the standards from appropriate entry points without repeating them there.

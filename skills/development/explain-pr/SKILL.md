@@ -19,6 +19,10 @@ Include the checks that actually ran and what they establish, tied to the tested
 
 When asked to write a PR description, lead with the problem and resulting behavior, then relevant verification and limitations. Embed or link useful evidence in the PR body using verified locations accessible to its intended reviewers. Redact sensitive content before an authorized upload; a local path is not an attachment. If uploading is unavailable, include useful textual results/reproduction steps and state which artifact remains local. Preserve the project's template and unrelated author content. Posting or updating the description follows the user's actual authorization.
 
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+
 ## Completion
 
 The explanation matches the fixed comparison, established intent, and verification evidence; it does not imply a correctness approval. Review uses `review-code`; unresolved consequential intent can use `challenge-proposal`.

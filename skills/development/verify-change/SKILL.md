@@ -19,19 +19,25 @@ Before editing, preserve the affected baseline when available. For an existing f
 
 Use [evidence selection and reporting](references/verification.template.md) for the relevant evidence types. Record the actual command or interaction, prerequisites, input/state, environment, observation, and result. Keep failed attempts and changed conditions distinguishable from final results.
 
-For an explicitly authorized command check, the optional Bun [check runner](scripts/run-check.ts) records its argv, directory, timings, actual exit or launch failure, and Git state before/after while showing output live:
+For an explicitly authorized command check, the optional [check runner](scripts/run-check.ts), requiring Bun 1.3.9 or newer, records its argv, directory, timings, actual exit or launch failure, and Git state before/after while showing output live:
 
 ```text
-bun run /path/to/verify-change/scripts/run-check.ts --cwd /path/to/project --out /tmp/check-result.json -- bun test
+bun run /path/to/verify-change/scripts/run-check.ts --cwd /path/to/project --out /tmp/check-result.json --timeout-ms 60000 -- bun test
 ```
 
 Choose the project's actual check and a new output file; run `--help` for usage. The parent directory must exist, and an existing file is refused before execution. Prefer evidence outside the worktree. The record preserves failures and propagates a failing exit; it does not capture output, attest untracked/ignored contents, prove a reviewed commit, or decide acceptance criteria. Inspect recorded arguments and evidence before sharing; no upload is performed.
+
+Choose a timeout appropriate to the command; omit `--timeout-ms` for an unbounded check. A timeout exits 124, and runner SIGINT/SIGTERM exits 130/143, with the actual child result and termination reason recorded separately. Cancellation hard-kills only the direct child; its descendants and external work may continue, and graceful cleanup is not guaranteed. Git observation subprocesses are individually limited to five seconds; unavailable state stays explicit. An incomplete or truncated record has no verified outcome. SIGKILL or a host crash can prevent final capture and leave a live child; inspect and clean up run-owned resources through the project's existing procedure.
 
 For feature, journey, or release QA, use [behavior and risk checks](references/behavior-checks.checklist.md) to select meaningful paths and boundaries. Derive the matrix from the actual product and changed risks rather than running a fixed website checklist. Treat missing access or unclear expected behavior as explicit coverage limits.
 
 Compare like with like. Use the same fixture, user role, viewport, workload, and configuration where they affect the result; explain unavoidable differences. Repeat noisy measurements enough to establish whether the claimed change exceeds the observed variation. Preserve failures and important neighboring behavior, not only the happy path.
 
 Use synthetic or approved data. Inspect artifacts for secrets, personal data, internal URLs, and unrelated windows before sharing. Capture only what the claim needs. Verification authority does not imply permission to run production load tests, change live data, or upload private evidence.
+
+## Independent evaluation
+
+Run this verification in a separate agent with fresh context from the work's author. Supply the accepted request, constraints, candidate artifacts, relevant raw sources, and check access without the author's conversation or preferred conclusions. Try counterexamples and inspect observed proof, reconcile findings, and independently recheck affected results after fixes. If you authored the work, delegate this evaluation; if an independent agent is unavailable, report unreviewed and stop before acceptance.
 
 ## Decide and hand off
 

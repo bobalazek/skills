@@ -25,6 +25,10 @@ For uncertain business behavior, stop the dependent work and resolve the specifi
 
 Load [the change-risk playbook](references/change-risks.playbook.md) for a task batch or resumed work, or when a refactor, migration, shared UI, webhook, or stateful boundary makes those checks relevant.
 
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+
 ## Verify the actual result
 
 Choose observable evidence from the acceptance criteria before changing behavior, so a useful baseline can be preserved. Use screenshots for visible states, interaction traces for user flows, comparable measurements for performance/data claims, or focused check output for code and document changes. Record the relevant input, environment, baseline, and tested revision; a build alone cannot demonstrate a repaired behavior.

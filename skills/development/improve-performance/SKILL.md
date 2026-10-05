@@ -23,6 +23,10 @@ Prefer the smallest change supported by the profile: remove unnecessary work, re
 
 Change one meaningful factor at a time where practical. Preserve the benchmark procedure and workload; if they must change, rerun the baseline under those conditions. Do not report a faster sample caused by dropped requests, missing work, stale data, reduced quality, or smaller inputs as an equivalent improvement.
 
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+
 ## Verify and deliver evidence
 
 Repeat the relevant measurement under comparable conditions and inspect variation, error/timeout counts, correctness checks, and any shifted resource cost. Include a representative end-to-end check alongside a narrow benchmark when the claim concerns a user flow. If results are inconclusive or another constraint dominates, report that outcome and avoid retaining unsupported complexity merely because it was implemented.

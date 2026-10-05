@@ -27,6 +27,10 @@ Load [the onboarding outline](references/onboarding.template.md) when a durable 
 
 Prioritize adoption blockers and preservation risks; avoid converting onboarding into an unsolicited correctness audit or rewrite. History can explain a recorded decision but does not establish unrecorded motives.
 
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+
 ## Completion
 
 The contributor can find the owning code and authoritative conventions, understand the important flow, and run the verified feedback path or see its exact blocker. Report inspected scope and evidence.

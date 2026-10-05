@@ -20,3 +20,7 @@ Check that file paths, revisions, links, and completion claims match the current
 For resumption, reload the applicable instructions and inspect current workspace, task, and remote-operation state. Recheck material source/evidence pointers and reconcile drift before acting. Carry forward established authorization and stop points; a summary does not create additional authority or turn a worker's claim into verified completion.
 
 Finish with the transfer artifact or concise context block, exact blockers, and the next action. Avoid a chronological transcript and avoid claiming that a command invocation proves success.
+
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.

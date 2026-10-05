@@ -11,10 +11,16 @@ Inspect the rendered interface through available browser/native tools. Read sour
 
 Use [interface review checks](references/interface-review.checklist.md) to select relevant tasks and states. Walk the primary journey, important failures/recovery, and supported input methods. Observe concrete problems before reporting them; distinguish functional defects, accessibility barriers, and visual preferences.
 
+Try to break the supported journey within the review's authority: use relevant boundary inputs, denied permissions, repeated or interrupted actions, and supported keyboard/zoom paths. Challenge assumptions about feedback, focus restoration, and recovery. Use synthetic or approved data and safe states; a review does not authorize destructive live experiments.
+
+Choose distinct review lenses from the actual risks, such as navigation comprehension, state/recovery, or keyboard access. At least one separate reviewer is required; add reviewers where a distinct risk needs coverage, using the same revision and stated conditions. Reconcile findings through reproduction and evidence rather than votes. Preserve a demonstrated defect even when only one reviewer observes it, and keep an unresolved conflicting claim visible for follow-up.
+
 For each finding, identify the affected task/state, location, evidence, consequence, priority, and useful correction. Include screenshots or reproduction steps when they clarify the issue. Record the revision and capture conditions; before/after screenshots need comparable viewport, route, role, fixture, and state. Keep visual evidence separate from observed interaction/focus/recovery results. Reconcile duplicate symptoms and separate optional polish from blocked user behavior.
 
 If formal standards conformance is requested, establish the applicable target and verify criteria against current authoritative guidance. A limited audit does not establish universal compliance. State inspected and uninspected coverage, unavailable tools, and any reliance on heuristics instead of user research.
 
-Review does not itself authorize a redesign or code edit. When fixes are requested, keep scope and recheck the changed tasks/states after implementation. Carry useful redacted findings and repaired-state evidence into authorized PR work with verified accessible links or inline observations. Label local-only evidence, stale captures, and unavailable checks.
+Review does not itself authorize a redesign or code edit. When fixes are requested, keep scope and recheck the changed tasks/states after implementation. Add useful redacted findings, before/after screenshots or video, interaction observations, and relevant regression-test results to authorized PR work as they become available, with verified accessible links or inline observations. Label local-only evidence, missing recordings, stale captures, and unavailable checks.
+
+Run this assessment in a separate agent with fresh context from the interface's author, using raw accepted requirements, the candidate interface, and observed proof without the author's planning conversation. If you authored the interface, delegate the review. Reproduce consequential findings or retain their exact verification gap; a minority demonstrated defect survives reconciliation. If an independent agent is unavailable, report unreviewed and not ready. Independent review does not replace required human approval.
 
 Next: `design-interface` for an agreed design revision, `diagnose-issue` for unclear runtime failures, or `implement-change` for selected concrete fixes.

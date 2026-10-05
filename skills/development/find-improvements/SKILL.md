@@ -30,3 +30,7 @@ Use [the candidate outline](references/candidates.template.md) when a durable li
 Rank against the user's goal using demonstrated impact, confidence, dependencies, cost, and blast radius. State what was inspected and what remains unexamined. Prefer a few actionable candidates over an exhaustive smell list. Existing valid decisions and intentional repetition can lead to no change.
 
 Finish with the next justified action: `diagnose-issue` for an unresolved failure, `improve-performance` for a measurable bottleneck investigation, `automate-code-checks` for an accepted repeatable guard, `plan-migration` for a transition with compatibility/data constraints, or `implement-change` for a selected bounded refactor. Use `write-spec` when desired behavior needs agreement and `create-tasks` for an accepted larger scope. Tracker writes and repairs follow actual authorization.
+
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.

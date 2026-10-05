@@ -24,3 +24,7 @@ Use evidence for external claims and label assumptions. If an idea depends on de
 Recommend a direction when the evidence and preferences support it, explaining the trade-off. Keep rejected or deferred alternatives only when their reasoning is useful. Update the current brief or conversation; brainstorming does not require another Markdown document.
 
 Finish with options, recommendation or unresolved choice, and the context ready for the next action. Use `challenge-proposal` to challenge a chosen direction, `research-topic` for missing facts, `build-prototype` for empirical uncertainty, or `write-spec` once behavior can be defined. Continue an authorized broader workflow without artificial approval between stages.
+
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.

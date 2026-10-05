@@ -21,6 +21,10 @@ Lead with what the system or flow does. Walk a concrete input through the import
 
 Describe relevant conventions and limits without turning the explanation into an unsolicited audit. For missing behavior or contradictory docs, name the evidence and unknown rather than inventing the intended design. Known bugs can be noted, but diagnosing or repairing them is a separate requested result.
 
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+
 ## Completion
 
 The explanation matches inspected source and the reader can locate the entry point, owning boundary, and appropriate feedback command. State unverified runtime claims and the inspected revision where it matters. Do not mutate code or create onboarding documents unless requested.

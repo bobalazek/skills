@@ -13,7 +13,7 @@ Collect expected versus observed behavior, environment/version, inputs, timing, 
 
 Use existing monitoring, logs, traces, error reports, or metrics when they help correlate the symptom with the deployed revision and request/job. State sampling, retention, or access limits; absence of an alert is not proof of health. Read-only diagnosis does not authorize installing a monitoring provider or exporting customer data.
 
-Choose the smallest reliable reproduction: a focused test, script, request, browser path, trace replay, or controlled harness. If the failure is production-only, preserve its evidence and identify the closest controlled signal; do not fabricate local reproduction.
+Choose the smallest reliable reproduction: a focused test, script, request, browser path, trace replay, or controlled harness. Confirming a diagnosis or verified repair requires an observed failing reproduction and relevant proof. For an intermittent failure, retain the actual failing attempt and conditions. If the failure is production-only and cannot be reproduced safely within authority, preserve the evidence and exact blocker; the investigation remains incomplete and must not pass diagnosis acceptance.
 
 For a live incident, load [incident diagnosis](references/incident.checklist.md). Read-only investigation does not authorize production changes or disruptive experiments.
 
@@ -30,6 +30,10 @@ If a repair is requested, fix the underlying cause in the owning boundary and pr
 Keep the original failure and repaired outcome comparable: the same reproduction, relevant input/state, and environment, with revisions identified. Capture screenshots for visible defects, measurements for data/performance claims, or focused observed output for behavior checks. If the original failure cannot safely be reproduced, label the supplied or historical evidence and the limit of the comparison. Do not rerun a harmful operation for a better artifact.
 
 For a broader behavioral change, produce the diagnosis and propose specification/planning rather than absorb an unrequested redesign. Update a meaningful incident or learning record where the project keeps it; do not create one for every routine typo.
+
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
 
 ## Completion
 

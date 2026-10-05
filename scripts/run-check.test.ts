@@ -7,6 +7,7 @@ const runner = resolve(import.meta.dir, "../skills/development/verify-change/scr
 let root: string;
 let cwd: string;
 let output: string;
+const ownedPids = new Set<number>();
 
 beforeEach(() => {
   root = mkdtempSync(join(tmpdir(), "skills-run-check-"));
@@ -15,7 +16,11 @@ beforeEach(() => {
   output = join(root, "check result.json");
 });
 
-afterEach(() => rmSync(root, { recursive: true, force: true }));
+afterEach(() => {
+  for (const pid of ownedPids) try { process.kill(pid, "SIGKILL"); } catch {}
+  ownedPids.clear();
+  rmSync(root, { recursive: true, force: true });
+});
 
 async function command(argv: string[], directory = cwd) {
   const child = Bun.spawn(argv, { cwd: directory, stdout: "pipe", stderr: "pipe" });
@@ -25,7 +30,7 @@ async function command(argv: string[], directory = cwd) {
   return { stdout, stderr, exitCode };
 }
 
-const run = (argv: string[], destination = output) => command([process.execPath, "run", runner, "--cwd", cwd, "--out", destination, "--", ...argv]);
+const run = (argv: string[], destination = output, timeoutMs?: string) => command([process.execPath, "run", runner, "--cwd", cwd, "--out", destination, ...(timeoutMs === undefined ? [] : ["--timeout-ms", timeoutMs]), "--", ...argv]);
 const record = () => JSON.parse(readFileSync(output, "utf8"));
 const script = (body: string) => {
   const path = join(cwd, "check.ts");
@@ -55,6 +60,8 @@ test("records a successful non-Git check and exposes live output", async () => {
   expect(evidence.gitAfter.kind).toBe("unavailable");
   expect(Date.parse(evidence.endedAt)).toBeGreaterThanOrEqual(Date.parse(evidence.startedAt));
   expect(evidence.durationMs).toBeGreaterThanOrEqual(0);
+  expect(evidence.recordState).toBe("finished");
+  expect(evidence.termination).toEqual({ timeoutMs: null, timedOut: false, interruptionSignal: null });
 });
 
 test("preserves and propagates a failing check", async () => {
@@ -131,4 +138,98 @@ test("records HEAD drift caused by the supplied command", async () => {
   expect(evidence.gitAfter.head).not.toBe(evidence.gitBefore.head);
   expect(evidence.gitBefore.dirty).toBe(false);
   expect(evidence.gitAfter.dirty).toBe(false);
+});
+
+async function waitFor(predicate: () => boolean) {
+  const deadline = Date.now() + 3000;
+  while (!predicate() && Date.now() < deadline) await Bun.sleep(10);
+  if (!predicate()) throw new Error("Fixture did not reach its expected state.");
+}
+const alive = (pid: number) => {
+  try { process.kill(pid, 0); return true; } catch { return false; }
+};
+function hangingCheck() {
+  const marker = join(root, "child.pid");
+  const fixture = script(`process.on("SIGTERM", () => {}); await Bun.write(${JSON.stringify(marker)}, String(process.pid)); setInterval(() => {}, 1000);`);
+  return { marker, fixture };
+}
+function startHanging(fixture: string, timeoutMs?: string) {
+  return Bun.spawn([process.execPath, runner, "--cwd", cwd, "--out", output, ...(timeoutMs === undefined ? [] : ["--timeout-ms", timeoutMs]), "--", process.execPath, fixture], {
+    stdout: "ignore", stderr: "ignore", timeout: 4000, killSignal: "SIGKILL",
+  });
+}
+
+test("bounds an unresponsive direct child and records timeout separately from its actual exit", async () => {
+  const { marker, fixture } = hangingCheck();
+  const child = startHanging(fixture, "500");
+  try {
+    await waitFor(() => existsSync(marker));
+    const pid = Number(readFileSync(marker, "utf8"));
+    ownedPids.add(pid);
+    expect(await child.exited).toBe(124);
+    const evidence = record();
+    expect(evidence.termination).toEqual({ timeoutMs: 500, timedOut: true, interruptionSignal: null });
+    expect(evidence.result.signal).toBe("SIGKILL");
+    expect(evidence.result.exitCode).not.toBe(0);
+    expect(evidence.result.launchError).toBeNull();
+    expect(evidence.recordState).toBe("finished");
+    expect(alive(pid)).toBe(false);
+    ownedPids.delete(pid);
+  } finally { if (child.exitCode === null) child.kill("SIGKILL"); }
+});
+
+test("parent SIGTERM/SIGINT writes interrupted evidence and stops a child that ignores SIGTERM", async () => {
+  for (const signal of ["SIGTERM", "SIGINT"] as const) {
+    output = join(root, `${signal}.json`);
+    const { marker, fixture } = hangingCheck();
+    if (existsSync(marker)) rmSync(marker);
+    const child = startHanging(fixture);
+    try {
+      await waitFor(() => existsSync(marker));
+      const pid = Number(readFileSync(marker, "utf8"));
+      ownedPids.add(pid);
+      expect(record().recordState).toBe("incomplete");
+      child.kill(signal);
+      expect(await child.exited).toBe(signal === "SIGTERM" ? 143 : 130);
+      const evidence = record();
+      expect(evidence.termination).toEqual({ timeoutMs: null, timedOut: false, interruptionSignal: signal });
+      expect(evidence.result.signal).toBe("SIGKILL");
+      expect(evidence.result.exitCode).not.toBe(0);
+      expect(evidence.gitAfter.kind).toBe("unavailable");
+      expect(alive(pid)).toBe(false);
+      ownedPids.delete(pid);
+    } finally { if (child.exitCode === null) child.kill("SIGKILL"); }
+  }
+});
+
+test("a fast bounded check finishes without waiting for or reporting its unused timeout", async () => {
+  const started = performance.now();
+  expect((await run([process.execPath, "-e", "process.exit(0)"], output, "10000")).exitCode).toBe(0);
+  expect(performance.now() - started).toBeLessThan(4000);
+  expect(record().termination).toEqual({ timeoutMs: 10000, timedOut: false, interruptionSignal: null });
+});
+
+test("rejects invalid timeout values before creating evidence or executing a check", async () => {
+  const marker = join(root, "executed");
+  const argv = [process.execPath, "-e", `await Bun.write(${JSON.stringify(marker)}, "ran")`];
+  for (const timeout of ["0", "-1", "1.5", "NaN", "1e3", "2147483648"]) {
+    expect((await run(argv, output, timeout)).exitCode).toBe(1);
+    expect(existsSync(output)).toBe(false);
+    expect(existsSync(marker)).toBe(false);
+  }
+});
+
+test("hard-killing the runner leaves incomplete evidence without claiming a stopped child", async () => {
+  const { marker, fixture } = hangingCheck();
+  const child = startHanging(fixture);
+  try {
+    await waitFor(() => existsSync(marker));
+    const pid = Number(readFileSync(marker, "utf8"));
+    ownedPids.add(pid);
+    child.kill("SIGKILL");
+    await child.exited;
+    expect(record().recordState).toBe("incomplete");
+    expect(record().result).toBeNull();
+    expect(alive(pid)).toBe(true);
+  } finally { if (child.exitCode === null) child.kill("SIGKILL"); }
 });

@@ -1,11 +1,12 @@
 # Productivity
 
-This domain owns the thinking and communication work that supports development and design. All six entries have draft packages.
+This domain owns the thinking and communication work that supports development and design. All seven entries have draft packages.
 
 ## Categories and skills
 
 | Category | Subcategory | Skill | Expected result |
 | --- | --- | --- | --- |
+| Routing | Pick the next action | [choose-skill](../../skills/productivity/choose-skill/SKILL.md) | One fitting starting skill, its expected result, and any missing input |
 | Ideas | Explore directions | [brainstorm-ideas](../../skills/productivity/brainstorm-ideas/SKILL.md) | Meaningfully different approaches, supported recommendation, assumptions, and next decision or experiment |
 | Decisions | Question a proposal | [challenge-proposal](../../skills/productivity/challenge-proposal/SKILL.md) | Consequential assumptions resolved, the existing proposal amended, or a precise remaining investigation |
 | Research | Answer an unknown | [research-topic](../../skills/productivity/research-topic/SKILL.md) | A bounded answer with traceable evidence, freshness, uncertainty, and decision implications |
@@ -23,10 +24,10 @@ This domain owns the thinking and communication work that supports development a
 
 Clarifying an idea establishes shared intent. Validation needs relevant evidence, such as observed user needs or a working feasibility experiment; agreement alone cannot supply it. Use accepted findings to gather requirements in `write-spec`, then derive phases and tasks when the work needs them. A PRD or issue is a specification format, not another productivity workflow.
 
-`prepare-handoff` is for an actual person/session transfer. Ordinary skill composition reuses accepted artifacts without another handoff document. `improve-prompt` edits instructions and does not perform the task contained in them.
+`choose-skill` routes an unclear request using its desired result and current state. A ready task can use its owning skill directly. `prepare-handoff` is for a person/session transfer or context compaction. Ordinary skill composition reuses accepted artifacts without another handoff document. `improve-prompt` edits instructions and does not perform the task contained in them.
 
 ## Resources
 
-`challenge-proposal` carries conditional questioning lenses. `track-project-decisions` carries a decision template. `prepare-handoff` carries a compact transfer outline. The other workflows are self-contained and do not need supporting files merely for symmetry.
+`choose-skill` carries the routing map. `challenge-proposal` carries conditional questioning lenses. `track-project-decisions` carries a decision template. `prepare-handoff` carries a compact transfer outline. The other workflows are self-contained and do not need supporting files merely for symmetry.
 
 See [workflows](../workflows.md) for next-step selection and context reuse.

@@ -21,6 +21,10 @@ For structure, assign ownership of behavior and state, define the interfaces con
 
 Use [the design template](references/technical-design.template.md) when recording the result. Load [cost and obligation checks](references/cost-and-obligations.checklist.md) when these constrain the choice. Record consequential decisions in the project's existing decision location, including alternatives, consequences, and a revisit trigger.
 
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+
 ## Completion and handoff
 
 Check the design against behavior and failure scenarios, affected consumers, operational constraints, and known costs. A decision that depends on unverified feasibility remains open; propose a bounded prototype instead of claiming readiness.

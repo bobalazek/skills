@@ -11,3 +11,5 @@ Actor, goal, entry point, prerequisites, supported surfaces, and evidence or ass
 Record permissions, irreversible consequences, content/data requirements, and meaningful accessibility/input-method needs. A disabled control needs an understandable reason or route when that affects the task.
 
 Walk the primary task and important branches. State what was observed, inferred, or still needs user evidence. Link accepted behavior criteria rather than inventing a parallel product specification.
+
+When a graph helps, retain its editable source and use consistent state names across the diagram, table, and screen/prototype references. Mark guards, recovery/exit paths, and intended transitions that have not been exercised.

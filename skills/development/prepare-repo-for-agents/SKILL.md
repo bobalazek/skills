@@ -21,6 +21,10 @@ Use instruction scopes appropriate to the host and repository. Do not claim a cl
 
 Make coding standards part of the task path: identify the applicable root and surface instructions, authoritative rules, representative local examples, exceptions, and actual enforcement commands. Resolve conflicting or stale guidance at its owning source instead of adding another copied rule block. Inspect the existing agent/tool configuration before changing it; repo preparation does not authorize global agent settings, credential setup, or new external integrations.
 
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+
 ## Verify usability
 
 Walk a representative task through the revised pointers: locate its owning code, applicable conventions, preserved contracts, and safe feedback command. Use one nested surface when instruction scope matters. Check links and command definitions, run relevant available checks, and state what could not run. When agent discovery itself is a requirement, exercise the configured client's discovery path; reading a file yourself does not prove the client loads it. Remove contradictory or redundant guidance found during the walk.

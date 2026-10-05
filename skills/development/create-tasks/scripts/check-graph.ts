@@ -4,6 +4,7 @@ type Status = "pending" | "running" | "accepted" | "blocked" | "failed";
 type Task = { id: string; status: Status; dependencies: string[]; writes?: string[]; resources?: string[] };
 type Conflict = { tasks: [string, string]; writes: [string, string][]; resources: string[]; bothDependencyReady: boolean };
 const statuses = new Set<Status>(["pending", "running", "accepted", "blocked", "failed"]);
+const usage = "Usage: bun check-graph.ts <task-snapshot.json>\nRequires Bun 1.3.9 or newer. Reads one JSON snapshot; reports dependency readiness, declared conflicts and unknown isolation. Does not execute tasks or validate acceptance evidence.";
 const record = (value: unknown): value is Record<string, unknown> => !!value && typeof value === "object" && !Array.isArray(value);
 const name = (value: unknown): value is string => typeof value === "string" && !!value.trim() && value === value.trim();
 
@@ -90,10 +91,13 @@ export function checkGraph(input: unknown) {
 if (import.meta.main) {
   try {
     const args = process.argv.slice(2);
-    if (args.length !== 1) throw new Error("Usage: bun check-graph.ts <task-snapshot.json>");
-    const result = checkGraph(JSON.parse(readFileSync(args[0], "utf8")));
-    console.log(JSON.stringify(result, null, 2));
-    if (!result.valid) process.exitCode = 1;
+    if (args.length === 1 && args[0] === "--help") console.log(usage);
+    else {
+      if (args.length !== 1) throw new Error(usage);
+      const result = checkGraph(JSON.parse(readFileSync(args[0], "utf8")));
+      console.log(JSON.stringify(result, null, 2));
+      if (!result.valid) process.exitCode = 1;
+    }
   } catch (error) {
     console.error(error instanceof Error ? error.message : String(error));
     process.exitCode = 1;
