@@ -17,6 +17,8 @@ For changes, load [change review](references/change-review.checklist.md). For br
 
 Trace changed behavior through callers, contracts, data/state, and failure paths. Apply correctness, compatibility, permissions/security, architecture, simplicity, testing, performance, and operability lenses only where they can reveal a concrete problem. Evaluate local standards separately from subjective preferences.
 
+Check for an existing implementation of newly introduced behavior and for duplicated business rules with diverging fixes, validation, or ownership. Compare callers and intentional variants before recommending consolidation. A useful finding identifies the conflicting responsibility, concrete cost or defect, proposed simpler owner, and preservation check; similar syntax or a clone percentage alone is insufficient. For feature or data-layer review, include the relevant schema/query/migration and consumer boundaries without implying a live database audit.
+
 Inspect the supplied verification evidence against the material acceptance criteria. Check the tested revision, relevant environment/state, and whether before/after comparisons use comparable conditions. Open useful artifacts and check what they actually demonstrate; green CI or a screenshot does not establish unrelated behavior. Missing required proof is a readiness gap, not an invented code defect. Run a scoped check when authorized and useful; reuse sound evidence rather than repeat it by default.
 
 A finding needs an affected scenario, located evidence, consequence, and actionable correction or investigation. Confirm suspected issues against code and available behavior. Do not report speculative concerns, generic style advice, duplicate symptoms, or already-handled failures as established defects.
@@ -29,4 +31,4 @@ Use [the report shape](references/review-report.template.md). State priority bas
 
 When fixes are requested, verify each claim before editing, keep the authorized scope, rerun affected checks, and inspect the final revision again. Reuse previous review evidence only for unchanged code and criteria; revise stale findings after implementation changes.
 
-Next: `diagnose-issue` for an uncertain suspected defect; `implement-change` for selected fixes; `find-refactors` for a separate improvement search; `ship-change` when the reviewed result is ready and delivery is requested.
+Next: `diagnose-issue` for an uncertain suspected defect; `implement-change` for selected fixes; `find-improvements` for a separate improvement search; `automate-code-checks` for an accepted recurring rule that needs enforcement; `ship-change` when the reviewed result is ready and delivery is requested.

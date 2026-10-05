@@ -2,14 +2,14 @@
 
 Workflows for developing software, making decisions, and designing interfaces. Each skill owns a concrete result and can be used on its own or as a step in a larger process.
 
-The collection contains 30 draft skills across development, productivity, and UI/UX. Supporting templates and references live with the skills that use them. These are authored workflows under evaluation; client installation and cross-client compatibility are not yet verified.
+The collection contains 34 draft skills across development, productivity, and UI/UX. Supporting templates and references live with the skills that use them. These are authored workflows under evaluation; client installation and cross-client compatibility are not yet verified.
 
 ## Find the right skill
 
 | I want to… | Start with |
 | --- | --- |
 | Explore a project or feature idea | [brainstorm-ideas](skills/productivity/brainstorm-ideas/SKILL.md) |
-| Challenge a proposed direction | [question-plan](skills/productivity/question-plan/SKILL.md) |
+| Challenge a proposed direction | [challenge-proposal](skills/productivity/challenge-proposal/SKILL.md) |
 | Get productive in an inherited codebase | [onboard-codebase](skills/development/onboard-codebase/SKILL.md) |
 | Understand current code or a PR | [explain-codebase](skills/development/explain-codebase/SKILL.md) or [explain-pr](skills/development/explain-pr/SKILL.md) |
 | Define behavior, phases, then tasks | [write-spec](skills/development/write-spec/SKILL.md) → [plan-phases](skills/development/plan-phases/SKILL.md) → [create-tasks](skills/development/create-tasks/SKILL.md) |
@@ -17,7 +17,9 @@ The collection contains 30 draft skills across development, productivity, and UI
 | Establish conventions or agent context | [define-project-conventions](skills/development/define-project-conventions/SKILL.md) or [prepare-repo-for-agents](skills/development/prepare-repo-for-agents/SKILL.md) |
 | Build an agreed change or fix a failure | [implement-change](skills/development/implement-change/SKILL.md) or [diagnose-issue](skills/development/diagnose-issue/SKILL.md) |
 | Demonstrate the result and prepare review evidence | [verify-change](skills/development/verify-change/SKILL.md) |
-| Find useful refactors or review code | [find-refactors](skills/development/find-refactors/SKILL.md) or [review-code](skills/development/review-code/SKILL.md) |
+| Find improvements or review code | [find-improvements](skills/development/find-improvements/SKILL.md) or [review-code](skills/development/review-code/SKILL.md) |
+| Prevent a recurring coding mistake | [automate-code-checks](skills/development/automate-code-checks/SKILL.md) |
+| Improve performance, upgrade dependencies, or plan a migration | [Development maintenance skills](docs/domains/development.md) |
 | Design or evaluate an interface | [UI/UX catalog](docs/domains/ui-ux.md) |
 | Deliver a change | [ship-change](skills/development/ship-change/SKILL.md) |
 | Reduce overlapping documentation | [consolidate-docs](skills/development/consolidate-docs/SKILL.md) |
@@ -26,8 +28,8 @@ Start at the action the request needs. A ready task can go directly to implement
 
 ## Full catalogs
 
-- [Development](docs/domains/development.md): 20 skills for understanding, foundations, specification, technical design, delivery planning, implementation, diagnosis, verification, review, and delivery.
-- [Productivity](docs/domains/productivity.md): 6 skills for ideas, questioning, research, decision maps, prompts, and handoffs.
+- [Development](docs/domains/development.md): 24 skills covering understanding, planning, implementation, verification, delivery, and maintenance.
+- [Productivity](docs/domains/productivity.md): 6 skills for exploring ideas, challenging proposals, researching topics, tracking decisions, improving prompts, and transferring work.
 - [UI/UX](docs/domains/ui-ux.md): 4 skills for flows, interface design, rendered review, and shared design systems.
 
 The catalogs describe categories, outputs, boundaries, and conditional resources. The [workflow map](docs/workflows.md) shows lifecycle phases, entry points, dependencies, parallel work, and next steps.

@@ -1,11 +1,11 @@
 ---
-name: research-question
+name: research-topic
 description: "Answer a bounded factual or comparative question using relevant repository evidence and current primary sources, with traceable conclusions, freshness, uncertainty, and a next decision."
 ---
 
-# Research question
+# Research topic
 
-Produce an answer that helps the user make the named decision. Establish the question, scope, desired depth, and what evidence would change the answer before collecting material.
+Produce evidence-backed findings or a comparison that helps the user make a named decision. Turn a broad topic into a bounded question, scope, and desired depth; establish what evidence would change the answer before collecting material.
 
 Inspect supplied artifacts and local sources first when the question concerns a project. For external, current, niche, legal, pricing, or product claims, use relevant primary sources and verify dates, versions, jurisdiction, and applicability. Do not treat search snippets or copied summaries as stronger evidence than the underlying material.
 

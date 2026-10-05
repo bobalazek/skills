@@ -19,6 +19,8 @@ Before editing, preserve the affected baseline when available. For an existing f
 
 Use [evidence selection and reporting](references/verification.template.md) for the relevant evidence types. Record the actual command or interaction, prerequisites, input/state, environment, observation, and result. Keep failed attempts and changed conditions distinguishable from final results.
 
+For feature, journey, or release QA, use [behavior and risk checks](references/behavior-checks.checklist.md) to select meaningful paths and boundaries. Derive the matrix from the actual product and changed risks rather than running a fixed website checklist. Treat missing access or unclear expected behavior as explicit coverage limits.
+
 Compare like with like. Use the same fixture, user role, viewport, workload, and configuration where they affect the result; explain unavoidable differences. Repeat noisy measurements enough to establish whether the claimed change exceeds the observed variation. Preserve failures and important neighboring behavior, not only the happy path.
 
 Use synthetic or approved data. Inspect artifacts for secrets, personal data, internal URLs, and unrelated windows before sharing. Capture only what the claim needs. Verification authority does not imply permission to run production load tests, change live data, or upload private evidence.

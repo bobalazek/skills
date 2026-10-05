@@ -23,4 +23,4 @@ Use evidence for external claims and label assumptions. If an idea depends on de
 
 Recommend a direction when the evidence and preferences support it, explaining the trade-off. Keep rejected or deferred alternatives only when their reasoning is useful. Update the current brief or conversation; brainstorming does not require another Markdown document.
 
-Finish with options, recommendation or unresolved choice, and the context ready for the next action. Use `question-plan` to challenge a chosen direction, `research-question` for missing facts, `build-prototype` for empirical uncertainty, or `write-spec` once behavior can be defined. Continue an authorized broader workflow without artificial approval between stages.
+Finish with options, recommendation or unresolved choice, and the context ready for the next action. Use `challenge-proposal` to challenge a chosen direction, `research-topic` for missing facts, `build-prototype` for empirical uncertainty, or `write-spec` once behavior can be defined. Continue an authorized broader workflow without artificial approval between stages.

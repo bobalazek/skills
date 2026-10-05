@@ -1,4 +1,4 @@
-# Decision map
+# Project decisions
 
 | ID | Question and consequence | Evidence/options | Depends on | State/owner | Next check |
 | --- | --- | --- | --- | --- | --- |
