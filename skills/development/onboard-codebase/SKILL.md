@@ -17,6 +17,8 @@ Map the purpose, runtime entry points, important flows, module/state ownership, 
 
 Inspect documented setup/check commands and their side effects. Run the safe relevant local path available within the requested onboarding scope. Respect project rules for dependency setup; do not reset data, replace configuration, fetch secrets, or contact production merely to make a check green.
 
+Before setup or dependency repair, inspect relevant lifecycle/Git hooks and shared dependency locations, especially in worktrees. A command or checkout operation can trigger installation or affect another workspace; establish the actual write scope before running it.
+
 Record each important command as verified, failed, or not run with its prerequisite. Preserve unrelated work and pre-existing failures. Where setup is blocked, provide the precise missing input and a useful read-only orientation without claiming a working environment.
 
 ## Make the next change approachable

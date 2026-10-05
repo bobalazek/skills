@@ -6,6 +6,8 @@ Load the applicable section; do not turn every edit into a full risk audit.
 
 Use the existing task records to establish ownership, current status, accepted inputs, and available outputs before dispatch. Follow any claim or concurrency controls in the requested task system; do not take over work owned by another contributor or assume a prior attempt did nothing.
 
+Give each worker enough context to act without the parent history: role/outcome, current criteria and source references, applicable instructions, permitted actions, owned writes, expected evidence, and stop conditions. Use available host controls for tool access and isolation. A separate context or process does not itself isolate files, services, credentials, or shared dependencies; prose alone does not enforce those boundaries.
+
 Record each task's disposition, workspace/output revision, evidence, and remaining blocker. If one task fails, preserve successful and partial outputs, block its dependent work, and continue independent ready work within scope. Before retrying, inspect what the previous attempt changed, including remote operations that may have succeeded despite a timeout. Reconcile uncertain state before repeating a mutation; a retry needs a changed approach or resolved prerequisite.
 
 After combining outputs, check the accepted behavior on the integrated revision and refresh evidence affected by integration or changed inputs. A worker's passing check applies to its tested state; it does not prove the combined result. Follow the project's completion statuses and identify work still awaiting integration, review, or delivery. Report a partial batch as partial, preserving the next resumable action in the same task records rather than another handoff document.
@@ -21,6 +23,8 @@ Inspect the deployed compatibility window and migration workflow. Prefer additiv
 ## Stateful and integration boundaries
 
 Check input validation, authorization, ownership/tenancy, duplicate delivery, retries/timeouts, partial failure, concurrency, and error visibility where these properties exist. Do not log secrets or sensitive payloads for convenience. A retry must have a safe repetition contract.
+
+Preserve the identity and material request meaning of the same logical operation across retries, within the destination's deduplication window. Reconcile uncertain outcomes before resending, including after that window expires. Follow accepted or queued work to its operation-specific completion signal, and verify required dependency readiness before serving traffic. Scope test fixtures and cleanup to the current run and wait for its asynchronous work to settle.
 
 ## Shared interfaces
 
