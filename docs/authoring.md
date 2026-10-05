@@ -45,7 +45,7 @@ Before authoring, state: “Given this input, produce this result; stop before t
 
 ## Validation
 
-Maintain executable tooling in TypeScript and run it with Bun. Run `bun run check` for frontmatter, package names, links, resource reachability, standalone-resource boundaries, and catalog coverage. Run `bun test` when changing the checker. Mermaid diagrams should also parse/render in a real supported renderer when changed.
+Maintain executable tooling in TypeScript and run it with Bun. Run `bun run check` for frontmatter, package names, links, resource reachability, standalone-resource boundaries, and catalog coverage. Run `bun test` when changing the checker or executable helpers. Mermaid diagrams should also parse/render in a real supported renderer when changed.
 
 Structural checks do not establish behavior. Trial representative direct requests, neighboring requests that should route elsewhere, small tasks, missing prerequisites, and consequential actions outside authorization. Inspect actual results, loaded context, questions, side effects, and completion claims. For risky or substantial workflows, use an independent evaluation with raw artifacts and no supplied intended answer.
 

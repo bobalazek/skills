@@ -45,8 +45,13 @@ Use skills/development/review-code/SKILL.md to review this branch against main.
 
 The skill supplies its procedure and links conditional resources. Reuse its result for the next needed action; installation and invocation through a client-specific skill menu require separate verification.
 
+Two optional Bun helpers support the work itself:
+
+- [Task-graph checks](skills/development/create-tasks/SKILL.md): validate dependencies and inspect ready work, declared write conflicts, and unknown isolation before selecting a batch.
+- [Command evidence](skills/development/verify-change/SKILL.md): run an explicit check and retain its actual result and observed source state for review. A successful command does not establish that every acceptance criterion passed.
+
 ## Working on the collection
 
 Each package lives at `skills/<domain>/<skill>/SKILL.md` and carries its required resources. Read [authoring and maintenance](docs/authoring.md) for conventions, validation, and deprecation. A skill should not need the whole collection installed or the entire repository loaded.
 
-Use Bun 1.3.9 or newer. Run `bun run check` for the collection audit and `bun test` for the TypeScript checker's tests. There are no package dependencies to install. Behavioral trials and client installation checks are separate from this audit.
+Use Bun 1.3.9 or newer. Run `bun run check` for the collection audit and `bun test` for the audit and helper tests. There are no package dependencies to install. Behavioral trials and client installation checks are separate from this audit.

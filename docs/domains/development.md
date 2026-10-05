@@ -60,7 +60,7 @@ Resources are bundled with their owning package and loaded conditionally. They a
 
 | Need | Resource owner and content |
 | --- | --- |
-| Consistent specifications and work items | `write-spec`, `plan-phases`, and `create-tasks` carry templates for their distinct artifacts |
+| Consistent specifications and work items | `write-spec`, `plan-phases`, and `create-tasks` carry templates for their distinct artifacts; `create-tasks` also checks a declared task graph for invalid dependencies, ready work and ownership conflicts |
 | Stack choice and architecture | `design-architecture` carries a technology-selection matrix and technical-design template |
 | Cost, obligations, and security constraints | Architecture's checklist covers applicable evidence, quantities/price dates, jurisdiction/data/contracts, trust boundaries, and unresolved owner decisions |
 | Traditional stack conventions | `define-project-conventions` carries a topic matrix, web/typed-code checks, and data/integration checks; verify actual versions and official guidance for unsettled framework details |
@@ -72,7 +72,7 @@ Resources are bundled with their owning package and loaded conditionally. They a
 | Change safety | `implement-change` covers refactors, migrations, shared interfaces, stateful boundaries, and recovery |
 | Incident diagnosis | `diagnose-issue` carries containment/evidence/recovery checks for live failures |
 | PR and codebase review | `review-code` has separate conditional checklists and one report shape |
-| Result evaluation and PR evidence | `verify-change` carries evidence selection, comparison conditions, criterion results, reviewer-accessible reporting, and conditional journey/security/reliability checks |
+| Result evaluation and PR evidence | `verify-change` carries evidence selection, comparison conditions, criterion results, reviewer-accessible reporting, conditional journey/security/reliability checks, and an optional command runner that records actual outcomes |
 | Delivery | `ship-change` has PR/merge, package, deployment, and handover checks |
 
 Cost analysis and legal applicability are scoped engineering inputs, with current primary evidence when used. They do not become invented budgets or compliance assurances. A dedicated specialist skill is justified when its independent recurring output requires a fuller procedure.

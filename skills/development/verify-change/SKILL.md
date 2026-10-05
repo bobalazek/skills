@@ -19,6 +19,14 @@ Before editing, preserve the affected baseline when available. For an existing f
 
 Use [evidence selection and reporting](references/verification.template.md) for the relevant evidence types. Record the actual command or interaction, prerequisites, input/state, environment, observation, and result. Keep failed attempts and changed conditions distinguishable from final results.
 
+For an explicitly authorized command check, the optional Bun [check runner](scripts/run-check.ts) records its argv, directory, timings, actual exit or launch failure, and Git state before/after while showing output live:
+
+```text
+bun run /path/to/verify-change/scripts/run-check.ts --cwd /path/to/project --out /tmp/check-result.json -- bun test
+```
+
+Choose the project's actual check and a new output file; run `--help` for usage. The parent directory must exist, and an existing file is refused before execution. Prefer evidence outside the worktree. The record preserves failures and propagates a failing exit; it does not capture output, attest untracked/ignored contents, prove a reviewed commit, or decide acceptance criteria. Inspect recorded arguments and evidence before sharing; no upload is performed.
+
 For feature, journey, or release QA, use [behavior and risk checks](references/behavior-checks.checklist.md) to select meaningful paths and boundaries. Derive the matrix from the actual product and changed risks rather than running a fixed website checklist. Treat missing access or unclear expected behavior as explicit coverage limits.
 
 Compare like with like. Use the same fixture, user role, viewport, workload, and configuration where they affect the result; explain unavoidable differences. Repeat noisy measurements enough to establish whether the claimed change exceeds the observed variation. Preserve failures and important neighboring behavior, not only the happy path.
