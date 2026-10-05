@@ -25,10 +25,12 @@ Keep a short evidence trail: hypothesis, check, result, and interpretation. Stop
 
 If a repair is requested, fix the underlying cause in the owning boundary and preserve local conventions. Prove that the prohibited behavior is rejected and the intended behavior still works. Add the smallest useful regression check where existing coverage does not preserve that proof; test-first is optional.
 
+Keep the original failure and repaired outcome comparable: the same reproduction, relevant input/state, and environment, with revisions identified. Capture screenshots for visible defects, measurements for data/performance claims, or focused observed output for behavior checks. If the original failure cannot safely be reproduced, label the supplied or historical evidence and the limit of the comparison. Do not rerun a harmful operation for a better artifact.
+
 For a broader behavioral change, produce the diagnosis and propose specification/planning rather than absorb an unrequested redesign. Update a meaningful incident or learning record where the project keeps it; do not create one for every routine typo.
 
 ## Completion
 
-Report reproduced evidence, demonstrated cause or remaining uncertainty, affected consumers, repair scope when applicable, and actual verification outcomes. A missing check or unresolved cause remains explicit.
+Report reproduced evidence, demonstrated cause or remaining uncertainty, affected consumers, repair scope when applicable, and actual verification outcomes. Carry the redacted before/after evidence into the authorized PR or handoff with usable links or short inline results; identify local-only artifacts and unavailable checks. A missing check or unresolved cause remains explicit.
 
 Next: `implement-change` for a diagnosed repair not yet authorized; `write-spec` for a larger change; `review-code` for a verified repair; operational recovery or delivery only within the actual authorization.

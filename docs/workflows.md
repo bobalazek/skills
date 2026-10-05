@@ -10,11 +10,12 @@ Select the requested result, use the narrowest matching skill, and carry accepte
 | Research | Inspect current reality or answer an uncertainty through code, sources, diagnosis, or experiments | Evidence supports a decision; unknowns are explicit |
 | Planning | Define desired behavior, domain/technical choices, phases, and tasks as needed | Selected work has settled prerequisites and observable acceptance |
 | Implementation | Make the scoped change under local conventions and update affected context | The requested behavior and relevant checks have observed evidence |
+| Verification | Evaluate material criteria and collect usable proof of the result | Required behavior is demonstrated, evidence identifies its revision/context, and gaps are explicit |
 | Review | Evaluate the selected result against intent and engineering/interface requirements | Findings, coverage, blocking fixes, and remaining risks are explicit |
 | Delivery | Reach the requested PR, release, deployment, or handover target | The actual target and revision/artifact/behavior are verified |
 | Operation | Observe the result, recover from incidents, and learn from use | Verified observations identify the next useful action or no further work |
 
-Clarification belongs wherever a consequential unknown occurs. A prototype creates research evidence even when code is used to build it. No phase requires a separate document or conversation turn. Relevant tests and checks are required; their order does not follow a mandatory test-first method.
+Clarification belongs wherever a consequential unknown occurs. A prototype creates research evidence even when code is used to build it. Verification can happen within implementation or as a dedicated `verify-change` pass; reuse completed checks that still apply. No phase requires a separate document or conversation turn. Relevant tests and checks are required; their order does not follow a mandatory test-first method.
 
 ## Lifecycle graph
 
@@ -29,6 +30,7 @@ flowchart TD
   ReadySpec["Accepted spec or phase"] --> Phases["plan-phases when milestones are needed"]
   ReadyTask["Ready task or agreed batch"] --> Implement["implement-change"]
   Audit["PR or codebase review request"] --> Review["review-code"]
+  Evidence["Check a result or prepare evidence"] --> Verify["verify-change"]
 
   Brainstorm -->|Facts missing| Research["research-question / build-prototype"]
   Research -->|Evidence ready| Spec["write-spec"]
@@ -47,7 +49,9 @@ flowchart TD
   Tasks -->|Foundation missing| Start["start-project"]
   Tasks -->|Foundation ready| Implement
   Start --> Implement
-  Implement --> Review
+  Implement --> Verify
+  Verify -->|Required criteria failed| Implement
+  Verify -->|Evidence ready| Review
   Review -->|Required scoped fixes| Implement
   Review -->|Ready and delivery requested| Ship["ship-change"]
   Ship --> Observe["Verify target and observe operation"]
@@ -70,6 +74,7 @@ Operational feedback re-enters through the relevant request: diagnosis for a fai
 | Inherited project | Onboard → preserve current behavior/data/contracts → select the actual change → define missing conventions/context only where needed → use the ordinary change route |
 | Feature in a familiar project | Inspect the affected baseline → spec if behavior is unclear → design/task decomposition only where useful → implement/review/deliver |
 | Bug or regression | Triage if the report is unverified → diagnose → implement the bounded repair → check affected consumers → review/deliver as requested |
+| Result evaluation | Select checks from acceptance criteria → preserve useful baseline → observe candidate behavior → report results and evidence → include proof in authorized PR/delivery work |
 | Refactor | Find evidenced candidates → select one → preserve behavior and define checks → implement the accepted scope → review |
 | Large uncertain initiative | Map project decisions → research/question/prototype the next ready choice → specify and plan sufficiently settled portions |
 | PR communication | Explain the fixed comparison; question unresolved intent when needed; use review separately for correctness |
@@ -110,7 +115,8 @@ Pass the accepted objective, relevant artifacts, decisions, scope, repository re
 | Accepted scope and design | Plan outcome-based phases, or create tasks directly for a small change |
 | Agreed phase | Create executable tasks preserving its criteria and dependencies |
 | Ready tasks | Establish a missing foundation, then implement one task or the agreed ready batch |
-| Verified change | Review the final revision; explain the PR when the reader needs that communication |
+| Implemented change with proof missing | Verify the affected criteria and capture useful evidence |
+| Verified change | Review the final revision using its evidence; include relevant proof when explaining or publishing the PR |
 | Review findings | Investigate uncertain claims and implement selected authorized fixes; recheck affected evidence |
 | Reviewed change and delivery authority | Deliver to the requested target and verify it |
 
@@ -125,3 +131,5 @@ Update existing authoritative records. Current behavior, a specification, a deci
 Keep task-system integration within the requested destination and authority. Inspect project/state/concurrency rules and existing items before remote writes. Preserve local work, secret values, and private records. Delivery, production changes, destructive operations, and external communication require the actual action's authority; already-granted authority remains valid.
 
 A check invocation is not evidence of success. Inspect outcomes and report exact failures or unavailable checks. A prototype is not production-ready software; a scoped review does not prove the whole system correct; a command completing does not prove the remote target is healthy.
+
+Verification records the material criterion, tested revision/environment, actual observation, and result. Visible changes use relevant rendered evidence; performance/data claims use comparable measurements; behavioral changes use reproducible interactions or check output. New behavior need not invent a historical baseline. PRs carry concise results and useful accessible artifact links, with comparison conditions and unchecked coverage. Inspect and redact evidence before authorized sharing, verify uploaded locations, and label anything still local. After follow-up edits, refresh the affected proof and PR claims.

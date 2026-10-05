@@ -2,7 +2,7 @@
 
 Workflows for developing software, making decisions, and designing interfaces. Each skill owns a concrete result and can be used on its own or as a step in a larger process.
 
-The collection contains 29 draft skills across development, productivity, and UI/UX. Supporting templates and references live with the skills that use them. These are authored workflows under evaluation; client installation and cross-client compatibility are not yet verified.
+The collection contains 30 draft skills across development, productivity, and UI/UX. Supporting templates and references live with the skills that use them. These are authored workflows under evaluation; client installation and cross-client compatibility are not yet verified.
 
 ## Find the right skill
 
@@ -16,6 +16,7 @@ The collection contains 29 draft skills across development, productivity, and UI
 | Choose the stack and technical structure | [design-architecture](skills/development/design-architecture/SKILL.md) |
 | Establish conventions or agent context | [define-project-conventions](skills/development/define-project-conventions/SKILL.md) or [prepare-repo-for-agents](skills/development/prepare-repo-for-agents/SKILL.md) |
 | Build an agreed change or fix a failure | [implement-change](skills/development/implement-change/SKILL.md) or [diagnose-issue](skills/development/diagnose-issue/SKILL.md) |
+| Demonstrate the result and prepare review evidence | [verify-change](skills/development/verify-change/SKILL.md) |
 | Find useful refactors or review code | [find-refactors](skills/development/find-refactors/SKILL.md) or [review-code](skills/development/review-code/SKILL.md) |
 | Design or evaluate an interface | [UI/UX catalog](docs/domains/ui-ux.md) |
 | Deliver a change | [ship-change](skills/development/ship-change/SKILL.md) |
@@ -25,7 +26,7 @@ Start at the action the request needs. A ready task can go directly to implement
 
 ## Full catalogs
 
-- [Development](docs/domains/development.md): 19 skills for understanding, foundations, specification, technical design, delivery planning, implementation, diagnosis, review, and delivery.
+- [Development](docs/domains/development.md): 20 skills for understanding, foundations, specification, technical design, delivery planning, implementation, diagnosis, verification, review, and delivery.
 - [Productivity](docs/domains/productivity.md): 6 skills for ideas, questioning, research, decision maps, prompts, and handoffs.
 - [UI/UX](docs/domains/ui-ux.md): 4 skills for flows, interface design, rendered review, and shared design systems.
 

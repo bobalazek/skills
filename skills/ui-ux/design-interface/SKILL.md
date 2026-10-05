@@ -23,4 +23,6 @@ Reuse the existing component system; identify a genuinely shared token/component
 
 Walk the primary task and important states. Inspect hierarchy, content fit, overflow, interaction feedback, keyboard behavior, and supported viewport/surface changes. Distinguish a visual proposal from behavior proven in a runnable interface. State uninspected states or unavailable rendering access.
 
+For a changed rendered surface, preserve useful baseline and result screenshots at matching routes, viewports, roles, fixture data, and states. For a new surface, capture the result against the agreed design criteria. Record the tested revision and interaction outcomes separately; screenshots alone do not prove keyboard or recovery behavior. Inspect artifacts for sensitive data before sharing and carry useful evidence into any authorized PR, using actual accessible uploads or clearly labeled local artifacts.
+
 Finish with the design/result, key decisions, state/surface coverage, verification, and unresolved product choices. Next: `build-design-system` for repeated shared needs, `implement-change` for a design handoff, or `review-interface` for independent evaluation.

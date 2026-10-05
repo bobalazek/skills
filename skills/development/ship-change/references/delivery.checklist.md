@@ -4,6 +4,8 @@
 
 Confirm intended diff, correct base, repository-required checks, review status, and requested stop point. Explain problem/result and actual validation. If merging is authorized, wait for required checks and verify the platform records the merge; reconcile the local checkout according to repository rules.
 
+Include an evidence section in the existing PR format: tested revision/environment, material acceptance criteria and observed results, relevant visual or measured comparisons, and failures/unavailable checks. Link actual CI runs or redacted artifacts accessible to reviewers; inspect uploaded results and note meaningful access/expiry limits. Label a missing baseline or local-only screenshot explicitly. Update affected evidence after follow-up fixes; retain useful unaffected results.
+
 ## Release or package
 
 Confirm versioning, included artifacts, changelog/migration notes where needed, reproducible build, and publish destination. Verify the published version and usable artifact rather than only the upload command. Do not publish credentials, internal records, or unintended source files.

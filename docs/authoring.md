@@ -29,7 +29,8 @@ Use role suffixes for reusable resources where their role matters: `.template.md
 | Scope | Finish the requested outcome; adjacent findings do not authorize unrelated cleanup |
 | Questions | Inspect discoverable facts first; ask about consequential choices that cannot be inferred safely |
 | Parallelism | Use ready dependencies, isolated ownership/state, and independently checkable results; reconcile shared decisions |
-| Verification | Inspect relevant commands/results and the final artifact against requirements; use meaningful checks without mandatory test-first sequencing |
+| Verification | Match material criteria to observed proof, identify the tested revision/environment, and distinguish demonstrated, failed, and unchecked results; use meaningful checks without mandatory test-first sequencing |
+| Evidence | Preserve useful baseline/result artifacts, compare consistent conditions, redact shared content, and include relevant accessible evidence in authorized PRs; local paths are not attachments |
 | Authority | Honor granted authority and pause only at the actual missing input, choice, permission, or failed required check |
 | Knowledge | Reconcile useful facts, decisions, and learnings in existing authoritative locations |
 | Handoff | Pass accepted context, revision/evidence, unresolved prerequisites, and the next useful action |
@@ -47,6 +48,8 @@ Before authoring, state: “Given this input, produce this result; stop before t
 Maintain executable tooling in TypeScript and run it with Bun. Run `bun run check` for frontmatter, package names, links, resource reachability, standalone-resource boundaries, and catalog coverage. Run `bun test` when changing the checker. Mermaid diagrams should also parse/render in a real supported renderer when changed.
 
 Structural checks do not establish behavior. Trial representative direct requests, neighboring requests that should route elsewhere, small tasks, missing prerequisites, and consequential actions outside authorization. Inspect actual results, loaded context, questions, side effects, and completion claims. For risky or substantial workflows, use an independent evaluation with raw artifacts and no supplied intended answer.
+
+Every workflow needs a way to evaluate its own result. A planning workflow can walk scenarios and check decision readiness; a code fix needs observed behavior; a visible change needs rendered inspection; a measured improvement needs a comparable baseline. Declare the useful signal and report its actual outcome. Do not require screenshots, benchmarks, or a separate report where they cannot establish the claim. For changed behavior, preserve useful evidence during the work and carry it into review or delivery. Reassess evidence after edits instead of publishing stale results.
 
 Compare against the agent without the skill when claiming an improvement. Validate scripts with meaningful failure cases. Verify client discovery/installation independently; do not infer compatibility from a valid Markdown file or advertise untested client support.
 

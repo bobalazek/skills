@@ -1,6 +1,6 @@
 # Development
 
-This domain owns software engineering outputs. All 19 entries have draft packages; links open their actual instructions. Use the narrowest result that matches the request.
+This domain owns software engineering outputs. All 20 entries have draft packages; links open their actual instructions. Use the narrowest result that matches the request.
 
 ## Categories and skills
 
@@ -23,6 +23,7 @@ This domain owns software engineering outputs. All 19 entries have draft package
 | Diagnosis | Defect or incident | [diagnose-issue](../../skills/development/diagnose-issue/SKILL.md) | Reproduction/evidence, demonstrated cause or precise uncertainty, and a verified repair when requested |
 | Improvement | Refactor discovery | [find-refactors](../../skills/development/find-refactors/SKILL.md) | Ranked candidates with current friction, concrete simpler shape, callers, risk, and checks |
 | Quality | Change or codebase review | [review-code](../../skills/development/review-code/SKILL.md) | Prioritized evidenced findings and explicit reviewed/unchecked coverage |
+| Quality | Acceptance and evidence | [verify-change](../../skills/development/verify-change/SKILL.md) | Observed acceptance results with relevant screenshots, comparable measurements, or check output, ready for review or delivery |
 | Delivery | PR, release, deploy, or handover | [ship-change](../../skills/development/ship-change/SKILL.md) | The authorized target reached and verified through repository automation |
 | Documentation | Consolidation | [consolidate-docs](../../skills/development/consolidate-docs/SKILL.md) | Clear authoritative locations, preserved useful knowledge, reduced duplication, and repaired links |
 
@@ -37,6 +38,7 @@ This domain owns software engineering outputs. All 19 entries have draft package
 | Conventions, agent context, or consolidation | Conventions establish contributor rules; agent preparation makes context/checks discoverable; consolidation removes competing documentation |
 | Find refactors or implement | Discovery proposes useful changes; implementation performs the selected authorized change and verifies it |
 | Explain a PR or review it | Explanation communicates established intent and behavior; review evaluates correctness and relevant risks |
+| Verify or review a change | Verification executes relevant checks and collects proof against criteria; review investigates defects and risks using that evidence and the code |
 
 ## New projects and inherited systems
 
@@ -60,6 +62,7 @@ Resources are bundled with their owning package and loaded conditionally. They a
 | Change safety | `implement-change` covers refactors, migrations, shared interfaces, stateful boundaries, and recovery |
 | Incident diagnosis | `diagnose-issue` carries containment/evidence/recovery checks for live failures |
 | PR and codebase review | `review-code` has separate conditional checklists and one report shape |
+| Result evaluation and PR evidence | `verify-change` carries evidence selection, comparison conditions, criterion results, and reviewer-accessible reporting |
 | Delivery | `ship-change` has PR/merge, package, deployment, and handover checks |
 
 Cost analysis and legal applicability are scoped engineering inputs, with current primary evidence when used. They do not become invented budgets or compliance assurances. A dedicated specialist skill is justified when its independent recurring output requires a fuller procedure.
