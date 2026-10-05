@@ -15,8 +15,8 @@ function strings(value: unknown, label: string): string[] {
 
 function writePath(value: string): string {
   const path = value.endsWith("/") ? value.slice(0, -1) : value;
-  if (/[*?\[\]{}\\:]/.test(path) || path.startsWith("!") || path.split("/").some(part => !part || part === "." || part === "..")) {
-    throw new Error(`unsupported write path ${JSON.stringify(value)}: use literal repo-relative paths without globs or traversal`);
+  if (/[*?{}\\:\0]/.test(path) || path.startsWith("!") || path.split("/").some(part => !part || part === "." || part === "..")) {
+    throw new Error(`unsupported write path ${JSON.stringify(value)}: use literal repo-relative paths without wildcard/brace syntax, NUL or traversal`);
   }
   return path;
 }
