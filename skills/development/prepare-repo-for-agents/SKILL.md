@@ -9,17 +9,21 @@ Make the repository's useful context easy to discover and its checks easy to run
 
 ## Inspect the current task path
 
-Read applicable agent instructions, README, documentation entry points, conventions, relevant decisions, and actual command definitions. Trace how an agent would find the context and feedback loop for a representative task. Identify missing, duplicated, stale, or overbroad instructions with evidence.
+Read applicable root and nested agent instructions, README, documentation entry points, conventions, relevant decisions, and actual command definitions before adding files. Discover existing memory, learning, decision, and convention indexes; inspect relevant entries, status, and source links rather than loading every record. Trace how an agent would find the context and feedback loop for a representative task. Identify missing, duplicated, stale, or overbroad instructions with evidence.
 
 For a new repository, add only instructions supported by working capabilities. For an established repository, keep useful organization and link authoritative facts instead of copying them. Never invent conventions, commands, history, or ownership to fill a template.
 
 ## Improve the entry points
 
-Use [project context guidance](references/project-context.playbook.md). Keep agent instructions focused on local invariants, conditional reading, safe operational boundaries, and exact supported checks. Put general project purpose/setup in README, detailed standards in their existing home, and domain facts in project documentation.
+Use [project context guidance](references/project-context.playbook.md). Keep agent instructions short and focused on local invariants, conditional reading, safe operational boundaries, and exact supported checks. Put general project purpose/setup in README, detailed standards in their existing home, and domain facts in project documentation. Link existing memory indexes and explain when their records apply; do not copy the records into agent instructions.
 
 Use instruction scopes appropriate to the host and repository. Do not claim a client discovers a file until that behavior is verified for the target setup. Optional CLIs, indexes, connectors, and agent runtimes remain optional unless the project requires them.
 
 Make coding standards part of the task path: identify the applicable root and surface instructions, authoritative rules, representative local examples, exceptions, and actual enforcement commands. Resolve conflicting or stale guidance at its owning source instead of adding another copied rule block. Inspect the existing agent/tool configuration before changing it; repo preparation does not authorize global agent settings, credential setup, or new external integrations.
+
+## Communicate the result
+
+Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
 
 ## Independent evaluation
 
@@ -27,10 +31,10 @@ Before accepting the result, have a separate agent in fresh context challenge it
 
 ## Verify usability
 
-Walk a representative task through the revised pointers: locate its owning code, applicable conventions, preserved contracts, and safe feedback command. Use one nested surface when instruction scope matters. Check links and command definitions, run relevant available checks, and state what could not run. When agent discovery itself is a requirement, exercise the configured client's discovery path; reading a file yourself does not prove the client loads it. Remove contradictory or redundant guidance found during the walk.
+Walk a representative task through the revised pointers: locate its owning code, applicable conventions, preserved contracts, relevant memory/decision status, and safe feedback command. Use one nested surface when instruction scope matters. Check links and command definitions, run relevant available checks, and state what could not run. Confirm an outdated or superseded record cannot be mistaken for a current rule. When agent discovery itself is a requirement, exercise the configured client's discovery path; reading a file yourself does not prove the client loads it. Remove contradictory or redundant guidance found during the walk.
 
 ## Completion
 
 Report the friction removed, changed entry points, verification, and remaining tooling/access gaps. Do not add broad policy boilerplate, empty memory folders, or a new orchestration system.
 
-Next: `consolidate-docs` for wider documentation overlap; `define-project-conventions` for unresolved contributor rules; `automate-code-checks` for accepted rules that need enforcement; ordinary implementation when the task path is ready.
+Next: `document-project` for missing factual knowledge or record maintenance; `consolidate-docs` for wider documentation overlap; `define-project-conventions` for unresolved contributor rules; `automate-code-checks` for accepted rules that need enforcement; ordinary implementation when the task path is ready.

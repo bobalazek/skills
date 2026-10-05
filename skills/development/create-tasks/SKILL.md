@@ -25,6 +25,10 @@ Use the requested local format by default. For a tracker, inspect its project, w
 
 Preserve existing ownership and in-progress or completed work when reconciling the plan. Use the destination's supported identity and concurrency controls. After a timeout or uncertain write result, inspect remote state before retrying: the first request may already have succeeded. Re-read after a version conflict rather than overwriting another contributor's changes. Confirm returned IDs and stored criteria, dependencies, and state before reporting publication; report partial synchronization and unresolved writes precisely.
 
+## Communicate the result
+
+Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
+
 ## Independent evaluation
 
 Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.

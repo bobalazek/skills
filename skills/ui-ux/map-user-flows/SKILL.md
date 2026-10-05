@@ -20,3 +20,7 @@ Validate through representative task walkthroughs and available evidence. Follow
 Before declaring the flow ready, have a separate agent in fresh context adversarially walk it against the raw accepted requirements, candidate map, and available journey evidence, without the author's planning conversation. Resolve demonstrated gaps and preserve unverified claims; if an independent reviewer is unavailable, report unreviewed and not ready. Include useful map/walkthrough evidence in authorized PR work as it becomes available. Independent review does not replace required human approval.
 
 Finish with the agreed flow, affected current behavior, state/recovery requirements, and unresolved decisions. Next: `design-interface` for composition, `write-spec` for behavior acceptance, or `build-prototype` when interaction uncertainty needs observation.
+
+## Communicate the result
+
+Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.

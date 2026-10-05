@@ -9,6 +9,8 @@ Reduce documentation friction in a bounded set of files. Finish with fewer compe
 
 Inventory the requested docs and their readers, purpose, authority, freshness, callers/links, and actual content. Verify material behavior/setup claims against current code or commands. Mark unsupported claims rather than preserving them as established facts.
 
+Establish the intended output and audience: short task result, reviewer-facing PR, onboarding guide, exact technical explanation, or reference. Follow explicit tone/depth preferences and existing writing conventions; concise does not mean deleting necessary evidence, exceptions or rationale. Load [consolidation checks](references/consolidation.checklist.md) for a broad cleanup or when memory and historical records overlap.
+
 Assign each kind of information a home: purpose/setup, contributor rules, current architecture, specifications, decisions/ADRs, learnings, incidents, and work status. These roles can share a file when useful; their different lifecycles should remain clear. Preserve useful existing structure and human-authored voice.
 
 Choose retained locations before moving content. Merge unique useful material, resolve contradictions with evidence, and remove duplication. Preserve historical decisions as historical rather than rewriting them to match the present. Do not invent missing motives from commits or promote observed patterns into mandatory standards.
@@ -18,6 +20,10 @@ Update incoming links, indexes, and instruction pointers. Check external consume
 Verify links, preserved information, and the reader's main lookup path. Run relevant documentation audits and direct checks for changed setup instructions. Report consolidation decisions, unresolved factual conflicts, and checks.
 
 This workflow does not require a new consolidation report or a Markdown file per handoff. Update the existing front door and finish with the useful result. Next: `prepare-repo-for-agents` only when contributor navigation still needs work.
+
+## Communicate the result
+
+Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
 
 ## Independent evaluation
 

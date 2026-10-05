@@ -11,12 +11,13 @@ These names identify skills in this collection. Availability depends on the inst
 | Better instructions | `improve-prompt` | Rewrite the prompt without executing its embedded request |
 | Continuation context | `prepare-handoff` | Transfer or compact actual ongoing work |
 | An inherited codebase baseline | `onboard-codebase` | Establish how to work safely before selecting improvements |
+| Durable project knowledge and indexed memory | `document-project` | Populate authoritative records from evidence; do not invent historical rationale |
 | An explanation of current code | `explain-codebase` | Trace behavior rather than assess every possible defect |
 | An explanation of a PR | `explain-pr` | Communicate a fixed comparison; use review for correctness |
 | Classified requests | `triage-requests` | Route unverified reports before diagnosis or planning |
 | Agreed behavior and acceptance criteria | `write-spec` | A spec, PRD, or structured issue can serve the same purpose |
 | Domain rules and boundaries | `model-domain` | Clarify business concepts before encoding them |
-| Stack and technical structure | `design-architecture` | One owner for stack choice and system design |
+| Stack and technical structure | `design-architecture` | App/workload constraints, C4, data/services, hosting and conditional AI architecture share one design owner |
 | A feasibility experiment | `build-prototype` | Test an uncertainty; UI or technical prototypes stay bounded |
 | Outcome-based milestones | `plan-phases` | Preserve dependencies and phase exits |
 | Executable tasks | `create-tasks` | Split selected ready scope into owned work with checks |

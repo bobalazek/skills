@@ -24,3 +24,7 @@ Review does not itself authorize a redesign or code edit. When fixes are request
 Run this assessment in a separate agent with fresh context from the interface's author, using raw accepted requirements, the candidate interface, and observed proof without the author's planning conversation. If you authored the interface, delegate the review. Reproduce consequential findings or retain their exact verification gap; a minority demonstrated defect survives reconciliation. If an independent agent is unavailable, report unreviewed and not ready. Independent review does not replace required human approval.
 
 Next: `design-interface` for an agreed design revision, `diagnose-issue` for unclear runtime failures, or `implement-change` for selected concrete fixes.
+
+## Communicate the result
+
+Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
