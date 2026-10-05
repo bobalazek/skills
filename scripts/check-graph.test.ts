@@ -1,0 +1,126 @@
+import { afterEach, expect, test } from "bun:test";
+import { spawnSync } from "node:child_process";
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { checkGraph } from "../skills/development/create-tasks/scripts/check-graph";
+
+const task = (id: string, dependencies: string[] = [], status = "pending", writes: string[] = [], resources: string[] = []) => ({ id, status, dependencies, writes, resources });
+const directories: string[] = [];
+const script = fileURLToPath(new URL("../skills/development/create-tasks/scripts/check-graph.ts", import.meta.url));
+const cli = (content: string) => {
+  const directory = mkdtempSync(join(tmpdir(), "skills-graph-"));
+  directories.push(directory);
+  const path = join(directory, "tasks.json");
+  writeFileSync(path, content);
+  const result = spawnSync(process.execPath, [script, path], { encoding: "utf8" });
+  expect(readFileSync(path, "utf8")).toBe(content);
+  return result;
+};
+afterEach(() => directories.splice(0).forEach(directory => rmSync(directory, { recursive: true, force: true })));
+
+test("rejects malformed snapshots, states and declarations", () => {
+  for (const input of [null, [], {}, { tasks: null }, { tasks: [null] }, { tasks: [{ id: "a", status: "done", dependencies: [] }] }, { tasks: [{ id: "a", status: "pending" }] }, { tasks: [{ ...task("a"), writes: "src/a.ts" }] }, { tasks: [{ ...task("a"), resources: [42] }] }]) {
+    expect(() => checkGraph(input)).toThrow();
+  }
+});
+
+test("rejects unknown fields instead of silently losing dependency or ownership declarations", () => {
+  expect(() => checkGraph({ tasks: [], taskz: [] })).toThrow("unknown snapshot fields");
+  for (const key of ["needs", "write", "resource"]) {
+    expect(() => checkGraph({ tasks: [{ ...task("a"), [key]: [] }] })).toThrow("unknown fields");
+  }
+});
+
+test("reports duplicate IDs and refuses to infer a frontier", () => {
+  const result = checkGraph({ tasks: [task("a"), task("a")] });
+  expect(result.valid).toBe(false);
+  expect(result.errors).toContain("duplicate task id: a");
+  expect(result.dependencyReady).toEqual([]);
+});
+
+test("reports a missing prerequisite instead of treating it as accepted", () => {
+  const result = checkGraph({ tasks: [task("a", ["missing"])] });
+  expect(result.valid).toBe(false);
+  expect(result.errors).toEqual(["a: missing dependency missing"]);
+  expect(result.dependencyReady).toEqual([]);
+});
+
+test("detects indirect and self cycles even when their states say accepted", () => {
+  const cycle = checkGraph({ tasks: [task("a", ["b"], "accepted"), task("b", ["c"], "accepted"), task("c", ["a"], "accepted")] });
+  expect(cycle.valid).toBe(false);
+  expect(cycle.errors).toEqual(["dependency cycle: a -> b -> c -> a"]);
+  expect(checkGraph({ tasks: [task("self", ["self"])] }).valid).toBe(false);
+});
+
+test("uses accepted prerequisites and pending state rather than future topological readiness", () => {
+  const result = checkGraph({ tasks: [
+    task("contract", [], "accepted"), task("page", ["contract"]), task("integration", ["page"]),
+    task("running", [], "running"), task("waiting", ["running"]), task("blocked", [], "blocked"),
+    task("failed", [], "failed"), task("retry-consumer", ["failed"]), task("independent"),
+  ] });
+  expect(result.valid).toBe(true);
+  expect(result.dependencyReady).toEqual(["page", "independent"]);
+});
+
+test("requires reconciliation of accepted or running nodes with unaccepted prerequisites", () => {
+  for (const status of ["accepted", "running"]) {
+    for (const prerequisiteStatus of ["pending", "blocked", "failed", "running"]) {
+      const result = checkGraph({ tasks: [task("b", [], prerequisiteStatus), task("a", ["b"], status), task("c", ["a"])] });
+      expect(result.valid).toBe(false);
+      expect(result.errors).toEqual([`a: ${status} task has unaccepted dependency b (${prerequisiteStatus})`]);
+      expect(result.dependencyReady).toEqual([]);
+    }
+  }
+});
+
+test("reports exact and ancestor write overlaps without matching sibling prefixes", () => {
+  const result = checkGraph({ tasks: [task("directory", [], "pending", ["src/components/"]), task("button", [], "pending", ["src/components/button.ts"]), task("same", [], "pending", ["src/components/button.ts"]), task("sibling", [], "pending", ["src/components-old/button.ts"])] });
+  expect(result.conflicts.map(item => item.tasks)).toEqual([["directory", "button"], ["directory", "same"], ["button", "same"]]);
+  expect(result.conflicts.every(item => item.bothDependencyReady)).toBe(true);
+  expect(result.conflicts[0].writes).toEqual([["src/components", "src/components/button.ts"]]);
+});
+
+test("reports shared resources independently of file paths", () => {
+  const result = checkGraph({ tasks: [task("a", [], "pending", ["src/a.ts"], ["test-db"]), task("b", [], "pending", ["src/b.ts"], ["test-db"])] });
+  expect(result.conflicts).toEqual([{ tasks: ["a", "b"], writes: [], resources: ["test-db"], bothDependencyReady: true }]);
+});
+
+test("distinguishes sequential overlap from two dependency-ready tasks", () => {
+  const result = checkGraph({ tasks: [task("a", [], "pending", ["src/a.ts"]), task("b", ["a"], "pending", ["src/a.ts"])] });
+  expect(result.valid).toBe(true);
+  expect(result.dependencyReady).toEqual(["a"]);
+  expect(result.conflicts[0].bothDependencyReady).toBe(false);
+});
+
+test("accepted tasks do not create unfinished-work conflicts", () => {
+  expect(checkGraph({ tasks: [task("a", [], "accepted", ["src/"]), task("b", ["a"], "pending", ["src/a.ts"])] }).conflicts).toEqual([]);
+});
+
+test("missing declarations remain unknown while explicit empty arrays declare no use", () => {
+  const result = checkGraph({ tasks: [{ id: "unknown", status: "pending", dependencies: [] }, { ...task("partial"), resources: undefined }, task("declared")] });
+  expect(result.unknownIsolation).toEqual([{ id: "unknown", missing: ["writes", "resources"] }, { id: "partial", missing: ["resources"] }]);
+  expect(result.dependencyReady).toEqual(["unknown", "partial", "declared"]);
+});
+
+test("rejects absolute, traversal, glob and ambiguous path syntax", () => {
+  for (const path of ["/tmp/file", "../file", "src/../file", "./src", "src//file", "src/*.ts", "src/a?.ts", "src/[ab].ts", "src/{a,b}.ts", "!src/file", "C:/file", "src\\file"]) {
+    expect(() => checkGraph({ tasks: [task("a", [], "pending", [path])] })).toThrow();
+  }
+});
+
+test("CLI reads a valid snapshot and emits the observed frontier without changing input", () => {
+  const result = cli(JSON.stringify({ tasks: [task("a", [], "accepted"), task("b", ["a"])] }));
+  expect(result.status).toBe(0);
+  expect(JSON.parse(result.stdout).dependencyReady).toEqual(["b"]);
+});
+
+test("CLI returns nonzero for malformed JSON and a cyclic graph", () => {
+  const malformed = cli("{broken");
+  expect(malformed.status).toBe(1);
+  expect(malformed.stderr.length).toBeGreaterThan(0);
+  const cyclic = cli(JSON.stringify({ tasks: [task("a", ["a"])] }));
+  expect(cyclic.status).toBe(1);
+  expect(JSON.parse(cyclic.stdout).valid).toBe(false);
+});
