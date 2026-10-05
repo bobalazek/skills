@@ -1,0 +1,34 @@
+---
+name: implement-change
+description: "Implement an agreed feature, fix, refactor, or dependency-ready task batch using repository conventions and scoped verification. Use when the requested output is working code, not a plan or review report."
+---
+
+# Implement change
+
+Complete the authorized change and its relevant verification. A clear local fix does not need a new spec, phase plan, or interview.
+
+## Establish the working contract
+
+Read local instructions and the affected surface's conventions. Use accepted tasks, spec criteria, design artifacts, known checks, and relevant decisions. Inspect the working tree and preserve unrelated edits. Establish the current baseline; distinguish pre-existing failures from introduced regressions.
+
+Trace impact proportional to risk. For a leaf edit, inspect its nearest consumer and check. For shared interfaces, permissions, schemas, stateful flows, or integrations, follow affected callers, data contracts, failure paths, and consumers before editing. Use an available project index when repository instructions require it.
+
+## Make the smallest complete change
+
+Follow the local module, data-access, typing, error, logging, dependency, and UI patterns. Reuse existing facilities before adding a layer or package. Fix the shared cause rather than patching only the reported caller. Keep adjacent cleanup out unless it is necessary to leave a coherent result.
+
+Select one task or the agreed ready batch. Shared contracts and migrations precede consumers. Concurrent workers require ready dependencies, isolated writes/state, and clear ownership; use available host isolation rather than assuming it exists. Integrate and verify their combined result.
+
+For uncertain business behavior, stop the dependent work and resolve the specific missing decision. For technical uncertainty, inspect or run a bounded experiment. Do not replace the user's product choices with implementation preferences.
+
+Load [the change-risk playbook](references/change-risks.playbook.md) when a refactor, migration, shared UI, webhook, or stateful boundary makes those checks relevant.
+
+## Verify the actual result
+
+Use the smallest relevant reproduction, regression test, request, build, browser path, or artifact check. There is no required test-first order. Cover meaningful failures and impacted consumers; format only touched files and use the repository's documented scoped commands.
+
+Inspect command exit status and output. Re-read acceptance criteria against the final diff and observed behavior. Resolve failures caused by the change and rerun affected checks. Record unavailable checks and pre-existing blockers without claiming completion for them.
+
+Update affected setup/behavior docs and material decisions or learnings in their existing locations. Report the resulting behavior, verification evidence, remaining gaps, and next action. Do not commit, push, send messages, or deploy unless the user or applicable repository workflow authorizes it.
+
+Next: `review-code` for independent change review; `explain-pr` for a reviewer-facing explanation; `ship-change` when delivery is requested. Reuse the verified revision and evidence.

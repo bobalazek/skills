@@ -1,0 +1,29 @@
+# Specification template
+
+Use the sections that affect this change. Keep an existing project format where it serves the same role.
+
+## Goal and scope
+
+Who needs what outcome, why it matters, and which alternatives or current behavior inform it. State non-goals and the evidence behind material claims.
+
+## Current and desired behavior
+
+Describe the relevant baseline separately from the proposed behavior. Name actors, permissions, inputs, outputs, state changes, and contracts to preserve.
+
+## Scenarios
+
+For each meaningful path: starting state, action/input, expected result, relevant failure or recovery, and affected surfaces. Include concurrency, retries, offline behavior, or partial failure only when the feature has those properties.
+
+## Acceptance
+
+| ID | Required observable behavior | Verification signal |
+| --- | --- | --- |
+| AC-01 | A concrete result in a defined context | A test, request, browser path, measurement, or inspected artifact |
+
+## Constraints and decisions
+
+Separate established requirements, accepted choices, assumptions, and open questions. Include applicable cost, data, security, accessibility, contractual, delivery, or migration constraints.
+
+## Readiness
+
+List blocking decisions and what would resolve them. Link accepted research or design artifacts. A task cannot be ready while its behavior depends on an unanswered choice.
