@@ -10,7 +10,7 @@ For each: priority, concise problem, affected scenario, file/symbol location, ev
 
 ## Verification and coverage
 
-Observed commands/results or runtime evidence; reviewed surfaces; uninspected areas and unavailable checks. No findings in the inspected scope does not establish whole-system correctness.
+Map material criteria to observed commands/results or runtime evidence and identify the tested revision/environment. Include useful screenshot or before/after measurement links, comparison conditions, reviewed surfaces, and uninspected areas. Separate failed or unavailable required checks from optional coverage limits. Identify stale evidence or local-only artifacts; no findings in the inspected scope does not establish whole-system correctness.
 
 ## Next action
 

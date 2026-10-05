@@ -25,10 +25,12 @@ Load [the change-risk playbook](references/change-risks.playbook.md) when a refa
 
 ## Verify the actual result
 
+Choose observable evidence from the acceptance criteria before changing behavior, so a useful baseline can be preserved. Use screenshots for visible states, interaction traces for user flows, comparable measurements for performance/data claims, or focused check output for code and document changes. Record the relevant input, environment, baseline, and tested revision; a build alone cannot demonstrate a repaired behavior.
+
 Use the smallest relevant reproduction, regression test, request, build, browser path, or artifact check. There is no required test-first order. Cover meaningful failures and impacted consumers; format only touched files and use the repository's documented scoped commands.
 
 Inspect command exit status and output. Re-read acceptance criteria against the final diff and observed behavior. Resolve failures caused by the change and rerun affected checks. Record unavailable checks and pre-existing blockers without claiming completion for them.
 
-Update affected setup/behavior docs and material decisions or learnings in their existing locations. Report the resulting behavior, verification evidence, remaining gaps, and next action. Do not commit, push, send messages, or deploy unless the user or applicable repository workflow authorizes it.
+Update affected setup/behavior docs and material decisions or learnings in their existing locations. Report criteria demonstrated, failed, or not checked, with inspected results and remaining gaps. Preserve useful artifacts for review; redact sensitive content before sharing. When PR work is authorized, include the evidence there as concise results or verified accessible links. A local file path is not an uploaded attachment. Do not commit, push, send messages, or deploy unless the user or applicable repository workflow authorizes it.
 
-Next: `review-code` for independent change review; `explain-pr` for a reviewer-facing explanation; `ship-change` when delivery is requested. Reuse the verified revision and evidence.
+Next: `verify-change` for a dedicated acceptance/evidence pass; `review-code` for independent change review; `explain-pr` for a reviewer-facing explanation; `ship-change` when delivery is requested. Reuse valid evidence instead of repeating completed checks.

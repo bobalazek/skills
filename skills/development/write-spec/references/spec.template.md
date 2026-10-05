@@ -20,6 +20,8 @@ For each meaningful path: starting state, action/input, expected result, relevan
 | --- | --- | --- |
 | AC-01 | A concrete result in a defined context | A test, request, browser path, measurement, or inspected artifact |
 
+Name the evidence needed to judge material criteria: relevant UI states/viewports, baseline/comparison conditions for measured changes, or expected behavior/check output. Define success before implementation; planned checks are not observed results. Keep evidence proportional to the claim.
+
 ## Constraints and decisions
 
 Separate established requirements, accepted choices, assumptions, and open questions. Include applicable cost, data, security, accessibility, contractual, delivery, or migration constraints.

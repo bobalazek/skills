@@ -24,6 +24,8 @@ Concrete criteria with the original source IDs where available. Changes to crite
 
 Known runnable commands or direct behavior checks, prerequisites, and expected observable outcomes. Label unavailable commands instead of inventing them.
 
+Name the baseline to preserve and the proof to capture when useful: comparable screenshots, measured data, observed interaction results, or focused check output. Identify relevant environment/input/state and the existing task/PR destination. Completion records the tested revision, actual outcomes, usable evidence links, and remaining gaps; it does not relabel this plan as an executed check.
+
 ## Done when
 
 The specified outcome is demonstrated, relevant checks pass, required docs agree with behavior, and the handoff identifies revision/evidence and remaining risks.

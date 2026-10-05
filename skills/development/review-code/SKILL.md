@@ -17,6 +17,8 @@ For changes, load [change review](references/change-review.checklist.md). For br
 
 Trace changed behavior through callers, contracts, data/state, and failure paths. Apply correctness, compatibility, permissions/security, architecture, simplicity, testing, performance, and operability lenses only where they can reveal a concrete problem. Evaluate local standards separately from subjective preferences.
 
+Inspect the supplied verification evidence against the material acceptance criteria. Check the tested revision, relevant environment/state, and whether before/after comparisons use comparable conditions. Open useful artifacts and check what they actually demonstrate; green CI or a screenshot does not establish unrelated behavior. Missing required proof is a readiness gap, not an invented code defect. Run a scoped check when authorized and useful; reuse sound evidence rather than repeat it by default.
+
 A finding needs an affected scenario, located evidence, consequence, and actionable correction or investigation. Confirm suspected issues against code and available behavior. Do not report speculative concerns, generic style advice, duplicate symptoms, or already-handled failures as established defects.
 
 Independent reviewers can investigate separate lenses in parallel on a fixed baseline when available; the coordinator reconciles evidence and deduplicates findings. More reviewers and majority votes do not replace verifying a claim.
