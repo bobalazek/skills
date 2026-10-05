@@ -1,9 +1,9 @@
 ---
-name: question-plan
+name: challenge-proposal
 description: "Challenge a proposed idea, specification, architecture, delivery plan, or stated PR intent through focused questions that resolve consequential assumptions and choices."
 ---
 
-# Question plan
+# Challenge proposal
 
 Improve a proposed direction by resolving the questions that could change its outcome. The result is an amended decision or artifact, or a precise investigation that remains necessary.
 
@@ -15,4 +15,6 @@ Use [questioning lenses](references/questions.checklist.md) when the proposal sp
 
 For PR intent, distinguish the author's stated purpose, behavior demonstrated by the diff, and unanswered rationale. Clarifying intent does not establish correctness; `review-code` evaluates that separately.
 
-Finish with decisions, changed assumptions/scope, unanswered questions, and the next check or action. Do not convert questioning into an unrequested spec, implementation, or mandatory ceremony for a clear task.
+Finish with decisions, changed assumptions/scope, unanswered questions, and the next check or action. Check that material edge cases and trade-offs have an answer or a named investigation. Agreement clarifies intent; it does not validate demand, feasibility, or other external assumptions without evidence. Do not convert questioning into an unrequested spec, implementation, or mandatory ceremony for a clear task.
+
+Next: `research-topic` or `build-prototype` for an unsupported premise; `write-spec` when the direction has enough evidence to define requirements. Continue ready stages already included in the user's request.

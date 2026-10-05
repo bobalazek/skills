@@ -19,10 +19,12 @@ Use [the convention matrix](references/conventions.matrix.md) to select relevant
 
 For each rule, explain the context, preferred pattern, a short local example, exceptions, and how it is checked. Resolve contradictions explicitly. Avoid arbitrary line limits, a layer per noun, or prescriptive naming changes without a maintenance benefit.
 
+Distinguish rules already enforced by the formatter, linter, types, schemas, or tests from rules requiring human judgment. For recurring violations, identify the smallest suitable guard and its valid exceptions; declaring the rule is not proof of enforcement. Keep one authoritative rule source and link it from agent entry points.
+
 Update existing standards instead of creating competing documents. Mark unresolved proposals and their decision owner. Changing a convention does not authorize mass reformatting, renaming, or migration; state an incremental adoption route when existing code differs.
 
 ## Completion
 
 A contributor can apply the rules to representative code, find exceptions, and run the relevant checks. Verify examples and commands against the repository. Link the standards from appropriate entry points without repeating them there.
 
-Next: `prepare-repo-for-agents` for discovery, or `create-tasks` for a separately agreed adoption change.
+Next: `prepare-repo-for-agents` for discovery, `automate-code-checks` for accepted rules needing a runnable guard, or `create-tasks` for a separately agreed adoption change.

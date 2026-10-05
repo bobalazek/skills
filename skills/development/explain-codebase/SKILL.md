@@ -25,4 +25,4 @@ Describe relevant conventions and limits without turning the explanation into an
 
 The explanation matches inspected source and the reader can locate the entry point, owning boundary, and appropriate feedback command. State unverified runtime claims and the inspected revision where it matters. Do not mutate code or create onboarding documents unless requested.
 
-Next: `onboard-codebase` for a verified contributor setup; `diagnose-issue` for a failure; `find-refactors` for improvement candidates; `write-spec` for desired behavior that differs from the baseline.
+Next: `onboard-codebase` for a verified contributor setup; `diagnose-issue` for a failure; `find-improvements` for improvement candidates; `write-spec` for desired behavior that differs from the baseline.

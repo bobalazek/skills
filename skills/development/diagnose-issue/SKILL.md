@@ -11,6 +11,8 @@ Establish the cause of the observed failure, or state precisely why the availabl
 
 Collect expected versus observed behavior, environment/version, inputs, timing, recent changes, and available traces. Inspect the relevant code and callers. Preserve original logs or artifacts with secrets and sensitive data removed from reusable outputs.
 
+Use existing monitoring, logs, traces, error reports, or metrics when they help correlate the symptom with the deployed revision and request/job. State sampling, retention, or access limits; absence of an alert is not proof of health. Read-only diagnosis does not authorize installing a monitoring provider or exporting customer data.
+
 Choose the smallest reliable reproduction: a focused test, script, request, browser path, trace replay, or controlled harness. If the failure is production-only, preserve its evidence and identify the closest controlled signal; do not fabricate local reproduction.
 
 For a live incident, load [incident diagnosis](references/incident.checklist.md). Read-only investigation does not authorize production changes or disruptive experiments.
@@ -33,4 +35,4 @@ For a broader behavioral change, produce the diagnosis and propose specification
 
 Report reproduced evidence, demonstrated cause or remaining uncertainty, affected consumers, repair scope when applicable, and actual verification outcomes. Carry the redacted before/after evidence into the authorized PR or handoff with usable links or short inline results; identify local-only artifacts and unavailable checks. A missing check or unresolved cause remains explicit.
 
-Next: `implement-change` for a diagnosed repair not yet authorized; `write-spec` for a larger change; `review-code` for a verified repair; operational recovery or delivery only within the actual authorization.
+Next: `implement-change` for a diagnosed repair not yet authorized; `write-spec` for a larger change; `automate-code-checks` when an established recurring cause warrants a calibrated guard; `review-code` for a verified repair; operational recovery or delivery only within the actual authorization.

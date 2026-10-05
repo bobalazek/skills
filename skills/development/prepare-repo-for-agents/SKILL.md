@@ -19,12 +19,14 @@ Use [project context guidance](references/project-context.playbook.md). Keep age
 
 Use instruction scopes appropriate to the host and repository. Do not claim a client discovers a file until that behavior is verified for the target setup. Optional CLIs, indexes, connectors, and agent runtimes remain optional unless the project requires them.
 
+Make coding standards part of the task path: identify the applicable root and surface instructions, authoritative rules, representative local examples, exceptions, and actual enforcement commands. Resolve conflicting or stale guidance at its owning source instead of adding another copied rule block. Inspect the existing agent/tool configuration before changing it; repo preparation does not authorize global agent settings, credential setup, or new external integrations.
+
 ## Verify usability
 
-Walk a representative task through the revised pointers: locate its owning code, applicable conventions, preserved contracts, and safe feedback command. Check links and command definitions, run relevant available checks, and state what could not run. Remove contradictory or redundant guidance found during the walk.
+Walk a representative task through the revised pointers: locate its owning code, applicable conventions, preserved contracts, and safe feedback command. Use one nested surface when instruction scope matters. Check links and command definitions, run relevant available checks, and state what could not run. When agent discovery itself is a requirement, exercise the configured client's discovery path; reading a file yourself does not prove the client loads it. Remove contradictory or redundant guidance found during the walk.
 
 ## Completion
 
 Report the friction removed, changed entry points, verification, and remaining tooling/access gaps. Do not add broad policy boilerplate, empty memory folders, or a new orchestration system.
 
-Next: `consolidate-docs` for wider documentation overlap; `define-project-conventions` for unresolved contributor rules; ordinary implementation when the task path is ready.
+Next: `consolidate-docs` for wider documentation overlap; `define-project-conventions` for unresolved contributor rules; `automate-code-checks` for accepted rules that need enforcement; ordinary implementation when the task path is ready.

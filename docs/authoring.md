@@ -12,7 +12,7 @@ skills/<domain>/<skill>/
   scripts/          Only useful deterministic operations
 ```
 
-Use an action-oriented lowercase name that tells the user what happens. The folder and frontmatter name must match. The description says when the skill applies and distinguishes a likely neighboring request. Every package must work without reading repository-maintainer docs or requiring all sibling skills to be installed.
+Use an action-oriented lowercase name that tells the user what happens, preferably two or three words and no more than four. The folder and frontmatter name must match. The description says when the skill applies, what it produces, and distinguishes a likely neighboring request. Every package must work without reading repository-maintainer docs or requiring all sibling skills to be installed.
 
 Keep the outcome, essential inputs, workflow decisions, scope, completion evidence, and next-action behavior in `SKILL.md`. Use references for substantial conditional guidance. Link each resource with a reason to load it; avoid duplicated instructions, copied manuals, and resources added only for symmetry.
 
@@ -60,3 +60,5 @@ Written packages begin as drafts. Experimental status requires meaningful behavi
 Keep names stable when categories move. A breaking change to inputs, outputs, side effects, or required authority needs a migration note. For a published rename or retirement, state the replacement or reason, affected users/contracts, migration steps, announcement date, and intended removal version/date. Preserve a working transition route for the stated window when practical; removal cannot revoke installed copies.
 
 Unreleased drafts can be consolidated without pretending a public compatibility promise existed. Remove duplicate procedures rather than maintain two active owners indefinitely. Choose a repository license and verify/document installation before a distributable release; add release notes when there is a real release or migration to record.
+
+Current draft renames: `question-plan` → `challenge-proposal`, `research-question` → `research-topic`, `map-project-decisions` → `track-project-decisions`, and `find-refactors` → `find-improvements`. Update saved invocations or local paths to the new names. Refactor discovery remains part of `find-improvements`; the broader scope also covers recurring defects, checks, documentation, dependencies, and performance leads.

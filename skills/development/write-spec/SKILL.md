@@ -5,11 +5,11 @@ description: "Write or revise a software specification from agreed intent, inclu
 
 # Write spec
 
-Produce the smallest specification that makes the selected change unambiguous. A feature brief and a product specification share this outcome; match depth to uncertainty and risk.
+Produce the smallest specification that makes the selected change unambiguous. A PRD, feature brief, or structured issue can express the same requirements; use the requested format and existing authoritative location, with depth matched to uncertainty and risk. Do not create all three for the same scope.
 
 ## Establish the contract
 
-Reuse the user's brief, accepted decisions, flows, and relevant research. Inspect current behavior and affected consumers for an existing system. For new software, establish actors, useful outcomes, available foundations, and constraints without inventing demand or an existing architecture.
+Gather requirements from the user's brief, accepted decisions, flows, and relevant research. Identify who needs the result, the problem, desired outcomes, constraints, and evidence supporting the direction. Inspect current behavior and affected consumers for an existing system. For new software, establish actors, useful outcomes, available foundations, and constraints without inventing demand or an existing architecture.
 
 Separate current behavior, desired behavior, assumptions, and unresolved decisions. Discover factual answers from the repository before questioning the user. Resolve choices that affect scope or acceptance; keep nonblocking unknowns explicit. A spec must not hide a product decision inside a technical recommendation.
 
@@ -19,7 +19,7 @@ Describe the primary scenarios and the failure, boundary, recovery, permission, 
 
 Give acceptance criteria stable IDs and observable outcomes. Tie each criterion to the intended behavior and a plausible verification method. Avoid subjective criteria such as “fast” or “user friendly” without a context and signal. Mark provisional thresholds as decisions rather than facts.
 
-Load [the specification template](references/spec.template.md) when a durable structured spec is needed. Update an existing authoritative specification instead of creating a competing document. Do not fill sections that have no purpose for this change.
+Load [the specification template](references/spec.template.md) when a durable structured spec is needed. Update an existing authoritative specification instead of creating a competing document. Do not fill sections that have no purpose for this change. Writing into a remote tracker requires the requested destination and authority; a local issue draft does not imply publication.
 
 ## Finish and continue
 

@@ -21,6 +21,6 @@ When asked to write a PR description, lead with the problem and resulting behavi
 
 ## Completion
 
-The explanation matches the fixed comparison, established intent, and verification evidence; it does not imply a correctness approval. Review uses `review-code`; unresolved consequential intent can use `question-plan`.
+The explanation matches the fixed comparison, established intent, and verification evidence; it does not imply a correctness approval. Review uses `review-code`; unresolved consequential intent can use `challenge-proposal`.
 
 Next: review the explained revision or perform the requested PR update. Do not merge, push, or publish merely because an explanation is ready.
