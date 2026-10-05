@@ -2,6 +2,14 @@
 
 Load the applicable section; do not turn every edit into a full risk audit.
 
+## Task batches and resumed work
+
+Use the existing task records to establish ownership, current status, accepted inputs, and available outputs before dispatch. Follow any claim or concurrency controls in the requested task system; do not take over work owned by another contributor or assume a prior attempt did nothing.
+
+Record each task's disposition, workspace/output revision, evidence, and remaining blocker. If one task fails, preserve successful and partial outputs, block its dependent work, and continue independent ready work within scope. Before retrying, inspect what the previous attempt changed, including remote operations that may have succeeded despite a timeout. Reconcile uncertain state before repeating a mutation; a retry needs a changed approach or resolved prerequisite.
+
+After combining outputs, check the accepted behavior on the integrated revision and refresh evidence affected by integration or changed inputs. A worker's passing check applies to its tested state; it does not prove the combined result. Follow the project's completion statuses and identify work still awaiting integration, review, or delivery. Report a partial batch as partial, preserving the next resumable action in the same task records rather than another handoff document.
+
 ## Refactors
 
 Identify behavior to preserve, callers, public contracts, and the seam being improved. Establish a representative baseline, change one coherent boundary, and compare behavior afterward. Removal needs evidence that code is unused or that all consumers migrate. Keep behavior changes separately identifiable.

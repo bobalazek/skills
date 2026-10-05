@@ -6,7 +6,7 @@ Stable task ID and a user-visible result or required technical prerequisite.
 
 ## Context
 
-Relevant spec criteria/phase, accepted decisions, current-state evidence, and links. Include only context this task depends on; preserve source vocabulary.
+Relevant spec criteria/phase, accepted decisions, current-state evidence, and links. Identify source versions or snapshots when changes could invalidate the task; compare them with the authoritative inputs before execution. Include only context this task depends on; preserve source vocabulary.
 
 ## Scope and ownership
 
@@ -14,7 +14,7 @@ Owned files, modules, artifacts, or interfaces; behavior/data to preserve; exclu
 
 ## Dependencies
 
-Required accepted outputs and what makes this task ready. Parallel eligibility includes write, state/data, and verification isolation, not just different paths.
+Required accepted outputs and what makes this task ready. Distinguish work eligible to run together after those prerequisites from work ready now. Parallel eligibility includes write, state/data, and verification isolation, not just different paths.
 
 ## Acceptance
 
@@ -29,3 +29,5 @@ Name the baseline to preserve and the proof to capture when useful: comparable s
 ## Done when
 
 The specified outcome is demonstrated, relevant checks pass, required docs agree with behavior, and the handoff identifies revision/evidence and remaining risks.
+
+For an ongoing batch, update the existing task record with its actual disposition, owner/workspace, output revision, accepted evidence, and blocker or next action. Preserve useful completed outputs when another task fails. Follow the destination's status meanings; worker completion alone does not establish integration, review, or delivery.
