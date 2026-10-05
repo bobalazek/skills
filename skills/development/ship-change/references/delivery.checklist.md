@@ -1,5 +1,7 @@
 # Delivery checks
 
+Before merging, publishing, or deploying, resolve the current candidate and compare it with the verified source revision, integration base, artifact identity, and material target configuration as applicable. Reconcile affected evidence if any changed. Bind the write to that candidate using the existing platform's expected-head/version controls or immutable artifact reference; a preflight read alone cannot prevent a moving branch or tag from changing during the write. If the delivery mechanism cannot retain that binding, report the constraint before proceeding.
+
 ## Pull request or merge
 
 Confirm intended diff, correct base, repository-required checks, review status, and requested stop point. Explain problem/result and actual validation. If merging is authorized, wait for required checks and verify the platform records the merge; reconcile the local checkout according to repository rules.
@@ -8,7 +10,7 @@ Include an evidence section in the existing PR format: tested revision/environme
 
 ## Release or package
 
-Confirm versioning, included artifacts, changelog/migration notes where needed, reproducible build, and publish destination. Verify the published version and usable artifact rather than only the upload command. Do not publish credentials, internal records, or unintended source files.
+Confirm versioning, included artifacts, changelog/migration notes where needed, reproducible build, and publish destination. Publish the verified artifact; if it must be rebuilt, verify the new artifact and record its identity before publication. A matching version label alone does not establish matching contents. Verify the published version and usable artifact rather than only the upload command. Do not publish credentials, internal records, or unintended source files.
 
 ## Deployment
 
