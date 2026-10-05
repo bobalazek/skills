@@ -11,6 +11,8 @@ Complete the authorized change and its relevant verification. A clear local fix 
 
 Read local instructions and the affected surface's conventions. Use accepted tasks, spec criteria, design artifacts, known checks, and relevant decisions. Inspect the working tree and preserve unrelated edits. Establish the current baseline; distinguish pre-existing failures from introduced regressions.
 
+Before starting or resuming a task, compare its criteria and input versions with the current authoritative requirements and dependency outputs. If they changed, identify the affected work and resolve consequential differences before executing it. Retain valid results from unaffected work; do not quietly implement a superseded task because its old checks still pass.
+
 Trace impact proportional to risk. For a leaf edit, inspect its nearest consumer and check. For shared interfaces, permissions, schemas, stateful flows, or integrations, follow affected callers, data contracts, failure paths, and consumers before editing. Use an available project index when repository instructions require it.
 
 ## Make the smallest complete change
@@ -21,7 +23,7 @@ Select one task or the agreed ready batch. Shared contracts and migrations prece
 
 For uncertain business behavior, stop the dependent work and resolve the specific missing decision. For technical uncertainty, inspect or run a bounded experiment. Do not replace the user's product choices with implementation preferences.
 
-Load [the change-risk playbook](references/change-risks.playbook.md) when a refactor, migration, shared UI, webhook, or stateful boundary makes those checks relevant.
+Load [the change-risk playbook](references/change-risks.playbook.md) for a task batch or resumed work, or when a refactor, migration, shared UI, webhook, or stateful boundary makes those checks relevant.
 
 ## Verify the actual result
 
@@ -29,7 +31,7 @@ Choose observable evidence from the acceptance criteria before changing behavior
 
 Use the smallest relevant reproduction, regression test, request, build, browser path, or artifact check. There is no required test-first order. Cover meaningful failures and impacted consumers; format only touched files and use the repository's documented scoped commands.
 
-Inspect command exit status and output. Re-read acceptance criteria against the final diff and observed behavior. Resolve failures caused by the change and rerun affected checks. Record unavailable checks and pre-existing blockers without claiming completion for them.
+Inspect command exit status and output. Before completing the task, compare the current authoritative criteria and dependency outputs with those used at intake. Reconcile changed scope before claiming completion, refresh affected evidence, and inspect the final diff against the accepted criteria and observed behavior. Resolve failures caused by the change and rerun affected checks. Record unavailable checks and pre-existing blockers without claiming completion for them.
 
 Update affected setup/behavior docs and material decisions or learnings in their existing locations. Report criteria demonstrated, failed, or not checked, with inspected results and remaining gaps. Preserve useful artifacts for review; redact sensitive content before sharing. When PR work is authorized, include the evidence there as concise results or verified accessible links. A local file path is not an uploaded attachment. Do not commit, push, send messages, or deploy unless the user or applicable repository workflow authorizes it.
 

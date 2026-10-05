@@ -17,7 +17,7 @@ For a new project, establish missing foundations before their consumers and reus
 
 Group work into independently checkable outcomes. For each phase, state its goal, required input artifacts, produced results, prerequisites, affected ownership, and observable exit criteria. Cover integration and the requested delivery target explicitly. Keep optional follow-up work separate from release blockers.
 
-Order shared contracts and foundations before dependent work. Declare a parallel branch only when its inputs are ready and its outputs can be reconciled without conflicting writes or shared-state assumptions. A phase graph describes dependencies; host support determines whether workers can run concurrently.
+Order shared contracts and foundations before dependent work. Show which phases could run together after their prerequisites are accepted, separately from which are ready now. Parallel branches need outputs that can be reconciled without conflicting writes or shared-state assumptions; an unfinished foundation can be their named prerequisite. A phase graph describes dependencies; host support determines whether workers can run concurrently.
 
 Use [the phase-plan template](references/phases.template.md) for a durable plan. Do not estimate dates or effort without assumptions about scope, staffing, and dependencies. Unknown feasibility becomes a bounded investigation; it does not become a supposedly executable build phase.
 
