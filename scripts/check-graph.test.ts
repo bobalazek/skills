@@ -104,14 +104,36 @@ test("missing declarations remain unknown while explicit empty arrays declare no
   expect(result.dependencyReady).toEqual(["unknown", "partial", "declared"]);
 });
 
-test("rejects absolute, traversal, glob and ambiguous path syntax", () => {
-  for (const path of ["/tmp/file", "../file", "src/../file", "./src", "src//file", "src/*.ts", "src/a?.ts", "src/[ab].ts", "src/{a,b}.ts", "!src/file", "C:/file", "src\\file"]) {
+test("rejects absolute, traversal, wildcard, NUL and ambiguous path syntax", () => {
+  for (const path of ["/tmp/file", "../file", "src/../file", "./src", "src//file", "src/*.ts", "src/a?.ts", "src/{a,b}.ts", "!src/file", "C:/file", "src\\file", "src/a\0.ts"]) {
     expect(() => checkGraph({ tasks: [task("a", [], "pending", [path])] })).toThrow();
   }
 });
 
+test("detects literal Next route ancestor and file overlaps while keeping distinct route paths separate", () => {
+  const result = checkGraph({ tasks: [
+    task("directory", [], "pending", ["src/app/[slug]/"]),
+    task("page", [], "pending", ["src/app/[slug]/page.tsx"]),
+    task("same", [], "pending", ["src/app/[slug]/page.tsx"]),
+    task("other", [], "pending", ["src/app/[id]/page.tsx", "src/app/[[...slug]]/page.tsx"]),
+  ] });
+  expect(result.valid).toBe(true);
+  expect(result.conflicts.map(item => item.tasks)).toEqual([["directory", "page"], ["directory", "same"], ["page", "same"]]);
+});
+
+test("treats Astro routes and square brackets as literal paths rather than character classes", () => {
+  const result = checkGraph({ tasks: [
+    task("astro", [], "pending", ["src/pages/[id].astro"]),
+    task("same", [], "pending", ["src/pages/[id].astro"]),
+    task("other", [], "pending", ["src/pages/[slug].astro", "src/pages/i.astro"]),
+    task("bracket", [], "pending", ["src/[ab].ts"]), task("letter", [], "pending", ["src/a.ts"]),
+  ] });
+  expect(result.valid).toBe(true);
+  expect(result.conflicts.map(item => item.tasks)).toEqual([["astro", "same"]]);
+});
+
 test("CLI reads a valid snapshot and emits the observed frontier without changing input", () => {
-  const result = cli(JSON.stringify({ tasks: [task("a", [], "accepted"), task("b", ["a"])] }));
+  const result = cli(JSON.stringify({ tasks: [task("a", [], "accepted"), task("b", ["a"], "pending", ["src/app/[slug]/page.tsx", "src/pages/[id].astro"])] }));
   expect(result.status).toBe(0);
   expect(JSON.parse(result.stdout).dependencyReady).toEqual(["b"]);
 });
