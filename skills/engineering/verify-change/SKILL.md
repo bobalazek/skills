@@ -9,11 +9,13 @@ description: "Evaluate a change against its acceptance criteria using observed c
 
 Use this to establish what a selected change demonstrably does against acceptance criteria, returning observed results and usable evidence. Reuse proof whose revision, inputs, environment and criteria remain valid. Use `review-code` for a defect/engineering-risk assessment, `review-interface` for a rendered experience review, or `diagnose-issue` to establish an unexplained failure's cause.
 
-Perform this verification in a separate agent with fresh context from the work's author, using the raw accepted request, constraints, candidate artifacts, relevant sources and check access without the author's conversation or preferred conclusions. If you authored the work, delegate this evaluation; unavailable independence leaves the result unreviewed and blocks acceptance. This evaluation needs no endless review-of-review chain.
+Perform this verification in a separate agent with fresh context from the work's author, using the raw accepted request, constraints, candidate artifacts, relevant sources and check access without the author's conversation or preferred conclusions. Prefer a different available model where practical and authorized; an explicit cross-model requirement left unmet blocks acceptance. If you authored the work, delegate this evaluation; unavailable independence leaves the result unreviewed and blocks acceptance. This evaluation needs no endless review-of-review chain.
 
 ## Choose the proof
 
 Read the request, acceptance criteria, local checks, change diff and existing evidence. Identify the baseline and candidate revision, including uncommitted changes. Tie each material criterion to an observable result.
+
+Inspect the project's actual command definitions and CI rules for required lint/format checks, type checking, static analysis, builds and tests. Run missing applicable checks and reuse valid results for the candidate. Record unavailable checks and justified exclusions; a skipped check is not a pass. Use check-only modes where available so verification does not silently rewrite the candidate. Automated checks complement behavior evidence and source review of architecture and conventions.
 
 Choose the smallest check that can establish the claim. A screenshot can show layout; keyboard navigation needs interaction evidence. A build establishes buildability; it cannot establish a repaired workflow. For a spec or documentation change, inspect scenarios, consistency, links, and rendered diagrams where relevant. No screenshot or benchmark is required for a change it cannot evaluate.
 
@@ -49,7 +51,7 @@ For each criterion, report demonstrated, failed, or not checked, with its eviden
 
 Record the tested revision and any dirty diff. Later edits require an impact check before reusing evidence; a changed artifact or behavior invalidates its proof. Keep the result in the existing task, PR, or handoff rather than creating a parallel report by default.
 
-As the independent evaluator, try relevant counterexamples and inspect raw proof, reconcile findings, and independently recheck affected results after fixes. Retain the returned assessment with reviewer/session identity, evaluated revision, findings and criterion coverage before claiming review. An attempted delegation, empty wait or author check is not an independent assessment. Required human approval remains separate.
+As the independent evaluator, try relevant counterexamples and inspect raw proof, reconcile findings, and independently recheck affected results after fixes. Retain the returned assessment with reviewer/session identity, host-reported model (or unknown), evaluated revision, findings and criterion coverage before claiming review. An attempted delegation, empty wait or author check is not an independent assessment. Required human approval remains separate.
 
 ## Return the result
 
