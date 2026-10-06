@@ -1,13 +1,13 @@
 ---
 name: write-website-copy
-description: "Write or revise public website copy, including page sections, headlines and calls to action, grounded in the actual offer and audience. Use for the wording itself; page planning, interface state messages and campaigns have separate scope."
+description: "Write, revise or critique public website copy, including page sections, headlines and calls to action, grounded in the actual offer and audience. Use for the wording itself; page planning, interface state messages and campaigns have separate scope."
 ---
 
 # Write website copy
 
 ## Use this skill
 
-Produce the requested wording for a homepage, product/service page, landing page or selected section. Reuse the accepted purpose and content plan; a small rewrite needs no new brief. `plan-landing-page` owns an unresolved page argument and section plan, `write-interface-copy` owns labels and state messages tied to product behavior, and `design-interface` owns visual composition. Advertising campaigns, editorial articles and video scripts are outside this package.
+Produce the requested wording or wording critique for a homepage, product/service page, landing page or selected section. Reuse the accepted purpose and content plan; a small rewrite needs no new brief. `plan-landing-page` owns an unresolved page argument and section plan, `write-interface-copy` owns labels and state messages tied to product behavior, and `design-interface` owns visual composition. Advertising campaigns, editorial articles and video scripts are outside this package.
 
 Establish whether the result is a draft, a copy handoff or authorized edits to existing website content. Writing copy does not itself authorize publishing, changing the offer or redesigning the page.
 
@@ -25,7 +25,7 @@ When a claim lacks support, omit it, use a narrower supported statement, or flag
 
 Use the audience's vocabulary and name the actual task, mechanism or useful consequence. Explain specialist terms when the audience needs them. Make headings identify their section and put decision information where it is needed. Cut generic praise and repetition without replacing them with fabricated specificity. Honor the requested tone and real space constraints rather than fixed word counts, mandatory section patterns or a universal banned-word list.
 
-For a human draft, identify the voice worth retaining and make the smallest useful edits. Preserve accurate distinctive lines, humor and intentional rhythm. Correct unclear meaning and unsupported claims; do not flatten the draft into uniformly polished prose. Explain material changes briefly when useful.
+For a human draft, identify the voice worth retaining and make the smallest useful edits. Preserve accurate distinctive lines, humor and intentional rhythm. Correct unclear meaning and unsupported claims; do not flatten the draft into uniformly polished prose. For substantive drafting, revision or a requested copy critique, use [the editing procedure and examples](references/edit-copy.playbook.md). A small correction needs no extra process. Explain material changes briefly when useful. If the request is critique only, return exact quoted issues and useful repairs without rewriting the whole page or guessing whether AI wrote it.
 
 For an opening or hook, make the subject and relevance understandable, then show where the following copy delivers its promise. Curiosity, contrast or a surprising detail is optional and needs a real supported basis. Keep a direct explanation available; do not manufacture danger, a secret, a reversal or a scientific claim. Treat reference hooks as structural inspiration and write original language. Do not promise attention, retention or conversion from a wording formula.
 

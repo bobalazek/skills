@@ -1,6 +1,6 @@
 ---
 name: create-wireframes
-description: "Create low-fidelity wireframes that resolve screen hierarchy, content placement and state layout from accepted flows or existing screens, before detailed visual design."
+description: "Create low-fidelity screen, full-page or website wireframes that resolve hierarchy, content placement and states from accepted flows or existing screens, before detailed visual design."
 ---
 
 # Create wireframes
@@ -15,11 +15,15 @@ Produce an editable, low-fidelity screen structure that people can inspect and d
 
 Identify the task, actors, requirement/flow-state IDs, supported surfaces and structural question. Inspect existing screens and relevant component conventions; preserve useful navigation, familiar patterns and behavior. For a new screen, derive its contents from accepted requirements and label assumptions. Ask only about choices that materially change structure; route unresolved journey rules back to flow mapping while progressing independent screens.
 
+Establish whether scope is a section, complete page, repeated page template or website. For a website redesign, inventory the affected routes/templates and meaningful states, including lower-page content and shared navigation/footer. Reuse the accepted sitemap and content plan; identify what must survive, what may change and what is excluded. A finished hero is not a complete-page wireframe, and one desktop frame cannot stand in for a whole website.
+
 Choose an available approved design tool and the requested editable format. If no tool is required, a small local HTML/CSS wireframe with labeled states is a suitable fallback. Report an unavailable required format before substituting it. Keep files in the agreed design/scratch location; publishing, uploads and product edits require their own authority.
 
 ## Lay out the affected screens
 
 Arrange regions, headings, realistic representative content and primary/secondary actions by task priority. Reuse relevant components structurally without reproducing brand polish. Use safe synthetic data where needed; mark uncertain copy or content instead of inventing claims. Show enough content length and density to test the proposed hierarchy.
+
+Give regions meaningful names and enough representative text to understand their role. Carry the accepted visitor question, answer/proof and action into each section; return unsettled messaging to `plan-landing-page` and wording to `write-website-copy`. Avoid both unlabeled rectangle collections and detailed visual styling that obscures a structural decision. Compare alternative arrangements only when a consequential choice remains; explain their trade-off against the task rather than generating variants for their own sake.
 
 Represent consequential loading, empty, error, permission and success states, plus validation, cancellation or destructive consequences where relevant. Connect screens and recovery actions to accepted flow states; do not invent retry, undo, access or persistence behavior. Annotate uncertain behavior as a decision rather than silently designing around it.
 
@@ -28,6 +32,8 @@ Show how the structure adapts on supported surfaces. Preserve meaningful reading
 ## Inspect and review
 
 Open or render the actual artifact at relevant sizes. Walk the primary task and consequential alternate states, checking content fit, overflow, omitted actions, permission leaks and usable exits. Record screen/state/surface coverage and inspectable captures tied to the artifact revision. Label static controls and simulated transitions; drawings do not prove runtime accessibility, service behavior or participant usability. Missing rendering access leaves visual checks unverified.
+
+For a full page or site, inspect the complete scroll and named route/template inventory, not only the initial viewport. Check the coarse hierarchy with detail reduced, then actual reading order and content density at the intended size. Confirm that narrow layouts retain decision-critical content and required paths. Record uncovered pages/states explicitly before claiming completion.
 
 Present the structural choices and open decisions for human review, retaining accepted choices and honoring existing authorization. A draft can finish with proposals; do not claim required human approval that has not occurred.
 

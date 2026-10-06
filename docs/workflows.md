@@ -183,6 +183,8 @@ One coordinator writes shared state. Workers receive bounded contracts and retur
 | "Improve this existing homepage without losing its customer and partner paths." | [plan-landing-page](../skills/content/plan-landing-page/SKILL.md) | Inspect current content and destinations, preserve useful paths, and propose supported changes without imposing a campaign-page template |
 | "Write the page copy from this accepted brief and product demonstration." | [write-website-copy](../skills/content/write-website-copy/SKILL.md) | Actual wording with claim sources and exact gaps; reconcile text with the layout before implementation |
 | "Rewrite only this hero in my voice, with a clearer opening hook." | [write-website-copy](../skills/content/write-website-copy/SKILL.md) | A bounded rewrite preserving meaning and verified promises; no mandatory full-page plan or fixed variant count |
+| "Wireframe the complete product website, including pricing and support paths." | [create-wireframes](../skills/ui-ux/create-wireframes/SKILL.md) | Named page/template and state coverage with full-page content; preserve accepted destinations, inspect the complete scroll and report omitted surfaces |
+| "Replace this site's visual direction while keeping its working content and routes." | [design-interface](../skills/ui-ux/design-interface/SKILL.md) | An explicit preservation/change scope, evidence-based visual direction and inspected candidate; content or structural gaps use their existing owners |
 | "Our one-page site has high bounce and zero visit duration; what does that tell us?" | [analyze-product-usage](../skills/product/analyze-product-usage/SKILL.md) | Provider definitions, instrumentation and observed outcomes before diagnosis; do not infer bots or failed copy from these signals alone |
 
 These arrows are possible handoffs. Start at the missing result, and stop at the requested output. Copy and screen structure can develop in parallel after their shared content requirements and action are accepted; reconcile both before implementation.
@@ -192,6 +194,10 @@ flowchart TD
   Need(["Input: offer and visitor context; page message unresolved"]) --> Plan[["plan-landing-page"]]
   Plan --> Agreed(["Result: content needs and action accepted"])
   Brief(["Input: accepted brief or bounded rewrite"]) --> Copy[["write-website-copy"]]
+  Existing(["Input: existing site and agreed redesign scope"]) --> Gap{"Next missing result?"}
+  Gap -->|Message and section needs| Plan
+  Gap -->|Full-page or site structure| Wire
+  Gap -->|Visual direction or detail| Design
   Agreed --> Copy
   Agreed -->|Screen structure missing| Wire[["create-wireframes"]]
   Wire -->|Visual detail needed| Design[["design-interface"]]
@@ -208,6 +214,12 @@ flowchart TD
 ```
 
 An existing layout can go directly to wording; a plan-only request ends before copywriting. Use `map-user-flows` for unsettled journeys, `write-interface-copy` for form and state messages, and `test-usability` when understanding needs participant evidence. The usual verification, independent review and authorized delivery route applies to implementation. A better draft does not prove a conversion increase; measurement definitions, experiment planning and readout retain their existing owners.
+
+For an existing-site redesign, inspect the current routes, page templates, content, working actions and visual rules first. Agree what should improve and what must survive. An evidence-gathering request can start with `review-interface`; an already-agreed redesign can inspect its baseline within the owning design skill. Do not require a new audit report for every restyling task.
+
+Use `capture-design-reference` when a supplied reference needs analysis. Record the specific pattern, source/state, why it fits this product and where it does not; an inspiration pack does not replace the target's requirements or grant rights to copy assets. Reuse available components and accepted content. Content planning records why each section exists and the question it answers; copywriting supplies the words; wireframes place all in-scope content and states; visual design resolves composition and craft.
+
+When independent copy and layout work share accepted inputs, they may proceed together, then reconcile actual text fit and action meaning. Review the combined rendered experience, including full-page and preserved-path coverage, before authorized delivery. Evaluate behavioral explanations as hypotheses: a clean layout or persuasive section sequence cannot establish what users understand, feel or do. Keep useful decisions and reference provenance in the existing design record.
 
 ### Understand and prepare a project
 
