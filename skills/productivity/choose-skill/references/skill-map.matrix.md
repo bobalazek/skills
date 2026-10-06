@@ -51,6 +51,6 @@ A ready fix does not need brainstorming. An accepted specification does not need
 | "Design this feature" | `model-domain` for unclear business concepts; `design-architecture` for technical boundaries; `map-user-flows` for the journey; `design-interface` for a settled screen; shared repeated needs can justify `build-design-system` |
 | "Review this" | `challenge-proposal` for unresolved proposal choices; `review-code` for code findings; `review-interface` for rendered experience; `explain-pr` for an explanation rather than an assessment |
 | "Refactor or speed this up" | `find-improvements` for candidates; `improve-performance` for measured bottlenecks; `implement-change` for an accepted bounded refactor |
-| "Release this on GitHub" | `ship-change` for the specified notes-only, draft or publication target; carry the chosen revision and version policy, and establish the comparison release before writing notes |
+| "Release this on GitHub" | `ship-change` for the specified notes-only, draft or publication target; carry the chosen revision and version policy, and establish the comparison release or first-release scope before writing notes |
 
 Select one next skill from the actual request; these alternatives are not a mandatory sequence. If both technical and interface design are needed, name separate skills and their shared prerequisites. A diagram group or general activity is not another installable skill.
