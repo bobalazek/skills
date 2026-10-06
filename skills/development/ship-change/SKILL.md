@@ -13,6 +13,8 @@ Read the consuming repository's delivery rules and current state. Identify the e
 
 Use [delivery checks](references/delivery.checklist.md) for the selected target. Missing required verification blocks the delivery claim. Existing authorization remains valid; ask only at a consequential action that is outside it or when a real decision/input is missing.
 
+For a release, resolve the project's version policy and consumer contracts, release channel, exact source/artifact identity, installation path and recovery limits. Preparation, a draft release, a pushed tag and publication have different effects; identify the authorized stopping point before writing to the remote target. Follow the release section of the delivery checks across package registries, source collections and binary distributions.
+
 ## Communicate the result
 
 Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
