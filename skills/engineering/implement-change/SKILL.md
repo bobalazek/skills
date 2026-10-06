@@ -19,7 +19,9 @@ Trace impact proportional to risk. For a leaf edit, inspect its nearest consumer
 
 Follow the local module, data-access, typing, error, logging, dependency, and UI patterns. Reuse existing facilities before adding a layer or package. Fix the shared cause rather than patching only the reported caller. Keep adjacent cleanup out unless it is necessary to leave a coherent result.
 
-Select one task or the agreed ready batch. Shared contracts and migrations precede consumers. Concurrent workers require ready dependencies, isolated writes/state, and clear ownership; use available host isolation rather than assuming it exists. Integrate and verify their combined result.
+Select one task or the agreed ready batch. For work spanning phases, follow the accepted dependency graph and phase exits. If branches need coordination and no graph exists, record a compact dependency graph in the existing work record; use `plan-phases` or `create-tasks` when decomposition itself needs work. Keep a local fix direct.
+
+Shared contracts and migrations precede consumers. Concurrent workers require accepted prerequisites, isolated writes/state and check environments, and clear ownership; use available host isolation rather than assuming it exists. Show what is ready now separately from future parallel candidates. Integrate and verify the combined result before accepting a phase exit. Preserve unaffected outputs if a branch fails, block its consumers, and recompute ready work after accepted outputs or requirements change.
 
 For uncertain business behavior, stop the dependent work and resolve the specific missing decision. For technical uncertainty, inspect or run a bounded experiment. Do not replace the user's product choices with implementation preferences.
 
@@ -47,4 +49,4 @@ Inspect command exit status and output. Before completing the task, compare the 
 
 Update affected setup/behavior docs and material decisions or learnings in their existing locations. Report criteria demonstrated, failed, or not checked, with inspected results and remaining gaps. Preserve useful artifacts for review; redact sensitive content before sharing. When PR work is authorized, include the evidence there as concise results or verified accessible links. A local file path is not an uploaded attachment. Do not commit, push, send messages, or deploy unless the user or applicable repository workflow authorizes it.
 
-Next: `verify-change` for a dedicated acceptance/evidence pass; `review-code` for independent change review; `explain-pr` for a reviewer-facing explanation; `ship-change` when delivery is requested. Reuse valid evidence instead of repeating completed checks.
+Next: name the next missing result and its skill, carrying the current revision, criteria, evidence and blockers. Use `verify-change` for missing acceptance proof, `review-code` or `review-interface` for the relevant independent assessment, `explain-pr` for a needed reviewer-facing explanation, or `ship-change` when ready and delivery is authorized. For a continuing phase plan, identify the next ready task/batch and the accepted outputs that unblock it. Reuse valid evidence and completed reviews. A bounded implementation request can finish here; describe the plain next action if its skill is unavailable.

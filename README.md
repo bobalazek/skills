@@ -61,23 +61,38 @@ A spec defines **what must happen**. A phase plan groups **deliverable outcomes 
 
 ```mermaid
 flowchart TD
-  Idea["brainstorm-ideas"] --> Spec["write-spec"]
-  Idea -. "Choices need grilling" .-> Challenge["challenge-proposal"]
-  Challenge --> Spec
-  Spec -->|Multiple milestones| Phases["plan-phases"]
-  Spec -->|Bounded scope| Tasks["create-tasks"]
-  Phases --> Tasks
-  Tasks --> Build["implement-change"]
+  subgraph Explore["Clarify and investigate"]
+    Idea["brainstorm-ideas"] -. "Choices need grilling" .-> Challenge["challenge-proposal"]
+    Challenge -. "Missing evidence" .-> Research["research-topic / build-prototype"]
+  end
+  Idea -->|Direction settled| Spec
+  Challenge -->|Choices resolved| Spec
+  Research -->|Direction supported by evidence| Spec
+  subgraph Plan["Specify, design and plan"]
+    Spec["write-spec"] -->|Design needed| Design["Architecture / user flows / interface design"]
+    Spec -->|Multiple milestones| Phases["plan-phases"]
+    Spec -->|Bounded scope| Tasks["create-tasks"]
+    Design -->|Multiple milestones| Phases
+    Design -->|Bounded scope| Tasks
+    Phases --> Tasks
+  end
+  Tasks --> Build
   Ready["Already-ready work"] --> Build
-  Build --> Verify["verify-change"]
-  Verify --> Review["review-code / review-interface"]
-  Review --> Ship["ship-change"]
+  subgraph Evaluate["Build and evaluate"]
+    Build["implement-change"] --> Verify["verify-change"]
+    Verify --> Review["review-code / review-interface"]
+  end
+  Review -->|Ready and delivery authorized| Ship["ship-change"]
   Ship --> Observe["Observe the delivered result"]
-  Observe --> Improve["find-improvements"]
-  Improve -. "Next justified change" .-> Idea
+  Observe -. "Failure" .-> Diagnose["diagnose-issue"]
+  Diagnose -. "Bounded repair authorized" .-> Build
+  Observe -. "Opportunity" .-> Improve["find-improvements"]
+  Improve -. "Selected change needs definition" .-> Spec
 ```
 
-The [workflow guide](docs/workflows.md) adds research and design branches, bug fixes, greenfield and inherited-project routes, and concrete sequential/parallel examples. It explains where human clarification happens and how specs, phases, tasks and PRs relate. Each skill can also finish on its own; this graph does not authorize the next action.
+The arrows show useful routes, not mandatory stages. Failed checks or blocking findings return to the relevant repair and independent recheck; delivery waits. A delivery with no justified follow-up can finish.
+
+The [workflow guide](docs/workflows.md) separates lifecycle stages from project phases and shows [parallel phases and tasks](docs/workflows.md#sequential-and-parallel-work), [staged reviews](docs/workflows.md#review-and-recheck), and [the next skill for each result](docs/workflows.md#context-and-next-actions). Each skill can finish on its own; this graph does not authorize the next action.
 
 ## Use a workflow
 
