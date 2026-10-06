@@ -41,3 +41,16 @@ These names identify skills in this collection. Availability depends on the inst
 | Independent interface findings | `review-interface` | Inspect rendered behavior and try to break supported journeys |
 
 A ready fix does not need brainstorming. An accepted specification does not need to be rewritten before task creation. A request to “review” needs its subject: proposal, code, or rendered interface. Review conclusions require independent evidence; choosing a route does not establish readiness.
+
+## Similar requests, different starts
+
+| Request context | Choose by the missing result |
+| --- | --- |
+| "Start a new project" | `brainstorm-ideas` for open direction; `design-architecture` for unsettled technical choices; `start-project` for a foundation whose choices are already accepted |
+| "Make this project AI-friendly" | `prepare-repo-for-agents` for discoverable existing guidance; `document-project` for missing factual knowledge; `design-architecture` when the request is an AI product capability |
+| "Design this feature" | `model-domain` for unclear business concepts; `design-architecture` for technical boundaries; `map-user-flows` for the journey; `design-interface` for a settled screen; shared repeated needs can justify `build-design-system` |
+| "Review this" | `challenge-proposal` for unresolved proposal choices; `review-code` for code findings; `review-interface` for rendered experience; `explain-pr` for an explanation rather than an assessment |
+| "Refactor or speed this up" | `find-improvements` for candidates; `improve-performance` for measured bottlenecks; `implement-change` for an accepted bounded refactor |
+| "Release this on GitHub" | `ship-change` for the specified notes-only, draft or publication target; carry the chosen revision and version policy, and establish the comparison release or first-release scope before writing notes |
+
+Select one next skill from the actual request; these alternatives are not a mandatory sequence. If both technical and interface design are needed, name separate skills and their shared prerequisites. A diagram group or general activity is not another installable skill.

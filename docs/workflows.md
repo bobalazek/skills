@@ -4,6 +4,14 @@ Select the requested result, use the narrowest matching skill, and carry accepte
 
 If the starting point is unclear, use `choose-skill` to recommend the next action from the current state. A ready task can go straight to its owning skill.
 
+Start with [request scenarios](#routes-by-situation), [parallel phases and tasks](#sequential-and-parallel-work), or [review and recheck](#review-and-recheck). The [portable router map](../skills/productivity/choose-skill/references/skill-map.matrix.md) distinguishes each skill's output; the scenarios below show how to use those boundaries in a request.
+
+## Reading the graphs
+
+Double-bordered boxes name one skill using its exact install name. Rounded boxes describe inputs, results or work within a scenario. Diamonds ask a routing or readiness question. Outer frames labeled `Stage:` or `Phase:` group work; their headings cannot be invoked. Shapes and labels carry the distinction even without color.
+
+In skill-route graphs, arrows show possible next actions, with conditions on branches. Select the branches the requested outcome needs, reconcile all required outputs, and reuse valid completed work. A fork does not by itself authorize parallel execution. In the phase/task examples, arrows are prerequisite dependencies: a join waits for every incoming required output. Each example states which meaning applies.
+
 ## Choose the result you need
 
 The [README graph](../README.md#from-idea-to-delivery) shows the overall route. Start from what is already known, then use this table to find the next missing result.
@@ -45,27 +53,75 @@ A clarified proposal is not a validated concept: demand, feasibility, and perfor
 
 ## Routes by situation
 
-| Situation | Useful route |
-| --- | --- |
-| Greenfield project | `brainstorm-ideas` → grill consequential choices with `challenge-proposal` → research/prototype missing evidence → `write-spec` → domain/architecture and user flows where needed → phases for multiple milestones, then tasks → `start-project` for a missing foundation → implement, verify, review, deliver and observe |
-| Inherited project | `onboard-codebase` → preserve current behavior/data/contracts → select the actual change → define missing conventions/context only where needed → use the ordinary change route; a familiar feature does not need whole-project onboarding |
-| Missing project knowledge | `document-project` → verify code, configuration, relevant history and accepted choices → update canonical docs and useful memory indexes → establish disputed rules or improve agent navigation only where needed |
-| Architecture or AI capability | Establish product/workload and existing infrastructure constraints → `design-architecture` for boundaries, C4, services, costs and conditional AI contracts → prototype unresolved feasibility → plan/implement → exercise actual data/tool/approval boundaries → deliver and observe |
-| Feature in a familiar project | Inspect the affected baseline → `write-spec` for missing behavior → relevant design choices → `create-tasks` directly for bounded scope, or `plan-phases` first for several milestones → implement/verify/review/deliver → observe |
-| Incoming request | `assess-request` → check evidence, duplicates, impact and missing information → choose diagnosis, specification, a support answer, or a justified closure recommendation; tracker changes require their own authority |
-| Bug or regression | `diagnose-issue` using reproduction and available signals → `implement-change` for the bounded repair → verify affected consumers → review/deliver → consider an automated guard for a recurring cause. Clarify changed product behavior before treating it as a bug fix |
-| Result evaluation | Select checks from acceptance criteria → preserve useful baseline → observe candidate behavior → report results and evidence → include proof in authorized PR/delivery work |
-| Improvement discovery | `find-improvements` across the requested repository, feature, or data layer → deduplicate confirmed candidates → choose the next investigation or scoped change |
-| Refactor | Find evidenced candidates → select one → preserve behavior and define checks → implement the accepted scope → verify/review |
-| Repeated coding mistake | Establish the accepted rule → `automate-code-checks` using existing enforcement where possible → demonstrate invalid failure and valid passes → adopt through normal review/delivery |
-| Performance | `improve-performance` to measure/profile a representative path → repair when requested → compare correct behavior under equivalent conditions → review/deliver |
-| Dependency upkeep | `upgrade-dependencies` to establish a compatible set and adapt consumers → verify resolution and runtime behavior → review/deliver |
-| System or data transition | Settle the target architecture → `plan-migration` for compatibility, transfer, cutover, and recovery → phases/tasks → execute authorized stages with evidence gates |
-| Large uncertain initiative | `track-project-decisions` → research/challenge/prototype the next ready choice → specify and plan sufficiently settled portions |
-| PR explanation or review | `explain-pr` communicates a fixed comparison; `challenge-proposal` resolves consequential unknown intent; `review-code` evaluates correctness. Use the requested one, without an automatic three-step ceremony |
-| New or changed user journey | `map-user-flows` → clarify consequential behavior with the product owner → `design-interface` for selected screens/states → implementation → `verify-change` and `review-interface` on the rendered result |
-| Established screen or shared components | Start with `design-interface` for the screen; use `build-design-system` only for repeated component/token needs. A rendered audit starts directly with `review-interface` |
-| Documentation cleanup | Consolidate existing authoritative content and links; prepare agent entry points only where needed |
+Match the requested result, not just words such as "new project," "review" or "AI." These examples cover every skill without requiring every skill in a workflow. Start with [exploration](#explore-and-route), [project context](#understand-and-prepare-a-project), [design](#specify-and-design), [implementation](#plan-and-change-software), or [evaluation and delivery](#verify-review-and-deliver).
+
+### Explore and route
+
+| Example request | First skill | Result and conditional continuation |
+| --- | --- | --- |
+| "I know the goal, but which skill fits the next step?" | [choose-skill](../skills/productivity/choose-skill/SKILL.md) | A next action from the current state; invoke it only when the request includes execution |
+| "I have an idea for a new product; help me compare approaches." | [brainstorm-ideas](../skills/productivity/brainstorm-ideas/SKILL.md) | Options and trade-offs; use `challenge-proposal` for unresolved choices or `write-spec` once the direction is supported |
+| "Grill this proposal before we commit to it." | [challenge-proposal](../skills/productivity/challenge-proposal/SKILL.md) | Consequential answers and exposed assumptions; research unsupported premises before relying on them |
+| "Is this service suitable under these constraints?" | [research-topic](../skills/productivity/research-topic/SKILL.md) | A sourced answer; use `design-architecture` when the next output is an accepted technical choice |
+| "Can this approach handle our workload? Test the uncertain part." | [build-prototype](../skills/engineering/build-prototype/SKILL.md) | A bounded experiment and observations; revise the relevant decision/spec before production implementation |
+| "We keep losing track of unresolved decisions and what they block." | [track-project-decisions](../skills/productivity/track-project-decisions/SKILL.md) | Current choices, dependencies and next ready question; specify settled portions without waiting for the whole initiative |
+| "Make this agent instruction clearer without running it." | [improve-prompt](../skills/productivity/improve-prompt/SKILL.md) | A checked rewrite preserving intent; finish with the prompt unless an evaluation or execution was requested |
+| "This ticket may be a duplicate or a support question; work out what it needs." | [assess-request](../skills/engineering/assess-request/SKILL.md) | Evidence, impact and a route; choose `diagnose-issue` for a failure, `write-spec` for missing behavior, or a support/closure recommendation |
+
+### Understand and prepare a project
+
+| Example request | First skill | Result and conditional continuation |
+| --- | --- | --- |
+| "I inherited this app; establish how we can work on it safely." | [onboard-codebase](../skills/engineering/onboard-codebase/SKILL.md) | A verified working baseline and preserved contracts; implement a ready first task or investigate a specific gap |
+| "Explain how this feature works." | [explain-codebase](../skills/engineering/explain-codebase/SKILL.md) | Located behavior and data flow; finish with the explanation, or use `review-code` for a separately requested assessment |
+| "Recover our conventions and decisions from the code and history." | [document-project](../skills/engineering/document-project/SKILL.md) | Evidence-backed records and useful indexes; unresolved rule choices go to `define-project-conventions` rather than becoming invented history |
+| "Agree on coding conventions for this repository." | [define-project-conventions](../skills/engineering/define-project-conventions/SKILL.md) | Accepted local rules; use `automate-code-checks` for an enforceable rule or `create-tasks` for a scoped adoption change |
+| "Make our existing project guidance easy for agents to find." | [prepare-repo-for-agents](../skills/engineering/prepare-repo-for-agents/SKILL.md) | Working entry points to authoritative context and commands; missing factual records belong to `document-project` |
+| "These docs overlap and disagree; consolidate them." | [consolidate-docs](../skills/engineering/consolidate-docs/SKILL.md) | Reconciled content and repaired links; verify affected navigation without adding another summary document |
+| "Hand this unfinished work to another session or owner." | [prepare-handoff](../skills/productivity/prepare-handoff/SKILL.md) | Current state, authority, evidence and next runnable action; resume from checked state instead of repeating discovery |
+
+### Specify and design
+
+| Example request | First skill | Result and conditional continuation |
+| --- | --- | --- |
+| "Turn this agreed feature into a PRD or structured issue." | [write-spec](../skills/engineering/write-spec/SKILL.md) | Scenarios and acceptance criteria; settle missing design, then use `plan-phases` for milestones or `create-tasks` for bounded work |
+| "Clarify what an account, workspace and membership mean here." | [model-domain](../skills/engineering/model-domain/SKILL.md) | Domain concepts, invariants and ownership; carry them into `write-spec` or `design-architecture` |
+| "Choose the stack, boundaries and hosting for this app or AI capability." | [design-architecture](../skills/engineering/design-architecture/SKILL.md) | Technical choices grounded in workload, data, cost and existing infrastructure; use `build-prototype` for unproven feasibility |
+| "Map how a user completes this task, including errors and recovery." | [map-user-flows](../skills/ui-ux/map-user-flows/SKILL.md) | Actors, states and transitions; use `design-interface` for screen composition once behavior is clear |
+| "The journey is settled; design the screen and its states." | [design-interface](../skills/ui-ux/design-interface/SKILL.md) | A design or requested rendered result; use `implement-change` for a design handoff or `review-interface` for a missing rendered assessment |
+| "Several screens need consistent shared tokens and components." | [build-design-system](../skills/ui-ux/build-design-system/SKILL.md) | Shared contracts demonstrated in real consumers; carry them into `design-interface` or implementation |
+| "Plan a move to this accepted data/service architecture." | [plan-migration](../skills/engineering/plan-migration/SKILL.md) | Compatibility, transfer, cutover and recovery plan; use phases/tasks to decompose authorized execution, with gates before live changes |
+
+Architecture and UI design answer different questions. `design-architecture` owns technical structure; `map-user-flows` owns the journey; `design-interface` owns screens and states; `build-design-system` owns repeated shared interface needs. Run the relevant skills and reconcile their shared contracts. Existing accepted design can be reused. UI and technical design may overlap once shared behavior is settled and their work is isolated; dependent implementation waits for accepted inputs.
+
+### Plan and change software
+
+| Example request | First skill | Result and conditional continuation |
+| --- | --- | --- |
+| "Break this agreed project into deliverable phases." | [plan-phases](../skills/engineering/plan-phases/SKILL.md) | Milestones with prerequisites and exits; use `create-tasks` for the selected sufficiently understood phase |
+| "Make executable tasks from this spec, with dependencies." | [create-tasks](../skills/engineering/create-tasks/SKILL.md) | Owned tasks and checks, locally or in an authorized tracker; use `implement-change` only for a selected ready batch |
+| "The stack and scope are agreed; bootstrap the new repository." | [start-project](../skills/engineering/start-project/SKILL.md) | A checked foundation, blank or from an accepted template; implement the first agreed capability next |
+| "Implement this ready feature, fix or selected refactor." | [implement-change](../skills/engineering/implement-change/SKILL.md) | The scoped change and proof; obtain missing independent evaluation before authorized delivery |
+| "This previously working action now fails; establish why." | [diagnose-issue](../skills/engineering/diagnose-issue/SKILL.md) | Reproduction, tested cause and exact gaps; a selected repair goes to `implement-change`, while changed product behavior may need a spec |
+| "Measure and reduce this feature's latency." | [improve-performance](../skills/engineering/improve-performance/SKILL.md) | A profile and, when requested, a measured repair under comparable conditions; review/deliver only within scope |
+| "Update these dependencies and adapt their consumers." | [upgrade-dependencies](../skills/engineering/upgrade-dependencies/SKILL.md) | A compatible, verified change; review it and deliver when requested |
+| "Find worthwhile refactors, duplication or bottlenecks in this code/data layer." | [find-improvements](../skills/engineering/find-improvements/SKILL.md) | Ranked evidenced candidates; measure suspected performance issues or implement one selected refactor with preservation checks |
+| "This accepted coding rule keeps being broken; automate its check." | [automate-code-checks](../skills/engineering/automate-code-checks/SKILL.md) | A calibrated guard with invalid failures and valid passes; review the check and keep bulk remediation separately scoped |
+
+A greenfield idea may start with exploration; an agreed greenfield foundation can start with `start-project`. A brownfield change preserves existing behavior and useful conventions, but a familiar bounded feature does not require whole-project onboarding. A small ready fix can skip spec, phase and task documents.
+
+### Verify, review and deliver
+
+| Example request | First skill | Result and conditional continuation |
+| --- | --- | --- |
+| "Prove this change meets these criteria, including before/after evidence." | [verify-change](../skills/engineering/verify-change/SKILL.md) | Observed outcomes and exact gaps; diagnose unexplained failures, repair selected defects, or obtain a missing independent assessment |
+| "Review this PR, feature or bounded codebase for defects." | [review-code](../skills/engineering/review-code/SKILL.md) | Prioritized findings and inspected coverage; use `verify-change` for missing proof or implementation for authorized fixes |
+| "Audit this rendered screen's usability and accessibility." | [review-interface](../skills/ui-ux/review-interface/SKILL.md) | Observed interaction/visual findings and limits; route concrete fixes to implementation and unclear runtime failures to diagnosis |
+| "Explain what this PR changes and why, using the available evidence." | [explain-pr](../skills/engineering/explain-pr/SKILL.md) | A fixed-comparison explanation; finish if that is the request, reusing valid completed correctness reviews |
+| "Take this reviewed change to the agreed PR, release or deployment target." | [ship-change](../skills/engineering/ship-change/SKILL.md) | The authorized target and its observed checks; use `diagnose-issue` for a failure, `find-improvements` for a justified opportunity, or finish |
+| "Prepare a GitHub release description from commits and merged PRs." | [ship-change](../skills/engineering/ship-change/SKILL.md) | Notes checked against the chosen previous release and candidate; stop at notes, a remote draft, or publication according to the requested target |
+
+For this collection's own release, use `ship-change` with the [release procedure](authoring.md#releasing-the-collection), the exact reviewed commit and the intended channel. For example: "Prepare the first GitHub prerelease notes for this collection at the selected commit. Read the relevant history and merged PRs, summarize supported skills and limitations, and include installation instructions. Return the notes and readiness gaps." A first release has no previous-release comparison; its notes describe the supported initial scope. Creating a remote draft, pushing a tag and publishing remain distinct requested targets.
 
 If the request stops at a spec, explanation, design or review, return that result and the next useful action. Continue a broader workflow when it is already authorized. A small change may need no new planning document. `verify-change` also applies to changed docs or plans through scenario checks, consistency, links and rendered diagrams; it does not impose a code test suite on every artifact. Reuse valid proof, with independent evaluation, instead of duplicating a completed verification pass. Testing is required where relevant; test-first sequencing is not mandatory.
 
@@ -81,33 +137,33 @@ Parallel work needs ready inputs, independently checkable outputs, and isolated 
 
 ### Parallel project phases
 
-For example, an agreed import/export release can have two capability phases after its shared data and permission contract is accepted. Each branch owns a usable outcome with its own implementation, verification and independent review:
+For example, an agreed import/export release can have two capability phases after its shared data and permission contract is accepted. Each branch owns a usable outcome with its own implementation, verification and independent review. These rounded nodes are phase outcomes, and every arrow is a prerequisite; none is a skill invocation:
 
 ```mermaid
 flowchart TD
-  P1["P1: Shared data and permission contract accepted"] --> P2["P2: Import journey accepted"]
-  P1 --> P3["P3: Export journey accepted"]
-  P2 --> P4["P4: Combined release verified and reviewed"]
+  P1(["P1 result: shared contract accepted"]) --> P2(["P2 result: import journey accepted"])
+  P1 --> P3(["P3 result: export journey accepted"])
+  P2 --> P4(["P4 result: combined release verified and reviewed"])
   P3 --> P4
-  P4 -->|Delivery authorized| Deliver["Deliver and verify the target"]
+  P4 -->|Delivery authorized| Deliver(["Work: deliver and verify the target"])
 ```
 
 P2 and P3 are parallel candidates only if their owned writes and test resources can be isolated and neither needs the other's output. If export depends on the new import behavior, add that dependency and run them sequentially. P4 waits for both accepted outputs, then checks cross-capability behavior on the combined revision. A failed P2 blocks P4 but need not stop independent P3 work. Preserve P3's accepted evidence unless later changes invalidate it.
 
 ### Parallel tasks within a phase
 
-A CSV import can also have parallel tasks inside one capability phase. This is a dependency illustration, not a declaration that any phase or task is already accepted:
+A CSV import can also have parallel tasks inside one capability phase. These rounded nodes describe work and results, with prerequisite arrows; the frame is the phase boundary. This is a dependency illustration, not a declaration that any phase or task is already accepted:
 
 ```mermaid
 flowchart TD
-  P1["P1: Agree import rules and shared contract"] --> API
+  P1(["P1 result: import rules and contract accepted"]) --> API
   P1 --> UI
-  subgraph P2["P2: Users can preview and confirm an import"]
-    API["Server work and scoped checks"] --> Join["Integrated journey meets acceptance criteria"]
-    UI["Review screen and scoped checks"] --> Join
-    Join --> Review["Independent review of the combined result"]
+  subgraph P2["Phase: P2 - Users can preview and confirm an import"]
+    API(["Task: server behavior and scoped checks"]) --> Join(["Result: integrated journey meets criteria"])
+    UI(["Task: preview screen and scoped checks"]) --> Join
+    Join --> Review(["Work: independently review the combined result"])
   end
-  Review --> P3["P3: Deliver and verify the target"]
+  Review --> P3(["P3 work: deliver and verify the target"])
 ```
 
 The server and screen tasks are parallel candidates after P1 is accepted. The screen can use contract fixtures while the server is built, provided workspaces, shared files and test state do not conflict. If both tasks edit the same generated client or reset the same database, assign that shared change to one owner or serialize it. P2 exits only after both branches integrate and their combined behavior is independently accepted; fixture-based checks cannot replace that evidence.
@@ -126,18 +182,22 @@ A large review can use stages without creating another project phase plan: estab
 
 ```mermaid
 flowchart TD
-  Scope["Fix scope, criteria and candidate revision"] --> Proof["verify-change: observe required behavior"]
-  Scope --> Risks["review-code / review-interface: inspect relevant risks"]
-  Proof --> Join["Reconcile findings and inspect the combined evidence"]
-  Risks --> Join
+  Scope(["Input: fixed candidate, scope and criteria"]) --> Proof[["verify-change"]]
+  Scope --> Code[["review-code"]]
+  Scope -->|Rendered experience in scope| UI[["review-interface"]]
+  Proof --> Join(["Work: reconcile all required findings and proof"])
+  Code --> Join
+  UI --> Join
   Join --> Gate{"Required defect or proof gap?"}
-  Gate -->|Yes| Gap["Report blocker and next repair or investigation"]
-  Gap -. "Fix authorized and completed" .-> Updated["Record new candidate; retain valid evidence"]
+  Gate -->|Yes| Gap(["Result: blocker and next repair or investigation"])
+  Gap -. "Fix authorized and completed" .-> Updated(["Input: new candidate with still-valid evidence"])
   Updated -->|Independent affected rechecks| Join
-  Gate -->|No| Verdict["Scoped verdict; honor requested stop and human approval"]
+  Gate -->|No| Verdict(["Result: scoped verdict and remaining approval gates"])
+  classDef skill fill:#edf5ff,stroke:#355b85,color:#172b42;
+  class Proof,Code,UI skill;
 ```
 
-Evidence capture and risk inspection can overlap on the same fixed candidate when their checks do not interfere. A browser session, shared test database, rate limit or mutable service can require separate fixtures or sequential checks even for read-only source reviewers. Reconcile cross-boundary behavior after the relevant branch results exist; a specialist's clean report covers only its inspected scope.
+This example reviews a code change with required behavioral proof and an optional rendered-interface assessment. Each double-bordered node is one skill; rounded nodes are coordination work, inputs or results. Reuse completed valid proof/reviews, and wait for every required branch before the verdict. Evidence capture and risk inspection can overlap on the same fixed candidate when their checks do not interfere. A browser session, shared test database, rate limit or mutable service can require separate fixtures or sequential checks even for read-only source reviewers. Reconcile cross-boundary behavior after the relevant branch results exist; a specialist's clean report covers only its inspected scope.
 
 After a fix, identify which paths, criteria and artifacts changed, independently rerun affected checks, and reconcile against the updated candidate before issuing a new verdict. Keep unaffected evidence with its original tested revision and explain why it still applies. Missing required access or unresolved behavior remains a blocker; a review can finish by reporting that gap. Only the coordinator changes shared review/task records unless ownership is explicitly divided.
 

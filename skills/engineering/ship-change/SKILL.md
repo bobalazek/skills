@@ -1,6 +1,6 @@
 ---
 name: ship-change
-description: "Deliver a verified change to the requested PR, release, deployment, or handover target using repository rules, existing automation, and observed target verification."
+description: "Deliver a verified change to the requested PR, GitHub or package release, deployment, or handover target. Includes preparing release notes from commits and PRs, following repository rules and verifying the reached target."
 ---
 
 # Ship change
@@ -14,6 +14,8 @@ Read the consuming repository's delivery rules and current state. Identify the e
 Use [delivery checks](references/delivery.checklist.md) for the selected target. Missing required verification blocks the delivery claim. Existing authorization remains valid; ask only at a consequential action that is outside it or when a real decision/input is missing.
 
 For a release, resolve the project's version policy and consumer contracts, release channel, exact source/artifact identity, installation path and recovery limits. Preparation, a draft release, a pushed tag and publication have different effects; identify the authorized stopping point before writing to the remote target. Follow the release section of the delivery checks across package registries, source collections and binary distributions.
+
+For GitHub release notes, identify the previous release and its commit, or establish that this is the first release. Read the commits, relevant merged PRs and actual diff through the selected candidate; account for reverts and changes absent from that candidate. Write a user-facing title and description with meaningful changes, migration/deprecation guidance, installation or upgrade steps, and known limits. Generated notes are a draft to verify. Use [the GitHub release procedure](references/delivery.checklist.md#github-release-notes-and-publication) for comparison selection, notes-only requests, remote drafts and publication readback.
 
 ## Communicate the result
 
