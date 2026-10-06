@@ -1,0 +1,4 @@
+interface:
+  display_name: "Improve team workflow"
+  short_description: "Test a bounded improvement to a recurring team process"
+  default_prompt: "Use $improve-team-workflow to investigate our recurring review delays and propose a bounded trial that preserves required controls."

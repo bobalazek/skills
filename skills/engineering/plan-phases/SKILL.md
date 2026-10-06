@@ -13,7 +13,7 @@ This skill owns the milestone dependency graph and its acceptance gates. The spe
 
 Use the current spec, technical decisions, constraints, and existing phase plan. Inspect the relevant foundation and delivery path. Preserve accepted decisions and revise only what changed. If scope is still disputed, identify the decision instead of making a precise schedule from an assumption.
 
-Resolve a consequential planning choice with an adaptive question about the affected outcome. Inspect factual prerequisites first; research or prototype work belongs in the graph only when its result could change feasibility, ordering, or acceptance. A broader request to grill the direction belongs to `challenge-proposal`; phase planning does not reopen settled product choices.
+Resolve a consequential planning choice with an adaptive question about the affected outcome. Inspect factual prerequisites first; research or prototype work belongs in the graph only when its result could change feasibility, ordering, or acceptance. A broader request to question the direction belongs to `challenge-proposal`; phase planning does not reopen settled product choices.
 
 For a new project, establish missing foundations before their consumers and reuse suitable starters or platforms. For an existing system, account for preserved behavior, compatibility windows, data migration, operational ownership, and rollback needs. Include design, research, or prototype work only when it resolves a prerequisite.
 

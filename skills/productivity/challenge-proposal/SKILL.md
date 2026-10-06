@@ -1,13 +1,13 @@
 ---
 name: challenge-proposal
-description: "Challenge a proposed idea, specification, architecture, delivery plan, or stated PR intent through adaptive questioning. Use for 'grill me on this' or to resolve consequential assumptions and choices."
+description: "Challenge a proposed idea, specification, architecture, delivery plan, or stated PR intent through focused questioning that resolves consequential assumptions and choices."
 ---
 
 # Challenge proposal
 
 Improve a proposed direction by resolving the questions that could change its outcome. The result is an amended decision or artifact, or a precise investigation that remains necessary.
 
-This is the focused home for adaptive human grilling. Start from a candidate, even a rough one. `brainstorm-ideas` owns comparing directions when the user has not selected one; `write-spec` owns the resulting behavior and acceptance contract. Other workflows can ask a necessary clarifying question without requiring a separate challenge session.
+Use a focused conversation to examine the proposal with the user. Start from a candidate, even a rough one. `brainstorm-ideas` owns comparing directions when the user has not selected one; `write-spec` owns the resulting behavior and acceptance contract. Other workflows can ask a necessary clarifying question without requiring a separate challenge session.
 
 Read the proposal, accepted answers, evidence, and relevant current behavior first. Separate factual unknowns from choices the user owns. Answer discoverable questions through inspection; do not ask the user to recite the repository.
 

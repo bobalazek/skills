@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test usability"
+  short_description: "Plan usability studies and analyze participant evidence"
+  default_prompt: "Use $test-usability to test this journey with representative participants or analyze the available sessions, keeping plans separate from observed findings."

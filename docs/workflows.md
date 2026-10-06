@@ -19,7 +19,7 @@ The [README graph](../README.md#from-idea-to-delivery) shows the overall route. 
 | You need | Skill | Result | Skip when |
 | --- | --- | --- | --- |
 | Alternatives to an unclear idea | `brainstorm-ideas` | Different approaches, trade-offs and a proposed direction | The direction is settled |
-| A grilling session for a proposal | `challenge-proposal` | Consequential questions answered, edge cases exposed, proposal updated | No material choice blocks the requested result |
+| Questions that challenge a proposal | `challenge-proposal` | Consequential questions answered, edge cases exposed, proposal updated | No material choice blocks the requested result |
 | Evidence for an uncertain premise | `research-topic` or `build-prototype` | A sourced answer or observed experiment | Existing evidence answers the uncertainty |
 | Precise required behavior | `write-spec` | Scenarios, constraints and observable acceptance criteria in a spec, PRD or issue | The accepted requirements already suffice |
 | Several deliverable milestones | `plan-phases` | Outcomes, prerequisites, parallel conditions and phase exits | The change fits one bounded work item or small task set |
@@ -33,13 +33,13 @@ The domain catalogs organize skills by responsibility. These stages organize a p
 | Stage | Useful skills | Ready to move on when |
 | --- | --- | --- |
 | Understand the starting point | `assess-request`, `onboard-codebase`, `explain-codebase`, `diagnose-issue` | The requested outcome and relevant baseline are understood |
-| Explore and challenge | `brainstorm-ideas`, `challenge-proposal`, `research-topic`, `build-prototype` | Consequential choices have answers and required premises have evidence |
+| Explore and challenge | `brainstorm-ideas`, `challenge-proposal`, `research-topic`, `capture-design-reference`, `build-prototype` | Consequential choices have answers and required premises have evidence |
 | Specify and design | `write-spec`, `model-domain`, `design-architecture`, `map-user-flows`, `design-interface` | Behavior and the decisions needed by the selected work are accepted |
 | Plan execution | `plan-phases`, `create-tasks` | The selected work has accepted prerequisites, owners and checks |
 | Build | `start-project`, `implement-change` and the relevant specialist skill | The selected result exists with scoped proof on its actual revision |
-| Evaluate | `verify-change`, `review-code`, `review-interface` | Independent evaluation covers required criteria and resolves blocking findings |
-| Deliver and observe | `ship-change` | The authorized target is reached and its required health checks pass |
-| Learn and improve | `find-improvements`, `document-project`, `automate-code-checks` | Useful findings are recorded or become a justified next change; no follow-up is also valid |
+| Evaluate | `verify-change`, `review-code`, `review-interface`, `test-usability` | Required evidence and independent evaluation cover the selected criteria; a planned user study still awaits observations |
+| Deliver and observe | `ship-change`, `report-project-status` | The requested target is reached and checked, or the requested update accurately reports its current state |
+| Learn and improve | `find-improvements`, `improve-team-workflow`, `document-project`, `automate-code-checks` | Useful findings are recorded or become a justified next change; no follow-up is also valid |
 
 Start at the stage that matches the request. The table names alternatives, not a list of skills to run at every stage. Evaluation also applies to a plan or design before its consumers rely on it.
 
@@ -47,7 +47,7 @@ A spec can include intended delivery slices and known dependencies when they exp
 
 ## Where clarification happens
 
-Every skill resolves missing input for its own outcome. Use `challenge-proposal` for a dedicated grilling session: inspect what can be discovered, ask the highest-impact unresolved question, follow the answer, and update the existing proposal. Ask about actors, boundaries, failures, recovery and preservation only where their answers could change the result. Explain the trade-off and let the human make choices that belong to them. Do not ask a fixed questionnaire or reopen accepted answers.
+Every skill resolves missing input for its own outcome. Use `challenge-proposal` to examine a proposal with the user: inspect what can be discovered, ask the highest-impact unresolved question, follow the answer, and update the existing proposal. Ask about actors, boundaries, failures, recovery and preservation only where their answers could change the result. Explain the trade-off and let the human make choices that belong to them. Do not ask a fixed questionnaire or reopen accepted answers.
 
 A clarified proposal is not a validated concept: demand, feasibility, and performance assumptions need relevant evidence. Use research or a bounded prototype for those claims. An unanswered consequential choice blocks only the work that depends on it; unrelated investigation can continue. Stop questioning when the requested result is sufficiently clear, and carry accepted answers into the spec, phases and tasks.
 
@@ -61,7 +61,7 @@ Match the requested result, not just words such as "new project," "review" or "A
 | --- | --- | --- |
 | "I know the goal, but which skill fits the next step?" | [choose-skill](../skills/productivity/choose-skill/SKILL.md) | A next action from the current state; invoke it only when the request includes execution |
 | "I have an idea for a new product; help me compare approaches." | [brainstorm-ideas](../skills/productivity/brainstorm-ideas/SKILL.md) | Options and trade-offs; use `challenge-proposal` for unresolved choices or `write-spec` once the direction is supported |
-| "Grill this proposal before we commit to it." | [challenge-proposal](../skills/productivity/challenge-proposal/SKILL.md) | Consequential answers and exposed assumptions; research unsupported premises before relying on them |
+| "Question this proposal before we commit to it." | [challenge-proposal](../skills/productivity/challenge-proposal/SKILL.md) | Consequential answers and exposed assumptions; research unsupported premises before relying on them |
 | "Is this service suitable under these constraints?" | [research-topic](../skills/productivity/research-topic/SKILL.md) | A sourced answer; use `design-architecture` when the next output is an accepted technical choice |
 | "Can this approach handle our workload? Test the uncertain part." | [build-prototype](../skills/engineering/build-prototype/SKILL.md) | A bounded experiment and observations; revise the relevant decision/spec before production implementation |
 | "We keep losing track of unresolved decisions and what they block." | [track-project-decisions](../skills/productivity/track-project-decisions/SKILL.md) | Current choices, dependencies and next ready question; specify settled portions without waiting for the whole initiative |
@@ -79,6 +79,8 @@ Match the requested result, not just words such as "new project," "review" or "A
 | "Make our existing project guidance easy for agents to find." | [prepare-repo-for-agents](../skills/engineering/prepare-repo-for-agents/SKILL.md) | Working entry points to authoritative context and commands; missing factual records belong to `document-project` |
 | "These docs overlap and disagree; consolidate them." | [consolidate-docs](../skills/engineering/consolidate-docs/SKILL.md) | Reconciled content and repaired links; verify affected navigation without adding another summary document |
 | "Hand this unfinished work to another session or owner." | [prepare-handoff](../skills/productivity/prepare-handoff/SKILL.md) | Current state, authority, evidence and next runnable action; resume from checked state instead of repeating discovery |
+| "Prepare this sprint's engineering update from our tracker and deployment evidence." | [report-project-status](../skills/productivity/report-project-status/SKILL.md) | Verified progress, blockers and next decisions for the stated audience/period; sending requires its own authority, and an owner transfer uses `prepare-handoff` |
+| "Our PR reviews keep waiting for the wrong person; improve that process." | [improve-team-workflow](../skills/productivity/improve-team-workflow/SKILL.md) | Current/proposed steps and a bounded trial; accepted implementation can become tasks, while a planned trial cannot claim saved time |
 
 ### Specify and design
 
@@ -89,6 +91,7 @@ Match the requested result, not just words such as "new project," "review" or "A
 | "Choose the stack, boundaries and hosting for this app or AI capability." | [design-architecture](../skills/engineering/design-architecture/SKILL.md) | Technical choices grounded in workload, data, cost and existing infrastructure; use `build-prototype` for unproven feasibility |
 | "Map how a user completes this task, including errors and recovery." | [map-user-flows](../skills/ui-ux/map-user-flows/SKILL.md) | Actors, states and transitions; use `design-interface` for screen composition once behavior is clear |
 | "The journey is settled; design the screen and its states." | [design-interface](../skills/ui-ux/design-interface/SKILL.md) | A design or requested rendered result; use `implement-change` for a design handoff or `review-interface` for a missing rendered assessment |
+| "Capture these two interfaces as useful references for our dashboard." | [capture-design-reference](../skills/ui-ux/capture-design-reference/SKILL.md) | Inspected patterns with capture conditions and evidence; use `design-interface` to adapt suitable ideas to the target product |
 | "Several screens need consistent shared tokens and components." | [build-design-system](../skills/ui-ux/build-design-system/SKILL.md) | Shared contracts demonstrated in real consumers; carry them into `design-interface` or implementation |
 | "Plan a move to this accepted data/service architecture." | [plan-migration](../skills/engineering/plan-migration/SKILL.md) | Compatibility, transfer, cutover and recovery plan; use phases/tasks to decompose authorized execution, with gates before live changes |
 
@@ -117,11 +120,12 @@ A greenfield idea may start with exploration; an agreed greenfield foundation ca
 | "Prove this change meets these criteria, including before/after evidence." | [verify-change](../skills/engineering/verify-change/SKILL.md) | Observed outcomes and exact gaps; diagnose unexplained failures, repair selected defects, or obtain a missing independent assessment |
 | "Review this PR, feature or bounded codebase for defects." | [review-code](../skills/engineering/review-code/SKILL.md) | Prioritized findings and inspected coverage; use `verify-change` for missing proof or implementation for authorized fixes |
 | "Audit this rendered screen's usability and accessibility." | [review-interface](../skills/ui-ux/review-interface/SKILL.md) | Observed interaction/visual findings and limits; route concrete fixes to implementation and unclear runtime failures to diagnosis |
+| "Find out whether new users can finish this setup flow without assistance." | [test-usability](../skills/ui-ux/test-usability/SKILL.md) | A focused study and findings from available participant observations, or a protocol with access gaps; use `map-user-flows` or `design-interface` for accepted changes and retest the relevant tasks |
 | "Explain what this PR changes and why, using the available evidence." | [explain-pr](../skills/engineering/explain-pr/SKILL.md) | A fixed-comparison explanation; finish if that is the request, reusing valid completed correctness reviews |
 | "Take this reviewed change to the agreed PR, release or deployment target." | [ship-change](../skills/engineering/ship-change/SKILL.md) | The authorized target and its observed checks; use `diagnose-issue` for a failure, `find-improvements` for a justified opportunity, or finish |
 | "Prepare a GitHub release description from commits and merged PRs." | [ship-change](../skills/engineering/ship-change/SKILL.md) | Notes checked against the chosen previous release and candidate; stop at notes, a remote draft, or publication according to the requested target |
 
-For this collection's own release, use `ship-change` with the [release procedure](authoring.md#releasing-the-collection), the exact reviewed commit and the intended channel. For example: "Prepare the first GitHub prerelease notes for this collection at the selected commit. Read the relevant history and merged PRs, summarize supported skills and limitations, and include installation instructions. Return the notes and readiness gaps." A first release has no previous-release comparison; its notes describe the supported initial scope. Creating a remote draft, pushing a tag and publishing remain distinct requested targets.
+For this collection's own release, use `ship-change` with the [release procedure](authoring.md#releasing-the-collection), the exact reviewed commit and the intended channel. For example: "Prepare GitHub release notes for this collection at the selected commit. Read the relevant history and merged PRs, summarize supported skills and limitations, and include installation instructions. Return the notes and readiness gaps." A first release has no previous-release comparison; its notes describe the supported initial scope. Creating a remote draft, pushing a tag and publishing remain distinct requested targets.
 
 If the request stops at a spec, explanation, design or review, return that result and the next useful action. Continue a broader workflow when it is already authorized. A small change may need no new planning document. `verify-change` also applies to changed docs or plans through scenario checks, consistency, links and rendered diagrams; it does not impose a code test suite on every artifact. Reuse valid proof, with independent evaluation, instead of duplicating a completed verification pass. Testing is required where relevant; test-first sequencing is not mandatory.
 

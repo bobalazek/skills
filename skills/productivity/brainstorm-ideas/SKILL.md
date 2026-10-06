@@ -13,7 +13,7 @@ This result compares alternatives before commitment. `challenge-proposal` examin
 
 Use the user's intent, audience, current alternatives, constraints, and accepted context. For a new project, establish the problem and smallest useful outcome; technical feasibility does not demonstrate demand. For existing software, inspect the affected experience and constraints before proposing replacement behavior.
 
-Ask about consequential missing preferences when they change the options. Inspect discoverable facts first. Let each answer narrow the next question; skip questions already answered by accepted context. Preserve settled choices and the user's vocabulary rather than replaying a full discovery interview. If the user wants to be grilled on an existing idea, use the focused challenge process instead of continually adding alternatives.
+Ask about consequential missing preferences when they change the options. Inspect discoverable facts first. Let each answer narrow the next question; skip questions already answered by accepted context. Preserve settled choices and the user's vocabulary rather than replaying a full discovery interview. If the user wants to question an existing idea, use the focused challenge process instead of continually adding alternatives.
 
 ## Develop options
 

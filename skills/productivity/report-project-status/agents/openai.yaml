@@ -1,0 +1,4 @@
+interface:
+  display_name: "Report project status"
+  short_description: "Reconcile project progress into an evidenced update"
+  default_prompt: "Use $report-project-status to draft this week's project update for the delivery team from current work and acceptance evidence."

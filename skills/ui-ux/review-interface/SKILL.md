@@ -21,6 +21,8 @@ For each finding, identify the affected task/state, location, evidence, conseque
 
 If formal standards conformance is requested, establish the applicable target and verify criteria against current authoritative guidance. A limited audit does not establish universal compliance. State inspected and uninspected coverage, unavailable tools, and any reliance on heuristics instead of user research.
 
+If the requested evidence is how actual users attempt a task, use `test-usability` when available, or propose the corresponding study. Agent walkthroughs cannot supply participant observations; retain useful expert findings without relabeling them as a user study.
+
 Review does not itself authorize a redesign or code edit. When fixes are requested, keep scope and recheck the changed tasks/states after implementation. Add useful redacted findings, before/after screenshots or video, interaction observations, and relevant regression-test results to authorized PR work as they become available, with verified accessible links or inline observations. Label local-only evidence, missing recordings, stale captures, and unavailable checks.
 
 Run this assessment in a separate agent with fresh context from the interface's author, using raw accepted requirements, the candidate interface, and observed proof without the author's planning conversation. If you authored the interface, delegate the review. Reproduce consequential findings or retain their exact verification gap; a minority demonstrated defect survives reconciliation. If an independent agent is unavailable, report unreviewed and not ready. Independent review does not replace required human approval.
