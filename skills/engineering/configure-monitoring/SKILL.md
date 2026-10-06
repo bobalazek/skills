@@ -9,7 +9,7 @@ description: "Configure or tune service monitoring and actionable alert routes, 
 
 Make selected failures detectable and actionable in a named service/environment. Reuse existing instrumentation, monitoring providers, routes and runbooks. Finish at the requested state: a prepared configuration, locally tested change or verified live setup. These establish different things; none promises a continuous watch or staffed response.
 
-Use `diagnose-issue` for an unexplained incident, `design-architecture` for consequential platform choices, or `automate-code-checks` for a recurring coding rule. Monitoring setup does not replace those procedures or silently include deployment.
+Use `diagnose-issue` for an unexplained incident, `design-architecture` for consequential platform choices, or `automate-code-checks` for a recurring coding rule. Product success definitions belong to `define-product-metrics`, and adoption or retention findings to `analyze-product-usage`. Monitoring setup does not replace those procedures or silently include deployment.
 
 ## Establish coverage and authority
 

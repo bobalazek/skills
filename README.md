@@ -1,6 +1,6 @@
 # Skills
 
-47 skills for developing software, evaluating product ideas, making decisions, and designing interfaces. Each produces a concrete result, such as a specification, working change, review or design. Run one on its own or continue from another skill's accepted output.
+49 skills for developing software, evaluating product ideas, making decisions, and designing interfaces. Each produces a concrete result, such as a specification, working change, review or design. Run one on its own or continue from another skill's accepted output.
 
 Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear. The collection is under active development; [releases](https://github.com/bobalazek/skills/releases) record reviewed snapshots and evaluation limits.
 
@@ -36,7 +36,7 @@ From a checkout, you can also ask a filesystem-capable agent to use `skills/engi
 | Catalog | What it covers |
 | --- | --- |
 | [Engineering · 26 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, monitor, and maintain it |
-| [Product · 3 skills](docs/domains/product.md) | Evaluate product and feature ideas, synthesize user feedback, and compare competitors and current alternatives |
+| [Product · 5 skills](docs/domains/product.md) | Evaluate ideas, synthesize feedback, compare alternatives, define success measures, and analyze product usage |
 | [Productivity · 10 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose work, route requests, improve prompts and team workflows, report status, and transfer context |
 | [UI/UX · 8 skills](docs/domains/ui-ux.md) | Capture design references, map flows and navigation, wireframe screen structure, design screens and systems, write interface copy, review interfaces, and test usability |
 

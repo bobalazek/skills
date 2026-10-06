@@ -43,6 +43,6 @@ Recheck material claims against their sources and recompute counts or economics.
 
 ## Next steps
 
-Pass an accepted direction and its evidence to `write-spec` when required behavior is the next result. Use `build-prototype` for a bounded feasibility or interaction experiment, `test-usability` for participant task evidence, or `research-topic` for a remaining factual uncertainty. Carry forward the assumption, test conditions, evidence and limits; check availability or describe the plain action.
+Pass an accepted direction and its evidence to `write-spec` when required behavior is the next result. Use `define-product-metrics` for unsettled success measures, `analyze-product-usage` for an existing behavior dataset, `build-prototype` for a bounded feasibility or interaction experiment, `test-usability` for participant task evidence, or `research-topic` for a remaining factual uncertainty. Carry forward the assumption, test conditions, evidence and limits; check availability or describe the plain action.
 
 End a decision-only request with its recommendation and gaps. Continue ready work already authorized, without treating a recommendation as permission to build, recruit or spend. Stopping or keeping the current approach is a valid result.
