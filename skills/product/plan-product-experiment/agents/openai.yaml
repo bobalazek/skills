@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan product experiment"
+  short_description: "Predeclare a feasible A/B test and its decision rules"
+  default_prompt: "Use $plan-product-experiment to plan a controlled test for this product hypothesis, checking assignment, measurement and traffic before fixing the decision rules."

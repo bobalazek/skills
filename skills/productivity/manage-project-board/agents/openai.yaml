@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manage project board"
+  short_description: "Track local tasks, blockers and agent-ready work"
+  default_prompt: "Use $manage-project-board to reconcile this project's Markdown tasks and identify the next ready work."
