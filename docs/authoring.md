@@ -1,4 +1,6 @@
-# Authoring and maintaining skills
+# Maintaining the collection
+
+This guide covers creating, changing, checking, and releasing skills. To install and use them, start with the [README](../README.md).
 
 A skill earns its place through a distinct useful output, a decision process that improves it, and an observable completion check. Domains and categories help discovery; different nouns or phases alone do not justify duplicate procedures.
 
@@ -14,7 +16,7 @@ skills/<domain>/<skill>/
 
 Use an action-oriented lowercase name that tells the user what happens, preferably two or three words and no more than four. The folder and frontmatter name must match. The description says when the skill applies, what it produces, and distinguishes a likely neighboring request. Every package must work without reading repository-maintainer docs or requiring all sibling skills to be installed.
 
-Keep the outcome, essential inputs, workflow decisions, scope, completion evidence, and next-action behavior in `SKILL.md`. Use references for substantial conditional guidance. Link each resource with a reason to load it; avoid duplicated instructions, copied manuals, and resources added only for symmetry. Keep one canonical MIT notice in the root `LICENSE`; include that full notice when copying or distributing standalone skill packages.
+Keep the outcome, essential inputs, workflow decisions, scope, completion evidence, and next-action behavior in `SKILL.md`. Use references for substantial conditional guidance. Link each resource with a reason to load it; avoid duplicated instructions, copied manuals, and resources added only for symmetry.
 
 Use role suffixes for reusable resources where their role matters: `.template.md`, `.checklist.md`, `.playbook.md`, or `.matrix.md`. Add executable helpers only when deterministic work justifies them and existing tools do not already cover it.
 
@@ -81,7 +83,7 @@ The first candidate should be an experimental prerelease such as `v0.1.0-alpha.1
 
 ### Before public distribution
 
-- This collection uses MIT, with one canonical notice in the root `LICENSE`. Retain the full notice with copies or substantial portions, including separately packaged skills; the documented folder-only installer does not include it automatically. Confirm any other required attribution travels with distributed copies, and verify rights to distribute included resources. Public visibility alone does not grant an open-source license. See [GitHub's licensing guidance](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).
+- Include the [license](../LICENSE) and any required third-party notices with distributed copies, including separately packaged skills. Verify rights to distribute included resources.
 - Review the material that will become visible: tracked files and reachable Git history, commit metadata, issues/PRs and comments, plus Actions logs, artifacts and release assets. Resolve known secrets, private records, and material without distribution rights using the appropriate remediation. Record the scope checked and remaining gaps in the release PR; a scan is evidence only for what it inspected. GitHub documents the [effects of a visibility change](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility), including public Actions history and logs.
 - Verify installation and discovery in each advertised client using the candidate's complete leaf packages. Run representative behavioral trials from Validation above, including resource loading, authority boundaries and failure cases. State tested client/model versions and limitations. Structural checks or a successful copy alone do not establish stable behavior.
 - Confirm explicit authority for the chosen license, visibility change, tag push and release publication. A request to assess or prepare a release authorizes preparation; perform each consequential action only when covered by the user's instruction. Update README status and installation claims as those facts change.
