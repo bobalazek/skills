@@ -25,11 +25,13 @@ The [README graph](../README.md#from-idea-to-delivery) shows the overall route. 
 | Needs from existing feedback | `analyze-user-feedback` | Sourced needs with reconciled counts, contrary evidence and coverage limits | Relevant synthesis is already available |
 | A comparison of product alternatives | `analyze-competitors` | Dated differences and implications for a named product decision | The existing comparison still fits the decision and date |
 | Defined product success measures | `define-product-metrics` | A measurement contract with source and quality requirements | Accepted definitions already answer the decision |
+| A controlled experiment protocol | `plan-product-experiment` | Assignment, measures, feasibility, stopping and decision rules before launch | A suitable accepted protocol already exists |
 | Findings from product behavior data | `analyze-product-usage` | Checked counts, comparisons and evidence limits | Current analysis already covers the question and observation window |
 | Precise required behavior | `write-spec` | Scenarios, constraints and observable acceptance criteria in a spec, PRD or issue | The accepted requirements already suffice |
 | Screen structure before visual detail | `create-wireframes` | Editable layouts with hierarchy, content/state placement and requirement links | Existing or accepted screen structure already resolves the question |
 | Several deliverable milestones | `plan-phases` | Outcomes, prerequisites, parallel conditions and phase exits | The change fits one bounded work item or small task set |
 | Executable work | `create-tasks` | Owned tasks with criteria, dependencies and checks, locally or in the authorized tracker | Suitable tasks already exist |
+| Current local work state and next pickup | `manage-project-board` | Reconciled Markdown tasks, owners, blockers and ready work | Existing coordination already meets the request |
 | Proof of a changed result | `verify-change` | Observed criterion-by-criterion evidence and gaps | Current, independently evaluated evidence already covers the result |
 | Useful service monitoring and alerts | `configure-monitoring` | Configured detection and response routes with scoped firing/delivery/recovery proof | Current coverage and evidence already meet the requested need |
 
@@ -42,9 +44,9 @@ The domain catalogs organize skills by responsibility. These stages organize a p
 | Understand the starting point | `assess-request`, `onboard-codebase`, `explain-codebase`, `diagnose-issue` | The requested outcome and relevant baseline are understood |
 | Explore and challenge | `brainstorm-ideas`, `challenge-proposal`, `research-topic`, `capture-design-reference`, `build-prototype` | Consequential choices have answers and required premises have evidence |
 | Evaluate a product opportunity | `validate-product-idea`, `analyze-user-feedback`, `analyze-competitors` | The next commitment has relevant evidence, or the decision is to stop, revise or investigate further |
-| Define success | `define-product-metrics` | The relevant outcome has a usable measurement contract and known collection gaps |
+| Define success and experiments | `define-product-metrics`, `plan-product-experiment` | Measures or an experiment protocol have their required definitions and explicit readiness gaps; a protocol alone does not authorize launch |
 | Specify and design | `write-spec`, `model-domain`, `design-architecture`, `map-user-flows`, `create-wireframes`, `design-interface`, `write-interface-copy` | Behavior and the decisions needed by the selected work are accepted |
-| Plan execution | `prioritize-work`, `plan-phases`, `create-tasks` | The selected work fits its stated constraints and has accepted prerequisites, owners and checks |
+| Plan and coordinate execution | `prioritize-work`, `plan-phases`, `create-tasks`, `manage-project-board` | The selected work fits its stated constraints and has accepted prerequisites, owners and checks |
 | Build | `start-project`, `implement-change` and the relevant specialist skill | The selected result exists with scoped proof on its actual revision |
 | Evaluate | `verify-change`, `review-code`, `review-interface`, `test-usability` | Required evidence and independent evaluation cover the selected criteria; a planned user study still awaits observations |
 | Deliver and observe | `ship-change`, `configure-monitoring`, `report-project-status` | The requested delivery, monitoring configuration or status result has its scoped evidence; none promises ongoing operation |
@@ -113,6 +115,8 @@ Feedback synthesis and competitor research can run in parallel after the audienc
 | --- | --- | --- |
 | "Define how we will know this new product or feature helps users." | [define-product-metrics](../skills/product/define-product-metrics/SKILL.md) | A measurement contract grounded in the outcome; implement agreed missing instrumentation separately, with no invented baseline |
 | "Our dashboards disagree about activation; settle the definition." | [define-product-metrics](../skills/product/define-product-metrics/SKILL.md) | Reconciled semantics and versioned definitions; preserve historical comparability and name data-quality checks |
+| "Plan an A/B test for this change before exposing users." | [plan-product-experiment](../skills/product/plan-product-experiment/SKILL.md) | A protocol with assignment, measures, sample feasibility, stopping and decision rules; missing inputs remain launch gaps |
+| "Read this experiment result; can we trust the apparent winner?" | [analyze-product-usage](../skills/product/analyze-product-usage/SKILL.md) | Check protocol, assignment, sample quality, maturity and harm outcomes before interpreting effects; analysis does not authorize rollout |
 | "Did adoption or retention change in the observed cohorts?" | [analyze-product-usage](../skills/product/analyze-product-usage/SKILL.md) | Findings from checked definitions and eligible observation windows; separate association, measurement changes and unproven explanations |
 | "Analyze this new product, but there are no usage observations yet." | [analyze-product-usage](../skills/product/analyze-product-usage/SKILL.md) | A bounded analysis plan and exact data gaps; missing outcomes cannot become zero usage or a validated conclusion |
 
@@ -125,12 +129,46 @@ flowchart TD
   Ready -->|Yes| Usage[["analyze-product-usage"]]
   Ready -->|No| Gap(["Result: collection gap or observation wait"])
   Data(["Input: accepted definitions and usage data"]) --> Usage
+  Hypothesis(["Input: proposed controlled comparison"]) --> Experiment[["plan-product-experiment"]]
+  Experiment --> Protocol(["Result: protocol and launch gaps"])
+  Protocol -. "Test separately authorized and run; observations available" .-> Usage
   Usage --> Findings(["Result: supported findings and evidence limits"])
   classDef skill fill:#edf5ff,stroke:#355b85,color:#172b42;
-  class Metrics,Usage skill;
+  class Metrics,Usage,Experiment skill;
 ```
 
+Experiment planning reuses accepted measures and checks whether the proposed comparison is feasible. Low traffic, missing power inputs or shared-user effects may prevent a useful A/B test; a weaker alternative must keep its evidence limits. Launch and implementation remain separately scoped.
+
 An accepted collection gap can go to `implement-change`; a required observation window must actually elapse before its outcome is available. Analysis can run alongside feedback synthesis on independent evidence, but any shared product decision waits for the relevant findings and their independent reviews. Technical alerts remain with `configure-monitoring`; a product metric does not imply a service incident or an ongoing monitoring commitment.
+
+### Coordinate local project work
+
+| Example request | First skill | Result and conditional continuation |
+| --- | --- | --- |
+| "Keep our accepted plan and tasks in a local Markdown project board." | [manage-project-board](../skills/productivity/manage-project-board/SKILL.md) | Use the existing docs location or a small board at `docs/project/README.md`; link accepted plans and keep each task authoritative in one place |
+| "Which task can an agent pick up next, and what is blocked?" | [manage-project-board](../skills/productivity/manage-project-board/SKILL.md) | Checked readiness, ownership and human decisions; select one task or agreed ready batch, with execution only within granted scope |
+| "This phase looks done because its PRs merged; reconcile the board." | [manage-project-board](../skills/productivity/manage-project-board/SKILL.md) | Inspect task proof, integration and the phase's actual exit; preserve unverified deployment or acceptance as a gap |
+
+Arrows below are possible handoffs. Start with existing accepted contracts when they suffice. Board files describe coordination; the host supplies any workers and isolation.
+
+```mermaid
+flowchart TD
+  Scope(["Input: accepted scope"]) --> Tasks[["create-tasks"]]
+  Scope -->|Milestones needed| Phases[["plan-phases"]]
+  Phases --> Tasks
+  Tasks --> Board[["manage-project-board"]]
+  Existing(["Input: existing tasks, claims and proof"]) --> Board
+  Board --> Ready{"Authorized ready work?"}
+  Ready -->|Yes, bounded task or batch| Build[["implement-change"]]
+  Ready -->|No| Gap(["Result: blockers, decisions or no_work"])
+  Build -->|Candidate needs proof| Verify[["verify-change"]]
+  Verify -->|Actual evidence and independent assessment| Board
+  Board --> State(["Result: reconciled task and phase state"])
+  classDef skill fill:#edf5ff,stroke:#355b85,color:#172b42;
+  class Tasks,Phases,Board,Build,Verify skill;
+```
+
+One coordinator writes shared state. Workers receive bounded contracts and return evidence; another session independently checks acceptance. Important blocked work remains blocked, and a ready queue never authorizes draining the backlog. If multiple coordinators must claim concurrently, use a tracker with actual concurrency controls. A Scrum-style view is optional; preserve the team's state meanings, capacity and cycle goal. See the skill's board template for defaults and file placement.
 
 ### Understand and prepare a project
 
@@ -299,6 +337,8 @@ Before context loss or an actual session transfer, condense those facts into the
 | Product or feature commitment depends on unproven need or demand | `validate-product-idea` | Intended users, proposed commitment, existing evidence and its limits |
 | Feedback synthesis or competitor comparison | `validate-product-idea`, `prioritize-work`, or finish according to the requested decision | Source-linked findings and counterevidence; prioritization additionally needs work candidates, goals and capacity |
 | Accepted outcome needing success measures | `define-product-metrics` | Decision, user outcome, existing definitions and source constraints |
+| Product hypothesis needing a controlled comparison | `plan-product-experiment` | Accepted measures, variant behavior, eligible units and source constraints; missing feasibility inputs stay explicit |
+| Experiment observations | `analyze-product-usage` | Fixed protocol, changes after exposure, assignment and outcome data, maturity and harm rules |
 | Measurement contract with usable observations | `analyze-product-usage` | Definition/version, eligible entity and window, source/identity rules, exclusions and data-quality checks |
 | Usage finding with a consequential gap | `define-product-metrics` for unclear semantics, `implement-change` for an accepted tracking repair, or `validate-product-idea` for an investment decision | Reproducible results, source coverage, counterevidence and the unresolved question |
 | Selected idea with enough evidence | `write-spec` | Accepted direction, constraints and supporting evidence |
@@ -307,6 +347,7 @@ Before context loss or an actual session transfer, condense those facts into the
 | Accepted screen structure needing visual detail | `design-interface` | Wireframes or existing layout, requirement/state links, component constraints and review evidence |
 | Accepted scope and design | `plan-phases`, or `create-tasks` directly for a small change | Criteria, preserved contracts and known dependencies |
 | Agreed phase | `create-tasks` | Its exits, accepted inputs and unresolved prerequisites; planning later tasks does not make them executable |
+| Existing local tasks needing coordination | `manage-project-board` | Canonical contracts, current owners, dependency proof and operation scope; one coordinator owns shared state |
 | Ready tasks | `start-project` if the selected task establishes a missing foundation; otherwise `implement-change` | One task or an agreed ready batch, ownership/isolation and accepted dependencies |
 | Implemented change with proof missing | `verify-change` | Candidate revision, relevant baseline, criteria and check access |
 | Verified change | `review-code` and/or `review-interface` according to risk | Fixed candidate and valid evidence; reuse an already completed independent review |

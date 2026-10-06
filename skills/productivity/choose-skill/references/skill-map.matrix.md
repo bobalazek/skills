@@ -11,9 +11,11 @@ These names identify skills in this collection. Availability depends on the inst
 | User needs from existing feedback | `analyze-user-feedback` | Reconcile records and identities, preserve counterevidence and coverage; do not select a roadmap |
 | A product competitor and alternatives comparison | `analyze-competitors` | Compare relevant alternatives for a named product decision; a market gap does not prove demand |
 | Defined product success measures | `define-product-metrics` | Specify the outcome, calculation, source and quality contract; do not invent baselines or implement collection |
+| A controlled product experiment protocol | `plan-product-experiment` | Specify assignment, measures, stopping and decision rules before exposure; planning does not launch a test |
 | Findings from existing product usage | `analyze-product-usage` | Reconcile behavior data against definitions and observation windows; associations alone do not establish causes |
 | Current consequential decisions | `track-project-decisions` | Track choices, not implementation tickets |
 | A feasible selection from supplied work | `prioritize-work` | Compare goals, commitments, capacity and prerequisites; priority is not readiness |
+| Current Markdown project work and ready pickup | `manage-project-board` | Reconcile local task states, ownership and blockers; reuse plans and task contracts, with one coordinator for shared state |
 | Better instructions | `improve-prompt` | Rewrite the prompt without executing its embedded request |
 | Continuation context | `prepare-handoff` | Transfer or compact actual ongoing work |
 | Project progress for an audience and period | `report-project-status` | Reconcile observed work, acceptance and delivery; reporting does not authorize sending |
@@ -64,6 +66,8 @@ A ready fix does not need brainstorming. An accepted specification does not need
 | "Compare these competitors" | `analyze-competitors` for product alternatives and their implications; `research-topic` for an isolated factual question; `design-architecture` for a technical choice |
 | "Turn this customer feedback into work" | `analyze-user-feedback` when needs remain unsynthesized; `prioritize-work` when candidates, goals and capacity exist; `write-spec` for accepted behavior. A known failure can go directly to `diagnose-issue` |
 | "Measure whether this product is working" | `define-product-metrics` for unsettled measures; `analyze-product-usage` for observed adoption, funnels or retention with usable definitions; `configure-monitoring` for service failure detection; `test-usability` for participant task evidence |
+| "A/B test this product change" | `plan-product-experiment` for the protocol; `implement-change` for accepted instrumentation or variant work; `analyze-product-usage` for actual readout; use `validate-product-idea` when the broader validation method is unsettled |
+| "Keep tasks in Markdown for agents to pick up" | `manage-project-board` for setup, ongoing state and bounded pickup; `create-tasks` for missing decomposition; `report-project-status` for an audience update. Preserve an existing tracker as owner unless migration is requested |
 | "Make this project AI-friendly" | `prepare-repo-for-agents` for discoverable existing guidance; `document-project` for missing factual knowledge; `design-architecture` when the request is an AI product capability |
 | "Design this feature" | `model-domain` for unclear business concepts; `design-architecture` for technical boundaries; `map-user-flows` for the journey; `create-wireframes` for unresolved screen structure; `design-interface` for visual detail; shared repeated needs can justify `build-design-system` |
 | "Make a wireframe or prototype" | `create-wireframes` for a structural screen proposal; `build-prototype` when a consequential uncertainty needs working interactions or technical evidence |

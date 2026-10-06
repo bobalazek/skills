@@ -53,4 +53,4 @@ Return the task graph in the requested/project format with ready work, blocked d
 
 ## Next steps
 
-Stop with the graph when decomposition is the request. Pass the selected contract, accepted outputs, evidence and blockers to `start-project` for a missing foundation, or `implement-change` for one task or agreed ready batch when execution is authorized. Use the plain action if its skill is unavailable. Reuse accepted context rather than restart discovery.
+Stop with the graph when decomposition is the request. Use `manage-project-board` when the requested next result is ongoing Markdown task state, blockers and bounded agent pickup; pass the accepted contracts and preserve their authoritative location. Pass the selected contract, accepted outputs, evidence and blockers to `start-project` for a missing foundation, or `implement-change` for one task or agreed ready batch when execution is authorized. Use the plain action if its skill is unavailable. Reuse accepted context rather than restart discovery.
