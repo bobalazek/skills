@@ -28,6 +28,8 @@ The [README graph](../README.md#from-idea-to-delivery) shows the overall route. 
 | A controlled experiment protocol | `plan-product-experiment` | Assignment, measures, feasibility, stopping and decision rules before launch | A suitable accepted protocol already exists |
 | Findings from product behavior data | `analyze-product-usage` | Checked counts, comparisons and evidence limits | Current analysis already covers the question and observation window |
 | Precise required behavior | `write-spec` | Scenarios, constraints and observable acceptance criteria in a spec, PRD or issue | The accepted requirements already suffice |
+| A product page's message and content needs | `plan-landing-page` | Audience, supported claims, proof and content sequence | The existing brief already settles these choices |
+| Actual website wording | `write-website-copy` | Page or section copy with exact evidence gaps | The accepted wording already meets the request |
 | Screen structure before visual detail | `create-wireframes` | Editable layouts with hierarchy, content/state placement and requirement links | Existing or accepted screen structure already resolves the question |
 | Several deliverable milestones | `plan-phases` | Outcomes, prerequisites, parallel conditions and phase exits | The change fits one bounded work item or small task set |
 | Executable work | `create-tasks` | Owned tasks with criteria, dependencies and checks, locally or in the authorized tracker | Suitable tasks already exist |
@@ -45,7 +47,7 @@ The domain catalogs organize skills by responsibility. These stages organize a p
 | Explore and challenge | `brainstorm-ideas`, `challenge-proposal`, `research-topic`, `capture-design-reference`, `build-prototype` | Consequential choices have answers and required premises have evidence |
 | Evaluate a product opportunity | `validate-product-idea`, `analyze-user-feedback`, `analyze-competitors` | The next commitment has relevant evidence, or the decision is to stop, revise or investigate further |
 | Define success and experiments | `define-product-metrics`, `plan-product-experiment` | Measures or an experiment protocol have their required definitions and explicit readiness gaps; a protocol alone does not authorize launch |
-| Specify and design | `write-spec`, `model-domain`, `design-architecture`, `map-user-flows`, `create-wireframes`, `design-interface`, `write-interface-copy` | Behavior and the decisions needed by the selected work are accepted |
+| Specify and design | `write-spec`, `model-domain`, `design-architecture`, `map-user-flows`, `plan-landing-page`, `write-website-copy`, `create-wireframes`, `design-interface`, `write-interface-copy` | Behavior and the decisions needed by the selected work are accepted |
 | Plan and coordinate execution | `prioritize-work`, `plan-phases`, `create-tasks`, `manage-project-board` | The selected work fits its stated constraints and has accepted prerequisites, owners and checks |
 | Build | `start-project`, `implement-change` and the relevant specialist skill | The selected result exists with scoped proof on its actual revision |
 | Evaluate | `verify-change`, `review-code`, `review-interface`, `test-usability` | Required evidence and independent evaluation cover the selected criteria; a planned user study still awaits observations |
@@ -143,11 +145,14 @@ An accepted collection gap can go to `implement-change`; a required observation 
 
 ### Coordinate local project work
 
+For a "software factory" using agents, start from the missing contract below. The existing phase/task/board flow already connects accepted scope to bounded execution, independent evaluation and delivery. Reuse the project's tracker and workers; Markdown instructions do not create a scheduler or establish safe parallelism.
+
 | Example request | First skill | Result and conditional continuation |
 | --- | --- | --- |
 | "Keep our accepted plan and tasks in a local Markdown project board." | [manage-project-board](../skills/productivity/manage-project-board/SKILL.md) | Use the existing docs location or a small board at `docs/project/README.md`; link accepted plans and keep each task authoritative in one place |
 | "Which task can an agent pick up next, and what is blocked?" | [manage-project-board](../skills/productivity/manage-project-board/SKILL.md) | Checked readiness, ownership and human decisions; select one task or agreed ready batch, with execution only within granted scope |
 | "This phase looks done because its PRs merged; reconcile the board." | [manage-project-board](../skills/productivity/manage-project-board/SKILL.md) | Inspect task proof, integration and the phase's actual exit; preserve unverified deployment or acceptance as a gap |
+| "Use agents to work through our accepted backlog as a software factory." | [manage-project-board](../skills/productivity/manage-project-board/SKILL.md) | Reconcile readiness and assign a bounded task or batch within authority; isolate work, integrate, verify and independently review before closing tasks or delivering |
 
 Arrows below are possible handoffs. Start with existing accepted contracts when they suffice. Board files describe coordination; the host supplies any workers and isolation.
 
@@ -169,6 +174,40 @@ flowchart TD
 ```
 
 One coordinator writes shared state. Workers receive bounded contracts and return evidence; another session independently checks acceptance. Important blocked work remains blocked, and a ready queue never authorizes draining the backlog. If multiple coordinators must claim concurrently, use a tracker with actual concurrency controls. A Scrum-style view is optional; preserve the team's state meanings, capacity and cycle goal. See the skill's board template for defaults and file placement.
+
+### Plan and write a product page
+
+| Example request | First skill | Result and conditional continuation |
+| --- | --- | --- |
+| "What should this new product landing page say and prove?" | [plan-landing-page](../skills/ui-ux/plan-landing-page/SKILL.md) | A content plan from the offer, audience and evidence; unresolved demand belongs to product validation, accepted content needs can move to copy or wireframes |
+| "Improve this existing homepage without losing its customer and partner paths." | [plan-landing-page](../skills/ui-ux/plan-landing-page/SKILL.md) | Inspect current content and destinations, preserve useful paths, and propose supported changes without imposing a campaign-page template |
+| "Write the page copy from this accepted brief and product demonstration." | [write-website-copy](../skills/ui-ux/write-website-copy/SKILL.md) | Actual wording with claim sources and exact gaps; reconcile text with the layout before implementation |
+| "Rewrite only this hero in my voice, with a clearer opening hook." | [write-website-copy](../skills/ui-ux/write-website-copy/SKILL.md) | A bounded rewrite preserving meaning and verified promises; no mandatory full-page plan or fixed variant count |
+| "Our one-page site has high bounce and zero visit duration; what does that tell us?" | [analyze-product-usage](../skills/product/analyze-product-usage/SKILL.md) | Provider definitions, instrumentation and observed outcomes before diagnosis; do not infer bots or failed copy from these signals alone |
+
+These arrows are possible handoffs. Start at the missing result, and stop at the requested output. Copy and screen structure can develop in parallel after their shared content requirements and action are accepted; reconcile both before implementation.
+
+```mermaid
+flowchart TD
+  Need(["Input: offer and visitor context; page message unresolved"]) --> Plan[["plan-landing-page"]]
+  Plan --> Agreed(["Result: content needs and action accepted"])
+  Brief(["Input: accepted brief or bounded rewrite"]) --> Copy[["write-website-copy"]]
+  Agreed --> Copy
+  Agreed -->|Screen structure missing| Wire[["create-wireframes"]]
+  Wire -->|Visual detail needed| Design[["design-interface"]]
+  Copy --> Result(["Result: requested draft, with checks and gaps"])
+  Copy -->|Implementation requested| Fit(["Work: reconcile copy, layout and required reviews"])
+  Wire -->|Implementation requested| Fit
+  Design -->|Implementation requested| Fit
+  Fit -->|Required inputs accepted and work authorized| Build[["implement-change"]]
+  Data(["Input: website observations and a decision question"]) --> Usage[["analyze-product-usage"]]
+  Usage -->|Supported content gap| Plan
+  Usage -->|Agreed wording change| Copy
+  classDef skill fill:#edf5ff,stroke:#355b85,color:#172b42;
+  class Plan,Copy,Wire,Design,Build,Usage skill;
+```
+
+An existing layout can go directly to wording; a plan-only request ends before copywriting. Use `map-user-flows` for unsettled journeys, `write-interface-copy` for form and state messages, and `test-usability` when understanding needs participant evidence. The usual verification, independent review and authorized delivery route applies to implementation. A better draft does not prove a conversion increase; measurement definitions, experiment planning and readout retain their existing owners.
 
 ### Understand and prepare a project
 

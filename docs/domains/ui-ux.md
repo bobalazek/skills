@@ -1,6 +1,6 @@
 # UI/UX
 
-This domain owns design references, user journeys, wireframes, detailed interface design and copy, rendered experience review, usability studies and shared interface foundations. Its eight packages are under active development.
+This domain owns design references, user journeys, website content, wireframes, detailed interface design, rendered experience review, usability studies and shared interface foundations. Its ten packages are under active development.
 
 ## Categories and skills
 
@@ -10,12 +10,16 @@ This domain owns design references, user journeys, wireframes, detailed interfac
 | Experience structure | Journeys and navigation | [map-user-flows](../../skills/ui-ux/map-user-flows/SKILL.md) | Actors, paths, states and recovery; destination hierarchy, labels and findability when navigation is in scope |
 | Experience structure | Screen wireframes | [create-wireframes](../../skills/ui-ux/create-wireframes/SKILL.md) | Editable low-fidelity screen layouts with content hierarchy, state coverage and requirement links |
 | Interface design | Detailed screen design | [design-interface](../../skills/ui-ux/design-interface/SKILL.md) | A detailed interface design or implemented surface with visual hierarchy, content, states, and supported responsive behavior |
-| Interface design | Interface copy | [write-interface-copy](../../skills/ui-ux/write-interface-copy/SKILL.md) | Strings keyed by state and context, with terminology, behavior, accessibility and localization constraints |
+| Content design | Page planning | [plan-landing-page](../../skills/ui-ux/plan-landing-page/SKILL.md) | Audience, arrival promise, supported message, section sequence, proof needs and next action |
+| Content design | Website copy | [write-website-copy](../../skills/ui-ux/write-website-copy/SKILL.md) | Actual page or section wording grounded in the offer, voice, proof and destination |
+| Content design | Interface copy | [write-interface-copy](../../skills/ui-ux/write-interface-copy/SKILL.md) | Strings keyed by state and context, with terminology, behavior, accessibility and localization constraints |
 | Quality | Rendered experience | [review-interface](../../skills/ui-ux/review-interface/SKILL.md) | Observed usability, accessibility, interaction, and visual findings with evidence and coverage |
 | User research | Task-based usability | [test-usability](../../skills/ui-ux/test-usability/SKILL.md) | A focused study protocol or findings traced to actual task observations, with coverage and uncertainty |
 | Shared foundations | Tokens and components | [build-design-system](../../skills/ui-ux/build-design-system/SKILL.md) | Useful tokens/themes/component contracts and representative verified consumers with a migration path when needed |
 
 ## Boundaries and use
+
+`plan-landing-page` determines the page's message and content needs when they are unresolved. `write-website-copy` produces the requested words, including a small rewrite that needs no new plan. Both reuse accepted product facts; neither establishes demand or conversion lift. Site navigation stays with `map-user-flows`, screen placement with `create-wireframes`, and visual detail with `design-interface`. See the [product-page route](../workflows.md#plan-and-write-a-product-page).
 
 `map-user-flows` defines how users reach an outcome and recover from meaningful failures. `create-wireframes` resolves screen hierarchy and content/state placement before visual detail. `design-interface` develops the selected structure into detailed visual design and complete states. Reuse accepted flows or existing screens; skip wireframing when structure is settled. `build-design-system` encodes repeated needs into shared foundations. `review-interface` evaluates the actual rendered experience against tasks and supported surfaces.
 
