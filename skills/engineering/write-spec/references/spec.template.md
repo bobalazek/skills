@@ -4,11 +4,15 @@ Use the sections that affect this change. Keep an existing project format where 
 
 ## Goal and scope
 
-Who needs what outcome, why it matters, and which alternatives or current behavior inform it. State non-goals and the evidence behind material claims.
+- **Outcome:** Who needs what result and why it matters.
+- **Scope and non-goals:** What this change includes and excludes.
+- **Basis:** Relevant alternatives, current behavior, and evidence behind material claims.
 
 ## Current and desired behavior
 
-Describe the relevant baseline separately from the proposed behavior. Name actors, permissions, inputs, outputs, state changes, and contracts to preserve.
+- **Current:** The relevant observed baseline.
+- **Required:** Actors, permissions, inputs, outputs, and state changes in the desired behavior.
+- **Preserve:** Existing contracts and behavior that must survive the change.
 
 ## Scenarios
 
@@ -16,13 +20,16 @@ For each meaningful path: starting state, action/input, expected result, relevan
 
 ## Acceptance
 
-| ID | Required observable behavior | Verification signal |
+Replace these illustrative CSV-import rows with the accepted requirements. Partial-success and duplicate-identity rules must be decided before these become executable criteria.
+
+| ID | Required observable behavior | Planned verification signal |
 | --- | --- | --- |
-| AC-01 | A concrete result in a defined context | A test, request, browser path, measurement, or inspected artifact |
+| AC-01 | Preview identifies invalid rows without persisting imported records | Preview a fixture containing valid and invalid rows; inspect row feedback and confirm imported-record state is unchanged |
+| AC-02 | Reconfirming the same completed import does not duplicate its completed effects | Repeat confirmation using the agreed import identity; compare persisted effects with the first confirmation |
 
 Name the evidence needed to judge material criteria: relevant UI states/viewports, baseline/comparison conditions for measured changes, or expected behavior/check output. Define success before implementation; planned checks are not observed results. Keep evidence proportional to the claim.
 
-For a CSV import whose accepted behavior includes preview and confirmation, one criterion could require a preview to identify invalid rows without persisting records. Another could require a repeated confirmation of the same import to avoid duplicating its completed effects. Define partial-success and duplicate-identity rules from accepted decisions before treating these as executable criteria. This describes required behavior, not separate phases or PRs.
+These rows describe required behavior, not separate phases or PRs.
 
 ## Constraints and decisions
 
@@ -34,4 +41,8 @@ Name only useful increments or explicitly deferred scope, with their criterion I
 
 ## Readiness
 
-List blocking decisions and what would resolve them. Link accepted research or design artifacts and identify which criteria depend on unresolved evidence. State whether the next useful action is a decision, bounded investigation, technical design, milestone planning, task decomposition, or implementation already covered by the request. A task cannot be ready while its behavior depends on an unanswered choice.
+- **Blockers:** Unanswered choices, affected criteria, and what would resolve them.
+- **Evidence:** Accepted research/design links and criteria still dependent on unresolved evidence.
+- **Next action:** Decision, bounded investigation, technical design, milestone planning, task decomposition, or already-authorized implementation.
+
+A task cannot be ready while its behavior depends on an unanswered choice.

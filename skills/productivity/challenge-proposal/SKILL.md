@@ -1,30 +1,38 @@
 ---
 name: challenge-proposal
-description: "Challenge a proposed idea, specification, architecture, delivery plan, or stated PR intent through focused questioning that resolves consequential assumptions and choices."
+description: "Test a proposed idea, specification, architecture, delivery plan or PR intent through focused questions, resolving consequential assumptions and choices before dependent work."
 ---
 
 # Challenge proposal
 
-Improve a proposed direction by resolving the questions that could change its outcome. The result is an amended decision or artifact, or a precise investigation that remains necessary.
+## Use this skill
 
-Use a focused conversation to examine the proposal with the user. Start from a candidate, even a rough one. `brainstorm-ideas` owns comparing directions when the user has not selected one; `write-spec` owns the resulting behavior and acceptance contract. Other workflows can ask a necessary clarifying question without requiring a separate challenge session.
+Start with a candidate direction, even a rough one, when the requested result is a stronger decision or a precise unresolved investigation. Reuse its accepted answers and evidence. `brainstorm-ideas` compares directions before selection; `write-spec` turns a sufficiently settled direction into a behavior contract. An ordinary clarifying question does not require a separate challenge session.
 
-Read the proposal, accepted answers, evidence, and relevant current behavior first. Separate factual unknowns from choices the user owns. Answer discoverable questions through inspection; do not ask the user to recite the repository.
+## Find the consequential uncertainty
 
-Identify the material claims the proposal depends on and try to disprove them with realistic scenarios. For a new project, test assumed needs, capabilities, and starter limits. For an existing system, test preservation of current users, data, consumers, and operating constraints. A counterexample must follow the actual scope, not introduce a requirement the user never requested.
+Read the proposal, current behavior and relevant constraints. Separate factual unknowns from choices the user owns; inspect repository facts instead of asking the user to recite them.
 
-Select the highest-impact uncertainty and ask a focused question with enough context to answer. Offer options when useful, including trade-offs and a recommendation supported by evidence. Follow the answer into the next consequential question rather than reading a fixed questionnaire. Challenge inconsistent answers with a concrete case and explain what changes depending on the answer. Do not imply that a recommendation is the user's accepted choice or demand an answer to questions that would not change the requested result.
+Identify the material claims and try to disprove them with realistic scenarios. For a new project, examine assumed needs, capabilities and starter limits. For an existing system, examine effects on users, data, consumers and operations. Keep counterexamples within the requested scope rather than inventing requirements.
 
-Use [questioning lenses and an adaptive example](references/questions.checklist.md) when the proposal spans several concerns. Skip lenses already settled or irrelevant. Preserve accepted choices and record their effect in the existing artifact. Investigate factual unknowns through sources or a bounded experiment; asking the user to agree cannot verify them. Continue useful independent questions while a factual check is pending. Stop questioning when the material choices have an answer or a named investigation and further answers would not change the requested result.
+For a proposal spanning several concerns, select relevant [questioning lenses](references/questions.checklist.md). Skip settled or irrelevant lenses; the checklist is not an interview to administer in full.
 
-Before calling the final proposal ready, at least one reviewer must evaluate it in a separate sub-agent or new clean context from its author. Scale additional lenses and depth by distinct consequential risks. Give the reviewer raw accepted requirements, the candidate proposal, relevant sources, and permitted check access without the author's conversation or rationale as conclusions. Independently check supplied evidence and material claims, then reconcile competing claims. Agreement cannot override a demonstrated contradiction; unsupported suspicions remain separate open questions. If an independent reviewer is unavailable, label the proposal unreviewed and do not claim it verified or ready.
+## Ask, inspect and amend
 
-For PR intent, distinguish the author's stated purpose, behavior demonstrated by the diff, and unanswered rationale. Clarifying intent does not establish correctness; `review-code` evaluates that separately.
+Ask the highest-impact unresolved question with enough context to answer. Give options and their trade-offs when useful. Let the answer determine the next question, and challenge inconsistent answers with a concrete consequence. Record a recommendation as a proposal until the actual decision owner accepts it.
 
-Finish with decisions, changed assumptions/scope, unanswered questions, and the next check or action. Check that material edge cases and trade-offs have an answer or a named investigation. Agreement clarifies intent; it does not validate demand, feasibility, or other external assumptions without evidence. Do not convert questioning into an unrequested spec, implementation, or mandatory ceremony for a clear task.
+Investigate factual unknowns through sources or a bounded experiment; agreement cannot verify them. Continue independent questions while a factual check is pending. Preserve accepted choices in the existing artifact and reopen them only when material evidence changes. Stop when further answers would not change the requested result and each consequential gap has an answer or a named investigation.
 
-Next: `research-topic` or `build-prototype` for an unsupported premise; `write-spec` when the direction has enough evidence to define requirements. Continue ready stages already included in the user's request.
+For PR intent, distinguish stated purpose, behavior demonstrated by the diff and unanswered rationale. Clarifying that intent does not establish code correctness.
 
-## Communicate the result
+## Result and verification
 
-Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
+Return changed decisions, assumptions or scope, remaining questions, and the check that would settle each material gap. Use the requested audience and depth and the project's existing format. Do not manufacture a new specification or task queue for a challenge-only request.
+
+Before calling the proposal ready, have a separate agent in fresh context examine the raw accepted requirements, candidate, sources and permitted checks without the author's conversation or preferred conclusions. Ask it to test edge cases and supplied evidence. Retain the returned reviewer/session identity, evaluated artifact or revision, findings and coverage; reconcile claims against proof and independently recheck affected results after changes. An unsupported suspicion remains an open question, while a demonstrated contradiction cannot be voted away. Without an independent assessment, label the proposal unreviewed and do not claim readiness. Human agreement and empirical evidence establish different things.
+
+## Next steps
+
+Pass unsupported premises to `research-topic` for factual investigation or `build-prototype` for an empirical test. Use `write-spec` when the chosen direction has enough evidence to define requirements, or `review-code` when the remaining question is a candidate diff's correctness. Carry the amended artifact, accepted choices and exact gap; check availability or describe the plain action.
+
+Finish a bounded challenge with its decisions and gaps. Continue ready stages already authorized without repeating settled questions or granting new authority.

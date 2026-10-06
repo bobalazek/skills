@@ -1,24 +1,34 @@
 ---
 name: choose-skill
-description: "Recommend the next skill for an engineering, productivity, or UI/UX task from the requested result and what is already settled."
+description: "Choose the next available skill for an engineering, productivity or UI/UX request from its desired result and accepted inputs, without restarting completed stages."
 ---
 
 # Choose skill
 
-Return one best starting skill, why it fits, and the input it needs. Add a short sequence only when the request spans several distinct results. A clear, ready task can start directly with its owning skill.
+## Use this skill
 
-Read the request and available project context. Establish the desired result and what already exists: an idea, accepted requirements, a ready task, a failing behavior, or a candidate awaiting review. For an existing project, preserve its useful conventions and behavior; for a new project, identify only the missing foundations. Ask a question only when its answer would change the route.
+Use this when the next owner or starting point is unclear. Return one best starting skill and the input it needs. A clear task can start directly with its owning skill; requests outside engineering, productivity and UI/UX can be outside this collection.
 
-Use [the skill map](references/skill-map.matrix.md) to distinguish neighboring results. Match by outcome rather than keywords: explaining a PR and reviewing its correctness are different requests. Choose the next unsettled step, not the beginning of the lifecycle.
+Reuse accepted artifacts, decisions and current work. An existing specification, ready task or reviewed candidate should change the starting point.
 
-Check which recommended skills are actually available. Name a missing skill and its purpose without pretending to invoke it or installing it silently. Do not guess tool access, delegate implementation, or turn the recommendation into new project documents. Requests outside engineering, productivity, and UI/UX should be identified as outside this collection.
+## Identify the next missing result
 
-## Independent check
+Read the request and available project context. Establish what exists and what the user wants next: alternatives, agreed behavior, executable work, a diagnosis, evidence or delivery. Preserve useful existing conventions and commitments; identify only missing foundations for a new project. Ask only when the answer changes the route.
 
-Before accepting the route, use a separate agent in fresh context to check the request, available inputs, and proposed skill against the map. It should challenge wrong starting points, overlapping ownership, and unnecessary steps without inheriting the author's conversation. If that check is unavailable, label the recommendation unreviewed.
+Consult [the skill map](references/skill-map.matrix.md) to distinguish neighboring outputs. Match the desired result rather than a keyword: explaining a PR and reviewing its correctness are different tasks. Add a short sequence only when the request spans distinct results, with the accepted prerequisite for each transition.
 
-Finish with the selected skill, why this is the next missing result, its expected output, accepted input to reuse, and any unmet prerequisite. For phased work, identify the selected ready phase/task rather than restarting discovery; show a short dependency sequence only when it helps distinguish ready work from later or parallel candidates. If the requested result is already complete and no follow-up is justified, say so. Continue into a skill only when execution is part of the user's request and the skill is available.
+## Check availability and readiness
 
-## Communicate the result
+Check which selected skills are installed or otherwise available. If one is missing, name its purpose and the equivalent plain action; do not pretend to invoke it or install it silently. Do not assume tool access or start delegated implementation from a routing-only request.
 
-Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
+For phased work, identify the ready phase/task and its dependencies. Distinguish work ready now from future parallel candidates; a sequence alone cannot prove readiness. If the result is already complete and no follow-up is justified, say so.
+
+## Result and verification
+
+Return the selected skill, why it owns the next missing result, expected output, accepted input to reuse, and any unmet prerequisite. Keep the answer at the requested depth and use the project's format; a new document is rarely needed for a route.
+
+Before accepting the recommendation, have a separate agent in fresh context check the raw request, available inputs, proposed route and map without the author's conversation or preferred answer. It should challenge the starting point, overlapping ownership and unnecessary steps. Retain the returned reviewer/session identity, assessed route or revision, findings and coverage. Correct demonstrated misrouting and independently recheck affected choices. If no independent assessment is available, label the recommendation unreviewed.
+
+## Next steps
+
+Continue into the selected skill only when execution is already part of the user's request, it is available and its prerequisites are met. Pass the accepted context and exact unresolved gap. A routing-only request finishes with the recommendation; choosing a skill supplies neither missing evidence nor new authority.

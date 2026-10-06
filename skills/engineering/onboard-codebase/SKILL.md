@@ -5,38 +5,40 @@ description: "Establish a working contributor baseline for an unfamiliar reposit
 
 # Onboard codebase
 
-Make an inherited repository usable for the intended contributor and task. The deliverable is a verified orientation and feedback path, with exact blockers where access or setup is missing.
+## Use this skill
+
+Use this when a contributor needs to start work in an unfamiliar repository. Produce an orientation, checked feedback path or exact setup blocker, and a bounded first-change route. Reuse current contributor documentation and known setup evidence; verify its applicability instead of repeating completed onboarding.
+
+Use `explain-codebase` for an explanation without contributor setup, `review-code` for a correctness assessment, or `prepare-repo-for-agents` when the requested output is improved agent entry points. Onboarding does not authorize an unsolicited audit or rewrite.
 
 ## Inspect from the entry points
 
 Read repository instructions and README, then the relevant manifests, lockfiles, runtime/configuration, tests, CI, and deployment references. Use the repository's required index/navigation tools. Identify the selected application or package in a larger workspace; do not survey unrelated projects.
 
-Map the purpose, runtime entry points, important flows, module/state ownership, integrations, conventions, and delivery path needed for the adoption goal. Trace representative code instead of trusting a directory name. Distinguish current code, documented intent, observed conventions, and unknown rationale.
+Map the purpose, runtime entry points, important flows, module/state ownership, integrations, conventions and delivery path needed for the adoption goal. Trace representative code instead of trusting a directory name. Locate authoritative standards, decisions and memory indexes; distinguish current code, documented intent, observed patterns, exceptions and unknown rationale. History can explain a recorded decision, not unrecorded motives.
 
 ## Establish a feedback path
 
-Inspect documented setup/check commands and their side effects. Run the safe relevant local path available within the requested onboarding scope. Respect project rules for dependency setup; do not reset data, replace configuration, fetch secrets, or contact production merely to make a check green.
+Before setup or dependency repair, inspect documented commands, relevant lifecycle/Git hooks and shared dependency locations, especially in worktrees. A command or checkout operation can trigger installation or affect another workspace; establish the actual write scope before running it. Do not reset data, replace configuration, fetch secrets or contact production merely to make a check green.
 
-Before setup or dependency repair, inspect relevant lifecycle/Git hooks and shared dependency locations, especially in worktrees. A command or checkout operation can trigger installation or affect another workspace; establish the actual write scope before running it.
+Run the safe relevant local path within the requested scope and project setup rules. A read-only request can inspect check definitions and prerequisites without executing setup; mark those commands as unrun rather than verified.
 
 Record each important command as verified, failed, or not run with its prerequisite. Preserve unrelated work and pre-existing failures. Where setup is blocked, provide the precise missing input and a useful read-only orientation without claiming a working environment.
 
 ## Make the next change approachable
 
-Load [the onboarding outline](references/onboarding.template.md) when a durable orientation is requested. Reuse the existing contributor documentation and repair only authorized gaps. Identify the correct locations for a representative first change, its affected consumers, relevant standards, and verification path.
+Load [the onboarding outline](references/onboarding.template.md) when a durable orientation is requested. Trace a representative feature's file/test placement, imports, reuse, data access, errors and dependency choices. Identify the owning files, consumers, applicable standards and verification path for a first bounded change. Keep accepted policy separate from merely observed patterns, and repair documentation only within the authorized scope.
 
-Prioritize adoption blockers and preservation risks; avoid converting onboarding into an unsolicited correctness audit or rewrite. History can explain a recorded decision but does not establish unrecorded motives.
+Prioritize adoption blockers and preservation risks. Static source inspection can explain an API/data flow but cannot establish production performance or integrity.
 
-## Communicate the result
+## Verify and return the orientation
 
-Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
+Check that the contributor can locate owning code and authoritative conventions, follow the important flow, and run the verified feedback path or see its exact blocker. Keep the inspected revision and scope visible.
 
-## Independent evaluation
+Before acceptance, have a separate agent in fresh context challenge the orientation and first-change route against the raw request, repository sources, candidate artifact and observed checks, without the author's conversation or preferred conclusion. Reconcile unsupported claims and independently recheck affected results after fixes. Retain the returned reviewer/session identity, evaluated artifact/revision, findings and coverage; an attempted delegation is not an assessment. If unavailable, label the result unreviewed and stop before acceptance. Required human approval remains separate.
 
-Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+Match the requested audience, tone and depth, then project conventions. Return the orientation, purpose, verified feedback path, first-change route and precise gaps. Update useful durable facts in existing authorized contributor/knowledge locations instead of creating competing summaries. For authorized PR work, include relevant observations and independent findings, refreshing affected evidence after edits.
 
-## Completion
+## Next steps
 
-The contributor can find the owning code and authoritative conventions, understand the important flow, and run the verified feedback path or see its exact blocker. Report inspected scope and evidence.
-
-Next: `define-project-conventions` for disputed/missing rules, `prepare-repo-for-agents` for agent entry points, or `implement-change` for a ready first task. Use `review-code` when a separate health/correctness assessment is requested.
+Use `define-project-conventions` for disputed or missing rules, `prepare-repo-for-agents` for broken agent entry points, or `implement-change` for a ready first task. A separately requested health/correctness assessment belongs to `review-code`. Pass the source revision, conventions, owning files, check evidence and unmet setup prerequisite. Check skill availability and describe the plain action when absent. Stop at the requested orientation or continue ready work already authorized; a completed orientation needs no follow-up unless another result is required.

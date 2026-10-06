@@ -2,20 +2,29 @@
 
 ## Goal and scope
 
-Requested outcome, accepted constraints, authorization and stopping point.
+- **Outcome and constraints:** [Accepted goal and boundaries.]
+- **Authority and stop:** [Authorized actions and stopping point.]
 
 ## Current state
 
-Repository/workspace, relevant revision or baseline, intended local edits, completed work, partial work, and pending operations with actual IDs.
+- **Workspace/revision:** [Repository, baseline and intended local edits.]
+- **Completed / partial / pending:** [Separate states; actual IDs for pending operations.]
 
 ## Decisions and context
 
-Accepted choices, relevant authoritative artifacts and versions, changed assumptions, and unresolved questions. Include a small file/symbol map when it avoids rediscovery, and only history that affects continuation. Keep temporary work state out of permanent contributor rules.
+- **Reuse:** [Accepted choices and authoritative artifacts/versions; useful file/symbol pointers.]
+- **Unresolved:** [Changed assumptions, consequential history and open questions.]
+
+Keep temporary work state out of permanent contributor rules.
 
 ## Verification
 
-Commands or observed behavior, exit/result, what they establish, and failed/unavailable checks.
+- **Proof:** [Command or observation, result/exit, tested revision and what it establishes.]
+- **Gaps:** [Failed, stale or unavailable checks and independent review status.]
 
 ## Next action
 
-The next runnable step, its prerequisites and owner where known, remaining dependency order, and the exact blocker if it cannot run. On receipt, reload applicable instructions and compare the summary with current source, workspace, task state, and pending operations before resuming.
+- **Continue:** [Runnable step, prerequisites, owner where known and dependency order.]
+- **Blocked by:** [Exact blocker, or none.]
+
+On receipt, reload applicable instructions and compare this handoff with current source, workspace, task state and pending operations before resuming.

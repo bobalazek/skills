@@ -5,7 +5,11 @@ description: "Investigate and improve a measured latency, throughput, memory, re
 
 # Improve performance
 
-Resolve the selected performance problem and demonstrate the result. An investigation-only request ends with a supported diagnosis and proposed change; implementation authority permits the bounded repair, not a platform replacement or live load test.
+## Use this skill
+
+Use this for a latency, throughput, memory, rendering or resource-cost problem that needs measurement and a bounded improvement. Return a supported diagnosis for investigation-only work, or a repair with comparable before/after evidence when implementation is authorized. Reuse an accepted target, profile and workload whose conditions still apply.
+
+Use `diagnose-issue` for an unexplained functional failure, `find-improvements` to select an opportunity, or `design-architecture` for an unresolved structural choice. A performance task does not authorize a platform replacement or live load test.
 
 ## Define the problem and baseline
 
@@ -13,7 +17,7 @@ Identify the affected user task or workload, current symptom, accepted target, a
 
 Choose a metric that describes the problem and a correctness guard that an optimization must preserve. Record baseline revision, input/data size, concurrency, device/runtime, relevant configuration, cache state, measurement procedure, and failed work. Reuse existing instrumentation before adding a harness. If no baseline is available, establish one safely or report the missing evidence; do not invent an improvement target or result.
 
-Use [the measurement playbook](references/measurement.playbook.md) for evidence selection and comparison. Keep experiments within authorized environments and resource limits; expensive tests, production writes, or customer-data exports require their actual authority.
+Use [the measurement playbook](references/measurement.playbook.md) when selecting signals or comparing measurements. Before experiments, establish the authorized environment and resource limits; expensive tests, production writes and customer-data exports need their actual authority.
 
 ## Locate and change the constraint
 
@@ -23,18 +27,18 @@ Prefer the smallest change supported by the profile: remove unnecessary work, re
 
 Change one meaningful factor at a time where practical. Preserve the benchmark procedure and workload; if they must change, rerun the baseline under those conditions. Do not report a faster sample caused by dropped requests, missing work, stale data, reduced quality, or smaller inputs as an equivalent improvement.
 
-## Communicate the result
-
-Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
-
-## Independent evaluation
-
-Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
-
-## Verify and deliver evidence
+## Verify the improvement
 
 Repeat the relevant measurement under comparable conditions and inspect variation, error/timeout counts, correctness checks, and any shifted resource cost. Include a representative end-to-end check alongside a narrow benchmark when the claim concerns a user flow. If results are inconclusive or another constraint dominates, report that outcome and avoid retaining unsupported complexity merely because it was implemented.
 
-Report baseline/candidate revisions, procedure, units, observed values and spread, preserved behavior, failed or unavailable checks, and limits of extrapolation. Distinguish measured results from estimates. For visible changes, capture relevant rendered states; a screenshot alone cannot demonstrate latency. Keep useful evidence in the existing task or authorized PR with accessible links or concise inline results, redacting sensitive content and identifying local-only artifacts.
+For visible changes, inspect and capture relevant rendered states; a screenshot alone cannot demonstrate latency. Finish when the scoped target and preservation checks are demonstrated, or name the unresolved measurement or decision. Do not turn inconclusive measurements into a success claim.
 
-Finish when the scoped target and preservation checks are demonstrated, or return the precise unresolved measurement or decision. Next: `verify-change` for missing acceptance proof, `review-code` for the final change, `design-architecture` if the measured constraint requires a consequential structural choice, or `ship-change` for authorized delivery.
+Before acceptance, have a separate agent in fresh context challenge the result against raw accepted requirements, baseline/candidate artifacts, measurements and correctness evidence, without the author's conversation or preferred conclusion. Ask it to test comparability, missing work and shifted costs. Reconcile findings and independently recheck affected results after fixes. Retain the returned reviewer/session identity, evaluated revision, findings and coverage; an attempted delegation is not an assessment. If unavailable, label the result unreviewed and stop before acceptance. Required human approval remains separate.
+
+## Return the result
+
+Match the requested audience, tone and depth, then project conventions. Report the outcome and purpose, baseline/candidate revisions, procedure, units, observed values and spread, preserved behavior, failed or unavailable checks, and limits of extrapolation. Distinguish measurements from estimates. Keep durable findings in their existing authorized home. Include useful redacted proof and independent findings when opening an authorized PR, with accessible links or concise inline results; label local-only artifacts and refresh affected evidence after edits.
+
+## Next steps
+
+Use `verify-change` for a named acceptance-proof gap, `review-code` for an outstanding code-risk assessment, `design-architecture` when the measured constraint requires a structural decision, or `ship-change` when proof and reviews support the authorized delivery target. Pass the profile, tested revision, preservation constraints and unresolved prerequisite. Check skill availability and describe the plain action when absent. Stop at the requested result or continue already-authorized ready work; do not restart completed investigation or add follow-up work without a reason.

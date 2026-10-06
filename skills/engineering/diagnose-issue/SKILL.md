@@ -5,7 +5,9 @@ description: "Reproduce and diagnose a software failure using evidence, hypothes
 
 # Diagnose issue
 
-Establish the cause of the observed failure, or state precisely why the available evidence cannot yet establish it. A plausible explanation is not a diagnosis.
+## Use this skill
+
+Establish the cause of an observed failure and verify a repair when requested. Reuse the report, reproduction and prior evidence, checking their current applicability. Use `assess-request` for an unverified intake queue or `implement-change` for an already-diagnosed repair. A plausible explanation alone is not a diagnosis.
 
 ## Build the feedback loop
 
@@ -15,7 +17,9 @@ Use existing monitoring, logs, traces, error reports, or metrics when they help 
 
 Choose the smallest reliable reproduction: a focused test, script, request, browser path, trace replay, or controlled harness. Confirming a diagnosis or verified repair requires an observed failing reproduction and relevant proof. For an intermittent failure, retain the actual failing attempt and conditions. If the failure is production-only and cannot be reproduced safely within authority, preserve the evidence and exact blocker; the investigation remains incomplete and must not pass diagnosis acceptance.
 
-For a live incident, load [incident diagnosis](references/incident.checklist.md). Read-only investigation does not authorize production changes or disruptive experiments.
+### Live-incident boundary
+
+For a live incident, load [incident diagnosis](references/incident.checklist.md) before proposing mitigation. Read-only investigation does not authorize production changes or disruptive experiments.
 
 ## Test causes
 
@@ -31,16 +35,14 @@ Keep the original failure and repaired outcome comparable: the same reproduction
 
 For a broader behavioral change, produce the diagnosis and propose specification/planning rather than absorb an unrequested redesign. Update a meaningful incident or learning record where the project keeps it; do not create one for every routine typo.
 
-## Communicate the result
+## Verify and report
 
-Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
+Report reproduced evidence, demonstrated cause or remaining uncertainty, affected consumers, repair scope when applicable, and actual verification outcomes. Carry redacted before/after evidence, independent findings and gaps into the authorized PR at creation or handoff with usable links or short inline results; identify local-only artifacts and unavailable checks. A missing check or unresolved cause remains explicit.
 
-## Independent evaluation
+Before acceptance, a separate agent in fresh context must challenge the cause and any repair using the accepted request, candidate revision, raw reproduction/source evidence and check access. Omit the author's conversation and preferred conclusions. Retain the returned assessment with reviewer/session identity, evaluated artifact/revision, findings and coverage. Resolve supported findings and obtain affected rechecks after fixes. Without a returned independent assessment, report unreviewed and stop before acceptance.
 
-Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+Follow the project's format and requested depth; keep durable findings in the existing incident or learning record rather than another summary. Update affected evidence after repairs.
 
-## Completion
+## Next steps
 
-Report reproduced evidence, demonstrated cause or remaining uncertainty, affected consumers, repair scope when applicable, and actual verification outcomes. Carry the redacted before/after evidence into the authorized PR or handoff with usable links or short inline results; identify local-only artifacts and unavailable checks. A missing check or unresolved cause remains explicit.
-
-Next: `implement-change` for a diagnosed repair not yet authorized; `write-spec` for a larger change; `automate-code-checks` when an established recurring cause warrants a calibrated guard; `review-code` for a verified repair; operational recovery or delivery only within the actual authorization.
+Carry the diagnosis, failing case and constraints to `implement-change` for a repair still to perform, or `write-spec` for a larger behavioral change. Use `automate-code-checks` for an established recurring cause warranting a guard, `review-code` for an outstanding repair review, or `ship-change` for authorized delivery. Name the required input/authority and use the plain action if its skill is unavailable. Diagnosis does not authorize operational recovery or deployment.

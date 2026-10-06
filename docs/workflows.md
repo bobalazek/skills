@@ -34,8 +34,8 @@ The domain catalogs organize skills by responsibility. These stages organize a p
 | --- | --- | --- |
 | Understand the starting point | `assess-request`, `onboard-codebase`, `explain-codebase`, `diagnose-issue` | The requested outcome and relevant baseline are understood |
 | Explore and challenge | `brainstorm-ideas`, `challenge-proposal`, `research-topic`, `capture-design-reference`, `build-prototype` | Consequential choices have answers and required premises have evidence |
-| Specify and design | `write-spec`, `model-domain`, `design-architecture`, `map-user-flows`, `design-interface` | Behavior and the decisions needed by the selected work are accepted |
-| Plan execution | `plan-phases`, `create-tasks` | The selected work has accepted prerequisites, owners and checks |
+| Specify and design | `write-spec`, `model-domain`, `design-architecture`, `map-user-flows`, `design-interface`, `write-interface-copy` | Behavior and the decisions needed by the selected work are accepted |
+| Plan execution | `prioritize-work`, `plan-phases`, `create-tasks` | The selected work fits its stated constraints and has accepted prerequisites, owners and checks |
 | Build | `start-project`, `implement-change` and the relevant specialist skill | The selected result exists with scoped proof on its actual revision |
 | Evaluate | `verify-change`, `review-code`, `review-interface`, `test-usability` | Required evidence and independent evaluation cover the selected criteria; a planned user study still awaits observations |
 | Deliver and observe | `ship-change`, `report-project-status` | The requested target is reached and checked, or the requested update accurately reports its current state |
@@ -81,6 +81,7 @@ Match the requested result, not just words such as "new project," "review" or "A
 | "Hand this unfinished work to another session or owner." | [prepare-handoff](../skills/productivity/prepare-handoff/SKILL.md) | Current state, authority, evidence and next runnable action; resume from checked state instead of repeating discovery |
 | "Prepare this sprint's engineering update from our tracker and deployment evidence." | [report-project-status](../skills/productivity/report-project-status/SKILL.md) | Verified progress, blockers and next decisions for the stated audience/period; sending requires its own authority, and an owner transfer uses `prepare-handoff` |
 | "Our PR reviews keep waiting for the wrong person; improve that process." | [improve-team-workflow](../skills/productivity/improve-team-workflow/SKILL.md) | Current/proposed steps and a bounded trial; accepted implementation can become tasks, while a planned trial cannot claim saved time |
+| "Should we automate this recurring report with AI or use an existing feature?" | [improve-team-workflow](../skills/productivity/improve-team-workflow/SKILL.md) | Compare credible options including review, exceptions and maintenance; a recommendation does not purchase or deploy a tool |
 
 ### Specify and design
 
@@ -90,7 +91,9 @@ Match the requested result, not just words such as "new project," "review" or "A
 | "Clarify what an account, workspace and membership mean here." | [model-domain](../skills/engineering/model-domain/SKILL.md) | Domain concepts, invariants and ownership; carry them into `write-spec` or `design-architecture` |
 | "Choose the stack, boundaries and hosting for this app or AI capability." | [design-architecture](../skills/engineering/design-architecture/SKILL.md) | Technical choices grounded in workload, data, cost and existing infrastructure; use `build-prototype` for unproven feasibility |
 | "Map how a user completes this task, including errors and recovery." | [map-user-flows](../skills/ui-ux/map-user-flows/SKILL.md) | Actors, states and transitions; use `design-interface` for screen composition once behavior is clear |
+| "People cannot find the right settings; reorganize the navigation." | [map-user-flows](../skills/ui-ux/map-user-flows/SKILL.md) | Destination inventory, hierarchy, labels and supported paths; use `test-usability` for participant findability evidence or `design-interface` for accepted composition work |
 | "The journey is settled; design the screen and its states." | [design-interface](../skills/ui-ux/design-interface/SKILL.md) | A design or requested rendered result; use `implement-change` for a design handoff or `review-interface` for a missing rendered assessment |
+| "Write validation, empty-state and permission messages without changing the layout." | [write-interface-copy](../skills/ui-ux/write-interface-copy/SKILL.md) | Strings tied to actual states, terminology and recovery actions; use implementation for authorized wiring and verify the rendered result before claiming fit |
 | "Capture these two interfaces as useful references for our dashboard." | [capture-design-reference](../skills/ui-ux/capture-design-reference/SKILL.md) | Inspected patterns with capture conditions and evidence; use `design-interface` to adapt suitable ideas to the target product |
 | "Several screens need consistent shared tokens and components." | [build-design-system](../skills/ui-ux/build-design-system/SKILL.md) | Shared contracts demonstrated in real consumers; carry them into `design-interface` or implementation |
 | "Plan a move to this accepted data/service architecture." | [plan-migration](../skills/engineering/plan-migration/SKILL.md) | Compatibility, transfer, cutover and recovery plan; use phases/tasks to decompose authorized execution, with gates before live changes |
@@ -101,6 +104,7 @@ Architecture and UI design answer different questions. `design-architecture` own
 
 | Example request | First skill | Result and conditional continuation |
 | --- | --- | --- |
+| "Which of these backlog items fit our next work period?" | [prioritize-work](../skills/productivity/prioritize-work/SKILL.md) | Selection, order, deferrals and capacity/prerequisite limits; decompose selected scope with `create-tasks` or begin an accepted ready task when execution is authorized |
 | "Break this agreed project into deliverable phases." | [plan-phases](../skills/engineering/plan-phases/SKILL.md) | Milestones with prerequisites and exits; use `create-tasks` for the selected sufficiently understood phase |
 | "Make executable tasks from this spec, with dependencies." | [create-tasks](../skills/engineering/create-tasks/SKILL.md) | Owned tasks and checks, locally or in an authorized tracker; use `implement-change` only for a selected ready batch |
 | "The stack and scope are agreed; bootstrap the new repository." | [start-project](../skills/engineering/start-project/SKILL.md) | A checked foundation, blank or from an accepted template; implement the first agreed capability next |

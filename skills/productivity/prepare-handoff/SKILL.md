@@ -1,30 +1,38 @@
 ---
 name: prepare-handoff
-description: "Prepare ongoing work for an owner/session transfer or context compaction, preserving current state, authority, decisions, evidence, blockers, and a checked path to resume."
+description: "Prepare an owner/session transfer or context compaction with checked work state, accepted decisions, authority, evidence and a runnable next action. Use for continuation rather than a stakeholder status update."
 ---
 
 # Prepare handoff
 
-Make it possible to continue the work without reconstructing the conversation. Use this for an owner/session transfer or when a long task needs a continuation summary before compaction or reset, not between every phase of one active session. Reuse the current task record or a concise context block; a new file or session is optional.
+## Use this skill
 
-Inspect the current goal, accepted scope, relevant repository/branch/revision and working-tree state, artifacts, decisions, command results, pending jobs, and remaining dependencies. Distinguish completed and verified work from partial edits, proposals, failed checks, and untested claims.
+Use this when work must continue with another owner or session, or after context compaction/reset. Carry the current task record and accepted artifacts forward; a concise context block may be enough. Routine phases in one active session do not each need a handoff.
 
-Use [the handoff outline](references/handoff.template.md). Carry the minimum context the next owner needs, with links to authoritative material rather than copied documents. Preserve existing user authorization and requested stop points; do not expand them. Reference secret locations or access prerequisites without including secret values.
+Use `report-project-status` for an audience-and-period update, or `explain-pr` to explain a fixed code comparison. A handoff's defining requirement is that someone can resume the actual work.
 
-Name the next runnable action and the condition that makes it ready. For a pending remote operation, provide its actual identifier and observed state so the next owner can inspect before retrying. Explain changed assumptions and material rejected approaches only when they prevent repeating a mistake.
+## Inspect the current state
 
-When compressing context, preserve the goal, constraints, authorization, criterion status, blockers, source versions, pending operations, and evidence locations. Keep a short map of relevant files or symbols; remove search noise and repeated logs before removing facts needed to continue. Distinguish durable project knowledge from temporary session state.
+Read the goal, accepted scope and stop point. Inspect the relevant workspace, branch/revision, intended local edits, artifacts, decisions, command results, pending jobs and dependencies. Distinguish verified completion from partial edits, proposals, failed checks and untested claims.
 
-Check that file paths, revisions, links, and completion claims match the current state. Update an existing handoff or task record when suitable. Preparing a handoff does not authorize sending it to someone or changing tracker state.
+Preserve established authorization without expanding it. Reference secret locations or access prerequisites without including values. Preparing a handoff does not authorize sending it or changing tracker state.
 
-For resumption, reload the applicable instructions and inspect current workspace, task, and remote-operation state. Recheck material source/evidence pointers and reconcile drift before acting. Carry forward established authorization and stop points; a summary does not create additional authority or turn a worker's claim into verified completion.
+## Write the continuation context
 
-Finish with the transfer artifact or concise context block, exact blockers, and the next action. Avoid a chronological transcript and avoid claiming that a command invocation proves success.
+When assembling the transfer block or record, use [the handoff template](references/handoff.template.md), adapting it to the project's existing format. Link authoritative material rather than copying documents. Retain the goal, constraints, authority, criterion status, source versions, blockers and useful file/symbol pointers.
 
-## Communicate the result
+Name the next runnable action and what makes it ready. For a pending remote operation, include its actual identifier and observed state so the recipient can inspect before retrying. Keep changed assumptions and rejected approaches only when they prevent a repeated mistake.
 
-Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
+During compaction, remove search noise and duplicate logs before removing continuation facts. Keep temporary session state separate from durable project knowledge; update an existing authorized record rather than creating a competing one.
 
-## Independent evaluation
+## Result and verification
 
-Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+Return the handoff or context block, exact blockers and next action at the requested depth. Check paths, links, revisions and completion claims against current state; a command invocation alone does not prove success.
+
+Before acceptance, have a separate agent in fresh context try to identify the next safe action from the raw request, candidate handoff, source artifacts and permitted state checks, without the author's conversation or preferred answer. Retain its returned reviewer/session identity, evaluated handoff or revision, findings and coverage. Resolve missing or contradictory continuation facts and independently recheck affected parts. If that assessment is unavailable, label the handoff unreviewed.
+
+## Next steps
+
+Name the skill that owns the actual next task, its accepted input and unmet prerequisite; check availability or give the plain runnable action. Do not force another workflow when the handoff itself satisfies the request.
+
+On resumption, reload applicable instructions and inspect current workspace, task and pending-operation state. Reconcile drift in material sources or evidence before acting. Carry existing authority and stop points forward; a summary neither creates permission nor upgrades a worker's claim into verified completion.

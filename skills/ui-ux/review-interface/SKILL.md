@@ -1,34 +1,44 @@
 ---
 name: review-interface
-description: "Review a rendered interface against user tasks, visual hierarchy, interaction states, usability, accessibility, and supported surfaces, producing evidence-backed findings and coverage."
+description: "Independently assess a rendered interface against user tasks, visual hierarchy, interaction, accessibility and supported surfaces, returning evidenced findings and coverage. Use participant studies for claims about actual user behavior."
 ---
 
 # Review interface
 
-Produce a scoped assessment of the actual user experience. Establish the target URL/app/artifact, revision where available, user tasks, accepted design/behavior, and supported surfaces.
+## Use this skill
 
-Inspect the rendered interface through available browser/native tools. Read source or design documentation as supporting evidence, but do not use it as proof of keyboard, layout, focus, or runtime behavior. For a static mockup, limit claims to what it can show.
+Use this for a scoped expert assessment of an actual interface. Reuse accepted requirements, candidate identity and valid prior evidence. `test-usability` supplies participant task evidence; `design-interface` creates a design; `capture-design-reference` analyzes reusable patterns from a reference.
 
-Use [interface review checks](references/interface-review.checklist.md) to select relevant tasks and states. Walk the primary journey, important failures/recovery, and supported input methods. Observe concrete problems before reporting them; distinguish functional defects, accessibility barriers, and visual preferences.
+Perform the assessment independently of the interface's author, in a separate agent or fresh context with raw requirements, candidate and check access, without the author's conversation or preferred conclusions. If you authored the interface, delegate it. Without an independent assessor, label the result unreviewed and not ready. This assessment can itself satisfy the independent review requirement; it does not require another review of the review.
 
-Try to break the supported journey within the review's authority: use relevant boundary inputs, denied permissions, repeated or interrupted actions, and supported keyboard/zoom paths. Challenge assumptions about feedback, focus restoration, and recovery. Use synthetic or approved data and safe states; a review does not authorize destructive live experiments.
+## Establish the candidate and coverage
 
-Choose distinct review lenses from the actual risks, such as navigation comprehension, state/recovery, or keyboard access. The agent performing this assessment must be independent of the interface's author. Add other reviewers only where a distinct risk needs coverage, using the same revision and stated conditions. Reconcile findings through reproduction and evidence rather than votes. Preserve a demonstrated defect even when only one reviewer observes it, and keep an unresolved conflicting claim visible for follow-up.
+Identify the target URL/app/artifact, available revision, user tasks, accepted behavior/design and supported surfaces. Inspect through available browser/native tools. Source and design documents support the review but cannot prove layout, focus, keyboard or runtime behavior. Limit static-mockup claims to visible evidence.
 
-For a review spanning journeys or delivery phases, establish the shared baseline and behavior first, then inspect independent paths in parallel only with separate sessions/fixtures where state can conflict. Keep shared navigation, permissions and cross-journey recovery in the combined assessment after branch findings arrive. A phase's screenshots or local review cannot establish the integrated experience; recheck affected paths independently after authorized fixes and retain valid evidence from unchanged paths.
+Select task-relevant lenses from [interface review checks](references/interface-review.checklist.md). Establish which routes, roles, states and input methods will be inspected, and preserve unknown coverage.
 
-For each finding, identify the affected task/state, location, evidence, consequence, priority, and useful correction. Include screenshots or reproduction steps when they clarify the issue. Record the revision and capture conditions; before/after screenshots need comparable viewport, route, role, fixture, and state. Keep visual evidence separate from observed interaction/focus/recovery results. Reconcile duplicate symptoms and separate optional polish from blocked user behavior.
+## Exercise consequential paths
 
-If formal standards conformance is requested, establish the applicable target and verify criteria against current authoritative guidance. A limited audit does not establish universal compliance. State inspected and uninspected coverage, unavailable tools, and any reliance on heuristics instead of user research.
+Walk the primary journey, failures and recovery. Try relevant boundary inputs, denied permissions, repeated/interrupted actions, keyboard and zoom paths. Inspect feedback, focus restoration and usable escape routes. Use synthetic or approved data and safe states; a review does not authorize destructive live experiments.
 
-If the requested evidence is how actual users attempt a task, use `test-usability` when available, or propose the corresponding study. Agent walkthroughs cannot supply participant observations; retain useful expert findings without relabeling them as a user study.
+Distinguish observed functional defects, accessibility barriers and optional visual preferences. If formal conformance is requested, identify the applicable standard and check criteria against current authoritative guidance. Limited coverage cannot establish universal compliance. Agent walkthroughs cannot be relabeled as participant observations.
 
-Review does not itself authorize a redesign or code edit. When fixes are requested, keep scope and recheck the changed tasks/states after implementation. Add useful redacted findings, before/after screenshots or video, interaction observations, and relevant regression-test results to authorized PR work as they become available, with verified accessible links or inline observations. Label local-only evidence, missing recordings, stale captures, and unavailable checks.
+Add reviewers only for distinct risks needing coverage. Keep the same candidate and conditions, and use separate sessions/fixtures where mutable state can conflict. Reconcile branch findings into shared navigation, permissions and cross-journey recovery. A phase's screenshots do not establish the integrated experience.
 
-Run this assessment in a separate agent with fresh context from the interface's author, using raw accepted requirements, the candidate interface, and observed proof without the author's planning conversation. If you authored the interface, delegate the review. Reproduce consequential findings or retain their exact verification gap; a minority demonstrated defect survives reconciliation. If an independent agent is unavailable, report unreviewed and not ready. Independent review does not replace required human approval.
+## Reconcile findings
 
-Next: select `design-interface` for an agreed design revision, `diagnose-issue` for unclear runtime failures, `implement-change` for selected authorized fixes, or `verify-change` for missing acceptance proof. A ready result can proceed to `ship-change` when delivery is authorized; a review-only request ends with its assessment. Carry the candidate, inspected states, evidence and exact gaps, and describe the plain action if the selected skill is unavailable.
+For each finding, identify the affected task/state, location, evidence, consequence, priority and useful correction. Reproduce consequential claims or retain the exact verification gap. Combine duplicate symptoms without hiding severe minority findings; votes cannot dismiss an observed defect. Keep unresolved conflicting observations visible.
 
-## Communicate the result
+Record the tested revision and capture conditions. Before/after screenshots need comparable route, viewport, role, fixture and state. Keep visual proof separate from exercised interaction/focus/recovery results. Review does not authorize redesign or code edits; after authorized fixes, independently recheck affected paths and retain still-valid evidence from unchanged ones.
 
-Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
+## Result and verification
+
+Return the scoped assessment, prioritized findings, inspected/uninspected coverage and exact blockers at the requested audience/depth and project format. Retain the returned assessment with reviewer/session identity, evaluated artifact/revision, findings and coverage. An attempted delegation, empty wait or the author's self-check cannot establish independent review.
+
+For authorized PR work, include useful redacted findings, captures, interaction observations and relevant regression outcomes through verified accessible links or inline evidence. Label local-only proof, stale captures and unavailable checks. Refresh affected evidence after changes; required human approval remains separate.
+
+## Next steps
+
+Use `design-interface` for an agreed design revision, `diagnose-issue` for an unclear runtime cause, `implement-change` for selected authorized fixes, or `verify-change` for missing acceptance proof. Use `test-usability` when the unresolved question needs actual participant behavior. A ready candidate can proceed to `ship-change` only when delivery is authorized.
+
+Pass the candidate, inspected states, findings and exact prerequisite. Check availability or describe the plain action. A review-only request ends with the assessment; continue only ready work already included in the user's authority.

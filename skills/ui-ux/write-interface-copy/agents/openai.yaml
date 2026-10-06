@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write interface copy"
+  short_description: "Write interface strings grounded in actual behavior"
+  default_prompt: "Use $write-interface-copy to write the labels and state messages for this flow, preserving its terminology and behavior constraints."
