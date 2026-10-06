@@ -23,7 +23,7 @@ Select one task or the agreed ready batch. Shared contracts and migrations prece
 
 For uncertain business behavior, stop the dependent work and resolve the specific missing decision. For technical uncertainty, inspect or run a bounded experiment. Do not replace the user's product choices with implementation preferences.
 
-Load [the change-risk playbook](references/change-risks.playbook.md) for a task batch or resumed work, or when a refactor, migration, shared UI, webhook, or stateful boundary makes those checks relevant.
+Load [the change-risk playbook](references/change-risks.playbook.md) for a task batch or resumed work, or when module ownership, collection processing, queries, concurrency, error handling, a refactor, migration, shared UI, webhook, or stateful boundary makes those checks relevant.
 
 For AI or agent behavior, implement the accepted data/tool permissions in trusted code, validate outputs at use, bound retries and spend, and preserve cancellation and recovery. Exercise required approval/evaluation gates on the actual action path; a prompt or declared workflow node is not enforcement. Retain relevant model, prompt, tool and evaluation versions with the result.
 
@@ -40,6 +40,8 @@ Before accepting the result, have a separate agent in fresh context challenge it
 Choose observable evidence from the acceptance criteria before changing behavior, so a useful baseline can be preserved. Use screenshots for visible states, interaction traces for user flows, comparable measurements for performance/data claims, or focused check output for code and document changes. Record the relevant input, environment, baseline, and tested revision; a build alone cannot demonstrate a repaired behavior.
 
 Use the smallest relevant reproduction, regression test, request, build, browser path, or artifact check. There is no required test-first order. Cover meaningful failures and impacted consumers; format only touched files and use the repository's documented scoped commands.
+
+Match test boundaries to the claim: unit checks for isolated rules; integration checks for real data/framework/service boundaries; contract checks for supported consumers; viable end-to-end checks for critical journeys. Tie acceptance to the requested observable outcome and include relevant rejection/regression cases. Reuse the existing harness and valid checks; mocked I/O, a build or a test count cannot establish an unexercised boundary. Isolate fixtures and wait for operation-specific completion before cleanup. State unavailable required proof explicitly instead of inventing a passing layer.
 
 Inspect command exit status and output. Before completing the task, compare the current authoritative criteria and dependency outputs with those used at intake. Reconcile changed scope before claiming completion, refresh affected evidence, and inspect the final diff against the accepted criteria and observed behavior. Resolve failures caused by the change and rerun affected checks. Record unavailable checks and pre-existing blockers without claiming completion for them.
 

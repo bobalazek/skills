@@ -42,6 +42,8 @@ Compare available before/after measurements under equivalent input, environment,
 
 For failure handling, check timeout/cancellation, bounded retries, backpressure, resource cleanup, stale state/cache behavior, and recovery where the flow needs them. Do not infer reliability from a single happy-path run or add distributed-system machinery to a local operation without cause.
 
+Challenge concurrency and transaction claims. Input-driven fan-out needs a bound compatible with pool/service capacity; independent reads may still need a consistent snapshot. A driver may serialize or reject concurrent work in one transaction. Check what the runtime actually does with sibling tasks after failure or cancellation, and whether completed effects remain. Trace atomic groups to the actual transaction context, isolation/constraints and retry boundary. Exercise a partial failure or concurrent update where material; external effects need their own recovery rather than an assumed database rollback.
+
 ## Architecture, maintainability, and duplication
 
 Check whether state and domain rules have a clear owner, imports follow accepted boundaries, and the change belongs in the feature/package it modifies. Trace public interfaces and affected callers before proposing another layer. Identify concrete coupling, circular dependencies, hidden side effects, or change hazards instead of enforcing a preferred architecture.
@@ -49,6 +51,8 @@ Check whether state and domain rules have a clear owner, imports follow accepted
 Search for existing behavior before accepting a new helper, dependency, configuration switch, or abstraction. Compare duplicated validation, transformations, and business rules by meaning and ownership. Confirm that apparent duplicates are not intentional variants, generated output, or required framework structure. A consolidation finding should name the diverging behavior or maintenance cost, the simpler existing owner, and a preservation check.
 
 Evaluate readability, error handling, naming, test seams, and unnecessary indirection against the real task and established conventions. File length, nesting, or clone-tool thresholds can point to an area to inspect; they do not establish a defect on their own. Prefer the smallest correction that addresses the root cause across affected callers.
+
+For collection/transformation changes, check lookup/grouping semantics, duplicate keys, ordering, key identity, memory and shared nested references. Maps, sets and shallow copies are tools with tradeoffs, not mandatory rewrites. Guard clauses must retain authorization, existence privacy and cleanup; mutable preconditions need protection at the write. Catch-and-log must not report success for a failed required operation. Before adding a dependency, check suitable native or already-installed support and target compatibility; dependency upgrades need the scoped compatibility evidence required by the project.
 
 ## Design and convention consistency
 
@@ -60,7 +64,15 @@ Keep mechanical lint/format feedback in the existing tool when it covers the iss
 
 ## Verification and delivery evidence
 
+Assess reversibility at the relevant stages: before exposure, after new writes or external effects, and after destructive cleanup. State the credible worst supported failure and its affected population, including shared consumers. Keep severity, likelihood and reversibility distinct: an easy revert does not undo an exposure that already happened.
+
+Check the proposed recovery operation and its prerequisites: deployable old artifact, compatible readers/writers, retained data, restore/replay coverage, available authority and an owner. Reverting a commit, switching a flag, compensating an external action and restoring data have different effects. A UI-only change can be straightforward to revert, but a UI action that sends money or deletes data leaves consequences after the component is reverted.
+
+Classify recovery as demonstrated reversible, conditional on named limits, irreversible for specified effects, or unverified. Record which observation or rehearsal supports the claim and when the safe return window closes. A migration may become irreversible only when old data is dropped; a backup may miss subsequent writes or take longer to restore than the accepted outage window. Do not demand disruptive recovery experiments on a live system. Missing material recovery proof blocks the affected readiness claim.
+
 Confirm the supplied commands exercised material changed scenarios and relevant rejection/regression cases on the candidate revision. Inspect proof rather than relying on filenames, test counts, or green CI. Reuse sound checks; run a focused counterexample when useful and authorized. A test that reproduces the implementation can miss a wrong requirement or an untested entry point.
+
+Check whether the chosen unit, integration, contract and viable end-to-end boundaries actually support acceptance. Pure mocked tests cannot establish a real query, transaction or middleware path; a broad end-to-end test may miss an important domain edge case. Acceptance criteria can reuse these layers without duplicate suites. Inspect assertions, fixtures, isolation, asynchronous readiness, failed attempts and disclosed provider substitutions. Ask for missing proof of a material behavior, not every test type for every edit; test-first order and a coverage percentage are not acceptance criteria unless explicitly required by the project.
 
 Check rollout/recovery needs, configuration/setup changes, logging or monitoring, and relevant documentation for the affected surface. Inspect command definitions and environment assumptions before trusting operational instructions. Required missing proof is a readiness gap; do not relabel it as a proven runtime defect.
 

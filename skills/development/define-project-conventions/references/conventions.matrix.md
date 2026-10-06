@@ -17,6 +17,8 @@ For each relevant topic, distinguish:
 
 Track enforcement separately: a documented requirement can lack an automated check, and a linter setting can enforce only part of a convention. Code frequency, a memory entry, or a tool default does not establish acceptance. Do not silently weaken an accepted rule because legacy code violates it.
 
+Accepted project and surface-specific rules govern implementation choices where they remain compatible with required behavior and supported platforms. In an inherited codebase, compare maintained sibling features, tests, and recent decisions before inferring an undocumented convention. Label inconsistent legacy patterns as observations; neither the nearest file nor the most common pattern automatically sets policy. Expose a conflict or needed exception instead of silently replacing a local rule with the preferences below.
+
 Keep the rule in its existing authoritative location. Add a new document only for substantial missing guidance with a clear owner and audience. Agent instructions and indexes should link to it. A rule record needs its scope, status/source, rationale, preferred local example, valid exceptions, enforcement command or review check, and adoption approach. Avoid repeating fields that are already clear from the document.
 
 ## Choose the relevant topics
@@ -26,8 +28,10 @@ Keep the rule in its existing authoritative location. Add a new document only fo
 | Repository and package structure | Applications/libraries, feature or layer ownership, dependency direction, package exports, test/docs/assets locations | Workspace manifests, imports, representative additions, build boundaries |
 | Files and symbols | Names for files, directories, public modules, classes, functions, variables, types, and generated artifacts | Maintained examples, resolver/tool rules, public consumers |
 | Types and validation | Valid states, null/error handling, external input validation, serialization | Compiler/schema settings and boundary scenarios |
+| Code and dependencies | Reuse boundaries, collection operations, mutation ownership, control flow, error propagation, dependency additions/updates | Current callers, runtime behavior, supported APIs, manifests/lockfiles, focused checks |
 | Data model | Identity, relationships, field meaning, constraints, state transitions, ownership, lifecycle | Schemas, readers/writers, invariant and migration checks |
-| APIs and integrations | Contract shape, errors, permissions, retries, idempotency, compatibility | Requests/events, consumers, failure cases |
+| APIs and integrations | Resources/methods, response/error contracts, headers, permissions, retries, idempotency, pagination, compatibility | Requests/events, middleware, consumers, failure cases |
+| Queries and storage | Database filtering and scope, relation loading, measured index choices, partitioning or sharding when justified | Generated queries, execution plans, workload and migration evidence |
 | UI | Component ownership, state, routes, tokens, supported interaction and accessibility patterns | Existing components, rendered examples and behavior checks |
 | Quality and delivery | Applicable tests, formatting, lint, build, review/release rules, exceptions | Commands actually present, CI and repository policy |
 | Documentation and knowledge | Canonical rules, decisions, facts, lessons, memory indexes, update triggers | Resolved links and a representative task walkthrough |
@@ -44,6 +48,27 @@ Make common placement decisions explicit using the existing project shape:
 - Package naming and scope, ownership of manifests, shared configuration, and version/release boundaries when the repository has multiple packages. Do not introduce a monorepo policy for a single package.
 
 Use a small annotated example from the repository. A copied full tree ages quickly; show the boundary and decision the example is meant to teach.
+
+For a feature addition, identify its existing owning module and the nearest maintained equivalent before choosing paths. Keep feature-local behavior with its owner according to the repository's feature or layer structure; extract shared code when current consumers need the same contract. Similar-looking fragments with different domain rules can remain separate. A change in one consumer should not require flags or dependencies that only another consumer understands.
+
+## Code and dependency choices
+
+Use these prompts for recurring decisions, then document only relevant adopted rules and exceptions. Preserve equivalent local styles; brevity or a favored language feature alone does not justify churn.
+
+| Choice | Guidance and evidence |
+| --- | --- |
+| Reuse before adding | Inspect existing helpers/components and their callers, then language, standard-library, platform, and already-installed facilities. Reuse a matching contract; do not contort a near-match or create a general abstraction for hypothetical callers. A small local implementation can be clearer than a new dependency. |
+| Collection lookup | For material repeated key lookup or membership work, consider a keyed collection or set instead of rescanning a sequence. Account for construction and memory cost; one lookup or a small collection may need only a scan. Define duplicate-key, missing-value, equality, and ordering behavior before replacing it. |
+| Grouping and joins | Group once when multiple consumers need the same groups. Use a supported native or existing grouping operation, or a clear local loop. Choose one-to-one lookup versus one-to-many grouping deliberately; deduplication or map insertion must not silently discard meaningful duplicates. Fetching related data first still requires scope and missing-record handling. |
+| Transformations | Preserve caller-owned inputs and shared state when the contract expects a new result. Allocate or copy only the parts that change; a new outer collection/object can still share nested objects. Mutation of a fresh local accumulator can be appropriate. Do not deep-clone everything or impose immutability on an API whose accepted contract is explicitly mutable. |
+| Control flow | Guard clauses or early returns can make rejection paths and the successful path clearer. Check relevant input and permissions before avoidable work or effects, while preserving validation/error-order and information-disclosure requirements. Ensure every exit releases resources and completes required cleanup; avoid style-only rewrites. |
+| Errors | Preserve the established exception or result-value contract. Catch where the caller can recover, translate at a boundary, or add useful context; retain the cause and distinguish absent data from a failed read. Logging alone does not turn a failed required operation into success. Explicit best-effort behavior needs a defined consequence and observable failure, without duplicate logs or sensitive payloads. |
+
+Check the selected language's key equality, hashing, ordering, ownership and concurrency rules before adopting a collection pattern. Do not assume object identity, value equality or constant-time lookup across implementations. Grouping preserves multiple values per key; a single-value lookup can discard them. Record concrete APIs and examples in the project's language-specific conventions only when relevant.
+
+Dependency conventions should name the configured package manager, manifest/lockfile ownership, and supported runtime targets. Before adding a package, establish the missing capability and check its actual API, maintenance/support, license, transitive footprint, and runtime or browser cost. Existing installation does not make a dependency suitable for every layer.
+
+For updates, identify the reason and exact candidate using current official release notes, migration guidance, and relevant advisories. Check runtime/peer constraints and packages that must move together. Follow the project's manager and update policy, inspect manifest and lockfile changes, and verify the affected behavior plus relevant build/type/test checks. Keep unrelated upgrades separate unless needed for compatibility. A successful install or permissive version range alone does not prove compatibility; record unresolved gaps and the recovery route.
 
 ## Naming by language and boundary
 
@@ -65,6 +90,6 @@ Prefer names that carry domain meaning and distinguish values that would otherwi
 
 ## Check usability and adoption
 
-Walk representative additions through the proposed rules: place a feature/file, name a function and domain value, and, where applicable, add a model/column or public field. Can a contributor find the owning rule, an example, exceptions, and a check without reconstructing the whole repository?
+Walk representative additions through the proposed rules: place a feature/file, name a function and domain value, and, where applicable, add a model/column or public field. Exercise a relevant collection edge case, failed operation, or dependency compatibility choice when adopting those rules. Can a contributor find the owning rule, an example, exceptions, and a check without reconstructing the whole repository?
 
 Run the existing scoped checks that establish the rules being claimed. Check that examples match actual APIs and configuration. Mark rules checked by human review honestly; do not add an enforcement claim because CI is green. For legacy inconsistencies, document whether the rule applies to new code, touched code, or a separately approved migration. Keep mass renaming and reformatting outside convention authoring unless requested.

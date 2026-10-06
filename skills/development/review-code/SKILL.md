@@ -15,6 +15,8 @@ For new code, check the requested behavior and foundation assumptions. For an in
 
 For changes, load [change review](references/change-review.checklist.md). For broader codebase work, load [codebase review](references/codebase-review.checklist.md). Use the requested scope rather than loading both by habit.
 
+When the scope touches HTTP APIs, queries, schemas or storage scaling, load [API and data review](references/api-data-review.checklist.md). Apply it to the changed feature or selected data layer, including its real consumers and alternate writers.
+
 ## Inspect relevant risks
 
 Trace changed behavior through callers, contracts, data/state, and failure paths. Select relevant correctness, compatibility, security/privacy, performance/reliability, architecture/maintainability, design/convention consistency, duplication, and verification checks from the loaded checklist. Prioritize auth and tenancy, money, sensitive records, destructive operations, migrations, and retry/concurrency paths when present; trace their affected flow end to end. Evaluate accepted local standards separately from observed patterns and subjective preferences.
@@ -22,6 +24,8 @@ Trace changed behavior through callers, contracts, data/state, and failure paths
 Check for an existing implementation of newly introduced behavior and for duplicated business rules with diverging fixes, validation, or ownership. Compare callers and intentional variants before recommending consolidation. A useful finding identifies the conflicting responsibility, concrete cost or defect, proposed simpler owner, and preservation check; similar syntax or a clone percentage alone is insufficient. For feature or data-layer review, include the relevant schema/query/migration and consumer boundaries without implying a live database audit.
 
 Inspect the supplied verification evidence against the material acceptance criteria. Check the tested revision, relevant environment/state, and whether before/after comparisons use comparable conditions. Open useful artifacts and check what they actually demonstrate; green CI or a screenshot does not establish unrelated behavior. Missing required proof is a readiness gap, not an invented code defect. Run a scoped check when authorized and useful; reuse sound evidence rather than repeat it by default.
+
+Evaluate the credible worst failure and reversibility separately from likelihood and severity. Identify the affected users, data and external effects, the detection signal, the recovery conditions and the proof behind them. A code revert may leave writes, published contracts or external actions intact. Carry material limits and recovery gaps into the PR or review verdict; do not label a change reversible merely because it changes a component or includes a down migration.
 
 Try to disprove material behavior claims. Choose a plausible counterexample within supported inputs and conditions, then trace the actual path or run a safe focused check. For example, a successful sequential retry does not prove that concurrent retries cannot duplicate a write. Check the intended result as well as the failure; do not invent requirements to produce findings.
 

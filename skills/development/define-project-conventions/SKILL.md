@@ -15,7 +15,16 @@ Inspect actual versions and current official guidance when a framework-specific 
 
 ## Define useful rules
 
-Use [the convention matrix](references/conventions.matrix.md) for authority, folder/file/package structure, language-specific naming, and the relevant rule topics. Load [web and typed-code guidance](references/web-conventions.checklist.md) for those stacks, or [data and integration guidance](references/data-contracts.checklist.md) for models, tables/columns, invariants, migrations, and public contracts. These are decision prompts; established project rules take precedence.
+Use [the convention matrix](references/conventions.matrix.md) for authority, folder/file/package structure, language-specific naming, and the relevant rule topics. Load only references needed by the selected surface:
+
+| Condition | Reference |
+| --- | --- |
+| Typed code, component frameworks, or rendered websites | [Web and typed-code conventions](references/web-conventions.checklist.md) |
+| Domain models, stored schemas, invariants, migrations, or integration lifecycle | [Data model and schema conventions](references/data-contracts.checklist.md) |
+| HTTP endpoints, REST CRUD, API consumers, or request/response policy | [HTTP and API conventions](references/http-api.checklist.md) |
+| Repeated query patterns, index policy, measured database performance, or storage growth | [Query and storage conventions](references/query-storage.checklist.md) |
+
+These are decision prompts. Preserve accepted project choices within supported protocol and platform behavior; expose conflicts and security defects instead of promoting them to conventions. In an existing system, trace one representative request or job through authorization, domain behavior, queries, and serialization, then inspect sibling callers and exceptions. For a new feature, state which rules apply at each boundary and where a proposed exception needs a decision.
 
 For each rule, record its scope and accepted/observed/proposed status, source, preferred pattern, a short local example, exceptions, and how it is checked. Resolve contradictions explicitly rather than silently promoting frequent code or stale memory to policy. Avoid arbitrary line limits, a layer per noun, or prescriptive naming changes without a maintenance benefit.
 

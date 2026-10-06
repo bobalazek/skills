@@ -10,6 +10,8 @@ Identify the independent evaluator and evaluated candidate. Without a separate r
 
 ## Findings and priority
 
+For a PR or consequential change, include a concise risk and reversibility statement: credible worst failure, affected users/data/consumers, detection signal, recovery action and owner where known, conditions or point of irreversible effects, and the proof or remaining gap. Separate demonstrated reversibility from a proposal or untested assumption. A minor stateless edit can use one sentence; material data or external effects need their actual limits. Link the existing recovery plan rather than creating another report.
+
 For each confirmed finding, give priority, concise problem, affected scenario/preconditions, file/symbol location, evidence, consequence, and the smallest useful correction or investigation. Cite the requirement or accepted convention when the finding depends on it. Order findings by demonstrated impact and credible likelihood, and deduplicate root causes across symptoms.
 
 Use the repository's severity scheme when established. Otherwise use plain descriptions that explain urgency and the next-step consequence:
