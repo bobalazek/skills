@@ -10,7 +10,7 @@ Identify the independent evaluator and evaluated candidate. Without a separate r
 
 ## Findings and priority
 
-For a PR or consequential change, include a concise risk and reversibility statement: credible worst failure, affected users/data/consumers, detection signal, recovery action and owner where known, conditions or point of irreversible effects, and the proof or remaining gap. Separate demonstrated reversibility from a proposal or untested assumption. A minor stateless edit can use one sentence; material data or external effects need their actual limits. Link the existing recovery plan rather than creating another report.
+For a PR or consequential change, include a concise risk and reversibility statement: credible worst failure, blast radius across affected users/data/consumers, containment and isolation assumptions, detection signal, recovery action and owner where known, conditions or point of irreversible effects, and the proof or remaining gap. Use a short before/after flow to explain a consequential mechanism: entry point, changed decision, state or external effect, and user-visible result. Separate demonstrated reversibility from a proposal or untested assumption. A minor stateless edit can use one sentence; material data or external effects need their actual limits. Link the existing recovery plan rather than creating another report.
 
 For each confirmed finding, give priority, concise problem, affected scenario/preconditions, file/symbol location, evidence, consequence, and the smallest useful correction or investigation. Cite the requirement or accepted convention when the finding depends on it. Order findings by demonstrated impact and credible likelihood, and deduplicate root causes across symptoms.
 
@@ -37,7 +37,7 @@ Map material criteria and risks to observed evidence. A compact table is useful 
 
 Include relevant high-risk paths, security, performance, architecture/maintainability, behavior, design/conventions, and duplication where they apply. Do not add empty category rows to imply a comprehensive audit. Explain material exclusions and uninspected areas; distinguish not applicable from not checked.
 
-For parallel or staged review, identify each reviewer's bounded question and tested revision, coverage still pending, and the combined assessment of interactions. Record which branch results the verdict depends on. After fixes or integration, distinguish refreshed proof from retained evidence and explain why retained evidence still applies.
+For parallel or staged review, identify each reviewer's bounded question and tested revision, coverage still pending, and the combined assessment of interactions. Record the reviewer/session and host-reported model if exposed; otherwise mark the model unknown. State whether any required cross-model review was fulfilled. Record which branch results the verdict depends on. After fixes or integration, distinguish refreshed proof from retained evidence and explain why retained evidence still applies.
 
 Open useful screenshot, recording, measurement, or test artifacts and state what they demonstrate. Before/after comparisons need comparable inputs, environment, and cache/state conditions. Identify stale evidence, missing baselines, and local-only artifacts. Local paths are not PR attachments, green CI does not prove unrelated behavior, and no findings in the inspected scope does not establish whole-system correctness.
 

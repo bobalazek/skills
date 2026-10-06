@@ -15,6 +15,8 @@ Perform this verification in a separate agent with fresh context from the work's
 
 Read the request, acceptance criteria, local checks, change diff and existing evidence. Identify the baseline and candidate revision, including uncommitted changes. Tie each material criterion to an observable result.
 
+Inspect the project's actual command definitions and CI rules for required lint/format checks, type checking, static analysis, builds and tests. Run missing applicable checks and reuse valid results for the candidate. Record unavailable checks and justified exclusions; a skipped check is not a pass. Use check-only modes where available so verification does not silently rewrite the candidate. Automated checks complement behavior evidence and source review of architecture and conventions.
+
 Choose the smallest check that can establish the claim. A screenshot can show layout; keyboard navigation needs interaction evidence. A build establishes buildability; it cannot establish a repaired workflow. For a spec or documentation change, inspect scenarios, consistency, links, and rendered diagrams where relevant. No screenshot or benchmark is required for a change it cannot evaluate.
 
 Before an authorized edit, preserve the affected baseline when available. For an existing fix, use an isolated baseline checkout or recorded evidence only when it is safe and useful. Do not overwrite the user's work or rerun a destructive failure to manufacture a comparison. New behavior can be checked against an expected result without inventing a historical baseline.

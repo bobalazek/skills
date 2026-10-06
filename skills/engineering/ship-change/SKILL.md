@@ -15,7 +15,7 @@ Use `verify-change` for missing acceptance proof, `review-code` for an outstandi
 
 Read the consuming repository's delivery rules and current state. Identify the exact revision/diff, accepted requirements, relevant verification, review status, release notes/versioning needs, target environment, and recovery procedure. Reuse valid evidence and recheck what changed. Preserve unrelated local work.
 
-Load the relevant PR/merge, release/package, deployment or handover section of [delivery checks](references/delivery.checklist.md) for the selected target. Missing required verification blocks that delivery claim. Existing authorization remains valid; ask only at a consequential action outside it or when a real decision/input is missing.
+Load the readiness checklist and relevant PR/merge, release/package, deployment or handover section of [delivery checks](references/delivery.checklist.md) for the selected target. Missing required verification blocks that delivery claim. Existing authorization remains valid; ask only at a consequential action outside it or when a real decision/input is missing.
 
 For a release, resolve the project's version policy and consumer contracts, release channel, exact source/artifact identity, installation path and recovery limits. Preparation, a draft release, a pushed tag and publication have different effects; identify the authorized stopping point before writing to the remote target. Follow the release section of the delivery checks across package registries, source collections and binary distributions.
 

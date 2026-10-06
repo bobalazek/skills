@@ -17,6 +17,8 @@ Identify the PR/diff, base and head revision, supplied description, linked requi
 
 Group changes by behavior and responsibility rather than listing every file. Show a concrete before/after example where useful. Explain data/contract changes, compatibility or migration concerns, and which supported surfaces are affected. Keep internal implementation detail only where it helps a reviewer understand the consequence.
 
+Give a short before/after control-flow explanation when the mechanism matters: where the user or system enters, the changed condition or decision, calls and state changes, then the visible result or failure. Use an arrow sequence or small diagram only when clearer than prose. For a tiny change, an exact relevant diff excerpt can show it directly; do not paste a large patch or let the snippet replace the consequence. Identify shared callers beyond the edited file when they inherit the behavior.
+
 Follow the requested audience, tone and depth, then the project's PR template and writing conventions. Default to a short problem/result explanation plus relevant verification; expand for a requested walkthrough or a consequential mechanism a reviewer needs to assess. Include why only when established by requirements or recorded decisions. Link detailed design/ADRs rather than copying them. Explain unfamiliar terms, keep exact identifiers where they aid inspection, and omit conversational history and unsupported praise.
 
 ### Evidence
@@ -29,19 +31,21 @@ When asked to write a PR description, lead with the problem and resulting behavi
 
 Include risk and reversibility at the depth the change needs: the credible worst failure, affected users/data/consumers, how it would be detected, and the recovery action with its conditions and evidence. Distinguish reverting code from undoing accepted writes or external effects. State whether recovery is demonstrated, conditional, irreversible for some effects, or unverified; name the point after which the old behavior or data cannot be restored. A short sentence can cover a stateless presentation change, while a destructive migration needs its data-loss limits, recovery owner and observed rehearsal or explicit proof gap. Do not infer low risk from a small diff or reversibility from the file type, a feature flag, a down migration, or the presence of a backup.
 
+State the blast radius in concrete terms: affected roles or tenants, entry points, shared components/services and data or external recipients as relevant. Explain what contains the impact and what evidence supports that boundary; unknown reach stays unknown. When concurrency is material, summarize the effective transaction isolation or consistency guarantee and its failure/locking/retry implications from the reviewed evidence. Keep that separate from tenant isolation and reviewer independence. A claim that a flag, transaction or deployment isolates effects needs proof of the actual scope.
+
 ### Description shape
 
 When no project template applies, use the fields below, collapsing them into a short paragraph for a small change. Fill them from evidence; omit inapplicable detail rather than inventing it.
 
 ```markdown
 ## Change
-[Problem, established purpose and resulting behavior; a concrete before/after example when useful.]
+[Problem, established purpose and resulting behavior; affected user/system entry point and short before/after flow or tiny diff when useful.]
 
 ## Evidence
 [Tested revision, observed checks/results and accessible artifacts; independent findings and exact gaps.]
 
 ## Risk and recovery
-[Credible failure, affected surface, detection and recovery conditions; demonstrated or unverified limits.]
+[Credible failure, blast radius and containment/isolation assumptions, detection and recovery conditions; demonstrated or unverified limits.]
 ```
 
 ## Verify and return

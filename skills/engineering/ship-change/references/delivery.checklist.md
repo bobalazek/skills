@@ -2,11 +2,23 @@
 
 Before merging, publishing, or deploying, resolve the current candidate and compare it with the verified source revision, integration base, artifact identity, and material target configuration as applicable. Reconcile affected evidence if any changed. Use the platform's expected-head/version controls or immutable artifact reference where available. A preflight read alone cannot prevent a moving branch or tag from changing during the write. If atomic binding is unavailable, follow the project's coordination and identity checks, state that limitation, and stop if a required integrity guarantee cannot be met; do not invent a universal requirement to change repository settings.
 
+## Readiness checklist
+
+Use the existing PR or release record to account for these gates at the depth required by the candidate and project. Reuse valid evidence; do not invent new suites or rerun unaffected checks merely to fill the list.
+
+- Required lint/format checks, type checks, static analysis and builds have actual outcomes from the project's commands and supported environment.
+- Functional acceptance has relevant unit, integration, contract or end-to-end evidence, including material failure paths. Select layers by the claim; not every change needs every layer.
+- Source review covers applicable architecture/development rules, consistency with existing code, reuse/duplication, security/privacy and performance risks. Tool success alone does not establish this review.
+- Independent assessments identify the candidate, reviewer/session, findings and coverage. Fulfill any required cross-model review and human approval separately; record unavailable requirements.
+- The requested target's compatibility, blast radius, isolation assumptions, recovery and artifact/rollout checks below have adequate proof. PR descriptions and release notes agree with the candidate and that evidence.
+
+Distinguish passed, failed, not checked and not applicable with a reason for material exclusions. Missing or failed required checks block delivery. A notes-only draft may report those gaps without claiming readiness or publishing.
+
 ## Pull request or merge
 
-Confirm intended diff, correct base, repository-required checks, review status, and requested stop point. Explain problem/result and actual validation. If merging is authorized, wait for required checks and verify the platform records the merge; reconcile the local checkout according to repository rules.
+Confirm intended diff, correct base, repository-required checks, review status, and requested stop point. Explain problem/result and actual validation. Show the affected user/system entry point and short before/after control flow where useful; a tiny exact diff can explain a small edit. Identify shared consumers beyond the changed files. If merging is authorized, wait for required checks and verify the platform records the merge; reconcile the local checkout according to repository rules.
 
-Include a risk and reversibility summary when opening the PR. Name the credible worst failure, affected consumers/data, detection signal and recovery action with its conditions, owner where established and actual proof. A small stateless change can use one sentence. For data or external effects, separate code/traffic rollback from state recovery and record the point after which the old state cannot be restored, any accepted loss/interruption bounds and missing evidence. Recheck these conditions at delivery: new writes, migration stages or expired backups can invalidate a previously safe return path. Required recovery gaps block readiness; a reversible edit is not automatically low impact.
+Include a risk and reversibility summary when opening the PR. Name the credible worst failure, blast radius across affected consumers/data, what contains propagation, detection signal and recovery action with its conditions, owner where established and actual proof. Include material isolation or consistency assumptions and unverified reach. A small stateless change can use one sentence. For data or external effects, separate code/traffic rollback from state recovery and record the point after which the old state cannot be restored, any accepted loss/interruption bounds and missing evidence. Recheck these conditions at delivery: new writes, migration stages or expired backups can invalidate a previously safe return path. Required recovery gaps block readiness; a reversible edit is not automatically low impact.
 
 Include evidence when opening the PR: tested revision/environment, material criteria and observed results, useful before/after screenshots or video, test outcomes, and independent review findings with their resolution or remaining gaps. Name the separate evaluator and reviewed candidate; author checks alone do not establish independent review. Keep required human approval separate from the agent verdict. Link actual CI runs or redacted artifacts accessible to reviewers; inspect uploaded results and note meaningful access/expiry limits. Label a missing baseline or local-only artifact explicitly. Update affected evidence after follow-up fixes; retain useful unaffected results.
 
