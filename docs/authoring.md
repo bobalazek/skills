@@ -1,4 +1,6 @@
-# Authoring and maintaining skills
+# Maintaining the collection
+
+This guide covers creating, changing, checking, and releasing skills. To install and use them, start with the [README](../README.md).
 
 A skill earns its place through a distinct useful output, a decision process that improves it, and an observable completion check. Domains and categories help discovery; different nouns or phases alone do not justify duplicate procedures.
 
@@ -67,6 +69,40 @@ Written packages begin as drafts. Experimental status requires meaningful behavi
 
 Keep names stable when categories move. A breaking change to inputs, outputs, side effects, or required authority needs a migration note. For a published rename or retirement, state the replacement or reason, affected users/contracts, migration steps, announcement date, and intended removal version/date. Preserve a working transition route for the stated window when practical; removal cannot revoke installed copies.
 
-Unreleased drafts can be consolidated without pretending a public compatibility promise existed. Remove duplicate procedures rather than maintain two active owners indefinitely. Choose a repository license and verify/document installation before a distributable release; add release notes when there is a real release or migration to record.
+Unreleased drafts can be consolidated without pretending a public compatibility promise existed. Remove duplicate procedures rather than maintain two active owners indefinitely. Follow the release procedure below before distributing a version.
 
 Current draft renames: `question-plan` → `challenge-proposal`, `research-question` → `research-topic`, `map-project-decisions` → `track-project-decisions`, and `find-refactors` → `find-improvements`. Update saved invocations or local paths to the new names. Refactor discovery remains part of `find-improvements`; the broader scope also covers recurring defects, checks, documentation, dependencies, and performance leads.
+
+## Releasing the collection
+
+Use one repository-wide version and GitHub Release for a reviewed snapshot of the collection. Keep `package.json` private: it runs maintainer checks, and this procedure distributes skill folders through Git. There is no npm publication step or per-skill version machinery.
+
+The consumer contract includes skill names/install paths, required inputs and tools, output formats, authority and side effects, and bundled resources or helper interfaces. Version changes against those contracts. After `1.0.0`, use major versions for incompatible changes, minor versions for compatible additions or deprecations, and patches for compatible fixes. During `0.x`, this collection uses minor versions for additions or breaking changes and patches for compatible fixes; document every break. [SemVer](https://semver.org/spec/v2.0.0.html) treats `0.x` as initial development and prerelease suffixes as unstable.
+
+The first candidate should be an experimental prerelease such as `v0.1.0-alpha.1`, after meaningful trials; this is a proposed version, not an existing release. Use subsequent prerelease numbers for corrections while evaluating that candidate. Reserve stable `1.0.0` for evidence supporting the stated contracts and supported environments. A GitHub draft is unpublished release metadata; a published prerelease is available to users and still needs the publication gates below. A draft does not hide an already-pushed tag in a public repository.
+
+### Before public distribution
+
+- Include the [license](../LICENSE) and any required third-party notices with distributed copies, including separately packaged skills. Verify rights to distribute included resources.
+- Review the material that will become visible: tracked files and reachable Git history, commit metadata, issues/PRs and comments, plus Actions logs, artifacts and release assets. Resolve known secrets, private records, and material without distribution rights using the appropriate remediation. Record the scope checked and remaining gaps in the release PR; a scan is evidence only for what it inspected. GitHub documents the [effects of a visibility change](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility), including public Actions history and logs.
+- Verify installation and discovery in each advertised client using the candidate's complete leaf packages. Run representative behavioral trials from Validation above, including resource loading, authority boundaries and failure cases. State tested client/model versions and limitations. Structural checks or a successful copy alone do not establish stable behavior.
+- Confirm explicit authority for the chosen license, visibility change, tag push and release publication. A request to assess or prepare a release authorizes preparation; perform each consequential action only when covered by the user's instruction. Update README status and installation claims as those facts change.
+
+### Prepare and publish a version
+
+1. Prepare the intended changes through a PR against `main`. Draft release notes with the proposed version/channel, useful changes since the previous release, affected skills, breaking changes and migration/deprecation steps, tested environments, known limitations, and install command. For a first release, describe what is actually supported. Generated commit lists can seed the notes; edit them for users. Keep proof and the independent review in the PR, and publish the notes with the release.
+2. Run `bun run check`, `bun test`, and `git diff --check`; complete the relevant install and behavioral checks above. Obtain the required independent review, resolve findings, and wait for the entire required CI run. After the authorized merge, select the full commit SHA on `main`, confirm its CI result, and recheck affected evidence if integration changed the candidate. Use a clean checkout of that exact SHA for final installation checks. Record it in the notes; never let a moving branch select the release implicitly.
+3. Once tag creation is authorized, confirm the version is unused locally and remotely, then create an annotated tag on that reviewed SHA and push only that tag. Use GitHub release immutability where available and protect version tags according to repository policy. Resolve missing authority for those settings separately; do not silently change protections. Replace the example values below before running them, and prepare the reviewed notes file outside the distributed skill folders:
+
+   ```bash
+   release_tag='v0.1.0-alpha.1'
+   release_commit='REPLACE_WITH_REVIEWED_FULL_COMMIT_SHA'
+   release_notes='/absolute/path/to/reviewed-release-notes.md'
+   git tag -a "$release_tag" "$release_commit" -m "$release_tag"
+   git push origin "refs/tags/$release_tag"
+   gh release create "$release_tag" --repo bobalazek/skills --verify-tag --draft --prerelease --latest=false --title "$release_tag" --notes-file "$release_notes"
+   ```
+
+4. Inspect the remote tag's peeled commit (`git ls-remote origin "refs/tags/$release_tag" "refs/tags/$release_tag^{}"`), draft notes, channel and contents against the approved candidate. `--verify-tag` checks existence, not commit identity. Confirm effective tag-update/deletion controls preserve that binding through publication; a preflight read and later immutability alone do not prevent the tag moving between them. If the available controls cannot retain the binding, keep the release in draft and resolve the specific gap. Complete any intended assets while the release is a draft. The source tree is the distribution here; add custom archives only for a demonstrated need. After publication is authorized, publish the reviewed draft with `gh release edit "$release_tag" --repo bobalazek/skills --tag "$release_tag" --verify-tag --draft=false --prerelease --latest=false`. These [create](https://cli.github.com/manual/gh_release_create) and [edit](https://cli.github.com/manual/gh_release_edit) flags keep the experimental release out of Latest. The edit command pairs `--verify-tag` with `--tag` so the existence check runs. For a stable version, create its own version tag and reviewed draft, set `--prerelease=false`, and choose Latest deliberately. [Release immutability](https://docs.github.com/en/code-security/concepts/supply-chain-security/immutable-releases) protects tags and assets only after publication.
+5. Verify the actual release URL, tag-to-commit identity, published status and assets. In a fresh temporary project, run the README installation command using the published tag, compare delivered package contents with the reviewed tree, check discovery, and exercise a representative invocation. For a public release, also verify access without repository credentials. Record the actual result and versions used in the release PR; a failed post-publication check means publication happened but release verification failed.
+6. Leave published version tags and their contents unchanged. Correct a defective release with a new version and migration/recovery notes; while evaluating a candidate, use the next prerelease number. Where authorized, mark a bad release clearly and direct users to a known-good version or replacement. Reinstalling an older skill cannot reverse actions it already performed, and deleting a release cannot recall downloaded copies. Report those limits and verify the replacement through the same procedure.

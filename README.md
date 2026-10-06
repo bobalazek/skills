@@ -8,7 +8,7 @@ Each final result requires an adversarial review by a separate agent in fresh co
 
 ## Install
 
-From your project directory, choose the skills you need:
+The collection is currently private and has no published release, so installation requires repository access. From your project directory, choose the skills you need from the current default branch:
 
 ```bash
 bunx skills@1.7.0 add bobalazek/skills --list
@@ -16,6 +16,17 @@ bunx skills@1.7.0 add bobalazek/skills --skill choose-skill create-tasks verify-
 ```
 
 This installs selected packages into the project, including their supporting files. Inspect the install summary before confirming. Use `--skill '*'` to select the whole collection, or choose a different agent supported by the installer and check discovery in that client. Avoid replacing locally edited skills without comparing those edits first.
+
+For a fixed release, replace `vX.Y.Z` below with an actual published tag. No such release is available yet:
+
+```bash
+release_tag='vX.Y.Z'
+bunx skills@1.7.0 add "https://github.com/bobalazek/skills/tree/$release_tag" --skill choose-skill create-tasks verify-change --agent opencode --copy
+```
+
+The version in `skills@1.7.0` pins the installer; the URL selects this collection's release. The [installer's source parser](https://github.com/vercel-labs/skills/blob/v1.7.0/src/source-parser.ts) accepts the tree reference. A default-branch install can change on the next installation; a release tag identifies the reviewed snapshot under our [release policy](docs/authoring.md#releasing-the-collection).
+
+Copied skills do not update themselves. To update, review changes and migration notes, preserve local edits, then rerun `add` for the selected skills using the desired branch or release tag. Inspect the installed files and verify client discovery again. Keep the selected source/tag with the project's install record; switching to a new release is an explicit update.
 
 Local package installation and discovery were checked with skills CLI 1.7.0 and OpenCode 1.18.31. This verifies package discovery and file delivery; model behavior, other clients, and automatic routing need their own checks. The workflows remain drafts under evaluation.
 
@@ -71,6 +82,12 @@ Two optional Bun helpers support the work itself:
 
 ## Working on the collection
 
-Each package lives at `skills/<domain>/<skill>/SKILL.md` and carries its required resources. Read [authoring and maintenance](docs/authoring.md) for conventions, validation, and deprecation. A skill should not need the whole collection installed or the entire repository loaded.
+Each package lives at `skills/<domain>/<skill>/SKILL.md` and carries its required resources. The [maintainer guide](docs/authoring.md) covers creating and changing skills, validation, deprecation, and [releases](docs/authoring.md#releasing-the-collection). A skill should not need the whole collection installed or the entire repository loaded.
 
 Use Bun 1.3.9 or newer. Run `bun run check` for the collection audit and `bun test` for the audit and helper tests. There are no package dependencies to install. Behavioral trials and client installation checks are separate from this audit.
+
+## License
+
+[MIT](LICENSE). Copyright (c) 2026 Borut Balazek.
+
+Include the root `LICENSE` when copying or redistributing standalone skills. The installer copies skill folders but does not include this file automatically.
