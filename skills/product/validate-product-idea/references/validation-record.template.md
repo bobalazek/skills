@@ -27,7 +27,7 @@ Interviews should explore a recent experience, what happened and why, before ask
 - **Hypothesis and alternative:** what different observations would distinguish them?
 - **Method and audience:** source or participants, selection rationale and expected limitations.
 - **Measure:** observed behavior, unit, eligible denominator, collection conditions and time window.
-- **Decision criteria:** success, failure and inconclusive outcomes, their rationale, and the action each would support. Mark thresholds chosen by the decision owner as choices rather than empirical facts.
+- **Decision criteria:** success, failure and inconclusive outcomes, their rationale, and the action each would support. Cover mixed outcomes such as purchase without use; distinguish unavailable observation or failed delivery from evidence against demand. Mark thresholds chosen by the decision owner as choices rather than empirical facts.
 - **Execution:** owner, bounded effort/cost, needed access and authority, data handling and stopping conditions.
 - **Observed result:** only after execution; evidence locations, actual conditions, deviations and unresolved gaps.
 - **Decision:** proceed with which commitment, revise, stop or investigate; strongest counterevidence and what could change the decision.
