@@ -18,3 +18,7 @@ Check which recommended skills are actually available. Name a missing skill and 
 Before accepting the route, use a separate agent in fresh context to check the request, available inputs, and proposed skill against the map. It should challenge wrong starting points, overlapping ownership, and unnecessary steps without inheriting the author's conversation. If that check is unavailable, label the recommendation unreviewed.
 
 Finish with the selected skill, its expected output, and the material missing input, if any. Continue into that skill only when execution is part of the user's request and the skill is available.
+
+## Communicate the result
+
+Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.

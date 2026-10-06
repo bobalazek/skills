@@ -31,6 +31,10 @@ Rank against the user's goal using demonstrated impact, confidence, dependencies
 
 Finish with the next justified action: `diagnose-issue` for an unresolved failure, `improve-performance` for a measurable bottleneck investigation, `automate-code-checks` for an accepted repeatable guard, `plan-migration` for a transition with compatibility/data constraints, or `implement-change` for a selected bounded refactor. Use `write-spec` when desired behavior needs agreement and `create-tasks` for an accepted larger scope. Tracker writes and repairs follow actual authorization.
 
+## Communicate the result
+
+Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
+
 ## Independent evaluation
 
 Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.

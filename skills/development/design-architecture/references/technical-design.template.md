@@ -2,7 +2,7 @@
 
 ## Scope and constraints
 
-Accepted behavior/spec references, current baseline, preserved contracts, and relevant operating constraints.
+Accepted behavior/spec references, application surfaces, current revision/baseline, preserved contracts, and relevant operating constraints. Record measured versus assumed users/traffic/data volume, service targets, budgets, team/operating capacity, and unresolved questions with units and evidence.
 
 ## Structure
 
@@ -10,11 +10,15 @@ Accepted behavior/spec references, current baseline, preserved contracts, and re
 | --- | --- | --- | --- | --- |
 | Module or service | Concrete responsibility | Inputs, outputs, invariants | Actual callers | Error, recovery, retry, or consistency contract |
 
-Show a small system/data-flow diagram when it clarifies ownership. Walk a representative scenario through the boundaries.
+Separate repository layout from runtime boundaries. Identify source-of-truth data, transaction/consistency rules, external identity and services, and owned contracts. Use the useful C4 levels: context and container views for the system, component detail only where needed. Include sequence/failure and environment-specific deployment views when relevant; render diagrams and walk representative paths.
+
+## Deployment and operation
+
+Existing versus proposed hosting/services, managed/self-hosted responsibilities, environments, access/secrets, capacity limits, backups/restore, release/migration order, observation signals and recovery ownership. Link comparable cost scenarios. For AI behavior, include tool/data authority, orchestration gates, memory lifecycle, evaluation and spend/latency bounds.
 
 ## Decisions
 
-Selected approach, credible alternatives, evidence, trade-offs, assumptions, and revisit conditions. Link durable decisions instead of copying them into multiple documents.
+Selected approach, credible alternatives, evidence, trade-offs, assumptions, status/acceptance source, and revisit conditions. Link durable decisions in the project's decision/ADR location instead of copying them into multiple documents or AGENTS.md.
 
 ## Change and verification
 

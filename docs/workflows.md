@@ -63,6 +63,8 @@ Conventions and agent context apply throughout. UI flows, interface design, shar
 | --- | --- |
 | Greenfield project | Brainstorm → challenge assumptions → relevant research or prototype → requirements/spec → domain/technical design as needed → phases → tasks → starter/foundation → implementation → verification/review → delivery → observation |
 | Inherited project | Onboard → preserve current behavior/data/contracts → select the actual change → define missing conventions/context only where needed → use the ordinary change route |
+| Missing project knowledge | `document-project` → verify code, configuration, relevant history and accepted choices → update canonical docs and useful memory indexes → establish disputed rules or improve agent navigation only where needed |
+| Architecture or AI capability | Establish product/workload and existing infrastructure constraints → `design-architecture` for boundaries, C4, services, costs and conditional AI contracts → prototype unresolved feasibility → plan/implement → exercise actual data/tool/approval boundaries → deliver and observe |
 | Feature in a familiar project | Inspect the affected baseline → gather missing requirements/spec → design/task decomposition only where useful → implement/verify/review/deliver → observe |
 | Bug or regression | Triage if the report is unverified → diagnose using reproduction and available signals → implement the bounded repair → verify affected consumers → review/deliver → consider an automated guard for a recurring cause |
 | Result evaluation | Select checks from acceptance criteria → preserve useful baseline → observe candidate behavior → report results and evidence → include proof in authorized PR/delivery work |
@@ -131,7 +133,9 @@ Recommendations can name another skill, but invocation depends on host support a
 
 ## Artifacts and side effects
 
-Update existing authoritative records. Current behavior, a specification, a decision, a learning, an incident, and a contributor standard have different roles, but they do not require empty folders or a new file every time context moves.
+Update existing authoritative records. Current behavior, a specification, a decision, a learning, an incident, and a contributor standard have different roles, but they do not require empty folders or a new file every time context moves. Use a memory index when it improves retrieval: link records with scope/status and a refresh trigger rather than copying their contents. Keep temporary run state separate; conflicting or stale memory requires evidence before reuse. AGENTS.md points to the applicable project knowledge.
+
+At task or workflow completion, follow the requested audience, tone, depth and project template. Default to a concise result, its purpose, the relevant method, observed verification and exact gaps or next action. A technical walkthrough can be detailed when requested; a PR should let a reviewer understand the changed behavior and evidence quickly. Update durable knowledge in place and link it from the summary. Repeated summaries are not new sources of truth.
 
 Keep task-system integration within the requested destination and authority. Inspect project/state/concurrency rules and existing items before remote writes. Preserve local work, secret values, and private records. Delivery, production changes, destructive operations, and external communication require the actual action's authority; already-granted authority remains valid.
 

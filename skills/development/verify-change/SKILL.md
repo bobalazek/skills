@@ -35,6 +35,10 @@ Compare like with like. Use the same fixture, user role, viewport, workload, and
 
 Use synthetic or approved data. Inspect artifacts for secrets, personal data, internal URLs, and unrelated windows before sharing. Capture only what the claim needs. Verification authority does not imply permission to run production load tests, change live data, or upload private evidence.
 
+## Communicate the result
+
+Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
+
 ## Independent evaluation
 
 Run this verification in a separate agent with fresh context from the work's author. Supply the accepted request, constraints, candidate artifacts, relevant raw sources, and check access without the author's conversation or preferred conclusions. Try counterexamples and inspect observed proof, reconcile findings, and independently recheck affected results after fixes. If you authored the work, delegate this evaluation; if an independent agent is unavailable, report unreviewed and stop before acceptance.

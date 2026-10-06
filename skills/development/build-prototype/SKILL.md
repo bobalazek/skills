@@ -24,3 +24,7 @@ When retaining the experiment, include its editable source or document revision,
 Before declaring the result ready for a decision, require a separate agent in fresh context to try to refute the acceptance result using the raw question/accepted requirements, candidate experiment, and actual evidence, without the author's planning conversation. For an interaction prototype, the reviewer exercises relevant paths and checks which boundaries are simulated. Resolve demonstrated gaps; if independent review is unavailable, report unreviewed and not ready. Add useful screenshots/video, observed results, and relevant regression-test proof to authorized PR work as available, with missing evidence explicit. Independent review does not replace required human approval.
 
 Next: update the existing specification or technical decision, run a specifically justified follow-up experiment, or create implementation work for the accepted approach. Passing a prototype does not authorize integration or deployment.
+
+## Communicate the result
+
+Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.

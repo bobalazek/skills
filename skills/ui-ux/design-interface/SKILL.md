@@ -32,3 +32,7 @@ For a changed rendered surface, preserve useful baseline and result screenshots 
 Before declaring the result ready, require a separate agent in fresh context to challenge the candidate against raw accepted requirements, current component constraints, and actual design/interaction evidence, without the author's planning conversation. The reviewer must distinguish a proposal from exercised behavior and preserve demonstrated defects. If independent review is unavailable, report unreviewed and not ready; resolve blocking findings before handoff. Independent review does not replace required human approval.
 
 Finish with the design/result, key decisions, state/surface coverage, verification, and unresolved product choices. Next: `build-design-system` for repeated shared needs, `implement-change` for a design handoff, or `review-interface` for independent evaluation.
+
+## Communicate the result
+
+Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.

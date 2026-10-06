@@ -2,7 +2,7 @@
 
 Workflows for developing software, making decisions, and designing interfaces. Each skill owns a concrete result and can be used on its own or as a step in a larger process.
 
-The collection contains 35 draft skills across development, productivity, and UI/UX. Each package carries its own templates, references, and optional helpers. Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear.
+The collection contains 36 draft skills across development, productivity, and UI/UX. Each package carries its own templates, references, and optional helpers. Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear.
 
 Each final result requires an adversarial review by a separate agent in fresh context. The reviewer checks accepted requirements and raw proof without the author's conversation. Tests, meaningful before/after evidence, and review findings go into the PR when it is opened; required human approval remains separate. A host without independent agents can produce a draft, but cannot satisfy this collection's acceptance gate.
 
@@ -29,6 +29,7 @@ Without an installer, point a filesystem-capable agent at a skill in this checko
 | Explore a project or feature idea | [brainstorm-ideas](skills/productivity/brainstorm-ideas/SKILL.md) |
 | Challenge a proposed direction | [challenge-proposal](skills/productivity/challenge-proposal/SKILL.md) |
 | Get productive in an inherited codebase | [onboard-codebase](skills/development/onboard-codebase/SKILL.md) |
+| Reconstruct project knowledge, decisions, and indexed memory | [document-project](skills/development/document-project/SKILL.md) |
 | Understand current code or a PR | [explain-codebase](skills/development/explain-codebase/SKILL.md) or [explain-pr](skills/development/explain-pr/SKILL.md) |
 | Define behavior, phases, then tasks | [write-spec](skills/development/write-spec/SKILL.md) → [plan-phases](skills/development/plan-phases/SKILL.md) → [create-tasks](skills/development/create-tasks/SKILL.md) |
 | Choose the stack and technical structure | [design-architecture](skills/development/design-architecture/SKILL.md) |
@@ -46,7 +47,7 @@ Start at the action the request needs. A ready task can go directly to implement
 
 ## Full catalogs
 
-- [Development](docs/domains/development.md): 24 skills covering understanding, planning, implementation, verification, delivery, and maintenance.
+- [Development](docs/domains/development.md): 25 skills covering understanding, project knowledge, planning, architecture, implementation, verification, delivery, and maintenance.
 - [Productivity](docs/domains/productivity.md): 7 skills for routing work, exploring ideas, challenging proposals, researching topics, tracking decisions, improving prompts, and transferring work.
 - [UI/UX](docs/domains/ui-ux.md): 4 skills for flows, interface design, rendered review, and shared design systems.
 

@@ -22,3 +22,7 @@ For PR intent, distinguish the author's stated purpose, behavior demonstrated by
 Finish with decisions, changed assumptions/scope, unanswered questions, and the next check or action. Check that material edge cases and trade-offs have an answer or a named investigation. Agreement clarifies intent; it does not validate demand, feasibility, or other external assumptions without evidence. Do not convert questioning into an unrequested spec, implementation, or mandatory ceremony for a clear task.
 
 Next: `research-topic` or `build-prototype` for an unsupported premise; `write-spec` when the direction has enough evidence to define requirements. Continue ready stages already included in the user's request.
+
+## Communicate the result
+
+Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.

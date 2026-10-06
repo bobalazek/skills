@@ -1,12 +1,13 @@
 # Development
 
-This domain owns software engineering outputs. All 24 entries have draft packages; links open their actual instructions. Use the narrowest result that matches the request.
+This domain owns software engineering outputs. All 25 entries have draft packages; links open their actual instructions. Use the narrowest result that matches the request.
 
 ## Categories and skills
 
 | Category | Subcategory | Skill | Expected result |
 | --- | --- | --- | --- |
 | Understanding | Contributor onboarding | [onboard-codebase](../../skills/development/onboard-codebase/SKILL.md) | Verified setup/check path, current-system map, preservation constraints, and first-change route |
+| Understanding | Durable project knowledge | [document-project](../../skills/development/document-project/SKILL.md) | Evidence-linked architecture, conventions, decisions, learnings, incidents, and useful memory indexes in authoritative project docs |
 | Understanding | Code and flow explanation | [explain-codebase](../../skills/development/explain-codebase/SKILL.md) | Reader-appropriate explanation linked to actual entry points, callers, state, and behavior |
 | Understanding | Change communication | [explain-pr](../../skills/development/explain-pr/SKILL.md) | Established purpose and before/after behavior of a fixed comparison, with real verification evidence |
 | Intake | Request disposition | [triage-requests](../../skills/development/triage-requests/SKILL.md) | Verified intake, impact/readiness, recommended disposition, or an actionable brief |
@@ -36,6 +37,7 @@ This domain owns software engineering outputs. All 24 entries have draft package
 | Similar requests | Choose by the requested result |
 | --- | --- |
 | Onboard, explain, or review | Onboarding establishes a contributor's working baseline; explanation teaches current behavior; review evaluates evidenced defects and risks |
+| Document, consolidate, or track decisions | Documentation reconstructs and updates durable knowledge; consolidation reconciles overlapping sources; decision tracking resolves open choices and their dependencies |
 | Triage or diagnose | Triage decides what kind of incoming work is justified; diagnosis establishes the cause of a failure |
 | Specification, domain model, or architecture | The spec defines required behavior; the domain model resolves business meaning/rules; architecture assigns technical structure and contracts |
 | Phase plan or tasks | Phases define milestones and exit evidence; task creation decomposes sufficiently agreed work into executable contracts |
@@ -61,10 +63,12 @@ Resources are bundled with their owning package and loaded conditionally. They a
 | Need | Resource owner and content |
 | --- | --- |
 | Consistent specifications and work items | `write-spec`, `plan-phases`, and `create-tasks` carry templates for their distinct artifacts; `create-tasks` also checks a declared task graph for invalid dependencies, ready work and ownership conflicts |
-| Stack choice and architecture | `design-architecture` carries a technology-selection matrix and technical-design template |
+| Stack choice and architecture | `design-architecture` carries discovery for app types, workload, repository/runtime boundaries, data/services, hosting and C4 views, plus a technology-selection matrix and technical-design template |
+| AI capabilities and workflows | Architecture selects bounded calls, retrieval, workflows or agents; its conditional checklist covers data/tool authority, memory, actual runtime gates, evaluation, budgets and recovery; implementation and verification check those contracts |
 | Cost, obligations, and security constraints | Architecture's checklist covers applicable evidence, quantities/price dates, jurisdiction/data/contracts, trust boundaries, and unresolved owner decisions |
 | Traditional stack conventions | `define-project-conventions` carries a topic matrix, web/typed-code checks, and data/integration checks; verify actual versions and official guidance for unsettled framework details |
 | Agent-friendly project knowledge | `prepare-repo-for-agents` carries guidance for README, agent instructions, current facts, standards, decisions, learnings, incidents, and task state |
+| Institutional knowledge and memory | `document-project` reconstructs facts and recorded intent from code/history, populates canonical records and indexes, preserves uncertainty, and promotes evidenced lessons through their appropriate owner |
 | Repeated manual fixes | `automate-code-checks` selects existing lint, type, schema, or behavior mechanisms, with false-positive checks and visible legacy debt |
 | Improvement backlog | `find-improvements` records confirmed candidates and scope/coverage; TODOs and duplicated text are investigation leads, not automatic tasks |
 | Upgrades and transitions | `upgrade-dependencies` checks compatibility boundaries; `plan-migration` covers coexistence, backfill, cutover, new writes, and recovery limits |
@@ -87,6 +91,6 @@ QA follows the changed behavior and risks through verification, review, and deli
 
 Local instructions and accepted project rules govern implementation. References provide reusable decision criteria; they do not impose a universal framework, ORM, folder tree, branch name, deployment platform, or mandatory test-first process.
 
-Keep current behavior separate from desired behavior and from historical decisions. A commit demonstrates a change; its rationale needs recorded evidence. Repeated code is an observed convention until a contributor rule is established. Record consequential decisions, useful discoveries, and incidents in existing authoritative locations, and update affected docs during the actual change.
+Keep current behavior separate from desired behavior and from historical decisions. A commit demonstrates a change; its rationale needs recorded evidence. Repeated code is an observed convention until a contributor rule is established. Record consequential decisions, useful discoveries, and incidents in existing authoritative locations, and update affected docs during the actual change. Use `document-project` when reconstructing that durable knowledge is the requested deliverable. Memory indexes link current records with their scope and status; AGENTS.md contains agent rules and reading pointers, not a parallel decision archive.
 
 See [workflow phases and handoffs](../workflows.md) for sequencing and [authoring](../authoring.md) for package conventions.

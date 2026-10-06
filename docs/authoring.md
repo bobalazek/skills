@@ -35,8 +35,11 @@ Use role suffixes for reusable resources where their role matters: `.template.md
 | Authority | Honor granted authority and pause only at the actual missing input, choice, permission, or failed required check |
 | Knowledge | Reconcile useful facts, decisions, and learnings in existing authoritative locations |
 | Handoff | Pass accepted context, revision/evidence, unresolved prerequisites, and the next useful action |
+| Communication | Follow the requested audience, tone and depth, then project conventions; report outcome, purpose, relevant method, proof and gaps without a chronological transcript or another summary document |
 
 ## Choosing the right granularity
+
+Keep essential decisions in the entrypoint and substantive conditional procedures in its references. A short package is not sufficient if it omits failure paths, evidence, examples or constraints needed to do the work. Conversely, a long reference should earn its space by guiding a decision or check; do not copy entire private manuals or repeat another skill's procedure.
 
 A skill owns a distinct deliverable, such as a spec, phase plan, task graph, diagnosis, review, or delivered target. A mode changes depth or starting state while preserving that deliverable, such as a focused/full explanation, a PR/codebase review, or blank/template setup.
 
