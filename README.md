@@ -1,6 +1,6 @@
 # Skills
 
-43 skills for developing software, making decisions, and designing interfaces. Each produces a concrete result, such as a specification, working change, review or design. Run one on its own or continue from another skill's accepted output.
+44 skills for developing software, making decisions, and designing interfaces. Each produces a concrete result, such as a specification, working change, review or design. Run one on its own or continue from another skill's accepted output.
 
 Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear. The collection is under active development; [releases](https://github.com/bobalazek/skills/releases) record reviewed snapshots and evaluation limits.
 
@@ -21,7 +21,7 @@ For a fixed release, use its tag instead of the default branch:
 bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.0.2 --skill choose-skill create-tasks verify-change --agent codex --copy
 ```
 
-`skills@1.7.0` pins the installer; `v0.0.2` pins the 42-skill release. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.0.2) for changes and evaluation limits. The default branch also includes `create-wireframes`; the earlier `v0.0.1` release remains available with 40 skills.
+`skills@1.7.0` pins the installer; `v0.0.2` pins the 42-skill release. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.0.2) for changes and evaluation limits. The default branch also includes `create-wireframes` and `configure-monitoring`; the earlier `v0.0.1` release remains available with 40 skills.
 
 In Codex, invoke an installed skill with its name and your task:
 
@@ -35,7 +35,7 @@ From a checkout, you can also ask a filesystem-capable agent to use `skills/engi
 
 | Catalog | What it covers |
 | --- | --- |
-| [Engineering · 25 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, and maintain it |
+| [Engineering · 26 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, monitor, and maintain it |
 | [Productivity · 10 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose work, route requests, improve prompts and team workflows, report status, and transfer context |
 | [UI/UX · 8 skills](docs/domains/ui-ux.md) | Capture design references, map flows and navigation, wireframe screen structure, design screens and systems, write interface copy, review interfaces, and test usability |
 

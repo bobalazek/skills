@@ -38,6 +38,7 @@ These names identify skills in this collection. Availability depends on the inst
 | Independent code findings | `review-code` | Review a change, feature, data layer, or codebase against evidence |
 | Proof that a change meets its criteria | `verify-change` | Independently exercise behavior or inspect changed documents/plans; no mandatory duplicate pass when valid evidence already exists |
 | A delivered target | `ship-change` | Reach the authorized PR, release, deployment, or handover |
+| Configured monitoring and actionable alerts | `configure-monitoring` | Verify scoped signals, firing, delivery and recovery; distinguish local tests from live verification and ongoing operation |
 | Reusable observations from existing interfaces | `capture-design-reference` | Capture and analyze inspected patterns without turning them into the target's design contract |
 | User journeys, navigation and state transitions | `map-user-flows` | Include hierarchy and labels when needed, plus failure, recovery, permissions and alternate paths |
 | Low-fidelity screen structure | `create-wireframes` | Reuse accepted flows or existing screens; resolve hierarchy, content placement and states before visual detail |
@@ -65,5 +66,6 @@ A ready fix does not need brainstorming. An accepted specification does not need
 | "Improve the labels" | `write-interface-copy` for specific strings and messages; `map-user-flows` when destination grouping or navigation structure is unclear; `test-usability` when label comprehension needs participant evidence |
 | "Refactor or speed this up" | `find-improvements` for candidates; `improve-performance` for measured bottlenecks; `implement-change` for an accepted bounded refactor |
 | "Release this on GitHub" | `ship-change` for the specified notes-only, draft or publication target; carry the chosen revision and version policy, and establish the comparison release or first-release scope before writing notes |
+| "Monitor this service" | `configure-monitoring` for detection and alert configuration; `diagnose-issue` for a known failure; `ship-change` for a bounded post-delivery check. Continuous operation needs an explicit operating arrangement |
 
 Select one next skill from the actual request; these alternatives are not a mandatory sequence. If both technical and interface design are needed, name separate skills and their shared prerequisites. A diagram group or general activity is not another installable skill.

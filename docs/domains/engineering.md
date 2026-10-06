@@ -1,6 +1,6 @@
 # Engineering
 
-This domain covers the software lifecycle, including requirements, architecture, coding, quality, delivery, and maintenance. Its 25 packages are under active development; links open their actual instructions. Use the narrowest result that matches the request. UI/UX owns user journeys and interface decisions; productivity owns idea exploration and decision support.
+This domain covers the software lifecycle, including requirements, architecture, coding, quality, delivery, monitoring, and maintenance. Its 26 packages are under active development; links open their actual instructions. Use the narrowest result that matches the request. UI/UX owns user journeys and interface decisions; productivity owns idea exploration and decision support.
 
 ## Categories and skills
 
@@ -30,6 +30,7 @@ This domain covers the software lifecycle, including requirements, architecture,
 | Quality | Change or codebase review | [review-code](../../skills/engineering/review-code/SKILL.md) | Prioritized evidenced findings and explicit reviewed/unchecked coverage |
 | Quality | Acceptance and evidence | [verify-change](../../skills/engineering/verify-change/SKILL.md) | Observed acceptance results with relevant screenshots, comparable measurements, or check output, ready for review or delivery |
 | Delivery | PR, release, deploy, or handover | [ship-change](../../skills/engineering/ship-change/SKILL.md) | The authorized target reached and verified through repository automation |
+| Operations | Monitoring and alerting | [configure-monitoring](../../skills/engineering/configure-monitoring/SKILL.md) | Scoped signals and actionable alert routes with observed firing, delivery and recovery evidence, distinguishing local tests from live verification |
 | Documentation | Consolidation | [consolidate-docs](../../skills/engineering/consolidate-docs/SKILL.md) | Clear authoritative locations, preserved useful knowledge, reduced duplication, and repaired links |
 
 ## Boundaries that matter
@@ -47,6 +48,7 @@ This domain covers the software lifecycle, including requirements, architecture,
 | Architecture, migration, or delivery phases | Architecture selects a target; migration plans a safe transition from current state; phases organize the overall delivery, including that transition |
 | Explain a PR or review it | Explanation communicates established intent and behavior; review evaluates correctness and relevant risks |
 | Verify or review a change | Verification demonstrates criteria with observed checks; review investigates defects and risks using that evidence and the code. Documentation and plan changes need scenario/consistency checks, not an unrelated test suite |
+| Monitoring, diagnosis, or delivery | Monitoring configures detection and alert response paths; diagnosis establishes an observed failure's cause; delivery reaches a requested target and checks available signals. None establishes a continuous watch |
 
 ## New projects and inherited systems
 
@@ -76,6 +78,7 @@ Resources are bundled with their owning package and loaded conditionally. They a
 | Performance | `improve-performance` defines representative measurements, causal evidence, preserved correctness, and comparable results |
 | Change safety | `implement-change` covers refactors, migrations, shared interfaces, stateful boundaries, and recovery |
 | Incident diagnosis | `diagnose-issue` carries containment/evidence/recovery checks for live failures |
+| Monitoring and alerting | `configure-monitoring` carries signal selection, ownership/routing, bounded collection and firing/delivery/recovery checks using existing tools |
 | PR and codebase review | `review-code` has separate conditional checklists and one report shape |
 | Risk and reversibility | PR explanation, review, implementation and delivery carry credible worst impact, affected consumers/state, detection, recovery conditions and proof; reverting code does not necessarily undo data or external effects |
 | Result evaluation and PR evidence | `verify-change` carries evidence selection, comparison conditions, criterion results, reviewer-accessible reporting, conditional journey/security/reliability checks, and an optional command runner that records actual outcomes |
@@ -87,7 +90,7 @@ Cost analysis and legal applicability are scoped engineering inputs, with curren
 
 Code review and improvement discovery support a whole repository, a feature/flow, or a data layer. Trace schemas, migrations, queries, consumers, and state invariants as the scope requires. A static repository inspection does not claim to have audited a live database. Duplication matters when it splits one rule or causes drift; deliberate variants need not become abstractions.
 
-QA follows the changed behavior and risks through verification, review, and delivery. Diagnosis can use existing logs, traces, errors, and monitoring. Delivery names a failure signal, observation window, owner, and recovery action using available facilities. Installing monitoring, operating a continuous watch, and changing alert destinations are not yet dedicated workflows; do not imply they happen because a release check passed.
+QA follows the changed behavior and risks through verification, review, and delivery. Diagnosis can use existing logs, traces, errors, and monitoring. Delivery names a failure signal, observation window, owner, and recovery action using available facilities. `configure-monitoring` owns scoped monitoring and alert-route changes, with separate local and live evidence. A release check does not implicitly configure monitoring, and a verified setup does not promise a continuous watch or staffed response.
 
 ## Conventions and project knowledge
 

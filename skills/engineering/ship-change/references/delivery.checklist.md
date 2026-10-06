@@ -52,7 +52,7 @@ Use the existing release workflow or available GitHub tooling. A request for a d
 
 Identify environment/account/cluster, release revision, configuration dependencies, migrations, readiness checks, and recovery owner. Follow the existing automation. Verify rollout completion and relevant user behavior on the actual target. For GitOps, a merged manifest is not proof of reconciliation; for a container platform, a created job is not proof of a healthy rollout.
 
-Use the existing monitoring or logs to identify the relevant failure signal, agreed observation window, who responds, and what action follows. Report the period actually observed and the ongoing owner; a bounded release check does not provide a continuous watch. State missing instrumentation or access rather than treating silence as healthy operation. Check whether rollback remains safe after schema changes or new writes; use the accepted recovery plan instead of assuming a code revert restores data. Installing monitoring or changing live alert destinations needs its own scope and authority.
+Use the existing monitoring or logs to identify the relevant failure signal, agreed observation window, who responds, and what action follows. Report the period actually observed and the ongoing owner; a bounded release check does not provide a continuous watch. State missing instrumentation or access rather than treating silence as healthy operation. Check whether rollback remains safe after schema changes or new writes; use the accepted recovery plan instead of assuming a code revert restores data. Use `configure-monitoring`, if available, for requested monitoring or alert-route changes, carrying the coverage gap and environment; that work needs its own scope and authority.
 
 ## Handover
 
