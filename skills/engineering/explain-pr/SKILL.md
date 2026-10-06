@@ -52,7 +52,7 @@ When no project template applies, use the fields below, collapsing them into a s
 
 Check that the explanation matches the fixed comparison, established intent and verification evidence; it does not imply correctness approval. Return the requested explanation or confirm the authorized description update, with actual publication state and evidence gaps. Include relevant proof and independent findings when opening an authorized PR. Preserve valid completed reviews and refresh evidence affected by changes.
 
-Before accepting the explanation, a separate agent in fresh context must challenge its claims using the accepted request, candidate text, raw diff/requirements/evidence and check access. Omit the author's conversation and preferred conclusions. Retain the returned assessment with reviewer/session identity, evaluated artifact and base/head revisions, findings and coverage. Resolve supported findings and obtain affected rechecks after fixes. Without a returned independent assessment, report unreviewed and stop before acceptance.
+Before accepting the explanation, a separate agent in fresh context must challenge its claims using the accepted request, candidate text, raw diff/requirements/evidence and check access. Omit the author's conversation and preferred conclusions. Prefer a different available model where practical and authorized; an explicit cross-model requirement left unmet blocks acceptance. Retain the returned assessment with reviewer/session identity, host-reported model (or unknown), evaluated artifact and base/head revisions, findings and coverage. Resolve supported findings and obtain affected rechecks after fixes. Without a returned independent assessment, report unreviewed and stop before acceptance.
 
 ## Next steps
 
