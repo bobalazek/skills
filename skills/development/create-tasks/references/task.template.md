@@ -45,7 +45,7 @@ When useful, supply a JSON snapshot to the package's `scripts/check-graph.ts`. K
 }
 ```
 
-From this skill's directory, run:
+With Bun 1.3.9 or newer, run from this skill's directory (`--help` prints usage):
 
 ```bash
 bun scripts/check-graph.ts /path/to/task-snapshot.json

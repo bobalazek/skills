@@ -4,6 +4,8 @@
 
 Screen/page goal, primary action, entry path, content hierarchy, and the visual direction supported by project context.
 
+Editable artifact location/format/revision, available tool or local entry point, and opening/export instructions. Note any fidelity lost in a fallback or export, and link relevant flow states to screens and implemented interactions.
+
 ## Structure
 
 Regions, relevant components, real content/data requirements, and navigation. Identify existing components and only the necessary additions.
@@ -11,6 +13,8 @@ Regions, relevant components, real content/data requirements, and navigation. Id
 ## Behavior
 
 Meaningful states, validation/feedback, permissions, failure/recovery, focus and keyboard behavior, and destructive-action consequences. Include animation only when its role and reduced-motion behavior are clear.
+
+Identify which controls and transitions actually work, which use synthetic data or simulated services, and which are static proposals. Every important failure or cancellation path needs a usable next action or an explicit unresolved decision.
 
 ## Supported surfaces
 

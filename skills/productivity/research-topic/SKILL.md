@@ -18,3 +18,7 @@ For delegated research, provide the exact question, relevant source scope/baseli
 Return the direct answer, supporting evidence near the relevant claims, dates where freshness matters, important limitations, and the next useful action. Quote sparingly and respect source restrictions. Save or update a research artifact only when requested or useful to the ongoing workflow.
 
 Research describes what is known; selecting desired behavior or a technical direction remains a visible decision. Next: `brainstorm-ideas`, `write-spec`, or `design-architecture` using the accepted findings; `build-prototype` when documentation cannot answer the empirical question.
+
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.

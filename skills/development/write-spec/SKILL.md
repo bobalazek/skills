@@ -26,3 +26,7 @@ Load [the specification template](references/spec.template.md) when a durable st
 Check that scenarios and criteria agree, non-goals bound the scope, and no blocking choice is presented as settled. The result identifies the source context, decisions, and remaining questions. It does not silently create a task queue, select every technology, or start implementation.
 
 Next: `design-architecture` for unresolved technical choices; `plan-phases` for a multi-stage outcome; `create-tasks` for sufficiently agreed work. Continue those actions when they are part of the authorized request, carrying the same accepted specification forward.
+
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.

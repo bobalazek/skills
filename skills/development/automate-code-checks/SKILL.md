@@ -27,6 +27,10 @@ For an automatic fix, verify preserved behavior and idempotency on representativ
 
 Wire the accepted check into existing developer and CI commands at the agreed scope. Document the rule and narrow exception process in their authoritative location, and make the command discoverable to agents. Keep disabling or expiry conditions visible for temporary suppressions.
 
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+
 ## Verify and hand off
 
 Show that the forbidden case fails with the intended diagnostic and a valid case passes. Record the actual command, exit status, tested revision/tool versions, scope, false-positive evaluation, existing debt, and CI coverage. A configured rule that never runs does not prevent recurrence. Include concise results and useful accessible evidence in authorized PR work.

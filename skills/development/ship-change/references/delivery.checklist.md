@@ -6,7 +6,7 @@ Before merging, publishing, or deploying, resolve the current candidate and comp
 
 Confirm intended diff, correct base, repository-required checks, review status, and requested stop point. Explain problem/result and actual validation. If merging is authorized, wait for required checks and verify the platform records the merge; reconcile the local checkout according to repository rules.
 
-Include an evidence section in the existing PR format: tested revision/environment, material acceptance criteria and observed results, relevant visual or measured comparisons, and failures/unavailable checks. Link actual CI runs or redacted artifacts accessible to reviewers; inspect uploaded results and note meaningful access/expiry limits. Label a missing baseline or local-only screenshot explicitly. Update affected evidence after follow-up fixes; retain useful unaffected results.
+Include evidence when opening the PR: tested revision/environment, material criteria and observed results, useful before/after screenshots or video, test outcomes, and independent review findings with their resolution or remaining gaps. Name the separate evaluator and reviewed candidate; author checks alone do not establish independent review. Keep required human approval separate from the agent verdict. Link actual CI runs or redacted artifacts accessible to reviewers; inspect uploaded results and note meaningful access/expiry limits. Label a missing baseline or local-only artifact explicitly. Update affected evidence after follow-up fixes; retain useful unaffected results.
 
 ## Release or package
 

@@ -20,6 +20,15 @@ const cli = (content: string) => {
 };
 afterEach(() => directories.splice(0).forEach(directory => rmSync(directory, { recursive: true, force: true })));
 
+test("CLI explains usage without requiring a snapshot", () => {
+  const help = spawnSync(process.execPath, [script, "--help"], { encoding: "utf8" });
+  expect(help.status).toBe(0);
+  expect(help.stdout).toContain("Usage:");
+  const missing = spawnSync(process.execPath, [script], { encoding: "utf8" });
+  expect(missing.status).toBe(1);
+  expect(missing.stderr).toContain("Usage:");
+});
+
 test("rejects malformed snapshots, states and declarations", () => {
   for (const input of [null, [], {}, { tasks: null }, { tasks: [null] }, { tasks: [{ id: "a", status: "done", dependencies: [] }] }, { tasks: [{ id: "a", status: "pending" }] }, { tasks: [{ ...task("a"), writes: "src/a.ts" }] }, { tasks: [{ ...task("a"), resources: [42] }] }]) {
     expect(() => checkGraph(input)).toThrow();

@@ -11,6 +11,8 @@ Produce one evidence-backed assessment of the selected code against required beh
 
 Identify the purpose, relevant spec/criteria, repository rules, reviewed revision, and comparison baseline. Inspect the working tree and actual diff. For a codebase review, define surfaces and review questions instead of implying total coverage. Unknown author intent is a question, not a fact inferred from a patch.
 
+For new code, check the requested behavior and foundation assumptions. For an inherited system, also identify existing consumers, data, and contracts the change must preserve.
+
 For changes, load [change review](references/change-review.checklist.md). For broader codebase work, load [codebase review](references/codebase-review.checklist.md). Use the requested scope rather than loading both by habit.
 
 ## Inspect relevant risks
@@ -21,13 +23,17 @@ Check for an existing implementation of newly introduced behavior and for duplic
 
 Inspect the supplied verification evidence against the material acceptance criteria. Check the tested revision, relevant environment/state, and whether before/after comparisons use comparable conditions. Open useful artifacts and check what they actually demonstrate; green CI or a screenshot does not establish unrelated behavior. Missing required proof is a readiness gap, not an invented code defect. Run a scoped check when authorized and useful; reuse sound evidence rather than repeat it by default.
 
-A finding needs an affected scenario, located evidence, consequence, and actionable correction or investigation. Confirm suspected issues against code and available behavior. Do not report speculative concerns, generic style advice, duplicate symptoms, or already-handled failures as established defects.
+Try to disprove material behavior claims. Choose a plausible counterexample within supported inputs and conditions, then trace the actual path or run a safe focused check. For example, a successful sequential retry does not prove that concurrent retries cannot duplicate a write. Check the intended result as well as the failure; do not invent requirements to produce findings.
 
-Independent reviewers can investigate separate lenses in parallel on a fixed baseline when available; the coordinator reconciles evidence and deduplicates findings. More reviewers and majority votes do not replace verifying a claim.
+A finding needs an affected scenario, located evidence, consequence, and actionable correction or investigation. Confirm suspected issues against code and available behavior. Keep unresolved material suspicions separate, with the evidence missing and a check that could settle them. Do not report speculative concerns, generic style advice, duplicate symptoms, or already-handled failures as established defects.
+
+At least one reviewer must evaluate the final candidate in a separate sub-agent or new clean context from its author. Scale additional reviewers and depth by distinct failure risks. Supply raw accepted requirements, the fixed candidate, relevant sources, and check access; do not supply the author's conversation or rationale as conclusions. The reviewer independently checks proofs and material claims. The coordinator reconciles evidenced disagreements and deduplicates findings; agreement cannot override a demonstrated defect. If an independent reviewer is unavailable, mark the result unreviewed and do not claim the candidate verified or ready.
 
 ## Report and verify
 
 Use [the report shape](references/review-report.template.md). State priority based on impact and likelihood, cite the inspected location, and distinguish blocking findings from optional adjacent observations. Include coverage, commands/observations, and unavailable checks. A clean inspected area is not proof that uninspected code is correct.
+
+For human PR review, carry observed before/after evidence, relevant test/check results, and independent findings with their resolution or remaining gaps. Preserve existing approval requirements and requested stop points; an independent agent review does not replace a required human approval.
 
 When fixes are requested, verify each claim before editing, keep the authorized scope, rerun affected checks, and inspect the final revision again. Reuse previous review evidence only for unchanged code and criteria; revise stale findings after implementation changes.
 

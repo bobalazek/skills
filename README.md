@@ -2,12 +2,30 @@
 
 Workflows for developing software, making decisions, and designing interfaces. Each skill owns a concrete result and can be used on its own or as a step in a larger process.
 
-The collection contains 34 draft skills across development, productivity, and UI/UX. Supporting templates and references live with the skills that use them. These are authored workflows under evaluation; client installation and cross-client compatibility are not yet verified.
+The collection contains 35 draft skills across development, productivity, and UI/UX. Each package carries its own templates, references, and optional helpers. Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear.
+
+Each final result requires an adversarial review by a separate agent in fresh context. The reviewer checks accepted requirements and raw proof without the author's conversation. Tests, meaningful before/after evidence, and review findings go into the PR when it is opened; required human approval remains separate. A host without independent agents can produce a draft, but cannot satisfy this collection's acceptance gate.
+
+## Install
+
+From your project directory, choose the skills you need:
+
+```bash
+bunx skills@1.7.0 add bobalazek/skills --list
+bunx skills@1.7.0 add bobalazek/skills --skill choose-skill create-tasks verify-change --agent opencode --copy
+```
+
+This installs selected packages into the project, including their supporting files. Inspect the install summary before confirming. Use `--skill '*'` to select the whole collection, or choose a different agent supported by the installer and check discovery in that client. Avoid replacing locally edited skills without comparing those edits first.
+
+Local package installation and discovery were checked with skills CLI 1.7.0 and OpenCode 1.18.31. This verifies package discovery and file delivery; model behavior, other clients, and automatic routing need their own checks. The workflows remain drafts under evaluation.
+
+Without an installer, point a filesystem-capable agent at a skill in this checkout. To copy one manually, preserve the entire leaf folder containing `SKILL.md` and its resources in your client's skills location, then verify discovery. Domain folders organize this repository; they are not individual skills.
 
 ## Find the right skill
 
 | I want to… | Start with |
 | --- | --- |
+| Find the next skill from my current task | [choose-skill](skills/productivity/choose-skill/SKILL.md) |
 | Explore a project or feature idea | [brainstorm-ideas](skills/productivity/brainstorm-ideas/SKILL.md) |
 | Challenge a proposed direction | [challenge-proposal](skills/productivity/challenge-proposal/SKILL.md) |
 | Get productive in an inherited codebase | [onboard-codebase](skills/development/onboard-codebase/SKILL.md) |
@@ -29,7 +47,7 @@ Start at the action the request needs. A ready task can go directly to implement
 ## Full catalogs
 
 - [Development](docs/domains/development.md): 24 skills covering understanding, planning, implementation, verification, delivery, and maintenance.
-- [Productivity](docs/domains/productivity.md): 6 skills for exploring ideas, challenging proposals, researching topics, tracking decisions, improving prompts, and transferring work.
+- [Productivity](docs/domains/productivity.md): 7 skills for routing work, exploring ideas, challenging proposals, researching topics, tracking decisions, improving prompts, and transferring work.
 - [UI/UX](docs/domains/ui-ux.md): 4 skills for flows, interface design, rendered review, and shared design systems.
 
 The catalogs describe categories, outputs, boundaries, and conditional resources. The [workflow map](docs/workflows.md) shows lifecycle phases, entry points, dependencies, parallel work, and next steps.
@@ -43,7 +61,7 @@ Use skills/development/write-spec/SKILL.md to define the requested feature.
 Use skills/development/review-code/SKILL.md to review this branch against main.
 ```
 
-The skill supplies its procedure and links conditional resources. Reuse its result for the next needed action; installation and invocation through a client-specific skill menu require separate verification.
+The skill supplies its procedure and links conditional resources. Reuse its result for the next needed action; check discovery and invocation in the client you use.
 
 Two optional Bun helpers support the work itself:
 

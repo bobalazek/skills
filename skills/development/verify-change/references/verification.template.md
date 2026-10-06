@@ -8,6 +8,7 @@ Use the project's existing result or PR format. Include only sections that suppo
 - Baseline and tested revision/artifact; identify uncommitted changes when present.
 - Environment and relevant versions, fixture, role, configuration, and observation time.
 - Demonstrated behavior, failures, and required checks still unavailable.
+- Independent evaluator, candidate reviewed, counterexamples checked, findings and resolution; keep human approval separate.
 
 | Criterion | Check and expected observation | Actual observation | Result | Evidence |
 | --- | --- | --- | --- | --- |
@@ -31,7 +32,7 @@ A picture of a passing terminal adds little when a readable result or CI link ca
 
 ## PR evidence
 
-Explain the trigger and before/after behavior, then include the observed checks and the evidence needed to judge the change. Put visual comparisons together with labels; show measured comparisons with units and conditions. State whether a baseline was captured, reconstructed safely, supplied, or unavailable.
+Include this evidence when opening the PR, then update it as the candidate changes. Explain the trigger and before/after behavior, observed checks, and independent review findings and resolution. Put visual comparisons together with labels; use a short before/after video when motion or an interaction matters, and include a regression test that exercises a repaired failure where suitable. Show measured comparisons with units and conditions. State whether a baseline was captured, reconstructed safely, supplied, or unavailable.
 
 Use inline text for short results and existing CI/run/artifact links for larger proof. Verify that links point to the actual result for the tested revision and are usable by the intended reviewers. Note expiry or access restrictions that affect review. Do not invent upload URLs or publish private artifacts to make a link work.
 

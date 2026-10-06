@@ -16,3 +16,7 @@ Produce a recommended disposition with evidence: proceed to diagnosis, define re
 Tracker labels, assignments, comments, and closure are external writes. Perform only the authorized actions, using the actual project workflow and concurrency/version controls. Without tool access or authority, deliver the recommendation locally and state that the tracker was not changed.
 
 Next: `diagnose-issue`, `write-spec`, `create-tasks`, or a direct explanation according to the evidence. A triage result does not require every later phase.
+
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.

@@ -27,6 +27,10 @@ Separate reversal from forward recovery. State what remains reversible before an
 
 Retire old interfaces, storage, jobs, and infrastructure only after explicit consumer, reconciliation, retention, and recovery-window conditions are met. Name unresolved owner decisions and the work they block. Parallel preparation is valid only with independent prerequisites and isolated ownership; shared state and cutover actions need coordinated ordering.
 
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+
 ## Verify and hand off the plan
 
 Walk representative success, interruption, retry, coexistence, and post-cutover failure scenarios against the invariants. Define rehearsals and checks, their required environment/fixtures, expected observations, and unavailable prerequisites. Planned tests and cutover conditions remain plans until observed; do not present them as passing results.

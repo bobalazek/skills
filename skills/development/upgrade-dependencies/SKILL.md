@@ -25,10 +25,14 @@ Use the established package manager and its lockfile workflow. Inspect relevant 
 
 Trace affected callers, configuration, build tooling, and runtime entry points. Apply the required API/configuration adaptations within scope. A dependency's migration guide does not authorize unrelated feature changes, production data migration, or replacement of the application's platform.
 
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+
 ## Verify the resolved result
 
 Check manifest/lockfile consistency using the project's supported install verification. Run relevant type/build/tests and a representative path through the actual upgraded dependency. Exercise changed behavior and important failure cases; a passing typecheck or mocked test cannot establish module loading, native compatibility, or runtime semantics.
 
 Tie evidence to the candidate revision and dirty diff, resolved versions, inputs, and tested environments. Compare relevant baseline behavior where it exists. Mark unavailable supported-environment checks and required failures as readiness gaps; do not claim all supported platforms work from one local run.
 
-Report changed versions, adaptations, primary evidence, actual check outcomes, and remaining constraints. Update affected setup/version guidance in its authoritative location. When the goal requires a larger transition, pass the compatibility findings into migration planning. Otherwise use verification or independent review as needed; commit, publish, or deploy only when that delivery is authorized.
+Report changed versions, adaptations, primary evidence, actual check outcomes, and remaining constraints. Update affected setup/version guidance in its authoritative location. When the goal requires a larger transition, pass the compatibility findings into migration planning. Independently review the verified candidate before accepting it; commit, publish, or deploy only when that delivery is authorized.

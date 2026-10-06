@@ -18,3 +18,7 @@ Update incoming links, indexes, and instruction pointers. Check external consume
 Verify links, preserved information, and the reader's main lookup path. Run relevant documentation audits and direct checks for changed setup instructions. Report consolidation decisions, unresolved factual conflicts, and checks.
 
 This workflow does not require a new consolidation report or a Markdown file per handoff. Update the existing front door and finish with the useful result. Next: `prepare-repo-for-agents` only when contributor navigation still needs work.
+
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.

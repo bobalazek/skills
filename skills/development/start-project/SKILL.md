@@ -21,6 +21,10 @@ Implement a narrow path through the actual runtime and its required boundaries. 
 
 Load [foundation readiness](references/foundation.checklist.md) before handoff. Write useful README setup and local contributor instructions, preserving a template's authoritative documentation where it remains correct. Remove misleading template-specific claims and examples only within the requested project copy.
 
+## Independent evaluation
+
+Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+
 ## Completion
 
 Demonstrate the working path, setup prerequisites, feedback commands, and known environment gaps. A locally working foundation is not a production deployment. Provisioning, remote repository creation, and publication follow the actual user authorization.
