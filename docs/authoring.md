@@ -9,6 +9,7 @@ A skill earns its place through a distinct useful output, a decision process tha
 ```text
 skills/<domain>/<skill>/
   SKILL.md
+  agents/openai.yaml Codex display name, short description, and example prompt
   references/       Only conditional instructions, checklists, or artifact shapes
   assets/           Only files actually used in generated output
   scripts/          Only useful deterministic operations
@@ -19,6 +20,8 @@ Use an action-oriented lowercase name that tells the user what happens, preferab
 Keep the outcome, essential inputs, workflow decisions, scope, completion evidence, and next-action behavior in `SKILL.md`. Use references for substantial conditional guidance. Link each resource with a reason to load it; avoid duplicated instructions, copied manuals, and resources added only for symmetry.
 
 Use role suffixes for reusable resources where their role matters: `.template.md`, `.checklist.md`, `.playbook.md`, or `.matrix.md`. Add executable helpers only when deterministic work justifies them and existing tools do not already cover it.
+
+Every package in this collection includes `agents/openai.yaml` for Codex discovery UI. Keep `interface.display_name`, `short_description` (25–64 characters), and a concrete `default_prompt` mentioning `$skill-name` consistent with the workflow. Quote string values. This is host metadata, not a reference the agent must load; do not add a `SKILL.md` link just to satisfy resource reachability. Keep automatic invocation at its default unless an explicit requirement changes it. Icons, tool dependencies and other optional fields need a real use. See the [OpenAI skill metadata fields](https://developers.openai.com/plugins/deploy/submission-errors#skill-agent-metadata-errors).
 
 ## Shared workflow contract
 
@@ -51,7 +54,7 @@ Before authoring, state: “Given this input, produce this result; stop before t
 
 ## Validation
 
-Maintain executable tooling in TypeScript and run it with Bun. Run `bun run check` for frontmatter, package names, links, resource reachability, standalone-resource boundaries, and catalog coverage. Run `bun test` when changing the checker or executable helpers. Mermaid diagrams should also parse/render in a real supported renderer when changed.
+Maintain executable tooling in TypeScript and run it with Bun. Run `bun run check` for frontmatter, package names, Codex interface metadata, links, resource reachability, standalone-resource boundaries, and catalog coverage. Run `bun test` when changing the checker or executable helpers. Mermaid diagrams should also parse/render in a real supported renderer when changed.
 
 Structural checks do not establish behavior. Trial representative direct requests, neighboring requests that should route elsewhere, small tasks, missing prerequisites, and consequential actions outside authorization. Inspect actual results, loaded context, questions, side effects, and completion claims. Use a separate agent in fresh context for final evaluation, with raw artifacts and no supplied intended answer or author conversation. Authors may run checks and capture evidence; they cannot supply their own independent verdict.
 
@@ -71,7 +74,9 @@ Keep names stable when categories move. A breaking change to inputs, outputs, si
 
 Unreleased drafts can be consolidated without pretending a public compatibility promise existed. Remove duplicate procedures rather than maintain two active owners indefinitely. Follow the release procedure below before distributing a version.
 
-Current draft renames: `question-plan` → `challenge-proposal`, `research-question` → `research-topic`, `map-project-decisions` → `track-project-decisions`, and `find-refactors` → `find-improvements`. Update saved invocations or local paths to the new names. Refactor discovery remains part of `find-improvements`; the broader scope also covers recurring defects, checks, documentation, dependencies, and performance leads.
+Current draft renames: `question-plan` → `challenge-proposal`, `research-question` → `research-topic`, `map-project-decisions` → `track-project-decisions`, `find-refactors` → `find-improvements`, and `triage-requests` → `assess-request`. Update saved invocations or local paths to the new names. After preserving local edits, remove a retired installed package when replacing it; installing the new name alone can leave both discoverable. Refactor discovery remains part of `find-improvements`; the broader scope also covers recurring defects, checks, documentation, dependencies, and performance leads.
+
+The source domain moved from `skills/development/` to `skills/engineering/`, with its catalog at `docs/domains/engineering.md`. Update direct source paths and saved links. Domain folders organize the source; this move does not rename the other installed skills.
 
 ## Releasing the collection
 

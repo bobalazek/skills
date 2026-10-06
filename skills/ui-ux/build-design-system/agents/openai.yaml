@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build design system"
+  short_description: "Create shared tokens and component contracts"
+  default_prompt: "Use $build-design-system to extract shared tokens and component contracts from these interfaces."

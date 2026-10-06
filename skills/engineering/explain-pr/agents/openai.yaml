@@ -1,0 +1,4 @@
+interface:
+  display_name: "Explain PR"
+  short_description: "Explain a diff's purpose and before/after behavior"
+  default_prompt: "Use $explain-pr to explain this pull request's behavior changes and verification evidence."

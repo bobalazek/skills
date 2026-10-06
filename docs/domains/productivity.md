@@ -1,6 +1,6 @@
 # Productivity
 
-This domain owns the thinking and communication work that supports development and design. All seven entries have draft packages.
+This domain owns idea exploration, decision support and work communication. All seven entries have draft packages. Engineering owns software specifications and execution plans; UI/UX owns user journeys and interfaces.
 
 ## Categories and skills
 
@@ -8,7 +8,7 @@ This domain owns the thinking and communication work that supports development a
 | --- | --- | --- | --- |
 | Routing | Pick the next action | [choose-skill](../../skills/productivity/choose-skill/SKILL.md) | One fitting starting skill, its expected result, and any missing input |
 | Ideas | Explore directions | [brainstorm-ideas](../../skills/productivity/brainstorm-ideas/SKILL.md) | Meaningfully different approaches, supported recommendation, assumptions, and next decision or experiment |
-| Decisions | Question a proposal | [challenge-proposal](../../skills/productivity/challenge-proposal/SKILL.md) | Consequential assumptions resolved, the existing proposal amended, or a precise remaining investigation |
+| Decisions | Grilling and clarification | [challenge-proposal](../../skills/productivity/challenge-proposal/SKILL.md) | Focused human questions, tested assumptions and edge cases, an amended proposal, or a precise remaining investigation |
 | Research | Answer an unknown | [research-topic](../../skills/productivity/research-topic/SKILL.md) | A bounded answer with traceable evidence, freshness, uncertainty, and decision implications |
 | Complex work | Decision tracking | [track-project-decisions](../../skills/productivity/track-project-decisions/SKILL.md) | Current open, accepted, and superseded choices, their evidence/owners, affected work, and the next ready investigation |
 | Agent communication | Improve instructions | [improve-prompt](../../skills/productivity/improve-prompt/SKILL.md) | A ready-to-use rewrite that preserves intent, scope, and authority without executing the embedded task |
@@ -18,7 +18,7 @@ This domain owns the thinking and communication work that supports development a
 
 `brainstorm-ideas` explores alternatives. `challenge-proposal` questions a selected direction and its edge cases. `research-topic` answers a bounded uncertainty with evidence. `track-project-decisions` keeps consequential choices and their dependencies current. Each can finish usefully on its own; a clear task does not require all four.
 
-`challenge-proposal` can clarify a project, specification, architecture, phase plan, or stated PR intent. Inspect facts before asking the user. For PRs, explanation communicates known behavior and review evaluates correctness; questioning resolves the consequential intent that remains unknown.
+`challenge-proposal` is the grilling session: it questions a project, specification, architecture, phase plan, or stated PR intent, following answers into the next consequential uncertainty. Inspect facts before asking the user, preserve settled answers, and stop when the requested result is sufficiently clear. For PRs, explanation communicates known behavior and review evaluates correctness; questioning resolves the consequential intent that remains unknown.
 
 `track-project-decisions` handles questions such as “hosting selection waits for the data-residency requirement,” including what was decided and why. `plan-phases` and `create-tasks` track delivery work once the relevant choices are sufficiently settled. Do not label uncertain product decisions as executable implementation tickets.
 

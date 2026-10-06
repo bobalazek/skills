@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prepare handoff"
+  short_description: "Preserve work state and a checked path to resume"
+  default_prompt: "Use $prepare-handoff to prepare this work for another session with current evidence and a checked next step."

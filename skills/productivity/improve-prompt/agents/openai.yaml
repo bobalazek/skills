@@ -1,0 +1,4 @@
+interface:
+  display_name: "Improve prompt"
+  short_description: "Clarify a prompt while preserving its intent"
+  default_prompt: "Use $improve-prompt to revise this prompt for a clear outcome, scope, and completion check."

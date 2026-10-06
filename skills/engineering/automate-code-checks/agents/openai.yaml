@@ -1,0 +1,4 @@
+interface:
+  display_name: "Automate code checks"
+  short_description: "Turn recurring defects into runnable checks"
+  default_prompt: "Use $automate-code-checks to add a runnable check for this accepted coding rule."

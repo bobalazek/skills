@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design architecture"
+  short_description: "Choose technical boundaries, contracts, and stack"
+  default_prompt: "Use $design-architecture to resolve the technical choices and system boundaries for this capability."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Track project decisions"
+  short_description: "Track decision status, evidence, and open choices"
+  default_prompt: "Use $track-project-decisions to reconcile this project's accepted and open decisions with their evidence."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Consolidate docs"
+  short_description: "Reconcile overlapping docs and repair their links"
+  default_prompt: "Use $consolidate-docs to reconcile these overlapping documents into one authoritative home."

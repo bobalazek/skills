@@ -1,0 +1,4 @@
+interface:
+  display_name: "Find improvements"
+  short_description: "Find useful codebase improvements and rank them"
+  default_prompt: "Use $find-improvements to identify and prioritize evidenced improvements in this module."

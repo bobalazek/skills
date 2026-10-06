@@ -1,0 +1,4 @@
+interface:
+  display_name: "Map user flows"
+  short_description: "Map user journeys, decisions, and recovery paths"
+  default_prompt: "Use $map-user-flows to map this capability's user journey, including failure and recovery paths."

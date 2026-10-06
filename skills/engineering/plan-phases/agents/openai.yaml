@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan phases"
+  short_description: "Organize agreed scope into outcome-based phases"
+  default_prompt: "Use $plan-phases to divide this agreed scope into phases with dependencies and exit criteria."

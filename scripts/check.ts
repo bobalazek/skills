@@ -1,7 +1,9 @@
-import { existsSync, readFileSync, readdirSync, realpathSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, realpathSync, statSync } from "node:fs";
 import { dirname, extname, isAbsolute, join, relative, resolve } from "node:path";
 
 const read = (path: string) => readFileSync(path, "utf8");
+const mapping = (value: unknown): value is Record<string, unknown> =>
+  value !== null && typeof value === "object" && !Array.isArray(value);
 const inside = (root: string, path: string) => {
   const rel = relative(root, path);
   return rel !== ".." && !rel.startsWith("../") && !rel.startsWith("..\\") && !isAbsolute(rel);
@@ -58,11 +60,11 @@ export function audit(inputRoot: string) {
     } catch {
       fail(entry, "invalid YAML frontmatter");
     }
-    if (!metadata || typeof metadata !== "object" || Array.isArray(metadata)) {
+    if (!mapping(metadata)) {
       fail(entry, "missing mapping frontmatter");
       continue;
     }
-    const { name, description } = metadata as Record<string, unknown>;
+    const { name, description } = metadata;
     if (typeof name !== "string" || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(name) || name.length > 64) {
       fail(entry, "invalid name");
     } else if (name !== dirname(entry).split(/[\\/]/).at(-1) || names.has(name)) {
@@ -72,6 +74,36 @@ export function audit(inputRoot: string) {
     }
     if (typeof description !== "string" || !description.trim() || description.length > 1024) {
       fail(entry, "invalid description");
+    }
+    const agentFile = join(dirname(entry), "agents/openai.yaml");
+    if (!existsSync(agentFile) || !statSync(agentFile).isFile()) {
+      fail(agentFile, "missing regular agent metadata file");
+    } else if (!inside(dirname(entry), realpathSync(agentFile))) {
+      fail(agentFile, "agent metadata leaves its package");
+    } else {
+      try {
+        const agent: unknown = Bun.YAML.parse(read(agentFile));
+        if (!mapping(agent)) {
+          fail(agentFile, "agent metadata must be a mapping");
+        } else if (!mapping(agent.interface)) {
+          fail(agentFile, "interface must be a mapping");
+        } else {
+          const { display_name, short_description, default_prompt } = agent.interface;
+          if (typeof display_name !== "string" || !display_name.trim()) {
+            fail(agentFile, "invalid interface.display_name");
+          }
+          const shortLength = typeof short_description === "string" && short_description.trim() ? [...short_description].length : 0;
+          if (shortLength < 25 || shortLength > 64) {
+            fail(agentFile, "interface.short_description must be a string of 25–64 characters");
+          }
+          const invocations = typeof default_prompt === "string" ? [...default_prompt.matchAll(/\$([A-Za-z0-9_-]+)/g)] : [];
+          if (invocations.length !== 1 || invocations[0][1] !== name) {
+            fail(agentFile, `interface.default_prompt must contain one exact $${name} invocation`);
+          }
+        }
+      } catch {
+        fail(agentFile, "invalid agent metadata YAML");
+      }
     }
     const reached = new Set([realpathSync(entry)]);
     const queue = [entry];
@@ -86,7 +118,7 @@ export function audit(inputRoot: string) {
         }
       }
     }
-    for (const resource of files(dirname(entry)).filter((path) => path !== entry)) {
+    for (const resource of files(dirname(entry)).filter((path) => path !== entry && path !== agentFile)) {
       resources++;
       if (!reached.has(realpathSync(resource))) fail(resource, "resource is not reachable from SKILL.md");
     }

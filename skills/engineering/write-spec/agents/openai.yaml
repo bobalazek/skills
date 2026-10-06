@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write spec"
+  short_description: "Define behavior and observable acceptance criteria"
+  default_prompt: "Use $write-spec to turn this agreed feature intent into a specification with acceptance criteria."

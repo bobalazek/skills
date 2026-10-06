@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design interface"
+  short_description: "Design a usable screen with clear visual hierarchy"
+  default_prompt: "Use $design-interface to design this screen's layout, content, and interaction states."

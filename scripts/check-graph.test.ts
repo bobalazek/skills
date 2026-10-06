@@ -4,11 +4,11 @@ import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { checkGraph } from "../skills/development/create-tasks/scripts/check-graph";
+import { checkGraph } from "../skills/engineering/create-tasks/scripts/check-graph";
 
 const task = (id: string, dependencies: string[] = [], status = "pending", writes: string[] = [], resources: string[] = []) => ({ id, status, dependencies, writes, resources });
 const directories: string[] = [];
-const script = fileURLToPath(new URL("../skills/development/create-tasks/scripts/check-graph.ts", import.meta.url));
+const script = fileURLToPath(new URL("../skills/engineering/create-tasks/scripts/check-graph.ts", import.meta.url));
 const cli = (content: string) => {
   const directory = mkdtempSync(join(tmpdir(), "skills-graph-"));
   directories.push(directory);

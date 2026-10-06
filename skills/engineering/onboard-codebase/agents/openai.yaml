@@ -1,0 +1,4 @@
+interface:
+  display_name: "Onboard codebase"
+  short_description: "Verify setup and find a safe first-change route"
+  default_prompt: "Use $onboard-codebase to verify this repository's setup and map a safe route to my first change."
