@@ -2,13 +2,13 @@
 
 Workflows for developing software, making decisions, and designing interfaces. Each skill owns a concrete result and can be used on its own or as a step in a larger process.
 
-The collection contains 36 draft skills across engineering, productivity, and UI/UX. Each package carries its instructions, conditional resources, and Codex display metadata. Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear.
+The collection contains 40 skills under active development across engineering, productivity, and UI/UX. Each package carries its instructions, conditional resources, and Codex display metadata. Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear.
 
 Each final result requires an adversarial review by a separate agent in fresh context. The reviewer checks accepted requirements and raw proof without the author's conversation. Tests, meaningful before/after evidence, and review findings go into the PR when it is opened; required human approval remains separate. A host without independent agents can produce a draft, but cannot satisfy this collection's acceptance gate.
 
 ## Install
 
-The collection is currently private and has no published release, so installation requires repository access. From your project directory, choose the skills you need from the current default branch:
+The repository is private, so installation requires repository access. From your project directory, choose the skills you need from the current default branch:
 
 ```bash
 bunx skills@1.7.0 add bobalazek/skills --list
@@ -17,7 +17,7 @@ bunx skills@1.7.0 add bobalazek/skills --skill choose-skill create-tasks verify-
 
 This installs selected packages into the project, including their supporting files. Inspect the install summary before confirming. Use `--skill '*'` to select the whole collection, or choose a different agent supported by the installer and check discovery in that client. Avoid replacing locally edited skills without comparing those edits first.
 
-For a fixed release, replace `vX.Y.Z` below with an actual published tag. No such release is available yet:
+For a fixed release, replace `vX.Y.Z` below with a published tag from [GitHub Releases](https://github.com/bobalazek/skills/releases):
 
 ```bash
 release_tag='vX.Y.Z'
@@ -28,7 +28,7 @@ The version in `skills@1.7.0` pins the installer; the URL selects this collectio
 
 Copied skills do not update themselves. To update, review changes and migration notes, preserve local edits, then rerun `add` for the selected skills using the desired branch or release tag. Inspect the installed files and verify client discovery again. Keep the selected source/tag with the project's install record; switching to a new release is an explicit update.
 
-Local package installation and discovery were checked with skills CLI 1.7.0, OpenCode 1.18.31, and Codex CLI 0.160.0. Codex's `skills/list` read all 36 display names, descriptions and example prompts from `agents/openai.yaml`. These checks cover file delivery and discovery; model behavior, other clients, and automatic routing need their own checks. The workflows remain drafts under evaluation.
+Local package installation and discovery were checked with skills CLI 1.7.0, OpenCode 1.18.31, and Codex CLI 0.160.0. Codex's `skills/list` read all 40 display names, descriptions and example prompts from `agents/openai.yaml`. These checks cover file delivery and discovery; model behavior, other clients, and automatic routing need their own checks. The workflows remain under evaluation.
 
 Without an installer, point a filesystem-capable agent at a skill in this checkout. To copy one manually, preserve the entire leaf folder containing `SKILL.md` and its resources in your client's skills location, then verify discovery. Domain folders organize this repository; they are not individual skills.
 
@@ -37,8 +37,8 @@ Without an installer, point a filesystem-capable agent at a skill in this checko
 | Catalog | What it covers |
 | --- | --- |
 | [Engineering · 25 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, and maintain it |
-| [Productivity · 7 skills](docs/domains/productivity.md) | Explore ideas, question proposals, research decisions, route requests, improve prompts, and transfer context |
-| [UI/UX · 4 skills](docs/domains/ui-ux.md) | Map user flows, design screens, build shared design systems, and review rendered experiences |
+| [Productivity · 9 skills](docs/domains/productivity.md) | Explore ideas, research decisions, route requests, improve prompts and team workflows, report status, and transfer context |
+| [UI/UX · 6 skills](docs/domains/ui-ux.md) | Capture design references, map flows, design screens and systems, review interfaces, and test usability |
 
 The catalogs list every skill by category, with its output and boundaries. Engineering includes architecture, quality and operations as well as coding. UI/UX owns user experience and interface decisions; it joins engineering work when the change needs it.
 
@@ -57,6 +57,10 @@ The catalogs list every skill by category, with its output and boundaries. Engin
 | Choose a stack or settle technical boundaries | [design-architecture](skills/engineering/design-architecture/SKILL.md) |
 | Define a user journey and its recovery paths | [map-user-flows](skills/ui-ux/map-user-flows/SKILL.md) |
 | Design a screen whose flow is understood | [design-interface](skills/ui-ux/design-interface/SKILL.md) |
+| Capture useful patterns from an existing interface | [capture-design-reference](skills/ui-ux/capture-design-reference/SKILL.md) |
+| Study whether users can complete a task | [test-usability](skills/ui-ux/test-usability/SKILL.md) |
+| Report verified project progress and blockers | [report-project-status](skills/productivity/report-project-status/SKILL.md) |
+| Improve a recurring team process | [improve-team-workflow](skills/productivity/improve-team-workflow/SKILL.md) |
 | Split agreed scope into milestones | [plan-phases](skills/engineering/plan-phases/SKILL.md) |
 | Turn a spec or phase into executable work | [create-tasks](skills/engineering/create-tasks/SKILL.md) |
 | Set up a new project from accepted choices | [start-project](skills/engineering/start-project/SKILL.md) |
@@ -142,8 +146,10 @@ Each package lives at `skills/<domain>/<skill>/SKILL.md` and carries its require
 
 Use Bun 1.3.9 or newer. Run `bun run check` for the collection audit and `bun test` for the audit and helper tests. There are no package dependencies to install. Behavioral trials and client installation checks are separate from this audit.
 
+## Acknowledgments
+
+This collection grows out of workflows I have used internally for several months. These extracted packages are still being evaluated. [Matt Pocock's skills](https://github.com/mattpocock/skills) and [HumanLayer's skills](https://github.com/humanlayer/skills) inspired parts of the approach, including focused questioning, planning, review and clear explanations. This is an independent collection with its own scope across engineering, productivity and UI/UX.
+
 ## License
 
 [MIT](LICENSE). Copyright (c) 2026 Borut Balazek.
-
-Include the root `LICENSE` when copying or redistributing standalone skills. The installer copies skill folders but does not include this file automatically.

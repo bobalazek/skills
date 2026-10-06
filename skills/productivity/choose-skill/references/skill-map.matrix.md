@@ -5,11 +5,13 @@ These names identify skills in this collection. Availability depends on the inst
 | Requested result | Skill | Boundary |
 | --- | --- | --- |
 | Different approaches to an idea | `brainstorm-ideas` | Explore before choosing a direction |
-| A grilling session for an idea, spec, or plan | `challenge-proposal` | Resolve consequential choices and edge cases through focused questions; do not manufacture agreement |
+| Questions that challenge an idea, spec, or plan | `challenge-proposal` | Resolve consequential choices and edge cases through focused questions; do not manufacture agreement |
 | An evidence-backed answer | `research-topic` | Answer the specific uncertainty |
 | Current consequential decisions | `track-project-decisions` | Track choices, not implementation tickets |
 | Better instructions | `improve-prompt` | Rewrite the prompt without executing its embedded request |
 | Continuation context | `prepare-handoff` | Transfer or compact actual ongoing work |
+| Project progress for an audience and period | `report-project-status` | Reconcile observed work, acceptance and delivery; reporting does not authorize sending |
+| A better recurring team process | `improve-team-workflow` | Propose and evaluate a bounded process change; code improvement discovery stays separate |
 | An inherited codebase baseline | `onboard-codebase` | Establish how to work safely before selecting improvements |
 | Durable project knowledge and indexed memory | `document-project` | Populate authoritative records from evidence; do not invent historical rationale |
 | An explanation of current code | `explain-codebase` | Trace behavior rather than assess every possible defect |
@@ -35,10 +37,12 @@ These names identify skills in this collection. Availability depends on the inst
 | Independent code findings | `review-code` | Review a change, feature, data layer, or codebase against evidence |
 | Proof that a change meets its criteria | `verify-change` | Independently exercise behavior or inspect changed documents/plans; no mandatory duplicate pass when valid evidence already exists |
 | A delivered target | `ship-change` | Reach the authorized PR, release, deployment, or handover |
+| Reusable observations from existing interfaces | `capture-design-reference` | Capture and analyze inspected patterns without turning them into the target's design contract |
 | User journeys and state transitions | `map-user-flows` | Include failure, recovery, permissions, and alternate paths |
 | A usable screen or interface design | `design-interface` | Work within the product's flows and component conventions |
 | Reusable visual and component rules | `build-design-system` | Shared needs justify a system; one screen does not |
 | Independent interface findings | `review-interface` | Inspect rendered behavior and try to break supported journeys |
+| A usability study or findings from user sessions | `test-usability` | Test realistic tasks with participant evidence; a study plan or expert review cannot claim observed user behavior |
 
 A ready fix does not need brainstorming. An accepted specification does not need to be rewritten before task creation. A request to “review” needs its subject: proposal, code, or rendered interface. Review conclusions require independent evidence; choosing a route does not establish readiness.
 
@@ -50,6 +54,9 @@ A ready fix does not need brainstorming. An accepted specification does not need
 | "Make this project AI-friendly" | `prepare-repo-for-agents` for discoverable existing guidance; `document-project` for missing factual knowledge; `design-architecture` when the request is an AI product capability |
 | "Design this feature" | `model-domain` for unclear business concepts; `design-architecture` for technical boundaries; `map-user-flows` for the journey; `design-interface` for a settled screen; shared repeated needs can justify `build-design-system` |
 | "Review this" | `challenge-proposal` for unresolved proposal choices; `review-code` for code findings; `review-interface` for rendered experience; `explain-pr` for an explanation rather than an assessment |
+| "Check whether this design works for users" | `test-usability` for participant task evidence or a study protocol; `review-interface` for an expert assessment; `capture-design-reference` for analysis of an existing reference rather than validation |
+| "Summarize our work" | `report-project-status` for a period/audience update; `prepare-handoff` for continuation context; `explain-pr` for one fixed code comparison |
+| "Improve how we work" | `improve-team-workflow` for a recurring process; `find-improvements` for codebase candidates; `automate-code-checks` for an agreed recurring coding rule |
 | "Refactor or speed this up" | `find-improvements` for candidates; `improve-performance` for measured bottlenecks; `implement-change` for an accepted bounded refactor |
 | "Release this on GitHub" | `ship-change` for the specified notes-only, draft or publication target; carry the chosen revision and version policy, and establish the comparison release or first-release scope before writing notes |
 

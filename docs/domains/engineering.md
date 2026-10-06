@@ -1,6 +1,6 @@
 # Engineering
 
-This domain covers the software lifecycle, including requirements, architecture, coding, quality, delivery, and maintenance. All 25 entries have draft packages; links open their actual instructions. Use the narrowest result that matches the request. UI/UX owns user journeys and interface decisions; productivity owns idea exploration and decision support.
+This domain covers the software lifecycle, including requirements, architecture, coding, quality, delivery, and maintenance. Its 25 packages are under active development; links open their actual instructions. Use the narrowest result that matches the request. UI/UX owns user journeys and interface decisions; productivity owns idea exploration and decision support.
 
 ## Categories and skills
 

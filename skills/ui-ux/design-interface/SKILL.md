@@ -13,6 +13,8 @@ Read the existing design contract, tokens/components, accepted flows, content, b
 
 Choose a coherent composition and visual direction using the actual audience and task. Make typography, spacing, density, imagery, and emphasis support that direction. Avoid filling gaps with generic claims, invented testimonials, or placeholder content presented as real.
 
+Use `capture-design-reference`, when available, if the requested input is a reusable analysis of existing interfaces. Keep those observations separate from the target product's accepted design choices.
+
 Inspect available design tools and access before choosing an artifact format. Use a requested available tool when it supports the agreed result; retain the editable file/document, relevant revision, and opening/export instructions. Check that handed-off structure, component constraints, content, and states survive an export rather than assuming a screenshot or exported markup preserves them. If a required tool or format is unavailable, state that gap before substituting another deliverable.
 
 ## Design the complete behavior

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Capture design reference"
+  short_description: "Capture interface patterns with traceable visual evidence"
+  default_prompt: "Use $capture-design-reference to analyze these interfaces as reusable references, distinguishing observed details, measured values and proposed adaptations."
