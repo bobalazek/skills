@@ -1,0 +1,4 @@
+interface:
+  display_name: "Validate product idea"
+  short_description: "Assess product assumptions and the next investment"
+  default_prompt: "Use $validate-product-idea to assess this product or feature idea against the available evidence and recommend the next decision or bounded test."

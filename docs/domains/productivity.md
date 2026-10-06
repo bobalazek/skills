@@ -1,6 +1,6 @@
 # Productivity
 
-This domain owns idea exploration, decision support, work communication and improvements to recurring team processes. Its ten packages are under active development. Engineering owns software specifications and execution plans; UI/UX owns user journeys and interfaces.
+This domain owns idea exploration, decision support, work communication and improvements to recurring team processes. Its ten packages are under active development. Product owns demand, feedback and competitor evidence; Engineering owns software specifications and execution plans; UI/UX owns user journeys and interfaces.
 
 ## Categories and skills
 
@@ -27,7 +27,7 @@ This domain owns idea exploration, decision support, work communication and impr
 
 `prioritize-work` selects from an existing candidate set under goals and capacity. `find-improvements` discovers repository candidates; `create-tasks` decomposes accepted scope. Priority and readiness are separate: important blocked work can stay high priority while independent lower-ranked work can start.
 
-Clarifying an idea establishes shared intent. Validation needs relevant evidence, such as observed user needs or a working feasibility experiment; agreement alone cannot supply it. Use accepted findings to gather requirements in `write-spec`, then derive phases and tasks when the work needs them. A PRD or issue is a specification format, not another productivity workflow.
+Clarifying an idea establishes shared intent. Use Product's `validate-product-idea` for evidence supporting a product commitment, or `build-prototype` for an unproven feasibility claim; agreement alone cannot supply either. Use accepted findings to gather requirements in `write-spec`, then derive phases and tasks when the work needs them. A PRD or issue is a specification format, not another productivity workflow.
 
 `choose-skill` routes an unclear request using its desired result and current state. A ready task can use its owning skill directly. `prepare-handoff` is for a person/session transfer or context compaction. Ordinary skill composition reuses accepted artifacts without another handoff document. `improve-prompt` edits instructions and does not perform the task contained in them.
 

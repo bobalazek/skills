@@ -21,6 +21,9 @@ The [README graph](../README.md#from-idea-to-delivery) shows the overall route. 
 | Alternatives to an unclear idea | `brainstorm-ideas` | Different approaches, trade-offs and a proposed direction | The direction is settled |
 | Questions that challenge a proposal | `challenge-proposal` | Consequential questions answered, edge cases exposed, proposal updated | No material choice blocks the requested result |
 | Evidence for an uncertain premise | `research-topic` or `build-prototype` | A sourced answer or observed experiment | Existing evidence answers the uncertainty |
+| Evidence for a product investment | `validate-product-idea` | A supported decision or bounded validation plan | The relevant need and commitment already have sufficient evidence |
+| Needs from existing feedback | `analyze-user-feedback` | Sourced needs with reconciled counts, contrary evidence and coverage limits | Relevant synthesis is already available |
+| A comparison of product alternatives | `analyze-competitors` | Dated differences and implications for a named product decision | The existing comparison still fits the decision and date |
 | Precise required behavior | `write-spec` | Scenarios, constraints and observable acceptance criteria in a spec, PRD or issue | The accepted requirements already suffice |
 | Screen structure before visual detail | `create-wireframes` | Editable layouts with hierarchy, content/state placement and requirement links | Existing or accepted screen structure already resolves the question |
 | Several deliverable milestones | `plan-phases` | Outcomes, prerequisites, parallel conditions and phase exits | The change fits one bounded work item or small task set |
@@ -36,6 +39,7 @@ The domain catalogs organize skills by responsibility. These stages organize a p
 | --- | --- | --- |
 | Understand the starting point | `assess-request`, `onboard-codebase`, `explain-codebase`, `diagnose-issue` | The requested outcome and relevant baseline are understood |
 | Explore and challenge | `brainstorm-ideas`, `challenge-proposal`, `research-topic`, `capture-design-reference`, `build-prototype` | Consequential choices have answers and required premises have evidence |
+| Evaluate a product opportunity | `validate-product-idea`, `analyze-user-feedback`, `analyze-competitors` | The next commitment has relevant evidence, or the decision is to stop, revise or investigate further |
 | Specify and design | `write-spec`, `model-domain`, `design-architecture`, `map-user-flows`, `create-wireframes`, `design-interface`, `write-interface-copy` | Behavior and the decisions needed by the selected work are accepted |
 | Plan execution | `prioritize-work`, `plan-phases`, `create-tasks` | The selected work fits its stated constraints and has accepted prerequisites, owners and checks |
 | Build | `start-project`, `implement-change` and the relevant specialist skill | The selected result exists with scoped proof on its actual revision |
@@ -51,11 +55,11 @@ A spec can include intended delivery slices and known dependencies when they exp
 
 Every skill resolves missing input for its own outcome. Use `challenge-proposal` to examine a proposal with the user: inspect what can be discovered, ask the highest-impact unresolved question, follow the answer, and update the existing proposal. Ask about actors, boundaries, failures, recovery and preservation only where their answers could change the result. Explain the trade-off and let the human make choices that belong to them. Do not ask a fixed questionnaire or reopen accepted answers.
 
-A clarified proposal is not a validated concept: demand, feasibility, and performance assumptions need relevant evidence. Use research or a bounded prototype for those claims. An unanswered consequential choice blocks only the work that depends on it; unrelated investigation can continue. Stop questioning when the requested result is sufficiently clear, and carry accepted answers into the spec, phases and tasks.
+A clarified proposal is not a validated concept: demand, feasibility, and performance assumptions need relevant evidence. Use `validate-product-idea` for a product commitment, research for missing facts, or a bounded prototype for empirical feasibility. An unanswered consequential choice blocks only the work that depends on it; unrelated investigation can continue. Stop questioning when the requested result is sufficiently clear, and carry accepted answers into the spec, phases and tasks.
 
 ## Routes by situation
 
-Match the requested result, not just words such as "new project," "review" or "AI." These examples cover every skill without requiring every skill in a workflow. Start with [exploration](#explore-and-route), [project context](#understand-and-prepare-a-project), [design](#specify-and-design), [implementation](#plan-and-change-software), or [evaluation and delivery](#verify-review-and-deliver).
+Match the requested result, not just words such as "new project," "review" or "AI." These examples cover every skill without requiring every skill in a workflow. Start with [exploration](#explore-and-route), [product discovery](#evaluate-a-product-opportunity), [project context](#understand-and-prepare-a-project), [design](#specify-and-design), [implementation](#plan-and-change-software), or [evaluation and delivery](#verify-review-and-deliver).
 
 ### Explore and route
 
@@ -69,6 +73,36 @@ Match the requested result, not just words such as "new project," "review" or "A
 | "We keep losing track of unresolved decisions and what they block." | [track-project-decisions](../skills/productivity/track-project-decisions/SKILL.md) | Current choices, dependencies and next ready question; specify settled portions without waiting for the whole initiative |
 | "Make this agent instruction clearer without running it." | [improve-prompt](../skills/productivity/improve-prompt/SKILL.md) | A checked rewrite preserving intent; finish with the prompt unless an evaluation or execution was requested |
 | "This ticket may be a duplicate or a support question; work out what it needs." | [assess-request](../skills/engineering/assess-request/SKILL.md) | Evidence, impact and a route; choose `diagnose-issue` for a failure, `write-spec` for missing behavior, or a support/closure recommendation |
+
+### Evaluate a product opportunity
+
+| Example request | First skill | Result and conditional continuation |
+| --- | --- | --- |
+| "Should we invest in this new product idea, given these interviews and constraints?" | [validate-product-idea](../skills/product/validate-product-idea/SKILL.md) | An evidence-backed next decision or bounded test plan; use `write-spec` for accepted scope, without claiming an unexecuted test validated demand |
+| "Should we add this feature to the existing product?" | [validate-product-idea](../skills/product/validate-product-idea/SKILL.md) | Assess the target segment, observed need, alternatives and commitment while preserving working behavior; skip rediscovery for an already accepted change |
+| "What needs are supported by these interviews, tickets and reviews?" | [analyze-user-feedback](../skills/product/analyze-user-feedback/SKILL.md) | Deduplicated needs with sources, opposing evidence and coverage limits; use validation for uncertain demand or prioritization when work candidates and capacity exist |
+| "Compare competitors and manual alternatives for this product decision." | [analyze-competitors](../skills/product/analyze-competitors/SKILL.md) | A dated, comparable assessment and supported implications; a proposed opportunity still needs user evidence before treating it as demand |
+
+This graph shows possible handoffs. Start with the missing result and reuse existing evidence. A direct request for feedback synthesis or a comparison can finish at that result.
+
+```mermaid
+flowchart TD
+  Idea(["Input: proposed product or feature"]) --> Validate[["validate-product-idea"]]
+  Raw(["Input: existing interviews, tickets or reviews"]) --> Feedback[["analyze-user-feedback"]]
+  Alternatives(["Input: product decision needing an alternatives comparison"]) --> Competitors[["analyze-competitors"]]
+  Feedback -->|Needs inform the investment| Validate
+  Competitors -->|Comparison informs the investment| Validate
+  Validate --> Decision{"What does the evidence support?"}
+  Decision -->|Accepted commitment needs behavior defined| Spec[["write-spec"]]
+  Decision -->|Missing observations| Test(["Result: bounded test plan or authorized experiment"])
+  Test -->|Actual observations available| Validate
+  Decision -->|Premise needs changing| Ideas[["brainstorm-ideas"]]
+  Decision -->|Stop or retain current approach| Stop(["Result: decision and reasons recorded"])
+  classDef skill fill:#edf5ff,stroke:#355b85,color:#172b42;
+  class Validate,Feedback,Competitors,Spec,Ideas skill;
+```
+
+Feedback synthesis and competitor research can run in parallel after the audience, job and decision are agreed, when their sources and workspaces allow independent work. Reconcile shared assumptions before a decision depending on both; neither branch is mandatory. Independent review challenges the actual sources and conclusions before acceptance. It cannot stand in for user observations, and a proposed test does not authorize recruitment, publication or spending.
 
 ### Understand and prepare a project
 
@@ -234,6 +268,8 @@ Before context loss or an actual session transfer, condense those facts into the
 | --- | --- | --- |
 | Idea with a consequential choice unresolved | `challenge-proposal` | Options, accepted answers and the decision that changes the outcome |
 | Proposal depends on an unsupported premise | `research-topic` or `build-prototype` | The falsifiable question and the evidence needed; resume the affected proposal afterward |
+| Product or feature commitment depends on unproven need or demand | `validate-product-idea` | Intended users, proposed commitment, existing evidence and its limits |
+| Feedback synthesis or competitor comparison | `validate-product-idea`, `prioritize-work`, or finish according to the requested decision | Source-linked findings and counterevidence; prioritization additionally needs work candidates, goals and capacity |
 | Selected idea with enough evidence | `write-spec` | Accepted direction, constraints and supporting evidence |
 | Spec with unresolved technical or journey choices | `design-architecture` or `map-user-flows` | Relevant behavior criteria; use `build-prototype` for unproven feasibility |
 | Accepted flow or existing screen with unresolved structure | `create-wireframes` | Accepted behavior, current screens/components, supported surfaces and the structural question |
