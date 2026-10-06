@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analyze product usage"
+  short_description: "Explain observed usage with checked counts and limits"
+  default_prompt: "Use $analyze-product-usage to answer this product behavior question from the available data, checking definitions and coverage before drawing conclusions."

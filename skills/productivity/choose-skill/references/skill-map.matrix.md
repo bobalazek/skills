@@ -10,6 +10,8 @@ These names identify skills in this collection. Availability depends on the inst
 | Evidence for the next product or feature investment | `validate-product-idea` | Assess need and demand for a named commitment; missing observations yield a plan or evidence gap |
 | User needs from existing feedback | `analyze-user-feedback` | Reconcile records and identities, preserve counterevidence and coverage; do not select a roadmap |
 | A product competitor and alternatives comparison | `analyze-competitors` | Compare relevant alternatives for a named product decision; a market gap does not prove demand |
+| Defined product success measures | `define-product-metrics` | Specify the outcome, calculation, source and quality contract; do not invent baselines or implement collection |
+| Findings from existing product usage | `analyze-product-usage` | Reconcile behavior data against definitions and observation windows; associations alone do not establish causes |
 | Current consequential decisions | `track-project-decisions` | Track choices, not implementation tickets |
 | A feasible selection from supplied work | `prioritize-work` | Compare goals, commitments, capacity and prerequisites; priority is not readiness |
 | Better instructions | `improve-prompt` | Rewrite the prompt without executing its embedded request |
@@ -61,6 +63,7 @@ A ready fix does not need brainstorming. An accepted specification does not need
 | "Validate this idea" | `validate-product-idea` for evidence supporting a product commitment; `challenge-proposal` for unresolved choices; `build-prototype` for a bounded feasibility experiment; `test-usability` for participant task evidence |
 | "Compare these competitors" | `analyze-competitors` for product alternatives and their implications; `research-topic` for an isolated factual question; `design-architecture` for a technical choice |
 | "Turn this customer feedback into work" | `analyze-user-feedback` when needs remain unsynthesized; `prioritize-work` when candidates, goals and capacity exist; `write-spec` for accepted behavior. A known failure can go directly to `diagnose-issue` |
+| "Measure whether this product is working" | `define-product-metrics` for unsettled measures; `analyze-product-usage` for observed adoption, funnels or retention with usable definitions; `configure-monitoring` for service failure detection; `test-usability` for participant task evidence |
 | "Make this project AI-friendly" | `prepare-repo-for-agents` for discoverable existing guidance; `document-project` for missing factual knowledge; `design-architecture` when the request is an AI product capability |
 | "Design this feature" | `model-domain` for unclear business concepts; `design-architecture` for technical boundaries; `map-user-flows` for the journey; `create-wireframes` for unresolved screen structure; `design-interface` for visual detail; shared repeated needs can justify `build-design-system` |
 | "Make a wireframe or prototype" | `create-wireframes` for a structural screen proposal; `build-prototype` when a consequential uncertainty needs working interactions or technical evidence |

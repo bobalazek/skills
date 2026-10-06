@@ -1,0 +1,4 @@
+interface:
+  display_name: "Define product metrics"
+  short_description: "Define decision-linked metrics and data requirements"
+  default_prompt: "Use $define-product-metrics to define a small measurement contract for this product decision, reusing existing data definitions and naming quality checks and unresolved gaps."
