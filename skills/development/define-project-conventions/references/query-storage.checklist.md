@@ -14,9 +14,27 @@ For a new feature, list its expected reads/writes and the source of any volume a
 
 Use the existing access owner for filtering, authorization/tenant scope, ordering, projection, aggregation, and limits. Apply scope consistently to relations and counts. Return only fields the caller may see. Map dynamic identifiers to an allowlist and bind values through the existing query API. Follow [HTTP/API conventions](http-api.checklist.md) for collection contracts.
 
-Inspect query count for list views and loops. Resolve demonstrated N+1 access with a bounded relation load, join, batch, or aggregate that preserves authorization and row cardinality. One giant join can multiply rows; fetching every related row can replace round trips with a memory problem. Check both query count and returned volume. Bound batches by actual driver/engine limits and workload, with transaction and partial-failure behavior defined.
+Inspect query count for list views and loops. Resolve demonstrated N+1 access with a bounded relation load, join, batch, or aggregate that preserves authorization and row cardinality. One giant join can multiply rows; fetching every related row can replace round trips with a memory problem. Check both query count and returned volume. For bounded related-record loads, collect needed keys, deduplicate only where semantics permit, then associate results by the correct key or group. Preserve caller order where promised and handle missing or unauthorized records without silently losing entries.
 
 Use deterministic order for limited results and keyset traversal. For example, a tenant-scoped feed sorted by `(created_at, id)` needs both values in its cursor comparison; an index candidate must reflect the scope and order. Validate the actual query plan and ties. Do not claim constant-time pagination: filters, data distribution, and access paths still matter.
+
+## Batching, concurrency, and transactions
+
+Choose execution shape from dependencies, failure semantics, and capacity. A bulk statement or bounded batch can remove round trips; parallel individual calls retain their query count and may add contention. Use the existing bulk API when it preserves validation, authorization, required hooks, and result/error semantics. Bound batches by driver parameter limits, payload size, lock duration, and observed workload. Sequential execution is appropriate for dependent operations or required ordering, and can be sufficient for a small workload.
+
+Independent calls can overlap when latency matters and the driver/upstream permits it. Bound active work and queued inputs using existing facilities, accounting for concurrent requests, workers, application instances, pool capacity, and operational headroom. The concurrency limit should come from workload evidence rather than a fixed universal number. Inspect pool wait time and held connections before increasing capacity.
+
+Define what happens when one operation fails. Check whether the selected concurrency primitive waits for, cancels, or leaves sibling work running; none of those outcomes establishes that completed effects were undone. Inspect every collected failure and wait for work to settle before releasing shared resources or retrying. Cancellation, deadlines, and partial success need explicit support and behavior in the underlying operations. Use the language/runtime's established task-lifetime and error-handling model.
+
+Use a transaction when an identified invariant requires database operations to commit or abort together. Keep every participating query in the transaction context supplied by the database API; inspect helpers for accidental use of an unrelated session or global pool. Verify the driver's connection ownership and concurrency restrictions. Parallel syntax alone cannot establish parallel execution or a shared transaction.
+
+Atomic commit does not by itself prevent every concurrency anomaly or guarantee one stable snapshot for separate reads. Select constraints, conditional updates, locks, or an isolation level that enforces the actual invariant. Check the deployed database's guarantees and defaults; test the competing operation rather than merely checking that both statements use a transaction.
+
+Keep the transaction's work and resource lifetime bounded. Complete its queries before commit/rollback and release the client on every exit; preserve failure when a helper rejects. Avoid unrelated network waits inside a transaction unless the accepted design requires them and accounts for lock duration and failure. An external message or payment is not undone by a database rollback; use the project's delivery/reconciliation mechanism for effects spanning systems.
+
+Retry only identified transient failures within a bounded attempt/time budget, with backoff when appropriate. Follow the database's retry unit: a failure may require rerunning the whole transaction and decisions based on its reads, not just the last statement. Ensure retryable code does not duplicate external effects; a connection loss near commit can leave the outcome unknown and needs reconciliation or idempotency before repeating.
+
+Check a representative batch boundary, partial failure, competing write, and relevant retry path before claiming the convention preserves correctness. Measure both end-to-end behavior and database/pool impact for a claimed concurrency improvement. Do not wrap every read in a transaction or replace every awaited loop with parallel work as a style rule.
 
 ## Measure a proposed query change
 
@@ -44,7 +62,7 @@ Choose index creation/rebuild procedures from the engine's actual locking and tr
 
 ## Match capacity measures to evidence
 
-Before distributing storage, investigate the measured limit: unnecessary reads, bad access paths, contention, connection pressure, memory/I/O, or an actual capacity ceiling. A bounded pool needs a connection budget across processes and workloads; increasing its size can increase contention. Replicas need explicit lag and read-after-write behavior. Caches or precomputed aggregates need freshness limits, authorization-safe keys, invalidation, and repair ownership. A cache hit rate alone does not establish correctness or usefulness.
+Before distributing storage, investigate the measured limit: unnecessary reads, bad access paths, contention, connection pressure, memory/I/O, or an actual capacity ceiling. Use the connection/concurrency budget above. Replicas need explicit lag and read-after-write behavior. Caches or precomputed aggregates need freshness limits, authorization-safe keys, invalidation, and repair ownership. A cache hit rate alone does not establish correctness or usefulness.
 
 Use an analytical store or offline pipeline only when analytical work, retention, or freshness requirements justify another data copy. Define ownership, change/deletion propagation, reconciliation, and how stale results are represented. Storage additions do not remove the need to preserve source invariants.
 

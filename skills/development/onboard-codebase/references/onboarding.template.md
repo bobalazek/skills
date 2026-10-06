@@ -6,7 +6,7 @@ Use the project's existing location and include only useful sections.
 - Important entry points and a traced flow with code references.
 - Module/data ownership, integrations, and contracts to preserve.
 - For API/data work: representative route-to-query flow, authenticated actor and tenant scope, contract/schema locations, data model and migrations, important query/index patterns, supported deployed clients and unresolved recovery constraints. Use current code and authorized observations; do not infer production performance or integrity from a static map.
-- Local conventions and their authoritative locations; disputed or merely observed patterns stay labeled.
+- Local conventions and their authoritative locations; disputed or merely observed patterns stay labeled. Trace a representative feature's file/test placement, imports, reuse, data access, error handling and dependency choices. Record accepted rules, maintained examples, intentional exceptions and legacy conflicts separately; propose scoped adoption instead of silently replacing project conventions with generic preferences.
 - Setup/check commands with observed results, prerequisites, and missing access.
 - Delivery and operating ownership relevant to the first change.
 - The first bounded change route: owning files, consumers, and verification.
