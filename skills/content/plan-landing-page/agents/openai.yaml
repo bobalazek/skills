@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan landing page"
+  short_description: "Plan a page's message, proof and content sequence"
+  default_prompt: "Use $plan-landing-page to turn these product facts and visitor needs into a focused page content plan."

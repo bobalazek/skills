@@ -1,6 +1,6 @@
 # UI/UX
 
-This domain owns design references, user journeys, wireframes, detailed interface design and copy, rendered experience review, usability studies and shared interface foundations. Its eight packages are under active development.
+This domain owns design references, user journeys, wireframes, detailed interface design and state messages, rendered experience review, usability studies and shared interface foundations. Its eight packages are under active development.
 
 ## Categories and skills
 
@@ -16,6 +16,8 @@ This domain owns design references, user journeys, wireframes, detailed interfac
 | Shared foundations | Tokens and components | [build-design-system](../../skills/ui-ux/build-design-system/SKILL.md) | Useful tokens/themes/component contracts and representative verified consumers with a migration path when needed |
 
 ## Boundaries and use
+
+[Content](content.md) owns website messaging and page prose. UI/UX owns the journey, screen structure and behavior-dependent interface strings, including forms embedded in a marketing page. A page can need both domains; keep each artifact with its owner and reconcile meaning and text fit. See the [product-page route](../workflows.md#plan-and-write-a-product-page).
 
 `map-user-flows` defines how users reach an outcome and recover from meaningful failures. `create-wireframes` resolves screen hierarchy and content/state placement before visual detail. `design-interface` develops the selected structure into detailed visual design and complete states. Reuse accepted flows or existing screens; skip wireframing when structure is settled. `build-design-system` encodes repeated needs into shared foundations. `review-interface` evaluates the actual rendered experience against tasks and supported surfaces.
 

@@ -50,6 +50,8 @@ These names identify skills in this collection. Availability depends on the inst
 | User journeys, navigation and state transitions | `map-user-flows` | Include hierarchy and labels when needed, plus failure, recovery, permissions and alternate paths |
 | Low-fidelity screen structure | `create-wireframes` | Reuse accepted flows or existing screens; resolve hierarchy, content placement and states before visual detail |
 | Detailed screen or interface design | `design-interface` | Reuse settled structure and component conventions; no wireframe stage is needed when structure already suffices |
+| A landing page's message and content sequence | `plan-landing-page` | Connect visitor questions, supported claims, proof and next action; leave actual wording and screen layout to their owners |
+| Actual website page or section wording | `write-website-copy` | Write or revise public page copy from accepted purpose and facts; interface states and unresolved page strategy stay separate |
 | Interface labels and state-specific messages | `write-interface-copy` | Deliver copy grounded in actual behavior; do not redesign the screen or invent recovery promises |
 | Reusable visual and component rules | `build-design-system` | Shared needs justify a system; one screen does not |
 | Independent interface findings | `review-interface` | Inspect rendered behavior and try to break supported journeys |
@@ -71,6 +73,10 @@ A ready fix does not need brainstorming. An accepted specification does not need
 | "Make this project AI-friendly" | `prepare-repo-for-agents` for discoverable existing guidance; `document-project` for missing factual knowledge; `design-architecture` when the request is an AI product capability |
 | "Design this feature" | `model-domain` for unclear business concepts; `design-architecture` for technical boundaries; `map-user-flows` for the journey; `create-wireframes` for unresolved screen structure; `design-interface` for visual detail; shared repeated needs can justify `build-design-system` |
 | "Make a wireframe or prototype" | `create-wireframes` for a structural screen proposal; `build-prototype` when a consequential uncertainty needs working interactions or technical evidence |
+| "Improve this product landing page" | `plan-landing-page` for unsettled message/content needs; `write-website-copy` for the words; `design-interface` for visual detail; `analyze-product-usage` for interpreting existing website observations |
+| "Give this headline a stronger hook" | `write-website-copy` for website wording grounded in the real offer; a video script or broader campaign is outside this package |
+| "Write a blog post, social post or video script" | No dedicated package in this collection yet; the Content domain currently covers website planning and copy. Describe the plain action rather than forcing the request through `write-website-copy` |
+| "Run a software factory from our accepted backlog" | `manage-project-board` for ongoing coordination and bounded ready pickup; `create-tasks` for missing task contracts. Actual workers, isolation and execution authority come from the host |
 | "Review this" | `challenge-proposal` for unresolved proposal choices; `review-code` for code findings; `review-interface` for rendered experience; `explain-pr` for an explanation rather than an assessment |
 | "Check whether this design works for users" | `test-usability` for participant task evidence or a study protocol; `review-interface` for an expert assessment; `capture-design-reference` for analysis of an existing reference rather than validation |
 | "Summarize our work" | `report-project-status` for a period/audience update; `prepare-handoff` for continuation context; `explain-pr` for one fixed code comparison |

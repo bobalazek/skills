@@ -9,6 +9,8 @@ description: "Write or revise interface labels, instructions and state messages 
 
 Use this for focused wording, a string handoff or authorized edits to existing resources. Reuse accepted behavior, terminology and stable resource keys. Routine wording can remain within `design-interface`; navigation structure belongs to `map-user-flows`, and unresolved required behavior to `write-spec`.
 
+Use `write-website-copy` for public page messaging, headlines and promotional copy. A marketing page's form validation and submission states still belong here. Check availability or describe the plain action when switching.
+
 ## Establish meaning and scope
 
 Read the task, accepted flows, current strings, supported locales/platforms and relevant content/accessibility conventions. Inspect the actual interface or supplied state evidence. Record the candidate revision and distinguish observed behavior, accepted requirements and assumptions.

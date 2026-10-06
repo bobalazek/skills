@@ -1,13 +1,13 @@
 ---
 name: choose-skill
-description: "Choose the next available skill for an engineering, product, productivity or UI/UX request from its desired result and accepted inputs, without restarting completed stages."
+description: "Choose the next available skill for an engineering, product, productivity, UI/UX or content request from its desired result and accepted inputs, without restarting completed stages."
 ---
 
 # Choose skill
 
 ## Use this skill
 
-Use this when the next owner or starting point is unclear. Return one best starting skill and the input it needs. A clear task can start directly with its owning skill; requests outside engineering, product, productivity and UI/UX can be outside this collection.
+Use this when the next owner or starting point is unclear. Return one best starting skill and the input it needs. A clear task can start directly with its owning skill. Route only to an actual package in the map; a domain name does not imply coverage of every task within it.
 
 Reuse accepted artifacts, decisions and current work. An existing specification, ready task or reviewed candidate should change the starting point.
 

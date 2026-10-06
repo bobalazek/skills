@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write website copy"
+  short_description: "Write clear website copy grounded in the actual offer"
+  default_prompt: "Use $write-website-copy to revise this page's wording for its audience, preserving the voice and checking every promise against the supplied offer and proof."

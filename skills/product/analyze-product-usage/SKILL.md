@@ -29,6 +29,8 @@ Inspect event-version and property changes, feature availability and exposure, p
 
 Choose the smallest analysis that answers the question. Use the existing report or query when it matches the contract; otherwise preserve a reproducible calculation using the project's tools. For funnels, cohorts, retention, controlled-experiment readouts or conflicting totals, load the relevant sections of [usage analysis checks](references/usage-analysis.checklist.md). For a readout, obtain the predeclared protocol, revision and change log before inspecting effects; absent rules cannot be retroactively predeclared.
 
+For website acquisition, landing-page behavior or search-performance questions, load [website observation checks](references/website-analysis.checklist.md). Provider semantics, search coverage and traffic mix can change what the same dashboard number means.
+
 Report numerator and denominator beside a rate, and the eligible observation window beside each cohort. Separate not-yet-observable cohorts from mature results. Pool compatible counts rather than averaging percentages with different denominators. Keep incompatible definitions separate. Check segments that could materially change the conclusion, including exposure and acquisition mix; avoid slicing until a favorable result appears.
 
 Preserve small-sample and selection limits. Distinguish percentage-point from relative changes and use uncertainty estimates only when their method and assumptions fit the data. A before/after difference or association alone does not establish that a feature caused the change. Causal claims require a defensible design and checked assumptions; if those are absent, report the association and a way to investigate it. Do not invent statistical significance or a benchmark.
