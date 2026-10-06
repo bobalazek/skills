@@ -25,7 +25,7 @@ Order sections around visitor questions: what it does, whether it fits, how it w
 
 A campaign destination may support one narrow task; a homepage can serve several audiences and returning users. Preserve useful navigation and distinct paths. Do not apply universal rules about removing navigation, placing every action above the fold or reaching a word count. Screen geometry belongs to wireframing; this output defines content needs and order.
 
-Use [the content plan](references/page-plan.template.md) for a whole page or design handoff, adapting the existing brief rather than duplicating it. A bounded section request needs only its changed question, message, evidence and next action. Keep missing facts separate from accepted content.
+For a whole page, redesign or design handoff, use [the content inventory, section decisions and plan](references/page-plan.template.md). Explain what each useful section must answer, its supported content and intended decision purpose; identify how that purpose could be checked. Preserve useful existing content and destinations before proposing replacements. Adapt the existing brief rather than duplicating it. A bounded section request needs only its changed question, message, evidence and next action. Keep missing facts separate from accepted content.
 
 ## Evaluate the plan
 

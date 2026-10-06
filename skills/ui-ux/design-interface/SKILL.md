@@ -1,6 +1,6 @@
 ---
 name: design-interface
-description: "Create or refine detailed interface design with visual hierarchy, content, states and responsive behavior, delivering an agreed design artifact, implementation handoff or rendered surface."
+description: "Design, refine or redesign an interface with visual hierarchy, content, states and responsive behavior, delivering an agreed design artifact, implementation handoff or rendered surface."
 ---
 
 # Design interface
@@ -13,9 +13,9 @@ Use `map-user-flows` when the journey or navigation is unresolved, `create-wiref
 
 ## Inspect the surface and choose the format
 
-Read the design contract, tokens/components, brand direction and supported platforms. Inspect existing UI in its rendered state and preserve useful patterns. For a new surface, establish the primary task and content hierarchy before selecting decoration.
+Read the design contract, tokens/components, brand direction and supported platforms. Inspect existing UI in its rendered state. Determine whether the request refines an existing design, replaces its visual direction, or creates a new surface. Existing code, content and accepted decisions remain evidence when a design document is missing; a new page inside an established product normally inherits its system.
 
-Choose a coherent composition for the audience and task. Make typography, spacing, density, imagery and emphasis serve it. Do not fill missing content with invented testimonials or claims presented as real.
+For a redesign, unsettled visual direction or a substantial composition/type refinement, read [visual direction and craft](references/visual-direction.playbook.md). Establish the page or screen's task, what must survive, and the design choices still open. Reuse accepted reference analysis and content plans; a local refinement needs only its affected decisions. Do not fill missing content with invented testimonials or claims presented as real.
 
 Check available tools and access before choosing a format. Use the requested tool when it supports the result. Preserve editable artifacts, revision and opening/export instructions; inspect whether export retains structure, component constraints, content and states. State an unavailable required format before offering a substitute.
 
@@ -24,6 +24,8 @@ Check available tools and access before choosing a format. Use the requested too
 For a detailed handoff, use [screen and state requirements](references/screen.template.md). Specify meaningful loading, empty, error, success, selected, focus and disabled states. Include accessibility, recovery and supported responsive/adaptive differences in the behavior contract.
 
 Reuse existing components and patterns before proposing additions. Identify a shared need without turning one screen into a new design system. If implementation is requested, follow local code conventions and verify the rendered result.
+
+When motion is requested or needed to explain a consequential transition, read [motion decisions and checks](references/motion.playbook.md). Define its purpose, repetition and interruption behavior before selecting an effect; keep state and task completion usable with reduced or unavailable motion.
 
 When the requested fidelity allows it, a small local HTML/CSS prototype with SVG can be an editable fallback. Use synthetic data and only interactions needed for the design question, reusing product components where applicable. Label static controls, simulated services and native/platform behavior it cannot establish. Connected drawings alone do not demonstrate navigation, validation or recovery.
 
