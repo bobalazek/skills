@@ -39,7 +39,7 @@ Every package in this collection includes `agents/openai.yaml` for Codex discove
 | Evidence | Preserve useful baseline/result artifacts, compare consistent conditions, redact shared content, and include relevant accessible evidence in authorized PRs; local paths are not attachments |
 | Authority | Honor granted authority and pause only at the actual missing input, choice, permission, or failed required check |
 | Knowledge | Reconcile useful facts, decisions, and learnings in existing authoritative locations |
-| Handoff | Pass accepted context, revision/evidence, unresolved prerequisites, and the next useful action |
+| Handoff | Name the next useful action and owning skill, why it fits, required input and unmet prerequisite; pass accepted context and revision/evidence, or state that no follow-up is needed |
 | Communication | Follow the requested audience, tone and depth, then project conventions; report outcome, purpose, relevant method, proof and gaps without a chronological transcript or another summary document |
 
 ## Choosing the right granularity
@@ -51,6 +51,8 @@ A skill owns a distinct deliverable, such as a spec, phase plan, task graph, dia
 A reference supplies specialist guidance or an artifact shape. Project context supplies the consuming repository's facts and rules. Keep stack-specific detail conditional and version-aware; do not turn a private convention into a universal requirement.
 
 Before authoring, state: “Given this input, produce this result; stop before this neighboring work; finish when this evidence exists.” Then check that the skill is useful when requested alone.
+
+Next-step guidance belongs in the portable skill itself. Recommend from the actual result, check sibling availability, and describe the plain action if it is unavailable. A recommendation can end a bounded request; continue already-authorized work without adding a confirmation step. For phased work, preserve accepted outputs, show ready work separately from future parallel candidates, and require integration and affected independent rechecks before advancing.
 
 ## Validation
 

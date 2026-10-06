@@ -35,4 +35,4 @@ Before accepting the result, have a separate agent in fresh context challenge it
 
 The explanation matches the fixed comparison, established intent, and verification evidence; it does not imply a correctness approval. Review uses `review-code`; unresolved consequential intent can use `challenge-proposal`.
 
-Next: review the explained revision or perform the requested PR update. Do not merge, push, or publish merely because an explanation is ready.
+Next: use `review-code` only when a correctness assessment is still needed, carrying the fixed comparison, criteria and evidence; use `verify-change` for missing behavior proof. Perform a requested PR-description update within its authority, or finish with the explanation when that is the whole request. Preserve valid completed reviews. Do not merge, push, or publish merely because an explanation is ready.

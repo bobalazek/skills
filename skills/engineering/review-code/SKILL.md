@@ -17,6 +17,12 @@ For changes, load [change review](references/change-review.checklist.md). For br
 
 When the scope touches HTTP APIs, queries, schemas or storage scaling, load [API and data review](references/api-data-review.checklist.md). Apply it to the changed feature or selected data layer, including its real consumers and alternate writers.
 
+## Sequence the review
+
+For a broad or multi-phase review, organize the existing review record into scope/baseline, risk inspection, reconciliation, and affected rechecks. Use a small dependency graph when branches make the order unclear. Assign distinct questions and coverage to independent reviewers on the same fixed candidate; parallel inspection is useful only when inputs are ready and checks do not interfere through shared services, fixtures or working files. One independent reviewer can cover a small change.
+
+Wait for the required branch evidence before reconciling cross-boundary behavior and issuing the verdict. Phase-local reviews can establish their scoped results, but the combined revision still needs integration evidence and assessment of interactions. After authorized fixes, identify affected paths and proofs, independently recheck them on the new candidate, then reconcile again. Preserve valid coverage from unchanged areas; missing required evidence remains a readiness gap. Reviews can end with findings without initiating fixes.
+
 ## Inspect relevant risks
 
 Trace changed behavior through callers, contracts, data/state, and failure paths. Select relevant correctness, compatibility, security/privacy, performance/reliability, architecture/maintainability, design/convention consistency, duplication, and verification checks from the loaded checklist. Prioritize auth and tenancy, money, sensitive records, destructive operations, migrations, and retry/concurrency paths when present; trace their affected flow end to end. Evaluate accepted local standards separately from observed patterns and subjective preferences.
@@ -41,7 +47,7 @@ For human PR review, carry observed before/after evidence, relevant test/check r
 
 When fixes are requested, verify each claim before editing, keep the authorized scope, rerun affected checks, and inspect the final revision again. Reuse previous review evidence only for unchanged code and criteria; revise stale findings after implementation changes.
 
-Next: `diagnose-issue` for an uncertain suspected defect; `implement-change` for selected fixes; `find-improvements` for a separate improvement search; `automate-code-checks` for an accepted recurring rule that needs enforcement; `ship-change` when the reviewed result is ready and delivery is requested.
+Next: select the action justified by the verdict, carrying its candidate revision, findings, proof and unmet prerequisites. Use `diagnose-issue` for an uncertain suspected defect, `implement-change` for selected authorized fixes, or `verify-change` for missing behavioral evidence. Use `automate-code-checks` for an accepted recurring rule that needs enforcement, or `ship-change` when ready and delivery is requested. A requested review can finish with its report; do not require another review or improvement search merely because those skills exist. If a selected skill is unavailable, describe its plain action.
 
 ## Communicate the result
 

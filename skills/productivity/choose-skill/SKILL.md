@@ -17,7 +17,7 @@ Check which recommended skills are actually available. Name a missing skill and 
 
 Before accepting the route, use a separate agent in fresh context to check the request, available inputs, and proposed skill against the map. It should challenge wrong starting points, overlapping ownership, and unnecessary steps without inheriting the author's conversation. If that check is unavailable, label the recommendation unreviewed.
 
-Finish with the selected skill, its expected output, and the material missing input, if any. Continue into that skill only when execution is part of the user's request and the skill is available.
+Finish with the selected skill, why this is the next missing result, its expected output, accepted input to reuse, and any unmet prerequisite. For phased work, identify the selected ready phase/task rather than restarting discovery; show a short dependency sequence only when it helps distinguish ready work from later or parallel candidates. If the requested result is already complete and no follow-up is justified, say so. Continue into a skill only when execution is part of the user's request and the skill is available.
 
 ## Communicate the result
 

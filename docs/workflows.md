@@ -20,6 +20,21 @@ The [README graph](../README.md#from-idea-to-delivery) shows the overall route. 
 
 Research, planning, implementation, verification, delivery and operation are lifecycle stages. A **delivery phase** is a milestone inside a particular project, such as “users can preview an import.” `plan-phases` creates those project milestones; it does not require a task to traverse every lifecycle stage. `create-tasks` creates work items, not skills.
 
+The domain catalogs organize skills by responsibility. These stages organize a particular piece of work, so a stage can use skills from more than one domain:
+
+| Stage | Useful skills | Ready to move on when |
+| --- | --- | --- |
+| Understand the starting point | `assess-request`, `onboard-codebase`, `explain-codebase`, `diagnose-issue` | The requested outcome and relevant baseline are understood |
+| Explore and challenge | `brainstorm-ideas`, `challenge-proposal`, `research-topic`, `build-prototype` | Consequential choices have answers and required premises have evidence |
+| Specify and design | `write-spec`, `model-domain`, `design-architecture`, `map-user-flows`, `design-interface` | Behavior and the decisions needed by the selected work are accepted |
+| Plan execution | `plan-phases`, `create-tasks` | The selected work has accepted prerequisites, owners and checks |
+| Build | `start-project`, `implement-change` and the relevant specialist skill | The selected result exists with scoped proof on its actual revision |
+| Evaluate | `verify-change`, `review-code`, `review-interface` | Independent evaluation covers required criteria and resolves blocking findings |
+| Deliver and observe | `ship-change` | The authorized target is reached and its required health checks pass |
+| Learn and improve | `find-improvements`, `document-project`, `automate-code-checks` | Useful findings are recorded or become a justified next change; no follow-up is also valid |
+
+Start at the stage that matches the request. The table names alternatives, not a list of skills to run at every stage. Evaluation also applies to a plan or design before its consumers rely on it.
+
 A spec can include intended delivery slices and known dependencies when they explain scope or rollout. `plan-phases` owns the detailed milestone graph; `create-tasks` owns executable dependencies. During brainstorming, ordering and parallelism are hypotheses until the relevant behavior and shared contracts are agreed. Reuse one authoritative document or tracker where possible, rather than copying the same requirements into several files.
 
 ## Where clarification happens
@@ -64,7 +79,24 @@ Sequence work when one result determines another task's input. Required domain r
 
 Parallel work needs ready inputs, independently checkable outputs, and isolated writes/state/data/verification environments. Different filenames alone do not establish independence. Read-only specialist investigations or reviews can run together on a fixed baseline. UI and technical design can run together once shared behavior is clear, with reconciliation before their consumers are implemented.
 
-For example, a CSV import might use these delivery phases, with parallel tasks inside P2. This is a dependency illustration, not a declaration that any phase or task is already accepted:
+### Parallel project phases
+
+For example, an agreed import/export release can have two capability phases after its shared data and permission contract is accepted. Each branch owns a usable outcome with its own implementation, verification and independent review:
+
+```mermaid
+flowchart TD
+  P1["P1: Shared data and permission contract accepted"] --> P2["P2: Import journey accepted"]
+  P1 --> P3["P3: Export journey accepted"]
+  P2 --> P4["P4: Combined release verified and reviewed"]
+  P3 --> P4
+  P4 -->|Delivery authorized| Deliver["Deliver and verify the target"]
+```
+
+P2 and P3 are parallel candidates only if their owned writes and test resources can be isolated and neither needs the other's output. If export depends on the new import behavior, add that dependency and run them sequentially. P4 waits for both accepted outputs, then checks cross-capability behavior on the combined revision. A failed P2 blocks P4 but need not stop independent P3 work. Preserve P3's accepted evidence unless later changes invalidate it.
+
+### Parallel tasks within a phase
+
+A CSV import can also have parallel tasks inside one capability phase. This is a dependency illustration, not a declaration that any phase or task is already accepted:
 
 ```mermaid
 flowchart TD
@@ -73,8 +105,8 @@ flowchart TD
   subgraph P2["P2: Users can preview and confirm an import"]
     API["Server work and scoped checks"] --> Join["Integrated journey meets acceptance criteria"]
     UI["Review screen and scoped checks"] --> Join
+    Join --> Review["Independent review of the combined result"]
   end
-  Join --> Review["Independent review of the combined result"]
   Review --> P3["P3: Deliver and verify the target"]
 ```
 
@@ -88,6 +120,27 @@ Evaluation always uses a separate agent in fresh context, including for plans, r
 
 A worker may not receive the parent conversation. Give it a bounded question or outcome, source scope/baseline, applicable instructions, accepted criteria, permitted actions and owned writes, expected evidence, and stop conditions. Research returns located findings and unresolved claims; the coordinator checks consequential evidence before adopting conclusions. Use host controls where available: separate context does not establish isolation of files, services, or credentials.
 
+## Review and recheck
+
+A large review can use stages without creating another project phase plan: establish scope and a fixed candidate, inspect distinct risks, reconcile findings across boundaries, then independently recheck authorized fixes. A small review can do this with one independent reviewer. Select extra review branches only for risks that need separate coverage.
+
+```mermaid
+flowchart TD
+  Scope["Fix scope, criteria and candidate revision"] --> Proof["verify-change: observe required behavior"]
+  Scope --> Risks["review-code / review-interface: inspect relevant risks"]
+  Proof --> Join["Reconcile findings and inspect the combined evidence"]
+  Risks --> Join
+  Join --> Gate{"Required defect or proof gap?"}
+  Gate -->|Yes| Gap["Report blocker and next repair or investigation"]
+  Gap -. "Fix authorized and completed" .-> Updated["Record new candidate; retain valid evidence"]
+  Updated -->|Independent affected rechecks| Join
+  Gate -->|No| Verdict["Scoped verdict; honor requested stop and human approval"]
+```
+
+Evidence capture and risk inspection can overlap on the same fixed candidate when their checks do not interfere. A browser session, shared test database, rate limit or mutable service can require separate fixtures or sequential checks even for read-only source reviewers. Reconcile cross-boundary behavior after the relevant branch results exist; a specialist's clean report covers only its inspected scope.
+
+After a fix, identify which paths, criteria and artifacts changed, independently rerun affected checks, and reconcile against the updated candidate before issuing a new verdict. Keep unaffected evidence with its original tested revision and explain why it still applies. Missing required access or unresolved behavior remains a blocker; a review can finish by reporting that gap. Only the coordinator changes shared review/task records unless ownership is explicitly divided.
+
 ## Specs, tasks and PRs
 
 A spec is the behavior contract; a phase is a deliverable milestone; a task is an owned unit of work; a PR is a review and integration boundary. They do not map one-to-one. One phase may need several PRs. Several small tasks may belong in one coherent PR. Split PRs by independently reviewable behavior, dependencies and safe integration, not merely by frontend/backend folders or task count.
@@ -98,22 +151,26 @@ At PR creation, describe the actual change and include observed checks, useful b
 
 ## Context and next actions
 
-Pass the accepted objective, relevant artifacts and their versions where material, decisions, scope, repository revision/baseline, unresolved prerequisites, and verification evidence. Reconcile copied task criteria with authoritative inputs after a change; retain unaffected discoveries. For partial batches, preserve each task's outputs and actual disposition, stop dependent work when its prerequisite fails, and resume from observed state. Integration needs evidence for the combined revision. Each result should state the next useful action and why it fits.
+Pass the accepted objective, relevant artifacts and their versions where material, decisions, scope, repository revision/baseline, unresolved prerequisites, and verification evidence. Reconcile copied task criteria with authoritative inputs after a change; retain unaffected discoveries. For partial batches, preserve each task's outputs and actual disposition, stop dependent work when its prerequisite fails, and resume from observed state. Integration needs evidence for the combined revision.
+
+Finish with the next useful action, the skill that owns it, the input to carry forward, and any unmet prerequisite. Select the next missing result instead of reciting the whole pipeline. For example: "P1's import contract is accepted; run `create-tasks` for P2 using its preview/confirm criteria. Implementation waits until the required test environment is available." If the requested result is complete and no follow-up is justified, say so.
 
 Before context loss or an actual session transfer, condense those facts into the existing work record or a short continuation block, retaining pending operation IDs and useful file/symbol pointers. Remove repeated logs and search noise; retain authority, blockers and unchecked criteria. On resumption, reload applicable instructions and compare against current sources/state. Summaries guide that check; they do not replace evidence or require a new document or session.
 
-| Completed result | Next action when needed |
-| --- | --- |
-| Selected idea with enough evidence | Write the behavior spec |
-| Spec with unresolved technical choices | Design the relevant architecture; use a prototype for unproven feasibility |
-| Accepted scope and design | Plan outcome-based phases, or create tasks directly for a small change |
-| Agreed phase | Create executable tasks preserving its criteria and dependencies |
-| Ready tasks | Establish a missing foundation, then implement one task or the agreed ready batch |
-| Implemented change with proof missing | Verify the affected criteria and capture useful evidence |
-| Verified change | Review the final revision using its evidence; include relevant proof when explaining or publishing the PR |
-| Review findings | Investigate uncertain claims and implement selected authorized fixes; recheck affected evidence |
-| Reviewed change and delivery authority | Deliver to the requested target and verify it |
-| Delivery observed | Diagnose failures, prioritize evidenced improvements, or record that no follow-up is justified; carry the observations into the next cycle |
+| Current result | Next skill when needed | Carry forward / prerequisite |
+| --- | --- | --- |
+| Idea with a consequential choice unresolved | `challenge-proposal` | Options, accepted answers and the decision that changes the outcome |
+| Proposal depends on an unsupported premise | `research-topic` or `build-prototype` | The falsifiable question and the evidence needed; resume the affected proposal afterward |
+| Selected idea with enough evidence | `write-spec` | Accepted direction, constraints and supporting evidence |
+| Spec with unresolved technical or interaction choices | `design-architecture` or `map-user-flows`, then `design-interface` for settled flows | Relevant behavior criteria; use `build-prototype` for unproven feasibility |
+| Accepted scope and design | `plan-phases`, or `create-tasks` directly for a small change | Criteria, preserved contracts and known dependencies |
+| Agreed phase | `create-tasks` | Its exits, accepted inputs and unresolved prerequisites; planning later tasks does not make them executable |
+| Ready tasks | `start-project` if the selected task establishes a missing foundation; otherwise `implement-change` | One task or an agreed ready batch, ownership/isolation and accepted dependencies |
+| Implemented change with proof missing | `verify-change` | Candidate revision, relevant baseline, criteria and check access |
+| Verified change | `review-code` and/or `review-interface` according to risk | Fixed candidate and valid evidence; reuse an already completed independent review |
+| Review findings | `diagnose-issue` for an uncertain failure; `implement-change` for selected repairs | Evidence, affected criteria and fix authority; independently recheck the result |
+| Reviewed change and delivery authority | `ship-change`; `explain-pr` only when an explanation is needed | Final candidate, observed proof, recovery limits and requested target |
+| Delivery observed | `diagnose-issue` for failures, `find-improvements` for evidenced opportunities, or finish | Actual target signals and existing decisions/learnings; do not restart settled planning |
 
 A bounded request finishes with its result and a recommendation. An authorized end-to-end request continues through ready stages without invented confirmation stops. Use `prepare-handoff` for an owner/session transfer or context compaction, not between every skill.
 

@@ -19,6 +19,8 @@ Before editing, preserve the affected baseline when available. For an existing f
 
 Use [evidence selection and reporting](references/verification.template.md) for the relevant evidence types. Record the actual command or interaction, prerequisites, input/state, environment, observation, and result. Keep failed attempts and changed conditions distinguishable from final results.
 
+For phased or parallel work, verify accepted prerequisite outputs before their consumers and the integrated revision after branches join. Independent checks may overlap on a fixed candidate only when their fixtures, services and mutable state are isolated; otherwise sequence them. Reconcile criterion coverage before accepting the result, preserving unaffected proof when a branch fails. A phase-local pass does not prove interactions with another phase.
+
 For an explicitly authorized command check, the optional [check runner](scripts/run-check.ts), requiring Bun 1.3.9 or newer, records its argv, directory, timings, actual exit or launch failure, and Git state before/after while showing output live:
 
 ```text
@@ -51,4 +53,4 @@ Record the tested revision and any dirty diff. Later edits require an impact che
 
 Include reviewer-accessible artifacts or concise inline results in the PR when PR work is authorized. Upload only through an approved repository or host mechanism; verify the returned location and intended access. A local screenshot path is not a PR attachment. If upload is unavailable, keep the local evidence, include useful textual observations and reproduction steps, and state the attachment gap.
 
-Next: `implement-change` for failed criteria that need a repair, `review-code` for independent assessment, or `ship-change` for the authorized delivery target. Pass the evidence with the tested revision so the next step can reuse it.
+Next: `diagnose-issue` for an unexplained failure, `implement-change` for a selected repair, `review-code` or `review-interface` for a missing independent assessment, or `ship-change` when ready for the authorized delivery target. Name the next unmet result and prerequisite, and pass its evidence with the tested revision; reuse completed valid reviews. A verification-only request finishes with the result and recommendation. Describe the plain action when its skill is unavailable.

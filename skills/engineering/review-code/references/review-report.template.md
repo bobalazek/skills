@@ -37,6 +37,8 @@ Map material criteria and risks to observed evidence. A compact table is useful 
 
 Include relevant high-risk paths, security, performance, architecture/maintainability, behavior, design/conventions, and duplication where they apply. Do not add empty category rows to imply a comprehensive audit. Explain material exclusions and uninspected areas; distinguish not applicable from not checked.
 
+For parallel or staged review, identify each reviewer's bounded question and tested revision, coverage still pending, and the combined assessment of interactions. Record which branch results the verdict depends on. After fixes or integration, distinguish refreshed proof from retained evidence and explain why retained evidence still applies.
+
 Open useful screenshot, recording, measurement, or test artifacts and state what they demonstrate. Before/after comparisons need comparable inputs, environment, and cache/state conditions. Identify stale evidence, missing baselines, and local-only artifacts. Local paths are not PR attachments, green CI does not prove unrelated behavior, and no findings in the inspected scope does not establish whole-system correctness.
 
 For a PR, provide the human reviewer with accessible criterion-linked evidence, relevant check results, and independent findings with their resolution or remaining gaps. Preserve required human approval and requested stop points. Agent review does not grant delivery authority.
