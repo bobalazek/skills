@@ -1,0 +1,4 @@
+interface:
+  display_name: "Upgrade dependencies"
+  short_description: "Upgrade dependencies and verify compatibility"
+  default_prompt: "Use $upgrade-dependencies to apply this dependency upgrade and check the affected code and resolved versions."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build prototype"
+  short_description: "Test a technical or interaction uncertainty"
+  default_prompt: "Use $build-prototype to test this uncertainty with a bounded prototype and report the result."

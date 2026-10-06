@@ -1,0 +1,4 @@
+interface:
+  display_name: "Start project"
+  short_description: "Create a runnable project from agreed choices"
+  default_prompt: "Use $start-project to create a minimal runnable project from these agreed requirements and technical choices."

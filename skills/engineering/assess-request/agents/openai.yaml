@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assess request"
+  short_description: "Assess impact and readiness of incoming requests"
+  default_prompt: "Use $assess-request to assess this change request and recommend its next action."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Improve performance"
+  short_description: "Measure and reduce a demonstrated performance cost"
+  default_prompt: "Use $improve-performance to investigate this slow path and compare a verified improvement against its baseline."

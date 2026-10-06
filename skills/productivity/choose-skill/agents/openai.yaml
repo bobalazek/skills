@@ -1,0 +1,4 @@
+interface:
+  display_name: "Choose skill"
+  short_description: "Find the next skill for the result you need"
+  default_prompt: "Use $choose-skill to recommend the next workflow for this request and its current state."

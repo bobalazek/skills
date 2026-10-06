@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create tasks"
+  short_description: "Break agreed scope into executable tasks"
+  default_prompt: "Use $create-tasks to turn this agreed specification into tasks with dependencies and acceptance checks."

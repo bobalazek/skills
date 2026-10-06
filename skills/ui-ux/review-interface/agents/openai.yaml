@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review interface"
+  short_description: "Review rendered usability and visual consistency"
+  default_prompt: "Use $review-interface to review this rendered screen for usability, accessibility, and visual consistency."

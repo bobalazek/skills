@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan migration"
+  short_description: "Plan compatibility, cutover, and recovery"
+  default_prompt: "Use $plan-migration to plan this accepted transition with compatibility checks and a recovery path."

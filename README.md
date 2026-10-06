@@ -2,7 +2,7 @@
 
 Workflows for developing software, making decisions, and designing interfaces. Each skill owns a concrete result and can be used on its own or as a step in a larger process.
 
-The collection contains 36 draft skills across development, productivity, and UI/UX. Each package carries its own templates, references, and optional helpers. Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear.
+The collection contains 36 draft skills across engineering, productivity, and UI/UX. Each package carries its instructions, conditional resources, and Codex display metadata. Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear.
 
 Each final result requires an adversarial review by a separate agent in fresh context. The reviewer checks accepted requirements and raw proof without the author's conversation. Tests, meaningful before/after evidence, and review findings go into the PR when it is opened; required human approval remains separate. A host without independent agents can produce a draft, but cannot satisfy this collection's acceptance gate.
 
@@ -28,57 +28,72 @@ The version in `skills@1.7.0` pins the installer; the URL selects this collectio
 
 Copied skills do not update themselves. To update, review changes and migration notes, preserve local edits, then rerun `add` for the selected skills using the desired branch or release tag. Inspect the installed files and verify client discovery again. Keep the selected source/tag with the project's install record; switching to a new release is an explicit update.
 
-Local package installation and discovery were checked with skills CLI 1.7.0 and OpenCode 1.18.31. This verifies package discovery and file delivery; model behavior, other clients, and automatic routing need their own checks. The workflows remain drafts under evaluation.
+Local package installation and discovery were checked with skills CLI 1.7.0, OpenCode 1.18.31, and Codex CLI 0.160.0. Codex's `skills/list` read all 36 display names, descriptions and example prompts from `agents/openai.yaml`. These checks cover file delivery and discovery; model behavior, other clients, and automatic routing need their own checks. The workflows remain drafts under evaluation.
 
 Without an installer, point a filesystem-capable agent at a skill in this checkout. To copy one manually, preserve the entire leaf folder containing `SKILL.md` and its resources in your client's skills location, then verify discovery. Domain folders organize this repository; they are not individual skills.
 
-## Find the right skill
+## Browse by domain
 
-| I want to… | Start with |
+| Catalog | What it covers |
 | --- | --- |
-| Find the next skill from my current task | [choose-skill](skills/productivity/choose-skill/SKILL.md) |
-| Explore a project or feature idea | [brainstorm-ideas](skills/productivity/brainstorm-ideas/SKILL.md) |
-| Challenge a proposed direction | [challenge-proposal](skills/productivity/challenge-proposal/SKILL.md) |
-| Get productive in an inherited codebase | [onboard-codebase](skills/development/onboard-codebase/SKILL.md) |
-| Reconstruct project knowledge, decisions, and indexed memory | [document-project](skills/development/document-project/SKILL.md) |
-| Understand current code or a PR | [explain-codebase](skills/development/explain-codebase/SKILL.md) or [explain-pr](skills/development/explain-pr/SKILL.md) |
-| Define behavior, phases, then tasks | [write-spec](skills/development/write-spec/SKILL.md) → [plan-phases](skills/development/plan-phases/SKILL.md) → [create-tasks](skills/development/create-tasks/SKILL.md) |
-| Choose the stack and technical structure | [design-architecture](skills/development/design-architecture/SKILL.md) |
-| Establish conventions or agent context | [define-project-conventions](skills/development/define-project-conventions/SKILL.md) or [prepare-repo-for-agents](skills/development/prepare-repo-for-agents/SKILL.md) |
-| Build an agreed change or fix a failure | [implement-change](skills/development/implement-change/SKILL.md) or [diagnose-issue](skills/development/diagnose-issue/SKILL.md) |
-| Demonstrate the result and prepare review evidence | [verify-change](skills/development/verify-change/SKILL.md) |
-| Find improvements or review code | [find-improvements](skills/development/find-improvements/SKILL.md) or [review-code](skills/development/review-code/SKILL.md) |
-| Prevent a recurring coding mistake | [automate-code-checks](skills/development/automate-code-checks/SKILL.md) |
-| Improve performance, upgrade dependencies, or plan a migration | [Development maintenance skills](docs/domains/development.md) |
-| Design or evaluate an interface | [UI/UX catalog](docs/domains/ui-ux.md) |
-| Deliver a change | [ship-change](skills/development/ship-change/SKILL.md) |
-| Reduce overlapping documentation | [consolidate-docs](skills/development/consolidate-docs/SKILL.md) |
+| [Engineering · 25 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, and maintain it |
+| [Productivity · 7 skills](docs/domains/productivity.md) | Explore ideas, question proposals, research decisions, route requests, improve prompts, and transfer context |
+| [UI/UX · 4 skills](docs/domains/ui-ux.md) | Map user flows, design screens, build shared design systems, and review rendered experiences |
 
-Start at the action the request needs. A ready task can go directly to implementation; a small change may need no new planning document. New projects establish foundations. Existing projects preserve users, data, contracts, and useful conventions while improving the selected behavior.
+The catalogs list every skill by category, with its output and boundaries. Engineering includes architecture, quality and operations as well as coding. UI/UX owns user experience and interface decisions; it joins engineering work when the change needs it.
 
-## Full catalogs
+## Common starting points
 
-- [Development](docs/domains/development.md): 25 skills covering understanding, project knowledge, planning, architecture, implementation, verification, delivery, and maintenance.
-- [Productivity](docs/domains/productivity.md): 7 skills for routing work, exploring ideas, challenging proposals, researching topics, tracking decisions, improving prompts, and transferring work.
-- [UI/UX](docs/domains/ui-ux.md): 4 skills for flows, interface design, rendered review, and shared design systems.
+| What you have | Useful first action |
+| --- | --- |
+| An idea with several possible directions | [brainstorm-ideas](skills/productivity/brainstorm-ideas/SKILL.md) to compare approaches |
+| A proposal you want grilled | [challenge-proposal](skills/productivity/challenge-proposal/SKILL.md) to question assumptions and edge cases |
+| A user journey or screen to design | [map-user-flows](skills/ui-ux/map-user-flows/SKILL.md), or [design-interface](skills/ui-ux/design-interface/SKILL.md) when the flow is settled |
+| An unfamiliar existing project | [onboard-codebase](skills/engineering/onboard-codebase/SKILL.md) to establish the working baseline |
+| An incoming request or a known failure | [assess-request](skills/engineering/assess-request/SKILL.md) to check and route the request; [diagnose-issue](skills/engineering/diagnose-issue/SKILL.md) to establish a failure's cause |
+| Agreed intent that needs precise behavior | [write-spec](skills/engineering/write-spec/SKILL.md) to define scenarios and acceptance criteria |
+| A ready task or agreed batch | [implement-change](skills/engineering/implement-change/SKILL.md) to do the scoped work |
+| A change that needs proof or review | [verify-change](skills/engineering/verify-change/SKILL.md) for observed acceptance evidence; [review-code](skills/engineering/review-code/SKILL.md) or [review-interface](skills/ui-ux/review-interface/SKILL.md) for findings |
 
-The catalogs describe categories, outputs, boundaries, and conditional resources. The [workflow map](docs/workflows.md) shows lifecycle phases, entry points, dependencies, parallel work, and next steps.
+## From idea to delivery
+
+A spec defines **what must happen**. A phase plan groups **deliverable outcomes and their order**. Tasks define **who changes what, after which prerequisites, and how to verify it**. Use the steps the request needs; a small change can skip a phase plan, and ready work can start with implementation.
+
+```mermaid
+flowchart TD
+  Idea["brainstorm-ideas"] --> Spec["write-spec"]
+  Idea -. "Choices need grilling" .-> Challenge["challenge-proposal"]
+  Challenge --> Spec
+  Spec -->|Multiple milestones| Phases["plan-phases"]
+  Spec -->|Bounded scope| Tasks["create-tasks"]
+  Phases --> Tasks
+  Tasks --> Build["implement-change"]
+  Ready["Already-ready work"] --> Build
+  Build --> Verify["verify-change"]
+  Verify --> Review["review-code / review-interface"]
+  Review --> Ship["ship-change"]
+  Ship --> Observe["Observe the delivered result"]
+  Observe --> Improve["find-improvements"]
+  Improve -. "Next justified change" .-> Idea
+```
+
+The [workflow guide](docs/workflows.md) adds research and design branches, bug fixes, greenfield and inherited-project routes, and concrete sequential/parallel examples. It explains where human clarification happens and how specs, phases, tasks and PRs relate. Each skill can also finish on its own; this graph does not authorize the next action.
 
 ## Use a workflow
 
 From this checkout, point a filesystem-capable agent to the selected skill and give it the actual task. For example:
 
 ```text
-Use skills/development/write-spec/SKILL.md to define the requested feature.
-Use skills/development/review-code/SKILL.md to review this branch against main.
+Use skills/engineering/write-spec/SKILL.md to define the requested feature.
+Use skills/engineering/review-code/SKILL.md to review this branch against main.
 ```
 
 The skill supplies its procedure and links conditional resources. Reuse its result for the next needed action; check discovery and invocation in the client you use.
 
 Two optional Bun helpers support the work itself:
 
-- [Task-graph checks](skills/development/create-tasks/SKILL.md): validate dependencies and inspect ready work, declared write conflicts, and unknown isolation before selecting a batch.
-- [Command evidence](skills/development/verify-change/SKILL.md): run an explicit check and retain its actual result and observed source state for review. A successful command does not establish that every acceptance criterion passed.
+- [Task-graph checks](skills/engineering/create-tasks/SKILL.md): validate dependencies and inspect ready work, declared write conflicts, and unknown isolation before selecting a batch.
+- [Command evidence](skills/engineering/verify-change/SKILL.md): run an explicit check and retain its actual result and observed source state for review. A successful command does not establish that every acceptance criterion passed.
 
 ## Working on the collection
 

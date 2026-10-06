@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brainstorm ideas"
+  short_description: "Explore approaches and identify the next decision"
+  default_prompt: "Use $brainstorm-ideas to compare practical approaches to this idea and choose the next experiment."

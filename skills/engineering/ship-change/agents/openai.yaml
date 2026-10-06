@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ship change"
+  short_description: "Deliver verified work to the requested target"
+  default_prompt: "Use $ship-change to open a pull request for this verified change with its review evidence."

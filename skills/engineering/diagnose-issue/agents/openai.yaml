@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diagnose issue"
+  short_description: "Find the cause of a software failure with evidence"
+  default_prompt: "Use $diagnose-issue to reproduce this failure and identify its root cause."

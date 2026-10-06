@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prepare repo for agents"
+  short_description: "Improve agent context, navigation, and check paths"
+  default_prompt: "Use $prepare-repo-for-agents to make this repository's instructions and scoped checks easy for agents to find."

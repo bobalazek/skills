@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implement change"
+  short_description: "Build an agreed change and run scoped checks"
+  default_prompt: "Use $implement-change to implement this agreed task and verify the affected behavior."

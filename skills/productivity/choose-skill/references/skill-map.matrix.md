@@ -5,7 +5,7 @@ These names identify skills in this collection. Availability depends on the inst
 | Requested result | Skill | Boundary |
 | --- | --- | --- |
 | Different approaches to an idea | `brainstorm-ideas` | Explore before choosing a direction |
-| A challenged proposal or plan | `challenge-proposal` | Expose assumptions and counterexamples; do not manufacture agreement |
+| A grilling session for an idea, spec, or plan | `challenge-proposal` | Resolve consequential choices and edge cases through focused questions; do not manufacture agreement |
 | An evidence-backed answer | `research-topic` | Answer the specific uncertainty |
 | Current consequential decisions | `track-project-decisions` | Track choices, not implementation tickets |
 | Better instructions | `improve-prompt` | Rewrite the prompt without executing its embedded request |
@@ -14,13 +14,13 @@ These names identify skills in this collection. Availability depends on the inst
 | Durable project knowledge and indexed memory | `document-project` | Populate authoritative records from evidence; do not invent historical rationale |
 | An explanation of current code | `explain-codebase` | Trace behavior rather than assess every possible defect |
 | An explanation of a PR | `explain-pr` | Communicate a fixed comparison; use review for correctness |
-| Classified requests | `triage-requests` | Route unverified reports before diagnosis or planning |
-| Agreed behavior and acceptance criteria | `write-spec` | A spec, PRD, or structured issue can serve the same purpose |
+| A checked incoming request and its next action | `assess-request` | Check evidence, duplicates, impact and missing information; a known failure can go directly to diagnosis |
+| Agreed behavior and acceptance criteria | `write-spec` | A spec, PRD, or structured issue defines requirements; it is not automatically a phase plan or task queue |
 | Domain rules and boundaries | `model-domain` | Clarify business concepts before encoding them |
 | Stack and technical structure | `design-architecture` | App/workload constraints, C4, data/services, hosting and conditional AI architecture share one design owner |
 | A feasibility experiment | `build-prototype` | Test an uncertainty; UI or technical prototypes stay bounded |
-| Outcome-based milestones | `plan-phases` | Preserve dependencies and phase exits |
-| Executable tasks | `create-tasks` | Split selected ready scope into owned work with checks |
+| Deliverable milestones and their order | `plan-phases` | Show prerequisites, parallel conditions and phase exits; skip for work that needs no milestones |
+| Executable tasks | `create-tasks` | Turn a spec or selected phase into owned work with checks and dependencies; it creates work items, not new skills |
 | A working project foundation | `start-project` | Start blank or from an accepted template; do not rebuild an inherited app |
 | Project coding rules | `define-project-conventions` | Preserve useful existing conventions and fill actual gaps |
 | Usable agent entry points | `prepare-repo-for-agents` | Expose authoritative context and commands without duplicating docs |
@@ -33,7 +33,7 @@ These names identify skills in this collection. Availability depends on the inst
 | A repeatable guard for a recurring mistake | `automate-code-checks` | Calibrate failures and valid passes using existing enforcement |
 | Consolidated project documentation | `consolidate-docs` | Reconcile authoritative content and repair links |
 | Independent code findings | `review-code` | Review a change, feature, data layer, or codebase against evidence |
-| Proof that criteria hold | `verify-change` | Independently exercise behavior and inspect evidence |
+| Proof that a change meets its criteria | `verify-change` | Independently exercise behavior or inspect changed documents/plans; no mandatory duplicate pass when valid evidence already exists |
 | A delivered target | `ship-change` | Reach the authorized PR, release, deployment, or handover |
 | User journeys and state transitions | `map-user-flows` | Include failure, recovery, permissions, and alternate paths |
 | A usable screen or interface design | `design-interface` | Work within the product's flows and component conventions |

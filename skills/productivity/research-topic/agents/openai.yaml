@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research topic"
+  short_description: "Answer a bounded question with current sources"
+  default_prompt: "Use $research-topic to answer this question using current primary sources and traceable evidence."

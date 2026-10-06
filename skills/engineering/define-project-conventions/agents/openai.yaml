@@ -1,0 +1,4 @@
+interface:
+  display_name: "Define project conventions"
+  short_description: "Establish contributor rules from local evidence"
+  default_prompt: "Use $define-project-conventions to reconcile this repository's coding conventions and document usable rules."

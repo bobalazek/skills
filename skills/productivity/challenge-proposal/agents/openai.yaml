@@ -1,0 +1,4 @@
+interface:
+  display_name: "Challenge proposal"
+  short_description: "Challenge consequential assumptions in a proposal"
+  default_prompt: "Use $challenge-proposal to test this plan's assumptions and surface the decisions that need resolution."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify change"
+  short_description: "Check acceptance criteria and capture proof"
+  default_prompt: "Use $verify-change to check this change against its acceptance criteria and capture review evidence."
