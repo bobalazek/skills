@@ -80,7 +80,7 @@ Keep names stable when categories move. A breaking change to inputs, outputs, si
 
 Unreleased drafts can be consolidated without pretending a public compatibility promise existed. Remove duplicate procedures rather than maintain two active owners indefinitely. Follow the release procedure below before distributing a version.
 
-Renames before v0.1.0: `question-plan` → `challenge-proposal`, `research-question` → `research-topic`, `map-project-decisions` → `track-project-decisions`, `find-refactors` → `find-improvements`, and `triage-requests` → `assess-request`. Update saved invocations or local paths to the new names. After preserving local edits, remove a retired installed package when replacing it; installing the new name alone can leave both discoverable. Refactor discovery remains part of `find-improvements`; the broader scope also covers recurring defects, checks, documentation, dependencies, and performance leads.
+Renames before v0.0.1: `question-plan` → `challenge-proposal`, `research-question` → `research-topic`, `map-project-decisions` → `track-project-decisions`, `find-refactors` → `find-improvements`, and `triage-requests` → `assess-request`. Update saved invocations or local paths to the new names. After preserving local edits, remove a retired installed package when replacing it; installing the new name alone can leave both discoverable. Refactor discovery remains part of `find-improvements`; the broader scope also covers recurring defects, checks, documentation, dependencies, and performance leads.
 
 The source domain moved from `skills/development/` to `skills/engineering/`, with its catalog at `docs/domains/engineering.md`. Update direct source paths and saved links. Domain folders organize the source; this move does not rename the other installed skills.
 
@@ -90,7 +90,7 @@ Use one repository-wide version and GitHub Release for a reviewed snapshot of th
 
 The consumer contract includes skill names/install paths, required inputs and tools, output formats, authority and side effects, and bundled resources or helper interfaces. Version changes against those contracts. After `1.0.0`, use major versions for incompatible changes, minor versions for compatible additions or deprecations, and patches for compatible fixes. During `0.x`, this collection uses minor versions for additions or breaking changes and patches for compatible fixes; document every break. [SemVer](https://semver.org/spec/v2.0.0.html) treats `0.x` as initial development and prerelease suffixes as unstable.
 
-Start at `v0.1.0` for the first reviewed release. Use a prerelease suffix such as `v0.2.0-alpha.1` when an upcoming version needs a separate evaluation channel. An ordinary 0.x release is still initial development; reserve stable `1.0.0` for evidence supporting the stated contracts and supported environments. A GitHub draft is unpublished metadata; publishing a release or prerelease makes it available to users with repository access. A draft does not hide an already-pushed tag in a public repository.
+Start at `v0.0.1` for the first reviewed release. Use a prerelease suffix such as `v0.2.0-alpha.1` when an upcoming version needs a separate evaluation channel. An ordinary 0.x release is still initial development; reserve stable `1.0.0` for evidence supporting the stated contracts and supported environments. A GitHub draft is unpublished metadata; publishing a release or prerelease makes it available to users with repository access. A draft does not hide an already-pushed tag in a public repository.
 
 ### Before public distribution
 
@@ -106,7 +106,7 @@ Start at `v0.1.0` for the first reviewed release. Use a prerelease suffix such a
 3. Once tag creation is authorized, confirm the version is unused locally and remotely, then create an annotated tag on that reviewed SHA and push only that tag. Use existing immutability and tag protections according to repository policy. Additional protection settings need their own authority; they are not a prerequisite for every release. Coordinate one publisher for the selected version. Replace the example values below before running them, and prepare the reviewed notes file outside the distributed skill folders:
 
    ```bash
-   release_tag='v0.1.0'
+   release_tag='v0.0.1'
    release_commit='REPLACE_WITH_REVIEWED_FULL_COMMIT_SHA'
    release_notes='/absolute/path/to/reviewed-release-notes.md'
    git tag -a "$release_tag" "$release_commit" -m "$release_tag"
