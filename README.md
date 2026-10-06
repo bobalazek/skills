@@ -18,10 +18,10 @@ Inspect the install summary before confirming. Use `--skill '*'` for the whole c
 For a fixed release, use its tag instead of the default branch:
 
 ```bash
-bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.0.1 --skill choose-skill create-tasks verify-change --agent codex --copy
+bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.0.2 --skill choose-skill create-tasks verify-change --agent codex --copy
 ```
 
-`skills@1.7.0` pins the installer; `v0.0.1` pins this collection. That first release contains 40 skills; the default branch includes the newer additions listed here.
+`skills@1.7.0` pins the installer; `v0.0.2` pins this 42-skill collection. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.0.2) for changes and evaluation limits. The earlier `v0.0.1` release remains available with 40 skills.
 
 In Codex, invoke an installed skill with its name and your task:
 
