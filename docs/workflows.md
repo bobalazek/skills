@@ -179,10 +179,10 @@ One coordinator writes shared state. Workers receive bounded contracts and retur
 
 | Example request | First skill | Result and conditional continuation |
 | --- | --- | --- |
-| "What should this new product landing page say and prove?" | [plan-landing-page](../skills/ui-ux/plan-landing-page/SKILL.md) | A content plan from the offer, audience and evidence; unresolved demand belongs to product validation, accepted content needs can move to copy or wireframes |
-| "Improve this existing homepage without losing its customer and partner paths." | [plan-landing-page](../skills/ui-ux/plan-landing-page/SKILL.md) | Inspect current content and destinations, preserve useful paths, and propose supported changes without imposing a campaign-page template |
-| "Write the page copy from this accepted brief and product demonstration." | [write-website-copy](../skills/ui-ux/write-website-copy/SKILL.md) | Actual wording with claim sources and exact gaps; reconcile text with the layout before implementation |
-| "Rewrite only this hero in my voice, with a clearer opening hook." | [write-website-copy](../skills/ui-ux/write-website-copy/SKILL.md) | A bounded rewrite preserving meaning and verified promises; no mandatory full-page plan or fixed variant count |
+| "What should this new product landing page say and prove?" | [plan-landing-page](../skills/content/plan-landing-page/SKILL.md) | A content plan from the offer, audience and evidence; unresolved demand belongs to product validation, accepted content needs can move to copy or wireframes |
+| "Improve this existing homepage without losing its customer and partner paths." | [plan-landing-page](../skills/content/plan-landing-page/SKILL.md) | Inspect current content and destinations, preserve useful paths, and propose supported changes without imposing a campaign-page template |
+| "Write the page copy from this accepted brief and product demonstration." | [write-website-copy](../skills/content/write-website-copy/SKILL.md) | Actual wording with claim sources and exact gaps; reconcile text with the layout before implementation |
+| "Rewrite only this hero in my voice, with a clearer opening hook." | [write-website-copy](../skills/content/write-website-copy/SKILL.md) | A bounded rewrite preserving meaning and verified promises; no mandatory full-page plan or fixed variant count |
 | "Our one-page site has high bounce and zero visit duration; what does that tell us?" | [analyze-product-usage](../skills/product/analyze-product-usage/SKILL.md) | Provider definitions, instrumentation and observed outcomes before diagnosis; do not infer bots or failed copy from these signals alone |
 
 These arrows are possible handoffs. Start at the missing result, and stop at the requested output. Copy and screen structure can develop in parallel after their shared content requirements and action are accepted; reconcile both before implementation.
