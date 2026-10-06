@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analyze competitors"
+  short_description: "Compare alternatives for a product decision"
+  default_prompt: "Use $analyze-competitors to compare the relevant alternatives for this product decision, with current sources, trade-offs and unknowns."

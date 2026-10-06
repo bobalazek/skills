@@ -1,6 +1,6 @@
 # Skills
 
-44 skills for developing software, making decisions, and designing interfaces. Each produces a concrete result, such as a specification, working change, review or design. Run one on its own or continue from another skill's accepted output.
+47 skills for developing software, evaluating product ideas, making decisions, and designing interfaces. Each produces a concrete result, such as a specification, working change, review or design. Run one on its own or continue from another skill's accepted output.
 
 Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear. The collection is under active development; [releases](https://github.com/bobalazek/skills/releases) record reviewed snapshots and evaluation limits.
 
@@ -21,7 +21,7 @@ For a fixed release, use its tag instead of the default branch:
 bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.0.2 --skill choose-skill create-tasks verify-change --agent codex --copy
 ```
 
-`skills@1.7.0` pins the installer; `v0.0.2` pins the 42-skill release. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.0.2) for changes and evaluation limits. The default branch also includes `create-wireframes` and `configure-monitoring`; the earlier `v0.0.1` release remains available with 40 skills.
+`skills@1.7.0` pins the installer; `v0.0.2` pins the 42-skill release. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.0.2) for changes and evaluation limits. The catalogs below describe the default branch, which includes unreleased additions; the earlier `v0.0.1` release remains available with 40 skills.
 
 In Codex, invoke an installed skill with its name and your task:
 
@@ -36,6 +36,7 @@ From a checkout, you can also ask a filesystem-capable agent to use `skills/engi
 | Catalog | What it covers |
 | --- | --- |
 | [Engineering · 26 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, monitor, and maintain it |
+| [Product · 3 skills](docs/domains/product.md) | Evaluate product and feature ideas, synthesize user feedback, and compare competitors and current alternatives |
 | [Productivity · 10 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose work, route requests, improve prompts and team workflows, report status, and transfer context |
 | [UI/UX · 8 skills](docs/domains/ui-ux.md) | Capture design references, map flows and navigation, wireframe screen structure, design screens and systems, write interface copy, review interfaces, and test usability |
 
@@ -46,6 +47,7 @@ Each catalog lists skills by category, with their outputs and boundaries.
 | What you want | Start with |
 | --- | --- |
 | Compare directions for an idea | [brainstorm-ideas](skills/productivity/brainstorm-ideas/SKILL.md) |
+| Decide whether a product or feature idea merits further investment | [validate-product-idea](skills/product/validate-product-idea/SKILL.md) |
 | Begin working in an inherited project | [onboard-codebase](skills/engineering/onboard-codebase/SKILL.md) |
 | Define a feature's required behavior | [write-spec](skills/engineering/write-spec/SKILL.md) |
 | Sketch screen structure from an understood flow | [create-wireframes](skills/ui-ux/create-wireframes/SKILL.md) |
@@ -115,7 +117,7 @@ Select every required design/review branch and reconcile its result before conti
 
 </details>
 
-The [workflow guide](docs/workflows.md) covers sequential and parallel work, review loops and context passed between skills. Recommendations do not authorize additional work.
+The [workflow guide](docs/workflows.md) covers [product discovery](docs/workflows.md#evaluate-a-product-opportunity), sequential and parallel work, review loops and context passed between skills. Recommendations do not authorize additional work.
 
 ## Questions
 

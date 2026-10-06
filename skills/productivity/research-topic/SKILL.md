@@ -9,7 +9,7 @@ description: "Answer a bounded factual or comparative question using relevant re
 
 Use this when evidence is needed to answer a named uncertainty or compare alternatives for a decision. Reuse supplied artifacts, accepted requirements and earlier findings whose source and freshness still apply.
 
-Use `explain-codebase` for a request such as explaining the repository's login path. `brainstorm-ideas` explores possible directions, while `design-architecture` selects technical structure. Research establishes what is known; accepting a direction remains a visible decision.
+Use `explain-codebase` for a request such as explaining the repository's login path. `brainstorm-ideas` explores possible directions, `analyze-competitors` compares alternatives for a product decision, and `design-architecture` selects technical structure. Research establishes what is known; accepting a direction remains a visible decision.
 
 ## Bound the question
 

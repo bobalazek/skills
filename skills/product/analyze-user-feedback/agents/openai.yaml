@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analyze user feedback"
+  short_description: "Turn existing feedback into evidence-linked user needs"
+  default_prompt: "Use $analyze-user-feedback to synthesize these interviews and support records into deduplicated user needs with source links, opposing evidence and coverage limits."
