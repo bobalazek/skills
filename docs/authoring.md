@@ -19,6 +19,23 @@ Use an action-oriented lowercase name that tells the user what happens, preferab
 
 Keep the outcome, essential inputs, workflow decisions, scope, completion evidence, and next-action behavior in `SKILL.md`. Use references for substantial conditional guidance. Link each resource with a reason to load it; avoid duplicated instructions, copied manuals, and resources added only for symmetry.
 
+### Entry points and routing
+
+Use the structure that makes the skill's decisions easy to find; do not add empty sections just to match another package.
+
+| Location | What belongs here |
+| --- | --- |
+| Frontmatter description | The requested result and when to activate; a nearby exclusion when confusion is likely |
+| Opening scope | What this skill finishes, inputs it reuses, and the neighboring result it leaves to another skill |
+| Workflow headings | Concrete actions and decision points, with critical constraints before the affected action |
+| Conditional resource links | A specific trigger and purpose: “For navigation changes, read …”; avoid loading every reference |
+| Output shape | Fillable fields, a small table or an example where it improves consistency; use the project's existing format first |
+| Completion and next action | Observable proof, remaining gaps, and a conditional next skill with the accepted artifact and prerequisite it needs |
+
+A separate “When to use” or “Critical rules” section helps only when it makes a real boundary easier to find. Keep critical constraints in the entrypoint when they apply to every run. A related-skills list should explain when to switch or continue, rather than repeat the catalog. The router owns collection-wide selection; each skill owns its closest boundaries.
+
+This follows the [Agent Skills format](https://agentskills.io/specification), its [authoring guidance](https://agentskills.io/skill-creation/best-practices), and [Claude's progressive-disclosure guidance](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices). These sources guide structure; realistic task trials determine whether our wording works.
+
 Use role suffixes for reusable resources where their role matters: `.template.md`, `.checklist.md`, `.playbook.md`, or `.matrix.md`. Add executable helpers only when deterministic work justifies them and existing tools do not already cover it.
 
 Every package in this collection includes `agents/openai.yaml` for Codex discovery UI. Keep `interface.display_name`, `short_description` (25–64 characters), and a concrete `default_prompt` mentioning `$skill-name` consistent with the workflow. Quote string values. This is host metadata, not a reference the agent must load; do not add a `SKILL.md` link just to satisfy resource reachability. Keep automatic invocation at its default unless an explicit requirement changes it. Icons, tool dependencies and other optional fields need a real use. See the [OpenAI skill metadata fields](https://developers.openai.com/plugins/deploy/submission-errors#skill-agent-metadata-errors).
@@ -29,6 +46,7 @@ Every package in this collection includes `agents/openai.yaml` for Codex discove
 | --- | --- |
 | Entry | Start from the actual request and accepted artifacts; skip completed or irrelevant stages |
 | Context | Read applicable project instructions and relevant conventions; inspect actual code/behavior before trusting stale docs |
+| Reuse | Inspect existing owners, helpers, components, documents and work items before adding equivalents; extend matching responsibilities and link authoritative artifacts |
 | Facts and decisions | Distinguish observed facts, documented intent, inference, assumptions, proposals, and accepted choices |
 | New/existing work | Establish missing foundations for new projects; preserve behavior/data/contracts and useful conventions in existing systems |
 | Scope | Finish the requested outcome; adjacent findings do not authorize unrelated cleanup |

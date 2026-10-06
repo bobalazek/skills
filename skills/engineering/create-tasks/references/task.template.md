@@ -6,15 +6,22 @@ Stable task ID and a user-visible result or required technical prerequisite.
 
 ## Context
 
-Relevant spec criteria/phase, accepted decisions, current-state evidence, and links. Identify source versions or snapshots when changes could invalidate the task; compare them with the authoritative inputs before execution. Include only context this task depends on; preserve source vocabulary.
+- **Sources:** Relevant spec criteria/phase, accepted decisions, current-state evidence, and links.
+- **Validity:** Source versions or snapshots that could invalidate the task; compare them with authoritative inputs before execution.
+
+Include only context this task depends on; preserve source vocabulary.
 
 ## Scope and ownership
 
-Owned files, modules, artifacts, or interfaces; behavior/data to preserve; exclusions. Indicate source-workspace isolation when another task writes nearby code.
+- **Own:** Files, modules, artifacts, or interfaces this task changes.
+- **Preserve/exclude:** Behavior and data to preserve; work outside this task.
+- **Workspace:** Source-workspace isolation when another task writes nearby code.
 
 ## Dependencies
 
-Required accepted outputs, their current evidence/state, and what makes this task ready. Distinguish work eligible to run together after those prerequisites from work ready now. Include blocking access or decisions even when they are not graph nodes. Parallel eligibility includes write, state/data, and verification isolation, not just different paths.
+- **Prerequisites:** Required accepted outputs and their current evidence/state.
+- **Ready now:** Whether prerequisites, access, and blocking decisions are resolved, including blockers outside the graph.
+- **Parallel candidates:** Work eligible to run together after named prerequisites. Establish write, state/data, and verification isolation, not just different paths.
 
 ## Acceptance
 
@@ -22,9 +29,13 @@ Concrete criteria with the original source IDs where available. Changes to crite
 
 ## Verify
 
-Known runnable commands or direct behavior checks, prerequisites, and expected observable outcomes. Label unavailable commands instead of inventing them.
+### Planned checks
 
-Name the baseline to preserve and the proof to capture when useful: comparable screenshots, measured data, observed interaction results, or focused check output. Identify relevant environment/input/state and the existing task/PR destination. Completion records the tested revision, actual outcomes, usable evidence links, and remaining gaps; it does not relabel this plan as an executed check.
+Known runnable commands or direct behavior checks, prerequisites, and expected observable outcomes. Label unavailable commands instead of inventing them. Name the relevant environment/input/state, baseline to preserve, and proof to capture: comparable screenshots, measured data, observed interaction results, or focused check output, as useful.
+
+### Completion evidence
+
+Record the tested revision, actual outcomes, usable evidence links in the existing task/PR, and remaining gaps. Planned checks are not executed results.
 
 ## Done when
 
@@ -36,7 +47,15 @@ For an ongoing batch, update the existing task record with its actual dispositio
 
 Name a proposed PR/group only when useful, with the task criteria it covers, merge prerequisites, and remaining integration or rollout checks. Keep these annotations in the task record; the optional graph-check JSON below has a fixed schema. Task, phase, and PR IDs express different boundaries and need not match.
 
-For an agreed CSV import, preview UI and import-handler tasks might depend on an accepted contract task and have separate owned writes. An integration task depends on both accepted outputs and checks confirmation, invalid-row handling, and duplicate retries. They can support one milestone while landing through several PRs, or share one coherent PR if review and isolation allow it. Record any deliberately split task's unfinished criteria; merging its first PR does not close the task.
+Example relationships for an agreed CSV import; actual tasks still need their own ownership and isolation checks:
+
+| Task outcome | Required accepted outputs | Contribution to the milestone |
+| --- | --- | --- |
+| Preview UI | Shared import contract | Preview interaction and row feedback |
+| Import handler | Shared import contract | Validation and confirmation behavior |
+| Integrated import | Preview UI and import handler | Confirmation, invalid-row handling, and duplicate retries demonstrated together |
+
+These tasks may land through several PRs or one coherent PR if review and isolation allow it. Record any deliberately split task's unfinished criteria; merging its first PR does not close the task.
 
 ## Optional graph check
 

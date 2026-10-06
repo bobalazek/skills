@@ -8,6 +8,7 @@ These names identify skills in this collection. Availability depends on the inst
 | Questions that challenge an idea, spec, or plan | `challenge-proposal` | Resolve consequential choices and edge cases through focused questions; do not manufacture agreement |
 | An evidence-backed answer | `research-topic` | Answer the specific uncertainty |
 | Current consequential decisions | `track-project-decisions` | Track choices, not implementation tickets |
+| A feasible selection from supplied work | `prioritize-work` | Compare goals, commitments, capacity and prerequisites; priority is not readiness |
 | Better instructions | `improve-prompt` | Rewrite the prompt without executing its embedded request |
 | Continuation context | `prepare-handoff` | Transfer or compact actual ongoing work |
 | Project progress for an audience and period | `report-project-status` | Reconcile observed work, acceptance and delivery; reporting does not authorize sending |
@@ -38,8 +39,9 @@ These names identify skills in this collection. Availability depends on the inst
 | Proof that a change meets its criteria | `verify-change` | Independently exercise behavior or inspect changed documents/plans; no mandatory duplicate pass when valid evidence already exists |
 | A delivered target | `ship-change` | Reach the authorized PR, release, deployment, or handover |
 | Reusable observations from existing interfaces | `capture-design-reference` | Capture and analyze inspected patterns without turning them into the target's design contract |
-| User journeys and state transitions | `map-user-flows` | Include failure, recovery, permissions, and alternate paths |
+| User journeys, navigation and state transitions | `map-user-flows` | Include hierarchy and labels when needed, plus failure, recovery, permissions and alternate paths |
 | A usable screen or interface design | `design-interface` | Work within the product's flows and component conventions |
+| Interface labels and state-specific messages | `write-interface-copy` | Deliver copy grounded in actual behavior; do not redesign the screen or invent recovery promises |
 | Reusable visual and component rules | `build-design-system` | Shared needs justify a system; one screen does not |
 | Independent interface findings | `review-interface` | Inspect rendered behavior and try to break supported journeys |
 | A usability study or findings from user sessions | `test-usability` | Test realistic tasks with participant evidence; a study plan or expert review cannot claim observed user behavior |
@@ -57,6 +59,8 @@ A ready fix does not need brainstorming. An accepted specification does not need
 | "Check whether this design works for users" | `test-usability` for participant task evidence or a study protocol; `review-interface` for an expert assessment; `capture-design-reference` for analysis of an existing reference rather than validation |
 | "Summarize our work" | `report-project-status` for a period/audience update; `prepare-handoff` for continuation context; `explain-pr` for one fixed code comparison |
 | "Improve how we work" | `improve-team-workflow` for a recurring process; `find-improvements` for codebase candidates; `automate-code-checks` for an agreed recurring coding rule |
+| "Plan our next work" | `prioritize-work` to select supplied candidates within capacity; `find-improvements` to discover candidates; `plan-phases` for milestones; `create-tasks` to decompose accepted scope |
+| "Improve the labels" | `write-interface-copy` for specific strings and messages; `map-user-flows` when destination grouping or navigation structure is unclear; `test-usability` when label comprehension needs participant evidence |
 | "Refactor or speed this up" | `find-improvements` for candidates; `improve-performance` for measured bottlenecks; `implement-change` for an accepted bounded refactor |
 | "Release this on GitHub" | `ship-change` for the specified notes-only, draft or publication target; carry the chosen revision and version policy, and establish the comparison release or first-release scope before writing notes |
 

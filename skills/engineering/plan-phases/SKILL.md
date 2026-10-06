@@ -5,15 +5,17 @@ description: "Turn agreed project or feature scope into outcome-based phases wit
 
 # Plan phases
 
-Produce a phase plan that shows how the agreed outcome becomes deliverable. A phase owns a usable result or a prerequisite that makes later work possible; file types and arbitrary weeks are poor phase boundaries.
+## Use this skill
 
-This skill owns the milestone dependency graph and its acceptance gates. The spec remains authoritative for required behavior; tasks own executable work, concrete ownership/isolation, and checks. Use a separate phase plan when coordination, staged delivery, or meaningful prerequisites justify it. For a small change, the accepted spec or brief may already give enough sequence to create tasks or implement directly.
+Use this to turn agreed scope into deliverable milestones when coordination, staged delivery or meaningful prerequisites need a plan. Own the milestone dependency graph and acceptance gates; reuse the accepted spec, technical decisions and existing plan without reopening settled choices. A phase owns a usable result or enabling prerequisite, not a file type or arbitrary week.
+
+Use `write-spec` for unsettled required behavior, `challenge-proposal` to question a direction, or `create-tasks` for executable work and concrete ownership/isolation. A bounded change may already have enough sequence for tasks or implementation and need no separate phase plan.
 
 ## Read the accepted scope
 
 Use the current spec, technical decisions, constraints, and existing phase plan. Inspect the relevant foundation and delivery path. Preserve accepted decisions and revise only what changed. If scope is still disputed, identify the decision instead of making a precise schedule from an assumption.
 
-Resolve a consequential planning choice with an adaptive question about the affected outcome. Inspect factual prerequisites first; research or prototype work belongs in the graph only when its result could change feasibility, ordering, or acceptance. A broader request to question the direction belongs to `challenge-proposal`; phase planning does not reopen settled product choices.
+Resolve a consequential planning choice with an adaptive question about the affected outcome. Inspect factual prerequisites first; research or prototype work belongs in the graph only when its result could change feasibility, ordering or acceptance.
 
 For a new project, establish missing foundations before their consumers and reuse suitable starters or platforms. For an existing system, account for preserved behavior, compatibility windows, data migration, operational ownership, and rollback needs. Include design, research, or prototype work only when it resolves a prerequisite.
 
@@ -29,16 +31,16 @@ A phase, task, and PR are different boundaries. One milestone can require severa
 
 Use [the phase-plan template](references/phases.template.md) for a durable plan. Do not estimate dates or effort without assumptions about scope, staffing, and dependencies. Unknown feasibility becomes a bounded investigation; it does not become a supposedly executable build phase.
 
-## Communicate the result
-
-Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
-
-## Independent evaluation
-
-Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
-
-## Completion
+## Verify and return the plan
 
 Verify that the graph is acyclic, each result contributes to agreed scope, exits are observable, and all delivery requirements have an owner. Show which phase is ready now and which prerequisites remain unresolved.
 
-Stop with the milestone plan when that is the requested outcome. Next: `create-tasks` for the selected phase or agreed scope that has enough detail for decomposition. Hand forward the phase goal, criteria, dependency acceptance state, decisions, and source artifacts. Dependent tasks may be planned, but cannot start before their prerequisites are accepted. Do not create every possible task when later phases remain uncertain or start execution unless the request includes it.
+Before acceptance, have a separate agent in fresh context challenge the graph against raw accepted scope, decisions, prerequisite evidence and the candidate plan, without the author's conversation or preferred conclusion. Ask it to find missing dependencies, unsupported readiness and unowned exits. Reconcile findings and independently recheck affected phases after fixes. Retain the returned reviewer/session identity, evaluated artifact/revision, findings and coverage; an attempted delegation is not an assessment. If unavailable, label the result unreviewed and stop before acceptance. Required human approval remains separate.
+
+Match the requested audience, tone and depth, then project conventions. Return the milestone graph, its purpose, current readiness, future parallel candidates, checks and unresolved prerequisites. Update the existing authorized plan and decision locations instead of creating competing summaries. For authorized PR work, include relevant scenario/evidence checks and independent findings, refreshing affected proof after edits.
+
+## Next steps
+
+Use `create-tasks` for the selected phase or agreed scope that has enough detail for decomposition. Pass the goal, criteria, dependency acceptance state, decisions and source artifacts. Dependent tasks may be planned, but cannot execute before prerequisites are accepted. If an unresolved premise blocks planning, use `research-topic` for discoverable facts or `build-prototype` for runtime feasibility; keep the affected outcome and question bounded.
+
+Check skill availability and describe the plain action when absent. Stop with the requested milestone plan or continue ready work already authorized. Do not create every possible task while later phases remain uncertain, restart accepted discovery, or begin execution from planning authority alone.

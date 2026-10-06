@@ -22,6 +22,26 @@ Choose the existing measure or simplest manual observation that can test the hyp
 
 Keep a balancing observation for the risk the change could worsen: acceptance failures, rework, missed reviews, escalation burden or downstream delay. Quality and required controls remain criteria, even if the speed measure improves. A small sample or noisy process may support only a tentative observation; a convenient percentage is not a substitute for adequate evidence.
 
+## When automation is a candidate
+
+First establish whether the recurring output is still needed and whether the process is stable enough to specify. Compare only credible options for the actual task:
+
+| Option | What would justify it | What to check |
+| --- | --- | --- |
+| Remove or simplify the work | The output or duplicated step no longer serves a required outcome | Preserve the actual obligation, useful information and necessary control |
+| Keep it manual | Frequency, variation or judgment makes the current method appropriate | Count real effort and errors rather than treating manual work as free |
+| Use an existing native feature | A supported capability already covers the needed behavior | Verify the current tool/version, permissions, limits, failure behavior and ongoing cost |
+| Use deterministic automation | The rules and exception boundaries can be specified | Include implementation, validation, operation and recovery work |
+| Use AI assistance | Variable inputs require interpretation and output quality can be evaluated | Include human checking, uncertain outputs, privacy constraints and change/drift evaluation |
+
+Choose from the observed process, required quality, mistake consequences and available controls. Recurrence alone does not justify automation, and AI is not a default upgrade from a script or native feature. A high-consequence output may require a different approach or an accountable human decision regardless of potential time savings.
+
+Compare total cost over the same stated horizon: setup and migration, usage or license charges where known, normal operation, human review, exceptions and corrections, monitoring, maintenance, retraining or revalidation when needed, and eventual removal or replacement. Keep money, active effort and elapsed delay distinct unless there is an explicit conversion basis. Label unknown quantities and estimates; do not manufacture a payback figure or fixed trial duration.
+
+Make expected savings a hypothesis until a bounded trial observes them. Inspect ordinary and failure cases, required human checks and effort shifted to other roles. For example, saving two hours of manual work while adding three hours of checking and maintenance does not establish a labor saving, even if another measured quality benefit might justify the change.
+
+Record who operates the chosen approach, how exceptions reach an accountable owner, what stops unsafe or repeated effects, and how work continues when the automation is unavailable. Tie the revisit or retirement trigger to the task's actual costs, quality and continued need. The process proposal can hand accepted technical work to implementation; it does not grant authority to purchase a tool, send messages, migrate records or change production behavior.
+
 ## Make the trial executable
 
 Record the following in the existing process or work item, omitting fields that add no decision value:

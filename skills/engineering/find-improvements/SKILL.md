@@ -5,7 +5,9 @@ description: "Find and prioritize useful improvements in a codebase, feature, or
 
 # Find improvements
 
-Produce a bounded, deduplicated set of improvement candidates tied to the user's goal. Refactoring is one focus of this skill. A candidate is a decision or investigation input; discovery does not authorize implementing every item.
+## Use this skill
+
+Discover and rank evidenced improvement candidates in a selected codebase or feature; refactoring is one focus. Reuse the existing backlog, accepted decisions and valid findings. Use `prioritize-work` to select from an already-evidenced supplied backlog under capacity, or `implement-change` for a selected executable improvement. Discovery does not authorize every repair.
 
 ## Select the scope and evidence
 
@@ -23,18 +25,27 @@ For refactors, identify the behavior to preserve and the concrete simpler form. 
 
 Separate demonstrated defects from opportunities and untested hypotheses. A suspected bottleneck becomes a profiling investigation until measured. Group candidates by root cause, search existing work items, and link related or duplicate items instead of creating competing tickets.
 
-## Prioritize and hand off
+## Rank evidenced candidates
 
 Use [the candidate outline](references/candidates.template.md) when a durable list helps. For each useful item, include evidence and location, affected users/callers, the proposed treatment, expected benefit, preservation risk, and a check that would demonstrate success. Label uncertainty; do not invent savings, dates, or effort scores.
 
 Rank against the user's goal using demonstrated impact, confidence, dependencies, cost, and blast radius. State what was inspected and what remains unexamined. Prefer a few actionable candidates over an exhaustive smell list. Existing valid decisions and intentional repetition can lead to no change.
 
-Finish with the next justified action: `diagnose-issue` for an unresolved failure, `improve-performance` for a measurable bottleneck investigation, `automate-code-checks` for an accepted repeatable guard, `plan-migration` for a transition with compatibility/data constraints, or `implement-change` for a selected bounded refactor. Use `write-spec` when desired behavior needs agreement and `create-tasks` for an accepted larger scope. Tracker writes and repairs follow actual authorization.
+## Verify and report
 
-## Communicate the result
+Check each retained candidate against current source, existing work and accepted constraints. Confirm that the evidence supports its classification, proposed treatment and proof needed; keep hypotheses and uninspected surfaces explicit. Follow the project's format and requested depth, using its backlog or existing review instead of a competing summary.
 
-Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
+Before acceptance, a separate agent in fresh context must challenge the candidates using the user's goal, selected scope, candidate list, raw source/operational evidence and check access. Omit the author's conversation and preferred conclusions. Retain the returned assessment with reviewer/session identity, evaluated artifact/revision, findings and coverage. Resolve supported findings and obtain affected rechecks after fixes. Without a returned independent assessment, report unreviewed and stop before acceptance.
 
-## Independent evaluation
+Include useful evidence, independent findings and limitations in authorized PRs at creation; refresh affected proof after edits. Tracker writes and repairs require their actual authorization.
 
-Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+## Next steps
+
+Carry the selected finding, evidence and missing prerequisite to its owner:
+
+- `diagnose-issue` for an unresolved failure; `improve-performance` for a bottleneck needing measurement.
+- `automate-code-checks` for an accepted recurring guard; `plan-migration` for compatibility/data transitions.
+- `write-spec` for unsettled behavior; `create-tasks` for accepted larger scope; `implement-change` for a bounded ready change.
+- `prioritize-work` when selection among these and other supplied candidates needs a capacity decision.
+
+Use the plain action if its skill is unavailable. Reuse accepted findings; a discovery request can finish with the list.

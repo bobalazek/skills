@@ -1,28 +1,36 @@
 ---
 name: research-topic
-description: "Answer a bounded factual or comparative question using relevant repository evidence and current primary sources, with traceable conclusions, freshness, uncertainty, and a next decision."
+description: "Answer a bounded factual or comparative question using relevant repository evidence and current primary sources, with traceable conclusions and uncertainty. Use explain-codebase for an explanation of current code behavior."
 ---
 
 # Research topic
 
-Produce evidence-backed findings or a comparison that helps the user make a named decision. Turn a broad topic into a bounded question, scope, and desired depth; establish what evidence would change the answer before collecting material.
+## Use this skill
 
-Inspect supplied artifacts and local sources first when the question concerns a project. For external, current, niche, legal, pricing, or product claims, use relevant primary sources and verify dates, versions, jurisdiction, and applicability. Do not treat search snippets or copied summaries as stronger evidence than the underlying material.
+Use this when evidence is needed to answer a named uncertainty or compare alternatives for a decision. Reuse supplied artifacts, accepted requirements and earlier findings whose source and freshness still apply.
 
-Compare alternatives using the same requirements and units. Separate observed current behavior, documented capability, interpretation, and recommendation. For conflicting sources, explain the conflict and prefer evidence with the right authority, version, and scope. A missing source is an uncertainty, not a license to fill a gap.
+Use `explain-codebase` for a request such as explaining the repository's login path. `brainstorm-ideas` explores possible directions, while `design-architecture` selects technical structure. Research establishes what is known; accepting a direction remains a visible decision.
 
-Keep research bounded to the decision. Parallel independent questions can be investigated separately when the host supports it, but reconcile their assumptions and evidence before concluding. Avoid collecting a directory of links that never affect the answer.
+## Bound the question
 
-For delegated research, provide the exact question, relevant source scope/baseline, permitted actions, and expected findings with source locations and unresolved claims. Assume the recipient lacks the parent conversation. Keep investigation read-only unless changes are separately authorized; inspect consequential source evidence before adopting a worker's conclusion. Separate locating code, explaining behavior, and recommending changes when mixing them would obscure what was actually established.
+Turn a broad topic into a question, scope and desired depth. Establish which evidence could change the answer before collecting material. Keep the investigation focused on that decision rather than producing a directory of unused links.
 
-Return the direct answer, supporting evidence near the relevant claims, dates where freshness matters, important limitations, and the next useful action. Quote sparingly and respect source restrictions. Save or update a research artifact only when requested or useful to the ongoing workflow.
+Inspect supplied artifacts and local sources first for project questions. For external, current, niche, legal, pricing or product claims, verify relevant primary sources, dates, versions, jurisdiction and applicability. Search snippets and copied summaries do not outrank the underlying material.
 
-Research describes what is known; selecting desired behavior or a technical direction remains a visible decision. Next: `brainstorm-ideas`, `write-spec`, or `design-architecture` using the accepted findings; `build-prototype` when documentation cannot answer the empirical question.
+## Compare and resolve evidence
 
-## Communicate the result
+Compare alternatives against the same requirements and units. Separate observed behavior, documented capability, interpretation and recommendation. Resolve conflicting sources using the authority, version and scope appropriate to the claim. Missing evidence remains an uncertainty.
 
-Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
+Independent questions may be investigated in parallel when supported and authorized. For delegation, provide the exact question, baseline/source scope, permitted actions and expected findings with source locations. Assume no parent conversation. Keep research read-only unless changes are separately authorized, inspect consequential evidence yourself, and reconcile assumptions before adopting conclusions.
 
-## Independent evaluation
+Separate locating code, explaining its behavior and recommending changes when combining them would obscure what was established. Documentation cannot prove an empirical property that needs observation.
 
-Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+## Result and verification
+
+Return the direct answer, evidence beside supported claims, dates where freshness matters, material limitations and the decision now possible. Quote sparingly and respect source restrictions. Match the requested audience/depth and project format; update an authorized existing research record when useful rather than creating a redundant summary.
+
+Check consequential claims against the actual sources. Before acceptance, have a separate agent in fresh context challenge the raw question, candidate findings and source evidence without the author's conversation or preferred answer. Ask it to test applicability, counterevidence and unsupported inferences. Retain its returned reviewer/session identity, evaluated artifact or revision, findings and coverage. Reconcile defects and independently recheck affected conclusions after corrections. Without that assessment, report the findings as unreviewed.
+
+## Next steps
+
+Pass accepted findings and their limits to `brainstorm-ideas` when directions remain open, `write-spec` when behavior can be defined, or `design-architecture` when a technical choice is requested. Use `build-prototype` for a bounded empirical uncertainty sources cannot resolve. Name the prerequisite, check availability or give the plain action. Finish an answer-only request with its findings; continue ready authorized work without repeating settled research or inferring new authority.

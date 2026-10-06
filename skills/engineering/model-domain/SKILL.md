@@ -5,22 +5,30 @@ description: "Clarify domain vocabulary, entities, relationships, states, invari
 
 # Model domain
 
-Produce a consistent domain model that explains the business behavior the software must represent. Work on concepts and rules before treating database tables or class names as the model.
+## Use this skill
+
+Use this when business vocabulary, ownership, relationships, states or invariants need agreement. Produce a consistent conceptual model that explains representative scenarios. Reuse accepted definitions and decisions; reopen only what the new evidence or request affects.
+
+Use `write-spec` for required feature behavior and acceptance, or `design-architecture` for technical boundaries and storage choices once the model is understood. Database tables and class names are evidence, not the domain model by default.
+
+## Establish the language and rules
 
 Collect the user's language, accepted requirements, examples, existing code/data, and recorded decisions. For a new domain, identify actors, ownership, lifecycle, and meaningful events. For an existing system, distinguish current implementation vocabulary from intended business meaning and compatibility constraints.
 
 Find overloaded terms, hidden synonyms, ambiguous ownership, invalid states, and rules duplicated across boundaries. Test proposed definitions with concrete scenarios, including relevant failure, permission, concurrency, and lifecycle transitions. Ask about choices that only the domain owner can settle; do not infer business truth solely from code.
 
-Use [the domain-model outline](references/domain-model.template.md) to record a durable result. Keep relationships, invariants, and state transitions explicit. Separate confirmed rules, proposals, and unresolved questions. Use a small diagram when it clarifies relationships or transitions.
+## Build and check the model
 
-Check that the model explains the representative scenarios without contradictions. For a changed existing model, identify affected terms/contracts/data and the migration questions, without silently renaming code or transforming records.
+Use [the domain-model outline](references/domain-model.template.md) when recording a durable model. Keep relationships, invariants and state transitions explicit; distinguish confirmed rules, proposals and unresolved questions. Use a small diagram when it clarifies relationships or transitions.
 
-Next: update `write-spec` behavior or use `design-architecture` to map the accepted model into technical boundaries. Persist consequential choices in the existing decision location and reuse the model during task creation.
+Walk representative scenarios through the definitions and transitions, checking for contradictions and invalid states. For an existing system, identify affected terms, contracts, data and migration questions. Modeling does not authorize code renames, schema changes or record transformations.
 
-## Communicate the result
+Before acceptance, have a separate agent in fresh context challenge the model against the raw request, accepted rules, scenario evidence and candidate artifact, without the author's conversation or preferred conclusion. Ask for counterexamples to definitions and invariants. Reconcile findings and independently recheck affected parts after fixes. Retain the returned reviewer/session identity, evaluated artifact/revision, findings and coverage; an attempted delegation is not an assessment. If unavailable, label the result unreviewed and stop before acceptance. Required human approval remains separate.
 
-Match the requested audience, tone and depth, then the project's communication conventions. Finish with the outcome, purpose, relevant method, observed proof and exact gaps or next action; keep it concise unless more detail is requested or needed. Update relevant durable knowledge in its authorized authoritative home and link it instead of creating another summary document. For authorized PR work, include relevant observed proof, independent findings and remaining gaps when opening the PR; refresh affected evidence after edits.
+## Return the result
 
-## Independent evaluation
+Match the requested audience, tone and depth, then project conventions. Return the model, its purpose, scenarios checked, evidence, compatibility implications and unresolved owner choices. Persist consequential decisions in the existing authorized decision location rather than creating another model or summary. For authorized PR work, include relevant scenario proof and independent findings, refreshing affected evidence after edits.
 
-Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate artifacts, relevant raw sources, and check access. Omit the author’s conversation and preferred conclusions. Ask for counterexamples and observed proof, reconcile findings, and have affected results checked again after fixes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
+## Next steps
+
+Use `write-spec` when the accepted model changes required behavior, `design-architecture` to map it into technical boundaries, or `plan-migration` when an accepted model change needs a compatible transition. Pass the model revision, accepted rules, scenario evidence and unresolved choices; blocked definitions cannot become executable requirements. Check skill availability and describe the plain action when absent. Stop at the requested model or continue ready work already authorized, reusing the model rather than restarting discovery.
