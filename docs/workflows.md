@@ -105,8 +105,8 @@ flowchart TD
   subgraph P2["P2: Users can preview and confirm an import"]
     API["Server work and scoped checks"] --> Join["Integrated journey meets acceptance criteria"]
     UI["Review screen and scoped checks"] --> Join
+    Join --> Review["Independent review of the combined result"]
   end
-  Join --> Review["Independent review of the combined result"]
   Review --> P3["P3: Deliver and verify the target"]
 ```
 
