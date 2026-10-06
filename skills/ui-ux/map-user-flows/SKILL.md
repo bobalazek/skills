@@ -7,7 +7,7 @@ description: "Map user journeys, navigation, decisions and recovery for a produc
 
 ## Use this skill
 
-Use this for a usable map of actors, entry points, actions, states, outcomes and recovery. Reuse accepted goals, domain rules, user evidence and supported surfaces. `design-interface` owns screen composition; `write-interface-copy` owns a dedicated string set; `write-spec` owns the behavior acceptance contract.
+Use this for a usable map of actors, entry points, actions, states, outcomes and recovery. Reuse accepted goals, domain rules, user evidence and supported surfaces. `create-wireframes` owns unresolved screen structure; `design-interface` owns detailed visual design; `write-interface-copy` owns a dedicated string set; `write-spec` owns the behavior acceptance contract.
 
 For existing software, inspect the actual journey and preserve useful familiar behavior. For a new product, label assumptions about users and their context rather than treating them as observed needs.
 
@@ -39,6 +39,6 @@ Return the map, affected current behavior, state/recovery requirements, observed
 
 ## Next steps
 
-Pass the accepted map and exact gaps to `design-interface` for composition, `write-interface-copy` for detailed strings, or `write-spec` for behavior criteria. Use `build-prototype` for interaction uncertainty. For findability or comprehension needing participants, use `test-usability` with the versioned hierarchy/labels, target destinations and neutral question.
+Pass the accepted map and exact gaps to `create-wireframes` for unresolved screen structure, `design-interface` when structure is settled and visual detail is needed, `write-interface-copy` for detailed strings, or `write-spec` for behavior criteria. Use `build-prototype` for interaction uncertainty. For findability or comprehension needing participants, use `test-usability` with the versioned hierarchy/labels, target destinations and neutral question.
 
 Check availability or describe the plain action, carrying revision and evidence limits. Finish a mapping-only request or continue ready work already authorized; no follow-up is required for its own sake.

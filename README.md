@@ -1,6 +1,6 @@
 # Skills
 
-42 skills for developing software, making decisions, and designing interfaces. Each produces a concrete result, such as a specification, working change, review or design. Run one on its own or continue from another skill's accepted output.
+43 skills for developing software, making decisions, and designing interfaces. Each produces a concrete result, such as a specification, working change, review or design. Run one on its own or continue from another skill's accepted output.
 
 Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear. The collection is under active development; [releases](https://github.com/bobalazek/skills/releases) record reviewed snapshots and evaluation limits.
 
@@ -21,7 +21,7 @@ For a fixed release, use its tag instead of the default branch:
 bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.0.2 --skill choose-skill create-tasks verify-change --agent codex --copy
 ```
 
-`skills@1.7.0` pins the installer; `v0.0.2` pins this 42-skill collection. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.0.2) for changes and evaluation limits. The earlier `v0.0.1` release remains available with 40 skills.
+`skills@1.7.0` pins the installer; `v0.0.2` pins the 42-skill release. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.0.2) for changes and evaluation limits. The default branch also includes `create-wireframes`; the earlier `v0.0.1` release remains available with 40 skills.
 
 In Codex, invoke an installed skill with its name and your task:
 
@@ -37,7 +37,7 @@ From a checkout, you can also ask a filesystem-capable agent to use `skills/engi
 | --- | --- |
 | [Engineering · 25 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, and maintain it |
 | [Productivity · 10 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose work, route requests, improve prompts and team workflows, report status, and transfer context |
-| [UI/UX · 7 skills](docs/domains/ui-ux.md) | Capture design references, map flows and navigation, design screens and systems, write interface copy, review interfaces, and test usability |
+| [UI/UX · 8 skills](docs/domains/ui-ux.md) | Capture design references, map flows and navigation, wireframe screen structure, design screens and systems, write interface copy, review interfaces, and test usability |
 
 Each catalog lists skills by category, with their outputs and boundaries.
 
@@ -48,7 +48,8 @@ Each catalog lists skills by category, with their outputs and boundaries.
 | Compare directions for an idea | [brainstorm-ideas](skills/productivity/brainstorm-ideas/SKILL.md) |
 | Begin working in an inherited project | [onboard-codebase](skills/engineering/onboard-codebase/SKILL.md) |
 | Define a feature's required behavior | [write-spec](skills/engineering/write-spec/SKILL.md) |
-| Design a screen whose flow is understood | [design-interface](skills/ui-ux/design-interface/SKILL.md) |
+| Sketch screen structure from an understood flow | [create-wireframes](skills/ui-ux/create-wireframes/SKILL.md) |
+| Add visual detail to settled screen structure | [design-interface](skills/ui-ux/design-interface/SKILL.md) |
 | Choose which supplied work fits the available capacity | [prioritize-work](skills/productivity/prioritize-work/SKILL.md) |
 | Establish the cause of a known failure | [diagnose-issue](skills/engineering/diagnose-issue/SKILL.md) |
 | Review code for evidenced defects | [review-code](skills/engineering/review-code/SKILL.md) |
@@ -76,11 +77,15 @@ flowchart TD
     Spec[["write-spec"]] --> Need{"What design is missing?"}
     Need -->|Technical choices| Architecture[["design-architecture"]]
     Need -->|User journey| Flow[["map-user-flows"]]
-    Need -->|Screen composition| Screen
-    Flow -->|Screen design needed| Screen[["design-interface"]]
+    Need -->|Screen structure| Wire[["create-wireframes"]]
+    Need -->|Visual detail| Screen[["design-interface"]]
+    Flow -->|Structure unresolved| Wire
+    Flow -->|Structure settled| Screen
+    Wire -->|Detail needed| Screen
     Need -->|None| Agreed(["Result: required scope and design accepted"])
     Architecture --> Agreed
     Flow -->|Existing screens suffice| Agreed
+    Wire -->|Requested design complete| Agreed
     Screen --> Agreed
   end
   Agreed --> Size{"Milestones needed?"}
@@ -103,7 +108,7 @@ flowchart TD
   Accepted -->|Delivery authorized| Ship[["ship-change"]]
   Ship --> Delivered(["Result: requested target delivered and checked"])
   classDef skill fill:#edf5ff,stroke:#355b85,color:#172b42;
-  class Idea,Challenge,Spec,Architecture,Flow,Screen,Phases,Tasks,Build,Verify,Code,UI,Ship skill;
+  class Idea,Challenge,Spec,Architecture,Flow,Wire,Screen,Phases,Tasks,Build,Verify,Code,UI,Ship skill;
 ```
 
 Select every required design/review branch and reconcile its result before continuing. Failed checks return to repair and independent recheck; delivery waits. Ready tasks can skip planning. Delivery includes checking the requested target.

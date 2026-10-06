@@ -1,15 +1,15 @@
 ---
 name: design-interface
-description: "Design or improve a concrete screen, page or interface with visual hierarchy, content, states and responsive behavior, delivering an agreed design artifact, implementation handoff or rendered surface."
+description: "Create or refine detailed interface design with visual hierarchy, content, states and responsive behavior, delivering an agreed design artifact, implementation handoff or rendered surface."
 ---
 
 # Design interface
 
 ## Use this skill
 
-Use this for a concrete interface at the requested fidelity. Establish whether the result is a screen blueprint, editable design artifact or implemented surface, reusing accepted flows, content and design decisions.
+Use this for detailed visual design at the requested fidelity. Establish whether the result is an editable design artifact, implementation handoff or implemented surface, reusing accepted flows, wireframes, content and design decisions. Existing settled screen structure can start here directly.
 
-Use `map-user-flows` when the journey or navigation is unresolved, `capture-design-reference` for reusable analysis of existing interfaces, or `write-interface-copy` for a dedicated set of labels/state messages. Keep routine wording within screen design. Repeated shared contracts can belong to `build-design-system`.
+Use `map-user-flows` when the journey or navigation is unresolved, `create-wireframes` for a low-fidelity structural decision before visual detail, `capture-design-reference` for reusable analysis of existing interfaces, or `write-interface-copy` for a dedicated set of labels/state messages. Keep routine wording within screen design. Repeated shared contracts can belong to `build-design-system`.
 
 ## Inspect the surface and choose the format
 
