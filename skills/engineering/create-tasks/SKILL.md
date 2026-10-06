@@ -45,6 +45,8 @@ Preserve existing ownership and in-progress or completed work when reconciling t
 
 Trace each in-scope acceptance criterion to a task or explicit deferral, keeping its requirement and phase links. A task linked to a requirement does not cover criteria omitted from its contract. Ensure dependencies, ownership, task criteria, and phase exits agree. Identify ready work and unresolved blockers. No task is executable while it depends on an unmade consequential decision.
 
+For each “done when,” name the outputs it consumes and trace their producing tasks. Add missing dependency edges or separate an independently acceptable contribution from the later integration gate. An integration task cannot wait for a contributor whose own acceptance requires that integration to pass; check the written criteria as well as the declared graph for this cycle.
+
 Before acceptance, a separate agent in fresh context must challenge the graph against accepted criteria, candidate task records, source artifacts, and check access. Omit the author's conversation and preferred conclusions. Retain the returned assessment with reviewer/session identity, evaluated artifact/revision, findings and coverage. Resolve supported findings and obtain affected rechecks after fixes. Without a returned independent assessment, report unreviewed and stop before acceptance.
 
 Return the task graph in the requested/project format with ready work, blocked dependencies, verification and actual publication status. Link canonical context instead of creating another summary; keep the result concise for its audience. Include proof, independent findings and gaps in authorized PRs at creation; refresh affected evidence after edits.
