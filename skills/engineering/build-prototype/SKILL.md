@@ -7,7 +7,7 @@ description: "Build a bounded technical or interaction experiment that answers a
 
 ## Use this skill
 
-Answer one consequential technical or interaction uncertainty through a bounded experiment. Reuse accepted requirements and existing code or starter capabilities. Inspect documentation or current behavior first when that can answer the question; use `implement-change` for a settled production change. Failure can be a useful experimental result.
+Answer one consequential technical or interaction uncertainty through a bounded experiment. Reuse accepted requirements and existing code or starter capabilities. Inspect documentation or current behavior first when that can answer the question; use `create-wireframes` for a screen-structure proposal or `implement-change` for a settled production change. Failure can be a useful experimental result.
 
 ## Define the experiment
 

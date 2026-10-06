@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create wireframes"
+  short_description: "Resolve screen structure with low-fidelity wireframes"
+  default_prompt: "Use $create-wireframes to turn these accepted flows into editable screen layouts and state annotations."
