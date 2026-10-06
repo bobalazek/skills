@@ -60,6 +60,12 @@ Keep mechanical lint/format feedback in the existing tool when it covers the iss
 
 ## Verification and delivery evidence
 
+Assess reversibility at the relevant stages: before exposure, after new writes or external effects, and after destructive cleanup. State the credible worst supported failure and its affected population, including shared consumers. Keep severity, likelihood and reversibility distinct: an easy revert does not undo an exposure that already happened.
+
+Check the proposed recovery operation and its prerequisites: deployable old artifact, compatible readers/writers, retained data, restore/replay coverage, available authority and an owner. Reverting a commit, switching a flag, compensating an external action and restoring data have different effects. A UI-only change can be straightforward to revert, but a UI action that sends money or deletes data leaves consequences after the component is reverted.
+
+Classify recovery as demonstrated reversible, conditional on named limits, irreversible for specified effects, or unverified. Record which observation or rehearsal supports the claim and when the safe return window closes. A migration may become irreversible only when old data is dropped; a backup may miss subsequent writes or take longer to restore than the accepted outage window. Do not demand disruptive recovery experiments on a live system. Missing material recovery proof blocks the affected readiness claim.
+
 Confirm the supplied commands exercised material changed scenarios and relevant rejection/regression cases on the candidate revision. Inspect proof rather than relying on filenames, test counts, or green CI. Reuse sound checks; run a focused counterexample when useful and authorized. A test that reproduces the implementation can miss a wrong requirement or an untested entry point.
 
 Check rollout/recovery needs, configuration/setup changes, logging or monitoring, and relevant documentation for the affected surface. Inspect command definitions and environment assumptions before trusting operational instructions. Required missing proof is a readiness gap; do not relabel it as a proven runtime defect.

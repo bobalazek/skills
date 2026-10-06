@@ -67,6 +67,7 @@ Resources are bundled with their owning package and loaded conditionally. They a
 | AI capabilities and workflows | Architecture selects bounded calls, retrieval, workflows or agents; its conditional checklist covers data/tool authority, memory, actual runtime gates, evaluation, budgets and recovery; implementation and verification check those contracts |
 | Cost, obligations, and security constraints | Architecture's checklist covers applicable evidence, quantities/price dates, jurisdiction/data/contracts, trust boundaries, and unresolved owner decisions |
 | Traditional stack conventions | `define-project-conventions` carries a topic matrix, web/typed-code checks, and data/integration checks; verify actual versions and official guidance for unsettled framework details |
+| HTTP APIs and database scaling | Conventions cover resource/CRUD contracts, headers and trust boundaries, schema design, query placement, measured indexes and conditional partitioning/sharding; review checks those choices against actual consumers and evidence |
 | Agent-friendly project knowledge | `prepare-repo-for-agents` carries guidance for README, agent instructions, current facts, standards, decisions, learnings, incidents, and task state |
 | Institutional knowledge and memory | `document-project` reconstructs facts and recorded intent from code/history, populates canonical records and indexes, preserves uncertainty, and promotes evidenced lessons through their appropriate owner |
 | Repeated manual fixes | `automate-code-checks` selects existing lint, type, schema, or behavior mechanisms, with false-positive checks and visible legacy debt |
@@ -76,6 +77,7 @@ Resources are bundled with their owning package and loaded conditionally. They a
 | Change safety | `implement-change` covers refactors, migrations, shared interfaces, stateful boundaries, and recovery |
 | Incident diagnosis | `diagnose-issue` carries containment/evidence/recovery checks for live failures |
 | PR and codebase review | `review-code` has separate conditional checklists and one report shape |
+| Risk and reversibility | PR explanation, review, implementation and delivery carry credible worst impact, affected consumers/state, detection, recovery conditions and proof; reverting code does not necessarily undo data or external effects |
 | Result evaluation and PR evidence | `verify-change` carries evidence selection, comparison conditions, criterion results, reviewer-accessible reporting, conditional journey/security/reliability checks, and an optional command runner that records actual outcomes |
 | Delivery | `ship-change` has PR/merge, package, deployment, and handover checks |
 

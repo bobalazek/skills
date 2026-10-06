@@ -27,7 +27,8 @@ Keep the rule in its existing authoritative location. Add a new document only fo
 | Files and symbols | Names for files, directories, public modules, classes, functions, variables, types, and generated artifacts | Maintained examples, resolver/tool rules, public consumers |
 | Types and validation | Valid states, null/error handling, external input validation, serialization | Compiler/schema settings and boundary scenarios |
 | Data model | Identity, relationships, field meaning, constraints, state transitions, ownership, lifecycle | Schemas, readers/writers, invariant and migration checks |
-| APIs and integrations | Contract shape, errors, permissions, retries, idempotency, compatibility | Requests/events, consumers, failure cases |
+| APIs and integrations | Resources/methods, response/error contracts, headers, permissions, retries, idempotency, pagination, compatibility | Requests/events, middleware, consumers, failure cases |
+| Queries and storage | Database filtering and scope, relation loading, measured index choices, partitioning or sharding when justified | Generated queries, execution plans, workload and migration evidence |
 | UI | Component ownership, state, routes, tokens, supported interaction and accessibility patterns | Existing components, rendered examples and behavior checks |
 | Quality and delivery | Applicable tests, formatting, lint, build, review/release rules, exceptions | Commands actually present, CI and repository policy |
 | Documentation and knowledge | Canonical rules, decisions, facts, lessons, memory indexes, update triggers | Resolved links and a representative task walkthrough |

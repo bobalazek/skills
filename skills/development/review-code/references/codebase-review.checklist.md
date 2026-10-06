@@ -18,6 +18,8 @@ Prioritize critical flows whose failure exposes data, crosses tenant or privileg
 
 For a feature, include shared consumers, failure/state transitions, and supported alternate entry points. For a data layer, inspect schema/model meaning, naming and mappings, constraints, queries, transaction boundaries, authorization/tenant filters, migrations, and readers/writers. Static references cannot establish production integrity, workload, or an unused column. State the additional safe observation required when those claims matter.
 
+Use [API and data checks](api-data-review.checklist.md) for the relevant routes, contracts, schema and storage paths. Check known deployed versions and current operating constraints before judging an inherited design. Partitioning, sharding, caching or replacing the database needs an evidenced requirement; their absence alone is not a defect. Assess recovery for existing high-risk flows using actual retained state and tested operating paths, without inventing a deployment verdict for uninspected areas.
+
 For performance, locate the expensive or unbounded path and the workload that activates it. Use available measurements or scoped checks to evaluate query amplification, memory growth, repeated work, caching, or concurrency. Describe an unmeasured concern as a hypothesis; a broad review does not authorize speculative optimization.
 
 For architecture and maintainability, examine domain ownership, package boundaries, dependency direction, state ownership, public contracts, and the cost of a representative change. Connect structural concerns to a concrete defect or repeated change hazard. Do not prescribe a rewrite because another architecture is familiar.

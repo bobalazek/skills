@@ -23,3 +23,5 @@ Selected approach, credible alternatives, evidence, trade-offs, assumptions, sta
 ## Change and verification
 
 Integration order, compatibility or data migration, rollback/recovery, observability, and the checks that demonstrate the design. List unresolved decisions separately from implementation tasks.
+
+For consequential choices, state the credible worst failure, affected consumers/data, reversibility before and after accepted writes or destructive cleanup, and the point where recovery requires forward repair or accepts loss. Identify the recovery owner and evidence needed; keep proposed rehearsals distinct from executed proof.
