@@ -35,6 +35,8 @@ Before acceptance, have a separate agent in fresh context challenge the referenc
 
 Finish with the reference, inspected scope, useful patterns, measured versus inferred details, evidence locations and exact gaps. Next: `design-interface` for the target screen, `build-design-system` for agreed shared foundations, or `review-interface` when the requested result is an assessment of the target's usability or correctness. Pass the reference and its limits, check skill availability and describe the plain action when absent. Continue only next work already included in the user's request.
 
+Retain the returned assessment with its independent reviewer or session identity, evaluated artifact/revision, findings and coverage before claiming review. An attempted delegation, an empty wait or the author's own check is not an independent assessment.
+
 ## Communicate the result
 
 Match the requested audience, tone and depth, then project conventions. Report the result, its purpose, capture method, observed proof and next action without a chronological browsing log. Update an existing authorized reference location rather than duplicating summaries. For authorized PR work, include relevant safe captures and independent findings when opening the PR, using actual accessible evidence and refreshing affected observations after changes. Label local-only or restricted artifacts and unavailable proof explicitly.

@@ -37,6 +37,8 @@ Report observed results, confounders and remaining uncertainty. A small or chang
 
 Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate diagnosis/trial, relevant raw records and check access. Omit the author's conversation and preferred conclusions. Try alternative explanations, inspect comparability and preserved controls, reconcile findings, and independently recheck affected results after changes. If independent review is unavailable, report the result as unreviewed and stop before acceptance.
 
+Retain the returned assessment with its independent reviewer or session identity, evaluated artifact/revision, findings and coverage before claiming review. An attempted delegation, an empty wait or the author's own check is not an independent assessment.
+
 ## Communicate and continue
 
 Match the requested audience, tone and depth, then the project's communication conventions. Finish with the process problem, relevant evidence, selected trial or observed outcome, limitations and next action. Use the existing authorized process or work record instead of creating another report by default. Include observed proof and independent findings in authorized PR work, refreshing affected evidence after edits.

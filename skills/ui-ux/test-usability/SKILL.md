@@ -31,6 +31,8 @@ Use counts and denominators only when supported by the records. Explain coverage
 
 Before acceptance, have a separate agent in fresh context challenge the protocol or findings against the raw request, task definitions, candidate artifact and permitted source evidence, without the author's conversation or preferred conclusion. Respect participant consent and access limits when sharing evidence with a reviewer. It must check task neutrality, evidence traceability, unsupported completion claims and conflicting observations. Reconcile demonstrated defects and independently recheck affected results after fixes. If independent review or required evidence is unavailable, label the result unreviewed or incomplete rather than ready. Human approval remains separate.
 
+Retain the returned assessment with its independent reviewer or session identity, evaluated artifact/revision, findings and coverage before claiming review. An attempted delegation, an empty wait or the author's own check is not an independent assessment.
+
 ## Communicate the result
 
 Match the requested audience, tone and depth, then project conventions. Return the protocol or findings, the decision it supports, method and coverage, observed proof, exact gaps and next action. Update the existing authorized research record rather than creating duplicate summaries. For authorized PR work, include relevant redacted observations and independent findings when opening the PR, using reviewer-accessible evidence and refreshing it after material changes. Do not publish participant records merely to make a PR self-contained.

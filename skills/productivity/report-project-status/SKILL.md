@@ -33,6 +33,8 @@ Match detail and sensitive content to the intended audience. Keep internal reaso
 
 Before accepting the result, have a separate agent in fresh context challenge it against the accepted request, constraints, candidate update, relevant raw sources and check access. Omit the author's conversation and preferred conclusions. Check completion, health and forecast claims, reconcile findings, and independently recheck affected claims after corrections. If independent review is unavailable, report the update as unreviewed and stop before acceptance.
 
+Retain the returned assessment with its independent reviewer or session identity, evaluated artifact/revision, findings and coverage before claiming review. An attempted delegation, an empty wait or the author's own check is not an independent assessment.
+
 ## Communicate and continue
 
 Match the requested audience, tone and depth, then the project's communication conventions. Finish with the update, relevant evidence, coverage limits and exact next action; use the existing authorized reporting location instead of creating a duplicate summary. For authorized PR work, include the observed proof and independent findings, refreshing affected claims after edits.
