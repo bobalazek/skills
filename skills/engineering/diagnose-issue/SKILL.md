@@ -13,7 +13,7 @@ Establish the cause of an observed failure and verify a repair when requested. R
 
 Collect expected versus observed behavior, environment/version, inputs, timing, recent changes, and available traces. Inspect the relevant code and callers. Preserve original logs or artifacts with secrets and sensitive data removed from reusable outputs.
 
-Use existing monitoring, logs, traces, error reports, or metrics when they help correlate the symptom with the deployed revision and request/job. State sampling, retention, or access limits; absence of an alert is not proof of health. Read-only diagnosis does not authorize installing a monitoring provider or exporting customer data.
+Use existing monitoring, logs, traces, error reports, or metrics when they help correlate the symptom with the deployed revision and request/job. State sampling, retention, or access limits; absence of an alert is not proof of health. Read-only diagnosis does not authorize installing a monitoring provider or exporting customer data. Use `configure-monitoring` when configuring missing detection or alert routes is the requested result, carrying the observed gap and target environment.
 
 Choose the smallest reliable reproduction: a focused test, script, request, browser path, trace replay, or controlled harness. Confirming a diagnosis or verified repair requires an observed failing reproduction and relevant proof. For an intermittent failure, retain the actual failing attempt and conditions. If the failure is production-only and cannot be reproduced safely within authority, preserve the evidence and exact blocker; the investigation remains incomplete and must not pass diagnosis acceptance.
 

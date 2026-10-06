@@ -1,0 +1,4 @@
+interface:
+  display_name: "Configure monitoring"
+  short_description: "Configure and verify actionable monitoring"
+  default_prompt: "Use $configure-monitoring to configure this service's monitoring with the existing tools and verify the authorized alert and recovery paths."
