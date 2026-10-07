@@ -92,6 +92,8 @@ Choose the next missing result, then read the relevant domain below. Names ident
 | A cut, reframe or caption edit of recorded footage | `edit-video` | Preserve originals and source/output timing; check the actual edit and captions, not just an edit list |
 | A presentation deck or its requested outline | `create-presentation` | Build for a talk or asynchronous read, preserving editable source and checking the requested export |
 | An ordered social image set or swipe PDF | `create-carousel` | Produce a self-contained panel sequence with readable exports and companion text; website carousels stay in UI/UX |
+| Narration audio from an accepted script | `create-voiceover` | Record or generate one clip per line, a stem and a timing manifest with listening evidence; the script and its placement stay with the consuming media skill |
+| Reproducible captures of the user's own product | `capture-product-screens` | Seeded, deterministic screenshots or recordings with a shot manifest; other sites' designs and visual regression baselines stay elsewhere |
 
 ## Boundary cases
 
@@ -111,6 +113,8 @@ Use these when several outputs could fit. Alternatives are not a mandatory seque
 | "Summarize our work" | `report-project-status` for a period/audience update; `prepare-handoff` for continuation context; `explain-pr` for one fixed code comparison |
 | "Improve how we work" | `improve-team-workflow` for a recurring process; `find-improvements` for codebase candidates; `automate-code-checks` for an agreed recurring coding rule |
 | "Plan our next work" | `prioritize-work` to select supplied candidates within capacity; `find-improvements` to discover candidates; `plan-phases` for milestones; `create-tasks` to decompose accepted scope |
+| "Capture screenshots" | `capture-product-screens` for the user's own product in marketing, docs or media; `capture-design-reference` for analyzing other interfaces; `verify-change` for screenshots that serve as evidence a change works; visual regression baselines stay with the project's tests |
+| "Add a voice to this" | `create-voiceover` for narration audio from an accepted script; `define-writing-voice` for a written style guide; the owning media skill for script wording and placement |
 | "Turn this article into media" | `create-presentation` for a deck; `create-carousel` for social panels; `create-motion-video` for generated animation. Reuse the accepted article. Use `edit-video` when the input is recorded footage |
 
 A known failure can go straight to `diagnose-issue`; an accepted bounded fix can go to `implement-change`. Choose one next owner and name only justified follow-ups. A domain or diagram group is not an installable skill. Routing supplies neither missing evidence nor new authority.

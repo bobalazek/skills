@@ -1,0 +1,4 @@
+interface:
+  display_name: "Capture product screens"
+  short_description: "Capture reproducible product screenshots for media"
+  default_prompt: "Use $capture-product-screens to script reproducible captures of our product screens from seeded demo data, with a shot manifest and checks that nothing forbidden is in frame."

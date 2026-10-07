@@ -9,7 +9,7 @@ description: "Capture supplied interfaces as reusable visual references, separat
 
 Use this to explain inspected patterns and their constraints for a named design question. Reuse existing project references and accepted target context before creating another artifact.
 
-`design-interface` designs the target screen, `build-design-system` establishes agreed shared contracts, and `review-interface` assesses the target experience. Capturing a reference does not implement a clone or replace the target's design contract.
+`design-interface` designs the target screen, `build-design-system` establishes agreed shared contracts, and `review-interface` assesses the target experience. Capturing a reference does not implement a clone or replace the target's design contract. Reproducible screenshots of the user's own product for marketing, docs or media belong to `capture-product-screens` when available.
 
 ## Bound access and capture
 

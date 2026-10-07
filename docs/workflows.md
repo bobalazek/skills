@@ -35,6 +35,8 @@ The [README graph](../README.md#from-idea-to-delivery) shows the overall route. 
 | Findings about existing prose | `review-writing` | Exact quoted issues or requested edits preserving meaning and voice | Valid findings or accepted wording already cover the request |
 | A motion graphic, explainer or its requested preview | `create-motion-video` | Brief, timed script/storyboard and requested export with scoped playback proof | Accepted production artifacts already meet the requested fidelity |
 | A recorded-footage edit, deck or social carousel | `edit-video`, `create-presentation` or `create-carousel` | The requested media artifact with editable source and format-specific proof | Accepted artifacts already meet the requested fidelity |
+| Narration audio for a video, edit or deck | `create-voiceover` | One clip per line, a voice stem and a timing manifest with pronunciation, loudness and listening evidence | An accepted recording and manifest already match the script |
+| Real product captures for media or documentation | `capture-product-screens` | Reproducible seeded screenshots or recordings with a shot manifest and forbidden-content checks | Current captures still match the interface and the copy they accompany |
 | Screen structure before visual detail | `create-wireframes` | Editable layouts with hierarchy, content/state placement and requirement links | Existing or accepted screen structure already resolves the question |
 | Several deliverable milestones | `plan-phases` | Outcomes, prerequisites, parallel conditions and phase exits | The change fits one bounded work item or small task set |
 | Executable work | `create-tasks` | Owned tasks with criteria, dependencies and checks, locally or in the authorized tracker | Suitable tasks already exist |
@@ -277,8 +279,11 @@ A voice profile is reusable context, not a mandatory stage for each paragraph. W
 | "Outline the deck first; do not build the slides yet." | [create-presentation](../skills/media/create-presentation/SKILL.md) | A sourced slide sequence at requested fidelity; no claimed rendered deck or compatibility |
 | "Turn this article into a social carousel with image exports and alt text." | [create-carousel](../skills/media/create-carousel/SKILL.md) | A self-contained ordered panel sequence, editable source and checked exports; reuse the article without restarting editorial work |
 | "Repair the clipped text on panel three; leave the other panels alone." | [create-carousel](../skills/media/create-carousel/SKILL.md) | A scoped layout repair with evidence at reading size and checked sequence; no unsolicited full redesign |
+| "Make a 45-second narrated explainer for our app." | [create-motion-video](../skills/media/create-motion-video/SKILL.md) | A brief with playback mode and a short narration-led script; narration from `create-voiceover` and real screens from `capture-product-screens` when needed, with beats timed to the measured manifest |
+| "Generate the voice-over for this accepted script with ElevenLabs." | [create-voiceover](../skills/media/create-voiceover/SKILL.md) | Authorized provider use with current voice and model IDs, checked name pronunciation, one clip per line, a stem and a timing manifest; unheard lines stay open |
+| "Capture marketing screenshots of our dashboard for the landing page." | [capture-product-screens](../skills/media/capture-product-screens/SKILL.md) | Seeded, deterministic captures of the screens the copy names, a shot manifest, whole-frame checks for forbidden content and a missing-asset guard |
 
-Choose one owner by the requested artifact. The branches below are alternatives, not four production stages. After selection, arrows describe dependencies inside that skill; rounded boxes are work/results, not install names. Reuse accepted stages and finish at the requested fidelity.
+Choose one owner by the requested artifact. The branches below are alternatives, not production stages. After selection, arrows describe dependencies inside that skill; rounded boxes are work/results, not install names. Reuse accepted stages and finish at the requested fidelity.
 
 ```mermaid
 flowchart TD
@@ -287,11 +292,15 @@ flowchart TD
   Kind -->|Recorded footage edit| Edit[["edit-video"]]
   Kind -->|Talk or reading deck| Deck[["create-presentation"]]
   Kind -->|Social image set or swipe PDF| Carousel[["create-carousel"]]
+  Kind -->|Narration audio| Voice[["create-voiceover"]]
+  Kind -->|Product screenshots or recordings| Capture[["capture-product-screens"]]
   Motion --> Brief(["Work: reuse inputs and resolve missing choices"])
   Edit --> Brief
   Deck --> Brief
   Carousel --> Brief
-  Brief --> Plan(["Work: requested outline, cut map or storyboard"])
+  Voice --> Brief
+  Capture --> Brief
+  Brief --> Plan(["Work: requested outline, cut map, storyboard, line list or shot list"])
   Plan --> Scope{"Requested fidelity?"}
   Scope -->|Plan or preview only| Preview(["Work: check the requested plan or preview"])
   Scope -->|Finished artifact| Build(["Work: produce and inspect the actual requested formats"])
@@ -302,8 +311,10 @@ flowchart TD
   Pass -->|No| Gap(["Work: repair within scope or name the exact unmet requirement"])
   Gap -. "Recheck repaired result" .-> Assess
   classDef skill fill:#edf5ff,stroke:#355b85,color:#172b42;
-  class Motion,Edit,Deck,Carousel skill;
+  class Motion,Edit,Deck,Carousel,Voice,Capture skill;
 ```
+
+A narrated product explainer often draws on `capture-product-screens` and `create-voiceover` before animation. Both can run in parallel once the script and shot list are accepted; motion timing waits for the measured narration manifest, and a recapture rechecks shots that consumers use by pixel position.
 
 Independent scenes, slides or panels may overlap only after shared story, visual rules, assets and join/ordering contracts are settled, with isolated ownership and one integration owner. Final assembly and assessment wait for all required parts. Recheck affected formats after changes; a new recording or cut invalidates dependent timing and captions.
 

@@ -6,7 +6,17 @@ Use this guide for a new deck, substantial revision, template adaptation or expo
 
 Capture the brief in a few lines: audience and prior knowledge, intended decision or learning outcome, delivery mode, budget, required source/template, editable target and exports. Separate supported claims from assumptions or proposals. Missing evidence can become a clearly marked gap in a draft; it cannot become invented proof.
 
-Choose the sequence from the requested outcome. A decision deck may need the current situation, options with tradeoffs, evidence and recommendation. A teaching deck may need a worked example before terminology. Use the actual material rather than forcing either pattern onto every presentation. Preserve required sections in a revision and explain meaningful cuts or reordering.
+Choose the sequence from the requested outcome. These patterns are common starting points; use the actual material rather than forcing one onto every presentation:
+
+| Pattern | Fits | Shape |
+| --- | --- | --- |
+| Situation, complication, resolution | Proposals and updates that need a decision | Where things stand, what changed or is at risk, what to do about it |
+| Problem, options, recommendation | Decision decks | Criteria first, options compared against them with evidence, then the choice and its cost |
+| Before, after, how | Launches, changes and results | The old state, the new state with evidence, the path between them |
+| Example, concept, practice | Teaching | A worked case before terminology, the general idea named, then the audience applying it |
+| Timeline with turning points | Incident reviews and retrospectives | What happened in order, the decisive moments marked, then causes and actions |
+
+When the audience must decide, state the recommendation early and spend the remaining slides on evidence and trade-offs. When it must first accept a premise, build to the conclusion. End on the decision, ask or next step; a closing slide left up during questions should show that rather than only a thank-you. Preserve required sections in a revision and explain meaningful cuts or reordering.
 
 Map each planned slide to its purpose, supported takeaway, evidence or visual, and any notes or timing it needs. Consecutive slides should advance the argument. Remove repetition or move secondary detail to an appendix when that serves the request. A slide that must survive independent circulation needs enough context to keep its claim accurate.
 
@@ -17,6 +27,18 @@ Map each planned slide to its purpose, supported takeaway, evidence or visual, a
 | Both | Keep one accepted content source, but identify any needed notes or reading version. Do not promise the same export serves both uses when it drops essential explanation. |
 
 Use source facts for chart data and quotations. Check dates, denominators and comparison periods. Distinguish a proposed result from one already achieved. Keep attribution near the claim or in a clearly referenced source section that survives the requested export.
+
+## Make each slide carry one point
+
+Give each content slide one message and write its title as that message in a sentence: "Support tickets fell after the onboarding change" rather than "Support tickets". A topic label leaves the audience to work out the point; a sentence title also shows whether the author has one. If the title cannot fit in one or two lines at display size, the slide probably carries two points. Title, agenda and section-divider slides can keep labels. Michael Alley's [assertion–evidence approach](https://www.assertion-evidence.com/) describes this pattern and its supporting research.
+
+The body is evidence for the title: a chart, screenshot, diagram, example or quotation. Bullets that restate the title add reading without adding support. Check the sequence by reading only the titles in order. They should tell the argument on their own; two titles saying the same thing can merge, and a jump between them shows a missing step.
+
+Set density by delivery mode, extending the table above. A live-talk slide should be absorbable in the few seconds before attention returns to the speaker; most of what is said lives in the delivery and notes. A reading deck can carry complete sentences, qualifications and sources on the slide, organized with short paragraphs and labeled visuals, while still making one point per slide. Move secondary detail to an appendix in either mode.
+
+Make data slides explain. State the finding in the title and show one comparison per chart. Emphasize the series, bar or row carrying the point and mute the rest; annotate the moment that matters, such as the change point or the target, on the chart itself. Round to the precision the decision needs, and keep the unit, period and source visible. A table the audience must scan for the answer needs that row highlighted.
+
+Use builds only when the order of reveal helps: steps of a process the speaker walks through, or an answer that should follow its question. Keep one simple transition style and avoid decorative effects. Each build state should read coherently, and the final state must hold the whole point, because exports and readers may see only one state. Reading decks rarely need builds. Rehearse builds in presenter mode when live use is in scope.
 
 ## Reuse a template honestly
 

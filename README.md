@@ -1,6 +1,6 @@
 # Skills
 
-60 skills for developing software, evaluating products, coordinating work, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
+62 skills for developing software, evaluating products, coordinating work, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
 
 Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear. The collection is under active development; [releases](https://github.com/bobalazek/skills/releases) record reviewed snapshots and evaluation limits.
 
@@ -40,7 +40,7 @@ From a checkout, you can also ask a filesystem-capable agent to use `skills/engi
 | [Productivity · 11 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose and coordinate work, route requests, improve prompts and team workflows, report status, and transfer context |
 | [UI/UX · 8 skills](docs/domains/ui-ux.md) | Capture design references, map flows and navigation, wireframe and design screens, write interface messages, build shared systems, review interfaces, and test usability |
 | [Content · 5 skills](docs/domains/content.md) | Define a writing voice, plan page content, write website copy and blog posts, and review prose for clarity and supported meaning |
-| [Media · 4 skills](docs/domains/media.md) | Create motion videos, edit recorded footage, build presentation decks and produce social carousels |
+| [Media · 6 skills](docs/domains/media.md) | Create motion videos, edit recorded footage, record narration, capture product screens, build presentation decks and produce social carousels |
 
 Each catalog lists skills by category, with their outputs and boundaries.
 
@@ -57,6 +57,8 @@ Each catalog lists skills by category, with their outputs and boundaries.
 | Turn source material into a blog post | [write-blog-post](skills/content/write-blog-post/SKILL.md) |
 | Create a motion graphic or explainer video | [create-motion-video](skills/media/create-motion-video/SKILL.md) |
 | Cut, reframe or caption recorded footage | [edit-video](skills/media/edit-video/SKILL.md) |
+| Record or generate the narration for a video | [create-voiceover](skills/media/create-voiceover/SKILL.md) |
+| Capture product screenshots for marketing or docs | [capture-product-screens](skills/media/capture-product-screens/SKILL.md) |
 | Review generic or unclear writing while preserving voice | [review-writing](skills/content/review-writing/SKILL.md) |
 | Sketch screen structure from an understood flow | [create-wireframes](skills/ui-ux/create-wireframes/SKILL.md) |
 | Add visual detail to settled screen structure | [design-interface](skills/ui-ux/design-interface/SKILL.md) |
@@ -133,7 +135,7 @@ The [workflow guide](docs/workflows.md) covers [product discovery](docs/workflow
 
 **How are results checked?** Use observed proof appropriate to the task and an adversarial review from a separate agent in fresh context. PRs include proof and findings when opened. A host without independent agents can produce an unreviewed draft; required human approval remains separate.
 
-**Which clients were checked?** Installation and discovery were checked with skills CLI 1.7.0, OpenCode 1.18.31 and Codex CLI 0.160.1. These checks establish package delivery and metadata discovery. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
+**Which clients were checked?** For the v0.1.0 release, installation and discovery were checked with skills CLI 1.7.0, OpenCode 1.18.31 and Codex CLI 0.160.1. These checks establish package delivery and metadata discovery. `create-voiceover` and `capture-product-screens`, added since, were installed from a local checkout with the same skills CLI and discovered by both clients. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
 
 **How do I update?** Copied skills do not update themselves. Review changes and migration notes, preserve local edits, then rerun `add` with the chosen source/tag. Inspect the files and verify discovery again; record the selected version with the project.
 
