@@ -135,7 +135,7 @@ The [workflow guide](docs/workflows.md) covers [product discovery](docs/workflow
 
 **How are results checked?** Use observed proof appropriate to the task and an adversarial review from a separate agent in fresh context. PRs include proof and findings when opened. A host without independent agents can produce an unreviewed draft; required human approval remains separate.
 
-**Which clients were checked?** For the v0.1.0 release, installation and discovery were checked with skills CLI 1.7.0, OpenCode 1.18.31 and Codex CLI 0.160.1. These checks establish package delivery and metadata discovery. Packages added since, `create-voiceover` and `capture-product-screens`, have not had that full client check. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
+**Which clients were checked?** For the v0.1.0 release, installation and discovery were checked with skills CLI 1.7.0, OpenCode 1.18.31 and Codex CLI 0.160.1. These checks establish package delivery and metadata discovery. `create-voiceover` and `capture-product-screens`, added since, were installed from a local checkout with the same skills CLI and discovered by both clients. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
 
 **How do I update?** Copied skills do not update themselves. Review changes and migration notes, preserve local edits, then rerun `add` with the chosen source/tag. Inspect the files and verify discovery again; record the selected version with the project.
 
