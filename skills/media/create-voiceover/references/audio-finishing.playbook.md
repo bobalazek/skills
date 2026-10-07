@@ -78,15 +78,23 @@ The default deliverable is the voice stem. Add a music bed only when the request
 
 Use music only with a license covering the destination, duration, territory and any monetization or paid promotion, and keep the license or receipt with the manifest. Generated music follows its generator's terms. Platform matching systems can flag licensed tracks, so keep the proof ready. Leave music out rather than use an uncleared track.
 
-Edit the music to the narration: start and end on musical phrases and fade at a phrase end. Duck it under the voice and write both the ducked bed and the mix:
+Edit the music to the narration's length: start and end on musical phrases and fade at a phrase end. Duck it under the voice and write both the ducked bed and the mix, replacing 6.339562 with the voice stem's measured duration:
 
 ```sh
 ffmpeg -n -hide_banner -v error -i music.wav -i voice.wav -filter_complex \
-  '[1:a]aformat=channel_layouts=stereo,asplit=2[key][vo];[0:a][key]sidechaincompress=threshold=0.03:ratio=8:attack=30:release=400,asplit=2[bed][under];[vo][under]amix=inputs=2:normalize=0[mix]' \
+  '[1:a]aformat=channel_layouts=stereo,asplit=2[k0][vo];[k0]apad[key];[0:a]apad[m0];[m0][key]sidechaincompress=threshold=0.03:ratio=8:attack=30:release=400,atrim=end=6.339562,asplit=2[bed][under];[vo][under]amix=inputs=2:normalize=0:duration=first[mix]' \
   -map '[bed]' -c:a pcm_s24le music-ducked.wav -map '[mix]' -c:a pcm_s24le mix.wav
 ```
 
-The voice drives [sidechaincompress](https://ffmpeg.org/ffmpeg-filters.html#sidechaincompress) on the music. In the trial, the music sat about 15 dB lower under speech and returned in the pauses. Tune threshold, ratio and release by listening: a short release makes the music pump, and a long one leaves it low through the pauses. Normalize the finished mix to the destination target as above; the voice stem keeps its own normalization.
+The voice drives [sidechaincompress](https://ffmpeg.org/ffmpeg-filters.html#sidechaincompress) on the music. In FFmpeg 7.0 the filter ended its output early, at a length that varied between runs: 6.229 or 6.315 s against a 6.340 s stem, with the music missing from the end of the mix. Padding both inputs with `apad`, trimming the bed to the stem's duration, and `duration=first`, which ends `amix` with the voice, gave full-length files on every run. Music shorter than the stem still leaves silence at the end, so edit it to length first. Check that all three files decode to the same duration:
+
+```sh
+for f in voice.wav music-ducked.wav mix.wav; do
+  printf '%s ' "$f"; ffmpeg -hide_banner -v error -i "$f" -f null - -progress pipe:1 | grep '^out_time=' | tail -1
+done
+```
+
+In the trial, the music sat about 15 dB lower under speech and returned in the pauses. Tune threshold, ratio and release by listening: a short release makes the music pump, and a long one leaves it low through the pauses. Normalize the finished mix to the destination target as above; the voice stem keeps its own normalization.
 
 ## Check by listening
 

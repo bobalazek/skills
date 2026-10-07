@@ -51,10 +51,11 @@ async function settle(page: Page, ready: Locator, timeoutMs = 15_000) {
   let timer: ReturnType<typeof setTimeout> | undefined;
   const limit = new Promise<never>((_, reject) => {
     timer = setTimeout(async () => {
-      const pending = await page.evaluate(() => ({
+      const report = page.evaluate(() => ({
         step: (window as unknown as { settling?: string }).settling,
         incomplete: Array.from(document.images).filter((image) => !image.complete).map((image) => image.currentSrc || image.src),
       })).catch(() => 'unknown');
+      const pending = await Promise.race([report, new Promise((done) => setTimeout(() => done('page unresponsive'), 2_000))]);
       reject(new Error(`settle timed out after ${timeoutMs} ms: ${JSON.stringify(pending)}`));
     }, timeoutMs);
   });
@@ -66,7 +67,7 @@ async function settle(page: Page, ready: Locator, timeoutMs = 15_000) {
 }
 ```
 
-Wait for a visible condition that only the finished state has, such as the table's first seeded row or a chart's plotted series, rather than a fixed sleep. Playwright marks `networkidle` as discouraged. The loop decodes each visible image in the frame one at a time and fails if one cannot load; [decode](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/decode) waits for the image to be ready to paint. Large images decoded in parallel can reject in Chromium, hence the sequence. It skips images with an empty box or a box outside the viewport on either axis: a lazily loaded image that is hidden or off screen never loads, so its `decode()` never settles. `page.evaluate` has no default timeout, so the timeout reports the step that stalled and the images still loading instead of hanging the run. In Chromium, a stalled image also holds `document.fonts.ready` until the page finishes loading, so read the image list, not just the step. For content that loads on scroll, scroll it into view, wait for its ready condition, then return to the intended scroll position.
+Wait for a visible condition that only the finished state has, such as the table's first seeded row or a chart's plotted series, rather than a fixed sleep. Playwright marks `networkidle` as discouraged. The loop decodes each visible image in the frame one at a time and fails if one cannot load; [decode](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/decode) waits for the image to be ready to paint. Large images decoded in parallel can reject in Chromium, hence the sequence. It skips images with an empty box or a box outside the viewport on either axis: a lazily loaded image that is hidden or off screen never loads, so its `decode()` never settles. `page.evaluate` has no default timeout, so the timeout reports the step that stalled and the images still loading instead of hanging the run; the report has its own short limit, so a wedged page still rejects. In Chromium, a stalled image also holds `document.fonts.ready` until the page finishes loading, so read the image list, not just the step. For content that loads on scroll, scroll it into view, wait for its ready condition, then return to the intended scroll position.
 
 ## Fail on broken states
 
@@ -152,16 +153,22 @@ await recording.clock.setFixedTime(new Date(CLOCK));
 await recording.addInitScript(() => {
   addEventListener('DOMContentLoaded', () => {
     const cursor = document.createElement('div');
+    const place = (x: number, y: number) => { cursor.style.transform = `translate(${x}px, ${y}px)`; };
     cursor.style.cssText = 'position:fixed;left:0;top:0;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;' +
-      'background:rgba(0,0,0,.55);border:2px solid #fff;pointer-events:none;z-index:2147483647;transform:translate(-99px,-99px)';
+      'background:rgba(0,0,0,.55);border:2px solid #fff;pointer-events:none;z-index:2147483647';
+    const [x, y] = JSON.parse(sessionStorage.getItem('capture-cursor') ?? '[-99,-99]');
+    place(x, y);
     document.body.append(cursor);
     addEventListener('mousemove', (event) => {
-      cursor.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+      place(event.clientX, event.clientY);
+      sessionStorage.setItem('capture-cursor', JSON.stringify([event.clientX, event.clientY]));
     }, true);
   });
 });
+const START_URL = 'http://localhost:3000/bookings';
 const flow = await recording.newPage();
+await flow.goto(START_URL);
 await flow.mouse.move(820, 410, { steps: 25 });
 ```
 
-Playwright draws no pointer in screenshots or recordings, so a recorded flow shows clicks with no visible cause. Inject an overlay cursor like the one above, which ignores pointer events so it cannot create hover states, and move the mouse in steps so it glides; a locator's `click()` jumps straight to its target, so move there first. Alternatively, leave the pointer out and add a cursor in the motion composition. Keep the overlay out of still captures. The [video](https://playwright.dev/docs/videos) is saved when the context closes, so await `close()`. Without `size`, the recording is scaled down to fit 800 × 800. In the trial it came out as VP8 WebM at 25 fps and at the CSS viewport size, ignoring the device scale, so a recording is not a high-density capture. Pace actions with deliberate waits so a viewer can follow them. Inspect the file's actual resolution, frame rate and quality, and check every frame for forbidden content before use. For a motion video, stills of each state animated in the composition are usually sharper and easier to retime; a desktop screen recorder at the target resolution suits flows a browser cannot reproduce.
+Playwright draws no pointer in screenshots or recordings, so a recorded flow shows clicks with no visible cause. Inject an overlay cursor like the one above, which ignores pointer events so it cannot create hover states, and move the mouse in steps so it glides. Each page load creates a new overlay, so it restores the last position from `sessionStorage`, which persists across same-origin navigations in the tab; otherwise the cursor vanishes after a click that navigates until the mouse moves again. Navigate before moving the mouse, because the blank starting page has no overlay; a locator's `click()` jumps straight to its target, so move there first. Alternatively, leave the pointer out and add a cursor in the motion composition. Keep the overlay out of still captures. The [video](https://playwright.dev/docs/videos) is saved when the context closes, so await `close()`. Without `size`, the recording is scaled down to fit 800 × 800. In the trial it came out as VP8 WebM at 25 fps and at the CSS viewport size, ignoring the device scale, so a recording is not a high-density capture. Pace actions with deliberate waits so a viewer can follow them. Inspect the file's actual resolution, frame rate and quality, and check every frame for forbidden content before use. For a motion video, stills of each state animated in the composition are usually sharper and easier to retime; a desktop screen recorder at the target resolution suits flows a browser cannot reproduce.
