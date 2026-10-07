@@ -113,7 +113,7 @@ Use these when several outputs could fit. Alternatives are not a mandatory seque
 | "Summarize our work" | `report-project-status` for a period/audience update; `prepare-handoff` for continuation context; `explain-pr` for one fixed code comparison |
 | "Improve how we work" | `improve-team-workflow` for a recurring process; `find-improvements` for codebase candidates; `automate-code-checks` for an agreed recurring coding rule |
 | "Plan our next work" | `prioritize-work` to select supplied candidates within capacity; `find-improvements` to discover candidates; `plan-phases` for milestones; `create-tasks` to decompose accepted scope |
-| "Capture screenshots" | `capture-product-screens` for the user's own product in marketing, docs or media; `capture-design-reference` for analyzing other interfaces; visual regression baselines stay with the project's tests |
+| "Capture screenshots" | `capture-product-screens` for the user's own product in marketing, docs or media; `capture-design-reference` for analyzing other interfaces; `verify-change` for screenshots that serve as evidence a change works; visual regression baselines stay with the project's tests |
 | "Add a voice to this" | `create-voiceover` for narration audio from an accepted script; `define-writing-voice` for a written style guide; the owning media skill for script wording and placement |
 | "Turn this article into media" | `create-presentation` for a deck; `create-carousel` for social panels; `create-motion-video` for generated animation. Reuse the accepted article. Use `edit-video` when the input is recorded footage |
 

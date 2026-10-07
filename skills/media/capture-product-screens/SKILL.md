@@ -17,13 +17,13 @@ Collect the project's rules for what must not appear: unreleased, unsold or deli
 
 ## Prepare data and environment
 
-Capture seeded or demo data in a local, preview or staging environment built from a recorded revision. Never capture real customer data. Use production only with authority and an account that holds only demo data. Make the data realistic for the audience: plausible names, amounts, dates and volumes, populated lists and charts, and one coherent persona across shots. Avoid "Test 1", placeholder text and empty states unless the copy is about them. Use fictional people, `example.com` addresses and phone numbers from ranges reserved for fiction where they exist. Keep the seed reproducible as a committed script or fixture, with slugs or names the capture can find.
+Capture seeded or demo data in a local, preview or staging environment built from a recorded revision. Never capture real customer data. Seeding or resetting a shared preview or staging environment needs authority, since others may depend on its data; prefer a local or disposable one. Use production only with authority and an account that holds only demo data. Make the data realistic for the audience: plausible names, amounts, dates and volumes, populated lists and charts, and one coherent persona across shots. Avoid "Test 1", placeholder text and empty states unless the copy is about them. Use fictional people, `example.com` addresses and phone numbers from ranges reserved for fiction where they exist. Keep the seed reproducible as a committed script or fixture, with slugs or names the capture can find.
 
 ## Make every state deterministic
 
 For a scripted browser capture, load [the capture script guide](references/capture-script.playbook.md). Fix what varies between runs: clock, date and time zone, locale, color scheme, reduced motion and animations, loaded fonts and decoded images, lazily loaded content, toasts and banners, the caret and focus, scroll position, and a pointer parked away from hover targets unless the shot is about hover. Wait for a condition only the finished state has rather than a fixed delay. Fail the run on HTTP, console or page errors, the product's error text, blank pages or missing seed records, rather than saving a broken shot.
 
-Use one viewport and device scale per set, chosen from where the shots will appear: match the consumer's aspect ratio, and use a device scale of at least 2 so text stays sharp on high-density screens and when a consumer enlarges a region. Capture shots that a consumer frames as a phone with phone emulation. Size captures for the frame instead of cropping full-page captures later.
+Use one viewport and device scale per format within a set, such as desktop and phone, chosen from where the shots will appear: match the consumer's aspect ratio, and use a device scale of at least 2 so text stays sharp on high-density screens and when a consumer enlarges a region. Capture shots that a consumer frames as a phone with phone emulation. Size captures for the frame instead of cropping full-page captures later.
 
 ## Keep forbidden content out of frame
 
@@ -31,9 +31,9 @@ Exclude forbidden content by choosing the state and data: another tab, a filtere
 
 ## Record the manifest and guard references
 
-Have the capture script write [the shot manifest](references/shot-manifest.template.md) beside the output. Add a guard to the project's ordinary checks that fails when a consumer references a capture that is missing or absent from the manifest, or one with the wrong dimensions; show it failing before trusting a pass. Keep the capture script out of ordinary test runs unless the project wants it there, with one command that regenerates the set.
+Have the capture script write [the shot manifest](references/shot-manifest.template.md) beside the output. Add a guard that fails when a consumer references a capture that is missing or absent from the manifest, or one with the wrong dimensions; show it failing before trusting a pass. It belongs in the project's ordinary checks when consumers reference captures from source code; for captures handed over as files, run it with the capture command. Keep the capture script out of ordinary test runs unless the project wants it there, with one command that regenerates the set.
 
-For a screen recording, script actions at a pace viewers can follow, with a visible pointer when they need to track it, at the consumer's resolution and frame rate. Browser test recordings are test artifacts and may not reach that quality. For a motion video, stills of each state animated in the composition are often sharper and easier to retime.
+For a screen recording, script actions at a pace viewers can follow, at the consumer's resolution and frame rate. Build the recording context from the same settings as the stills. Browser automation draws no pointer in screenshots or recordings, so when viewers need to follow it, inject an overlay cursor that tracks mouse events or add the cursor later in the composition. Browser test recordings are test artifacts and may not reach that quality. For a motion video, stills of each state animated in the composition are often sharper and easier to retime.
 
 ## Verify and regenerate
 
@@ -45,4 +45,4 @@ Before acceptance, have a separate agent in fresh context challenge the raw requ
 
 ## Return and hand off
 
-Return the captures, manifest, capture script and seed with the command that reruns them, the app revision, checks performed, masked shots and exact gaps. Pass the manifest and output paths to `create-motion-video`, `create-carousel`, `create-presentation` or `design-interface` when available, naming shots with pixel-position dependents; otherwise describe the plain next action. Committing captures to a shared branch, uploading or publishing needs applicable authority. Continue already-authorized work without an extra permission loop.
+Return the captures, manifest, capture script and seed with the command that reruns them, the app revision, checks performed, masked shots and exact gaps. Pass the manifest and output paths to `create-motion-video`, `create-carousel`, `create-presentation` or `design-interface` when available, and recordings to `edit-video` when they need cutting, naming shots with pixel-position dependents; otherwise describe the plain next action. Committing captures to a shared branch, uploading or publishing needs applicable authority. Continue already-authorized work without an extra permission loop.

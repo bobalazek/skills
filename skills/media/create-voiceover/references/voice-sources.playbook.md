@@ -49,4 +49,4 @@ The owner decides how their brand, product and people's names are said. Ask for 
 3. A respelling in the line's spoken text, such as "KWOR-uh" or "example dot com", leaving the caption text unchanged. This works with any source.
 4. For a human read, the respelling and a reference recording in the script, plus a corrected take when the read misses.
 
-Write numbers, dates, currencies, units, acronyms and addresses as they should be spoken, and decide between letter-by-letter and word readings. Listen to every occurrence. Speech recognition tends to transcribe a mispronounced brand as the intended word, so a matching transcript does not prove the pronunciation.
+Write numbers, dates, currencies, units, acronyms and addresses as they should be spoken, and decide between letter-by-letter and word readings. Listen to every occurrence.

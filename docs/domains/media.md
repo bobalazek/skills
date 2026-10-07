@@ -10,7 +10,7 @@ This domain owns produced media and its production evidence. Choose by the artif
 | Video | Recorded footage | [edit-video](../../skills/media/edit-video/SKILL.md) | A traceable cut, reframe or caption edit with preserved originals and checked output |
 | Slides | Presentation decks | [create-presentation](../../skills/media/create-presentation/SKILL.md) | A deck for a live talk or asynchronous reading, with editable source and requested exports |
 | Slides | Social carousels | [create-carousel](../../skills/media/create-carousel/SKILL.md) | An ordered image set or swipe PDF, with readable panels and accessible companion text |
-| Audio | Narration | [create-voiceover](../../skills/media/create-voiceover/SKILL.md) | One clip per script line, a mixed stem and a timing manifest, with pronunciation, loudness and listening checks |
+| Audio | Narration | [create-voiceover](../../skills/media/create-voiceover/SKILL.md) | One clip per script line, a voice stem and a timing manifest, with pronunciation, loudness and listening checks |
 | Source material | Product captures | [capture-product-screens](../../skills/media/capture-product-screens/SKILL.md) | Reproducible screenshots or recordings of the product from seeded data, with a shot manifest and forbidden-content checks |
 
 ## Choose the owner
