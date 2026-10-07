@@ -53,6 +53,7 @@ export function audit(inputRoot: string) {
     if (relative(join(root, "skills"), entry).split(/[\\/]/).length !== 3) {
       fail(entry, "expected skills/<domain>/<skill>/SKILL.md");
     }
+    if (!inside(dirname(entry), realpathSync(entry))) fail(entry, "skill entrypoint leaves its package");
     const match = read(entry).match(/^---\n([\s\S]*?)\n---(?:\n|$)/);
     let metadata: unknown;
     try {
