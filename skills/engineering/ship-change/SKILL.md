@@ -27,6 +27,8 @@ Write a user-facing title and description with meaningful changes, migration/dep
 
 ## Confirm independent readiness
 
+For release notes needing a prose-quality pass, use `review-writing` when available, with the selected comparison and draft. Otherwise remove generic celebration and repeated claims locally. Preserve migration steps, compatibility limits and actual verification status. A writing review can contribute to the required assessment below; it cannot establish delivery readiness by itself.
+
 Before accepting prepared notes or delivering the candidate, require an independent assessment appropriate to that target. Reuse a valid returned review; otherwise have a separate agent in fresh context challenge the raw accepted request, fixed candidate, source/artifact identity, notes and required proof without the author's conversation or preferred conclusion. Prefer a different available model where practical and authorized; an explicit cross-model requirement left unmet blocks acceptance. Reconcile findings and independently recheck affected results after fixes. Retain reviewer/session identity, host-reported model (or unknown), evaluated revision/artifact, findings and coverage; an attempted delegation is not an assessment. If unavailable, label the result unreviewed and stop before acceptance. Required human approval remains separate.
 
 ## Deliver through the existing path

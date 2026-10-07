@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review writing"
+  short_description: "Find weak prose and preserve the writer's voice"
+  default_prompt: "Use $review-writing to flag generic or unclear passages in this draft, quoting each issue and suggesting a small repair without rewriting it."

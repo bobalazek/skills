@@ -30,6 +30,8 @@ The [README graph](../README.md#from-idea-to-delivery) shows the overall route. 
 | Precise required behavior | `write-spec` | Scenarios, constraints and observable acceptance criteria in a spec, PRD or issue | The accepted requirements already suffice |
 | A product page's message and content needs | `plan-landing-page` | Audience, supported claims, proof and content sequence | The existing brief already settles these choices |
 | Actual website wording | `write-website-copy` | Page or section copy with exact evidence gaps | The accepted wording already meets the request |
+| An article from source material | `write-blog-post` | A supported blog draft, tutorial, revision or requested outline | The accepted article already meets the request |
+| Findings about existing prose | `review-writing` | Exact quoted issues or requested edits preserving meaning and voice | Valid findings or accepted wording already cover the request |
 | Screen structure before visual detail | `create-wireframes` | Editable layouts with hierarchy, content/state placement and requirement links | Existing or accepted screen structure already resolves the question |
 | Several deliverable milestones | `plan-phases` | Outcomes, prerequisites, parallel conditions and phase exits | The change fits one bounded work item or small task set |
 | Executable work | `create-tasks` | Owned tasks with criteria, dependencies and checks, locally or in the authorized tracker | Suitable tasks already exist |
@@ -50,7 +52,7 @@ The domain catalogs organize skills by responsibility. These stages organize a p
 | Specify and design | `write-spec`, `model-domain`, `design-architecture`, `map-user-flows`, `plan-landing-page`, `write-website-copy`, `create-wireframes`, `design-interface`, `write-interface-copy` | Behavior and the decisions needed by the selected work are accepted |
 | Plan and coordinate execution | `prioritize-work`, `plan-phases`, `create-tasks`, `manage-project-board` | The selected work fits its stated constraints and has accepted prerequisites, owners and checks |
 | Build | `start-project`, `implement-change` and the relevant specialist skill | The selected result exists with scoped proof on its actual revision |
-| Evaluate | `verify-change`, `review-code`, `review-interface`, `test-usability` | Required evidence and independent evaluation cover the selected criteria; a planned user study still awaits observations |
+| Evaluate | `verify-change`, `review-code`, `review-interface`, `review-writing`, `test-usability` | Required evidence and independent evaluation cover the selected criteria; a planned user study still awaits observations |
 | Deliver and observe | `ship-change`, `configure-monitoring`, `report-project-status` | The requested delivery, monitoring configuration or status result has its scoped evidence; none promises ongoing operation |
 | Learn and improve | `analyze-product-usage`, `find-improvements`, `improve-team-workflow`, `document-project`, `automate-code-checks` | Useful findings are recorded or become a justified next change; no follow-up is also valid |
 
@@ -220,6 +222,35 @@ For an existing-site redesign, inspect the current routes, page templates, conte
 Use `capture-design-reference` when a supplied reference needs analysis. Record the specific pattern, source/state, why it fits this product and where it does not; an inspiration pack does not replace the target's requirements or grant rights to copy assets. Reuse available components and accepted content. Content planning records why each section exists and the question it answers; copywriting supplies the words; wireframes place all in-scope content and states; visual design resolves composition and craft.
 
 When independent copy and layout work share accepted inputs, they may proceed together, then reconcile actual text fit and action meaning. Review the combined rendered experience, including full-page and preserved-path coverage, before authorized delivery. Evaluate behavioral explanations as hypotheses: a clean layout or persuasive section sequence cannot establish what users understand, feel or do. Keep useful decisions and reference provenance in the existing design record.
+
+### Draft and review writing
+
+| Example request | First skill | Result and conditional continuation |
+| --- | --- | --- |
+| "Turn these project notes into a blog post in my voice." | [write-blog-post](../skills/content/write-blog-post/SKILL.md) | A supported draft with missing facts identified; use writing review for prose quality and the destination's checks for an integrated post |
+| "Give me only an outline for this tutorial." | [write-blog-post](../skills/content/write-blog-post/SKILL.md) | The requested outline and source gaps; stop before writing or publishing the article |
+| "Does this paragraph sound AI-written? Flag problems without rewriting." | [review-writing](../skills/content/review-writing/SKILL.md) | Quoted textual problems and useful repairs, or no supported findings; no authorship verdict or whole-draft rewrite |
+| "Cut the generic praise from this draft but keep my voice." | [review-writing](../skills/content/review-writing/SKILL.md) | The requested revision, retained meaning and brief reasons for material edits |
+| "Make this PR description clearer without hiding the migration risk." | [explain-pr](../skills/engineering/explain-pr/SKILL.md) | An explanation from the fixed comparison and evidence; use `review-writing` for prose cleanup while preserving risk and proof gaps |
+| "Polish this status update; the deployment is still unverified." | [report-project-status](../skills/productivity/report-project-status/SKILL.md) | An evidence-backed update that retains the unknown deployment state; writing review cannot improve its completion status |
+
+These are possible handoffs, not mandatory stages. A small correction can finish in its owner. A writing review that satisfies the owning skill's prose criteria can be reused in its independent assessment; source, behavior and delivery checks still apply.
+
+```mermaid
+flowchart TD
+  Notes(["Input: article assignment and source material"]) --> Blog[["write-blog-post"]]
+  Page(["Input: accepted page purpose and facts"]) --> Copy[["write-website-copy"]]
+  Existing(["Input: existing prose to review or edit"]) --> Review[["review-writing"]]
+  Blog -->|Prose review needed| Review
+  Copy -->|Prose review needed| Review
+  Review --> Result(["Result: findings or requested edits with evidence limits"])
+  Blog -->|Requested outline complete| Outline(["Result: outline and missing inputs"])
+  Result -. "Further work already authorized" .-> Owner(["Work: owning workflow checks sources, behavior and delivery"])
+  classDef skill fill:#edf5ff,stroke:#355b85,color:#172b42;
+  class Blog,Copy,Review skill;
+```
+
+Detailed anti-pattern checks live in `review-writing`, without treating punctuation, technical terms or useful uncertainty as automatic defects. A draft stays within the requested scope; an article, copy edit or critique does not authorize publication. With no independent reviewer available, retain the unreviewed status instead of presenting an author check as independent proof.
 
 ### Understand and prepare a project
 

@@ -34,6 +34,8 @@ Use the structure that makes the skill's decisions easy to find; do not add empt
 
 A separate “When to use” or “Critical rules” section helps only when it makes a real boundary easier to find. Keep critical constraints in the entrypoint when they apply to every run. A related-skills list should explain when to switch or continue, rather than repeat the catalog. The router owns collection-wide selection; each skill owns its closest boundaries.
 
+For prose, use direct wording, consistent terms and supported claims; remove empty praise and repeated explanations while preserving useful voice and qualifications. `review-writing` owns the collection's reusable writing-pattern checks. Refer to it by name when a content workflow needs that pass, with a brief standalone fallback rather than copied lists or required sibling paths. Ordinary small edits need no added workflow. A writing assessment can contribute to an existing independent review, but cannot replace the owning skill's factual or behavioral checks.
+
 This follows the [Agent Skills format](https://agentskills.io/specification), its [authoring guidance](https://agentskills.io/skill-creation/best-practices), and [Claude's progressive-disclosure guidance](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices). These sources guide structure; realistic task trials determine whether our wording works.
 
 Use role suffixes for reusable resources where their role matters: `.template.md`, `.checklist.md`, `.playbook.md`, or `.matrix.md`. Add executable helpers only when deterministic work justifies them and existing tools do not already cover it.

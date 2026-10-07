@@ -21,6 +21,8 @@ When wording depends on unknown behavior, name the fact or decision and continue
 
 ## Write strings in context
 
+Use direct, useful language without empty praise, staged revelations or repetitive filler. For substantive help text or a requested tone review, use `review-writing` when available; otherwise preserve meaning and remove unnecessary wording locally. Keep behavior, approved terminology, legal meaning and message syntax authoritative. A stylistic suggestion cannot justify a false reassurance or require a review workflow for a one-word fix.
+
 Use accepted vocabulary consistently. Explain actions, consequences and recovery where needed. Distinguish no data from no matches, permission denial from request failure, and confirmed failure from an unknown outcome. Offer only supported recovery; do not promise nothing changed or that retry is safe without evidence.
 
 Return actual strings. For multi-state handoffs, variables or localization-sensitive work, use [the copy contract](references/copy.template.md), adapting the project's existing source/format. Preserve resource keys and message syntax; identical text does not necessarily mean identical context.

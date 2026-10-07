@@ -35,6 +35,8 @@ Match sensitive content and detail to the audience, requested depth and project 
 
 ## Result and verification
 
+For substantive wording cleanup, use `review-writing` when available; otherwise remove empty praise and repetition locally. Keep completion states, dates, ownership, uncertainty and blockers intact. An improved tone must not make the project look healthier than its evidence supports; reuse a valid writing assessment rather than adding a compulsory second pass.
+
 Return the update with nearby evidence, cutoff, coverage limits and exact next action. Reuse the authorized reporting location. For authorized PR reporting, retain accessible proof and independent findings, refreshed after affected changes.
 
 Before acceptance, have a separate agent in fresh context check the raw request, candidate update, source records and permitted checks without the author's conversation or preferred conclusion. It must test completion, health and forecast claims. Retain the returned reviewer/session identity, evaluated update or revision, findings and coverage. Reconcile defects and independently recheck affected claims after corrections. Without that assessment, label the update unreviewed.
