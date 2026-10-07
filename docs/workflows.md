@@ -34,6 +34,7 @@ The [README graph](../README.md#from-idea-to-delivery) shows the overall route. 
 | An article from source material | `write-blog-post` | A supported blog draft, tutorial, revision or requested outline | The accepted article already meets the request |
 | Findings about existing prose | `review-writing` | Exact quoted issues or requested edits preserving meaning and voice | Valid findings or accepted wording already cover the request |
 | A motion graphic, explainer or its requested preview | `create-motion-video` | Brief, timed script/storyboard and requested export with scoped playback proof | Accepted production artifacts already meet the requested fidelity |
+| A recorded-footage edit, deck or social carousel | `edit-video`, `create-presentation` or `create-carousel` | The requested media artifact with editable source and format-specific proof | Accepted artifacts already meet the requested fidelity |
 | Screen structure before visual detail | `create-wireframes` | Editable layouts with hierarchy, content/state placement and requirement links | Existing or accepted screen structure already resolves the question |
 | Several deliverable milestones | `plan-phases` | Outcomes, prerequisites, parallel conditions and phase exits | The change fits one bounded work item or small task set |
 | Executable work | `create-tasks` | Owned tasks with criteria, dependencies and checks, locally or in the authorized tracker | Suitable tasks already exist |
@@ -70,7 +71,7 @@ A clarified proposal is not a validated concept: demand, feasibility, and perfor
 
 ## Routes by situation
 
-Match the requested result, not just words such as "new project," "review" or "AI." These examples cover every skill without requiring every skill in a workflow. Start with [exploration](#explore-and-route), [product discovery](#evaluate-a-product-opportunity), [media](#create-motion-video), [project context](#understand-and-prepare-a-project), [design](#specify-and-design), [implementation](#plan-and-change-software), or [evaluation and delivery](#verify-review-and-deliver).
+Match the requested result, not just words such as "new project," "review" or "AI." These examples cover every skill without requiring every skill in a workflow. Start with [exploration](#explore-and-route), [product discovery](#evaluate-a-product-opportunity), [media](#produce-media), [project context](#understand-and-prepare-a-project), [design](#specify-and-design), [implementation](#plan-and-change-software), or [evaluation and delivery](#verify-review-and-deliver).
 
 ### Explore and route
 
@@ -261,37 +262,52 @@ Detailed anti-pattern checks live in `review-writing`, without treating punctuat
 
 A voice profile is reusable context, not a mandatory stage for each paragraph. Writers first reuse the applicable guide and sample text. When the requested voice is unknown, ask for a representative passage, blog/post URL or social account and what the owner wants to retain or change. Inspect accessible supplied sources and state coverage; a whole-blog request does not justify claiming every page was read. Keep the profile in the consuming project's docs and pass its path, status, language and channel forward. A personal or brand preference needs the owner's input; an agent can propose and check a guide without inventing approval.
 
-### Create motion video
+<a id="create-motion-video"></a>
+
+### Produce media
 
 | Example request | First skill | Result and conditional continuation |
 | --- | --- | --- |
 | "Create a short animated explainer from these supported facts." | [create-motion-video](../skills/media/create-motion-video/SKILL.md) | Resolve missing brief choices, preview script/look/storyboard, then render and check the authorized export; missing tools or playback leave explicit gaps |
 | "Show the script and storyboard before animating anything." | [create-motion-video](../skills/media/create-motion-video/SKILL.md) | A timed preview at requested fidelity; finish there without claiming an exported video |
 | "Fix the clipped text in this existing motion composition and export vertical and landscape versions." | [create-motion-video](../skills/media/create-motion-video/SKILL.md) | Reuse the source and accepted story, repair each layout, and recheck actual exports, joins and applicable audio |
+| "Tighten this recorded demo and make a vertical captioned cut." | [edit-video](../skills/media/edit-video/SKILL.md) | Trace source ranges into output time, preserve meaning and originals, then inspect the actual crop, captions and export |
+| "Correct this one caption; keep the cut unchanged." | [edit-video](../skills/media/edit-video/SKILL.md) | A scoped caption repair and affected checks; skip discovery and recutting when accepted context suffices |
+| "Turn these accepted findings into a five-minute presentation using our template." | [create-presentation](../skills/media/create-presentation/SKILL.md) | An editable deck and requested export, checked slide by slide; preserve source facts and distinguish talk notes from visible text |
+| "Outline the deck first; do not build the slides yet." | [create-presentation](../skills/media/create-presentation/SKILL.md) | A sourced slide sequence at requested fidelity; no claimed rendered deck or compatibility |
+| "Turn this article into a social carousel with image exports and alt text." | [create-carousel](../skills/media/create-carousel/SKILL.md) | A self-contained ordered panel sequence, editable source and checked exports; reuse the article without restarting editorial work |
+| "Repair the clipped text on panel three; leave the other panels alone." | [create-carousel](../skills/media/create-carousel/SKILL.md) | A scoped layout repair with evidence at reading size and checked sequence; no unsolicited full redesign |
 
-The production stages below belong to one skill. Arrows are dependencies inside this scenario; rounded nodes are work/results, not additional install names. Reuse accepted stages, and stop at the requested output.
+Choose one owner by the requested artifact. The branches below are alternatives, not four production stages. After selection, arrows describe dependencies inside that skill; rounded boxes are work/results, not install names. Reuse accepted stages and finish at the requested fidelity.
 
 ```mermaid
 flowchart TD
-  Request(["Input: message, sources and requested fidelity"]) --> Video[["create-motion-video"]]
-  Video --> Brief(["Work: resolve missing brief choices"])
-  Brief --> Script(["Work: supported script and applicable measured audio"])
-  Script --> Boards(["Work: look frames and timed storyboard"])
-  Boards --> Scope{"Export requested and prerequisites ready?"}
-  Scope -->|Preview only or blocked| Preview(["Result: preview, status and exact gaps"])
-  Scope -->|Yes| Segment(["Work: deterministic scene and short transition preview"])
-  Segment --> Export(["Work: requested formats and encode"])
-  Export --> Check(["Work: export metadata, contact sheets and playback/audio checks"])
-  Check --> Assess(["Work: fresh independent assessment of actual artifacts"])
-  Assess --> Pass{"Required evidence and decisions satisfied?"}
-  Pass -->|No| Repair(["Work: bounded repair or explicit unresolved result"])
-  Repair -. "Affected checks and assessment repeated after repair" .-> Check
-  Pass -->|Yes| Done(["Result: editable source, video and criterion-linked proof"])
+  Request(["Input: sources, audience and requested artifact"]) --> Kind{"What is being produced?"}
+  Kind -->|Generated animation| Motion[["create-motion-video"]]
+  Kind -->|Recorded footage edit| Edit[["edit-video"]]
+  Kind -->|Talk or reading deck| Deck[["create-presentation"]]
+  Kind -->|Social image set or swipe PDF| Carousel[["create-carousel"]]
+  Motion --> Brief(["Work: reuse inputs and resolve missing choices"])
+  Edit --> Brief
+  Deck --> Brief
+  Carousel --> Brief
+  Brief --> Plan(["Work: requested outline, cut map or storyboard"])
+  Plan --> Scope{"Requested fidelity?"}
+  Scope -->|Plan or preview only| Preview(["Work: check the requested plan or preview"])
+  Scope -->|Finished artifact| Build(["Work: produce and inspect the actual requested formats"])
+  Preview --> Assess(["Work: fresh independent assessment and affected rechecks"])
+  Build --> Assess
+  Assess --> Pass{"Required proof and decisions satisfied?"}
+  Pass -->|Yes| Done(["Result: requested artifacts and criterion-linked proof"])
+  Pass -->|No| Gap(["Work: repair within scope or name the exact unmet requirement"])
+  Gap -. "Recheck repaired result" .-> Assess
   classDef skill fill:#edf5ff,stroke:#355b85,color:#172b42;
-  class Video skill;
+  class Motion,Edit,Deck,Carousel skill;
 ```
 
-Independent scene builds may overlap after shared timing, look and join contracts are settled, with isolated ownership and one integration owner. A final narration replacement invalidates dependent timing/caption checks. Contact sheets establish only inspected stills; normal-speed playback and listening cover different criteria. Review and human choices remain separate; an export does not authorize upload or publication.
+Independent scenes, slides or panels may overlap only after shared story, visual rules, assets and join/ordering contracts are settled, with isolated ownership and one integration owner. Final assembly and assessment wait for all required parts. Recheck affected formats after changes; a new recording or cut invalidates dependent timing and captions.
+
+Inspect every final slide/panel, and check video joins, normal-speed playback and applicable audio. Contact sheets prove only inspected stills. Keep output format, editability, accessibility and tool limitations explicit. Human choices and independent evaluation remain separate; producing an artifact does not authorize upload or publication. Mixed productions pass a checked artifact to the next owner only when that additional result is requested.
 
 ### Understand and prepare a project
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create presentation"
+  short_description: "Build editable decks and verify slides and exports"
+  default_prompt: "Use $create-presentation to turn these sources and this template into an editable deck for the intended audience, then verify every slide and the requested exports."
