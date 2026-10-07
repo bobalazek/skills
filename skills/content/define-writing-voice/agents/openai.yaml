@@ -1,0 +1,4 @@
+interface:
+  display_name: "Define writing voice"
+  short_description: "Capture personal or brand voice from writing samples"
+  default_prompt: "Use $define-writing-voice to analyze these writing samples and my preferences, then prepare a reusable docs/voice.md guide with examples and channel-specific tone."

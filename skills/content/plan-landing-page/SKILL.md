@@ -9,6 +9,8 @@ description: "Plan the audience, message, proof and content sequence for a produ
 
 Produce a content plan connecting the visitor's arrival expectations to an informed next action. Reuse accepted product research, offer details, existing page content and project conventions. Record their sources and freshness. A new product needs honest capability evidence; an existing page needs inspection of its current promise, destinations and useful content before replacement.
 
+Reuse the applicable voice guide, commonly `docs/voice.md`, when proposing language. Use `define-writing-voice` for a separately requested reusable profile; a page's content structure does not require one. Pass available voice examples and unsettled preferences into the copy handoff.
+
 Ask only consequential missing questions. Who arrives, from where, and what did the ad, search result or shared link promise? What are they trying to do or decide? What do they already know, and what alternative do they use? Which product capabilities and limits matter to that decision? What happens after the main action, including any confirmed cost, commitment or eligibility?
 
 Use existing feedback for audience language and objections. Label an inferred need as a hypothesis. Research a disputed factual premise with current primary evidence; use `validate-product-idea` when the requested result is evidence for investing in the product itself. Planning a page cannot validate demand.

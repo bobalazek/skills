@@ -30,6 +30,7 @@ The [README graph](../README.md#from-idea-to-delivery) shows the overall route. 
 | Precise required behavior | `write-spec` | Scenarios, constraints and observable acceptance criteria in a spec, PRD or issue | The accepted requirements already suffice |
 | A product page's message and content needs | `plan-landing-page` | Audience, supported claims, proof and content sequence | The existing brief already settles these choices |
 | Actual website wording | `write-website-copy` | Page or section copy with exact evidence gaps | The accepted wording already meets the request |
+| Reusable language conventions | `define-writing-voice` | A source-backed personal or brand voice profile and contextual tone | An applicable approved guide already meets the need |
 | An article from source material | `write-blog-post` | A supported blog draft, tutorial, revision or requested outline | The accepted article already meets the request |
 | Findings about existing prose | `review-writing` | Exact quoted issues or requested edits preserving meaning and voice | Valid findings or accepted wording already cover the request |
 | Screen structure before visual detail | `create-wireframes` | Editable layouts with hierarchy, content/state placement and requirement links | Existing or accepted screen structure already resolves the question |
@@ -228,6 +229,7 @@ When independent copy and layout work share accepted inputs, they may proceed to
 | Example request | First skill | Result and conditional continuation |
 | --- | --- | --- |
 | "Turn these project notes into a blog post in my voice." | [write-blog-post](../skills/content/write-blog-post/SKILL.md) | A supported draft with missing facts identified; use writing review for prose quality and the destination's checks for an integrated post |
+| "Analyze my blog and these posts, then document how I write." | [define-writing-voice](../skills/content/define-writing-voice/SKILL.md) | A guide in the existing authoritative location or `docs/voice.md`, with inspected samples, concrete conventions, tone by context and unresolved preferences |
 | "Give me only an outline for this tutorial." | [write-blog-post](../skills/content/write-blog-post/SKILL.md) | The requested outline and source gaps; stop before writing or publishing the article |
 | "Does this paragraph sound AI-written? Flag problems without rewriting." | [review-writing](../skills/content/review-writing/SKILL.md) | Quoted textual problems and useful repairs, or no supported findings; no authorship verdict or whole-draft rewrite |
 | "Cut the generic praise from this draft but keep my voice." | [review-writing](../skills/content/review-writing/SKILL.md) | The requested revision, retained meaning and brief reasons for material edits |
@@ -238,6 +240,10 @@ These are possible handoffs, not mandatory stages. A small correction can finish
 
 ```mermaid
 flowchart TD
+  Samples(["Input: representative writing and owner preferences"]) --> Voice[["define-writing-voice"]]
+  Voice --> Guide(["Result: voice profile, status and coverage limits"])
+  Guide -->|Article requested| Blog
+  Guide -->|Page wording requested| Copy
   Notes(["Input: article assignment and source material"]) --> Blog[["write-blog-post"]]
   Page(["Input: accepted page purpose and facts"]) --> Copy[["write-website-copy"]]
   Existing(["Input: existing prose to review or edit"]) --> Review[["review-writing"]]
@@ -247,10 +253,12 @@ flowchart TD
   Blog -->|Requested outline complete| Outline(["Result: outline and missing inputs"])
   Result -. "Further work already authorized" .-> Owner(["Work: owning workflow checks sources, behavior and delivery"])
   classDef skill fill:#edf5ff,stroke:#355b85,color:#172b42;
-  class Blog,Copy,Review skill;
+  class Voice,Blog,Copy,Review skill;
 ```
 
 Detailed anti-pattern checks live in `review-writing`, without treating punctuation, technical terms or useful uncertainty as automatic defects. A draft stays within the requested scope; an article, copy edit or critique does not authorize publication. With no independent reviewer available, retain the unreviewed status instead of presenting an author check as independent proof.
+
+A voice profile is reusable context, not a mandatory stage for each paragraph. Writers first reuse the applicable guide and sample text. When the requested voice is unknown, ask for a representative passage, blog/post URL or social account and what the owner wants to retain or change. Inspect accessible supplied sources and state coverage; a whole-blog request does not justify claiming every page was read. Keep the profile in the consuming project's docs and pass its path, status, language and channel forward. A personal or brand preference needs the owner's input; an agent can propose and check a guide without inventing approval.
 
 ### Understand and prepare a project
 

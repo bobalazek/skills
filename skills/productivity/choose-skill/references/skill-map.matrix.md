@@ -51,6 +51,7 @@ These names identify skills in this collection. Availability depends on the inst
 | Low-fidelity screen structure | `create-wireframes` | Reuse accepted flows or existing screens; resolve hierarchy, content placement and states before visual detail |
 | Detailed screen or interface design | `design-interface` | Reuse settled structure and component conventions; no wireframe stage is needed when structure already suffices |
 | A landing page's message and content sequence | `plan-landing-page` | Connect visitor questions, supported claims, proof and next action; leave actual wording and screen layout to their owners |
+| Reusable personal or brand language conventions | `define-writing-voice` | Analyze representative writing and explicit preferences into a voice guide; leave single drafts, edits and brand positioning to their owners |
 | Actual website page or section wording | `write-website-copy` | Write or revise public page copy from accepted purpose and facts; interface states and unresolved page strategy stay separate |
 | A blog post, article, tutorial or its requested outline | `write-blog-post` | Develop editorial content from supported sources; drafting does not authorize publication |
 | Writing-quality findings or a requested prose cleanup | `review-writing` | Quote concrete problems or make the requested edits while preserving meaning and voice; no AI-authorship verdict |
@@ -79,6 +80,7 @@ A ready fix does not need brainstorming. An accepted specification does not need
 | "Improve this product landing page" | `plan-landing-page` for unsettled message/content needs; `write-website-copy` for the words; `design-interface` for visual detail; `analyze-product-usage` for interpreting existing website observations |
 | "Give this headline a stronger hook" | `write-website-copy` for website wording grounded in the real offer; a video script or broader campaign is outside this package |
 | "Write a blog post from these notes" | `write-blog-post` for an article or requested outline; `review-writing` when the whole request is to critique or clean up an existing passage |
+| "Learn my voice from my blog or social account" | `define-writing-voice` for a reusable source-backed profile; the relevant writing skill for a single draft that can use existing examples. Ask for missing representative sources and preferences rather than guessing |
 | "Does this sound AI-written?" | `review-writing` for specific textual problems and suggested repairs; do not infer authorship, provide an AI score or rewrite a critique-only submission |
 | "Write a social post or video script" | No dedicated drafting package yet; describe the plain action. `review-writing` can review supplied prose without claiming to own a channel strategy or production workflow |
 | "Run a software factory from our accepted backlog" | `manage-project-board` for ongoing coordination and bounded ready pickup; `create-tasks` for missing task contracts. Actual workers, isolation and execution authority come from the host |
