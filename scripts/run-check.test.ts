@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, test } from "bun:test";
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, realpathSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, realpathSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 
@@ -92,6 +92,39 @@ test("refuses an invalid output parent before executing the check", async () => 
   const result = await run([process.execPath, "-e", `await Bun.write(${JSON.stringify(marker)}, "ran")`], join(root, "absent", "check.json"));
   expect(result.exitCode).not.toBe(0);
   expect(existsSync(marker)).toBe(false);
+});
+
+test("concurrent writers reserve evidence before starting either check", async () => {
+  const marker = join(root, "executions.txt");
+  const check = script(`import { appendFileSync } from "node:fs"; appendFileSync(${JSON.stringify(marker)}, "ran\\n"); await Bun.sleep(100);`);
+  const results = await Promise.all([run([process.execPath, check]), run([process.execPath, check])]);
+  expect(results.map(result => result.exitCode).sort()).toEqual([0, 1]);
+  expect(readFileSync(marker, "utf8")).toBe("ran\n");
+  expect(record().recordState).toBe("finished");
+  expect(record().result.exitCode).toBe(0);
+});
+
+test("refuses symlink and directory destinations without changing their contents", async () => {
+  const original = join(root, "original.json");
+  writeFileSync(original, "retained evidence\n");
+  symlinkSync(original, output);
+  const marker = join(root, "executed");
+  const argv = [process.execPath, "-e", `await Bun.write(${JSON.stringify(marker)}, "ran")`];
+  const sentinel = join(cwd, "keep.txt");
+  writeFileSync(sentinel, "retained directory contents\n");
+  expect((await run(argv)).exitCode).toBe(1);
+  expect(readFileSync(original, "utf8")).toBe("retained evidence\n");
+  expect((await run(argv, cwd)).exitCode).toBe(1);
+  expect(readFileSync(sentinel, "utf8")).toBe("retained directory contents\n");
+  expect(existsSync(marker)).toBe(false);
+});
+
+test("records a child signal without misreporting a parent cancellation", async () => {
+  const result = await run([process.execPath, "-e", 'process.kill(process.pid, "SIGTERM")']);
+  expect(result.exitCode).not.toBe(0);
+  expect(record().result.signal).toBe("SIGTERM");
+  expect(record().result.launchError).toBeNull();
+  expect(record().termination).toEqual({ timeoutMs: null, timedOut: false, interruptionSignal: null });
 });
 
 test("passes spaces and shell syntax as literal argv", async () => {

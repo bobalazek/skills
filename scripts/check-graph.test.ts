@@ -96,6 +96,33 @@ test("reports shared resources independently of file paths", () => {
   expect(result.conflicts).toEqual([{ tasks: ["a", "b"], writes: [], resources: ["test-db"], bothDependencyReady: true }]);
 });
 
+test("task order cannot change readiness or declared conflicts", () => {
+  const tasks = [task("contract", [], "accepted"), task("api", ["contract"], "pending", ["src/shared/"], ["schema"]), task("ui", ["contract"], "pending", ["src/shared/types.ts"], ["schema"]), task("integration", ["api", "ui"], "pending", [], ["schema"])];
+  const permutations = <T,>(items: T[]): T[][] => items.length === 0 ? [[]] : items.flatMap((item, index) => permutations(items.filter((_, other) => other !== index)).map(rest => [item, ...rest]));
+  for (const order of permutations(tasks)) {
+    const input = { tasks: order };
+    const before = JSON.stringify(input);
+    const result = checkGraph(input);
+    expect(result.valid).toBe(true);
+    expect(result.dependencyReady.toSorted()).toEqual(["api", "ui"]);
+    expect(result.conflicts.map(conflict => conflict.tasks.toSorted().join("/")).toSorted()).toEqual(["api/integration", "api/ui", "integration/ui"]);
+    expect(result.conflicts.flatMap(conflict => conflict.writes.map(pair => pair.toSorted().join("|"))).toSorted()).toEqual(["src/shared|src/shared/types.ts"]);
+    expect(result.conflicts.every(conflict => conflict.resources.join() === "schema")).toBe(true);
+    expect(result.conflicts.filter(conflict => conflict.bothDependencyReady).map(conflict => conflict.tasks.toSorted())).toEqual([["api", "ui"]]);
+    expect(JSON.stringify(input)).toBe(before);
+    const cyclic = checkGraph({ tasks: order.map(item => item.id === "api" ? { ...item, dependencies: ["integration"] } : item) });
+    expect(cyclic.valid).toBe(false);
+    expect(cyclic.dependencyReady).toEqual([]);
+  }
+});
+
+test("treats prototype property names as ordinary task identifiers", () => {
+  const result = checkGraph({ tasks: [task("__proto__", [], "accepted"), task("constructor", ["__proto__"]), task("toString", ["constructor"])] });
+  expect(result.valid).toBe(true);
+  expect(result.dependencyReady).toEqual(["constructor"]);
+  expect(checkGraph({ tasks: [task("__proto__", ["toString"]), task("toString", ["__proto__"])] }).valid).toBe(false);
+});
+
 test("distinguishes sequential overlap from two dependency-ready tasks", () => {
   const result = checkGraph({ tasks: [task("a", [], "pending", ["src/a.ts"]), task("b", ["a"], "pending", ["src/a.ts"])] });
   expect(result.valid).toBe(true);

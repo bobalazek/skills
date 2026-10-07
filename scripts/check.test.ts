@@ -85,6 +85,14 @@ test("rejects agent metadata outside its package", () => {
   expect(audit(root).errors.join("\n")).toContain("agent metadata leaves its package");
 });
 
+test("rejects a skill entrypoint symlinked to a file outside its package", () => {
+  const outside = join(root, "shared-skill.md");
+  write(outside, valid);
+  rmSync(entry);
+  symlinkSync(outside, entry);
+  expect(audit(root).errors.join("\n")).toContain("skill entrypoint leaves its package");
+});
+
 test("keeps other agent-folder resources subject to reachability checks", () => {
   write(join(dirname(agentFile), "notes.md"), "# Notes\n");
   expect(audit(root).errors.join("\n")).toContain("agents/notes.md: resource is not reachable");

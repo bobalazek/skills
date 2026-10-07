@@ -23,6 +23,8 @@ Trace material claims to their sources. Verify current or technical claims again
 
 If sources are thin, narrow the claim, omit it or mark the exact gap outside the public text. Use visible placeholders only in a clearly unfinished draft. For a personal story or case study with missing experience or outcomes, request those facts and continue supported sections; do not substitute an invented anecdote. When research access is unavailable, identify the affected claims and return a bounded draft or outline rather than declaring them verified.
 
+A missing detail in the notes does not establish that it never happened or that the author does not know it. Describe the source gap outside the article instead of adding an unsupported first-person claim.
+
 Confirm which private details may appear publicly, including names, customer records and unpublished results. Access to a document is not permission to publish it. Use approved material, anonymize only when it adequately protects the source, or omit the detail pending a decision. Attribute borrowed ideas, quote faithfully within permitted use, and check reuse rights for supplied images or substantial excerpts. Do not closely rewrite another article and present it as original work.
 
 ## Build the piece
@@ -30,6 +32,8 @@ Confirm which private details may appear publicly, including names, customer rec
 Choose structure from the reader's task and available evidence, using the existing draft first. An explainer needs a clear mechanism and limits; a tutorial needs an ordered path to an observable result; an argument needs reasons and relevant counterevidence; an account of real work needs the supported decisions and outcomes. These are choices, not mandatory sections or a word-count formula.
 
 For a new post, settle its central point and the evidence needed to support it before expanding. Make an outline only as detailed as the request or complexity warrants. For a revision, preserve the writer's meaning, distinctive language and intentional rhythm, and explain material changes briefly. Keep useful uncertainty. Correct factual problems explicitly instead of silently strengthening the claim.
+
+Check whether the material supports the requested length. Each paragraph needs a distinct supported purpose. If reaching a minimum would require restating facts, commentary about the writing or invented meaning, return the supported shorter draft with the unmet length stated outside it and ask for the specific additional material needed. Do not present that result as meeting the original request.
 
 Write an opening whose promise the body fulfills and an ending that follows from the piece. Include a reader action when useful; do not add a sales call to action by default. Remove filler without replacing it with unsupported specificity. When available and useful, load `review-writing` for its detailed editing guidance; this skill remains usable without it. A universal banned-word list or a fixed sentence pattern must not replace the author's voice.
 
@@ -40,6 +44,8 @@ Add metadata, images, internal links or search terms only when requested or requ
 ## Check the draft and return it
 
 Compare the final artifact with the raw request and sources. Check requested coverage and length, claim support, quotation fidelity, retained voice, technical details and unresolved placeholders. Check that the title and opening describe what the post delivers. Keep evidence notes and private sources outside the public body.
+
+When reporting a word count, measure the final body after the last edit and state whether the title or other material is included. Do not report an estimate as a measured count.
 
 For an integrated post, run the relevant content/schema checks and inspect the rendered result for heading structure, links, code formatting, image context and clipping. Record the inspected artifact or revision and surface. A draft-only request can finish with a stated render limitation; required integration or rendered verification remains incomplete without its proof. Neither editorial review nor a successful build proves audience response or search performance.
 
