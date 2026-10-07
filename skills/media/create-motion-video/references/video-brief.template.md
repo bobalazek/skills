@@ -17,6 +17,7 @@ Use the existing production brief when it fits. Ask for missing consequential ch
 | Requested destination | Integer pixels | Fixed rate | Agreed rounding | Seconds | Supported target | Burned-in, sidecar or none |
 
 - Audio: silent, supplied narration, authorized generated narration or music-led
+- Playback: voice-led with sound, muted autoplay with captions, or both; added on-screen words per beat:
 - Audio source/version, measured duration and cue confidence:
 - Output/source locations, available renderer/browser/encoder and versions:
 - Render time/storage budget, preview scope and stopping condition:

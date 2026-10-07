@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create voiceover"
+  short_description: "Record or generate narration with a timing manifest"
+  default_prompt: "Use $create-voiceover to produce one checked narration clip per line of this accepted script, plus a mixed stem and a timing manifest for the video."
