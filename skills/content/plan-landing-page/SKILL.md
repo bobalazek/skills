@@ -29,6 +29,8 @@ For a whole page, redesign or design handoff, use [the content inventory, sectio
 
 ## Evaluate the plan
 
+Keep proposed messages concrete and supported, without generic praise or invented proof. If polishing audience-facing wording is part of this request, use `review-writing` when available for its prose checks; otherwise remove filler without changing meaning or certainty. A content plan does not need a separate copy-editing stage when no finished copy is requested.
+
 Walk each intended arrival through the proposed content to its actual destination. Check whether the offer, audience fit, material conditions and action can be understood, and whether every section answers a relevant question. Compare an existing page with the proposed change and explain what is retained, removed or still uncertain. A walkthrough is an expert check, not evidence of user comprehension or conversion lift.
 
 Before acceptance, have a separate agent in fresh context challenge the raw request, product sources, candidate plan and destination evidence without the author's conversation or preferred answer. Retain its returned reviewer/session identity, assessed revision, findings and coverage. Resolve defects and independently recheck affected claims or paths. Without that assessment, label the plan unreviewed. Required human approval remains separate.

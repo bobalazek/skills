@@ -52,6 +52,8 @@ These names identify skills in this collection. Availability depends on the inst
 | Detailed screen or interface design | `design-interface` | Reuse settled structure and component conventions; no wireframe stage is needed when structure already suffices |
 | A landing page's message and content sequence | `plan-landing-page` | Connect visitor questions, supported claims, proof and next action; leave actual wording and screen layout to their owners |
 | Actual website page or section wording | `write-website-copy` | Write or revise public page copy from accepted purpose and facts; interface states and unresolved page strategy stay separate |
+| A blog post, article, tutorial or its requested outline | `write-blog-post` | Develop editorial content from supported sources; drafting does not authorize publication |
+| Writing-quality findings or a requested prose cleanup | `review-writing` | Quote concrete problems or make the requested edits while preserving meaning and voice; no AI-authorship verdict |
 | Interface labels and state-specific messages | `write-interface-copy` | Deliver copy grounded in actual behavior; do not redesign the screen or invent recovery promises |
 | Reusable visual and component rules | `build-design-system` | Shared needs justify a system; one screen does not |
 | Independent interface findings | `review-interface` | Inspect rendered behavior and try to break supported journeys |
@@ -76,9 +78,11 @@ A ready fix does not need brainstorming. An accepted specification does not need
 | "Redesign our existing website" | `design-interface` for agreed visual replacement; `create-wireframes` for unresolved full-page/site structure; `plan-landing-page` for missing message/content decisions; `review-interface` when the requested result is findings about the current experience. Reuse the baseline and preserve accepted contracts |
 | "Improve this product landing page" | `plan-landing-page` for unsettled message/content needs; `write-website-copy` for the words; `design-interface` for visual detail; `analyze-product-usage` for interpreting existing website observations |
 | "Give this headline a stronger hook" | `write-website-copy` for website wording grounded in the real offer; a video script or broader campaign is outside this package |
-| "Write a blog post, social post or video script" | No dedicated package in this collection yet; the Content domain currently covers website planning and copy. Describe the plain action rather than forcing the request through `write-website-copy` |
+| "Write a blog post from these notes" | `write-blog-post` for an article or requested outline; `review-writing` when the whole request is to critique or clean up an existing passage |
+| "Does this sound AI-written?" | `review-writing` for specific textual problems and suggested repairs; do not infer authorship, provide an AI score or rewrite a critique-only submission |
+| "Write a social post or video script" | No dedicated drafting package yet; describe the plain action. `review-writing` can review supplied prose without claiming to own a channel strategy or production workflow |
 | "Run a software factory from our accepted backlog" | `manage-project-board` for ongoing coordination and bounded ready pickup; `create-tasks` for missing task contracts. Actual workers, isolation and execution authority come from the host |
-| "Review this" | `challenge-proposal` for unresolved proposal choices; `review-code` for code findings; `review-interface` for rendered experience; `explain-pr` for an explanation rather than an assessment |
+| "Review this" | `challenge-proposal` for unresolved proposal choices; `review-code` for code findings; `review-interface` for rendered experience; `review-writing` for prose quality; `explain-pr` for an explanation rather than an assessment |
 | "Check whether this design works for users" | `test-usability` for participant task evidence or a study protocol; `review-interface` for an expert assessment; `capture-design-reference` for analysis of an existing reference rather than validation |
 | "Summarize our work" | `report-project-status` for a period/audience update; `prepare-handoff` for continuation context; `explain-pr` for one fixed code comparison |
 | "Improve how we work" | `improve-team-workflow` for a recurring process; `find-improvements` for codebase candidates; `automate-code-checks` for an agreed recurring coding rule |

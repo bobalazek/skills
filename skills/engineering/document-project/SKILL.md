@@ -47,6 +47,8 @@ Record lessons that change future work. Distinguish recurring causes from repeat
 
 ## Verify and report
 
+Write direct explanations with stable terminology and no unsupported praise. For substantial prose revision, use `review-writing` when available; otherwise remove filler locally while retaining technical meaning, historical context and evidence limits. Reuse accepted writing checks instead of creating a duplicate document or review stage.
+
 Check material claims against their sources, retained history against its records, and links against actual destinations. Run documented commands when their behavior is part of the requested result and safe execution is available; distinguish a command definition from a successful observed run.
 
 Walk a representative future task from the documentation entry point to the owning code, applicable rule, relevant decision or lesson, and supported check. Inspect the final result against the requested coverage and audience. Keep confidential source material within the authorized audience.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write blog post"
+  short_description: "Draft articles and tutorials from verified sources"
+  default_prompt: "Use $write-blog-post to turn these notes into a blog draft for the stated audience, preserving my voice and marking gaps in the evidence."
