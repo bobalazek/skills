@@ -5,7 +5,7 @@ description: "Create or revise code-driven motion graphics and explainer videos 
 
 # Create motion video
 
-Produce the requested motion graphic, explainer or storyboard with editable source and evidence at the requested fidelity. Reuse an existing composition, renderer, assets, accepted script and brand conventions before building equivalents. A storyboard-only request finishes at the storyboard; it is not a rendered video. Interactive transitions belong to `design-interface` when available.
+Produce the requested motion graphic, explainer or storyboard with editable source and evidence at the requested fidelity. Reuse an existing composition, renderer, assets, accepted script and brand conventions before building equivalents. A storyboard-only request finishes at the storyboard; it is not a rendered video. Recorded-footage edits belong to `edit-video`; interactive transitions belong to `design-interface`, when available. For mixed work, keep the composition here and pass its checked export to the footage edit only when assembly is requested.
 
 ## Clarify the brief
 

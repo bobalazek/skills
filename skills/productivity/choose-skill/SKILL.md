@@ -15,7 +15,7 @@ Reuse accepted artifacts, decisions and current work. An existing specification,
 
 Read the request and available project context. Establish what exists and what the user wants next: alternatives, agreed behavior, executable work, a diagnosis, evidence or delivery. Preserve useful existing conventions and commitments; identify only missing foundations for a new project. Ask only when the answer changes the route.
 
-Consult [the skill map](references/skill-map.matrix.md) to distinguish neighboring outputs. Match the desired result rather than a keyword: explaining a PR and reviewing its correctness are different tasks. Add a short sequence only when the request spans distinct results, with the accepted prerequisite for each transition.
+Consult the relevant domain section of [the skill map](references/skill-map.matrix.md); use its boundary cases only when several outputs could fit. Match the desired result rather than a keyword: explaining a PR and reviewing its correctness are different tasks. A social carousel is an exported media set; a website carousel is an interface. Add a short sequence only when the request spans distinct results, with the accepted prerequisite for each transition.
 
 ## Check availability and readiness
 

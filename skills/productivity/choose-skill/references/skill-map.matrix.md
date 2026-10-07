@@ -1,18 +1,16 @@
 # Skill map
 
-These names identify skills in this collection. Availability depends on the installed selection; no sibling package is required to read this map.
+Choose the next missing result, then read the relevant domain below. Names identify packages in this collection; availability depends on the installed selection. No sibling package is required to read this map.
+
+[Productivity](#productivity) · [Product](#product) · [Engineering](#engineering) · [UI/UX](#uiux) · [Content](#content) · [Media](#media)
+
+## Productivity
 
 | Requested result | Skill | Boundary |
 | --- | --- | --- |
 | Different approaches to an idea | `brainstorm-ideas` | Explore before choosing a direction |
 | Questions that challenge an idea, spec, or plan | `challenge-proposal` | Resolve consequential choices and edge cases through focused questions; do not manufacture agreement |
 | An evidence-backed answer | `research-topic` | Answer the specific uncertainty |
-| Evidence for the next product or feature investment | `validate-product-idea` | Assess need and demand for a named commitment; missing observations yield a plan or evidence gap |
-| User needs from existing feedback | `analyze-user-feedback` | Reconcile records and identities, preserve counterevidence and coverage; do not select a roadmap |
-| A product competitor and alternatives comparison | `analyze-competitors` | Compare relevant alternatives for a named product decision; a market gap does not prove demand |
-| Defined product success measures | `define-product-metrics` | Specify the outcome, calculation, source and quality contract; do not invent baselines or implement collection |
-| A controlled product experiment protocol | `plan-product-experiment` | Specify assignment, measures, stopping and decision rules before exposure; planning does not launch a test |
-| Findings from existing product usage | `analyze-product-usage` | Reconcile behavior data against definitions and observation windows; associations alone do not establish causes |
 | Current consequential decisions | `track-project-decisions` | Track choices, not implementation tickets |
 | A feasible selection from supplied work | `prioritize-work` | Compare goals, commitments, capacity and prerequisites; priority is not readiness |
 | Current Markdown project work and ready pickup | `manage-project-board` | Reconcile local task states, ownership and blockers; reuse plans and task contracts, with one coordinator for shared state |
@@ -20,6 +18,22 @@ These names identify skills in this collection. Availability depends on the inst
 | Continuation context | `prepare-handoff` | Transfer or compact actual ongoing work |
 | Project progress for an audience and period | `report-project-status` | Reconcile observed work, acceptance and delivery; reporting does not authorize sending |
 | A better recurring team process | `improve-team-workflow` | Propose and evaluate a bounded process change; code improvement discovery stays separate |
+
+## Product
+
+| Requested result | Skill | Boundary |
+| --- | --- | --- |
+| Evidence for the next product or feature investment | `validate-product-idea` | Assess need and demand for a named commitment; missing observations yield a plan or evidence gap |
+| User needs from existing feedback | `analyze-user-feedback` | Reconcile records and identities, preserve counterevidence and coverage; do not select a roadmap |
+| A product competitor and alternatives comparison | `analyze-competitors` | Compare relevant alternatives for a named product decision; a market gap does not prove demand |
+| Defined product success measures | `define-product-metrics` | Specify the outcome, calculation, source and quality contract; do not invent baselines or implement collection |
+| A controlled product experiment protocol | `plan-product-experiment` | Specify assignment, measures, stopping and decision rules before exposure; planning does not launch a test |
+| Findings from existing product usage | `analyze-product-usage` | Reconcile behavior data against definitions and observation windows; associations alone do not establish causes |
+
+## Engineering
+
+| Requested result | Skill | Boundary |
+| --- | --- | --- |
 | An inherited codebase baseline | `onboard-codebase` | Establish how to work safely before selecting improvements |
 | Durable project knowledge and indexed memory | `document-project` | Populate authoritative records from evidence; do not invent historical rationale |
 | An explanation of current code | `explain-codebase` | Trace behavior rather than assess every possible defect |
@@ -46,55 +60,57 @@ These names identify skills in this collection. Availability depends on the inst
 | Proof that a change meets its criteria | `verify-change` | Independently exercise behavior or inspect changed documents/plans; no mandatory duplicate pass when valid evidence already exists |
 | A delivered target | `ship-change` | Reach the authorized PR, release, deployment, or handover |
 | Configured monitoring and actionable alerts | `configure-monitoring` | Verify scoped signals, firing, delivery and recovery; distinguish local tests from live verification and ongoing operation |
+
+## UI/UX
+
+| Requested result | Skill | Boundary |
+| --- | --- | --- |
 | Reusable observations from existing interfaces | `capture-design-reference` | Capture and analyze inspected patterns without turning them into the target's design contract |
 | User journeys, navigation and state transitions | `map-user-flows` | Include hierarchy and labels when needed, plus failure, recovery, permissions and alternate paths |
 | Low-fidelity screen structure | `create-wireframes` | Reuse accepted flows or existing screens; resolve hierarchy, content placement and states before visual detail |
 | Detailed screen or interface design | `design-interface` | Reuse settled structure and component conventions; no wireframe stage is needed when structure already suffices |
-| A landing page's message and content sequence | `plan-landing-page` | Connect visitor questions, supported claims, proof and next action; leave actual wording and screen layout to their owners |
-| Reusable personal or brand language conventions | `define-writing-voice` | Analyze representative writing and explicit preferences into a voice guide; leave single drafts, edits and brand positioning to their owners |
-| Actual website page or section wording | `write-website-copy` | Write or revise public page copy from accepted purpose and facts; interface states and unresolved page strategy stay separate |
-| A blog post, article, tutorial or its requested outline | `write-blog-post` | Develop editorial content from supported sources; drafting does not authorize publication |
-| Writing-quality findings or a requested prose cleanup | `review-writing` | Quote concrete problems or make the requested edits while preserving meaning and voice; no AI-authorship verdict |
-| A code-driven motion video or its requested storyboard | `create-motion-video` | Own the brief, timed script/storyboard and requested export with visual/audio evidence; interactive UI motion stays in interface design |
 | Interface labels and state-specific messages | `write-interface-copy` | Deliver copy grounded in actual behavior; do not redesign the screen or invent recovery promises |
 | Reusable visual and component rules | `build-design-system` | Shared needs justify a system; one screen does not |
 | Independent interface findings | `review-interface` | Inspect rendered behavior and try to break supported journeys |
 | A usability study or findings from user sessions | `test-usability` | Test realistic tasks with participant evidence; a study plan or expert review cannot claim observed user behavior |
 
-A ready fix does not need brainstorming. An accepted specification does not need to be rewritten before task creation. A request to “review” needs its subject: proposal, code, or rendered interface. Review conclusions require independent evidence; choosing a route does not establish readiness.
+## Content
 
-## Similar requests, different starts
+| Requested result | Skill | Boundary |
+| --- | --- | --- |
+| A landing page's message and content sequence | `plan-landing-page` | Connect visitor questions, supported claims, proof and next action; leave actual wording and screen layout to their owners |
+| Reusable personal or brand language conventions | `define-writing-voice` | Analyze representative writing and explicit preferences into a voice guide; leave single drafts, edits and brand positioning to their owners |
+| Actual website page or section wording | `write-website-copy` | Write or revise public page copy from accepted purpose and facts; interface states and unresolved page strategy stay separate |
+| A blog post, article, tutorial or its requested outline | `write-blog-post` | Develop editorial content from supported sources; drafting does not authorize publication |
+| Writing-quality findings or a requested prose cleanup | `review-writing` | Quote concrete problems or make the requested edits while preserving meaning and voice; no AI-authorship verdict |
+
+## Media
+
+| Requested result | Skill | Boundary |
+| --- | --- | --- |
+| A code-driven motion video or its requested storyboard | `create-motion-video` | Own the brief, timed script/storyboard and requested export with visual/audio evidence; interactive UI motion stays in interface design |
+| A cut, reframe or caption edit of recorded footage | `edit-video` | Preserve originals and source/output timing; check the actual edit and captions, not just an edit list |
+| A presentation deck or its requested outline | `create-presentation` | Build for a talk or asynchronous read, preserving editable source and checking the requested export |
+| An ordered social image set or swipe PDF | `create-carousel` | Produce a self-contained panel sequence with readable exports and companion text; website carousels stay in UI/UX |
+
+## Boundary cases
+
+Use these when several outputs could fit. Alternatives are not a mandatory sequence; completed stages stay completed.
 
 | Request context | Choose by the missing result |
 | --- | --- |
 | "Start a new project" | `brainstorm-ideas` for open direction; `design-architecture` for unsettled technical choices; `start-project` for a foundation whose choices are already accepted |
 | "Validate this idea" | `validate-product-idea` for evidence supporting a product commitment; `challenge-proposal` for unresolved choices; `build-prototype` for a bounded feasibility experiment; `test-usability` for participant task evidence |
-| "Compare these competitors" | `analyze-competitors` for product alternatives and their implications; `research-topic` for an isolated factual question; `design-architecture` for a technical choice |
 | "Turn this customer feedback into work" | `analyze-user-feedback` when needs remain unsynthesized; `prioritize-work` when candidates, goals and capacity exist; `write-spec` for accepted behavior. A known failure can go directly to `diagnose-issue` |
-| "Measure whether this product is working" | `define-product-metrics` for unsettled measures; `analyze-product-usage` for observed adoption, funnels or retention with usable definitions; `configure-monitoring` for service failure detection; `test-usability` for participant task evidence |
-| "A/B test this product change" | `plan-product-experiment` for the protocol; `implement-change` for accepted instrumentation or variant work; `analyze-product-usage` for actual readout; use `validate-product-idea` when the broader validation method is unsettled |
-| "Keep tasks in Markdown for agents to pick up" | `manage-project-board` for setup, ongoing state and bounded pickup; `create-tasks` for missing decomposition; `report-project-status` for an audience update. Preserve an existing tracker as owner unless migration is requested |
 | "Make this project AI-friendly" | `prepare-repo-for-agents` for discoverable existing guidance; `document-project` for missing factual knowledge; `design-architecture` when the request is an AI product capability |
 | "Design this feature" | `model-domain` for unclear business concepts; `design-architecture` for technical boundaries; `map-user-flows` for the journey; `create-wireframes` for unresolved screen structure; `design-interface` for visual detail; shared repeated needs can justify `build-design-system` |
-| "Make a wireframe or prototype" | `create-wireframes` for a structural screen proposal; `build-prototype` when a consequential uncertainty needs working interactions or technical evidence |
-| "Redesign our existing website" | `design-interface` for agreed visual replacement; `create-wireframes` for unresolved full-page/site structure; `plan-landing-page` for missing message/content decisions; `review-interface` when the requested result is findings about the current experience. Reuse the baseline and preserve accepted contracts |
 | "Improve this product landing page" | `plan-landing-page` for unsettled message/content needs; `write-website-copy` for the words; `design-interface` for visual detail; `analyze-product-usage` for interpreting existing website observations |
-| "Give this headline a stronger hook" | `write-website-copy` for website wording grounded in the real offer; a video script or broader campaign is outside this package |
-| "Write a blog post from these notes" | `write-blog-post` for an article or requested outline; `review-writing` when the whole request is to critique or clean up an existing passage |
-| "Learn my voice from my blog or social account" | `define-writing-voice` for a reusable source-backed profile; the relevant writing skill for a single draft that can use existing examples. Ask for missing representative sources and preferences rather than guessing |
-| "Does this sound AI-written?" | `review-writing` for specific textual problems and suggested repairs; do not infer authorship, provide an AI score or rewrite a critique-only submission |
-| "Write a social post" | No dedicated drafting package yet; describe the plain action. `review-writing` can review supplied prose without claiming to own a channel strategy |
-| "Create an animated explainer or just its script/storyboard" | `create-motion-video` for the requested production stage using accepted inputs; a preview-only request does not authorize full rendering or publication |
-| "Animate this interface transition" | `design-interface` for usable interactive motion, interruption and reduced-motion behavior; an exported explainer belongs to `create-motion-video` |
+| "Write a social post" | `create-carousel` only for an exported panel sequence. A text-only post has no dedicated drafting package: describe the plain action. `review-writing` can assess existing prose |
 | "Run a software factory from our accepted backlog" | `manage-project-board` for ongoing coordination and bounded ready pickup; `create-tasks` for missing task contracts. Actual workers, isolation and execution authority come from the host |
 | "Review this" | `challenge-proposal` for unresolved proposal choices; `review-code` for code findings; `review-interface` for rendered experience; `review-writing` for prose quality; `explain-pr` for an explanation rather than an assessment |
-| "Check whether this design works for users" | `test-usability` for participant task evidence or a study protocol; `review-interface` for an expert assessment; `capture-design-reference` for analysis of an existing reference rather than validation |
 | "Summarize our work" | `report-project-status` for a period/audience update; `prepare-handoff` for continuation context; `explain-pr` for one fixed code comparison |
 | "Improve how we work" | `improve-team-workflow` for a recurring process; `find-improvements` for codebase candidates; `automate-code-checks` for an agreed recurring coding rule |
 | "Plan our next work" | `prioritize-work` to select supplied candidates within capacity; `find-improvements` to discover candidates; `plan-phases` for milestones; `create-tasks` to decompose accepted scope |
-| "Improve the labels" | `write-interface-copy` for specific strings and messages; `map-user-flows` when destination grouping or navigation structure is unclear; `test-usability` when label comprehension needs participant evidence |
-| "Refactor or speed this up" | `find-improvements` for candidates; `improve-performance` for measured bottlenecks; `implement-change` for an accepted bounded refactor |
-| "Release this on GitHub" | `ship-change` for the specified notes-only, draft or publication target; carry the chosen revision and version policy, and establish the comparison release or first-release scope before writing notes |
-| "Monitor this service" | `configure-monitoring` for detection and alert configuration; `diagnose-issue` for a known failure; `ship-change` for a bounded post-delivery check. Continuous operation needs an explicit operating arrangement |
+| "Turn this article into media" | `create-presentation` for a deck; `create-carousel` for social panels; `create-motion-video` for generated animation. Reuse the accepted article. Use `edit-video` when the input is recorded footage |
 
-Select one next skill from the actual request; these alternatives are not a mandatory sequence. If both technical and interface design are needed, name separate skills and their shared prerequisites. A diagram group or general activity is not another installable skill.
+A known failure can go straight to `diagnose-issue`; an accepted bounded fix can go to `implement-change`. Choose one next owner and name only justified follow-ups. A domain or diagram group is not an installable skill. Routing supplies neither missing evidence nor new authority.

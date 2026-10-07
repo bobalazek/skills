@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create carousel"
+  short_description: "Create social image sequences and swipe documents"
+  default_prompt: "Use $create-carousel to turn these supported notes and assets into the requested social slide sequence, with editable layouts, accessible text and checked exports."
