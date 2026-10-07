@@ -19,6 +19,8 @@ For an accepted SLO, verify the measured population, good/total event definition
 
 For errors, logs or traces, verify service, environment and release attribution with a known event. Sampling, filtering and retention limit what absence can establish; sampled traces alone cannot prove every request succeeded. Source maps, symbols or request correlation are useful only where they improve the selected investigation path.
 
+Name an error's cause only when the observed operation supports it. A broad request-handler catch cannot classify every exception as a dependency outage. Exercise a different failure with that dependency healthy and check that the signal and operator action remain accurate.
+
 ## Make alerts usable
 
 - Tie severity to the action and agreed response window. Name the actual owner and route; do not invent round-the-clock availability.
