@@ -16,6 +16,8 @@ Capture look/beat frames, then a short target-layout segment crossing a join. In
 
 For narration, verify the final recording against the script and measure duration before scheduling visuals. An aligner can estimate unmatched words; retain confidence/status and listen to material cues. Correct captions against what is actually spoken, including punctuation and line breaks. A recording replacement invalidates dependent cue, caption and export evidence. Check music rights and mix using the destination's verified requirements; no universal loudness or word-rate target is assumed.
 
+Validate cue order and bounds against the measured recording; recognition timestamps can extend past the audio or assign the wrong word. Compare speech onsets with the visual event being described. Recheck the decoded final mux after compression, since a source recording's checks do not establish the encoded result. For separately recorded lines or words, measured segment placement can establish timing; distinguish that from inferred word alignment. Local speech recognition and signal measurements can corroborate content, clipping and timing, but do not constitute a listening review.
+
 ## Capture and encode
 
 Render exactly the expected indexed frames into a fresh run directory. Check missing/duplicate frames, capture errors and file validity; do not mix stale tails from a previous longer render. Reuse valid frames only when their inputs and indices still match. Check every subprocess status and the tool's reported findings, not only its exit code.
