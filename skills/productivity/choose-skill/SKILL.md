@@ -1,6 +1,6 @@
 ---
 name: choose-skill
-description: "Choose the next available skill for an engineering, product, productivity, UI/UX or content request from its desired result and accepted inputs, without restarting completed stages."
+description: "Choose the next available skill for an engineering, product, productivity, UI/UX, content or media request from its desired result and accepted inputs, without restarting completed stages."
 ---
 
 # Choose skill

@@ -11,6 +11,8 @@ Use this for detailed visual design at the requested fidelity. Establish whether
 
 Use `map-user-flows` when the journey or navigation is unresolved, `create-wireframes` for a low-fidelity structural decision before visual detail, `capture-design-reference` for reusable analysis of existing interfaces, or `write-interface-copy` for a dedicated set of labels/state messages. Keep routine wording within screen design. Repeated shared contracts can belong to `build-design-system`.
 
+Exported motion graphics and explainers belong to `create-motion-video` when available; this skill owns interactive UI motion and its task behavior.
+
 ## Inspect the surface and choose the format
 
 Read the design contract, tokens/components, brand direction and supported platforms. Inspect existing UI in its rendered state. Determine whether the request refines an existing design, replaces its visual direction, or creates a new surface. Existing code, content and accepted decisions remain evidence when a design document is missing; a new page inside an established product normally inherits its system.

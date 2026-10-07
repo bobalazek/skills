@@ -1,6 +1,6 @@
 # Content
 
-This domain owns audience-facing messages, writing-voice conventions and written content, plus a reusable prose-review workflow for other domains. Dedicated social-post and video-script workflows are not yet provided.
+This domain owns audience-facing messages, writing-voice conventions and written content, plus a reusable prose-review workflow for other domains. A dedicated social-post workflow is not yet provided. [Media](media.md) owns motion-video production, including its script and timing.
 
 ## Categories and skills
 
