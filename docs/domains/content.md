@@ -1,17 +1,20 @@
 # Content
 
-This domain owns audience-facing messages and written content, plus a reusable prose-review workflow for other domains. It covers website planning and copy, blog posts and articles, and writing-quality reviews. Dedicated social-post and video-script workflows are not yet provided.
+This domain owns audience-facing messages, writing-voice conventions and written content, plus a reusable prose-review workflow for other domains. Dedicated social-post and video-script workflows are not yet provided.
 
 ## Categories and skills
 
 | Category | Subcategory | Skill | Expected result |
 | --- | --- | --- | --- |
+| Voice and language | Define conventions | [define-writing-voice](../../skills/content/define-writing-voice/SKILL.md) | A personal or brand voice guide from representative samples and preferences, with concrete language choices and contextual tone |
 | Website content | Plan a page | [plan-landing-page](../../skills/content/plan-landing-page/SKILL.md) | Audience, arrival promise, supported message, section sequence, proof needs and next action |
 | Website content | Write and revise | [write-website-copy](../../skills/content/write-website-copy/SKILL.md) | Actual page or section wording grounded in the offer, voice, proof and destination |
 | Editorial content | Draft an article | [write-blog-post](../../skills/content/write-blog-post/SKILL.md) | A source-grounded post, tutorial, revision or requested outline, with exact evidence gaps |
 | Writing quality | Review and edit | [review-writing](../../skills/content/review-writing/SKILL.md) | Quoted findings or requested edits that remove weak prose while preserving meaning and voice |
 
 ## Boundaries and use
+
+`define-writing-voice` captures reusable style from supplied text, blog posts, a blog or social account and explicit preferences. It asks for missing representative sources, reports inspected coverage, and keeps observed traits separate from proposed or accepted choices. Reuse an existing guide or save in the consuming project's `docs/voice.md`; link it from the docs index rather than copying it into agent instructions. Traits such as dry, witty, sarcastic or professional need examples and boundaries. Tone adapts to the audience, channel, language and situation.
 
 `plan-landing-page` settles what a page needs to say and prove. `write-website-copy` produces the requested words, including a small rewrite that needs no new plan. Reuse accepted product facts and content; a content draft cannot establish demand, user comprehension or conversion lift.
 

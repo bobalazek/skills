@@ -15,6 +15,8 @@ Use `write-website-copy` for public page messaging, headlines and promotional co
 
 Read the task, accepted flows, current strings, supported locales/platforms and relevant content/accessibility conventions. Inspect the actual interface or supplied state evidence. Record the candidate revision and distinguish observed behavior, accepted requirements and assumptions.
 
+Read the applicable voice guide, commonly `docs/voice.md`, and use its interface/context-specific tone. If the requested brand voice is unresolved, ask for representative examples and preferences; use `define-writing-voice` for a reusable profile when available and useful. Continue clear behavior-grounded strings without inventing a personality. Humor or sarcasm in editorial content need not carry into consequential errors; supported meaning, recovery and message syntax remain authoritative.
+
 Identify each string's audience, location, trigger and available action. Cover requested states that exist, such as help, validation, loading, empty, error, permission, confirmation and success. Do not create product behavior to fill a copy template.
 
 When wording depends on unknown behavior, name the fact or decision and continue unaffected strings. Do not invent consent, legal obligations, retention, permissions, undo, retry safety or completion. Preserve approved legal/consent wording and meaning unless a change is explicitly authorized; route consequential uncertainty to its owner.

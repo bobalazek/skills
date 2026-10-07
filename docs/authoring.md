@@ -36,6 +36,8 @@ A separate “When to use” or “Critical rules” section helps only when it 
 
 For prose, use direct wording, consistent terms and supported claims; remove empty praise and repeated explanations while preserving useful voice and qualifications. `review-writing` owns the collection's reusable writing-pattern checks. Refer to it by name when a content workflow needs that pass, with a brief standalone fallback rather than copied lists or required sibling paths. Ordinary small edits need no added workflow. A writing assessment can contribute to an existing independent review, but cannot replace the owning skill's factual or behavioral checks.
 
+Project-specific voice conventions belong in the consuming project's existing guide or `docs/voice.md`, with evidence and acceptance status. `define-writing-voice` owns their capture; writing skills discover and apply that guide rather than embedding a personal voice in portable packages. Keep agent entry points to conditional pointers.
+
 This follows the [Agent Skills format](https://agentskills.io/specification), its [authoring guidance](https://agentskills.io/skill-creation/best-practices), and [Claude's progressive-disclosure guidance](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices). These sources guide structure; realistic task trials determine whether our wording works.
 
 Use role suffixes for reusable resources where their role matters: `.template.md`, `.checklist.md`, `.playbook.md`, or `.matrix.md`. Add executable helpers only when deterministic work justifies them and existing tools do not already cover it.

@@ -11,6 +11,8 @@ Review the supplied passage in context. A request to identify problems returns f
 
 Read the original before editing and identify what to retain: meaning, precise terminology, useful uncertainty, distinctive phrasing and the author's rhythm. A rough or machine-assisted draft can still contain approved choices worth keeping. Do not infer authorship from its style or assign an AI probability. If asked whether AI wrote it, explain that this review can establish textual problems, then show any supported findings.
 
+Use the project's applicable voice guide, commonly `docs/voice.md`, as the style reference. If judging voice needs missing context, ask for representative text or a blog/social URL and the author's preferences; preserve the supplied draft's voice in the meantime. Use `define-writing-voice` when the requested result is a reusable profile, checking availability or describing the plain action. Do not impose a generic witty or polished personality, or require a full profile for a local correction.
+
 This skill owns prose quality across formats. Use `write-website-copy` for new page wording or offer/destination decisions, `write-blog-post` for developing an article, and `write-interface-copy` for state-dependent strings. Keep a bounded copy critique here when the needed facts already exist. Check skill availability; describe the equivalent action if it is missing.
 
 ## Diagnose before changing

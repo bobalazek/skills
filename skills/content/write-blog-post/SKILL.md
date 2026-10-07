@@ -11,6 +11,8 @@ Produce the requested article, tutorial, revision or outline from the available 
 
 Read applicable project instructions, the supplied draft or notes, and relevant existing posts. Reuse the audience, reader outcome, intended venue, voice and length already established. Ask only about missing choices that would materially change the piece. Keep the existing format and authorial perspective unless the requested change requires otherwise.
 
+Read the existing voice guide, commonly `docs/voice.md`, when it applies. If "write in my voice" lacks usable context, ask for representative text, a blog/post URL or social account and what the author wants to retain or change. Inspect accessible supplied samples; do not infer a voice from an unread account. Use `define-writing-voice` when a reusable profile is requested or needed across content; otherwise use the supplied examples for this draft. Check availability and use the same plain action if absent. Apply the selected language/channel conventions while preserving supported facts and the author's stated views.
+
 A writing request authorizes the requested draft work. It does not by itself authorize publication, scheduling, CMS writes or distribution. Before saving into a website repository, inspect its content schema and draft/date behavior: a new file or frontmatter edit may make a post public. Use a verified draft location or return an unscheduled draft when safe staging is unresolved. Continue separately authorized delivery only within its granted scope.
 
 ## Establish what can be said
