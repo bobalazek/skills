@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create motion video"
+  short_description: "Plan, render and check code-driven motion videos"
+  default_prompt: "Use $create-motion-video to clarify this explainer's brief, preview its script and storyboard, then render and verify the requested video."

@@ -1,6 +1,6 @@
 # Skills
 
-56 skills for developing software, evaluating products, coordinating work, designing interfaces and writing content. Each produces a concrete result, such as a specification, working change, review or page draft. Run one on its own or continue from another skill's accepted output.
+57 skills for developing software, evaluating products, coordinating work, designing interfaces, writing content and producing motion video. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
 
 Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear. The collection is under active development; [releases](https://github.com/bobalazek/skills/releases) record reviewed snapshots and evaluation limits.
 
@@ -40,6 +40,7 @@ From a checkout, you can also ask a filesystem-capable agent to use `skills/engi
 | [Productivity · 11 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose and coordinate work, route requests, improve prompts and team workflows, report status, and transfer context |
 | [UI/UX · 8 skills](docs/domains/ui-ux.md) | Capture design references, map flows and navigation, wireframe and design screens, write interface messages, build shared systems, review interfaces, and test usability |
 | [Content · 5 skills](docs/domains/content.md) | Define a writing voice, plan page content, write website copy and blog posts, and review prose for clarity and supported meaning |
+| [Media · 1 skill](docs/domains/media.md) | Plan, storyboard, render and verify code-driven motion graphics and explainer videos |
 
 Each catalog lists skills by category, with their outputs and boundaries.
 
@@ -54,6 +55,7 @@ Each catalog lists skills by category, with their outputs and boundaries.
 | Plan what a product page needs to say and prove | [plan-landing-page](skills/content/plan-landing-page/SKILL.md) |
 | Write or revise the words on a website | [write-website-copy](skills/content/write-website-copy/SKILL.md) |
 | Turn source material into a blog post | [write-blog-post](skills/content/write-blog-post/SKILL.md) |
+| Create a motion graphic or explainer video | [create-motion-video](skills/media/create-motion-video/SKILL.md) |
 | Review generic or unclear writing while preserving voice | [review-writing](skills/content/review-writing/SKILL.md) |
 | Sketch screen structure from an understood flow | [create-wireframes](skills/ui-ux/create-wireframes/SKILL.md) |
 | Add visual detail to settled screen structure | [design-interface](skills/ui-ux/design-interface/SKILL.md) |
@@ -148,6 +150,7 @@ This independent collection grows out of workflows I have used internally for se
 - [Design with Intent](https://github.com/ghaida/intent): purposeful wireframes, interaction states and concrete accessibility and deceptive-design checks.
 - [Emil Kowalski's skills](https://github.com/emilkowalski/skills): motion judged by purpose, repeated use, interruption and observed behavior.
 - [Peter Yang's no-ai-slop](https://github.com/petergyang/no-ai-slop): preserving a writer's voice and grounding critiques in specific passages.
+- [Animate](https://github.com/cth9191/animate) and [Chase AI's video](https://www.youtube.com/watch?v=rscb1DgJtNg): preview-first procedural video, timed storyboards and frame/export inspection. This collection supplies original instructions and templates; it does not bundle Animate's runtime.
 
 ## License
 

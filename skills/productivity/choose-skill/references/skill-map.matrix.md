@@ -55,6 +55,7 @@ These names identify skills in this collection. Availability depends on the inst
 | Actual website page or section wording | `write-website-copy` | Write or revise public page copy from accepted purpose and facts; interface states and unresolved page strategy stay separate |
 | A blog post, article, tutorial or its requested outline | `write-blog-post` | Develop editorial content from supported sources; drafting does not authorize publication |
 | Writing-quality findings or a requested prose cleanup | `review-writing` | Quote concrete problems or make the requested edits while preserving meaning and voice; no AI-authorship verdict |
+| A code-driven motion video or its requested storyboard | `create-motion-video` | Own the brief, timed script/storyboard and requested export with visual/audio evidence; interactive UI motion stays in interface design |
 | Interface labels and state-specific messages | `write-interface-copy` | Deliver copy grounded in actual behavior; do not redesign the screen or invent recovery promises |
 | Reusable visual and component rules | `build-design-system` | Shared needs justify a system; one screen does not |
 | Independent interface findings | `review-interface` | Inspect rendered behavior and try to break supported journeys |
@@ -82,7 +83,9 @@ A ready fix does not need brainstorming. An accepted specification does not need
 | "Write a blog post from these notes" | `write-blog-post` for an article or requested outline; `review-writing` when the whole request is to critique or clean up an existing passage |
 | "Learn my voice from my blog or social account" | `define-writing-voice` for a reusable source-backed profile; the relevant writing skill for a single draft that can use existing examples. Ask for missing representative sources and preferences rather than guessing |
 | "Does this sound AI-written?" | `review-writing` for specific textual problems and suggested repairs; do not infer authorship, provide an AI score or rewrite a critique-only submission |
-| "Write a social post or video script" | No dedicated drafting package yet; describe the plain action. `review-writing` can review supplied prose without claiming to own a channel strategy or production workflow |
+| "Write a social post" | No dedicated drafting package yet; describe the plain action. `review-writing` can review supplied prose without claiming to own a channel strategy |
+| "Create an animated explainer or just its script/storyboard" | `create-motion-video` for the requested production stage using accepted inputs; a preview-only request does not authorize full rendering or publication |
+| "Animate this interface transition" | `design-interface` for usable interactive motion, interruption and reduced-motion behavior; an exported explainer belongs to `create-motion-video` |
 | "Run a software factory from our accepted backlog" | `manage-project-board` for ongoing coordination and bounded ready pickup; `create-tasks` for missing task contracts. Actual workers, isolation and execution authority come from the host |
 | "Review this" | `challenge-proposal` for unresolved proposal choices; `review-code` for code findings; `review-interface` for rendered experience; `review-writing` for prose quality; `explain-pr` for an explanation rather than an assessment |
 | "Check whether this design works for users" | `test-usability` for participant task evidence or a study protocol; `review-interface` for an expert assessment; `capture-design-reference` for analysis of an existing reference rather than validation |

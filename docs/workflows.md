@@ -33,6 +33,7 @@ The [README graph](../README.md#from-idea-to-delivery) shows the overall route. 
 | Reusable language conventions | `define-writing-voice` | A source-backed personal or brand voice profile and contextual tone | An applicable approved guide already meets the need |
 | An article from source material | `write-blog-post` | A supported blog draft, tutorial, revision or requested outline | The accepted article already meets the request |
 | Findings about existing prose | `review-writing` | Exact quoted issues or requested edits preserving meaning and voice | Valid findings or accepted wording already cover the request |
+| A motion graphic, explainer or its requested preview | `create-motion-video` | Brief, timed script/storyboard and requested export with scoped playback proof | Accepted production artifacts already meet the requested fidelity |
 | Screen structure before visual detail | `create-wireframes` | Editable layouts with hierarchy, content/state placement and requirement links | Existing or accepted screen structure already resolves the question |
 | Several deliverable milestones | `plan-phases` | Outcomes, prerequisites, parallel conditions and phase exits | The change fits one bounded work item or small task set |
 | Executable work | `create-tasks` | Owned tasks with criteria, dependencies and checks, locally or in the authorized tracker | Suitable tasks already exist |
@@ -69,7 +70,7 @@ A clarified proposal is not a validated concept: demand, feasibility, and perfor
 
 ## Routes by situation
 
-Match the requested result, not just words such as "new project," "review" or "AI." These examples cover every skill without requiring every skill in a workflow. Start with [exploration](#explore-and-route), [product discovery](#evaluate-a-product-opportunity), [project context](#understand-and-prepare-a-project), [design](#specify-and-design), [implementation](#plan-and-change-software), or [evaluation and delivery](#verify-review-and-deliver).
+Match the requested result, not just words such as "new project," "review" or "AI." These examples cover every skill without requiring every skill in a workflow. Start with [exploration](#explore-and-route), [product discovery](#evaluate-a-product-opportunity), [media](#create-motion-video), [project context](#understand-and-prepare-a-project), [design](#specify-and-design), [implementation](#plan-and-change-software), or [evaluation and delivery](#verify-review-and-deliver).
 
 ### Explore and route
 
@@ -259,6 +260,38 @@ flowchart TD
 Detailed anti-pattern checks live in `review-writing`, without treating punctuation, technical terms or useful uncertainty as automatic defects. A draft stays within the requested scope; an article, copy edit or critique does not authorize publication. With no independent reviewer available, retain the unreviewed status instead of presenting an author check as independent proof.
 
 A voice profile is reusable context, not a mandatory stage for each paragraph. Writers first reuse the applicable guide and sample text. When the requested voice is unknown, ask for a representative passage, blog/post URL or social account and what the owner wants to retain or change. Inspect accessible supplied sources and state coverage; a whole-blog request does not justify claiming every page was read. Keep the profile in the consuming project's docs and pass its path, status, language and channel forward. A personal or brand preference needs the owner's input; an agent can propose and check a guide without inventing approval.
+
+### Create motion video
+
+| Example request | First skill | Result and conditional continuation |
+| --- | --- | --- |
+| "Create a short animated explainer from these supported facts." | [create-motion-video](../skills/media/create-motion-video/SKILL.md) | Resolve missing brief choices, preview script/look/storyboard, then render and check the authorized export; missing tools or playback leave explicit gaps |
+| "Show the script and storyboard before animating anything." | [create-motion-video](../skills/media/create-motion-video/SKILL.md) | A timed preview at requested fidelity; finish there without claiming an exported video |
+| "Fix the clipped text in this existing motion composition and export vertical and landscape versions." | [create-motion-video](../skills/media/create-motion-video/SKILL.md) | Reuse the source and accepted story, repair each layout, and recheck actual exports, joins and applicable audio |
+
+The production stages below belong to one skill. Arrows are dependencies inside this scenario; rounded nodes are work/results, not additional install names. Reuse accepted stages, and stop at the requested output.
+
+```mermaid
+flowchart TD
+  Request(["Input: message, sources and requested fidelity"]) --> Video[["create-motion-video"]]
+  Video --> Brief(["Work: resolve missing brief choices"])
+  Brief --> Script(["Work: supported script and applicable measured audio"])
+  Script --> Boards(["Work: look frames and timed storyboard"])
+  Boards --> Scope{"Export requested and prerequisites ready?"}
+  Scope -->|Preview only or blocked| Preview(["Result: preview, status and exact gaps"])
+  Scope -->|Yes| Segment(["Work: deterministic scene and short transition preview"])
+  Segment --> Export(["Work: requested formats and encode"])
+  Export --> Check(["Work: export metadata, contact sheets and playback/audio checks"])
+  Check --> Assess(["Work: fresh independent assessment of actual artifacts"])
+  Assess --> Pass{"Required evidence and decisions satisfied?"}
+  Pass -->|No| Repair(["Work: bounded repair or explicit unresolved result"])
+  Repair -. "Affected checks and assessment repeated after repair" .-> Check
+  Pass -->|Yes| Done(["Result: editable source, video and criterion-linked proof"])
+  classDef skill fill:#edf5ff,stroke:#355b85,color:#172b42;
+  class Video skill;
+```
+
+Independent scene builds may overlap after shared timing, look and join contracts are settled, with isolated ownership and one integration owner. A final narration replacement invalidates dependent timing/caption checks. Contact sheets establish only inspected stills; normal-speed playback and listening cover different criteria. Review and human choices remain separate; an export does not authorize upload or publication.
 
 ### Understand and prepare a project
 
