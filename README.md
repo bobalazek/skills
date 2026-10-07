@@ -18,10 +18,10 @@ Inspect the install summary before confirming. Use `--skill '*'` for the whole c
 For a fixed release, use its tag instead of the default branch:
 
 ```bash
-bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.0.3 --skill choose-skill create-tasks verify-change --agent codex --copy
+bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.1.0 --skill choose-skill create-tasks verify-change --agent codex --copy
 ```
 
-`skills@1.7.0` pins the installer; `v0.0.3` pins the 51-skill release. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.0.3) for changes and evaluation limits. The catalogs below describe the default branch and may include changes made after this release. Earlier releases remain available.
+`skills@1.7.0` pins the installer; `v0.1.0` pins the 60-skill release. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.1.0) for changes and evaluation limits. The catalogs below describe the default branch and may include changes made after this release. Earlier releases remain available.
 
 In Codex, invoke an installed skill with its name and your task:
 
@@ -148,6 +148,7 @@ This independent collection grows out of workflows I have used internally for se
 - [Matt Pocock's skills](https://github.com/mattpocock/skills): focused questioning and planning, domain vocabulary and decisions, and PR explanations with evidence and risk.
 - [HumanLayer's skills](https://github.com/humanlayer/skills): visual PR explanations and concise agent instructions that load detail when needed.
 - [Impeccable](https://github.com/pbakaus/impeccable): deliberate visual direction, redesign boundaries and rendered typography and layout checks.
+- [Taste Skill](https://github.com/Leonxlnx/taste-skill): comparing an accepted image comp with its implementation and checking rendered media, adapted to the project's constraints.
 - [Design with Intent](https://github.com/ghaida/intent): purposeful wireframes, interaction states and concrete accessibility and deceptive-design checks.
 - [Emil Kowalski's skills](https://github.com/emilkowalski/skills): motion judged by purpose, repeated use, interruption and observed behavior.
 - [Peter Yang's no-ai-slop](https://github.com/petergyang/no-ai-slop): preserving a writer's voice and grounding critiques in specific passages.

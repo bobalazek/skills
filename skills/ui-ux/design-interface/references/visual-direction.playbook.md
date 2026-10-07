@@ -27,6 +27,8 @@ Describe the proposed direction through its leading content, reading/task path, 
 
 For reference material, reuse inspected captures first. Select a bounded reference to answer a named question, such as handling dense filters or giving a project image enough prominence. Record source, inspected state, useful relationship and necessary adaptation. Keep estimated measurements and inferred behavior labeled. Do not blend unrelated motifs merely to appear distinctive, or copy assets, text and fonts without appropriate rights.
 
+When a visual choice remains open, a supplied or generated image comp can be a useful proposal if the available tools and authority permit it. Keep relevant details readable and inspect the composition before implementation. Reconcile generated wording, assets and implied controls with actual content and behavior requirements; the image cannot establish facts or interactions. Compare the implemented surface with the accepted comp under comparable conditions, recording deliberate departures for content, accessibility or platform constraints. A settled design does not need another image-generation step.
+
 ## Work with actual content
 
 Compose one representative complete surface before propagating a new direction through shared templates. Use its real content or labeled representative data, including a relevant long or empty case. Check the whole requested page, not only the opening viewport; an attractive hero does not establish a coherent page or site. Reuse accepted wireframes when structure is settled.
@@ -34,9 +36,9 @@ Compose one representative complete surface before propagating a new direction t
 | Decision | Probe before spreading it |
 | --- | --- |
 | Hierarchy and grouping | At reduced detail, can the main action/content and major groups still be identified? Use proximity and emphasis to fix competing priorities before adding more borders, cards or decoration. |
-| Typography | Identify heading, body, label, metadata and numeric roles actually needed. Check whether weight, size and spacing distinguish them with the real text. Inspect loaded fonts, fallback layout, long headings and zoom rather than choosing a scale by habit. |
+| Typography | Identify heading, body, label, metadata and numeric roles actually needed. Check whether weight, size and spacing distinguish them with the real text. Inspect loaded fonts, fallback layout, long headings, clipped accents/descenders and zoom rather than choosing a scale by habit. |
 | Density and rhythm | Match visible information to the task. Check comparison, scanning and repeated use; equal-sized containers should represent meaningfully equivalent content. Preserve useful repetition. |
-| Color and imagery | Give color an identifiable emphasis, state or brand role. Check contrast against actual backgrounds and retain non-color cues. Confirm that images explain or carry the requested experience and survive responsive cropping. |
+| Color and imagery | Give color an identifiable emphasis, state or brand role. Check contrast against actual backgrounds and retain non-color cues. Inspect the loaded asset's actual subject and crop, including supported themes. Check reserved space and usable content when media loads slowly or fails. A plausible URL or successful fetch does not establish the intended image. |
 | Adaptation | At supported narrow, intermediate and wide sizes, decide what wraps, reflows, scrolls or changes placement. Check that reading and focus order still follow the task, with long content and overlays present. |
 
 Revise choices that fail these probes, then carry the accepted rules into the remaining requested surfaces. Recheck shared components where they meet different content and states. Avoid fixed aesthetic bans: a grid, system font or restrained palette can be correct when it serves the brief.
@@ -50,3 +52,5 @@ Pass the candidate, original constraints, reference evidence, observed checks an
 ## Sources behind this procedure
 
 The separation of existing identity from replacement work, and the rendered typography/layout probes, draw on Paul Bakaus's Impeccable: [new visual work](https://github.com/pbakaus/impeccable/blob/cf3d2fa07d3ad1814ac5fbbbb5b2043b795eaef1/skill/reference/new-work.md), [layout](https://github.com/pbakaus/impeccable/blob/cf3d2fa07d3ad1814ac5fbbbb5b2043b795eaef1/skill/reference/layout.md) and [typography](https://github.com/pbakaus/impeccable/blob/cf3d2fa07d3ad1814ac5fbbbb5b2043b795eaef1/skill/reference/typeset.md), inspected 2026-10-06. This is original procedural guidance for this package; it does not import Impeccable's scripts, mandatory concept selection or aesthetic rules.
+
+Leonxlnx's Taste Skill informs the optional [image-comp comparison](https://github.com/Leonxlnx/taste-skill/blob/b482f7a970abb98c4108d4a9f761e458c64cefc8/skills/image-to-code-skill/SKILL.md) and [rendered asset checks](https://github.com/Leonxlnx/taste-skill/blob/b482f7a970abb98c4108d4a9f761e458c64cefc8/skills/taste-skill/SKILL.md), inspected 2026-10-07. These are contextual adaptations; its mandatory generation, stack choices and aesthetic bans are not requirements here.
