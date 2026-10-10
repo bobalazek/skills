@@ -11,6 +11,8 @@ Identify the skill, requested capability, candidate revision, baseline and permi
 
 Choose a small set of discriminating cases: a normal request, a nearby request or missing prerequisite, and a known failure or consequential boundary. Define the expected behavior from the raw requirements before running. A correct refusal or scoped incomplete result can pass a boundary case; inventing completion cannot. Do not grade exact wording unless it is part of the contract.
 
+Separate task quality from automatic activation. For activation, install the relevant skill set and supply ordinary requests without naming the target skill; include nearby requests and simple tasks that should not load it. Inspect actual entrypoint reads or host invocation events, not the final answer's claim to have used a skill. Missing or incomplete events leave activation unchecked. For recovery, test unavailable tools, missing siblings or resumed work only where relevant; distinguish replayed handoffs from actual client-session recovery.
+
 Use [the evaluation record](references/evaluation.template.md) when no local case/result format exists. Keep fixtures and assertions separate from the context supplied to the executing agent. Include only the raw request and necessary input files; do not leak the expected answer, suspected defect or author's preferred conclusion.
 
 ## Run comparable trials

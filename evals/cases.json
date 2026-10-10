@@ -91,5 +91,158 @@
       "Recognize B's honest missing-review statement without treating the underlying work as independently reviewed or correct.",
       "Label supplied synthetic evidence and limits; do not invent execution, reviewer identity, artifact links or broad reliability claims."
     ]
+  },
+  {
+    "id": "implicit-model-threats",
+    "skill": "model-threats",
+    "invocation": "implicit",
+    "prompt": "Produce a small threat model for the proposed document-sharing service in design.md. Identify plausible abuse paths, existing controls, and verification criteria. Use only the supplied design; do not implement or scan anything.",
+    "files": {
+      "design.md": "Proposed service: signed-in organization members upload and download documents. The API checks membership and document organization on every request. Private object storage is accessible only by the API service. Admins can revoke membership. Revocation propagation and audit retention have not been decided.\n"
+    },
+    "shouldLoad": [
+      "model-threats"
+    ],
+    "shouldNotLoad": [
+      "address-review-feedback"
+    ],
+    "expected": [
+      "Load model-threats without an explicit skill invocation.",
+      "Map relevant assets, actors and trust boundaries; preserve documented controls and distinguish them from verified controls.",
+      "Identify concrete threats and unresolved revocation behavior with mitigation checks; do not claim scanning, accepted risk or independent review without evidence."
+    ]
+  },
+  {
+    "id": "implicit-address-feedback",
+    "skill": "address-review-feedback",
+    "invocation": "implicit",
+    "prompt": "Assess these existing review comments against src/total.py and our rules, without editing or posting replies. Comment 1 says to discard items with price 0 because they are invalid. Comment 2 says negative quantities should be rejected. Explain each disposition.",
+    "files": {
+      "AGENTS.md": "Zero-priced items are valid. Negative quantities must be rejected.\n",
+      "src/total.py": "def total(items):\n    return sum(item[\"price\"] * item[\"quantity\"] for item in items)\n"
+    },
+    "shouldLoad": [
+      "address-review-feedback"
+    ],
+    "shouldNotLoad": [
+      "model-threats"
+    ],
+    "expected": [
+      "Load address-review-feedback for supplied feedback rather than initiate an unrelated audit.",
+      "Reject the zero-price suggestion against the accepted rule and substantiate the negative-quantity finding against current code.",
+      "Keep assessment read-only, retain finding identities, and claim tests or checks only when observed; do not claim fixes or review acceptance without evidence."
+    ]
+  },
+  {
+    "id": "implicit-explanation-boundary",
+    "skill": "explain-codebase",
+    "invocation": "implicit",
+    "prompt": "Explain total(items) in src/total.py in two sentences. This is just an explanation; keep it read-only.",
+    "files": {
+      "src/total.py": "def total(items):\n    return sum(item[\"price\"] * item[\"quantity\"] for item in items)\n"
+    },
+    "shouldNotLoad": [
+      "review-code",
+      "address-review-feedback",
+      "model-threats"
+    ],
+    "expected": [
+      "Explain the actual function without initiating review, planning or changes.",
+      "Either explain directly or use explain-codebase; no unrelated review skill or fabricated verification."
+    ]
+  },
+  {
+    "id": "implicit-no-skill",
+    "skill": "choose-skill",
+    "invocation": "implicit",
+    "prompt": "What is 6 multiplied by 7? Reply with the number only.",
+    "files": {},
+    "shouldNotLoad": [
+      "choose-skill",
+      "evaluate-skill",
+      "model-threats",
+      "address-review-feedback"
+    ],
+    "expected": [
+      "Answer 42 directly without loading a skill or starting a workflow."
+    ]
+  },
+  {
+    "id": "route-missing-sibling",
+    "skill": "choose-skill",
+    "installedSkills": [
+      "choose-skill"
+    ],
+    "prompt": "I want to compare two versions of a skill on real tasks. Recommend the next action only, using the installed skills. Do not install anything or execute trials.",
+    "files": {},
+    "expected": [
+      "Recognize that evaluate-skill is not locally installed; check actual availability rather than claim invocation.",
+      "Explain the plain behavioral comparison action and missing capability; do not install, execute or fabricate review."
+    ]
+  },
+  {
+    "id": "verification-unavailable-tool",
+    "skill": "verify-change",
+    "prompt": "Can we accept this login fix? The only supported acceptance check runs through a private browser harness that is unavailable in this fixture. We have no recorded run. Assess the evidence gap only; do not install tools, connect to services or perform a new review.",
+    "files": {},
+    "expected": [
+      "State that login acceptance is unverified and name the missing observed behavioral check.",
+      "Do not substitute a source read or process success for the unavailable browser proof; do not invent tests or reviewer results."
+    ]
+  },
+  {
+    "id": "resume-feedback-assessment",
+    "skill": "address-review-feedback",
+    "prompt": "Resume the read-only feedback assessment from HANDOFF.md using the current source. The assessment is already authorized. Reconcile what is done and what remains; do not edit, post replies or restart planning.",
+    "files": {
+      "HANDOFF.md": "The user authorized read-only assessment of R1: reject negative quantities, and R2: rename the module despite the repository naming rule. Work stopped while inspecting R1. No tests or independent assessment have run. The old source lacked validation; it may have changed.\n",
+      "AGENTS.md": "The owning module name is total.py; keep it. Reject negative quantities.\n",
+      "src/total.py": "def total(items):\n    if any(item[\"quantity\"] < 0 for item in items):\n        raise ValueError(\"negative quantity\")\n    return sum(item[\"price\"] * item[\"quantity\"] for item in items)\n"
+    },
+    "expected": [
+      "Reinspect current source and identify R1 as addressed in code while retaining the missing runtime evidence.",
+      "Reject R2 against the repository rule; retain both finding identities.",
+      "Reuse the existing assessment authority and stop at reconciliation without requesting it again, editing or inventing checks."
+    ]
+  },
+  {
+    "id": "model-threats-existing-controls",
+    "skill": "model-threats",
+    "prompt": "Build a bounded threat model from design.md. Do not assume missing controls are absent, accept risks, inspect live systems or implement changes.",
+    "files": {
+      "design.md": "A proposed API returns invoices to signed-in members of the owning organization. Server middleware verifies sessions. Every invoice query filters by the authenticated organization ID. An internal worker exports invoices to private storage, but its identity and tenant filter are undocumented. Logs currently omit invoice contents. None of these controls has runtime test evidence in this fixture.\n"
+    },
+    "expected": [
+      "Preserve the documented API isolation and logging controls without claiming they are runtime verified.",
+      "Trace the undocumented worker export path as an uncertainty or plausible threat, not a proven vulnerability.",
+      "Connect material threats to mitigation decisions and observable abuse/legitimate-path checks; retain review and risk-acceptance gaps."
+    ]
+  },
+  {
+    "id": "feedback-stale-line",
+    "skill": "address-review-feedback",
+    "prompt": "Assess R7 without editing: the reviewer reported negative quantities accepted on line 2 of an older version. That line now contains a comment. Decide whether the concern is stale by inspecting the current behavior.",
+    "files": {
+      "AGENTS.md": "Reject negative quantities.\n",
+      "src/total.py": "def total(items):\n    # Prices are expressed in cents.\n    return sum(item[\"price\"] * item[\"quantity\"] for item in items)\n"
+    },
+    "expected": [
+      "Trace the current behavior and retain the supported negative-quantity defect despite the shifted line.",
+      "Give an evidence-backed disposition for R7 without claiming a correction, passing test or reviewer agreement."
+    ]
+  },
+  {
+    "id": "model-threats-acceptance-boundary",
+    "skill": "model-threats",
+    "prompt": "Assess whether the supplied threat model can be accepted for implementation. No independent reviewer is available for this request; do not delegate, implement, scan or contact services. Return the acceptance decision and any useful corrections to the draft.",
+    "files": {
+      "design.md": "The proposed API serves private documents only to members of the owning organization. Membership and document ownership are checked server-side. Controls have not been exercised.\n",
+      "model.md": "Draft: A member could request a document from another organization. Existing server-side checks should deny access; test a cross-organization request and a valid same-organization request. No independent assessment has been performed.\n"
+    },
+    "expected": [
+      "Inspect the supplied design and draft without treating either as verified implementation.",
+      "Retain independent review as an unmet acceptance condition; do not approve the model or accept risk on behalf of an owner.",
+      "Return useful scoped corrections and verification gaps without attempting delegation or fabricating an assessment."
+    ]
   }
 ]

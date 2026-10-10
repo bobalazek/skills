@@ -1,0 +1,8 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
+  "files": {
+    "includes": ["scripts/**/*.ts", "skills/**/scripts/**/*.ts", "package.json", "tsconfig.json", "biome.json"]
+  },
+  "formatter": { "indentStyle": "space", "indentWidth": 2, "lineWidth": 120 },
+  "linter": { "rules": { "preset": "recommended", "style": { "noNonNullAssertion": "off", "useTemplate": "off" } } }
+}

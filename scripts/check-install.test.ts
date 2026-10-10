@@ -1,8 +1,17 @@
 import { afterEach, beforeEach, expect, test } from "bun:test";
-import { cpSync, mkdirSync, mkdtempSync, readFileSync, realpathSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import {
+  cpSync,
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  realpathSync,
+  rmSync,
+  symlinkSync,
+  writeFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { verifyCodex, verifyCopies, verifyOpenCode } from "./check-install";
+import { manifest, verifyCodex, verifyCopies, verifyOpenCode } from "./lib/skill-packages.ts";
 
 let root: string;
 let expected: string;
@@ -38,6 +47,16 @@ test("rejects missing and extra installed files", () => {
   expect(() => verifyCopies(expected, installed)).toThrow("differ");
 });
 
+test("content manifests retain filenames that match object prototype properties", () => {
+  const name = "__proto__";
+  const path = join(project, name);
+  writeFileSync(path, "before");
+  const before = manifest(project);
+  expect(Object.keys(before)).toContain(name);
+  writeFileSync(path, "after");
+  expect(manifest(project)[name]).not.toBe(before[name]);
+});
+
 test("rejects package symlinks instead of claiming copy integrity", () => {
   rmSync(join(installed, "example"), { recursive: true });
   symlinkSync(join(expected, "skills/productivity/example"), join(installed, "example"));
@@ -47,21 +66,38 @@ test("rejects package symlinks instead of claiming copy integrity", () => {
 const codex = (entries: string) => JSON.stringify([{ content: [{ text: `- \`r2\` = \`${installed}\`\n${entries}` }] }]);
 test("checks exact Codex names and aliased project locations", () => {
   verifyCodex(codex("- example: Task (file: r2/example/SKILL.md)"), installed, ["example"]);
-  expect(() => verifyCodex(codex("- example: Task (file: r2/other/SKILL.md)"), installed, ["example"])).toThrow("discovery");
+  expect(() => verifyCodex(codex("- example: Task (file: r2/other/SKILL.md)"), installed, ["example"])).toThrow(
+    "discovery",
+  );
   expect(() => verifyCodex(codex(""), installed, ["example"])).toThrow("discovery");
   expect(() => verifyCodex("[]", installed, ["example"])).toThrow("root");
 });
 
+test("accepts a no-skill baseline without a root alias but rejects unexpected local entries", () => {
+  verifyCodex("[]", installed, []);
+  verifyCodex(codex(""), installed, []);
+  expect(() => verifyCodex(codex("- example: Task (file: r2/example/SKILL.md)"), installed, [])).toThrow("discovery");
+});
+
 test("compares OpenCode body without frontmatter and ignores unrelated global packages", () => {
   const entry = { name: "example", location: join(installed, "example/SKILL.md"), content: body };
-  verifyOpenCode(JSON.stringify([entry, { name: "global", location: join(root, "global/SKILL.md") }]), project, installed, ["example"]);
-  expect(() => verifyOpenCode(JSON.stringify([{ ...entry, content: "Wrong body" }]), project, installed, ["example"])).toThrow("body");
+  verifyOpenCode(
+    JSON.stringify([entry, { name: "global", location: join(root, "global/SKILL.md") }]),
+    project,
+    installed,
+    ["example"],
+  );
+  expect(() =>
+    verifyOpenCode(JSON.stringify([{ ...entry, content: "Wrong body" }]), project, installed, ["example"]),
+  ).toThrow("body");
   expect(() => verifyOpenCode(JSON.stringify([entry, entry]), project, installed, ["example"])).toThrow("discovery");
 });
 
 test("the CLI refuses ignored source files absent from its recorded commit", async () => {
   const git = (...args: string[]) => {
-    const result = Bun.spawnSync(["git", "-c", "core.hooksPath=/dev/null", "-c", "commit.gpgsign=false", ...args], { cwd: expected });
+    const result = Bun.spawnSync(["git", "-c", "core.hooksPath=/dev/null", "-c", "commit.gpgsign=false", ...args], {
+      cwd: expected,
+    });
     expect(result.exitCode).toBe(0);
     return result.stdout.toString();
   };
@@ -72,7 +108,10 @@ test("the CLI refuses ignored source files absent from its recorded commit", asy
   writeFileSync(join(expected, "skills/productivity/example/ignored.txt"), "Not part of HEAD\n");
   expect(git("status", "--porcelain", "--untracked-files=all")).toBe("");
   const output = join(root, "evidence");
-  const child = Bun.spawn([process.execPath, join(import.meta.dir, "check-install.ts"), expected, expected, output], { stdout: "pipe", stderr: "pipe" });
+  const child = Bun.spawn([process.execPath, join(import.meta.dir, "check-install.ts"), expected, expected, output], {
+    stdout: "pipe",
+    stderr: "pipe",
+  });
   const [exit, stderr] = await Promise.all([child.exited, new Response(child.stderr).text()]);
   expect(exit).toBe(1);
   expect(stderr).toContain("ignored files absent from the revision");

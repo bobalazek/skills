@@ -1,0 +1,4 @@
+interface:
+  display_name: "Model threats"
+  short_description: "Map threats, controls and verification criteria"
+  default_prompt: "Use $model-threats to assess the trust boundaries and plausible abuse paths in this system."

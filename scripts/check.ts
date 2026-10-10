@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, readdirSync, realpathSync, statSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, realpathSync, statSync } from "node:fs";
 import { dirname, extname, isAbsolute, join, relative, resolve } from "node:path";
 
 const read = (path: string) => readFileSync(path, "utf8");
@@ -39,15 +39,16 @@ export function audit(inputRoot: string) {
   const names = new Set<string>();
   let resources = 0;
   const fail = (path: string, message: string) => errors.push(`${relative(root, path)}: ${message}`);
-  const targets = (source: string): string[] => links(read(source)).flatMap((raw) => {
-    try {
-      const target = localTarget(source, raw);
-      return target ? [target] : [];
-    } catch {
-      fail(source, `invalid local link: ${raw}`);
-      return [];
-    }
-  });
+  const targets = (source: string): string[] =>
+    links(read(source)).flatMap((raw) => {
+      try {
+        const target = localTarget(source, raw);
+        return target ? [target] : [];
+      } catch {
+        fail(source, `invalid local link: ${raw}`);
+        return [];
+      }
+    });
 
   for (const entry of packages) {
     if (relative(join(root, "skills"), entry).split(/[\\/]/).length !== 3) {
@@ -93,11 +94,13 @@ export function audit(inputRoot: string) {
           if (typeof display_name !== "string" || !display_name.trim()) {
             fail(agentFile, "invalid interface.display_name");
           }
-          const shortLength = typeof short_description === "string" && short_description.trim() ? [...short_description].length : 0;
+          const shortLength =
+            typeof short_description === "string" && short_description.trim() ? [...short_description].length : 0;
           if (shortLength < 25 || shortLength > 64) {
             fail(agentFile, "interface.short_description must be a string of 25–64 characters");
           }
-          const invocations = typeof default_prompt === "string" ? [...default_prompt.matchAll(/\$([A-Za-z0-9_-]+)/g)] : [];
+          const invocations =
+            typeof default_prompt === "string" ? [...default_prompt.matchAll(/\$([A-Za-z0-9_-]+)/g)] : [];
           if (invocations.length !== 1 || invocations[0][1] !== name) {
             fail(agentFile, `interface.default_prompt must contain one exact $${name} invocation`);
           }
@@ -125,13 +128,17 @@ export function audit(inputRoot: string) {
     }
   }
 
-  const catalogTargets = new Set(files(join(root, "docs/domains"))
-    .filter((path) => extname(path) === ".md").flatMap(targets));
+  const catalogTargets = new Set(
+    files(join(root, "docs/domains"))
+      .filter((path) => extname(path) === ".md")
+      .flatMap(targets),
+  );
   for (const entry of packages) {
     if (!catalogTargets.has(realpathSync(entry))) fail(entry, "absent from domain catalogs");
   }
-  const markdown = [join(root, "README.md"), ...files(join(root, "docs")), ...allSkillFiles]
-    .filter((path) => extname(path) === ".md");
+  const markdown = [join(root, "README.md"), ...files(join(root, "docs")), ...allSkillFiles].filter(
+    (path) => extname(path) === ".md",
+  );
   for (const path of markdown) {
     if (!existsSync(path)) {
       fail(path, "missing document");
@@ -156,6 +163,8 @@ if (import.meta.main) {
     console.error(result.errors.join("\n"));
     process.exitCode = 1;
   } else {
-    console.log(`PASS: ${result.packages} skill packages, ${result.resources} reachable resources; metadata, local links, standalone boundaries, catalog coverage`);
+    console.log(
+      `PASS: ${result.packages} skill packages, ${result.resources} reachable resources; metadata, local links, standalone boundaries, catalog coverage`,
+    );
   }
 }

@@ -1,5 +1,14 @@
 import { afterEach, beforeEach, expect, test } from "bun:test";
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, realpathSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  realpathSync,
+  rmSync,
+  symlinkSync,
+  writeFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 
@@ -17,7 +26,10 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-  for (const pid of ownedPids) try { process.kill(pid, "SIGKILL"); } catch {}
+  for (const pid of ownedPids)
+    try {
+      process.kill(pid, "SIGKILL");
+    } catch {}
   ownedPids.clear();
   rmSync(root, { recursive: true, force: true });
 });
@@ -25,12 +37,26 @@ afterEach(() => {
 async function command(argv: string[], directory = cwd) {
   const child = Bun.spawn(argv, { cwd: directory, stdout: "pipe", stderr: "pipe" });
   const [stdout, stderr, exitCode] = await Promise.all([
-    new Response(child.stdout).text(), new Response(child.stderr).text(), child.exited,
+    new Response(child.stdout).text(),
+    new Response(child.stderr).text(),
+    child.exited,
   ]);
   return { stdout, stderr, exitCode };
 }
 
-const run = (argv: string[], destination = output, timeoutMs?: string) => command([process.execPath, "run", runner, "--cwd", cwd, "--out", destination, ...(timeoutMs === undefined ? [] : ["--timeout-ms", timeoutMs]), "--", ...argv]);
+const run = (argv: string[], destination = output, timeoutMs?: string) =>
+  command([
+    process.execPath,
+    "run",
+    runner,
+    "--cwd",
+    cwd,
+    "--out",
+    destination,
+    ...(timeoutMs === undefined ? [] : ["--timeout-ms", timeoutMs]),
+    "--",
+    ...argv,
+  ]);
 const record = () => JSON.parse(readFileSync(output, "utf8"));
 const script = (body: string) => {
   const path = join(cwd, "check.ts");
@@ -38,7 +64,8 @@ const script = (body: string) => {
   return path;
 };
 async function repository() {
-  const invoke = (args: string[]) => command(["git", "-c", "core.hooksPath=/dev/null", "-c", "commit.gpgsign=false", ...args]);
+  const invoke = (args: string[]) =>
+    command(["git", "-c", "core.hooksPath=/dev/null", "-c", "commit.gpgsign=false", ...args]);
   expect((await invoke(["init", "-q"])).exitCode).toBe(0);
   expect((await invoke(["config", "user.name", "Fixture"])).exitCode).toBe(0);
   expect((await invoke(["config", "user.email", "fixture@example.invalid"])).exitCode).toBe(0);
@@ -89,16 +116,21 @@ test("refuses existing evidence before executing the check", async () => {
 
 test("refuses an invalid output parent before executing the check", async () => {
   const marker = join(root, "check-started");
-  const result = await run([process.execPath, "-e", `await Bun.write(${JSON.stringify(marker)}, "ran")`], join(root, "absent", "check.json"));
+  const result = await run(
+    [process.execPath, "-e", `await Bun.write(${JSON.stringify(marker)}, "ran")`],
+    join(root, "absent", "check.json"),
+  );
   expect(result.exitCode).not.toBe(0);
   expect(existsSync(marker)).toBe(false);
 });
 
 test("concurrent writers reserve evidence before starting either check", async () => {
   const marker = join(root, "executions.txt");
-  const check = script(`import { appendFileSync } from "node:fs"; appendFileSync(${JSON.stringify(marker)}, "ran\\n"); await Bun.sleep(100);`);
+  const check = script(
+    `import { appendFileSync } from "node:fs"; appendFileSync(${JSON.stringify(marker)}, "ran\\n"); await Bun.sleep(100);`,
+  );
   const results = await Promise.all([run([process.execPath, check]), run([process.execPath, check])]);
-  expect(results.map(result => result.exitCode).sort()).toEqual([0, 1]);
+  expect(results.map((result) => result.exitCode).sort()).toEqual([0, 1]);
   expect(readFileSync(marker, "utf8")).toBe("ran\n");
   expect(record().recordState).toBe("finished");
   expect(record().result.exitCode).toBe(0);
@@ -129,7 +161,13 @@ test("records a child signal without misreporting a parent cancellation", async 
 
 test("passes spaces and shell syntax as literal argv", async () => {
   const injected = join(root, "injected");
-  const values = ["two words", `$(touch ${injected})`, `; touch ${injected}`, `\`touch ${injected}\``, '"literal quotes"'];
+  const values = [
+    "two words",
+    `$(touch ${injected})`,
+    `; touch ${injected}`,
+    `\`touch ${injected}\``,
+    '"literal quotes"',
+  ];
   const captured = join(root, "argv.json");
   const check = script(`await Bun.write(${JSON.stringify(captured)}, JSON.stringify(Bun.argv.slice(2)));`);
   const argv = [process.execPath, check, ...values];
@@ -155,7 +193,10 @@ test("records changed dirty contents even when status stays modified", async () 
   await repository();
   const source = join(cwd, "source.txt");
   writeFileSync(source, "first dirty state\n");
-  expect((await run([process.execPath, "-e", `await Bun.write(${JSON.stringify(source)}, "second dirty state\\n")`])).exitCode).toBe(0);
+  expect(
+    (await run([process.execPath, "-e", `await Bun.write(${JSON.stringify(source)}, "second dirty state\\n")`]))
+      .exitCode,
+  ).toBe(0);
   const evidence = record();
   expect(evidence.gitBefore.dirty).toBe(true);
   expect(evidence.gitAfter.dirty).toBe(true);
@@ -165,7 +206,17 @@ test("records changed dirty contents even when status stays modified", async () 
 
 test("records HEAD drift caused by the supplied command", async () => {
   await repository();
-  const result = await run(["git", "-c", "core.hooksPath=/dev/null", "-c", "commit.gpgsign=false", "commit", "--allow-empty", "-qm", "next revision"]);
+  const result = await run([
+    "git",
+    "-c",
+    "core.hooksPath=/dev/null",
+    "-c",
+    "commit.gpgsign=false",
+    "commit",
+    "--allow-empty",
+    "-qm",
+    "next revision",
+  ]);
   expect(result.exitCode).toBe(0);
   const evidence = record();
   expect(evidence.gitAfter.head).not.toBe(evidence.gitBefore.head);
@@ -179,17 +230,41 @@ async function waitFor(predicate: () => boolean) {
   if (!predicate()) throw new Error("Fixture did not reach its expected state.");
 }
 const alive = (pid: number) => {
-  try { process.kill(pid, 0); return true; } catch { return false; }
+  try {
+    process.kill(pid, 0);
+    return true;
+  } catch {
+    return false;
+  }
 };
 function hangingCheck() {
   const marker = join(root, "child.pid");
-  const fixture = script(`process.on("SIGTERM", () => {}); await Bun.write(${JSON.stringify(marker)}, String(process.pid)); setInterval(() => {}, 1000);`);
+  const fixture = script(
+    `process.on("SIGTERM", () => {}); await Bun.write(${JSON.stringify(marker)}, String(process.pid)); setInterval(() => {}, 1000);`,
+  );
   return { marker, fixture };
 }
 function startHanging(fixture: string, timeoutMs?: string) {
-  return Bun.spawn([process.execPath, runner, "--cwd", cwd, "--out", output, ...(timeoutMs === undefined ? [] : ["--timeout-ms", timeoutMs]), "--", process.execPath, fixture], {
-    stdout: "ignore", stderr: "ignore", timeout: 4000, killSignal: "SIGKILL",
-  });
+  return Bun.spawn(
+    [
+      process.execPath,
+      runner,
+      "--cwd",
+      cwd,
+      "--out",
+      output,
+      ...(timeoutMs === undefined ? [] : ["--timeout-ms", timeoutMs]),
+      "--",
+      process.execPath,
+      fixture,
+    ],
+    {
+      stdout: "ignore",
+      stderr: "ignore",
+      timeout: 4000,
+      killSignal: "SIGKILL",
+    },
+  );
 }
 
 test("bounds an unresponsive direct child and records timeout separately from its actual exit", async () => {
@@ -208,7 +283,9 @@ test("bounds an unresponsive direct child and records timeout separately from it
     expect(evidence.recordState).toBe("finished");
     expect(alive(pid)).toBe(false);
     ownedPids.delete(pid);
-  } finally { if (child.exitCode === null) child.kill("SIGKILL"); }
+  } finally {
+    if (child.exitCode === null) child.kill("SIGKILL");
+  }
 });
 
 test("parent SIGTERM/SIGINT writes interrupted evidence and stops a child that ignores SIGTERM", async () => {
@@ -231,7 +308,9 @@ test("parent SIGTERM/SIGINT writes interrupted evidence and stops a child that i
       expect(evidence.gitAfter.kind).toBe("unavailable");
       expect(alive(pid)).toBe(false);
       ownedPids.delete(pid);
-    } finally { if (child.exitCode === null) child.kill("SIGKILL"); }
+    } finally {
+      if (child.exitCode === null) child.kill("SIGKILL");
+    }
   }
 });
 
@@ -264,5 +343,7 @@ test("hard-killing the runner leaves incomplete evidence without claiming a stop
     expect(record().recordState).toBe("incomplete");
     expect(record().result).toBeNull();
     expect(alive(pid)).toBe(true);
-  } finally { if (child.exitCode === null) child.kill("SIGKILL"); }
+  } finally {
+    if (child.exitCode === null) child.kill("SIGKILL");
+  }
 });
