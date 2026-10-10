@@ -43,6 +43,7 @@ Choose the next missing result, then read the relevant domain below. Names ident
 | Agreed behavior and acceptance criteria | `write-spec` | A spec, PRD, or structured issue defines requirements; it is not automatically a phase plan or task queue |
 | Domain rules and boundaries | `model-domain` | Clarify business concepts before encoding them |
 | Stack and technical structure | `design-architecture` | App/workload constraints, C4, data/services, hosting and conditional AI architecture share one design owner |
+| A scoped security threat model | `model-threats` | Trace plausible abuse paths, existing controls and mitigation checks; code defects and incidents have separate owners |
 | A feasibility experiment | `build-prototype` | Test an uncertainty; UI or technical prototypes stay bounded |
 | Deliverable milestones and their order | `plan-phases` | Show prerequisites, parallel conditions and phase exits; skip for work that needs no milestones |
 | Executable tasks | `create-tasks` | Turn a spec or selected phase into owned work with checks and dependencies; it creates work items, not new skills |
@@ -58,6 +59,7 @@ Choose the next missing result, then read the relevant domain below. Names ident
 | A repeatable guard for a recurring mistake | `automate-code-checks` | Calibrate failures and valid passes using existing enforcement |
 | Consolidated project documentation | `consolidate-docs` | Reconcile authoritative content and repair links |
 | Independent code findings | `review-code` | Review a change, feature, data layer, or codebase against evidence |
+| Resolution of supplied review findings | `address-review-feedback` | Check current evidence, correct supported findings when authorized and retain dispositions; a new audit belongs to review-code |
 | Proof that a change meets its criteria | `verify-change` | Independently exercise behavior or inspect changed documents/plans; no mandatory duplicate pass when valid evidence already exists |
 | A delivered target | `ship-change` | Reach the authorized PR, release, deployment, or handover |
 | Configured monitoring and actionable alerts | `configure-monitoring` | Verify scoped signals, firing, delivery and recovery; distinguish local tests from live verification and ongoing operation |

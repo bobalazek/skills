@@ -29,7 +29,7 @@ For structure, assign ownership of behavior and state, define the interfaces con
 
 Before decomposition, map responsibilities to folder/package ownership, dependency directions and public boundaries. Follow written repository conventions, then maintained surrounding code; use language/framework practices only where neither settles the choice. Resolve consequential conflicts without inventing layers or a speculative file tree.
 
-Load [cost and obligation checks](references/cost-and-obligations.checklist.md) when these constrain the choice. For an AI capability or agent workflow, load [AI architecture](references/ai-architecture.checklist.md) for access boundaries, orchestration, evaluation, cost, and recovery.
+Load [cost and obligation checks](references/cost-and-obligations.checklist.md) when these constrain the choice. Use `model-threats` when a dedicated threat model is needed, carrying the system boundaries and accepted security constraints; otherwise keep relevant threat/control checks in this design. For an AI capability or agent workflow, load [AI architecture](references/ai-architecture.checklist.md) for access boundaries, orchestration, evaluation, cost, and recovery.
 
 ## Record and verify the design
 

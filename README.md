@@ -1,6 +1,6 @@
 # Skills
 
-63 skills for developing software, evaluating products, coordinating work, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
+65 skills for developing software, evaluating products, coordinating work, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
 
 Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear. The collection is under active development; [releases](https://github.com/bobalazek/skills/releases) record reviewed snapshots and evaluation limits.
 
@@ -35,7 +35,7 @@ From a checkout, you can also ask a filesystem-capable agent to use `skills/engi
 
 | Catalog | What it covers |
 | --- | --- |
-| [Engineering · 26 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, monitor, and maintain it |
+| [Engineering · 28 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, monitor, and maintain it |
 | [Product · 6 skills](docs/domains/product.md) | Evaluate ideas, synthesize feedback, compare alternatives, define success measures, plan experiments, and analyze product usage |
 | [Productivity · 12 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose and coordinate work, route requests, improve prompts and team workflows, report status, and transfer context |
 | [UI/UX · 8 skills](docs/domains/ui-ux.md) | Capture design references, map flows and navigation, wireframe and design screens, write interface messages, build shared systems, review interfaces, and test usability |
@@ -65,6 +65,8 @@ Each catalog lists skills by category, with their outputs and boundaries.
 | Add visual detail to settled screen structure | [design-interface](skills/ui-ux/design-interface/SKILL.md) |
 | Choose which supplied work fits the available capacity | [prioritize-work](skills/productivity/prioritize-work/SKILL.md) |
 | Establish the cause of a known failure | [diagnose-issue](skills/engineering/diagnose-issue/SKILL.md) |
+| Model security threats before implementation | [model-threats](skills/engineering/model-threats/SKILL.md) |
+| Address supplied review findings | [address-review-feedback](skills/engineering/address-review-feedback/SKILL.md) |
 | Review code for evidenced defects | [review-code](skills/engineering/review-code/SKILL.md) |
 | Prepare or publish a GitHub release and its notes | [ship-change](skills/engineering/ship-change/SKILL.md) |
 
@@ -142,7 +144,7 @@ The [workflow guide](docs/workflows.md) covers [product discovery](docs/workflow
 
 ## Working on the collection
 
-See the [maintainer guide](docs/authoring.md) for package conventions, evaluation, deprecation and releases. With Bun 1.3.9 or newer, run `bun run check` and `bun test`. There are no package dependencies to install.
+See the [maintainer guide](docs/authoring.md) for package conventions, evaluation, deprecation and releases. With Bun 1.3.9 or newer, run `bun install --frozen-lockfile`, `bun run check` and `bun test`. The pinned development tools provide type, lint and format checks; installed skill packages do not require those maintainer dependencies. See [evaluation](docs/evaluation.md) for explicitly invoked behavioral trials.
 
 ## Acknowledgments
 

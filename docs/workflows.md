@@ -443,6 +443,10 @@ A worker may not receive the parent conversation. Give it a bounded question or 
 
 ## Review and recheck
 
+Use `model-threats` when the missing result is a security model of the system or design: assets, trust boundaries, plausible abuse paths, existing protections and mitigation checks. Reuse architecture and local security conventions; a threat-modeling request does not authorize an active scan or implementation. Carry accepted mitigations into the existing requirements and task path.
+
+When feedback already exists, `address-review-feedback` owns its resolution. Check each finding against current code and accepted requirements, preserve supported disagreements and stale/already-addressed dispositions, then implement authorized corrections and recheck them. Reviewing creates findings; addressing feedback resolves supplied findings.
+
 Use the owning skill’s permitted depth. Simple routing, explanations, brainstorming and wording-only drafts can finish with direct checks where explicitly allowed. User/project requirements and consequential acceptance still require independent assessment; this exception does not waive code or delivery gates. The workflow below applies when review is required.
 
 A large review can use stages without creating another project phase plan: establish scope and a fixed candidate, inspect distinct risks, reconcile findings across boundaries, then independently recheck authorized fixes. A small review can do this with one independent reviewer. Select extra review branches only for risks that need separate coverage.
@@ -505,7 +509,7 @@ Before context loss or an actual session transfer, condense those facts into the
 | Ready tasks | `start-project` if the selected task establishes a missing foundation; otherwise `implement-change` | One task or an agreed ready batch, ownership/isolation and accepted dependencies |
 | Implemented change with proof missing | `verify-change` | Candidate revision, relevant baseline, criteria and check access |
 | Verified change | `review-code` and/or `review-interface` according to risk | Fixed candidate and valid evidence; reuse an already completed independent review |
-| Review findings | `diagnose-issue` for an uncertain failure; `implement-change` for selected repairs | Evidence, affected criteria and fix authority; independently recheck the result |
+| Review findings | `address-review-feedback` | Original findings, reviewed/current revisions and fix authority; reconcile dispositions and independently recheck supported corrections |
 | Reviewed change and delivery authority | `ship-change`; `explain-pr` only when an explanation is needed | Final candidate, observed proof, recovery limits and requested target |
 | Delivery observed | `diagnose-issue` for failures, `configure-monitoring` for requested coverage changes, `find-improvements` for evidenced opportunities, or finish | Actual target signals, operating constraints and existing decisions/learnings; do not restart settled planning |
 | Monitoring configured | `verify-change` for missing independent proof; `ship-change` for a requested delivery target; otherwise finish | Exact configuration/environment, signal and route evidence, owner, recovery action and live verification gaps |

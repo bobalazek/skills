@@ -1,6 +1,6 @@
 # Engineering
 
-This domain covers the software lifecycle, including requirements, architecture, coding, quality, delivery, monitoring, and maintenance. Its 26 packages are under active development; links open their actual instructions. Use the narrowest result that matches the request. UI/UX owns user journeys and interface decisions; productivity owns idea exploration and decision support.
+This domain covers the software lifecycle, including requirements, architecture, coding, quality, delivery, monitoring, and maintenance. Its 28 packages are under active development; links open their actual instructions. Use the narrowest result that matches the request. UI/UX owns user journeys and interface decisions; productivity owns idea exploration and decision support.
 
 ## Categories and skills
 
@@ -14,6 +14,7 @@ This domain covers the software lifecycle, including requirements, architecture,
 | Specification | Requirements and behavior | [write-spec](../../skills/engineering/write-spec/SKILL.md) | Agreed requirements, scenarios, constraints, non-goals, and observable criteria in a spec, PRD, or structured issue |
 | Domain design | Language and rules | [model-domain](../../skills/engineering/model-domain/SKILL.md) | Consistent concepts, relationships, valid states, invariants, and representative scenarios |
 | Architecture | Technology and structure | [design-architecture](../../skills/engineering/design-architecture/SKILL.md) | Selected stack/technical choices, boundaries, state ownership, contracts, failure behavior, and trade-offs |
+| Security design | Threat modeling | [model-threats](../../skills/engineering/model-threats/SKILL.md) | Traceable threats, existing controls, mitigation decisions and observable verification criteria |
 | Planning | Milestones | [plan-phases](../../skills/engineering/plan-phases/SKILL.md) | Outcome-based phases with inputs, outputs, dependencies, and exit evidence |
 | Planning | Executable work | [create-tasks](../../skills/engineering/create-tasks/SKILL.md) | A dependency graph of bounded tasks with ownership, acceptance, verification, and readiness |
 | Planning | System or data transition | [plan-migration](../../skills/engineering/plan-migration/SKILL.md) | An ordered compatibility, transfer, cutover, recovery, and retirement plan for an accepted target |
@@ -28,6 +29,7 @@ This domain covers the software lifecycle, including requirements, architecture,
 | Maintenance | Measured performance | [improve-performance](../../skills/engineering/improve-performance/SKILL.md) | A demonstrated bottleneck and, when requested, an improvement measured against comparable behavior |
 | Quality | Automated prevention | [automate-code-checks](../../skills/engineering/automate-code-checks/SKILL.md) | An accepted rule enforced by the smallest reliable check, with invalid/valid cases and an explicit adoption path |
 | Quality | Change or codebase review | [review-code](../../skills/engineering/review-code/SKILL.md) | Prioritized evidenced findings and explicit reviewed/unchecked coverage |
+| Quality | Review resolution | [address-review-feedback](../../skills/engineering/address-review-feedback/SKILL.md) | Evidence-backed dispositions of supplied findings, authorized corrections and affected rechecks |
 | Quality | Acceptance and evidence | [verify-change](../../skills/engineering/verify-change/SKILL.md) | Observed acceptance results with relevant screenshots, comparable measurements, or check output, ready for review or delivery |
 | Delivery | PR, release, deploy, or handover | [ship-change](../../skills/engineering/ship-change/SKILL.md) | The authorized target reached and verified through repository automation |
 | Operations | Monitoring and alerting | [configure-monitoring](../../skills/engineering/configure-monitoring/SKILL.md) | Scoped signals and actionable alert routes with observed firing, delivery and recovery evidence, distinguishing local tests from live verification |
@@ -47,6 +49,8 @@ This domain covers the software lifecycle, including requirements, architecture,
 | Discovery or performance investigation | Discovery identifies leads and missing measurements; performance work profiles a representative path and evaluates comparable results |
 | Architecture, migration, or delivery phases | Architecture selects a target; migration plans a safe transition from current state; phases organize the overall delivery, including that transition |
 | Explain a PR or review it | Explanation communicates established intent and behavior; review evaluates correctness and relevant risks |
+| Model threats or review code | Threat modeling identifies plausible abuse paths and needed controls in a system/design; code review establishes implementation defects and risks |
+| Review or address feedback | Review creates an assessment; addressing feedback reconciles supplied findings with current code and performs authorized corrections |
 | Verify or review a change | Verification demonstrates criteria with observed checks; review investigates defects and risks using that evidence and the code. Documentation and plan changes need scenario/consistency checks, not an unrelated test suite |
 | Monitoring, diagnosis, or delivery | Monitoring configures detection and alert response paths; diagnosis establishes an observed failure's cause; delivery reaches a requested target and checks available signals. None establishes a continuous watch |
 

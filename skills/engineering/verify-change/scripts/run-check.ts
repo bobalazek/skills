@@ -34,7 +34,8 @@ function options(args: string[]) {
     else if (flag === "--out") output = value;
     else {
       timeoutMs = Number(value);
-      if (!/^[1-9]\d*$/.test(value) || !Number.isSafeInteger(timeoutMs) || timeoutMs > 2_147_483_647) throw new Error("--timeout-ms must be an integer from 1 to 2147483647.");
+      if (!/^[1-9]\d*$/.test(value) || !Number.isSafeInteger(timeoutMs) || timeoutMs > 2_147_483_647)
+        throw new Error("--timeout-ms must be an integer from 1 to 2147483647.");
     }
   }
   if (!output) throw new Error("Supply --out <new.json>.");
@@ -44,11 +45,17 @@ function options(args: string[]) {
 async function git(cwd: string, args: string[], signal: AbortSignal) {
   try {
     const child = Bun.spawn(["git", "--no-optional-locks", "-c", "core.fsmonitor=false", "-C", cwd, ...args], {
-      stdin: "ignore", stdout: "pipe", stderr: "pipe",
-      timeout: 5000, killSignal: "SIGKILL", signal,
+      stdin: "ignore",
+      stdout: "pipe",
+      stderr: "pipe",
+      timeout: 5000,
+      killSignal: "SIGKILL",
+      signal,
     });
     const [stdout, stderr, exitCode] = await Promise.all([
-      new Response(child.stdout).text(), new Response(child.stderr).text(), child.exited,
+      new Response(child.stdout).text(),
+      new Response(child.stderr).text(),
+      child.exited,
     ]);
     return { stdout, error: exitCode === 0 ? null : stderr.trim() || `git exited ${exitCode}` };
   } catch (error) {
@@ -63,7 +70,8 @@ async function gitState(cwd: string, signal: AbortSignal) {
   const status = await git(cwd, ["status", "--porcelain=v1", "--untracked-files=all"], signal);
   const worktree = await git(cwd, ["diff", "--no-ext-diff", "--no-textconv", "--binary"], signal);
   const staged = await git(cwd, ["diff", "--cached", "--no-ext-diff", "--no-textconv", "--binary"], signal);
-  const digest = (result: Awaited<ReturnType<typeof git>>) => result.error ? null : createHash("sha256").update(result.stdout).digest("hex");
+  const digest = (result: Awaited<ReturnType<typeof git>>) =>
+    result.error ? null : createHash("sha256").update(result.stdout).digest("hex");
   return {
     kind: "git",
     root: root.stdout.trim(),
@@ -99,7 +107,12 @@ async function main() {
   process.on("SIGTERM", onTerm);
   let exitCode = 1;
   try {
-    const pending = { recordState: "incomplete", command: { argv: selected.argv, cwd }, timeoutMs: selected.timeoutMs ?? null, result: null };
+    const pending = {
+      recordState: "incomplete",
+      command: { argv: selected.argv, cwd },
+      timeoutMs: selected.timeoutMs ?? null,
+      result: null,
+    };
     await output.writeFile(JSON.stringify(pending, null, 2) + "\n");
     const before = await gitState(cwd, cancellation.signal);
     const startedAt = new Date().toISOString();
@@ -111,7 +124,14 @@ async function main() {
     try {
       if (cancellation.signal.aborted) result = { exitCode: null, signal: null, launchError: null };
       else {
-        const child = Bun.spawn(selected.argv, { cwd, stdin: "inherit", stdout: "inherit", stderr: "inherit", signal, killSignal: "SIGKILL" });
+        const child = Bun.spawn(selected.argv, {
+          cwd,
+          stdin: "inherit",
+          stdout: "inherit",
+          stderr: "inherit",
+          signal,
+          killSignal: "SIGKILL",
+        });
         childPid = child.pid;
         const code = await child.exited;
         result = { exitCode: code, signal: child.signalCode, launchError: null };
@@ -127,16 +147,28 @@ async function main() {
     const timedOut = timeout?.aborted ?? false;
     const after = await gitState(cwd, cancellation.signal);
     await output.truncate(0);
-    await output.write(JSON.stringify({
-      recordState: "finished", childPid,
-      command: { argv: selected.argv, cwd },
-      startedAt, endedAt, durationMs,
-      result,
-      termination: { timeoutMs: selected.timeoutMs ?? null, timedOut, interruptionSignal },
-      gitBefore: before,
-      gitAfter: after,
-      limits: "Execution record only, not acceptance or reviewed-commit proof. Git observations are separate snapshots, each Git subprocess limited to 5 seconds; dirty/untracked contents, ignored files, submodules, and intermediate changes are not fully attested. An output file inside the worktree participates in its dirty state. No command output or environment values are captured. Timeout/cancellation kills the direct child with SIGKILL, without graceful cleanup or descendant guarantees. Hard-killing the runner can leave an incomplete/truncated record and a live child.",
-    }, null, 2) + "\n", 0, "utf8");
+    await output.write(
+      JSON.stringify(
+        {
+          recordState: "finished",
+          childPid,
+          command: { argv: selected.argv, cwd },
+          startedAt,
+          endedAt,
+          durationMs,
+          result,
+          termination: { timeoutMs: selected.timeoutMs ?? null, timedOut, interruptionSignal },
+          gitBefore: before,
+          gitAfter: after,
+          limits:
+            "Execution record only, not acceptance or reviewed-commit proof. Git observations are separate snapshots, each Git subprocess limited to 5 seconds; dirty/untracked contents, ignored files, submodules, and intermediate changes are not fully attested. An output file inside the worktree participates in its dirty state. No command output or environment values are captured. Timeout/cancellation kills the direct child with SIGKILL, without graceful cleanup or descendant guarantees. Hard-killing the runner can leave an incomplete/truncated record and a live child.",
+        },
+        null,
+        2,
+      ) + "\n",
+      0,
+      "utf8",
+    );
     if (interruptionSignal) exitCode = interruptionSignal === "SIGINT" ? 130 : 143;
     else if (timedOut) exitCode = 124;
     console.error(`Check record: ${selected.output}`);

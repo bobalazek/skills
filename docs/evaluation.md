@@ -17,6 +17,30 @@ The candidate-specific expectations describe the accepted new behavior; baseline
 
 No model calls run in ordinary CI. Invoke behavioral trials deliberately using the existing authorized host; keep raw transcripts outside the repository and put a redacted result summary in the PR. The portable `evaluate-skill` package also works with another project's cases and execution tools.
 
+## Repeatable local runner
+
+After `bun install --frozen-lockfile`, select cases explicitly:
+
+```bash
+bun run eval --candidate /absolute/path/to/current-checkout --baseline /absolute/path/to/previous-checkout --cases implicit-model-threats,implicit-address-feedback --output /tmp/skills-eval-new
+```
+
+The runner snapshots complete packages from both sources, records their content digests and Git observations, checks project-local Codex discovery, and creates a new disposable Git project for every variant and attempt. A dirty source is identified by its package digest and status, never represented as identical to its HEAD commit. `--fixtures <file>` selects another case file. `--repeat 1..3` defaults to one; `--timeout 1..600` bounds each model call in seconds and defaults to 180. A run allows at most 60 top-level CLI trials. A trial may make multiple model/tool calls or delegate work; this count and the timeout are not token or spending caps. `--model <id>` preserves an explicitly chosen model; otherwise the host default applies and the actual model is unknown unless independently exposed. Codex CLI must already be installed and authenticated. The runner does not install clients, configure credentials or publish anything.
+
+Explicit cases name their owning skill when present; a new skill absent from the baseline uses the available host without that package. An `invocation: "implicit"` case supplies the ordinary request without a skill name. `installedSkills` limits the packages for standalone/missing-sibling cases; omitted means all packages in that variant. `shouldLoad` and `shouldNotLoad` are evaluator criteria, never prompt instructions. Match sibling availability across variants except where the source change or case intentionally tests it. Inspect discovery output for global copies that could contaminate a baseline.
+
+The private output contains `summary.json`, source snapshots, separate `criteria.json`, per-attempt prompts, complete stdout/stderr, command evidence, responses and a `comparison.md` ready for assessment. Expected results are outside the project supplied to the executor. Every attempt is retained, including timeout, launch or malformed-trace failures; failed attempts do not disappear into retries. Process exit and a complete trace establish execution only. Criterion outcomes and independent assessment remain **not checked** until an evaluator inspects the raw evidence. Positive skill-read observations require a successful command output containing the installed entrypoint body. Partial reads and other tool formats need manual trace inspection; no observed read does not automatically establish non-activation.
+
+Use the existing `verify-change` command helper for bounded execution. Its cancellation and descendant-cleanup limits still apply: SIGINT/SIGTERM stop the direct command; hard termination can leave incomplete evidence or a live descendant. Model calls use Codex's read-only sandbox and never-approve policy plus fixture-specific authority. This does not isolate global skills, inherited instructions, connected tools or credentials. Run only synthetic local read-only cases on a suitable host; do not treat the prompt or sandbox as a guarantee that a connected service cannot be called. Raw discovery and traces can include private host context; inspect and redact before sharing. Output must be a new directory outside both checkouts.
+
+Resume cases replay a supplied handoff and current files in a fresh session; they test whether the skill reconciles state and authority, not the client's live-session recovery. Runner timeout/cancellation tests use local deterministic child processes. The first runner supports Codex; installation/discovery checks for another client do not establish that client's behavioral compatibility.
+
+### Coverage and design sources
+
+Keep direct-use quality, automatic activation and recovery boundaries separate. Include nearby requests that should use another skill and simple requests that need none. Add repeated or held-out prompts when optimizing descriptions; avoid tuning and claiming reliability on the same small set. Grade static invariants first, then decisions and claims against raw traces.
+
+This follows the [Agent Skills evaluation](https://agentskills.io/skill-creation/evaluating-skills) and [activation guidance](https://agentskills.io/skill-creation/optimizing-descriptions). [Anthropic's skill creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator) provides a comparable baseline/trial and trigger-evaluation workflow. The collection keeps its existing TypeScript/Bun tools, bounded execution and independent assessment contract. These sources informed the design; they are not comparative performance evidence.
+
 ## Installation and discovery smoke check
 
 Run the automated consumer check against a clean checkout of the expected source. The output directory must be new and outside that checkout:

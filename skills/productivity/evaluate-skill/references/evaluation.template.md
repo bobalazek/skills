@@ -7,6 +7,7 @@ Reuse the project's format. Keep expected behavior with the evaluator, outside t
 - Accepted outcome, candidate and baseline source identities.
 - Host/client, model/settings, available tools, instructions and permissions; unknowns and differences.
 - Fixture identity, allowed effects and timeout/repeat bound.
+- Explicit invocation or automatic selection; expected and actually observed skill loads, with trace evidence. For recovery cases, identify a handoff replay versus a real resumed client session.
 
 ## Per-case evidence
 

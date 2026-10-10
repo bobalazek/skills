@@ -1,0 +1,4 @@
+interface:
+  display_name: "Address review feedback"
+  short_description: "Resolve review findings with checked corrections"
+  default_prompt: "Use $address-review-feedback to assess these findings and implement the supported corrections."

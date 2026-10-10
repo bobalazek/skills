@@ -3,11 +3,20 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "bun scripts/check.ts",
+    "check": "bun run check:skills && bun run typecheck && bun run lint",
     "test": "bun test",
-    "check:install": "bun scripts/check-install.ts"
+    "check:install": "bun scripts/check-install.ts",
+    "check:skills": "bun scripts/check.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check --error-on-warnings",
+    "eval": "bun scripts/run-evals.ts"
   },
   "engines": {
     "bun": ">=1.3.9"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/bun": "1.3.9",
+    "typescript": "7.0.2"
   }
 }

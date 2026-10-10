@@ -7,7 +7,7 @@ description: "Implement an agreed feature, fix, refactor, or dependency-ready ta
 
 ## Use this skill
 
-Deliver working code for an agreed feature, fix, refactor or ready task batch. Reuse accepted tasks, specifications, design and valid proof; a clear local fix needs no new spec, phase plan or interview. Use `diagnose-issue` for an unknown cause, `write-spec` for unsettled behavior and `create-tasks` when decomposition is the missing result.
+Deliver working code for an agreed feature, fix, refactor or ready task batch. Reuse accepted tasks, specifications, design and valid proof; a clear local fix needs no new spec, phase plan or interview. Use `address-review-feedback` to reconcile supplied review findings when that is the requested result, `diagnose-issue` for an unknown cause, `write-spec` for unsettled behavior and `create-tasks` when decomposition is the missing result.
 
 ## Establish the working contract
 
