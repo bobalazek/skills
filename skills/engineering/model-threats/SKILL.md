@@ -19,13 +19,13 @@ Map who can influence each relevant input or boundary, what authority they start
 
 Use the project's threat-modeling method. If none exists, walk each relevant boundary using identity spoofing, tampering, repudiation, disclosure, availability and privilege escalation as prompts. Include privacy or AI-specific concerns only where the data and behavior warrant them. Consult current primary guidance for version-specific controls; a named methodology or generic vulnerability list is not evidence of an applicable threat.
 
-Ground each threat in a plausible actor, prerequisite and path to an asset or invariant. Distinguish observed defects, plausible design threats, unverified controls and accepted residual risks. Existing protections are part of the model; test their coverage before prescribing another mechanism. Threat modeling does not authorize active exploitation, remote scanning or production changes.
+Ground each threat in a plausible actor, prerequisite and path to an asset or invariant. Distinguish observed defects, plausible design threats, unverified controls and accepted residual risks. Existing protections are part of the model; test their coverage before prescribing another mechanism. Do not infer undocumented protections from the presence of another control. Threat modeling does not authorize active exploitation, remote scanning or production changes.
 
 ## Decide responses and checks
 
 Prioritize by credible impact, feasibility and exposure; avoid invented numeric precision. For each material threat, identify an existing protection, a proposed mitigation, removal of the risky behavior, or an unresolved risk decision with its owner. Do not accept risk on someone else's behalf or present a proposed control as deployed.
 
-Give mitigations an observable verification criterion, including the rejected abuse path and preserved legitimate behavior. Prefer controls at the actual enforcement boundary; prose, client-side checks or a diagram do not establish authorization. Keep unresolved assumptions and recovery limits visible. Use [the threat-model template](references/threat-model.template.md) when the project has no suitable format.
+For each mitigation, specify both an abuse rejection check and a successful legitimate-use check. Check that added prerequisites preserve accepted workflows; unsettled tradeoffs need an owner decision. Prefer controls at the actual enforcement boundary; prose, client-side checks or a diagram do not establish authorization. Keep unresolved assumptions and recovery limits visible. Use [the threat-model template](references/threat-model.template.md) when the project has no suitable format.
 
 ## Verify and deliver
 

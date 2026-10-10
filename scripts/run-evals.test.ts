@@ -129,7 +129,7 @@ test("rejects source-contained and aliased output or existing evidence before la
   expect(readFileSync(join(existing, "retained"), "utf8")).toBe("untouched");
 });
 
-test("runs a full comparison against a fake host, preserving failed attempts without claiming behavior", async () => {
+test("runs comparison and verification modes, preserving failures and cancellation without claiming behavior", async () => {
   const source = join(root, "source");
   const skill = join(source, "skills/engineering/explain-codebase");
   mkdirSync(skill, { recursive: true });
@@ -185,6 +185,7 @@ console.log(JSON.stringify({type:"turn.completed",usage:{output_tokens:3}}));
   expect(await child.exited, error).toBe(1);
   const report = JSON.parse(readFileSync(join(output, "summary.json"), "utf8"));
   expect(report.state).toBe("failed");
+  expect(report.mode).toBe("comparison");
   expect(report.assessment).toBe("not checked");
   expect(report.attempts.map((item: { state: string }) => item.state)).toEqual([
     "failed",
@@ -195,6 +196,37 @@ console.log(JSON.stringify({type:"turn.completed",usage:{output_tokens:3}}));
   expect(readFileSync(join(output, "sample-candidate-1/request.txt"), "utf8")).not.toContain("PRIVATE-RUBRIC");
   expect(existsSync(join(output, "sample-candidate-1/project/criteria.json"))).toBe(false);
   expect(readFileSync(join(output, "comparison.md"), "utf8")).toContain("Not checked");
+  const verification = join(root, "verification");
+  const candidateOnly = Bun.spawn(
+    [
+      process.execPath,
+      resolve(import.meta.dir, "run-evals.ts"),
+      "--candidate",
+      source,
+      "--fixtures",
+      fixtures,
+      "--cases",
+      "failure,sample",
+      "--repeat",
+      "2",
+      "--output",
+      verification,
+    ],
+    { env: { ...process.env, PATH: `${bin}:${process.env.PATH}` }, stdout: "ignore", stderr: "pipe" },
+  );
+  expect(await candidateOnly.exited, await new Response(candidateOnly.stderr).text()).toBe(1);
+  const verified = JSON.parse(readFileSync(join(verification, "summary.json"), "utf8"));
+  expect(verified.mode).toBe("verification");
+  expect(Object.keys(verified.sources)).toEqual(["candidate"]);
+  expect(verified.attempts.map((item: { variant: string }) => item.variant)).toEqual(Array(4).fill("candidate"));
+  expect(verified.attempts.map((item: { state: string }) => item.state)).toEqual([
+    "failed",
+    "failed",
+    "executed",
+    "executed",
+  ]);
+  expect(verified.assessment).toBe("not checked");
+  expect(existsSync(join(verification, "baseline-skills"))).toBe(false);
   for (const phase of ["discovery", "model"]) {
     const cancelled = join(root, `cancelled-${phase}`);
     const ready = join(root, `ready-${phase}.pid`);
@@ -241,4 +273,4 @@ console.log(JSON.stringify({type:"turn.completed",usage:{output_tokens:3}}));
       }
     }
   }
-});
+}, 15_000);
