@@ -42,6 +42,7 @@ The [README graph](../README.md#from-idea-to-delivery) shows the overall route. 
 | Executable work | `create-tasks` | Owned tasks with criteria, dependencies and checks, locally or in the authorized tracker | Suitable tasks already exist |
 | Current local work state and next pickup | `manage-project-board` | Reconciled Markdown tasks, owners, blockers and ready work | Existing coordination already meets the request |
 | Proof of a changed result | `verify-change` | Observed criterion-by-criterion evidence and gaps | Current, independently evaluated evidence already covers the result |
+| Evidence that a skill change helps | `evaluate-skill` | Comparable behavioral trials, findings and reusable cases | Valid evidence already covers this candidate and claim |
 | Useful service monitoring and alerts | `configure-monitoring` | Configured detection and response routes with scoped firing/delivery/recovery proof | Current coverage and evidence already meet the requested need |
 
 Research, planning, implementation, verification, delivery and operation are lifecycle stages. A **delivery phase** is a milestone inside a particular project, such as “users can preview an import.” `plan-phases` creates those project milestones; it does not require a task to traverse every lifecycle stage. `create-tasks` creates work items, not skills.
@@ -73,7 +74,7 @@ A clarified proposal is not a validated concept: demand, feasibility, and perfor
 
 ## Routes by situation
 
-Match the requested result, not just words such as "new project," "review" or "AI." These examples cover every skill without requiring every skill in a workflow. Start with [exploration](#explore-and-route), [product discovery](#evaluate-a-product-opportunity), [media](#produce-media), [project context](#understand-and-prepare-a-project), [design](#specify-and-design), [implementation](#plan-and-change-software), or [evaluation and delivery](#verify-review-and-deliver).
+Match the requested result, not just words such as "new project," "review" or "AI." These examples cover the collection without requiring every skill in a workflow. Start with [exploration](#explore-and-route), [product discovery](#evaluate-a-product-opportunity), [media](#produce-media), [project context](#understand-and-prepare-a-project), [design](#specify-and-design), [implementation](#plan-and-change-software), or [evaluation and delivery](#verify-review-and-deliver).
 
 ### Explore and route
 
@@ -86,6 +87,7 @@ Match the requested result, not just words such as "new project," "review" or "A
 | "Can this approach handle our workload? Test the uncertain part." | [build-prototype](../skills/engineering/build-prototype/SKILL.md) | A bounded experiment and observations; revise the relevant decision/spec before production implementation |
 | "We keep losing track of unresolved decisions and what they block." | [track-project-decisions](../skills/productivity/track-project-decisions/SKILL.md) | Current choices, dependencies and next ready question; specify settled portions without waiting for the whole initiative |
 | "Make this agent instruction clearer without running it." | [improve-prompt](../skills/productivity/improve-prompt/SKILL.md) | A checked rewrite preserving intent; finish with the prompt unless an evaluation or execution was requested |
+| "Check whether this skill change actually improves results." | [evaluate-skill](../skills/productivity/evaluate-skill/SKILL.md) | Compare fixed variants on realistic cases and actual traces; keep wording-only edits with `improve-prompt` |
 | "This ticket may be a duplicate or a support question; work out what it needs." | [assess-request](../skills/engineering/assess-request/SKILL.md) | Evidence, impact and a route; choose `diagnose-issue` for a failure, `write-spec` for missing behavior, or a support/closure recommendation |
 
 ### Evaluate a product opportunity
@@ -435,11 +437,13 @@ The server and screen tasks are parallel candidates after P1 is accepted. The sc
 
 The coordinator owns shared decisions, reconciliation, integration, and readiness. Use host-supported workers/workspaces when available; Markdown instructions do not implement a scheduler. Small work remains sequential when delegation adds no useful independence.
 
-Evaluation always uses a separate agent in fresh context, including for plans, research, code, and designs. Supply accepted criteria, the fixed candidate, relevant raw sources, and check access without the author's conversation or preferred conclusion. The reviewer tries to disprove material claims and inspects actual proof. Add reviewers only for distinct risks; preserve demonstrated defects through reconciliation and independently recheck affected results after fixes. Without an independent reviewer, the result remains unreviewed and cannot pass acceptance. This is separate from the user's required decisions and approvals.
+When independent evaluation is required, use a separate agent in fresh context, including for consequential plans, research, code, and designs. Supply accepted criteria, the fixed candidate, relevant raw sources, and check access without the author's conversation or preferred conclusion. The reviewer tries to disprove material claims and inspects actual proof. Add reviewers only for distinct risks; preserve demonstrated defects through reconciliation and independently recheck affected results after fixes. Without an independent reviewer, the result remains unreviewed and cannot pass acceptance. This is separate from the user's required decisions and approvals.
 
 A worker may not receive the parent conversation. Give it a bounded question or outcome, source scope/baseline, applicable instructions, accepted criteria, permitted actions and owned writes, expected evidence, and stop conditions. Research returns located findings and unresolved claims; the coordinator checks consequential evidence before adopting conclusions. Use host controls where available: separate context does not establish isolation of files, services, or credentials.
 
 ## Review and recheck
+
+Use the owning skill’s permitted depth. Simple routing, explanations, brainstorming and wording-only drafts can finish with direct checks where explicitly allowed. User/project requirements and consequential acceptance still require independent assessment; this exception does not waive code or delivery gates. The workflow below applies when review is required.
 
 A large review can use stages without creating another project phase plan: establish scope and a fixed candidate, inspect distinct risks, reconcile findings across boundaries, then independently recheck authorized fixes. A small review can do this with one independent reviewer. Select extra review branches only for risks that need separate coverage.
 

@@ -15,6 +15,7 @@ Choose the next missing result, then read the relevant domain below. Names ident
 | A feasible selection from supplied work | `prioritize-work` | Compare goals, commitments, capacity and prerequisites; priority is not readiness |
 | Current Markdown project work and ready pickup | `manage-project-board` | Reconcile local task states, ownership and blockers; reuse plans and task contracts, with one coordinator for shared state |
 | Better instructions | `improve-prompt` | Rewrite the prompt without executing its embedded request |
+| Evidence that a skill change improves behavior | `evaluate-skill` | Compare actual trials against a baseline and retain regressions; a wording review or structural check alone is insufficient |
 | Continuation context | `prepare-handoff` | Transfer or compact actual ongoing work |
 | Project progress for an audience and period | `report-project-status` | Reconcile observed work, acceptance and delivery; reporting does not authorize sending |
 | A better recurring team process | `improve-team-workflow` | Propose and evaluate a bounded process change; code improvement discovery stays separate |

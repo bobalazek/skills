@@ -1,6 +1,6 @@
 # Skills
 
-62 skills for developing software, evaluating products, coordinating work, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
+63 skills for developing software, evaluating products, coordinating work, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
 
 Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear. The collection is under active development; [releases](https://github.com/bobalazek/skills/releases) record reviewed snapshots and evaluation limits.
 
@@ -18,10 +18,10 @@ Inspect the install summary before confirming. Use `--skill '*'` for the whole c
 For a fixed release, use its tag instead of the default branch:
 
 ```bash
-bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.1.1 --skill choose-skill create-tasks verify-change --agent codex --copy
+bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.2.0 --skill choose-skill create-tasks verify-change --agent codex --copy
 ```
 
-`skills@1.7.0` pins the installer; `v0.1.1` pins the 62-skill release. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.1.1) for changes and evaluation limits. The catalogs below describe the default branch and may include changes made after this release. Earlier releases remain available.
+`skills@1.7.0` pins the installer; `v0.2.0` pins the 63-skill release. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.2.0) for changes and evaluation limits. The catalogs below describe the default branch and may include changes made after this release. Earlier releases remain available.
 
 In Codex, invoke an installed skill with its name and your task:
 
@@ -37,7 +37,7 @@ From a checkout, you can also ask a filesystem-capable agent to use `skills/engi
 | --- | --- |
 | [Engineering · 26 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, monitor, and maintain it |
 | [Product · 6 skills](docs/domains/product.md) | Evaluate ideas, synthesize feedback, compare alternatives, define success measures, plan experiments, and analyze product usage |
-| [Productivity · 11 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose and coordinate work, route requests, improve prompts and team workflows, report status, and transfer context |
+| [Productivity · 12 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose and coordinate work, route requests, improve prompts and team workflows, report status, and transfer context |
 | [UI/UX · 8 skills](docs/domains/ui-ux.md) | Capture design references, map flows and navigation, wireframe and design screens, write interface messages, build shared systems, review interfaces, and test usability |
 | [Content · 5 skills](docs/domains/content.md) | Define a writing voice, plan page content, write website copy and blog posts, and review prose for clarity and supported meaning |
 | [Media · 6 skills](docs/domains/media.md) | Create motion videos, edit recorded footage, record narration, capture product screens, build presentation decks and produce social carousels |
@@ -134,9 +134,9 @@ The [workflow guide](docs/workflows.md) covers [product discovery](docs/workflow
 
 **Do I need every skill or stage?** No. Install the skills you need. Each package is self-contained, loads relevant references as needed and recommends a follow-up only when another result is useful.
 
-**How are results checked?** Use observed proof appropriate to the task and an adversarial review from a separate agent in fresh context. PRs include proof and findings when opened. A host without independent agents can produce an unreviewed draft; required human approval remains separate.
+**How are results checked?** Use observed proof appropriate to the task. Simple routing, explanations, brainstorming and wording-only drafts can use direct checks where their skill permits it. Consequential acceptance, code changes and delivery retain independent review; PRs include proof and findings when opened. An unavailable required review leaves the result unreviewed. Use `evaluate-skill` to compare actual behavior and preserve regressions; required human approval remains separate.
 
-**Which clients were checked?** For the v0.1.1 release, installation and discovery were checked with skills CLI 1.7.0, OpenCode 1.18.31 and Codex CLI 0.162.1. These checks establish package delivery and metadata discovery for all 62 skills. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
+**Which clients were checked?** For the v0.2.0 release, installation and discovery were checked with skills CLI 1.7.0, OpenCode 1.18.31 and Codex CLI 0.162.1. These checks establish package delivery and metadata discovery for all 63 skills. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
 
 **How do I update?** Copied skills do not update themselves. Review changes and migration notes, preserve local edits, then rerun `add` with the chosen source/tag. Inspect the files and verify discovery again; record the selected version with the project.
 

@@ -29,7 +29,9 @@ For example, repeated record entry could call for better manual entry, CSV impor
 
 Return the options, their decisive trade-offs, a supported recommendation or unresolved choice, and the next useful check. Match the requested audience and depth, using the project's format when one exists. Update an authorized existing brief rather than creating a second summary.
 
-Check that each option fits the accepted constraints and that untested demand, access, performance or other premises have not become reasons to commit. Before acceptance, have a separate agent in fresh context challenge the comparison using the raw request, candidate, relevant sources and check access, without the author's conversation or preferred answer. Retain its returned reviewer/session identity, evaluated artifact or revision, findings and coverage. Reconcile defects and independently recheck affected conclusions after fixes. Without that assessment, report the result as unreviewed.
+Check that each option fits the accepted constraints and that untested demand, access, performance or other premises have not become reasons to commit. For a low-impact advisory answer or wording-only draft, verify the relevant sources and constraints directly; no delegation or separate review record is needed. Use the independent assessment below when the user or project requires it, when accepting a consequential decision, or when publishing or updating a durable shared artifact. This exception does not waive code, security, release or deployment gates. A larger word count alone does not require a deeper workflow. Never claim independent review without an actual returned assessment.
+
+When required, have a separate agent in fresh context challenge the comparison using the raw request, candidate, relevant sources and check access, without the author's conversation or preferred answer. Retain its returned reviewer/session identity, evaluated artifact or revision, findings and coverage. Reconcile defects and independently recheck affected conclusions after fixes. Without that assessment, report the result as unreviewed.
 
 ## Next steps
 

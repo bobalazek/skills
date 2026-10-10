@@ -29,7 +29,9 @@ Describe relevant conventions and limits without turning the explanation into an
 
 Check that the explanation matches inspected source and the reader can locate the entry point, owning boundary, and appropriate feedback command. State unverified runtime claims and the inspected revision where it matters. Match the requested audience/depth and project format; link canonical material rather than creating another summary. Do not mutate code or create onboarding documents unless requested.
 
-Before acceptance, a separate agent in fresh context must challenge the explanation using the reader's request, candidate explanation, raw source and check access. Omit the author's conversation and preferred conclusions. Retain the returned assessment with reviewer/session identity, evaluated artifact/revision, findings and coverage. Resolve supported findings and obtain affected rechecks after fixes. Without a returned independent assessment, report unreviewed and stop before acceptance.
+For a low-impact advisory answer or wording-only draft, verify the relevant sources and constraints directly; no delegation or separate review record is needed. Use the independent assessment below when the user or project requires it, when accepting a consequential decision, or when publishing or updating a durable shared artifact. This exception does not waive code, security, release or deployment gates. A larger word count alone does not require a deeper workflow. Never claim independent review without an actual returned assessment.
+
+When required, a separate agent in fresh context must challenge the explanation using the reader's request, candidate explanation, raw source and check access. Omit the author's conversation and preferred conclusions. Retain the returned assessment with reviewer/session identity, evaluated artifact/revision, findings and coverage. Resolve supported findings and obtain affected rechecks after fixes. Without a returned independent assessment, report unreviewed and stop before acceptance.
 
 For authorized PRs, include relevant source/behavior evidence, independent findings and gaps at creation; refresh proof affected by changes.
 

@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "check": "bun scripts/check.ts",
-    "test": "bun test"
+    "test": "bun test",
+    "check:install": "bun scripts/check-install.ts"
   },
   "engines": {
     "bun": ">=1.3.9"

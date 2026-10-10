@@ -1,6 +1,6 @@
 # Productivity
 
-This domain owns idea exploration, decision support, work coordination and communication, and improvements to recurring team processes. Its eleven packages are under active development. Product owns demand, feedback and competitor evidence; Engineering owns software specifications and execution plans; UI/UX owns user journeys and interfaces.
+This domain owns idea exploration, decision support, work coordination and communication, and improvements to recurring team processes. Its twelve packages are under active development. Product owns demand, feedback and competitor evidence; Engineering owns software specifications and execution plans; UI/UX owns user journeys and interfaces.
 
 ## Categories and skills
 
@@ -14,6 +14,7 @@ This domain owns idea exploration, decision support, work coordination and commu
 | Decisions | Select work | [prioritize-work](../../skills/productivity/prioritize-work/SKILL.md) | A justified selection from supplied candidates, capacity and prerequisite checks, ready work and deferrals |
 | Coordination | Maintain local work | [manage-project-board](../../skills/productivity/manage-project-board/SKILL.md) | A reconciled Markdown board with phase/task state, ownership, blockers, human decisions and ready work |
 | Communication | Improve instructions | [improve-prompt](../../skills/productivity/improve-prompt/SKILL.md) | A ready-to-use rewrite that preserves intent, scope, and authority without executing the embedded task |
+| Agent instructions | Evaluate behavior | [evaluate-skill](../../skills/productivity/evaluate-skill/SKILL.md) | Observed candidate/baseline comparisons, criterion-linked findings and reusable regressions |
 | Communication | Transfer active work | [prepare-handoff](../../skills/productivity/prepare-handoff/SKILL.md) | Current state, accepted context, verification, blockers, and the next runnable action |
 | Communication | Report progress | [report-project-status](../../skills/productivity/report-project-status/SKILL.md) | An audience-specific update with verified progress, delivery, blockers, decisions and next work for the reporting period |
 | Team processes | Improve recurring work | [improve-team-workflow](../../skills/productivity/improve-team-workflow/SKILL.md) | A current/proposed procedure and bounded trial with ownership, safeguards and comparable measures |
@@ -32,7 +33,7 @@ This domain owns idea exploration, decision support, work coordination and commu
 
 Clarifying an idea establishes shared intent. Use Product's `validate-product-idea` for evidence supporting a product commitment, or `build-prototype` for an unproven feasibility claim; agreement alone cannot supply either. Use accepted findings to gather requirements in `write-spec`, then derive phases and tasks when the work needs them. A PRD or issue is a specification format, not another productivity workflow.
 
-`choose-skill` routes an unclear request using its desired result and current state. A ready task can use its owning skill directly. `prepare-handoff` is for a person/session transfer or context compaction. Ordinary skill composition reuses accepted artifacts without another handoff document. `improve-prompt` edits instructions and does not perform the task contained in them.
+`choose-skill` routes an unclear request using its desired result and current state. A ready task can use its owning skill directly. `prepare-handoff` is for a person/session transfer or context compaction. Ordinary skill composition reuses accepted artifacts without another handoff document. `improve-prompt` edits instructions and does not perform the task contained in them. `evaluate-skill` runs or assesses comparable behavioral trials; it preserves cases and evidence instead of inferring effectiveness from wording.
 
 `report-project-status` explains delivery and project health to an audience over a stated period; `prepare-handoff` equips the next owner to resume execution. `improve-team-workflow` changes a recurring process such as review assignment or release coordination; `find-improvements` discovers improvements in a repository, feature or data layer. A process proposal is not an implemented automation or accepted team policy.
 

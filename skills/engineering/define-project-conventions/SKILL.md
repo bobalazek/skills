@@ -17,7 +17,7 @@ Repository instructions, documented conventions and configured tooling override 
 
 Inventory existing standards, root and nested instructions, documentation and memory indexes, accepted decisions, formatter/linter/type settings, build/test commands, and representative code before creating a document. Check what each source owns, whether its pointers are current, and where rules conflict. Trace meaningful exceptions and recent decisions. For a new project, use its accepted architecture and selected stack; do not copy a private house stack into an unrelated repository.
 
-Inspect actual versions and current official guidance only when local rules and maintained code do not settle the choice. Distinguish a consistent local convention from an isolated accident or stale pattern.
+Inspect actual versions and current official guidance only when local rules and maintained code do not settle the choice. Distinguish a consistent local convention from an isolated accident or stale pattern. Add language-specific guidance only for a demonstrated recurring mistake; use the extension rules in the convention matrix instead of copying a language handbook.
 
 ## Load the relevant guidance
 
@@ -50,7 +50,9 @@ Update existing standards instead of creating competing documents. Mark unresolv
 
 A contributor can place and name a representative addition, choose a class or module/function and its file boundary, apply the relevant data or API rules, find exceptions, and run the relevant checks. Verify examples and commands against the repository. Link the standards from appropriate entry points and indexes without repeating them there; leave a short conditional reading path in agent instructions that applies before planning and coding.
 
-Before acceptance, a separate agent in fresh context must challenge the rules using the accepted scope, candidate standards, representative code/configuration and check access. Omit the author's conversation and preferred conclusions. Retain the returned assessment with reviewer/session identity, evaluated artifact/revision, findings and coverage. Resolve supported findings and obtain affected rechecks after fixes. Without a returned independent assessment, report unreviewed and stop before acceptance.
+For a read-only explanation of a settled local rule, inspect its source and maintained examples directly; no delegation or review record is needed unless the user or repository requires it. Establishing, changing or adopting conventions still requires the assessment below.
+
+Before accepting new or changed conventions, a separate agent in fresh context must challenge the rules using the accepted scope, candidate standards, representative code/configuration and check access. Omit the author's conversation and preferred conclusions. Retain the returned assessment with reviewer/session identity, evaluated artifact/revision, findings and coverage. Resolve supported findings and obtain affected rechecks after fixes. Without a returned independent assessment, report unreviewed and stop before acceptance.
 
 Use the project's format and requested depth. Report changed authoritative rules, decisions still proposed, checked examples, enforcement limits and adoption scope. Put proof, independent findings and gaps in authorized PRs at creation; refresh affected evidence after edits rather than add another policy summary.
 
