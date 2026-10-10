@@ -50,7 +50,9 @@ Update existing standards instead of creating competing documents. Mark unresolv
 
 A contributor can place and name a representative addition, choose a class or module/function and its file boundary, apply the relevant data or API rules, find exceptions, and run the relevant checks. Verify examples and commands against the repository. Link the standards from appropriate entry points and indexes without repeating them there; leave a short conditional reading path in agent instructions that applies before planning and coding.
 
-Before acceptance, a separate agent in fresh context must challenge the rules using the accepted scope, candidate standards, representative code/configuration and check access. Omit the author's conversation and preferred conclusions. Retain the returned assessment with reviewer/session identity, evaluated artifact/revision, findings and coverage. Resolve supported findings and obtain affected rechecks after fixes. Without a returned independent assessment, report unreviewed and stop before acceptance.
+For a read-only explanation of a settled local rule, inspect its source and maintained examples directly; no delegation or review record is needed unless the user or repository requires it. Establishing, changing or adopting conventions still requires the assessment below.
+
+Before accepting new or changed conventions, a separate agent in fresh context must challenge the rules using the accepted scope, candidate standards, representative code/configuration and check access. Omit the author's conversation and preferred conclusions. Retain the returned assessment with reviewer/session identity, evaluated artifact/revision, findings and coverage. Resolve supported findings and obtain affected rechecks after fixes. Without a returned independent assessment, report unreviewed and stop before acceptance.
 
 Use the project's format and requested depth. Report changed authoritative rules, decisions still proposed, checked examples, enforcement limits and adoption scope. Put proof, independent findings and gaps in authorized PRs at creation; refresh affected evidence after edits rather than add another policy summary.
 
