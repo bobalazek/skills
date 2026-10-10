@@ -27,7 +27,7 @@ Record each important command as verified, failed, or not run with its prerequis
 
 ## Make the next change approachable
 
-Load [the onboarding outline](references/onboarding.template.md) when a durable orientation is requested. Trace a representative feature's file/test placement, imports, reuse, data access, errors and dependency choices. Identify the owning files, consumers, applicable standards and verification path for a first bounded change. Keep accepted policy separate from merely observed patterns, and repair documentation only within the authorized scope.
+Load [the onboarding outline](references/onboarding.template.md) when a durable orientation is requested. Trace a representative feature's folder/file/test placement, class or module boundaries, symbol-to-filename naming, imports, reuse, data access, errors and dependency choices. Identify the owning files, consumers, applicable standards and verification path for a first bounded change. Keep accepted policy separate from merely observed patterns, and repair documentation only within the authorized scope.
 
 Prioritize adoption blockers and preservation risks. Static source inspection can explain an API/data flow but cannot establish production performance or integrity.
 

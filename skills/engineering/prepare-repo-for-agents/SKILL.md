@@ -23,7 +23,7 @@ When repairing instruction placement, memory navigation or client discovery, use
 
 Use instruction scopes appropriate to the host and repository. Do not claim a client discovers a file until that behavior is verified for the target setup. Optional CLIs, indexes, connectors, and agent runtimes remain optional unless the project requires them.
 
-Make coding standards part of the task path: identify the applicable root and surface instructions, authoritative rules, representative local examples, exceptions, and actual enforcement commands. Resolve conflicting or stale guidance at its owning source instead of adding another copied rule block. Inspect the existing agent/tool configuration before changing it; repo preparation does not authorize global agent settings, credential setup, or new external integrations.
+Make coding standards part of the task path before analysis, planning and implementation choose structure: identify the applicable root and surface instructions, authoritative rules, representative local examples, exceptions, and actual enforcement commands. The pointers should cover folder placement, class/module and file boundaries, and naming when relevant. Resolve conflicting or stale guidance at its owning source instead of adding another copied rule block. Inspect the existing agent/tool configuration before changing it; repo preparation does not authorize global agent settings, credential setup, or new external integrations.
 
 ## Verify usability
 

@@ -8,6 +8,7 @@ Stable task ID and a user-visible result or required technical prerequisite.
 
 - **Sources:** Relevant spec criteria/phase, accepted decisions, current-state evidence, and links.
 - **Validity:** Source versions or snapshots that could invalidate the task; compare them with authoritative inputs before execution.
+- **Conventions:** Applicable authoritative rules and exceptions for placement, class/module boundaries and naming; include only those this task needs.
 
 Include only context this task depends on; preserve source vocabulary.
 

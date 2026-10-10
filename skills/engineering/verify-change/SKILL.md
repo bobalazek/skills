@@ -15,7 +15,9 @@ Perform this verification in a separate agent with fresh context from the work's
 
 Read the request, acceptance criteria, local checks, change diff and existing evidence. Identify the baseline and candidate revision, including uncommitted changes. Tie each material criterion to an observable result.
 
-Inspect the project's actual command definitions and CI rules for required lint/format checks, type checking, static analysis, builds and tests. Run missing applicable checks and reuse valid results for the candidate. Record unavailable checks and justified exclusions; a skipped check is not a pass. Use check-only modes where available so verification does not silently rewrite the candidate. Automated checks complement behavior evidence and source review of architecture and conventions.
+Track those criteria and applicable items from the skill's checklists in the existing task, PR or result record. Record actual outcomes and evidence; mark skipped or inapplicable checks with reasons. Use this as the completion checklist rather than creating another document or requiring every possible check.
+
+Inspect the project's actual command definitions and CI rules for required lint/format checks, type checking, static analysis, builds and tests. Run missing applicable checks and reuse valid results for the candidate. Record unavailable checks and justified exclusions; a skipped check is not a pass. Use check-only modes where available so verification does not silently rewrite the candidate. Results from static checks take precedence over subjective judgments for the rules they cover; use them before manual review, alongside the required behavior evidence.
 
 Choose the smallest check that can establish the claim. A screenshot can show layout; keyboard navigation needs interaction evidence. A build establishes buildability; it cannot establish a repaired workflow. For a spec or documentation change, inspect scenarios, consistency, links, and rendered diagrams where relevant. No screenshot or benchmark is required for a change it cannot evaluate.
 

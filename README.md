@@ -51,6 +51,7 @@ Each catalog lists skills by category, with their outputs and boundaries.
 | Compare directions for an idea | [brainstorm-ideas](skills/productivity/brainstorm-ideas/SKILL.md) |
 | Decide whether a product or feature idea merits further investment | [validate-product-idea](skills/product/validate-product-idea/SKILL.md) |
 | Begin working in an inherited project | [onboard-codebase](skills/engineering/onboard-codebase/SKILL.md) |
+| Establish folder structure, class/file boundaries and naming before planning or coding | [define-project-conventions](skills/engineering/define-project-conventions/SKILL.md) |
 | Define a feature's required behavior | [write-spec](skills/engineering/write-spec/SKILL.md) |
 | Plan what a product page needs to say and prove | [plan-landing-page](skills/content/plan-landing-page/SKILL.md) |
 | Write or revise the words on a website | [write-website-copy](skills/content/write-website-copy/SKILL.md) |

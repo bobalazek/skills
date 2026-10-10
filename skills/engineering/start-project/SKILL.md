@@ -17,6 +17,8 @@ Inspect the requested destination and existing work. Resolve only missing decisi
 
 Inspect any proposed template, generator, or software factory before use. Check capability fit, licensing, maintenance/update strategy, extension boundaries, setup hooks, and inherited operating responsibilities. Adopt useful existing auth, billing, storage, or UI capabilities by configuration and verification. Do not assume a particular starter is installed or approved.
 
+Before creating source files, follow any repository conventions and maintained code. For greenfield choices they do not settle, use the selected language/framework's idiomatic layout, module/class model and naming. Create only the structure needed by the first supported path.
+
 ## Build the first complete path
 
 Use the selected tooling's current documented setup and compatible versions. Keep credentials out of generated files; document required variable names and safe setup. Inspect scripts before running them, especially hooks that provision services or alter data. Provisioning, remote repository creation and publication need their actual authority.

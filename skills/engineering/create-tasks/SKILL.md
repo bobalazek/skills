@@ -21,6 +21,8 @@ A task owns one reviewable outcome. Split work when ownership, acceptance, or de
 
 Use [the task template](references/task.template.md). Carry the relevant criteria into each task, with source IDs and artifact references. State owned writes, preserved contracts, prerequisites, applicable checks, and a falsifiable “done when.” File locations can be investigative pointers rather than guesses presented as mandatory paths.
 
+Choose placement, class/module boundaries and naming from written repository conventions, then maintained surrounding code; use language/framework practices only where neither settles the choice. Link useful rule sources or local code in the task. Keep paths provisional where responsibility is unsettled, and resolve only consequential gaps before marking dependent tasks ready.
+
 ## Order and isolate work
 
 Order contracts, schemas, and foundations before their consumers. Confirm the graph is acyclic. Show which tasks could run together after their prerequisites are accepted, and which are ready now. Parallel execution needs isolated writes, compatible shared state/data, and suitable verification environments; otherwise serialize it. A parallel batch contains only currently ready tasks. A broader execution sequence may include dependent successors, but they cannot start before their prerequisites are accepted. Declare the acceptance evidence and remaining external inputs; dependency-free does not mean ready when access or a consequential decision is missing.

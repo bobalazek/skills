@@ -17,7 +17,7 @@ For each relevant topic, distinguish:
 
 Track enforcement separately: a documented requirement can lack an automated check, and a linter setting can enforce only part of a convention. Code frequency, a memory entry, or a tool default does not establish acceptance. Do not silently weaken an accepted rule because legacy code violates it.
 
-Accepted project and surface-specific rules govern implementation choices where they remain compatible with required behavior and supported platforms. In an inherited codebase, compare maintained sibling features, tests, and recent decisions before inferring an undocumented convention. Label inconsistent legacy patterns as observations; neither the nearest file nor the most common pattern automatically sets policy. Expose a conflict or needed exception instead of silently replacing a local rule with the preferences below.
+Follow applicable repository instructions, documented conventions and tool configuration first. Where they leave a choice open, infer and follow consistent maintained surrounding code for the selected surface; this needs no new policy document. Only where neither provides guidance, use current best practices for the selected language/framework. Both written rules and established local code conventions override the defaults below. Expose conflicting or stale patterns rather than silently replacing local conventions or copying an isolated accident.
 
 Keep the rule in its existing authoritative location. Add a new document only for substantial missing guidance with a clear owner and audience. Agent instructions and indexes should link to it. A rule record needs its scope, status/source, rationale, preferred local example, valid exceptions, enforcement command or review check, and adoption approach. Avoid repeating fields that are already clear from the document.
 
@@ -49,7 +49,13 @@ Make common placement decisions explicit using the existing project shape:
 
 Use a small annotated example from the repository. A copied full tree ages quickly; show the boundary and decision the example is meant to teach.
 
+For greenfield work without local guidance, use the language/framework's idiomatic structure. Keep related responsibilities together and add modules or shared boundaries only when the current work needs them. Match the layout to project size; do not create speculative layers or packages.
+
 For a feature addition, identify its existing owning module and the nearest maintained equivalent before choosing paths. Keep feature-local behavior with its owner according to the repository's feature or layer structure; extract shared code when current consumers need the same contract. Similar-looking fragments with different domain rules can remain separate. A change in one consumer should not require flags or dependencies that only another consumer understands.
+
+## Classes and file boundaries
+
+Use the project's class/module model and keep responsibilities cohesive. Without local guidance, prefer one primary class per file and a corresponding filename where idiomatic for the selected language/framework. Keep supporting definitions together when that model calls for it. This default does not require introducing classes, splitting existing modules or renaming files.
 
 ## Code and dependency choices
 
@@ -84,7 +90,7 @@ Document relevant names at each level, rather than one universal casing rule:
 | Tables, columns, keys, indexes | What are the case, pluralization, identifier, relationship-key, constraint, and migration naming rules? Are SQL names explicit or derived? |
 | ORM/domain/transport models | How do model names map to stored entities and API representations? Which mappings are explicit, generated, or framework-controlled? |
 
-Inspect each relevant language separately. For example, Python module/package naming, Go package and export visibility, Rust modules/types/traits, JVM or .NET namespaces and types, and JavaScript/TypeScript exports have different constraints. Load current official guidance for the selected language or framework only when needed to settle a choice. Record the supported version or configuration when it affects the rule. Do not impose one language's casing or class model on another.
+Use local naming rules and maintained surrounding code before selecting language/framework defaults. Consult current official guidance only for unresolved choices, accounting for the supported version and tooling. Do not impose one language's casing or class model on another.
 
 Prefer names that carry domain meaning and distinguish values that would otherwise be confused. If local conventions need a unit or currency suffix, show it with a real example. Avoid invented abbreviations or universal suffix rules. Renaming an exported symbol, database field, route, or serialized property may require a compatibility plan; a naming decision alone does not authorize the change.
 
@@ -93,3 +99,5 @@ Prefer names that carry domain meaning and distinguish values that would otherwi
 Walk representative additions through the proposed rules: place a feature/file, name a function and domain value, and, where applicable, add a model/column or public field. Exercise a relevant collection edge case, failed operation, or dependency compatibility choice when adopting those rules. Can a contributor find the owning rule, an example, exceptions, and a check without reconstructing the whole repository?
 
 Run the existing scoped checks that establish the rules being claimed. Check that examples match actual APIs and configuration. Mark rules checked by human review honestly; do not add an enforcement claim because CI is green. For legacy inconsistencies, document whether the rule applies to new code, touched code, or a separately approved migration. Keep mass renaming and reformatting outside convention authoring unless requested.
+
+Encode mechanically checkable rules and recurring issues in the existing static checks or suitable automated guards. Verify the guard runs and accepts legitimate code. Use results from static checks before subjective review, leaving manual assessment for uncovered behavior and decisions; a passing static check proves only its own coverage.

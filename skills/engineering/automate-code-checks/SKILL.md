@@ -7,7 +7,9 @@ description: "Turn an accepted coding rule or recurring defect into a runnable l
 
 ## Use this skill
 
-Turn an accepted recurring rule into the smallest maintainable automated guard. Reuse established standards, failure evidence and existing tooling. Resolve disputed meaning through `define-project-conventions`; a one-off repair belongs to `implement-change` and does not automatically justify a rule.
+Enforce mechanically checkable established conventions and recurring defects with the smallest maintainable automated guard. Prefer configured formatter, linter, type checker or static-analysis rules over repeated subjective review comments. Reuse established standards, failure evidence and existing tooling. Resolve disputed meaning through `define-project-conventions`; a one-off repair belongs to `implement-change` and does not automatically justify a rule.
+
+Static checks cover formatting, linting, type checking and source analysis without running application behavior. Automated checks also include executed tests.
 
 ## Establish the invariant
 

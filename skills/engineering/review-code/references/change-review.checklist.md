@@ -58,9 +58,11 @@ For collection/transformation changes, check lookup/grouping semantics, duplicat
 
 Locate accepted root/surface rules, formatter/linter/type configuration, representative code, and documented exceptions. Distinguish mandatory policy from observed practice or a proposed preference. Check relevant folder/file/package placement; names for symbols, classes, functions, variables, models, tables/columns; API/data conventions; and framework-specific structure. Cite the applicable rule and effect of a violation rather than importing a house style.
 
+Check class/module boundaries and filenames against written repository rules, then maintained surrounding code. Use language/framework defaults only where neither settles the choice; do not demand restructuring to satisfy a shared preference.
+
 For a visible change, inspect the rendered result against accepted design, shared tokens/components, supported responsive states, semantics, keyboard/focus behavior, and loading/error/empty states. Include content or route metadata when the request touches them. A screenshot supports visible appearance in that state; it does not prove interaction, accessibility, or data correctness.
 
-Keep mechanical lint/format feedback in the existing tool when it covers the issue. Do not inflate style preferences into blocking findings or repeat the same automated failure as many comments.
+Use configured static checks before subjective convention judgments. Keep mechanical feedback in the tool that covers it and add practical guards for recurring detectable issues within an authorized fix scope. Do not inflate style preferences into blocking findings or repeat the same automated failure as many comments.
 
 ## Verification and delivery evidence
 
