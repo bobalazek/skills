@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { lstatSync, mkdirSync, readFileSync, readdirSync, realpathSync, writeFileSync } from "node:fs";
+import { closeSync, lstatSync, mkdirSync, openSync, readFileSync, readdirSync, realpathSync, writeFileSync } from "node:fs";
 import { isAbsolute, join, relative, resolve } from "node:path";
 
 const fail = (message: string): never => { throw new Error(message); };
@@ -88,26 +88,32 @@ async function main() {
   const save = () => writeFileSync(join(output, "summary.json"), JSON.stringify(report, null, 2) + "\n", { mode: 0o600 });
   const run = async (name: string, argv: string[], cwd = project) => {
     const started = performance.now();
-    const child = Bun.spawn(argv, { cwd, env, stdin: "ignore", stdout: "pipe", stderr: "pipe", timeout: 120_000, killSignal: "SIGKILL" });
-    const [stdout, stderr, exitCode] = await Promise.all([new Response(child.stdout).text(), new Response(child.stderr).text(), child.exited]);
-    writeFileSync(join(output, `${name}.stdout`), stdout, { mode: 0o600 });
-    writeFileSync(join(output, `${name}.stderr`), stderr, { mode: 0o600 });
-    commands.push({ name, argv, exitCode, signal: child.signalCode, durationMs: performance.now() - started });
-    save();
-    if (exitCode !== 0) fail(`${name} failed (${exitCode}); inspect retained output.`);
-    return stdout.trim();
+    // Direct files avoid clients truncating buffered pipe output on process exit.
+    const stdout = openSync(join(output, `${name}.stdout`), "wx", 0o600);
+    const stderr = openSync(join(output, `${name}.stderr`), "wx", 0o600);
+    try {
+      const child = Bun.spawn(argv, { cwd, env, stdin: "ignore", stdout, stderr, timeout: 120_000, killSignal: "SIGKILL" });
+      const exitCode = await child.exited;
+      commands.push({ name, argv, exitCode, signal: child.signalCode, durationMs: performance.now() - started });
+      save();
+      if (exitCode !== 0) fail(`${name} failed (${exitCode}); inspect retained output.`);
+      return readFileSync(join(output, `${name}.stdout`), "utf8").trim();
+    } finally { closeSync(stdout); closeSync(stderr); }
   };
   save();
   try {
     report.revision = await run("revision", ["git", "rev-parse", "HEAD"], expected);
     if (await run("status", ["git", "status", "--porcelain", "--untracked-files=all"], expected)) fail("Expected checkout must be clean.");
+    if (await run("ignored", ["git", "ls-files", "--others", "--ignored", "--exclude-standard", "--", "skills"], expected)) fail("Expected skill packages contain ignored files absent from the revision.");
     report.versions = { installer: "1.7.0", codex: await run("codex-version", ["codex", "--version"]), opencode: await run("opencode-version", ["opencode", "--version"]) };
+    // A repository boundary prevents ancestor project skills shadowing the copies.
+    await run("project", ["git", "-c", "init.templateDir=", "init", "--quiet"]);
     await run("installer", ["bunx", "skills@1.7.0", "add", source, "--skill", "*", "--agent", "codex", "opencode", "--copy", "--yes", "--json"]);
     const installed = join(project, ".agents", "skills");
     const copied = verifyCopies(expected, installed);
     verifyCodex(await run("codex", ["codex", "-C", project, "debug", "prompt-input", "List installed skills without performing work."]), installed, copied.names);
     verifyOpenCode(await run("opencode", ["opencode", "debug", "skill"]), project, installed, copied.names);
-    if (await run("final-revision", ["git", "rev-parse", "HEAD"], expected) !== report.revision || await run("final-status", ["git", "status", "--porcelain", "--untracked-files=all"], expected)) fail("Expected checkout changed during verification.");
+    if (await run("final-revision", ["git", "rev-parse", "HEAD"], expected) !== report.revision || await run("final-status", ["git", "status", "--porcelain", "--untracked-files=all"], expected) || await run("final-ignored", ["git", "ls-files", "--others", "--ignored", "--exclude-standard", "--", "skills"], expected)) fail("Expected checkout changed during verification.");
     report.state = "passed";
     report.packages = copied.names.length;
     report.files = copied.files;

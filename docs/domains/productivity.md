@@ -1,6 +1,6 @@
 # Productivity
 
-This domain owns idea exploration, decision support, work coordination and communication, and improvements to recurring team processes. Its eleven packages are under active development. Product owns demand, feedback and competitor evidence; Engineering owns software specifications and execution plans; UI/UX owns user journeys and interfaces.
+This domain owns idea exploration, decision support, work coordination and communication, and improvements to recurring team processes. Its twelve packages are under active development. Product owns demand, feedback and competitor evidence; Engineering owns software specifications and execution plans; UI/UX owns user journeys and interfaces.
 
 ## Categories and skills
 

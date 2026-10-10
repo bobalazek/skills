@@ -17,7 +17,7 @@ Repository instructions, documented conventions and configured tooling override 
 
 Inventory existing standards, root and nested instructions, documentation and memory indexes, accepted decisions, formatter/linter/type settings, build/test commands, and representative code before creating a document. Check what each source owns, whether its pointers are current, and where rules conflict. Trace meaningful exceptions and recent decisions. For a new project, use its accepted architecture and selected stack; do not copy a private house stack into an unrelated repository.
 
-Inspect actual versions and current official guidance only when local rules and maintained code do not settle the choice. Distinguish a consistent local convention from an isolated accident or stale pattern. Add language-specific guidance only for a demonstrated recurring mistake or a consequential unresolved choice; use the extension rules in the convention matrix instead of copying a language handbook.
+Inspect actual versions and current official guidance only when local rules and maintained code do not settle the choice. Distinguish a consistent local convention from an isolated accident or stale pattern. Add language-specific guidance only for a demonstrated recurring mistake; use the extension rules in the convention matrix instead of copying a language handbook.
 
 ## Load the relevant guidance
 

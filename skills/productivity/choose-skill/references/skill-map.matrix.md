@@ -15,6 +15,7 @@ Choose the next missing result, then read the relevant domain below. Names ident
 | A feasible selection from supplied work | `prioritize-work` | Compare goals, commitments, capacity and prerequisites; priority is not readiness |
 | Current Markdown project work and ready pickup | `manage-project-board` | Reconcile local task states, ownership and blockers; reuse plans and task contracts, with one coordinator for shared state |
 | Better instructions | `improve-prompt` | Rewrite the prompt without executing its embedded request |
+| Evidence that a skill change improves behavior | `evaluate-skill` | Compare actual trials against a baseline and retain regressions; a wording review or structural check alone is insufficient |
 | Continuation context | `prepare-handoff` | Transfer or compact actual ongoing work |
 | Project progress for an audience and period | `report-project-status` | Reconcile observed work, acceptance and delivery; reporting does not authorize sending |
 | A better recurring team process | `improve-team-workflow` | Propose and evaluate a bounded process change; code improvement discovery stays separate |
@@ -29,8 +30,6 @@ Choose the next missing result, then read the relevant domain below. Names ident
 | Defined product success measures | `define-product-metrics` | Specify the outcome, calculation, source and quality contract; do not invent baselines or implement collection |
 | A controlled product experiment protocol | `plan-product-experiment` | Specify assignment, measures, stopping and decision rules before exposure; planning does not launch a test |
 | Findings from existing product usage | `analyze-product-usage` | Reconcile behavior data against definitions and observation windows; associations alone do not establish causes |
-
-A request to compare skill behavior, test a skill change or preserve behavioral regressions belongs to `evaluate-skill`. A wording-only instruction rewrite belongs to `improve-prompt`; structural package checks alone cannot establish either behavioral improvement or review.
 
 ## Engineering
 
