@@ -12,6 +12,8 @@ Accepted behavior/spec references, application surfaces, current revision/baseli
 
 Separate repository layout from runtime boundaries. Identify source-of-truth data, transaction/consistency rules, external identity and services, and owned contracts. Use the useful C4 levels: context and container views for the system, component detail only where needed. Include sequence/failure and environment-specific deployment views when relevant; render diagrams and walk representative paths.
 
+Link applicable conventions and exceptions. Show the affected feature/package location, allowed dependency direction, public export boundary, and a representative class or function with its filename and test location. Explain any new class/module boundary without inventing files for unsettled responsibilities.
+
 ## Deployment and operation
 
 Existing versus proposed hosting/services, managed/self-hosted responsibilities, environments, access/secrets, capacity limits, backups/restore, release/migration order, observation signals and recovery ownership. Link comparable cost scenarios. For AI behavior, include tool/data authority, orchestration gates, memory lifecycle, evaluation and spend/latency bounds.

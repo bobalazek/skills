@@ -11,7 +11,9 @@ Deliver working code for an agreed feature, fix, refactor or ready task batch. R
 
 ## Establish the working contract
 
-Read local instructions and the affected surface's conventions. Use accepted tasks, spec criteria, design artifacts, known checks, and relevant decisions. Inspect the working tree and preserve unrelated edits. Establish the current baseline; distinguish pre-existing failures from introduced regressions.
+Read local instructions, the affected surface's conventions and maintained surrounding code before choosing paths or abstractions. Use accepted tasks, spec criteria, design artifacts, known checks, and relevant decisions. Inspect the working tree and preserve unrelated edits. Establish the current baseline; distinguish pre-existing failures from introduced regressions.
+
+Follow written repository rules, then consistent surrounding code; use language/framework best practices only where neither settles the choice. Resolve consequential conflicts through `define-project-conventions` when available, or a scoped decision. Routine work needs no new handbook or planning stage.
 
 Before starting or resuming a task, compare its criteria and input versions with the current authoritative requirements and dependency outputs. If they changed, identify the affected work and resolve consequential differences before executing it. Retain valid results from unaffected work; do not quietly implement a superseded task because its old checks still pass.
 
@@ -42,6 +44,8 @@ For AI or agent behavior, implement the accepted data/tool permissions in truste
 ## Verify the actual result
 
 Use the smallest relevant reproduction, regression test, request, build, browser path, or artifact check. There is no required test-first order. Cover meaningful failures and impacted consumers; format only touched files and use the repository's documented scoped commands.
+
+Run applicable configured static checks before subjective review. Enforce uncovered mechanically checkable rules or recurring issues through existing tooling within the agreed scope, with valid-case and violation checks; do not replace practical guards with prose reminders.
 
 Match test boundaries to the claim:
 

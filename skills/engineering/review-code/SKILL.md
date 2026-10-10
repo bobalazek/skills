@@ -15,6 +15,8 @@ Perform the review in an agent with fresh context from the work's author. Supply
 
 Identify the purpose, relevant spec/criteria, repository rules and reviewed revision. Read existing documentation and applicable conventions before judging compliance. Inspect the working tree; for changed work, establish the comparison baseline and actual diff. For a codebase review, define surfaces and questions without inventing a diff baseline or implying total coverage. Unknown author intent is a question, not a fact inferred from a patch.
 
+Use valid results from configured static checks before subjective review; run missing applicable checks in check-only mode when available. Their results take precedence on the rules they cover. Keep missing checks explicit and focus manual assessment on uncovered questions, without treating static success as proof of runtime behavior. Route recurring mechanically detectable findings to existing automated enforcement.
+
 For new code, check the requested behavior and foundation assumptions. For an inherited system, also identify existing consumers, data, and contracts the change must preserve.
 
 Load resources by the selected scope:

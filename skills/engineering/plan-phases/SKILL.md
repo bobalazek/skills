@@ -13,7 +13,7 @@ Use `write-spec` for unsettled required behavior, `challenge-proposal` to questi
 
 ## Read the accepted scope
 
-Use the current spec, technical decisions, constraints, and existing phase plan. Inspect the relevant foundation and delivery path. Preserve accepted decisions and revise only what changed. If scope is still disputed, identify the decision instead of making a precise schedule from an assumption.
+Use the current spec, technical decisions, applicable project conventions, constraints, and existing phase plan. Inspect the relevant foundation and delivery path. Preserve accepted decisions and revise only what changed. If scope is still disputed, identify the decision instead of making a precise schedule from an assumption. A consequential unsettled ownership or structure rule is a prerequisite for affected work; settled conventions need no separate phase.
 
 Resolve a consequential planning choice with an adaptive question about the affected outcome. Inspect factual prerequisites first; research or prototype work belongs in the graph only when its result could change feasibility, ordering or acceptance.
 

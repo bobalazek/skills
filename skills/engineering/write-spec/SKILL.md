@@ -15,6 +15,8 @@ Reuse accepted decisions, flows and research without requiring earlier ceremonie
 
 Gather requirements from the user's brief, accepted decisions, flows, and relevant research. Identify who needs the result, the problem, desired outcomes, constraints, and evidence supporting the direction. Inspect current behavior and affected consumers for an existing system. For new software, establish actors, useful outcomes, available foundations, and constraints without inventing demand or an existing architecture.
 
+Identify applicable project conventions as constraints and link their authoritative source. Carry consequential structural or naming conflicts to the owning design/convention decision before dependent planning; the spec need not choose a folder tree or class hierarchy to define behavior.
+
 Separate current behavior, desired behavior, assumptions, and unresolved decisions. Discover factual answers from the repository before questioning the user. Resolve choices that affect scope or acceptance; keep nonblocking unknowns explicit. A spec must not hide a product decision inside a technical recommendation.
 
 Ask the next question whose answer could change a requirement, adapting to prior answers. Use `challenge-proposal` when a sustained interrogation of the direction is the requested work. Missing external facts need primary-source research; uncertain runtime behavior may need a bounded experiment. Record an unresolved premise and its effect on readiness instead of inventing a requirement or researching unrelated topics.

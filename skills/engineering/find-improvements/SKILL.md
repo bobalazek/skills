@@ -23,6 +23,10 @@ Look for repeated business rules that drift, changes scattered across owners, un
 
 For refactors, identify the behavior to preserve and the concrete simpler form. Check existing utilities and ownership before proposing another abstraction. Shared code should represent the same stable responsibility; keep intentional variants separate when merging them would add flags or couple unrelated changes. Check dynamic/configured consumers before calling code dead. For data refactors, account for deployed readers/writers and migration state.
 
+For structural or convention analysis, compare feature placement, dependency direction, class/module responsibilities and filename mapping with accepted local rules and relevant stack constraints. Show a concrete navigation or change hazard; multiple classes in one file or a different folder layout alone is not a defect. Route consequential missing rules to `define-project-conventions`, or state the specific rule decision when that skill is unavailable, before planning adoption work.
+
+Use existing static-check results before subjective convention assessment. For recurring issues or mechanically checkable rules, identify the smallest guard in the current toolchain and carry it to `automate-code-checks`, or describe the direct configuration change when unavailable. Repeated manual review should not substitute for practical automated enforcement.
+
 Separate demonstrated defects from opportunities and untested hypotheses. A suspected bottleneck becomes a profiling investigation until measured. Group candidates by root cause, search existing work items, and link related or duplicate items instead of creating competing tickets.
 
 ## Rank evidenced candidates

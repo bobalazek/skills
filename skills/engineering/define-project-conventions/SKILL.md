@@ -1,6 +1,6 @@
 ---
 name: define-project-conventions
-description: "Establish or reconcile project coding and contributor conventions from local evidence and selected stack practices, producing clear rules, exceptions, examples, and verification guidance."
+description: "Establish or reconcile project conventions before planning or coding, including folder structure, class/file boundaries, naming, and applicable stack practices, with rules, exceptions, examples, and verification guidance."
 ---
 
 # Define project conventions
@@ -9,11 +9,15 @@ description: "Establish or reconcile project coding and contributor conventions 
 
 Establish or reconcile contributor rules for a selected surface using local standards, maintained examples and accepted decisions. Reuse authoritative rules instead of drafting a second handbook. Use `document-project` to record factual system knowledge and `automate-code-checks` when an already-accepted rule needs enforcement.
 
+Apply relevant conventions during codebase analysis, specification, architecture and task planning, before paths or abstractions become commitments. Routine work can use settled rules directly; it needs no separate convention-writing stage. Resolve only missing or disputed choices that affect the requested work, and carry their source, scope and exceptions into the handoff.
+
+Repository instructions, documented conventions and configured tooling override this skill's defaults. Where they leave a choice open, follow consistent maintained surrounding code. Use current language/framework practices only where neither supplies guidance, including greenfield work.
+
 ## Gather evidence
 
 Inventory existing standards, root and nested instructions, documentation and memory indexes, accepted decisions, formatter/linter/type settings, build/test commands, and representative code before creating a document. Check what each source owns, whether its pointers are current, and where rules conflict. Trace meaningful exceptions and recent decisions. For a new project, use its accepted architecture and selected stack; do not copy a private house stack into an unrelated repository.
 
-Inspect actual versions and current official guidance when a framework-specific choice is unresolved. Local requirements and supported behavior constrain the choice. Repetition alone does not turn an accidental pattern into a rule.
+Inspect actual versions and current official guidance only when local rules and maintained code do not settle the choice. Distinguish a consistent local convention from an isolated accident or stale pattern.
 
 ## Load the relevant guidance
 
@@ -38,13 +42,13 @@ For each useful rule, record:
 
 Resolve contradictions explicitly; frequent code and stale memory do not establish policy. Avoid arbitrary line limits, a layer per noun, or naming changes without a maintenance benefit.
 
-Distinguish rules already enforced by the formatter, linter, types, schemas, or tests from rules requiring human judgment. For recurring violations, identify the smallest suitable guard and its valid exceptions; declaring the rule is not proof of enforcement. Keep one authoritative rule source and link it from agent entry points.
+Enforce mechanically checkable conventions and recurring issues with existing static checks or other suitable automated guards within the agreed scope. Use results from configured static checks before subjective review; keep human judgment for what they cannot establish. Wire missing guards through `automate-code-checks` when available, or the existing toolchain directly, and verify detection and valid exceptions. Keep one authoritative rule source and link it from agent entry points.
 
 Update existing standards instead of creating competing documents. Mark unresolved proposals and their decision owner. Changing a convention does not authorize mass reformatting, renaming, or migration; state an incremental adoption route when existing code differs.
 
 ## Verify and report
 
-A contributor can place and name a representative addition, apply the relevant data or API rules, find exceptions, and run the relevant checks. Verify examples and commands against the repository. Link the standards from appropriate entry points and indexes without repeating them there; leave a short conditional reading path in agent instructions.
+A contributor can place and name a representative addition, choose a class or module/function and its file boundary, apply the relevant data or API rules, find exceptions, and run the relevant checks. Verify examples and commands against the repository. Link the standards from appropriate entry points and indexes without repeating them there; leave a short conditional reading path in agent instructions that applies before planning and coding.
 
 Before acceptance, a separate agent in fresh context must challenge the rules using the accepted scope, candidate standards, representative code/configuration and check access. Omit the author's conversation and preferred conclusions. Retain the returned assessment with reviewer/session identity, evaluated artifact/revision, findings and coverage. Resolve supported findings and obtain affected rechecks after fixes. Without a returned independent assessment, report unreviewed and stop before acceptance.
 

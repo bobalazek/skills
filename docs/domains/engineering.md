@@ -96,6 +96,8 @@ QA follows the changed behavior and risks through verification, review, and deli
 
 Local instructions and accepted project rules govern implementation. References provide reusable decision criteria; they do not impose a universal framework, ORM, folder tree, branch name, deployment platform, or mandatory test-first process.
 
+Conventions apply during analysis and planning, before code is written. Follow written repository rules first, then consistent maintained surrounding code, and use language/framework best practices only where neither provides guidance. These local conventions override shared defaults, including the preference for one class per file where idiomatic. Use `define-project-conventions` for relevant missing or disputed rules; settled work needs no extra stage. Enforce mechanically checkable rules and recurring issues through existing tooling and use those results before subjective review. `prepare-repo-for-agents` makes the rules and checks discoverable from the start.
+
 Keep current behavior separate from desired behavior and from historical decisions. A commit demonstrates a change; its rationale needs recorded evidence. Repeated code is an observed convention until a contributor rule is established. Record consequential decisions, useful discoveries, and incidents in existing authoritative locations, and update affected docs during the actual change. Use `document-project` when reconstructing that durable knowledge is the requested deliverable. Memory indexes link current records with their scope and status; AGENTS.md contains agent rules and reading pointers, not a parallel decision archive.
 
 See [workflow phases and handoffs](../workflows.md) for sequencing and [authoring](../authoring.md) for package conventions.

@@ -56,7 +56,7 @@ Every package in this collection includes `agents/openai.yaml` for Codex discove
 | Scope | Finish the requested outcome; adjacent findings do not authorize unrelated cleanup |
 | Questions | Inspect discoverable facts first; ask about consequential choices that cannot be inferred safely |
 | Parallelism | Use ready dependencies, isolated ownership/state, and independently checkable results; reconcile shared decisions |
-| Verification | Match material criteria to observed proof, identify the tested revision/environment, and distinguish demonstrated, failed, and unchecked results; use meaningful checks without mandatory test-first sequencing |
+| Verification | Provide completion checks inline or in a relevant linked checklist; track applicable items, material criteria and observed proof in the existing result record. Identify the tested revision/environment and distinguish demonstrated, failed and unchecked results; use meaningful checks without mandatory test-first sequencing |
 | Independent evaluation | Before acceptance, a separate agent with fresh context tries to refute the result using raw requirements, source artifacts, and observed proof; unavailable review leaves the result unreviewed |
 | Evidence | Preserve useful baseline/result artifacts, compare consistent conditions, redact shared content, and include relevant accessible evidence in authorized PRs; local paths are not attachments |
 | Authority | Honor granted authority and pause only at the actual missing input, choice, permission, or failed required check |

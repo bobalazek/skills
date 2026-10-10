@@ -46,7 +46,7 @@ Choose the next missing result, then read the relevant domain below. Names ident
 | Deliverable milestones and their order | `plan-phases` | Show prerequisites, parallel conditions and phase exits; skip for work that needs no milestones |
 | Executable tasks | `create-tasks` | Turn a spec or selected phase into owned work with checks and dependencies; it creates work items, not new skills |
 | A working project foundation | `start-project` | Start blank or from an accepted template; do not rebuild an inherited app |
-| Project coding rules | `define-project-conventions` | Preserve useful existing conventions and fill actual gaps |
+| Project coding rules, folder structure, class/file boundaries or naming | `define-project-conventions` | Settle relevant rules before planning or coding; preserve accepted conventions and fill actual gaps |
 | Usable agent entry points | `prepare-repo-for-agents` | Expose authoritative context and commands without duplicating docs |
 | Implemented agreed behavior | `implement-change` | One ready task or an agreed batch, including a scoped refactor |
 | A reproduced failure and tested cause | `diagnose-issue` | Missing reproduction leaves diagnosis unverified; no guessed repair |

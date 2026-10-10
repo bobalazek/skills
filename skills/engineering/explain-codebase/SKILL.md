@@ -15,6 +15,8 @@ Read repository entry instructions and relevant docs, then verify them against t
 
 For orientation, identify purpose, runnable entry points, modules, domain vocabulary, data ownership, integrations, delivery path, and the conventions the next contributor actually needs. Avoid dumping a file tree or describing every dependency. A useful map connects responsibilities to locations and one representative execution path.
 
+When structure or conventions are part of the question, show how a representative feature, class or function maps to its folder, filename, imports and tests. Identify accepted rules and deliberate exceptions before describing where an addition would belong; missing rules remain questions, not permission to redesign the repository.
+
 Inspect history or decisions when the user asks why a design exists. Distinguish recorded rationale, observed implementation, and inference. Current code determines current behavior; repeated patterns do not automatically establish contributor rules.
 
 ## Explain at the right level

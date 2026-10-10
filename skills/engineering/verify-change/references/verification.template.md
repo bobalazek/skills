@@ -14,7 +14,7 @@ Use the project's existing result or PR format. Include only sections that suppo
 | --- | --- | --- | --- | --- |
 | Existing criterion ID or behavior | Runnable command or reproducible interaction | Observed output, state, or value | Demonstrated / failed / not checked | Inline excerpt or verified artifact/run link |
 
-Do not fill this table with planned checks presented as results. A criterion may need several evidence types; one valid observation may cover several criteria.
+Use this table as the completion checklist, including relevant items selected from the loaded checklists. Do not fill it with planned checks presented as results. A criterion may need several evidence types; one valid observation may cover several criteria. Record inapplicable checks with their reason outside the required-criterion rows.
 
 ## Select evidence
 
