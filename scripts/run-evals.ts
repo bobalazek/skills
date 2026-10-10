@@ -237,26 +237,31 @@ export async function main(args = Bun.argv.slice(2)) {
     },
     strict: true,
   });
-  if (!values.candidate || !values.baseline || !values.cases || !values.output)
+  if (!values.candidate || !values.cases || !values.output)
     fail(
-      "Usage: bun run eval --candidate <source> --baseline <source> --cases <id,id> --output <new-directory> [--repeat 1..3] [--timeout 1..600] [--model <id>] [--fixtures <file>]",
+      "Usage: bun run eval --candidate <source> --cases <id,id> --output <new-directory> [--baseline <source>] [--repeat 1..3] [--timeout 1..600] [--model <id>] [--fixtures <file>]",
     );
+  const sources: Record<string, string> = values.baseline
+    ? { baseline: values.baseline, candidate: values.candidate }
+    : { candidate: values.candidate };
   const selected = selectCases(parseCases(JSON.parse(readFileSync(values.fixtures, "utf8"))), values.cases);
   const repeat = boundedInteger(values.repeat, 3);
   const timeoutMs = boundedInteger(values.timeout, 600) * 1000;
-  if (selected.length * repeat * 2 > 60) fail("At most 60 top-level trials per run; select fewer cases.");
+  if (selected.length * repeat * Object.keys(sources).length > 60)
+    fail("At most 60 top-level trials per run; select fewer cases.");
   const requestedOutput = resolve(values.output);
   const output = join(realpathSync(dirname(requestedOutput)), basename(requestedOutput));
   // Creating a new private directory preserves earlier attempts and keeps traces out of source.
-  for (const source of [values.candidate, values.baseline]) {
+  for (const source of Object.values(sources)) {
     const root = realpathSync(source);
-    if (output === root || output.startsWith(`${root}/`)) fail("Keep evaluation output outside both source checkouts.");
+    if (output === root || output.startsWith(`${root}/`)) fail("Keep evaluation output outside source checkouts.");
   }
   mkdirSync(output, { mode: 0o700 });
   const canonicalOutput = realpathSync(output);
   const attempts: Record<string, unknown>[] = [];
   const report: Record<string, unknown> = {
     state: "incomplete",
+    mode: values.baseline ? "comparison" : "verification",
     assessment: "not checked",
     selectedCases: selected.map((item) => item.id),
     repeat,
@@ -270,10 +275,9 @@ export async function main(args = Bun.argv.slice(2)) {
     const version = await execute(["codex", "--version"], output, join(output, "host-version"), 10_000);
     if (version.exitCode !== 0 || version.timedOut) fail("Codex version check failed.");
     report.host = readFileSync(join(output, "host-version.stdout"), "utf8").trim();
-    const variants = {
-      baseline: snapshot(values.baseline, join(output, "baseline-skills")),
-      candidate: snapshot(values.candidate, join(output, "candidate-skills")),
-    };
+    const variants = Object.fromEntries(
+      Object.entries(sources).map(([name, source]) => [name, snapshot(source, join(output, `${name}-skills`))]),
+    );
     report.sources = Object.fromEntries(Object.entries(variants).map(([name, source]) => [name, source.identity]));
     json(join(output, "criteria.json"), selected);
     for (const item of selected) {
@@ -378,7 +382,7 @@ export async function main(args = Bun.argv.slice(2)) {
     );
     writeFileSync(
       join(output, "comparison.md"),
-      `# Behavioral comparison\n\nExecution is not a behavioral verdict. Assess criteria.json against each result and complete trace, then retain a returned independent assessment.\n\n| Case | Variant | Attempt | Execution | Criteria |\n| --- | --- | --- | --- | --- |\n${rows.join("\n")}\n`,
+      `# Behavioral ${report.mode}\n\nExecution is not a behavioral verdict. Assess criteria.json against each result and complete trace, then retain a returned independent assessment.\n\n| Case | Variant | Attempt | Execution | Criteria |\n| --- | --- | --- | --- | --- |\n${rows.join("\n")}\n`,
       { mode: 0o600 },
     );
     return report.state === "executed" ? 0 : 1;

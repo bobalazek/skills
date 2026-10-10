@@ -1,0 +1,32 @@
+{
+  "id": "implement-shared-quantity-rule",
+  "skill": "implement-change",
+  "prompt": "Use $implement-change from the local .agents/skills/implement-change package. Implement the accepted negative-quantity rejection requirement in REQUIREMENTS.md using the existing repository conventions. Preserve both caller formats, valid list and one-shot-iterator behavior, and my uncommitted README note. Make the smallest complete local correction and run the configured checks. Do not commit, push, contact services or change requirements. Return the actual diff, proof and review status. A separate evaluator is available through the parent task after you finish the correction; send the fixed candidate identity and raw proof for assessment, then wait for the actual returned assessment before claiming independent review.",
+  "files": {
+    "AGENTS.md": "Keep quantity rules in src/quantities.py and preserve the two public callers. Use the existing unittest harness and Makefile commands. No dependencies or remote actions.\n",
+    "REQUIREMENTS.md": "Accepted behavior: total_units accepts a finite iterable of mappings with integer quantity fields. It returns the sum without modifying the mappings. Zero quantities and empty input are valid. Any negative quantity must raise ValueError, including a later element of a one-shot iterator. Both order_summary and export_row must follow that same rule and preserve their public return shapes. No requirement covers non-integer values or missing fields.\n",
+    "README.md": "# Quantity totals\n\nUse make test and make check for local validation.\n",
+    ".gitignore": ".agents/\n__pycache__/\n",
+    "src/__init__.py": "",
+    "src/quantities.py": "def total_units(items):\n    return sum(item[\"quantity\"] for item in items)\n",
+    "src/orders.py": "from .quantities import total_units\n\n\ndef order_summary(items):\n    return {\"total_units\": total_units(items), \"status\": \"preview\"}\n",
+    "src/exports.py": "from .quantities import total_units\n\n\ndef export_row(items):\n    return \"units,\" + str(total_units(items))\n",
+    "tests/test_quantities.py": "import unittest\n\nfrom src.quantities import total_units\nfrom src.orders import order_summary\nfrom src.exports import export_row\n\n\nclass QuantityTests(unittest.TestCase):\n    def test_empty_and_zero(self):\n        self.assertEqual(total_units([]), 0)\n        self.assertEqual(total_units([{\"quantity\": 0}]), 0)\n\n    def test_list_is_not_modified(self):\n        items = [{\"quantity\": 2}, {\"quantity\": 3}]\n        self.assertEqual(total_units(items), 5)\n        self.assertEqual(items, [{\"quantity\": 2}, {\"quantity\": 3}])\n\n    def test_one_shot_iterator(self):\n        self.assertEqual(total_units(iter([{\"quantity\": 2}, {\"quantity\": 3}])), 5)\n\n    def test_public_shapes(self):\n        self.assertEqual(order_summary([{\"quantity\": 2}]), {\"total_units\": 2, \"status\": \"preview\"})\n        self.assertEqual(export_row([{\"quantity\": 2}]), \"units,2\")\n",
+    "Makefile": "test:\n\tpython3 -B -m unittest discover -s tests -v\n\ncheck:\n\tpython3 -B -c 'import ast; from pathlib import Path; [ast.parse(p.read_text(), filename=str(p)) for folder in (\"src\", \"tests\") for p in Path(folder).glob(\"*.py\")]; print(\"syntax passed\")'\n"
+  },
+  "setup": {
+    "uncommittedEdits": {
+      "README.md": "# Quantity totals\n\nUse make test and make check for local validation.\n\nOwner note (uncommitted before this task): preserve both caller response formats.\n"
+    },
+    "initializeGitBaseline": true,
+    "skillInstallation": "Complete local implement-change leaf package; evaluator assessment returned after correction."
+  },
+  "expected": [
+    "Read the accepted contract and both actual callers; correct the shared quantity owner rather than duplicating validation or restarting planning.",
+    "Reject any negative quantity for all three public functions, including later elements of a one-shot iterator, while preserving zero, empty, valid list/generator results and caller return shapes.",
+    "Preserve input mappings and the entire pre-existing README edit; do not change requirements, dependencies or unrelated files.",
+    "Retain observable baseline failure and passing configured checks/regression evidence for the changed candidate; do not invent runtime or review success.",
+    "Return the correction and proof with an explicit review gap until the actual separate assessment returns, then reconcile that assessment against the unchanged candidate. No commit, remote action or production access."
+  ],
+  "authority": "Writable disposable local fixture only; no network, commit, push or live services."
+}
