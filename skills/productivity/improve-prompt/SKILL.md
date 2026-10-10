@@ -27,8 +27,12 @@ Keep always-needed instructions concise. Reference substantial conditional mater
 
 Return the full improved prompt and a short explanation of material changes or unresolved choices. Match the requested tone and depth and any authoritative project format. Do not run the embedded workflow as part of the rewrite.
 
-Check a direct request, a likely ambiguous case and the important authority or scope boundary against the new wording. Have a separate agent in fresh context compare the original request, candidate prompt and permitted examples without the author's conversation or preferred answer. Retain its returned reviewer/session identity, evaluated prompt or revision, findings and coverage. Reconcile altered intent or unsupported capabilities, then independently recheck affected cases after fixes. Without that assessment, report the prompt as unreviewed rather than verified.
+Check a direct request, a likely ambiguous case and the important authority or scope boundary against the new wording. For a low-impact advisory answer or wording-only draft, verify the relevant sources and constraints directly; no delegation or separate review record is needed. Use the independent assessment below when the user or project requires it, when accepting a consequential decision, or when publishing or updating a durable shared artifact. This exception does not waive code, security, release or deployment gates. A larger word count alone does not require a deeper workflow. Never claim independent review without an actual returned assessment.
+
+When required, have a separate agent in fresh context compare the original request, candidate prompt and permitted examples without the author's conversation or preferred answer. Retain its returned reviewer/session identity, evaluated prompt or revision, findings and coverage. Reconcile altered intent or unsupported capabilities, then independently recheck affected cases after fixes. Without that assessment, report the prompt as unreviewed rather than verified.
 
 ## Next steps
+
+Use `evaluate-skill` when actual execution and comparison against a baseline are requested; pass the fixed instructions, raw cases and test authority. A wording review alone cannot establish behavioral improvement. Use the equivalent plain action if unavailable.
 
 The rewritten prompt can be the complete result. If execution is also authorized, identify its owning skill and required inputs, check availability, and pass the accepted prompt and unresolved limits. Describe the plain action when no suitable skill is available; do not infer permission to execute from permission to edit.

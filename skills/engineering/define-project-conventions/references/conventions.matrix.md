@@ -94,6 +94,12 @@ Use local naming rules and maintained surrounding code before selecting language
 
 Prefer names that carry domain meaning and distinguish values that would otherwise be confused. If local conventions need a unit or currency suffix, show it with a real example. Avoid invented abbreviations or universal suffix rules. Renaming an exported symbol, database field, route, or serialized property may require a compatibility plan; a naming decision alone does not authorize the change.
 
+## Extend language guidance from evidence
+
+A recurring language/framework mistake can justify a short conditional supplement. First retain the failure or repeated review evidence and check whether an existing local rule, compiler, formatter or linter already resolves it. Prefer configuring that guard; prose should explain the remaining decision and valid exceptions. Do not add a language catalog merely for coverage.
+
+Put project-specific guidance in the existing convention source. A portable supplement must resolve a reusable demonstrated gap: name its trigger, supported language/framework versions, current primary source, rule and exceptions, and a representative failing/valid case. Link it only from the relevant decision point and load it only for that stack. Repository rules and maintained surrounding code still take precedence over its defaults. Recheck or retire the supplement when the toolchain or evidence changes; a stale example cannot override supported behavior.
+
 ## Check usability and adoption
 
 Walk representative additions through the proposed rules: place a feature/file, name a function and domain value, and, where applicable, add a model/column or public field. Exercise a relevant collection edge case, failed operation, or dependency compatibility choice when adopting those rules. Can a contributor find the owning rule, an example, exceptions, and a check without reconstructing the whole repository?

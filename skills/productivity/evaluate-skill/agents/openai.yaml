@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evaluate skill"
+  short_description: "Compare skill behavior using real execution evidence"
+  default_prompt: "Use $evaluate-skill to compare this skill with its previous version using representative requests and observed evidence."

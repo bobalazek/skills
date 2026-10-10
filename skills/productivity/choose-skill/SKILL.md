@@ -27,7 +27,7 @@ For phased work, identify the ready phase/task and its dependencies. Distinguish
 
 Return the selected skill, why it owns the next missing result, expected output, accepted input to reuse, and any unmet prerequisite. Keep the answer at the requested depth and use the project's format; a new document is rarely needed for a route.
 
-Before accepting the recommendation, have a separate agent in fresh context check the raw request, available inputs, proposed route and map without the author's conversation or preferred answer. It should challenge the starting point, overlapping ownership and unnecessary steps. Retain the returned reviewer/session identity, assessed route or revision, findings and coverage. Correct demonstrated misrouting and independently recheck affected choices. If no independent assessment is available, label the recommendation unreviewed.
+For an ordinary routing-only recommendation, check the request, accepted inputs and map directly, then return the route. No delegation or separate review record is needed. Require a separate fresh-context assessment only when the user or project requires it, or the recommendation itself accepts a consequential commitment. Execution and release retain their owning skill's gates. When independent review is required, retain the actual returned assessment with reviewer/session identity, assessed route, findings and coverage; if unavailable, state that gap. Never claim review from a requested delegation, empty wait or your own check.
 
 ## Next steps
 

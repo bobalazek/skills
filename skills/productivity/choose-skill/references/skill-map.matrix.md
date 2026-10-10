@@ -30,6 +30,8 @@ Choose the next missing result, then read the relevant domain below. Names ident
 | A controlled product experiment protocol | `plan-product-experiment` | Specify assignment, measures, stopping and decision rules before exposure; planning does not launch a test |
 | Findings from existing product usage | `analyze-product-usage` | Reconcile behavior data against definitions and observation windows; associations alone do not establish causes |
 
+A request to compare skill behavior, test a skill change or preserve behavioral regressions belongs to `evaluate-skill`. A wording-only instruction rewrite belongs to `improve-prompt`; structural package checks alone cannot establish either behavioral improvement or review.
+
 ## Engineering
 
 | Requested result | Skill | Boundary |
