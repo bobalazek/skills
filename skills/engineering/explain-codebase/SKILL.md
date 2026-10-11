@@ -15,6 +15,8 @@ Read repository entry instructions and relevant docs, then verify them against t
 
 For orientation, identify purpose, runnable entry points, modules, domain vocabulary, data ownership, integrations, delivery path, and the conventions the next contributor actually needs. Avoid dumping a file tree or describing every dependency. A useful map connects responsibilities to locations and one representative execution path.
 
+For system or architecture orientation, use [the system-map checks](references/system-map.checklist.md). Include relevant infrastructure/hosting, internal processes, local or managed data/file services, external APIs/AI, MCP/tool services and material runtime/build or delivery dependencies, with a scoped deployment/relationship diagram and a request/data-flow view where useful. Separate source-supported behavior and declared infrastructure from observed deployments, proposals and unknowns. A focused symbol question needs only its affected path.
+
 When structure or conventions are part of the question, show how a representative feature, class or function maps to its folder, filename, imports and tests. Identify accepted rules and deliberate exceptions before describing where an addition would belong; missing rules remain questions, not permission to redesign the repository.
 
 Inspect history or decisions when the user asks why a design exists. Distinguish recorded rationale, observed implementation, and inference. Current code determines current behavior; repeated patterns do not automatically establish contributor rules.

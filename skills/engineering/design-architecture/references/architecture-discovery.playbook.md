@@ -2,6 +2,8 @@
 
 Use the sections that can change the requested implementation. A focused feature needs its affected boundaries; a new system or inherited platform needs a broader baseline. Keep current, proposed, accepted, and unknown states distinct. Reconcile answers in the existing technical design rather than creating a questionnaire document for every conversation.
 
+At greenfield intake, first establish the goal and first journey, app targets, hosting/environments, internal processes and relevant infrastructure, data, file, API, AI, MCP and delivery dependencies below. Inspect supplied templates and accepted decisions before asking. Ask only unresolved choices that could change the foundation; capture nonblocking assumptions with an owner and validation point. An empty answer is not approval for a vendor, runtime, budget or new service. Keep dependent setup blocked while independent work can continue.
+
 ## Product and workload
 
 Establish who uses the system, the important journeys, where it runs, and what must work when a dependency or connection fails. Gather these constraints from requirements, code/configuration, measurements, and the responsible people:
@@ -39,7 +41,7 @@ Start with the simplest viable runtime structure. A modular monolith can keep de
 
 For inherited software, map existing boundaries, coupling and deployed versions before proposing a target. Separate the target from the migration route. Identify coexistence, incremental cuts, data movement, contract compatibility and rollback limits. Preserve useful patterns; do not infer that old means wrong.
 
-## Data and external services
+## Data and dependency inventory
 
 Identify the source of truth and permitted readers/writers for each important entity. Decide whether one database, separate schemas or separate databases fit transaction boundaries, tenancy, isolation, residency and operational needs. Record consistency and reconciliation where one transaction cannot cover the change. Include schema evolution, constraints/indexes, connection limits, backup and demonstrated restore needs.
 
@@ -49,7 +51,22 @@ For HTTP/API boundaries, settle resource and operation semantics, validation and
 
 For a proposed cache or Redis service, first identify the measured or required role: disposable cache, session state, coordination, queue, or durable data. Define invalidation, TTL, miss/failure behavior, persistence expectations, eviction and capacity. A cache must not silently become an unprotected source of truth. Reuse an existing suitable service when its ownership, capacity and isolation are established.
 
-Inventory external identity, OAuth/OIDC, payments, email, storage, search, analytics and other relevant services. For each, name purpose, owner, data exchanged, trust boundary, protocol/contract, quotas, failure/retry behavior, local test path and exit/data-portability constraints. Distinguish identity authentication from application authorization and tenant ownership. Verify actual provider capabilities and integration requirements rather than inferring them from a vendor name.
+Keep one scoped dependency inventory in the existing design. External means outside the relevant application, operating owner or trust boundary, not only an HTTP API: a database, object store, hosting platform or build service can be external too. Distinguish ownership/control from network location and managed versus self-hosted responsibility. Include only required or existing components, and distinguish a source package, running process, hosted resource and third-party dependency:
+
+| Boundary | Discover before committing the design |
+| --- | --- |
+| Hosting and delivery | Cloud/account/project/region, hosted app platform or self-managed VM/cluster, networks/ingress/egress, DNS/CDN/certificates, build/CI/artifact registry, secrets and telemetry services where relevant; deployment identity, availability and operating responsibility |
+| Internal processes | Frontend, API, worker/scheduler or other actual entry points; responsibility, deployment unit, synchronous/queued connections and shared contracts |
+| Data services | Local, self-hosted or externally managed database/source of truth, cache/session store, queue and search roles; ownership, consistency, persistence, connection/concurrency limits and recovery |
+| Files and transfer | Object/blob storage, local/shared disk or managed file-transfer endpoint; upload/download path, authorization, signed-link lifetime, metadata versus blob ownership, size/type limits, interrupted transfer, retention/deletion and recovery |
+| External APIs | Identity, payment, email, analytics and other business integrations; inbound callbacks as well as outbound requests, contract/version, quotas, retries, reconciliation and portability |
+| AI providers and gateways | Direct provider versus gateway responsibility, data sent and retained, model/API version, tool authority, spend/rate limits, timeout/cancellation, fallback meaning and evaluation boundary |
+| MCP and tool services | Local or remote server/connector, transport and contract/version, authentication and effective tool authority, permitted data/actions, untrusted output handling, side effects, timeout/cancellation, audit and recovery |
+| Runtime/build dependencies | Material SDKs, packages, runtimes, registries or generators whose compatibility, trust, licensing or availability constrains the architecture; distinguish build-time access from deployed runtime requirements |
+
+For each relevant entry, record purpose, actual or proposed provider/placement, account/region/environment, owner or unassigned responsibility, data exchanged, trust boundary, configuration/secret names (never values), protocol/contract, capacity/quota/cost assumptions, failure/recovery and local validation path. Inspect current provider contracts before making capability claims. Distinguish identity authentication from application authorization and tenant ownership. Do not add a service or tool just to fill the inventory. Follow existing provider and hosting decisions; cloud brands, managed platforms and self-hosted options are choices to evaluate, not default architecture requirements.
+
+Trace one important request and one relevant failure through the inventory: untrusted inputs, identities and sensitive data; durable writes and external effects; timeout/retry/duplicate handling; safe diagnostics and recovery ownership. For growth, connect workload units and burst/concurrency assumptions to the actual bottleneck, provider quota, connection pool or storage/transfer limit. Compare the smallest viable design before proposing replication, service splits or new infrastructure. Keep unmeasured capacity and unexercised threat mitigations explicit.
 
 ## Hosting and operation
 

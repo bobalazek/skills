@@ -647,5 +647,112 @@
       "Keep applicable missing desktop/keyboard/restart/update proof unchecked with concrete closing observations and readiness consequences; do not relabel it inapplicable or assert an observed runtime bug.",
       "Explain web/mobile/SEO exclusions by accepted target scope, keep required independent assessment missing, and obey the no-project-command/no-mutation boundary."
     ]
+  },
+  {
+    "id": "architecture-dependency-intake",
+    "skill": "design-architecture",
+    "installedSkills": [
+      "design-architecture"
+    ],
+    "prompt": "We are starting the project in REQUEST.md. Before scaffolding, return the consequential clarification questions and a compact known/unknown architecture inventory. Use local inputs only, keep files unchanged, and do not provision, contact providers or delegate. This is an unaccepted planning draft, not a vendor recommendation.",
+    "files": {
+      "REQUEST.md": "Original outcome: a web app where a customer uploads a document, receives an AI summary, and explicitly approves any subsequent action in their CRM. Keep the first journey small. An API and asynchronous worker are possible, not accepted deployments. No region, retention, scale target or budget is decided. No scaffold is authorized until consequential foundation choices are settled.\n",
+      "CONTEXT.md": "We have access to an existing self-managed VM account and a managed application-hosting account, but neither is chosen. A separate managed SQL database and object-storage account are available; their residency, capacity and production access are unverified. A remote MCP service can write to the CRM; its permission scope and cancellation/idempotency contract are unknown. An AI gateway and direct-provider option are available; data retention and timeout behavior need decisions. CI/build registry, DNS and telemetry ownership are unassigned. No caching requirement or measured workload exists. Provider names and credentials are intentionally omitted.\n"
+    },
+    "expected": [
+      "Ask or retain consequential unknown hosting/environment/region, ownership, data retention/residency, external authority, workload/budget and recovery choices before dependent setup; keep available accounts distinct from chosen or provisioned resources.",
+      "Include internal frontend/API/worker possibilities, external managed database and object storage, hosting/network/delivery services, AI provider/gateway and MCP/CRM dependencies with actual known versus unknown responsibility, configuration/contract and trust/data boundaries.",
+      "Trace the approved-action boundary and relevant upload/summary/job/tool effects, including sensitive data, partial failure/retry/cancellation, external tool authority and recovery questions; do not treat an MCP service as a harmless text API.",
+      "Use a minimal first-journey design and scoped questions without selecting a cloud, cache, microservices, provider capability or invented scale target; name how material assumptions would be verified.",
+      "Keep an unaccepted draft with no edits, provisioning, provider calls, leaked secrets or fabricated runtime/review evidence."
+    ]
+  },
+  {
+    "id": "explain-system-dependency-map",
+    "skill": "explain-codebase",
+    "installedSkills": [
+      "explain-codebase"
+    ],
+    "prompt": "Explain this small system for a new engineer: where its pieces run, what it depends on, and how an export reaches the user. Include useful architecture and flow diagrams. Keep the answer scoped, use only the fixture, do not edit or call services, and distinguish what we know from what has not been verified. No delegation.",
+    "files": {
+      "README.md": "# Export service\nBrowser requests an export from the API; a separate worker builds the file. Source package backend contains both processes. deployment.json is the intended staging layout, not a verified deployment. No live inspection or rendered diagram artifact is supplied.\n",
+      "deployment.json": "{\"status\": \"declared, unverified\", \"environment\": \"staging\", \"hosting\": {\"frontend\": \"managed web platform\", \"api\": \"self-managed VM\", \"worker\": \"same VM, separate process\"}, \"database\": \"externally managed SQL\", \"queue\": \"managed queue\", \"files\": \"external object store\", \"dns\": \"hosted DNS\", \"build\": \"hosted CI and registry\", \"telemetry\": \"external log sink\", \"ai\": \"not used\", \"mcp\": \"not used\"}\n",
+      "frontend/export.js": "export async function requestExport() { return fetch(\"/exports\", {method: \"POST\"}); }\n",
+      "backend/api.py": "def request_export(actor, db, queue):\n    if not actor[\"can_export\"]:\n        raise PermissionError()\n    row = db.insert_export(actor[\"tenant_id\"], state=\"pending\")\n    queue.add({\"id\": row.id, \"tenant_id\": actor[\"tenant_id\"]})\n    return {\"id\": row.id}\n",
+      "backend/worker.py": "def run_export(job, db, files, logs):\n    row = db.get_export(job[\"id\"], job[\"tenant_id\"])\n    blob = files.put(row.id, db.render_csv(row.tenant_id))\n    db.mark_ready(row.id, blob)\n    logs.info(\"export_ready\", export_id=row.id)\n",
+      "backend/download.py": "def download(actor, export_id, db, files):\n    row = db.get_export(export_id, actor[\"tenant_id\"])\n    if not actor[\"can_export\"]:\n        raise PermissionError()\n    return files.signed_download(row.blob, expires_seconds=60)\n",
+      "OPERATIONS.md": "No recovery scan or shared database/queue transaction is implemented. API failure between insert and enqueue can leave pending work. No live staging check, restore test, capacity measurement or install/runtime evidence exists. Configuration uses DB_URL, QUEUE_URL, OBJECT_STORE, LOG_SINK; values are not supplied.\n"
+    },
+    "expected": [
+      "Distinguish backend source package from API and worker processes and explain frontend, VM/managed hosting, external database/queue/object store and relevant DNS/build/log dependencies from declared staging evidence without claiming deployed state.",
+      "Provide scoped architecture/deployment and request/data-flow diagrams (combined when useful) with consistent named boundaries, directed meaningful connections and status/legend; identify rendering unavailable if not actually rendered.",
+      "Trace request authorization and tenant identity through database/enqueue/worker/file/readiness/download, including metadata versus blob ownership and external data boundaries, with source links.",
+      "Explain the documented insert/enqueue interruption and missing recovery without claiming execution; keep unverified capacity, deployment and provider behavior explicit and avoid inventing AI/MCP components.",
+      "Preserve read-only local scope and give a usable orientation without turning it into an unsolicited redesign or fabricated runtime/security approval."
+    ]
+  },
+  {
+    "id": "review-commercial-alternate-paths",
+    "skill": "review-code",
+    "installedSkills": [
+      "review-code"
+    ],
+    "prompt": "Review the quote acceptance change represented by these files, including relevant existing callers. Use read-only local inspection and harmless pure probes only; no edits, external calls, real charges or delegation. Explain material findings, complete affected paths and proof gaps for releasing this behavior.",
+    "files": {
+      "REQUEST.md": "Accepted contract: only an organization admin may accept that organization's unexpired quote. The accepted quoted amount/currency is charged once per quote acceptance, even after retries or provider success followed by local failure. Members may view their own organization's quote but cannot accept it. Existing calls through HTTP and queued approval must preserve this rule.\n",
+      "CHANGE.md": "Candidate adds role and expiry guards to ui_accept. Other callers and the helper are unchanged. No current provider contract or runtime/reconciliation proof is supplied.\n",
+      "quotes.py": "def accept_quote(actor, quote, provider, db):\n    receipt = provider.charge(quote[\"amount\"], quote[\"currency\"])\n    db.mark_accepted(quote[\"id\"], receipt)\n    return receipt\n\n\ndef ui_accept(actor, quote, now, provider, db):\n    if actor[\"role\"] != \"admin\" or quote[\"expires_at\"] <= now:\n        raise PermissionError()\n    return accept_quote(actor, quote, provider, db)\n",
+      "api.py": "from quotes import accept_quote\n\n\ndef post_accept(session, quote_id, db, provider):\n    actor = db.authenticate(session)\n    quote = db.get_quote(quote_id)\n    return accept_quote(actor, quote, provider, db)\n",
+      "jobs.py": "from quotes import accept_quote\n\n\ndef approve_job(payload, db, provider):\n    actor = db.get_user(payload[\"actor_id\"])\n    quote = db.get_quote(payload[\"quote_id\"])\n    return accept_quote(actor, quote, provider, db)\n",
+      "PROOF.md": "Supplied claim only: UI admin acceptance succeeds and UI member/expired cases are rejected. No wrong-tenant, alternate-path, duplicate/concurrent acceptance or provider-success/local-failure proof exists. No persistent operation identity or reconciliation code exists in this fixture.\n"
+    },
+    "expected": [
+      "Trigger financial/commercial, authorization/ownership and background/integration depth, following UI and API/job callers through the shared helper to charge and local state; a guarded UI does not establish full protection.",
+      "Find missing tenant ownership on the shown paths and bypassed admin/expiry rules through API/jobs, with accepted invariant and concrete conditions; distinguish authenticated identity from permission and do not invent provider behavior.",
+      "Identify unsupported exactly-once financial outcome: no operation identity or state/concurrency protection, provider success/local failure and retry can repeat effects; propose scoped checks/reconciliation rather than claiming a transaction undoes a charge.",
+      "Cover amount/currency/expiry/state meaning, legitimate use, rejected actors, concurrency/replay and failure/recovery proof with appropriate readiness impact; keep hypothetical provider behavior separate from source-established exposure and required evidence.",
+      "Keep findings actionable and preserve read-only/synthetic authority with no real provider calls, fabricated runtime tests or blanket pass from supplied author claims."
+    ]
+  },
+  {
+    "id": "review-lifecycle-decision-data",
+    "skill": "review-code",
+    "installedSkills": [
+      "review-code"
+    ],
+    "prompt": "Review the selected maintenance/reporting flow for readiness. This is a bounded review, not a whole-repo audit. Keep files unchanged and use local source or safe pure probes; do not run cleanup, reach services or delegate. Include the relevant callers, effects and recovery limits.",
+    "files": {
+      "REQUEST.md": "Accepted rules: a tenant admin may preview that tenant's expired records; only that approved set may later be deleted, using current authority. Retention is already fixed at 30 days by POLICY.md. The report used for refund decisions must include each settled payment once, preserve cents, and clearly flag incomplete source data. Cleanup must be resumable and a retry must not broaden the approved set.\n",
+      "POLICY.md": "Owner-approved retention: remove expired active-store records after 30 days for the authorized tenant. Backup deletion and legal-hold obligations are unresolved and must be decided before claiming full compliance. No restore rehearsal evidence exists.\n",
+      "maintenance.py": "def preview(actor, cutoff, db):\n    if actor[\"role\"] != \"admin\":\n        raise PermissionError()\n    return db.expired_ids(actor[\"tenant_id\"], cutoff)\n\n\ndef cleanup_job(payload, db):\n    rows = db.expired_ids_all_tenants(payload[\"cutoff\"])\n    for record_id in rows:\n        db.delete(record_id)\n    return \"done\"\n\n\ndef refund_report(payments, joined_events, complete):\n    return {\"settled_cents\": sum(p[\"cents\"] for p in payments for e in joined_events if p[\"id\"] == e[\"payment_id\"] and p[\"state\"] == \"settled\")}\n",
+      "admin.py": "from maintenance import preview, cleanup_job\n\n\ndef approve_cleanup(actor, cutoff, db, queue):\n    ids = preview(actor, cutoff, db)\n    queue.add({\"actor_id\": actor[\"id\"], \"approved_ids\": ids, \"cutoff\": cutoff})\n    return ids\n\n\ndef support_retry(payload, db):\n    return cleanup_job(payload, db)\n",
+      "OPERATIONS.md": "Queue handler calls cleanup_job with the stored payload. Deletes commit one at a time. Support retries the original payload after failure. No actor/grant revalidation, stable checkpoint, audit trail or restore test is shown. All sources are synthetic; no runtime or migration proof is available.\n"
+    },
+    "expected": [
+      "Trace preview/approval through queued cleanup and support retry; identify that execution ignores approved IDs, tenant and current authority, broadening destructive selection beyond accepted scope.",
+      "Investigate partial committed deletion, restart/retry selection, recovery and audit/operator visibility; keep restore and backup/legal-hold obligations unresolved without inventing policy or claiming a rollback restores data.",
+      "Find duplicate-join inflation in decision-driving settled_cents and ignored complete flag, showing concrete source or pure input evidence; check cents/grain/source/provenance and distinguish missing data from an authoritative total.",
+      "Apply relevant sensitive lifecycle, destructive migration/repair, analytics/reconciliation and privileged-job checks with actionable invariant/closing proof and readiness limits; preserve fixed 30-day policy and avoid unrequested legal advice.",
+      "Keep authority read-only and avoid actual cleanup/provider actions or fabricated runtime/independent assessments."
+    ]
+  },
+  {
+    "id": "pr-dependency-slices",
+    "skill": "explain-pr",
+    "installedSkills": [
+      "explain-pr"
+    ],
+    "prompt": "Explain the proposed PR and whether splitting it would make review and rollout easier. Use the supplied comparison and accepted requirements; return a concise recommendation only. No edits, remote actions, delegation or formal correctness approval.",
+    "files": {
+      "REQUEST.md": "Add optional delivery notes to order submission while preserving existing clients. Older clients keep sending only total. Existing deployments allow API and browser to update separately; no schema cleanup is required for this feature.\n",
+      "DIFF.md": "Base A to candidate B: shared order contract adds optional delivery_note; schema adds nullable delivery_note; API accepts omitted note and stores a supplied note; web adds the optional field. Same PR also renames an unrelated search module and contains generated API fixtures. A separate proposed follow-up removes old total in favor of amount, but current clients still require total. No runtime checks or deployment evidence are supplied.\n",
+      "DEPLOY.md": "Current code and schema use total. API must start on the migrated schema before note submission is enabled. Old clients must keep working during rollout. DB migration and compatible API support can deploy before the browser. No feature-flag system exists. Shared contract and API generated fixtures must agree at each merged revision.\n"
+    },
+    "expected": [
+      "Explain accepted optional-note behavior and preserved total contract from fixed A/B comparison; do not portray the unrelated rename or unaccepted total removal as required scope.",
+      "Assess coherence/dependencies/risk rather than arbitrary line counts; suggest a concrete compatible foundation/contract/schema, API support and browser adoption sequence where viable, separating unrelated rename.",
+      "Distinguish review/merge/deploy boundaries, keep generated fixtures with their owning contract changes, retain old/new compatibility and the migration-before-API-before-client constraint; do not require a flag framework or a broken layer split.",
+      "Keep integration/user criteria and missing checks/recovery proof visible, label recommendations as proposed and preserve advisory authority without claiming CI, deployment or correctness approval."
+    ]
   }
 ]

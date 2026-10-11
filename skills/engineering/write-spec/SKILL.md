@@ -19,6 +19,8 @@ Keep the original requested outcome, its source and accepted clarifications in t
 
 Establish supported application targets and the first end-to-end user outcome before choosing implementation. For an unspecified greenfield app, use web as an explicit provisional assumption; identify whether mobile means responsive web or an installed app, and include desktop when requested or required by accepted capabilities. Repository/product decisions override that default. Resolve consequential platform choices before committing architecture or claiming scope settled; do not silently add three applications.
 
+For greenfield work, surface infrastructure constraints at intake: where the app and its frontend/API/workers will run, which relevant dependencies it requires (including managed databases, data/file services, hosting/delivery services, APIs, AI and MCP/tool services), and who operates them. Preserve settled answers and route consequential technical choices to `design-architecture` when available, or the existing design record. The spec records requirements and open decisions; it need not choose unrequested providers or treat unknown hosting as approved.
+
 Identify applicable project conventions as constraints and link their authoritative source. Carry consequential structural or naming conflicts to the owning design/convention decision before dependent planning; the spec need not choose a folder tree or class hierarchy to define behavior.
 
 Separate current behavior, desired behavior, assumptions, and unresolved decisions. Discover factual answers from the repository before questioning the user. Resolve choices that affect scope or acceptance; keep nonblocking unknowns explicit. A spec must not hide a product decision inside a technical recommendation.

@@ -27,6 +27,8 @@ The `git-local-workflow`, `git-squash-message` and `foundation-checklist-proof` 
 
 The `spec-original-intent-targets`, `review-intent-category-coverage` and `verify-app-target-proof` cases challenge narrowed generated requirements, category omissions and unsupported native-app claims. The writable [intent and selection correction](../evals/workflows/implement-intent-selection.json) uses the same isolated setup and 15-minute bound as the implementation scenario below. It checks a real correction, preserved owner edits and proportionate checklist evidence. Give executors only the raw request and project; retain criteria and returned review with the evaluator.
 
+The architecture/dependency intake and system-map cases check unresolved infrastructure choices, managed data and MCP boundaries, declared versus deployed evidence and useful diagrams. The commercial and lifecycle review cases test alternate callers, financial partial effects, destructive scope and decision-data integrity. `pr-dependency-slices` checks viable compatibility sequencing rather than mandatory layer splits. These are selected scenarios, not proof of every provider or high-risk domain.
+
 No model calls run in ordinary CI. Invoke behavioral trials deliberately using the existing authorized host; keep raw transcripts outside the repository and put a redacted result summary in the PR. The portable `evaluate-skill` package also works with another project's cases and execution tools.
 
 ## Repeatable local runner
