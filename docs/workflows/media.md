@@ -27,32 +27,21 @@ Example: a narrated product explainer using real app screens. `create-motion-vid
 
 ```mermaid
 flowchart TD
-  subgraph Story["1. Settle the story"]
-    Goal(["Input: product facts, audience and destination"]) --> Motion[["create-motion-video"]]
-    Motion --> Script(["Work: settle script, look and shot list"])
-  end
-  subgraph Assets["2. Prepare the assets"]
-    Script --> Voice[["create-voiceover"]]
-    Script --> Capture[["capture-product-screens"]]
-  end
-  subgraph Finish["3. Finish"]
-    Voice -->|Audio clips + measured timing| Storyboard(["Work: time and preview the storyboard"])
-    Capture -->|Checked shots + shot manifest| Storyboard
-    Storyboard -->|Required choices resolved| Render(["Work: animate and render requested formats"])
-    Render --> Check(["Work: inspect playback and audio; independent assessment"])
-    Check --> Pass{"Required checks pass?"}
-    Pass -->|Yes| Done(["Result: checked video, editable source and evidence"])
-    Pass -->|No| Repair(["Work: repair affected source or report the blocker"])
-    Repair -. "Repair possible within scope; rerender and recheck" .-> Render
-  end
+  Goal(["Input: product facts and video brief"]) --> Motion[["create-motion-video"]]
+  Motion --> Script(["1. Settle script, look and shot list"])
+  Script --> Voice[["create-voiceover"]]
+  Script --> Capture[["capture-product-screens"]]
+  Voice -->|Audio clips + measured timing| Storyboard(["2. Preview the timed storyboard"])
+  Capture -->|Checked shots + manifest| Storyboard
+  Storyboard -->|Required choices resolved| Render(["3. Animate and export"])
+  Render --> Check(["4. Playback, audio and independent review"])
+  Check -->|Checks pass| Done(["Result: video, editable source and evidence"])
+  Check -. "Authorized repair + affected recheck" .-> Render
   classDef skill fill:#edf5ff,stroke:#355b85,color:#172b42;
   class Motion,Voice,Capture skill;
-  style Story fill:#f7f9fc,stroke:#cbd5e1,color:#172b42;
-  style Assets fill:#f7f9fc,stroke:#cbd5e1,color:#172b42;
-  style Finish fill:#f7f9fc,stroke:#cbd5e1,color:#172b42;
 ```
 
-The join waits for both asset sets; estimated narration length cannot substitute for measured timing. Script changes can invalidate narration and the storyboard; recaptures can invalidate pixel-dependent animation. Return to the affected owner before continuing. A storyboard-only request stops after its preview and scoped assessment. Delivery of a file does not authorize publishing it.
+The join waits for both asset sets; estimated narration length cannot substitute for measured timing. Script changes can invalidate narration and the storyboard; recaptures can invalidate pixel-dependent animation. Return to the affected owner before continuing. If a required check fails, repair the affected source and repeat its checks; missing access or an unresolved choice leaves a blocker. A storyboard-only request stops after its preview and scoped assessment. Delivery of a file does not authorize publishing it.
 
 A narrated product explainer often draws on `capture-product-screens` and `create-voiceover` before animation. Both can run in parallel once the script and shot list are accepted; motion timing waits for the measured narration manifest, and a recapture rechecks shots that consumers use by pixel position.
 
