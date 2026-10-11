@@ -27,9 +27,9 @@ Working agreements: <state definitions, capacity/WIP, decision and review owners
 
 ## Work view
 
-| Task and canonical link | Phase | State | Owner | Depends on | Blocker / next action |
-| --- | --- | --- | --- | --- | --- |
-| <ID and outcome> | <ID or none> | <state> | <owner or unclaimed> | <IDs> | <exact gap> |
+| Task and canonical link | Priority | Phase | State | Owner | Depends on | Blocker / next action |
+| --- | --- | --- | --- | --- | --- | --- |
+| <ID and outcome> | <source label or unassigned; rationale in task> | <ID or none> | <state> | <owner or unclaimed> | <IDs> | <exact gap> |
 
 Ready now: <checked IDs and evidence; or no_work with reasons>
 Future parallel candidates: <IDs, prerequisite and isolation conditions>
@@ -45,6 +45,7 @@ Reuse the existing executable contract: outcome, source criterion IDs/version, s
 | Field | What to record |
 | --- | --- |
 | State | Current state and reason for the latest material transition |
+| Priority | Canonical finding/task rating and rationale; retain prior rating and reason for an accepted change, separately from readiness/state |
 | Claim | Coordinator, worker/session, start time, source snapshot and owned workspace; unclaimed until assigned |
 | Blocker | Dependency, input, decision, access or verification gap; exact missing result, owner and next action |
 | Candidate | Output revision/artifact and partial results worth preserving |

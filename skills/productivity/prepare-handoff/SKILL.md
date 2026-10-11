@@ -19,6 +19,8 @@ Preserve established authorization without expanding it. Reference secret locati
 
 ## Write the continuation context
 
+Carry finding/task IDs, priority labels and their rationale into the existing record and next handoff. Preserve the project’s scale; explain any reprioritization with changed evidence or an accepted decision. Priority does not establish dependency readiness or expand execution authority.
+
 When assembling the transfer block or record, use [the handoff template](references/handoff.template.md), adapting it to the project's existing format. Link authoritative material rather than copying documents. Retain the goal, constraints, authority, criterion status, source versions, blockers and useful file/symbol pointers.
 
 Name the next runnable action and what makes it ready. For a pending remote operation, include its actual identifier and observed state so the recipient can inspect before retrying. Keep changed assumptions and rejected approaches only when they prevent a repeated mistake.

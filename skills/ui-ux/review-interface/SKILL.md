@@ -27,6 +27,8 @@ Add reviewers only for distinct risks needing coverage. Keep the same candidate 
 
 ## Reconcile findings
 
+Label actionable findings and fixes with the project's priority labels and meanings. Otherwise use P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), or P3 low (minor or optional improvement). Give the evidence-based impact/urgency rationale and next action; mark uncertain ratings provisional. Keep priority separate from severity, confidence and readiness. Preserve finding IDs and priority through rechecks; explain changes using new evidence or an accepted decision. Priority does not authorize extra work or waive required checks.
+
 For each finding, identify the affected task/state, location, evidence, consequence, priority and useful correction. Reproduce consequential claims or retain the exact verification gap. Combine duplicate symptoms without hiding severe minority findings; votes cannot dismiss an observed defect. Keep unresolved conflicting observations visible.
 
 Record the tested revision and capture conditions. Before/after screenshots need comparable route, viewport, role, fixture and state. Keep visual proof separate from exercised interaction/focus/recovery results. Review does not authorize redesign or code edits; after authorized fixes, independently recheck affected paths and retain still-valid evidence from unchanged ones.

@@ -43,6 +43,8 @@ For each useful rule, record:
 
 Resolve contradictions explicitly; frequent code and stale memory do not establish policy. Avoid arbitrary line limits, a layer per noun, or naming changes without a maintenance benefit.
 
+Include the relevant review/repair priority scale and finding-ID handoff rules from the convention matrix when establishing contributor workflow. Existing project labels and meanings take precedence; do not silently replace them with a second scale.
+
 Enforce mechanically checkable conventions and recurring issues with existing static checks or other suitable automated guards within the agreed scope. Use results from configured static checks before subjective review; keep human judgment for what they cannot establish. Wire missing guards through `automate-code-checks` when available, or the existing toolchain directly, and verify detection and valid exceptions. Keep one authoritative rule source and link it from agent entry points.
 
 Update existing standards instead of creating competing documents. Mark unresolved proposals and their decision owner. Changing a convention does not authorize mass reformatting, renaming, or migration; state an incremental adoption route when existing code differs.

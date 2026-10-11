@@ -51,6 +51,8 @@ Choose a timeout appropriate to the command; omit `--timeout-ms` for an unbounde
 
 ## Decide what the evidence establishes
 
+Label actionable findings and fixes with the project's priority labels and meanings. Otherwise use P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), or P3 low (minor or optional improvement). Give the evidence-based impact/urgency rationale and next action; mark uncertain ratings provisional. Keep priority separate from severity, confidence and readiness. Preserve finding IDs and priority through rechecks; explain changes using new evidence or an accepted decision. Priority does not authorize extra work or waive required checks.
+
 For each criterion, report demonstrated, failed, or not checked, with its evidence and limitations. For a failed or unchecked requirement, explain the consequence, smallest correction or missing prerequisite, and specific recheck needed. A failed or missing required check blocks readiness; an optional uninspected surface limits the claim. Do not convert a risk acceptance or tool failure into a pass. When fixes are requested, repair the cause and rerun affected checks; otherwise report the finding within scope.
 
 Before returning the result, reconcile the record against every material accepted criterion and selected checklist item. Check execution claims against actual command or interaction evidence, including failed attempts; omit unsupported execution-history details. A completed checklist row requires its observed result, not merely a planned command or an author's claim that it ran.

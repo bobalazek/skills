@@ -41,6 +41,8 @@ Export the requested formats and keep the editable project or reproducible edit 
 
 ## Evaluate and return
 
+For actionable critique or repair findings, use the project's priority labels and meanings; otherwise P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), P3 low (minor or optional). Include impact/urgency rationale and next action; mark uncertain ratings provisional. Preserve finding IDs and ratings through fixes/rechecks and explain changes from new evidence or an accepted decision. Priority is separate from readiness and grants no extra authority. Keep this in the existing result record; a clean deliverable needs no issue list.
+
 Apply [edit completion checks](references/completion.checklist.md) to the requested scope, using the existing edit record. Check only demonstrated criteria with evidence; failures and unavailable checks stay unchecked with consequence and next action. Explain exclusions.
 
 Before acceptance, have a separate agent in fresh context challenge the raw request, source passages, edit decisions and delivered files or observed proof, without the author's conversation or intended answer. Retain reviewer/session identity, evaluated revision/artifact, findings and coverage. Resolve defects and independently recheck affected results. If the reviewer cannot hear or play the export, preserve that coverage gap. Without a returned assessment, label the result unreviewed; review grants no publication authority.

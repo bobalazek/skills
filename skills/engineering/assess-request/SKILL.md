@@ -17,6 +17,8 @@ Preserve the original requested outcome and source in the existing brief/issue o
 
 ## Select the next action
 
+Label actionable findings and fixes with the project's priority labels and meanings. Otherwise use P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), or P3 low (minor or optional improvement). Give the evidence-based impact/urgency rationale and next action; mark uncertain ratings provisional. Keep priority separate from severity, confidence and readiness. Preserve finding IDs and priority through rechecks; explain changes using new evidence or an accepted decision. Priority does not authorize extra work or waive required checks.
+
 Assess impact, urgency, confidence, prerequisites, and ownership using the project's existing priority system. Do not invent severity from tone or assume a reported cause is correct. Inspect discoverable facts before asking for missing reproduction steps or a consequential product choice.
 
 Recommend diagnosis, behavior definition, a support answer, related work, specific missing information, or closure with a supported reason. For ready work, supply a concise execution brief with scope, artifacts, preservation constraints, and acceptance signal. For example, “Export fails” may need the affected version and a sample input before diagnosis; do not invent severity or a cause to fill the brief.

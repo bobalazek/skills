@@ -25,11 +25,13 @@ Prefer removing empty language to inventing a vivid replacement. Add no statisti
 
 ## Return the requested result
 
+Label actionable findings and fixes with the project's priority labels and meanings. Otherwise use P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), or P3 low (minor or optional improvement). Give the evidence-based impact/urgency rationale and next action; mark uncertain ratings provisional. Keep priority separate from severity, confidence and readiness. Preserve finding IDs and priority through rechecks; explain changes using new evidence or an accepted decision. Priority does not authorize extra work or waive required checks.
+
 For review, use a short list or this shape where useful:
 
-| Passage | Problem and consequence | Suggested repair or missing fact |
-| --- | --- | --- |
-| Exact quotation and location | What the reader loses or might misunderstand | Smallest useful change, or the evidence needed |
+| Priority and rationale | Passage | Problem and consequence | Suggested repair or missing fact |
+| --- | --- | --- | --- |
+| Project label or P0–P3; why it matters now | Exact quotation and location | What the reader loses or might misunderstand | Smallest useful change, or the evidence needed |
 
 Prioritize false meaning or unsupported promises before polish. Report no supported findings when appropriate. Avoid a numeric score unless requested with a defined rubric; it measures that rubric, never authorship. Do not add findings merely to fill a table.
 

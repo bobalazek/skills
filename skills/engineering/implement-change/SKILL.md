@@ -23,6 +23,8 @@ Trace impact proportional to risk. For a leaf edit, inspect its nearest consumer
 
 ## Select and coordinate ready work
 
+Label actionable findings and fixes with the project's priority labels and meanings. Otherwise use P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), or P3 low (minor or optional improvement). Give the evidence-based impact/urgency rationale and next action; mark uncertain ratings provisional. Keep priority separate from severity, confidence and readiness. Preserve finding IDs and priority through rechecks; explain changes using new evidence or an accepted decision. Priority does not authorize extra work or waive required checks.
+
 Select one task or the agreed ready batch. For work spanning phases, follow the accepted dependency graph and phase exits. If branches need coordination and no graph exists, record a compact dependency graph in the existing work record; use `plan-phases` or `create-tasks` when decomposition itself needs work. Keep a local fix direct.
 
 Shared contracts and migrations precede consumers. Concurrent workers require accepted prerequisites, isolated writes/state and check environments, and clear ownership; use available host isolation rather than assuming it exists. Show what is ready now separately from future parallel candidates. Integrate and verify the combined result before accepting a phase exit. Preserve unaffected outputs if a branch fails, block its consumers, and recompute ready work after accepted outputs or requirements change.

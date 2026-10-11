@@ -1088,5 +1088,92 @@
       "Do not block the answer on repeated approval of already accepted audience, goal, tool/budget constraints or delegated recommendation.",
       "Keep the recommendation/proposed trial separate from actual execution and any ungranted authority; no subscriptions, new app, messages or prototype work."
     ]
+  },
+  {
+    "id": "priority-review-defaults",
+    "skill": "review-writing",
+    "installedSkills": [
+      "review-writing"
+    ],
+    "prompt": "Review copy.md against facts.md. Return only supported findings and useful corrections, without rewriting the document or publishing. Use the supplied files only; no delegation.",
+    "files": {
+      "copy.md": "Every plan includes unlimited exports. The dashboard keeps completed exports in one place. This is very very useful.\n",
+      "facts.md": "Accepted product facts: Basic permits three exports per month; Plus permits ten. Neither permits unlimited exports. The dashboard lists completed exports. There is no house priority scale.\n"
+    },
+    "expected": [
+      "Label actionable findings with the fallback P0–P3 scale and an impact/urgency rationale plus next action; do not invent a critical P0 incident from a draft-copy defect.",
+      "Identify the unsupported unlimited-exports promise from supplied facts and prioritize its correction ahead of any supported minor wording issue; no filler finding is required.",
+      "Keep source evidence, proposed corrections and review limits clear; do not rewrite files, publish or fabricate independent review."
+    ]
+  },
+  {
+    "id": "priority-feedback-local-scale",
+    "skill": "address-review-feedback",
+    "installedSkills": [
+      "address-review-feedback"
+    ],
+    "prompt": "Revisit the supplied review using current.md and POLICY.md. Return a read-only disposition and next action for each finding; no edits, external actions or delegation.",
+    "files": {
+      "POLICY.md": "Work priority labels are NOW, NEXT and LATER. NOW means immediate attention, NEXT means next planned work, LATER means optional follow-up. Preserve these labels; do not add a second numeric scale. Priority does not waive required validation or authorize deployment.\n",
+      "review.md": "F-01 [NOW]: Export requests time out; repair and a successful representative export check are required. F-02 [LATER]: Help text uses an unclear field label; update only if the current label is still misleading.\n",
+      "current.md": "Owner update for revision B: the export code was patched, but the required representative export check has not run and no run evidence is available. The label concern still applies; it affects clarity, not data or access. No decision accepts either residual risk. This is supplied status, not independent runtime evidence.\n"
+    },
+    "expected": [
+      "Preserve NOW and LATER with the original finding IDs and rationale; use the project scale without replacing or duplicating it with P0–P3.",
+      "Keep F-01 validation and resolution open despite the claimed patch, retain its urgency and give the concrete missing export check; low effort or missing access does not justify downgrading.",
+      "Give F-02 a useful bounded disposition and next action without turning its optional label repair into a delivery blocker or executing fixes.",
+      "Distinguish supplied status from observed proof and do not invent independent review, remote resolution or deployment authority."
+    ]
+  },
+  {
+    "id": "priority-revisit-evidence",
+    "skill": "assess-request",
+    "installedSkills": [
+      "assess-request"
+    ],
+    "prompt": "Reassess the priority and next step for F-07 using the current report. Keep the original finding identity and explain any change. Return a local recommendation only; no tracker updates or delegation.",
+    "files": {
+      "report.md": "F-07 was P1 because an earlier report said all exports were broken. The owner has corrected the report: actual exports succeed; the supplied failing case is a broken link from an internal help page to the export guide. There is no live outage, data loss, exposure or deadline. Current support cost is one extra navigation step for two internal contributors; a known working documentation-index link is available. This evidence is supplied by the owner, not a test you ran. No project priority scheme overrides P0 critical, P1 high, P2 normal, P3 low.\n"
+    },
+    "expected": [
+      "Retain F-07 and its previous P1 rating, recommend a supported lower current priority (P2 or P3) with rationale tied to the corrected scope and usable workaround, and distinguish recommendation from an accepted tracker change.",
+      "Identify the bounded link correction and verification or exact remaining evidence, rather than inventing an export implementation task or claiming runtime validation.",
+      "Keep severity, urgency, confidence and execution readiness distinct; do not infer new authority, a performed independent assessment or completed repair."
+    ]
+  },
+  {
+    "id": "priority-website-critique",
+    "skill": "write-website-copy",
+    "installedSkills": [
+      "write-website-copy"
+    ],
+    "prompt": "Critique the website hero in copy.md against brief.md. Report supported problems and useful corrections only; do not write a replacement hero, edit files, delegate or publish.",
+    "files": {
+      "copy.md": "Start your free trial instantly — no card or sales call needed.\nButton: Start free trial\nDestination: /book-demo\n",
+      "brief.md": "Accepted audience: small-team coordinators assessing the product. The actual offer is a scheduled sales demonstration. /book-demo opens a request form and creates no account or trial. No free-trial offer exists. Keep the tone direct. No project priority scheme has been established. This is a supplied copy draft; no rendered site is available.\n"
+    },
+    "expected": [
+      "Label supported website-copy findings with fallback P0–P3 priorities, rationale and next correction; do not require the absent review-writing sibling or invent a P0 live incident.",
+      "Identify the promise/CTA mismatch with the actual sales-demo destination, deduplicating its shared cause and using only supplied offer facts.",
+      "Deliver a bounded critique without a replacement hero, file edits, publication, fabricated rendering/interaction proof or independent-review claims."
+    ]
+  },
+  {
+    "id": "priority-media-repair",
+    "skill": "edit-video",
+    "installedSkills": [
+      "edit-video"
+    ],
+    "prompt": "Revisit the remaining edit corrections in review.md using transcript.md and captions.srt. Return a repair order and evidence gaps only; do not edit, render, call providers or delegate.",
+    "files": {
+      "review.md": "Accepted scope: a 30-second tutorial with accurate captions. F-01 [P1]: the caption drops a negation and reverses the spoken instruction; this must be corrected before delivery. F-02 [P3]: a reviewer prefers a slower opening transition; the accepted pacing has no observed comprehension problem and this change is optional. Neither correction has been performed. No local priority scheme overrides these labels. No actual media, playback or independent post-fix review is available.\n",
+      "transcript.md": "Supplied source words at 00:00:04–00:00:07: Do not close this window during the upload.\n",
+      "captions.srt": "1\n00:00:04,000 --> 00:00:07,000\nDo close this window during the upload.\n"
+    },
+    "expected": [
+      "Preserve F-01/P1 and F-02/P3 with clear impact/urgency rationale and next actions; prioritize the required meaning repair without inflating the optional pacing preference into a blocker.",
+      "Use the text comparison as evidence for the negation omission while distinguishing supplied timing/transcript from actual watched or heard media.",
+      "Keep required repair and post-fix caption/playback/review evidence pending; do not claim completion, edit, render, call services or fabricate independent assessment."
+    ]
   }
 ]

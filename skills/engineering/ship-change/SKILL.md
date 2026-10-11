@@ -13,6 +13,8 @@ Use `verify-change` for missing acceptance proof, `review-code` for an outstandi
 
 ## Establish readiness
 
+Carry finding/task IDs, priority labels and their rationale into the existing record and next handoff. Preserve the project’s scale; explain any reprioritization with changed evidence or an accepted decision. Priority does not establish dependency readiness or expand execution authority.
+
 Read the consuming repository's delivery rules and current state. Identify the exact revision/diff, accepted requirements, relevant verification, review status, release notes/versioning needs, target environment, and recovery procedure. Reuse valid evidence and recheck what changed. Preserve unrelated local work.
 
 Load the readiness checklist and relevant PR/merge, release/package, deployment or handover section of [delivery checks](references/delivery.checklist.md) for the selected target. Missing required verification blocks that delivery claim. Existing authorization remains valid; ask only at a consequential action outside it or when a real decision/input is missing.

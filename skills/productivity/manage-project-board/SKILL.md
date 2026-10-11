@@ -19,6 +19,8 @@ For a new local board, use [the board template](references/project-board.templat
 
 ## Reconcile readiness
 
+Carry finding/task IDs, priority labels and their rationale into the existing record and next handoff. Preserve the project’s scale; explain any reprioritization with changed evidence or an accepted decision. Priority does not establish dependency readiness or expand execution authority.
+
 Use the project's states or adopt the template's small default set. For each task, preserve its outcome, source criteria/version, phase, dependencies, owner, scope/isolation and checks. Record an exact blocker, its owner and the missing result or decision. A high-priority or dependency-free task may still lack access, accepted requirements or authority.
 
 Check missing IDs, cycles and dependencies implied by the acceptance criteria, not just declared edges. A prerequisite counts only when its required output and acceptance evidence exist on the relevant revision. A cancelled task cannot satisfy its consumers. Reopen or block affected work when criteria, contracts or proof change; preserve unaffected results and the reason for the transition.

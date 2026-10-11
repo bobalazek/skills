@@ -13,6 +13,8 @@ An assessment-only request stays read-only. A request to address findings author
 
 ## Check each finding against the current code
 
+Label actionable findings and fixes with the project's priority labels and meanings. Otherwise use P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), or P3 low (minor or optional improvement). Give the evidence-based impact/urgency rationale and next action; mark uncertain ratings provisional. Keep priority separate from severity, confidence and readiness. Preserve finding IDs and priority through rechecks; explain changes using new evidence or an accepted decision. Priority does not authorize extra work or waive required checks.
+
 Trace the reported scenario, applicable requirement, affected callers and current implementation. Use existing static-check results for covered rules before subjective judgments; run missing scoped checks when available. Confirm whether the reviewed code still exists and whether another change already addresses the concern. A stale line number alone does not invalidate a surviving defect.
 
 Classify each material finding as supported, already addressed, unsupported by the evidence, deferred by an authorized decision, or blocked by a specific missing fact. Keep the reason and source evidence. A reviewer suggestion is not automatically a correct requirement; disagreement needs code, contracts or observed behavior rather than preference. Do not silently dismiss a demonstrated failure because another reviewer disagrees.
@@ -29,10 +31,11 @@ Group fixes by shared cause and dependency. Preserve unrelated user edits and st
 
 Use [the feedback record](references/feedback.template.md) only when the existing PR or task record lacks an equivalent. Check the applicable items:
 
-- Every supplied material finding has a current, evidence-backed disposition; duplicate comments link to their shared resolution.
-- Each implemented correction has its relevant failing scenario or baseline and observed post-fix proof, plus affected static checks and consumers.
-- Changes preserve the accepted behavior and local conventions; unresolved decisions and unavailable checks stay explicit.
-- Claims and draft replies match the actual revision, checks and remaining gaps. A code edit alone does not prove resolution.
+- [ ] Every supplied material finding has a current, evidence-backed disposition; duplicate comments link to their shared resolution.
+- [ ] Finding IDs, priorities and rationale survive the fix/recheck; changed ratings have evidence or an accepted decision, and blocked high-priority work remains blocked.
+- [ ] Each implemented correction has its relevant failing scenario or baseline and observed post-fix proof, plus affected static checks and consumers.
+- [ ] Changes preserve the accepted behavior and local conventions; unresolved decisions and unavailable checks stay explicit.
+- [ ] Claims and draft replies match the actual revision, checks and remaining gaps. A code edit alone does not prove resolution.
 
 Corrections require a separate fresh-context assessment against raw findings, requirements, current code and proof. Retain the actual returned assessment, reviewer/session identity, evaluated revision, findings and coverage; resolve supported findings and obtain affected rechecks. Reuse a valid independent assessment of unchanged work. Without the required returned assessment, identify the review gap and do not claim acceptance or readiness. A read-only disposition can finish with its evidence and uncertainty without commissioning a new code review.
 

@@ -29,6 +29,8 @@ During authorized sessions, record attempts, outcomes, assistance, recovery and 
 
 ## Synthesize what was observed
 
+Label actionable findings and fixes with the project's priority labels and meanings. Otherwise use P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), or P3 low (minor or optional improvement). Give the evidence-based impact/urgency rationale and next action; mark uncertain ratings provisional. Keep priority separate from severity, confidence and readiness. Preserve finding IDs and priority through rechecks; explain changes using new evidence or an accepted decision. Priority does not authorize extra work or waive required checks.
+
 Link findings to tasks, anonymized sessions, actual actions and capture conditions. Separate participant statements, observed behavior, interpretation and proposed remedies. Report unaided completion, assisted completion, unsuccessful attempts and missing observations distinctly; a participant's impression cannot substitute for an unobserved terminal result.
 
 Retain conflicting observations and isolated severe barriers. Use counts and denominators only when records support them. State coverage limits, repeat exposure and changed conditions where relevant. Do not generalize convenience participants to the audience, claim improvement without a comparable baseline, or treat usability findings as comprehensive accessibility conformance.

@@ -39,6 +39,8 @@ For acceptance or an improvement claim, have a separate evaluator in fresh conte
 
 ## Report and preserve regressions
 
+Label actionable findings and fixes with the project's priority labels and meanings. Otherwise use P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), or P3 low (minor or optional improvement). Give the evidence-based impact/urgency rationale and next action; mark uncertain ratings provisional. Keep priority separate from severity, confidence and readiness. Preserve finding IDs and priority through rechecks; explain changes using new evidence or an accepted decision. Priority does not authorize extra work or waive required checks.
+
 Return the comparison, material failures, evidence locations, execution/review gaps and the smallest supported correction. Keep execution, criterion outcomes and independent assessment separate. Preserve useful cases in the existing evaluation location; add a regression for a demonstrated failure, not a universal rule inferred from one example.
 
 After an authorized fix, rerun affected cases and nearby boundaries under comparable conditions, retain the failed attempt and refresh the independent assessment. Passing structural checks alone cannot close a behavioral failure. Carry accepted findings to `improve-prompt` for instruction changes or the repository's implementation workflow for scripts, then use the same cases to evaluate the result. Describe the plain action when a sibling skill is unavailable.
