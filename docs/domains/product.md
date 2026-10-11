@@ -25,7 +25,7 @@ For a new product, examine the intended users, current workarounds and riskiest 
 
 `plan-product-experiment` prepares a controlled comparison for a specific product question; it does not launch it. `validate-product-idea` owns the broader investment decision and choice of validation evidence. Actual experiment observations use `analyze-product-usage`, preserving the accepted protocol and checking assignment, sample quality and stopping rules before interpreting effects. Missing power inputs or unreliable assignment remain readiness gaps.
 
-Use the missing result directly. Once the audience, job and decision are settled, feedback synthesis and competitor research can run independently when their sources and workspaces allow it. Reconcile their assumptions before a decision that depends on both. Neither is a mandatory prerequisite when relevant evidence already exists. See the [product routes and graph](../workflows.md#evaluate-a-product-opportunity).
+Use the missing result directly. Once the audience, job and decision are settled, feedback synthesis and competitor research can run independently when their sources and workspaces allow it. Reconcile their assumptions before a decision that depends on both. Neither is a mandatory prerequisite when relevant evidence already exists. See the [product routes and graph](../workflows/product.md#evaluate-a-product-opportunity).
 
 Accepted evidence can inform `prioritize-work` when candidates, goals and capacity exist, or `write-spec` when behavior needs defining. Keep source IDs and limits through those handoffs; neither a finding nor a recommendation authorizes implementation, outreach or spending.
 

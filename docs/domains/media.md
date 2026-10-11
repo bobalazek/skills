@@ -42,4 +42,4 @@ These are conditional production routes, not claims that every tool is installed
 
 Check actual exports: every slide or panel for static media; joins, captions, playback and applicable audio for video. Keep source files, requested outputs, evidence and exact gaps together in the consuming project's existing location. Fresh independent assessment must identify the artifact and its coverage; an outline, contact sheet or successful export command alone cannot prove the finished medium. Upload, publication and provider spending need applicable authority.
 
-See [media scenarios and routing](../workflows.md#produce-media) for direct starts and conditional handoffs.
+See [media scenarios and routing](../workflows/media.md#produce-media) for direct starts and conditional handoffs.
