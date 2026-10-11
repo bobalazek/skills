@@ -8,6 +8,8 @@ Use the existing PR or release record to account for these gates at the depth re
 
 - [ ] Required lint/format checks, type checks, static analysis and builds have actual outcomes from the project's commands and supported environment.
 - [ ] Functional acceptance has relevant unit, integration, contract or end-to-end evidence, including material failure paths. Select layers by the claim; not every change needs every layer.
+- [ ] The delivered user outcome matches the original request and accepted changes, with material criterion IDs and supported web/mobile/desktop targets retained. Derived tasks, tests or release notes must not silently narrow the goal.
+- [ ] Selected development/review categories and concrete checks are reconciled with current proof. Applicable UX, behavioral, accessibility, public-web SEO, operating and platform/distribution checks have results or explicit gaps; untested does not mean inapplicable.
 - [ ] Source review covers applicable architecture/development rules, consistency with existing code, reuse/duplication, security/privacy and performance risks. Tool success alone does not establish this review.
 - [ ] Independent assessments identify the candidate, reviewer/session, findings and coverage. Fulfill any required cross-model review and human approval separately; record unavailable requirements.
 - [ ] The requested target's compatibility, blast radius, isolation assumptions, recovery and artifact/rollout checks below have adequate proof. PR descriptions and release notes agree with the candidate and that evidence.

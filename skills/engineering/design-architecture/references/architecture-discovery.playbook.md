@@ -18,6 +18,8 @@ For estimates, show the calculation and range. For example, requests per second 
 
 ## Application shape
 
+Start from the retained request, accepted clarifications and target scope. For an otherwise unspecified greenfield app, state web as a provisional default; resolve whether mobile is responsive web or an installed app, and consider desktop where requested capabilities require it. Existing project decisions take precedence. Do not add runtimes or shared packages merely to cover every platform.
+
 | Surface | Decisions that affect implementation |
 | --- | --- |
 | Web | Static/server/client rendering needs, discoverability, authenticated and public boundaries, browser support, session/cookie behavior, caching and network failure |
@@ -26,6 +28,8 @@ For estimates, show the calculation and range. For example, requests per second 
 | API or worker | Consumers, contracts/versioning, synchronous versus queued work, bounded retries, idempotency, backpressure, ordering and job recovery |
 
 Hybrid products can need several rows. Choose boundaries by actual capabilities and constraints, not by a preferred framework. A prototype proves only the platform behavior it exercised.
+
+For each supported target, record the primary user outcome, relevant OS/browser/device and input support, distribution/update path, local/offline state and permissions, and available validation environment. Identify shared contracts separately from platform-specific behavior. Do not claim device, store or packaged-app coverage from a browser preview or simulator alone.
 
 ## Repositories and runtime boundaries
 

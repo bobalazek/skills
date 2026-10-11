@@ -25,6 +25,8 @@ The `simplicity-` cases exercise shared ownership versus intentional variants, a
 
 The `git-local-workflow`, `git-squash-message` and `foundation-checklist-proof` cases exercise repository overrides, the actual proposed squash subject, and checklist evidence after a change. Assess syntax separately from semantic type, and distinguish a locally checked proposal from remote fields, current CI and returned review. Deterministic tests also execute the bundled `ship-change` title helper from a copied standalone package; that proves helper portability, not complete delivery behavior.
 
+The `spec-original-intent-targets`, `review-intent-category-coverage` and `verify-app-target-proof` cases challenge narrowed generated requirements, category omissions and unsupported native-app claims. The writable [intent and selection correction](../evals/workflows/implement-intent-selection.json) uses the same isolated setup and 15-minute bound as the implementation scenario below. It checks a real correction, preserved owner edits and proportionate checklist evidence. Give executors only the raw request and project; retain criteria and returned review with the evaluator.
+
 No model calls run in ordinary CI. Invoke behavioral trials deliberately using the existing authorized host; keep raw transcripts outside the repository and put a redacted result summary in the PR. The portable `evaluate-skill` package also works with another project's cases and execution tools.
 
 ## Repeatable local runner

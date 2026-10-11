@@ -5,6 +5,7 @@ Use the project's existing result or PR format. Include only sections that suppo
 ## Context and outcome
 
 - Requested result and material acceptance criteria.
+- Original request/source, accepted clarifications and supported app targets; trace current criteria back to that intent, preserving later accepted changes.
 - Baseline and tested revision/artifact; identify uncommitted changes when present.
 - Environment and relevant versions, fixture, role, configuration, and observation time.
 - Demonstrated behavior, failures, and required checks still unavailable.

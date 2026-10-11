@@ -15,6 +15,10 @@ Reuse accepted decisions, flows and research without requiring earlier ceremonie
 
 Gather requirements from the user's brief, accepted decisions, flows, and relevant research. Identify who needs the result, the problem, desired outcomes, constraints, and evidence supporting the direction. Inspect current behavior and affected consumers for an existing system. For new software, establish actors, useful outcomes, available foundations, and constraints without inventing demand or an existing architecture.
 
+Keep the original requested outcome, its source and accepted clarifications in the existing specification or issue. Use a faithful bounded excerpt/summary and an accessible source reference; retain only material context appropriate for that audience. Record later accepted changes without erasing the original basis. Derive criteria from that intent, then check that the criteria still cover it.
+
+Establish supported application targets and the first end-to-end user outcome before choosing implementation. For an unspecified greenfield app, use web as an explicit provisional assumption; identify whether mobile means responsive web or an installed app, and include desktop when requested or required by accepted capabilities. Repository/product decisions override that default. Resolve consequential platform choices before committing architecture or claiming scope settled; do not silently add three applications.
+
 Identify applicable project conventions as constraints and link their authoritative source. Carry consequential structural or naming conflicts to the owning design/convention decision before dependent planning; the spec need not choose a folder tree or class hierarchy to define behavior.
 
 Separate current behavior, desired behavior, assumptions, and unresolved decisions. Discover factual answers from the repository before questioning the user. Resolve choices that affect scope or acceptance; keep nonblocking unknowns explicit. A spec must not hide a product decision inside a technical recommendation.

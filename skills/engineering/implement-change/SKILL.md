@@ -13,6 +13,8 @@ Deliver working code for an agreed feature, fix, refactor or ready task batch. R
 
 Read local instructions, the affected surface's conventions and maintained surrounding code before choosing paths or abstractions. Use accepted tasks, spec criteria, design artifacts, known checks, and relevant decisions. Inspect the working tree and preserve unrelated edits. Establish the current baseline; distinguish pre-existing failures from introduced regressions.
 
+Locate the original request and accepted clarifications in the existing issue, brief or spec, including supported app targets. If only conversation context exists, retain the material requested outcome and source in that same work record before it can be lost. Keep later accepted scope changes distinguishable; implementation-derived criteria alone cannot establish the user's intent.
+
 Follow written repository rules, then consistent surrounding code; use language/framework best practices only where neither settles the choice. Resolve consequential conflicts through `define-project-conventions` when available, or a scoped decision. Routine work needs no new handbook or planning stage.
 
 Before starting or resuming a task, compare its criteria and input versions with the current authoritative requirements and dependency outputs. If they changed, identify the affected work and resolve consequential differences before executing it. Retain valid results from unaffected work; do not quietly implement a superseded task because its old checks still pass.
@@ -28,6 +30,8 @@ Shared contracts and migrations precede consumers. Concurrent workers require ac
 For uncertain business behavior, stop the dependent work and resolve the specific missing decision. For technical uncertainty, inspect or run a bounded experiment. Do not replace the user's product choices with implementation preferences.
 
 ## Check risks before editing
+
+Use [the implementation completion checklist](references/completion.checklist.md) to select concrete checks across intent, correctness, architecture, conventions, contracts, security, performance, UX, operation, dependencies and validation. Account for each category in the existing work record: selected with its relevant items, or inapplicable with a scope reason. Keep required unavailable checks open. Apply only supported web/mobile/desktop targets; a small edit can record exclusions together when they share a reason.
 
 Load [the change-risk playbook](references/change-risks.playbook.md) for a task batch or resumed work, or when module ownership, collection processing, queries, concurrency, error handling, a refactor, migration, shared UI, webhook, or stateful boundary makes those checks relevant.
 
@@ -61,6 +65,8 @@ Match test boundaries to the claim:
 Tie acceptance to the requested observable outcome and include relevant rejection/regression cases. Reuse the existing harness and valid checks; mocked I/O, a build or a test count cannot establish an unexercised boundary. Isolate fixtures and wait for operation-specific completion before cleanup. State unavailable required proof explicitly instead of inventing a passing layer.
 
 Inspect command exit status and output. Before completing the task, compare the current authoritative criteria and dependency outputs with those used at intake. Reconcile changed scope before claiming completion, refresh affected evidence, and inspect the final diff against the accepted criteria and observed behavior. Resolve failures caused by the change and rerun affected checks. Record unavailable checks and pre-existing blockers without claiming completion for them.
+
+Reconcile the selected checklist items with observed proof and walk the original requested scenario against the result. Explain missing intent, necessary supporting work and added scope; do not quietly redefine the request to make an incomplete implementation pass.
 
 Before acceptance, a separate agent in fresh context must challenge the integrated result using accepted criteria, the candidate revision, raw source/behavior evidence and check access. Omit the author's conversation and preferred conclusions. Retain the returned assessment with reviewer/session identity, evaluated revision, findings and coverage. Resolve supported findings and obtain affected rechecks after fixes. Without a returned independent assessment, report unreviewed and stop before acceptance.
 
