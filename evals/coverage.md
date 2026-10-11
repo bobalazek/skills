@@ -196,3 +196,10 @@ Independent reviewer `/root/review_video_delivery` assessed complete outputs and
 The reviewer also rechecked changed source, matched all 84 prior raw-artifact hashes and retained unchanged-case evidence. Together these passes cover 16 distinct video scenarios across 24 attempts, including baseline and historical attempts; they do not establish general reliability across all 68 skills. Package/resource checks pass for 68 skills and 105 resources; TypeScript/Biome, 97 tests with 1,209 assertions and whitespace checks pass.
 
 Raw follow-up records remain local in `/tmp/skills-video-pr-planning-20261011` and `/tmp/skills-video-pr-scripts-20261011`; the returned assessment and criterion/hash ledger are `/tmp/skills-video-delivery-review-20261011.md` and `.json`. They are not public attachments. Full installer/OpenCode checks, actual media generation, rendering/listening, provider integration and audience impact remain untested here. Human acceptance of draft creative work remains separate; merge and release are outside this delivery target.
+
+
+### v0.3.2 delivery preparation — 2026-10-11
+
+The user subsequently extended authority to merge and publish a patch release. Version `v0.3.2` is that explicit choice, an exception to the collection's default minor increment for added skills. Existing names and install paths remain available; the three new skills are optional. This changes the delivery target, not the prior trials' observations.
+
+A clean candidate installation at `2a6a8c6e6f520a07ccb165423ad3c5ee7d26ddf0` passed: 68 complete packages / 241 identical files, skills CLI 1.7.0, Codex CLI 0.162.1 and OpenCode 1.18.31 discovery. The installation manifest digest is `3e1f37b775cae2b2bc3779cc1542c26afd1ee9172ef987ad10246b1f4d42bc1d`; its file-list format differs from the evaluation snapshot digest above. Raw installation evidence remains local in `/tmp/skills-032-candidate-install-20261011`. Discovery does not prove behavior; the scoped output assessments above supply separate evidence. Exact merged-source and published-tag checks, final CI and release readback will be recorded in the delivery PR rather than presumed complete here.
