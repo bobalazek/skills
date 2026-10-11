@@ -12,15 +12,7 @@ import {
 } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
-import {
-  boundedInteger,
-  execute,
-  inspectTrace,
-  main,
-  parseCases,
-  requestFor,
-  selectCases,
-} from "../scripts/run-evals.ts";
+import { boundedInteger, execute, inspectTrace, main, parseCases, requestFor, selectCases } from "../run-evals.ts";
 
 let root: string;
 const sample = {
@@ -176,7 +168,7 @@ console.log(JSON.stringify({type:"turn.completed",usage:{output_tokens:3}}));
   const child = Bun.spawn(
     [
       process.execPath,
-      resolve(import.meta.dir, "../scripts/run-evals.ts"),
+      resolve(import.meta.dir, "../run-evals.ts"),
       "--candidate",
       source,
       "--baseline",
@@ -209,7 +201,7 @@ console.log(JSON.stringify({type:"turn.completed",usage:{output_tokens:3}}));
   const candidateOnly = Bun.spawn(
     [
       process.execPath,
-      resolve(import.meta.dir, "../scripts/run-evals.ts"),
+      resolve(import.meta.dir, "../run-evals.ts"),
       "--candidate",
       source,
       "--fixtures",
@@ -251,7 +243,7 @@ console.log(JSON.stringify({type:"turn.completed",usage:{output_tokens:3}}));
     const interrupted = Bun.spawn(
       [
         process.execPath,
-        resolve(import.meta.dir, "../scripts/run-evals.ts"),
+        resolve(import.meta.dir, "../run-evals.ts"),
         "--candidate",
         source,
         "--baseline",

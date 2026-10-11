@@ -11,7 +11,7 @@ import {
 } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { captureSession } from "../scripts/lib/codex-session.ts";
+import { captureSession } from "../lib/codex-session.ts";
 
 let root: string;
 const thread = "01a129b4-173f-7810-91a2-c266b3beed11";
