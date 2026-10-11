@@ -7,6 +7,7 @@ Select applicable categories before editing and reconcile them before handoff. K
 - [ ] Retain the original requested outcome and its source in the existing issue, brief or spec. Separate later accepted clarifications from assumptions; do not replace the original goal with the implementation plan.
 - [ ] Map each material requirement to the actual user/system outcome and its acceptance evidence. Walk the original scenario as well as the derived criteria; a test suite can agree with an incorrectly narrowed spec.
 - [ ] Reconcile missing requested behavior, necessary supporting work and added scope. Preserve accepted changes to intent and criterion IDs; leave disputed choices open instead of quietly changing the goal to fit the code.
+- [ ] Decisions affecting intent, behavior or scope were answered or explicitly delegated before dependent edits; open questions still block the affected work.
 
 ## Correctness and regressions
 

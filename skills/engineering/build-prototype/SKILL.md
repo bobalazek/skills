@@ -13,6 +13,8 @@ Answer one consequential technical or interaction uncertainty through a bounded 
 
 State the question, hypothesis, inputs, acceptance signal, time/resource bounds, and what the experiment will not prove.
 
+If the intended question, desired artifact or execution scope is unclear, ask and wait before building or running the experiment. A request to brainstorm possible experiments does not choose or authorize one. Preserve answers and explicit delegation in the existing record; use accepted constraints without restarting discovery.
+
 ## Build within the bounds
 
 Choose an isolated scratch area or agreed project surface. Preserve unrelated work, use safe representative data, and avoid live credentials or production side effects. Add only the setup necessary to exercise the uncertain boundary; label shortcuts that would matter to production use.

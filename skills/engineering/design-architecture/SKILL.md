@@ -17,6 +17,8 @@ For new software, identify the smallest useful runtime and available templates/p
 
 Load [architecture discovery](references/architecture-discovery.playbook.md) for unresolved application, workload, data, repository, hosting, or operating decisions. Read discoverable facts first, then ask focused questions about consequential unknowns. Record estimates as assumptions, with units and a validation path; do not turn an imagined scale or budget into a requirement.
 
+If user intent, required behavior or an operating preference remains unclear, ask and wait before selecting a design that depends on it. Requested alternatives may remain proposed while that decision is open. Record the question, answer, accepted or explicitly delegated choice and dependent work in the existing design; asking without receiving an answer does not settle the requirement.
+
 At greenfield intake, use that discovery before committing the foundation: establish hosting/environments, internal processes and every relevant runtime, data, infrastructure or delivery dependency, including externally hosted databases, file services, APIs, AI and MCP services, with operating owners and trust boundaries. Reuse settled answers; record a dependency as unnecessary, proposed or unresolved rather than silently selecting one. Resolve choices that change architecture before dependent scaffolding or task execution.
 
 ## Make the needed decisions

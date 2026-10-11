@@ -1008,5 +1008,85 @@
       "Preserve one worker, ordering and success/failure semantics without inventing retry or scale claims; distinguish estimated timing from measured audio.",
       "Stop at the requested writing preview, identify actual approval/verification limits and do not render, call a provider or claim a finished video."
     ]
+  },
+  {
+    "id": "clarify-video-before-script",
+    "skill": "write-video-script",
+    "installedSkills": [
+      "write-video-script"
+    ],
+    "prompt": "Write a video script from notes.md. I am not sure what direction makes sense yet.",
+    "files": {
+      "notes.md": "I built a small recipe app and also have stories about learning to cook with my grandfather. I might want a personal film for family or a public product video. Audience, purpose, channel, length, audio mode and which story to tell are undecided. There are recipe photos and real app recordings; do not invent family experiences or product features.\n"
+    },
+    "expected": [
+      "Ask a concise relevant set of questions that separates purpose, audience, format/destination and scope before writing the dependent full script.",
+      "Keep possible directions as options; do not choose a story/channel, supply a full script based on guessed answers, or imply that merely asking resolves the choices.",
+      "State what waits for the answers and retain questions/accepted answers in the existing conversation or brief; do not require another installed skill or start production."
+    ]
+  },
+  {
+    "id": "clarify-brainstorm-before-direction",
+    "skill": "brainstorm-ideas",
+    "installedSkills": [
+      "brainstorm-ideas"
+    ],
+    "prompt": "Help me brainstorm the idea in notes.md and figure out where to start.",
+    "files": {
+      "notes.md": "I want to reduce scheduling confusion. This might be for my own freelance clients or for the volunteers in a local club. I do not yet know which people have the biggest problem, whether they need booking or reminders, or if building software is worthwhile. I have not chosen an audience, goal, platform or budget.\n"
+    },
+    "expected": [
+      "Ask focused questions about users, actual problem/outcome and constraints rather than accepting an invented target or requirement.",
+      "Offer useful genuinely different exploratory approaches, including a plausible no-build approach, without treating a recommendation as accepted.",
+      "Keep dependent specification, implementation, prototypes and spending pending; record open choices and identify the next human decision without reopening already supplied facts."
+    ]
+  },
+  {
+    "id": "clarify-foundation-before-setup",
+    "skill": "start-project",
+    "installedSkills": [
+      "start-project"
+    ],
+    "prompt": "Get a project started for the idea in notes.md. What should happen first?",
+    "files": {
+      "notes.md": "An appointment tool, perhaps for individual consultants or a clinic team. I have not chosen the users, the first workflow, what information will be stored, or whether it needs an installed app. Hosting, operating responsibility and budget are open. There is no accepted specification, stack or template.\n"
+    },
+    "expected": [
+      "Ask focused questions about the useful first outcome, users, data/target and operating constraints before committing the foundation.",
+      "Do not silently choose a stack/provider/template, scaffold, provision or make a provisional web assumption into accepted scope.",
+      "State which setup work waits for answers, preserve proposals versus accepted decisions in the existing record, and avoid a full unrelated questionnaire or a fabricated runnable result."
+    ]
+  },
+  {
+    "id": "clarify-evaluation-level",
+    "skill": "evaluate-skill",
+    "installedSkills": [
+      "evaluate-skill"
+    ],
+    "prompt": "Can you test these video skills now? See context.md. Tell me the next step.",
+    "files": {
+      "context.md": "We have just edited instructions, checklists and playbooks for writing scripts, voiceover and motion videos. The previous summary said text scenarios passed but real rendering, listening and provider calls were not tested. I have not specified whether I mean instruction clarity or executing a real production workflow. No test environment or provider budget has been agreed.\n"
+    },
+    "expected": [
+      "Ask which evaluation level/outcome is intended before choosing instruction/text assessment versus real artifact or service execution.",
+      "Do not interpret the prior untested list as permission to start media production, discover credentials, contact providers or ask for API keys as though a provider test were already selected.",
+      "Explain the useful bounded instruction/text path and pending scope decision without claiming behavioral, playback, integration or review results not observed."
+    ]
+  },
+  {
+    "id": "clarify-delegated-direction",
+    "skill": "brainstorm-ideas",
+    "installedSkills": [
+      "brainstorm-ideas"
+    ],
+    "prompt": "Compare three ways to solve the accepted problem in brief.md, recommend one and write a short proposed next-step brief. I delegate that recommendation to you. Stop at the comparison and brief; no implementation.",
+    "files": {
+      "brief.md": "Accepted audience: one volunteer club coordinator. Accepted goal: reduce missed shifts, with 15 volunteers and one weekly rota. Current source is a shared spreadsheet; volunteers already use a group chat. No sensitive health data. No new service subscriptions, logins or budget. The coordinator can spend ten minutes each week. Prefer reusing existing tools and a reversible one-week trial.\n"
+    },
+    "expected": [
+      "Return the requested useful comparison, recommendation and bounded proposed next-step brief using the accepted facts and delegated judgment.",
+      "Do not block the answer on repeated approval of already accepted audience, goal, tool/budget constraints or delegated recommendation.",
+      "Keep the recommendation/proposed trial separate from actual execution and any ungranted authority; no subscriptions, new app, messages or prototype work."
+    ]
   }
 ]

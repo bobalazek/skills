@@ -17,17 +17,25 @@ Establish the audience, useful outcome, current alternatives and constraints. Fo
 
 Inspect discoverable facts first. Ask only about consequential missing preferences, letting each answer narrow the next question. Reuse accepted answers and the user's vocabulary instead of repeating discovery or reopening settled choices without new evidence.
 
+When intent, audience, scope, constraints or the desired output is unclear, ask a short group of questions before choosing a direction or starting work that depends on it. Cover the missing audience/problem, desired outcome and practical limits such as available time, budget or access; do not defer constraints that could rule out an option. Wait for the answers; listing a question and then assuming its answer does not resolve it. You may inspect supplied context and offer requested alternatives while waiting. Record answers, proposed options, accepted or explicitly delegated choices and open questions in the existing conversation or brief.
+
 ## Compare credible approaches
 
 Develop a small set of meaningfully different options, including a simpler or no-build approach when credible. Explain each option's useful outcome, beneficiaries, required resources, operating burden, cost drivers and reversibility. Evaluate available templates or platforms with their inherited responsibilities; do not assume a particular starter exists.
 
-Separate evidence from assumptions. For a decisive unknown, choose the smallest check that could change the comparison: repository inspection for local facts, current primary sources for external claims, observation or a prototype for empirical behavior, and the user's decision for their preferences. Resolve the discriminating uncertainty before researching every option equally.
+Separate evidence from assumptions. For a decisive unknown, recommend the smallest check that could change the comparison: repository inspection for local facts, current primary sources for external claims, observation or a prototype for empirical behavior, and the user's decision for their preferences. Run an experiment only when its question, scope and execution are authorized; a brainstorming request alone does not authorize building the prototype. Resolve the discriminating uncertainty before researching every option equally.
 
 For example, repeated record entry could call for better manual entry, CSV import or synchronization. Comparing those approaches belongs here; specifying invalid-row behavior for the selected import is later work.
 
 ## Result and verification
 
 Return the options, their decisive trade-offs, a supported recommendation or unresolved choice, and the next useful check. Match the requested audience and depth, using the project's format when one exists. Update an authorized existing brief rather than creating a second summary.
+
+Before handoff, check in that same record:
+
+- [ ] Unanswered questions remain open, with the work that depends on each identified.
+- [ ] The recommendation is distinguished from the user's accepted or explicitly delegated direction.
+- [ ] The next action fits the requested stopping point; discussion has not silently become implementation or production.
 
 Check that each option fits the accepted constraints and that untested demand, access, performance or other premises have not become reasons to commit. For a low-impact advisory answer or wording-only draft, verify the relevant sources and constraints directly; no delegation or separate review record is needed. Use the independent assessment below when the user or project requires it, when accepting a consequential decision, or when publishing or updating a durable shared artifact. This exception does not waive code, security, release or deployment gates. A larger word count alone does not require a deeper workflow. Never claim independent review without an actual returned assessment.
 

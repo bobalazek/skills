@@ -27,7 +27,7 @@ Select one task or the agreed ready batch. For work spanning phases, follow the 
 
 Shared contracts and migrations precede consumers. Concurrent workers require accepted prerequisites, isolated writes/state and check environments, and clear ownership; use available host isolation rather than assuming it exists. Show what is ready now separately from future parallel candidates. Integrate and verify the combined result before accepting a phase exit. Preserve unaffected outputs if a branch fails, block its consumers, and recompute ready work after accepted outputs or requirements change.
 
-For uncertain business behavior, stop the dependent work and resolve the specific missing decision. For technical uncertainty, inspect or run a bounded experiment. Do not replace the user's product choices with implementation preferences.
+For uncertain intent, business behavior, scope or acceptance, ask the user and wait before dependent edits. Retain the question, answer and affected work in the existing task; merely asking or labeling your choice an assumption does not settle it. Reuse accepted decisions and explicit delegation. For technical uncertainty, inspect or run a bounded experiment within the authorized task and environment; do not turn discovery into unrequested implementation or external actions. Do not replace the user's product choices with implementation preferences.
 
 ## Check risks before editing
 

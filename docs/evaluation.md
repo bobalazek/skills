@@ -31,6 +31,8 @@ The architecture/dependency intake and system-map cases check unresolved infrast
 
 The `video-` cases cover intake questions and human decisions, distinct concepts, hook-only and silent-story scope, storyboard action coverage, continuous narration, uncertain provider jobs, source/output timing, missing playback evidence and one implicit scriptwriting route. Run the affected cases from the catalog; actual media generation, rendering and audience performance need separate evidence. The writable [human story handoff](../evals/workflows/video-human-story-handoff.json) uses a disposable workspace with only `brief.md` and `script.md` writable. It tests a resumed conversation from supplied owner answers, decision retention, a revised silent script and the wording-confirmation boundary before storyboarding. Use complete local `plan-video` and `write-video-script` packages, a bounded five-minute execution, retained raw artifacts and a separate evaluator; keep expectations outside the executor context. It does not simulate a live audience or establish creative approval beyond the supplied answers.
 
+The `clarify-` cases check that unresolved intent, practical constraints and evaluation scope prompt useful questions and block dependent work. Pair them with accepted or explicitly delegated requests to catch repeated approval loops. Inspect actual question calls, proposed versus accepted choices, and required outputs; a question followed by work based on an invented answer does not pass.
+
 No model calls run in ordinary CI. Invoke behavioral trials deliberately using the existing authorized host; keep raw transcripts outside the repository and put a redacted result summary in the PR. The portable `evaluate-skill` package also works with another project's cases and execution tools.
 
 ## Repeatable local runner
@@ -77,7 +79,7 @@ Run the automated consumer check against a clean checkout of the expected source
 
 ```bash
 bun run check:install /absolute/path/to/candidate /absolute/path/to/candidate /tmp/skills-candidate-check
-bun run check:install https://github.com/bobalazek/skills/tree/v0.3.2 /absolute/path/to/reviewed-source /tmp/skills-published-check
+bun run check:install https://github.com/bobalazek/skills/tree/v0.3.3 /absolute/path/to/reviewed-source /tmp/skills-published-check
 ```
 
 This pins skills CLI 1.7.0, installs all packages as project-local copies into a disposable Git repository, compares every package file, and verifies Codex names/locations and OpenCode names/locations/loaded bodies. The repository boundary prevents ancestor project skills from shadowing the installation. It requires installed Codex and OpenCode CLIs and network access for the installer or remote source. Client versions are observed and retained; their diagnostic output formats are compatibility boundaries that can change. A failed command, changed source, ignored/untracked package file, wrong file or missing discovery fails the check. No dependency or client is installed into the consuming project.

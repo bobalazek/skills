@@ -27,6 +27,8 @@ Separate current behavior, desired behavior, assumptions, and unresolved decisio
 
 Ask the next question whose answer could change a requirement, adapting to prior answers. Use `challenge-proposal` when a sustained interrogation of the direction is the requested work. Missing external facts need primary-source research; uncertain runtime behavior may need a bounded experiment. Record an unresolved premise and its effect on readiness instead of inventing a requirement or researching unrelated topics.
 
+Wait for the user's answer before specifying dependent behavior as agreed or handing it to implementation. Record questions and answers alongside the original intent; a recommendation, provisional default or unanswered question is not acceptance. A requested exploratory spec may show alternatives and open decisions, while already accepted or explicitly delegated choices need no repeated approval.
+
 ## Define behavior
 
 Describe the primary scenarios and the failure, boundary, recovery, permission, and compatibility scenarios that could materially change the result. Cover data ownership and lifecycle, interfaces or integrations, UI states, and measurable operational requirements where relevant. Include rollout or migration constraints when users or stored data already exist.

@@ -203,3 +203,29 @@ Raw follow-up records remain local in `/tmp/skills-video-pr-planning-20261011` a
 The user subsequently extended authority to merge and publish a patch release. Version `v0.3.2` is that explicit choice, an exception to the collection's default minor increment for added skills. Existing names and install paths remain available; the three new skills are optional. This changes the delivery target, not the prior trials' observations.
 
 A clean candidate installation at `2a6a8c6e6f520a07ccb165423ad3c5ee7d26ddf0` passed: 68 complete packages / 241 identical files, skills CLI 1.7.0, Codex CLI 0.162.1 and OpenCode 1.18.31 discovery. The installation manifest digest is `3e1f37b775cae2b2bc3779cc1542c26afd1ee9172ef987ad10246b1f4d42bc1d`; its file-list format differs from the evaluation snapshot digest above. Raw installation evidence remains local in `/tmp/skills-032-candidate-install-20261011`. Discovery does not prove behavior; the scoped output assessments above supply separate evidence. Exact merged-source and published-tag checks, final CI and release readback will be recorded in the delivery PR rather than presumed complete here.
+
+
+## 2026-10-11 — Clarification before dependent work
+
+This patch tightens 13 standalone entrypoints and their relevant checklists/playbooks: unanswered intent, requirements or preferences block dependent work, while accepted answers, explicitly delegated choices and requested alternatives remain usable. Evaluation scope distinguishes instruction/text checks from production execution. Five fixed `clarify-` cases bring the read-only catalog to 64 cases; the existing full-script case is a ready-input control.
+
+The initial package snapshot over `b7a8eefcb03a4b65e00ae7a1d21bc03f6da69f6f` is `6630e770575d7e2f99ba523c63b72ee208153948a809db51c8c9a46638ffa9c8`. Independent reviewer `/root/review_clarification_gates` inspected all changed source and six native text traces: 17 of 19 fixed criteria passed. The brainstorming response omitted a practical-constraints question; the evaluation response named test modes without explaining the bounded text path. Both original misses remain retained.
+
+Two concise instruction corrections produced package snapshot `6e2f6abb21d9d4291001f9ed3afed210a6273824be2d61a19a4929706323d32f`. Unchanged-criteria rechecks independently demonstrate both previously missing clauses: brainstorming asks about time, money, tools and access, and evaluation explains checking clarity, ready/missing inputs, questions, stopping points and outputs before waiting for the scope choice. These digests identify package contents, not the base commit or a measured improvement over the previous release.
+
+All 19 current instruction criteria are demonstrated across six distinct cases, carrying forward unchanged-package evidence. The three fresh rechecks pass all nine criteria, including the delegated-direction control. All nine retained attempts exited zero without timeout or fixture changes; the initial two failed criteria and the separate foundation boundary deviation remain visible. This is a bounded instruction assessment, not a clean nine-attempt or whole-collection reliability claim.
+
+| Case | Observed instruction behavior |
+| --- | --- |
+| `clarify-video-before-script` | Asks grouped discovery questions, preserves two proposed directions and waits before a dependent script. |
+| `clarify-brainstorm-before-direction` | Corrected response asks about users/problem/outcome and practical constraints, compares three alternatives and keeps direction and implementation open. |
+| `clarify-foundation-before-setup` | Asks about users/workflow, data/target and operations before choosing a foundation; no scaffolding or provider selection. Its three criteria pass, with the separate host-boundary limit below. |
+| `clarify-evaluation-level` | Corrected response explains the text path and asks which evaluation level is intended; no production, credentials or provider execution. |
+| `clarify-delegated-direction` | Accepted facts and delegated judgment produce three options, a recommendation and proposed brief without another approval round or actual execution. |
+| `video-full-youtube-script` | Accepted brief produces eight complete beats and 213 narrated words, with supported create/start/pause/resume behavior and explicitly estimated timing. |
+
+The foundation attempt also read the globally installed Ponytail entrypoint outside its local-only fixture boundary. This is retained as a host/fixture deviation; it prevents a clean isolation claim even though the clarification criteria pass and no fixture changed. The changed skill did not request that read. No broader isolation or whole-collection reliability claim follows from these cases.
+
+Evidence uses Codex CLI 0.162.1 and native `gpt-6.1-sol`, with 240-second bounds. Reviewer model identity is unknown. Initial records are private in `/tmp/skills-clarity-{media,engineering,ready}-20261011`; corrected records are in `/tmp/skills-clarity-{brainstorm,evaluation}-recheck-20261011`. The returned assessment and exact criterion/session ledger are `/tmp/skills-clarity-review-20261011.md` and `/tmp/skills-clarity-criterion-ledger-20261011.json`, with initial versions preserved separately. These local files are not public attachments.
+
+Package checks cover 68 skills / 105 resources; TypeScript/Biome, 97 tests with 1,244 assertions and whitespace checks pass. Four changed skills have bounded behavior evidence; the other nine entrypoints have source review only. This pass does not establish live answer capture across sessions, automatic activation, a previous-version comparison, media production or provider integration. Exact installation, final CI and published release proof belong in the delivery PR.

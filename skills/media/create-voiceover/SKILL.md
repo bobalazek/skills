@@ -13,6 +13,8 @@ The script's wording stays with its owner: `write-video-script` for standalone v
 
 Read project instructions, the accepted script and what the consumer needs. Establish the language and accent, audience, destination and playback (sound-on, or muted with captions), delivery format, names to pronounce, deadline and requested fidelity: auditions, scratch pacing or final narration. Ask only about consequential gaps, which usually include the voice source, its cost and how the owner says their own names. When the requester asked you to proceed, take routine defaults and report them.
 
+An unresolved script, pronunciation, voice preference or scratch-versus-final choice needs an answer before dependent recording or generation. Ask, wait and retain the answer with the job; an announced assumption is not permission to resolve that choice yourself. Reuse explicit delegation and accepted choices, and keep any requested audition within its agreed scope.
+
 Keep stable IDs for meaningful script units so consumer cues survive edits. Recording units may be individual lines, paragraphs or continuous takes; choose from performance continuity, existing material, provider limits and pickup needs. IDs do not require separate files. Use [the narration manifest](references/narration-manifest.template.md) unless the project already keeps an equivalent script and timing file.
 
 ## Choose the source and the voice
