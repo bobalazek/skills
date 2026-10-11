@@ -5,12 +5,15 @@
 | Formatting or supported syntax convention | Existing formatter/linter configuration | Avoid a second tool enforcing conflicting rules |
 | Invalid internal state or incompatible callers | Existing compiler options and domain types | External/untrusted inputs still need runtime validation |
 | Wrong dependency direction or forbidden import | Existing import/module-boundary checks | Account for aliases, generated imports, and supported dynamic loading |
+| Registry, implementation or reference inventory drifts | Existing generator or a focused parity check over authoritative entries | Check the accepted relationships and intentional exceptions; equal counts or matching names do not prove runtime wiring or correct documentation |
 | Invalid data or request shape | Existing schema/contract validation at the owning boundary | Presence of a schema is not proof every entry path uses it |
 | Repeated behavioral regression | Focused test through the real public boundary | Do not encode only today's implementation details or omit meaningful failure cases |
 | Stable risky code pattern unsupported by current rules | A small analyzer using the existing parser/rule API | Text search can produce false positives for comments, strings, aliases, or intentional variants |
 | Copied business logic that drifts | Consolidated ownership plus relevant behavior checks | Clone detection is an investigation signal; repeated syntax alone does not justify shared abstractions |
 
 An automated guard need not be a static rule. Pick the mechanism that can distinguish the failure from legitimate code at acceptable maintenance cost.
+
+For a parity check, identify the source of truth and required counterparts before comparing files. Exercise a missing counterpart, a stale entry and a valid exception through the real command. Prefer generated reference data where practical; keep behavioral integration checks for relationships that source inspection cannot establish. Do not turn every prose mention into a mandatory inventory or require integrations the project intentionally leaves optional.
 
 Before wiring enforcement, exercise:
 

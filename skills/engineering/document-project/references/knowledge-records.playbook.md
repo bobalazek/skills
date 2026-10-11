@@ -7,6 +7,8 @@ Use the project's existing locations and formats. Select only records supported 
 | Information | Authoritative home and useful content |
 | --- | --- |
 | Project purpose and entry points | README or existing contributor front door: what exists, who uses it, how to reach setup and detailed documentation |
+| Current product | Existing product overview or README: audience and value, capabilities available today, main concepts and flows, current limits and explicitly planned work |
+| Product requirements | Existing PRD/spec: problem, users and scenarios, scope/non-goals, success criteria, constraints and unresolved choices; retain acceptance status and requirement IDs |
 | Current architecture | Existing architecture or surface docs: module boundaries, ownership of state, traced flows, contracts, integrations, and verified operating facts |
 | Contributor conventions | Existing standards: accepted rules and their scope, local examples, exceptions, and actual enforcement; label merely observed patterns |
 | Decisions and ADRs | Existing decision location: context, evidenced choice and rationale, known alternatives and consequences, acceptance source/status, supersession |
@@ -15,6 +17,14 @@ Use the project's existing locations and formats. Select only records supported 
 | Review memory | Existing reviewer knowledge: confirmed miss or false positive, relevant paths/conditions, evidence, bounded review guidance, and a recheck or retirement trigger |
 | Agent instructions | AGENTS.md or equivalent: short applicable rules, conditional pointers, and supported feedback commands |
 | Work status | Existing task system or plan: readiness, owner where assigned, blockers, and links to durable knowledge |
+
+## Keep product state and intent distinct
+
+A product overview answers what the product is and does today; a PRD/spec defines the required outcome and why it is needed. They can share a file in a small project, with current, planned and unresolved behavior clearly distinguished. Link detailed architecture, requirements and tasks instead of duplicating them. Include a short domain glossary only where terms would otherwise be ambiguous.
+
+Treat an untouched template or placeholder as missing information, not product evidence. Reconstruct supported capabilities from the selected sources; leave unknown users, value claims and product decisions explicit. Available template infrastructure does not establish an adopted product feature. Do not retire accepted requirements merely because an implementation or product overview exists; preserve their identity, acceptance history and links to verification.
+
+When a change adds or removes a documented capability, route, data entity or package, reconcile the affected canonical overview and inventories in the same change. Use generated inventories where the project already has them. Follow the owning generator or edit the authoritative record, then check its incoming pointers; do not create a second catalog.
 
 ## Reconstruct the selected system
 
