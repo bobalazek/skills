@@ -4,6 +4,8 @@ Use when turning selected takes into trimmed clips and a stem, adding requested 
 
 ## Prepare each clip
 
+The commands below illustrate sequential line clips. Keep a continuous take intact when that suits the job; for an extraction, retain source identity and measured in/out ranges. For anchored or overlapping units, use the actual timeline map instead of the sequential placement formula. Confirm selected words and boundary listening before relying on extracted timing.
+
 Convert every selected take to one working format, so clips from different sources mix cleanly, and trim its silence in the same pass:
 
 ```sh

@@ -1,27 +1,31 @@
 # Media
 
-This domain owns produced media and its production evidence. Choose by the artifact the user needs, then start at its next unfinished stage. Content owns reusable writing voice and editorial prose; UI/UX owns interactive interfaces.
+This domain owns produced media and its production evidence. Choose by the artifact the user needs, then start at its next unfinished stage. Content owns reusable writing voice, editorial prose and standalone video scripts; UI/UX owns interactive interfaces.
 
 ## Categories and skills
 
 | Category | Subcategory | Skill | Expected result |
 | --- | --- | --- | --- |
-| Video | Motion graphics and explainers | [create-motion-video](../../skills/media/create-motion-video/SKILL.md) | A timed script/storyboard or editable composition and checked video export |
-| Video | Recorded footage | [edit-video](../../skills/media/edit-video/SKILL.md) | A traceable cut, reframe or caption edit with preserved originals and checked output |
+| Video | Concepts and formats | [plan-video](../../skills/media/plan-video/SKILL.md) | Audience/goal questions, distinct ideas, a format decision or feasible brief |
+| Video | Storyboards and shot plans | [create-storyboard](../../skills/media/create-storyboard/SKILL.md) | Script-linked shots, actions, sound, continuity and asset gaps at the requested fidelity |
+| Video | Motion graphics and explainers | [create-motion-video](../../skills/media/create-motion-video/SKILL.md) | An editable code-driven composition and checked export, or a scoped composition preview |
+| Video | Existing footage | [edit-video](../../skills/media/edit-video/SKILL.md) | A traceable cut, reframe or caption edit with preserved originals and checked output |
 | Slides | Presentation decks | [create-presentation](../../skills/media/create-presentation/SKILL.md) | A deck for a live talk or asynchronous reading, with editable source and requested exports |
 | Slides | Social carousels | [create-carousel](../../skills/media/create-carousel/SKILL.md) | An ordered image set or swipe PDF, with readable panels and accessible companion text |
-| Audio | Narration | [create-voiceover](../../skills/media/create-voiceover/SKILL.md) | One clip per script line, a voice stem and a timing manifest, with pronunciation, loudness and listening checks |
+| Audio | Narration | [create-voiceover](../../skills/media/create-voiceover/SKILL.md) | Selected recordings, a voice stem and a measured timing manifest, with pronunciation, loudness and listening checks |
 | Source material | Product captures | [capture-product-screens](../../skills/media/capture-product-screens/SKILL.md) | Reproducible screenshots or recordings of the product from seeded data, with a shot manifest and forbidden-content checks |
 
 ## Choose the owner
 
-Use `edit-video` when working from recorded footage, including a small caption correction. Keep repairs to generated motion compositions in `create-motion-video`. A mixed production can pass a checked animation into a footage edit; neither needs to restart the other's accepted stages.
+Use `plan-video` for unresolved audience, goal, concepts or format; `write-video-script` for words and narrative beats; and `create-storyboard` for a standalone visual/asset plan. Start at the missing result, rather than running every stage.
 
-Use `create-voiceover` when narration needs recording or generating from an accepted script; the consuming video, edit or deck keeps the script and places the audio. Use `capture-product-screens` for reproducible captures of the user's own product. Analysis of other interfaces belongs to `capture-design-reference`, and visual regression baselines stay with the project's tests. Both supporting skills can run in parallel once the script and shot list are accepted; motion timing waits for the measured narration manifest, and a new recording or recapture invalidates dependent checks.
+Use `edit-video` when working from existing recorded, generated or mixed footage, including a small caption correction. Keep repairs to generated motion compositions in `create-motion-video`. A mixed production can pass a checked animation into a footage edit; neither needs to restart the other's accepted stages.
+
+Use `create-voiceover` when narration needs recording or generating from an accepted script; the script owner keeps accepted wording and the consuming video, edit or deck places the audio. Use `capture-product-screens` for reproducible captures of the user's own product. Analysis of other interfaces belongs to `capture-design-reference`, and visual regression baselines stay with the project's tests. Both supporting skills can run in parallel once the script and shot list are accepted; motion timing waits for the measured narration manifest, and a new recording or recapture invalidates dependent checks.
 
 A presentation supports a talk, meeting or document-style read. A social carousel tells a self-contained sequence in a feed. A carousel component on a website belongs to `design-interface`. A text-only social post has no dedicated drafting package; describe the plain writing action rather than choosing a media skill by keyword.
 
-These skills own the words embedded in their artifacts. Reuse the project's voice guide; use `define-writing-voice` for a separately needed reusable guide and `review-writing` for a prose-only assessment, when available. They do not require a writing or design stage for every edit.
+Production skills can reconcile embedded words with their artifacts, reusing accepted scripts rather than duplicating script development. Reuse the project's voice guide; use `define-writing-voice` for a separately needed reusable guide and `review-writing` for a prose-only assessment, when available. They do not require a writing or design stage for every edit.
 
 ## Production and proof
 

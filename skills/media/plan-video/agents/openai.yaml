@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan video"
+  short_description: "Develop video concepts, formats and feasible briefs"
+  default_prompt: "Use $plan-video to propose three distinct video concepts from these audience goals and available assets."

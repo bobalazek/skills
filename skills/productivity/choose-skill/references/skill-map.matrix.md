@@ -85,17 +85,20 @@ Choose the next missing result, then read the relevant domain below. Names ident
 | Reusable personal or brand language conventions | `define-writing-voice` | Analyze representative writing and explicit preferences into a voice guide; leave single drafts, edits and brand positioning to their owners |
 | Actual website page or section wording | `write-website-copy` | Write or revise public page copy from accepted purpose and facts; interface states and unresolved page strategy stay separate |
 | A blog post, article, tutorial or its requested outline | `write-blog-post` | Develop editorial content from supported sources; drafting does not authorize publication |
+| A video script, outline, hook or ending | `write-video-script` | Develop supported words, story progression and payoff; stop at the requested writing scope, before recording or rendering |
 | Writing-quality findings or a requested prose cleanup | `review-writing` | Quote concrete problems or make the requested edits while preserving meaning and voice; no AI-authorship verdict |
 
 ## Media
 
 | Requested result | Skill | Boundary |
 | --- | --- | --- |
-| A code-driven motion video or its requested storyboard | `create-motion-video` | Own the brief, timed script/storyboard and requested export with visual/audio evidence; interactive UI motion stays in interface design |
-| A cut, reframe or caption edit of recorded footage | `edit-video` | Preserve originals and source/output timing; check the actual edit and captions, not just an edit list |
+| Video ideas, a format decision or production brief | `plan-video` | Clarify video type, goal and audience; compare distinct concepts and feasibility without automatically scripting or producing |
+| A standalone storyboard or shot/asset plan | `create-storyboard` | Translate accepted script beats into shots, actions, sound and production gaps for any video method; boards are not playback proof |
+| A code-driven motion video or scoped composition preview | `create-motion-video` | Reuse the brief, script and board; build the composition and requested export with visual/audio evidence; interactive UI motion stays in interface design |
+| A cut, reframe or caption edit of existing footage | `edit-video` | Preserve originals and source/output timing; check the actual edit and captions, not just an edit list |
 | A presentation deck or its requested outline | `create-presentation` | Build for a talk or asynchronous read, preserving editable source and checking the requested export |
 | An ordered social image set or swipe PDF | `create-carousel` | Produce a self-contained panel sequence with readable exports and companion text; website carousels stay in UI/UX |
-| Narration audio from an accepted script | `create-voiceover` | Record or generate one clip per line, a stem and a timing manifest with listening evidence; the script and its placement stay with the consuming media skill |
+| Narration audio from an accepted script | `create-voiceover` | Record or generate selected audio, a stem and measured timing with listening evidence; writing and placement remain with their owners |
 | Reproducible captures of the user's own product | `capture-product-screens` | Seeded, deterministic screenshots or recordings with a shot manifest; other sites' designs and visual regression baselines stay elsewhere |
 
 ## Boundary cases
@@ -117,6 +120,7 @@ Use these when several outputs could fit. Alternatives are not a mandatory seque
 | "Improve how we work" | `improve-team-workflow` for a recurring process; `find-improvements` for codebase candidates; `automate-code-checks` for an agreed recurring coding rule |
 | "Plan our next work" | `prioritize-work` to select supplied candidates within capacity; `find-improvements` to discover candidates; `plan-phases` for milestones; `create-tasks` to decompose accepted scope |
 | "Capture screenshots" | `capture-product-screens` for the user's own product in marketing, docs or media; `capture-design-reference` for analyzing other interfaces; `verify-change` for screenshots that serve as evidence a change works; visual regression baselines stay with the project's tests |
+| "Make a video" | `plan-video` when goal, audience or concept is unresolved; `write-video-script` for words and story; `create-storyboard` for the visual plan; `create-motion-video` for code-driven rendering; `edit-video` for assembling existing footage. Do not require every stage or assume a production tool exists |
 | "Add a voice to this" | `create-voiceover` for narration audio from an accepted script; `define-writing-voice` for a written style guide; the owning media skill for script wording and placement |
 | "Turn this article into media" | `create-presentation` for a deck; `create-carousel` for social panels; `create-motion-video` for generated animation. Reuse the accepted article. Use `edit-video` when the input is recorded footage |
 

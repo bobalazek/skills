@@ -1,6 +1,6 @@
 # Content
 
-This domain owns audience-facing messages, writing-voice conventions and written content, plus a reusable prose-review workflow for other domains. A dedicated text-only social-post workflow is not yet provided. [Media](media.md) owns produced videos, decks and social carousels, including the words embedded in those artifacts. A prose-only review remains here.
+This domain owns audience-facing messages, writing-voice conventions and written content, plus a reusable prose-review workflow for other domains. A dedicated text-only social-post workflow is not yet provided. [Media](media.md) owns produced videos, decks and social carousels, with their visual and audio production. Standalone video scripts and prose-only reviews remain here.
 
 ## Categories and skills
 
@@ -10,6 +10,7 @@ This domain owns audience-facing messages, writing-voice conventions and written
 | Website content | Plan a page | [plan-landing-page](../../skills/content/plan-landing-page/SKILL.md) | Audience, arrival promise, supported message, section sequence, proof needs and next action |
 | Website content | Write and revise | [write-website-copy](../../skills/content/write-website-copy/SKILL.md) | Actual page or section wording grounded in the offer, voice, proof and destination |
 | Editorial content | Draft an article | [write-blog-post](../../skills/content/write-blog-post/SKILL.md) | A source-grounded post, tutorial, revision or requested outline, with exact evidence gaps |
+| Video writing | Scripts and narrative beats | [write-video-script](../../skills/content/write-video-script/SKILL.md) | A supported hook, outline or full script with storyline, payoff, visual intent and performance notes |
 | Writing quality | Review and edit | [review-writing](../../skills/content/review-writing/SKILL.md) | Quoted findings or requested edits that remove weak prose while preserving meaning and voice |
 
 ## Boundaries and use
@@ -23,6 +24,8 @@ This domain owns audience-facing messages, writing-voice conventions and written
 [UI/UX](ui-ux.md) owns journeys, navigation, screen layout and behavior-dependent strings through `write-interface-copy`. A headline explaining an offer belongs to Content; a permission error or submission confirmation belongs to UI/UX, even when it appears on the same page. Reconcile the page's promise with those actual actions and states.
 
 [Product](product.md) owns validation, feedback, competitor evidence and measurement. [Productivity](productivity.md) owns work coordination and operational communication such as status reports and handoffs. Those remain distinct outputs and need no move into Content.
+
+`write-video-script` owns standalone hooks, continuation, body and payoff, with separate explanations for each. `plan-video` develops unresolved concepts and formats; `create-storyboard` translates accepted beats into shots; production remains in Media. A hook-only request need not produce a full script.
 
 Opening hooks stay within the relevant writing workflow. The detailed writing-pattern checklist has one owner in `review-writing`; other skills refer to that pass when useful and remain usable without it. A writing assessment may contribute to the existing independent review, but factual, behavioral and delivery checks remain with their owners. New formats should earn their own skill through a distinct output and evaluation method.
 

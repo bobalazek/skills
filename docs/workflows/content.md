@@ -54,6 +54,7 @@ When independent copy and layout work share accepted inputs, they may proceed to
 
 | Example request | First skill | Result and conditional continuation |
 | --- | --- | --- |
+| "Write only the opening and ending for this video brief." | [write-video-script](../../skills/content/write-video-script/SKILL.md) | Supported hooks and payoff at the requested scope; full story development and production are conditional |
 | "Turn these project notes into a blog post in my voice." | [write-blog-post](../../skills/content/write-blog-post/SKILL.md) | A supported draft with missing facts identified; use writing review for prose quality and the destination's checks for an integrated post |
 | "Analyze my blog and these posts, then document how I write." | [define-writing-voice](../../skills/content/define-writing-voice/SKILL.md) | A guide in the existing authoritative location or `docs/voice.md`, with inspected samples, concrete conventions, tone by context and unresolved preferences |
 | "Give me only an outline for this tutorial." | [write-blog-post](../../skills/content/write-blog-post/SKILL.md) | The requested outline and source gaps; stop before writing or publishing the article |

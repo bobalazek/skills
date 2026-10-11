@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create storyboard"
+  short_description: "Plan video shots, visual beats and required assets"
+  default_prompt: "Use $create-storyboard to turn this accepted script into a shot plan with actions, sound, asset needs and continuity checks."

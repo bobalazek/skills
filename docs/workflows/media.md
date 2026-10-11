@@ -4,12 +4,27 @@
 
 Choose the requested artifact below, or follow the [narrated-video example](#from-script-to-checked-video) to see how three skills work together. Double-bordered boxes name skills; rounded boxes show inputs, work or results; diamonds are decisions. Reuse completed stages and follow only the branches your result needs.
 
+## Develop the video
+
+Start at the first missing result: **idea → script → storyboard → production**. These are possible handoffs, not required ceremonies. Before inventing a direction, resolve purpose (personal, product, educational or another goal), audience, narrative format, destination/surface (including YouTube, TikTok and Instagram) and available material through concise questions. Brainstorming belongs to `plan-video`; reuse answers already in the project and distinguish the primary piece from requested channel adaptations.
+
+| What you need | Skill | Finish with |
+| --- | --- | --- |
+| Ideas, format or an unresolved brief | [plan-video](../../skills/media/plan-video/SKILL.md) | Distinct concepts, a useful format/angle and a feasible audience promise |
+| Hook, outline or full script | [write-video-script](../../skills/content/write-video-script/SKILL.md) | Exact words and visual intent; separately develop hook, useful continuation, storyline and payoff |
+| Shots and visual sequence | [create-storyboard](../../skills/media/create-storyboard/SKILL.md) | Opening/action/ending states, sound, continuity, source assets and production gaps |
+| Code-driven animation | [create-motion-video](../../skills/media/create-motion-video/SKILL.md) | Editable composition and checked requested export |
+| Existing recorded/generated/mixed footage | [edit-video](../../skills/media/edit-video/SKILL.md) | A traceable assembly, repair or caption edit with export evidence |
+| Narration audio when needed | [create-voiceover](../../skills/media/create-voiceover/SKILL.md) | Selected speech, stem and measured timing; it is not a mandatory stage for silent or already-voiced video |
+
+Filming and generating new footage require the actual capture/provider tools and authorized inputs. A shot plan can expose those dependencies; the collection does not bundle those tools or imply that a code renderer produces every kind of video.
+
 ## Produce media
 
 | Example request | First skill | Result and conditional continuation |
 | --- | --- | --- |
 | "Create a short animated explainer from these supported facts." | [create-motion-video](../../skills/media/create-motion-video/SKILL.md) | Resolve missing brief choices, preview script/look/storyboard, then render and check the authorized export; missing tools or playback leave explicit gaps |
-| "Show the script and storyboard before animating anything." | [create-motion-video](../../skills/media/create-motion-video/SKILL.md) | A timed preview at requested fidelity; finish there without claiming an exported video |
+| "Storyboard this accepted script before producing anything." | [create-storyboard](../../skills/media/create-storyboard/SKILL.md) | The requested shot plan or visual board, with action coverage and asset gaps; stop before production |
 | "Fix the clipped text in this existing motion composition and export vertical and landscape versions." | [create-motion-video](../../skills/media/create-motion-video/SKILL.md) | Reuse the source and accepted story, repair each layout, and recheck actual exports, joins and applicable audio |
 | "Tighten this recorded demo and make a vertical captioned cut." | [edit-video](../../skills/media/edit-video/SKILL.md) | Trace source ranges into output time, preserve meaning and originals, then inspect the actual crop, captions and export |
 | "Correct this one caption; keep the cut unchanged." | [edit-video](../../skills/media/edit-video/SKILL.md) | A scoped caption repair and affected checks; skip discovery and recutting when accepted context suffices |
@@ -18,12 +33,12 @@ Choose the requested artifact below, or follow the [narrated-video example](#fro
 | "Turn this article into a social carousel with image exports and alt text." | [create-carousel](../../skills/media/create-carousel/SKILL.md) | A self-contained ordered panel sequence, editable source and checked exports; reuse the article without restarting editorial work |
 | "Repair the clipped text on panel three; leave the other panels alone." | [create-carousel](../../skills/media/create-carousel/SKILL.md) | A scoped layout repair with evidence at reading size and checked sequence; no unsolicited full redesign |
 | "Make a 45-second narrated explainer for our app." | [create-motion-video](../../skills/media/create-motion-video/SKILL.md) | A brief with playback mode and a short narration-led script; narration from `create-voiceover` and real screens from `capture-product-screens` when needed, with beats timed to the measured manifest |
-| "Generate the voice-over for this accepted script with ElevenLabs." | [create-voiceover](../../skills/media/create-voiceover/SKILL.md) | Authorized provider use with current voice and model IDs, checked name pronunciation, one clip per line, a stem and a timing manifest; unheard lines stay open |
+| "Generate the voice-over for this accepted script with ElevenLabs." | [create-voiceover](../../skills/media/create-voiceover/SKILL.md) | Authorized provider use with current voice and model IDs, checked name pronunciation, selected takes, a stem and a measured timing manifest; unheard lines stay open |
 | "Capture marketing screenshots of our dashboard for the landing page." | [capture-product-screens](../../skills/media/capture-product-screens/SKILL.md) | Seeded, deterministic captures of the screens the copy names, a shot manifest, whole-frame checks for forbidden content and a missing-asset guard |
 
 ## From script to checked video
 
-Example: a narrated product explainer using real app screens. `create-motion-video` owns the production; the other two skills supply assets. This example needs both narration and captures. Reuse either when its existing files and checks still match the brief. A silent animation or footage-only edit follows its own artifact owner above.
+Example: a narrated product explainer using real app screens, starting from an accepted script and shot plan. Earlier creative development can use the stages above. `create-motion-video` owns the production; the other two skills supply assets. This example needs both narration and captures. Reuse either when its existing files and checks still match the brief. A silent animation or footage-only edit follows its own artifact owner above.
 
 ```mermaid
 flowchart TD
