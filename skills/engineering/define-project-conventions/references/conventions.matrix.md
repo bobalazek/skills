@@ -34,6 +34,7 @@ Keep the rule in its existing authoritative location. Add a new document only fo
 | Queries and storage | Database filtering and scope, relation loading, measured index choices, partitioning or sharding when justified | Generated queries, execution plans, workload and migration evidence |
 | UI | Component ownership, state, routes, tokens, supported interaction and accessibility patterns | Existing components, rendered examples and behavior checks |
 | Quality and delivery | Applicable tests, formatting, lint, build, review/release rules, exceptions | Commands actually present, CI and repository policy |
+| Git workflow | Branch/base selection, commit and PR titles, merge strategy, required checks and release boundaries | Contributor rules, recent maintained history, remote settings and [Git workflow checks](git-workflow.checklist.md) |
 | Documentation and knowledge | Canonical rules, decisions, facts, lessons, memory indexes, update triggers | Resolved links and a representative task walkthrough |
 
 ## Folder, file, and package structure

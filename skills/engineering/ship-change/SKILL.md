@@ -39,6 +39,16 @@ Before stating review happened in commentary, a PR, notes or the final answer, l
 
 Follow established branch, PR, CI, merge, package, and deployment automation. Use available tools and inspect their actual behavior; do not assume a particular CLI, branch name, cloud, Kubernetes cluster, or GitOps controller.
 
+Apply the repository's naming convention to commits, PR titles and the messages actually retained by the merge strategy. For squash, inspect the final squash message even when individual commits pass; recheck edited titles before delivery. Where no convention exists, use Conventional Commits with a type that describes the actual change. Resolve branching-policy gaps through `define-project-conventions` when available; message prefixes do not require adopting Git Flow.
+
+Use the project's configured title/message guard first. For Conventional Commit titles without a suitable guard, the bundled [title check](scripts/check-pr-title.ts) runs from this installed skill with Bun 1.3.9 or newer:
+
+```bash
+PR_TITLE='fix(delivery): validate the final squash title' bun /path/to/ship-change/scripts/check-pr-title.ts
+```
+
+Resolve the actual installed path; pass untrusted titles as environment data, never interpolated shell code. The check reads `PR_TITLE`, writes no files, and exits nonzero for malformed headers. It accepts project-specific types; the exported `isConventionalTitle(title, allowedTypes)` lets existing tooling restrict them. It checks header syntax only, not the truthful type, breaking-change explanation, repository-specific scopes or readiness. Use it on the proposed final squash subject too, but skip it for a repository using another message format. If Bun is unavailable, use the existing toolchain or inspect the syntax directly and state that automated validation did not run; do not install a runtime just for this check.
+
 For a PR, include evidence with the problem/result: actual check outcomes and useful screenshots, before/after data, or artifact/run links. Identify the tested revision and relevant comparison conditions. Use the repository's template and approved upload mechanism, inspect shared artifacts for sensitive content, and verify returned links. Local paths and invented URLs are not attachments. If upload is unavailable, include concise observed results and reproduction steps, and state the artifact gap; a repository-required missing artifact still blocks readiness.
 
 Before a remote write, recheck the candidate against the verified revision/artifact and use available expected-head or immutable identity controls from the delivery checks. Stage only intended files when committing is requested. Respect protections and the requested stopping point. Do not bypass failing checks, force-push shared history, expose secrets or add external communication. Before retrying an uncertain remote write, inspect whether it already succeeded.

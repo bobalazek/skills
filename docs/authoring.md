@@ -80,7 +80,21 @@ Next-step guidance belongs in the portable skill itself. Recommend from the actu
 
 In workflow diagrams, use one exact skill name per double-bordered box, rounded boxes for scenario work or inputs/results, diamonds for decisions, and labeled outer frames for stages/phases. Include a key and state whether arrows are possible handoffs or required dependencies. Never combine several skill names in one invocation node. Keep request examples consistent with the router's output boundaries, and link detailed scenarios from the README instead of turning it into the full catalog.
 
+## Git workflow
+
+Use short-lived `type/short-description` branches from `main` and deliver through a PR. Keep this repository's existing flow; no `develop` branch is needed. Use lowercase [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for authored commits, PR titles and the final squash message: `type(scope): description`, with scope and a breaking `!` marker optional. Types are `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore` and `revert`; use a scope only when it identifies a useful owner.
+
+Choose the type from the net effect on consumers: a skill capability is `feat`, a corrected behavior is `fix`, and maintainer-only tests/docs/CI use the matching type. Include necessary tests and documentation with their change. For mixed work, split unrelated changes where useful; do not split a working change merely because its description contains “and”. Explain breaking changes and migration, and apply the release policy below independently of the prefix.
+
+Squash is the collection's delivery convention. Before merge, inspect the final squash title explicitly; GitHub's configured default can select the commit title or PR title. Wait for the complete checks on the current candidate, then read back the resulting commit title. Do not rewrite shared or released history to repair an old title.
+
+The `Check PR title` workflow validates title syntax on opening, editing, reopening and code updates; titles are passed as data through `PR_TITLE`. Run the same check locally with `PR_TITLE='fix(engineering): honor repository Git conventions' bun scripts/check-pr-title.ts`. That entrypoint applies this collection's allowed types to the portable validator bundled in `ship-change`; installed consumers can run the bundled check without this repository. This guard does not choose the semantic type, validate every branch commit, control a manually edited squash message, or configure branch protection. The author/delivery review covers those boundaries.
+
 ## Validation
+
+In `.checklist.md` resources, write actionable checks as unchecked Markdown tasks (`- [ ]`, or `1. [ ]` for ordered steps). Keep explanations, decision tables, sources and examples in their appropriate format; fence any completed checklist example. Package validation requires actual unchecked tasks and rejects prechecked items outside code examples. Review still determines whether the checks are useful and complete.
+
+Reusable checklists describe available checks; use the existing task or PR to record the applicable ones. A checked box means the current criterion was demonstrated, with its evidence. Failed and unperformed items stay unchecked with the consequence and next action; inapplicable items need a reason. Preserve criterion IDs and refresh affected results after changes. Do not create another checklist document or require unrelated stages for a small task.
 
 Maintain executable tooling in TypeScript and run it with Bun. Install pinned development tools with `bun install --frozen-lockfile`. Run `bun run check` for package validation, TypeScript checks and Biome lint/format checks; these precede subjective review. `bun run check:skills` checks frontmatter, package names, Codex interface metadata, links, resource reachability, standalone-resource boundaries and catalog coverage. Run `bun test` for executable helpers and fixtures. CI runs the same checks without model calls. Biome covers TypeScript helpers and tooling configuration; it preserves the existing non-null assertions and string concatenation policy. For later edits, use `bunx --no-install biome check --write <changed-files>` rather than formatting unrelated files. Mermaid diagrams should also parse/render in a real supported renderer when changed.
 

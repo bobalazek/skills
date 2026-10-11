@@ -2,13 +2,13 @@
 
 Select checks for actual tasks and supported surfaces. Inspect a suspected pattern in context: its appearance alone is not a defect or evidence that the author intended manipulation.
 
-- Orientation and hierarchy: users can identify purpose, current state, primary action, and important content.
-- Navigation and content: labels, information structure, back/exit paths, and instructions match the task and domain language.
-- Interaction: controls behave as signaled; validation, loading, progress, success, and recovery are clear; repeated or interrupted actions are handled.
-- Accessibility: inspect relevant semantics/names, keyboard access, focus order/visibility, error communication, contrast, zoom/reflow, and motion preferences with suitable tools.
-- Responsive/platform behavior: verify real layout, overflow, density, input, navigation, and state changes on supported surfaces.
-- Visual consistency: typography, spacing, alignment, tokens, and component states serve a coherent hierarchy; preferences require a stated rationale.
-- Trust and consequences: permissions, costs, destructive actions, and data handling are understandable; avoid manipulative or misleading interaction.
+- [ ] Orientation and hierarchy: users can identify purpose, current state, primary action, and important content.
+- [ ] Navigation and content: labels, information structure, back/exit paths, and instructions match the task and domain language.
+- [ ] Interaction: controls behave as signaled; validation, loading, progress, success, and recovery are clear; repeated or interrupted actions are handled.
+- [ ] Accessibility: inspect relevant semantics/names, keyboard access, focus order/visibility, error communication, contrast, zoom/reflow, and motion preferences with suitable tools.
+- [ ] Responsive/platform behavior: verify real layout, overflow, density, input, navigation, and state changes on supported surfaces.
+- [ ] Visual consistency: typography, spacing, alignment, tokens, and component states serve a coherent hierarchy; preferences require a stated rationale.
+- [ ] Trust and consequences: permissions, costs, destructive actions, and data handling are understandable; avoid manipulative or misleading interaction.
 
 Record actual observations and limits. Do not report a checklist item as passed because the code appears to contain a matching attribute.
 
@@ -32,6 +32,6 @@ These are diagnostic prompts, not automatic severity scores. Rank by the affecte
 
 ## Decision and evidence
 
-For each material concern, ask what the user is trying to understand or do, what information is available at that moment, what effort the interface demands, and how they can recover. A proposed psychological explanation remains a hypothesis until appropriate participant or behavioral evidence exists. Do not infer confusion, trust or motivation merely from a screenshot or metric.
+- [ ] For each material concern, ask what the user is trying to understand or do, what information is available at that moment, what effort the interface demands, and how they can recover. A proposed psychological explanation remains a hypothesis until appropriate participant or behavioral evidence exists. Do not infer confusion, trust or motivation merely from a screenshot or metric.
 
-Use current primary guidance when checking standards: [W3C page structure](https://www.w3.org/WAI/tutorials/page-structure/), [focus order](https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html) and [reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html). These checks cover their inspected criteria; they do not establish complete accessibility conformance.
+- [ ] Use current primary guidance when checking standards: [W3C page structure](https://www.w3.org/WAI/tutorials/page-structure/), [focus order](https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html) and [reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html). These checks cover their inspected criteria; they do not establish complete accessibility conformance.

@@ -4,7 +4,16 @@ Select the requested result, use the narrowest matching skill, and carry accepte
 
 If the starting point is unclear, use `choose-skill` to recommend the next action from the current state. A ready task can go straight to its owning skill.
 
-Start with [request scenarios](#routes-by-situation), [parallel phases and tasks](#sequential-and-parallel-work), or [review and recheck](#review-and-recheck). The [portable router map](../skills/productivity/choose-skill/references/skill-map.matrix.md) distinguishes each skill's output; the scenarios below show how to use those boundaries in a request.
+Start with the [visual entry map](../README.md#find-your-next-skill), [request scenarios](#routes-by-situation), [parallel phases and tasks](#sequential-and-parallel-work), or [review and recheck](#review-and-recheck). The [portable router map](../skills/productivity/choose-skill/references/skill-map.matrix.md) distinguishes each skill's output; the scenarios below show how to use those boundaries in a request.
+
+## Use a route
+
+1. Find the result you need in the [entry map](../README.md#find-your-next-skill) or a scenario below. Use the linked domain catalog to see every alternative in that area.
+2. Read the skill's purpose and required inputs. Reuse what you already have and skip completed stages; a graph is not a mandatory pipeline.
+3. Invoke an installed skill as `$skill-name` followed by your task, existing artifacts and requested stopping point. If unsure, ask `$choose-skill` to recommend only, or request a small graph of the relevant alternatives.
+4. Follow a next-step arrow only when its result is useful, prerequisites are met and execution is authorized. A failed check returns to correction and an affected recheck; a completed output can be the end of the task.
+
+The router owns recommendations; these diagrams are the human browsing view. No extra orchestration service is needed to read a map or invoke a skill.
 
 ## Reading the graphs
 

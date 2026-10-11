@@ -23,6 +23,8 @@ The `verify-checklist-coverage` and `verify-supplied-command-claims` cases exerc
 
 The `simplicity-` cases exercise shared ownership versus intentional variants, a proportionate technical design, and finding existing conventions before choosing file structure. Assess preserved contracts and concrete unnecessary complexity; shorter output or fewer files alone do not prove a better result.
 
+The `git-local-workflow`, `git-squash-message` and `foundation-checklist-proof` cases exercise repository overrides, the actual proposed squash subject, and checklist evidence after a change. Assess syntax separately from semantic type, and distinguish a locally checked proposal from remote fields, current CI and returned review. Deterministic tests also execute the bundled `ship-change` title helper from a copied standalone package; that proves helper portability, not complete delivery behavior.
+
 No model calls run in ordinary CI. Invoke behavioral trials deliberately using the existing authorized host; keep raw transcripts outside the repository and put a redacted result summary in the PR. The portable `evaluate-skill` package also works with another project's cases and execution tools.
 
 ## Repeatable local runner
