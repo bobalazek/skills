@@ -24,6 +24,12 @@ Include only context this task depends on; preserve source vocabulary.
 - **Ready now:** Whether prerequisites, access, and blocking decisions are resolved, including blockers outside the graph.
 - **Parallel candidates:** Work eligible to run together after named prerequisites. Establish write, state/data, and verification isolation, not just different paths.
 
+### Human decisions and actions, when blocking
+
+Use the existing blocker or human-task record only for work that needs human judgment, missing authority or unavailable human-controlled access/action. Determine this from current tools and granted authority; an external system alone does not make a task human-only. Continue independent ready work.
+
+Record the decision or action needed, the actual owner (or unassigned), affected task/criterion IDs, and the answer or observable evidence that would close it. Keep secrets out of task records. A pending choice is not an accepted ADR. Once resolved, link the actual decision/action evidence, reconcile the pending record and recheck dependent readiness; an answer does not by itself complete implementation or verification.
+
 ## Acceptance
 
 Concrete criteria with the original source IDs where available. Changes to criteria are product decisions, not task-writing conveniences.

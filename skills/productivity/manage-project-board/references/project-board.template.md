@@ -33,7 +33,7 @@ Working agreements: <state definitions, capacity/WIP, decision and review owners
 
 Ready now: <checked IDs and evidence; or no_work with reasons>
 Future parallel candidates: <IDs, prerequisite and isolation conditions>
-Human decisions: <existing decision links and tasks they block>
+Human decisions/actions: <canonical blocker links, actual owner or unassigned, evidence needed to close, and affected task IDs>
 ```
 
 The view can resemble Scrum columns without imposing Scrum on the team. If the project uses sprints, add its accepted Sprint Goal, date range/time zone and selected tasks; keep forecasts separate from commitments and actual results. Do not invent story points, velocity or a sprint cadence. In Scrum, the Sprint Backlog is a plan toward the Sprint Goal and work must meet the Definition of Done; a board alone does not establish the full framework. See the [Scrum Guide](https://scrumguides.org/scrum-guide.html) when Scrum terminology is required.

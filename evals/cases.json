@@ -501,5 +501,91 @@
       "Identify the missing Git contributor workflow under F3, with a proportionate path to establish it rather than inventing deployed settings or adding Git Flow stages.",
       "Mark F5 inapplicable because this local CLI has no rendered UI; preserve the read-only boundary without fabricated actions."
     ]
+  },
+  {
+    "id": "knowledge-product-state",
+    "skill": "document-project",
+    "installedSkills": [
+      "document-project"
+    ],
+    "prompt": "Draft a concise update to our existing product overview and identify any related documentation corrections using the supplied repository. Keep files unchanged and use local evidence only. Do not delegate; this is a draft for later review.",
+    "files": {
+      "README.md": "# Receipt book\nDocumentation starts at docs/product.md. Requirements: docs/requirements.md. Architecture: docs/architecture.md.\n",
+      "docs/product.md": "# Product\nTODO: replace this template with the product audience, capabilities, status and next milestone. The starter includes notification adapters.\n",
+      "docs/requirements.md": "# Accepted requirements, revision 2\nFor independent contractors recording expenses. AC-1: list saved receipts. AC-2: send a weekly email digest. AC-1 has source implementation but no recorded runtime verification. AC-2 is planned, not implemented. Success target is not decided.\n",
+      "docs/architecture.md": "The current application uses a local receipt store. app/receipts.py owns receipt listing. No scheduled jobs or email adapter are wired into the application.\n",
+      "docs/features.md": "# Feature inventory\n- Receipt listing: app/receipts.py\n- Weekly digest: app/digest.py (available)\n",
+      "app/receipts.py": "def list_receipts(store):\n    return list(store)\n"
+    },
+    "expected": [
+      "Use the existing docs/product.md and entrypoint instead of proposing a new documentation tree; ground the audience and purpose in the accepted requirements, not the placeholder.",
+      "Distinguish source-supported receipt listing from unverified runtime behavior and planned AC-2; do not treat template notification adapters as an adopted feature or invent a success target.",
+      "Preserve the accepted requirements and AC-1/AC-2 identities and identify the stale available-digest inventory claim and missing app/digest.py rather than retiring the PRD or declaring all features delivered.",
+      "Keep files unchanged and draft/review status honest; do not claim runtime checks, publication or returned independent review without actual evidence."
+    ]
+  },
+  {
+    "id": "tasks-human-blockers",
+    "skill": "create-tasks",
+    "installedSkills": [
+      "create-tasks"
+    ],
+    "prompt": "Reconcile the work in WORK.md against the brief and setup record. Return a small task-plan draft showing what is ready and what is blocked. Keep our task IDs. This is planning only: do not edit, execute tasks, access external services or delegate. No independent review is available in this session.",
+    "files": {
+      "BRIEF.md": "# Accepted brief\nDeliver a receipt list and a retention job. AC-1: show saved receipts in their existing order. AC-2: remove receipts older than the retention interval selected by the product owner. AC-3: serve the existing application at the staging hostname once its DNS is configured. AC-4: dispatch the existing CI validation workflow.\n",
+      "WORK.md": "T1 ready: implement AC-1 using the existing local store.\nT2 ready: implement AC-2; retention interval still unanswered. Rina is the assigned product decision owner.\nT3 ready: verify AC-3; DNS not configured. No DNS account owner assigned.\nT4 ready: dispatch AC-4 using the existing integration.\n",
+      "SETUP.md": "Existing local store and receipt-list contract are sufficient for T1. Retention has not been chosen. Staging DNS needs an account-holder action; no account login or automation is available. The CI integration has working access and standing authorization to dispatch the existing workflow; no extra human approval is required. These are supplied setup facts, not fresh execution evidence. Nothing has been implemented or verified for these four tasks.\n"
+    },
+    "expected": [
+      "Preserve T1-T4 and the accepted AC identities; leave T1 independently ready and T2 blocked on Rina choosing retention without inventing an interval or accepted ADR.",
+      "Treat missing DNS as a human action distinct from a product decision; leave its owner unassigned and T3 blocked, naming observable completion evidence and affected task/criterion IDs.",
+      "Keep T4 planning-ready on the supplied access/standing authority instead of making every external action human-only; do not dispatch it under this planning-only request.",
+      "Explain rechecking dependent readiness after blocker closure, without implying an answer, DNS change or CI dispatch alone completes implementation/verification; retain the draft review gap and perform no edits or external actions."
+    ]
+  },
+  {
+    "id": "architecture-runtime-handoff",
+    "skill": "design-architecture",
+    "installedSkills": [
+      "design-architecture"
+    ],
+    "prompt": "Draft the smallest technical design for the accepted export capability in docs/request.md, using docs/current.md and the source files. Cover the affected execution and deployment boundaries and the checks needed before implementation acceptance. Do not edit, provision, call external services or delegate; independent assessment will happen later.",
+    "files": {
+      "AGENTS.md": "Follow current function-based modules and keep the existing API and worker processes. Do not introduce classes, a new runtime or separate deployment for each source package.\n",
+      "docs/request.md": "# Accepted export requirement\nAn organization admin requests an export. The API acknowledges only after work is durably recoverable. A worker creates one logical export result per request identity and emits a completion event. Members cannot request exports; events and jobs must remain scoped to their originating organization. Duplicate delivery and process restart must not lose accepted work or create duplicate results. Use the existing storage and deployment boundaries.\n",
+      "docs/current.md": "# Inspected baseline\nAPI and worker are separate processes deployed from the same backend/ source package. PostgreSQL holds export rows; the queue is a separate service. The API authenticates sessions; the UI hides the export button for non-admins. The proposed endpoint has no resource authorization check yet. The current draft calls insert_export, then queue.add, then returns 202. There is no transaction shared with the queue and no recovery scan. The worker draft creates a new output on every delivery. No export runtime tests exist. Correlation stops at the API process. API and worker currently report liveness only. Source backend/config.mjs is server-only; browser/index.mjs imports a shared formatter.\n",
+      "backend/config.mjs": "import { readFileSync } from \"node:fs\";\nexport function loadConfig(path) { return JSON.parse(readFileSync(path, \"utf8\")); }\n",
+      "shared/format.mjs": "import { loadConfig } from \"../backend/config.mjs\";\nexport function exportLabel(id) { return `Export ${id}`; }\nexport { loadConfig };\n",
+      "browser/index.mjs": "import { exportLabel } from \"../shared/format.mjs\";\nexport const label = exportLabel(\"demo\");\n"
+    },
+    "expected": [
+      "Preserve the existing processes and function-based ownership; distinguish a source package from a deployed process and identify the transitive server-only import reached by browser/index.mjs.",
+      "Trace API authorization, persistence, enqueue, worker effects and acknowledgement; identify the insert/enqueue crash gap and duplicate worker output, with a concrete recoverable/idempotent design within existing boundaries rather than claiming retries alone satisfy the requirement.",
+      "Distinguish session authentication/UI visibility from resource authorization; preserve organization identity and request identity through background work and the completion event.",
+      "Cover restart or draining behavior and correlation across the API/worker boundary, with meaningful failure and legitimate-use checks; keep proposed checks distinct from observed proof and avoid inventing deployed readiness or passing runtime tests.",
+      "Return a bounded unaccepted design draft without edits, provisioning, external calls or fabricated independent assessment."
+    ]
+  },
+  {
+    "id": "checks-inventory-parity",
+    "skill": "automate-code-checks",
+    "installedSkills": [
+      "automate-code-checks"
+    ],
+    "prompt": "Plan the smallest automated guard for the recurring provider inventory drift recorded in docs/conventions.md. Inspect the current files and propose its scope, integration and calibration cases. This request is for a read-only draft: do not implement, install tools, call external services or delegate.",
+    "files": {
+      "docs/conventions.md": "# Accepted inventory rule\nproviders.json is authoritative. Every installed provider needs its src/providers/<name>.py implementation and an entry in docs/providers.json. Reference entries may also document explicitly optional providers; optional providers do not require an implementation. Other entries are stale. This mismatch has recurred after provider additions and removals. This rule covers inventory parity, not message delivery. No webhook support is required. Use the existing Python standard-library checks, not a new linter.\n",
+      "providers.json": "{\"installed\":[\"smtp\"],\"optional\":[\"ses\"]}\n",
+      "docs/providers.json": "{\"providers\":[\"postmark\",\"ses\"]}\n",
+      "src/providers/smtp.py": "def send(message):\n    return message\n",
+      "Makefile": "check:\n\tpython3 -B -m compileall -q src\n",
+      ".github/workflows/check.yml": "name: Check\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - run: make check\n"
+    },
+    "expected": [
+      "Identify missing smtp documentation and stale postmark despite equal inventory counts, taking providers.json as authoritative.",
+      "Allow documented optional ses without requiring its implementation or a webhook capability; do not replace the accepted scope with universal provider wiring rules.",
+      "Propose a focused standard-library guard through the existing make check/CI path, calibrated with missing, stale and legitimate optional cases rather than a new linter or prose-mention scanner.",
+      "Limit proof to inventory relationships; do not claim runtime delivery or live CI verification, perform edits, or invent independent review."
+    ]
   }
 ]

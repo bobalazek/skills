@@ -14,9 +14,22 @@ Separate repository layout from runtime boundaries. Identify source-of-truth dat
 
 Link applicable conventions and exceptions. Show the affected feature/package location, allowed dependency direction, public export boundary, and a representative class or function with its filename and test location. Explain any new class/module boundary without inventing files for unsettled responsibilities.
 
+Where code crosses runtime targets, identify browser-safe, server-only and build/tooling dependencies, including transitive imports. Map each deployed process to its entry point and owned work; a source package is not necessarily a separately deployed service.
+
+## Runtime paths, when affected
+
+Trace the relevant synchronous request, background job or inbound event through its actual owners. Reuse the project's diagram or concise sequence; do not invent missing layers to fill a standard flow. Show the points that determine correctness:
+
+- Input validation, caller/event authenticity and resource authorization, including alternate entry points. UI visibility or an authenticated connection alone does not establish authority for each operation.
+- Domain work, persistence/commit, enqueue or external effect, and acknowledgement. Identify failure gaps between them; a queue with retries alone does not prove durable handoff, safe duplicate effects or eventual completion.
+- Public serialization and the consuming caller's observed shape; shared types alone do not establish the runtime wire contract.
+- Correlation across process/job boundaries, safe diagnostic context, and who owns failure reporting and recovery. Keep these as design requirements until exercised.
+
 ## Deployment and operation
 
 Existing versus proposed hosting/services, managed/self-hosted responsibilities, environments, access/secrets, capacity limits, backups/restore, release/migration order, observation signals and recovery ownership. Link comparable cost scenarios. For AI behavior, include tool/data authority, orchestration gates, memory lifecycle, evaluation and spend/latency bounds.
+
+For affected long-running processes, distinguish startup, readiness and graceful shutdown/draining from an individual request's lifecycle. State where durable state lives and what a restart or lost dependency can lose, including accepted but unfinished work. Separate build-time configuration from runtime configuration when that changes deployment or secret exposure.
 
 ## Decisions
 
