@@ -30,4 +30,4 @@ Opening hooks stay within the relevant writing workflow. The detailed writing-pa
 
 The packages carry conditional page-plan and copy-handoff templates with primary guidance. Check promises against source facts and actual destinations; keep public wording separate from evidence notes and private records. Preserve useful before/after copy, inspect the rendered result when requested, and obtain independent evaluation without calling an expert check a user study.
 
-See the [product-page workflow](../workflows.md#plan-and-write-a-product-page) for composition with design and measurement, and [writing scenarios](../workflows.md#draft-and-review-writing) for articles, critiques and cross-domain prose review.
+See the [product-page workflow](../workflows/content.md#plan-and-write-a-product-page) for composition with design and measurement, and [writing scenarios](../workflows/content.md#draft-and-review-writing) for articles, critiques and cross-domain prose review.

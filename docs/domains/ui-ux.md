@@ -17,7 +17,7 @@ This domain owns design references, user journeys, wireframes, detailed interfac
 
 ## Boundaries and use
 
-[Content](content.md) owns website messaging and page prose. UI/UX owns the journey, screen structure and behavior-dependent interface strings, including forms embedded in a marketing page. A page can need both domains; keep each artifact with its owner and reconcile meaning and text fit. See the [product-page route](../workflows.md#plan-and-write-a-product-page).
+[Content](content.md) owns website messaging and page prose. UI/UX owns the journey, screen structure and behavior-dependent interface strings, including forms embedded in a marketing page. A page can need both domains; keep each artifact with its owner and reconcile meaning and text fit. See the [product-page route](../workflows/content.md#plan-and-write-a-product-page).
 
 `map-user-flows` defines how users reach an outcome and recover from meaningful failures. `create-wireframes` resolves screen, full-page or website hierarchy and content/state placement before visual detail. `design-interface` develops the selected structure into detailed visual design and complete states, distinguishing refinement from an agreed replacement of the visual direction. Reuse accepted flows or existing screens; skip wireframing when structure is settled. `build-design-system` encodes repeated needs into shared foundations. `review-interface` evaluates the actual rendered experience against tasks and supported surfaces.
 
@@ -25,7 +25,7 @@ Use `write-interface-copy` when the requested deliverable is the labels, message
 
 Navigation work stays in `map-user-flows`: inventory destinations and access rules, propose grouping and labels, and preserve search, deep links and return paths. Carry a proposed hierarchy and its label version into `test-usability` when findability needs participant evidence. A neat sitemap alone cannot establish that users can find the right destination.
 
-For new products, derive flows and components from actual intended behavior. For existing products, inspect the current experience, component consumers, design contract, and user expectations before changing them. Template adaptation starts by retaining useful tokens and components. A website redesign composes these existing owners through the [product-page route](../workflows.md#plan-and-write-a-product-page); it does not require another skill with duplicate planning, copy and design procedures.
+For new products, derive flows and components from actual intended behavior. For existing products, inspect the current experience, component consumers, design contract, and user expectations before changing them. Template adaptation starts by retaining useful tokens and components. A website redesign composes these existing owners through the [product-page route](../workflows/content.md#plan-and-write-a-product-page); it does not require another skill with duplicate planning, copy and design procedures.
 
 Technical architecture owns module/service boundaries and data contracts. A design system owns shared interface contracts. The two can inform each other without becoming duplicate skills. [Media](media.md) owns exported videos, narration, product captures, decks and social carousels; UI/UX owns interactive carousels and interface transitions. Sharing visual conventions does not require routing a media artifact through screen design.
 

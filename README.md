@@ -4,54 +4,6 @@
 
 Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear. The collection is under active development; [releases](https://github.com/bobalazek/skills/releases) record reviewed snapshots and evaluation limits.
 
-## Find your next skill
-
-Open this README on GitHub to see the map rendered below. Pick the result you want, then use the matching guide link for examples, skill choices and possible next steps. The [full catalogs](#browse-by-domain) list every skill; the [workflow guide](docs/workflows.md) contains the detailed graphs. These are choices, not stages you must all complete.
-
-```mermaid
-flowchart LR
-  Goal{"What do you want next?"}
-  Goal -->|Not sure| Router[["choose-skill"]]
-  subgraph Guides["Guide areas: follow a matching link below"]
-    Software(["Understand, build or fix software"])
-    Product(["Evaluate a product opportunity"])
-    Design(["Design a flow or interface"])
-    Words(["Write or improve content"])
-    Media(["Produce media or capture product screens"])
-    Work(["Plan, coordinate or improve work"])
-  end
-  Goal --> Software
-  Goal --> Product
-  Goal --> Design
-  Goal --> Words
-  Goal --> Media
-  Goal --> Work
-  classDef skill fill:#edf5ff,stroke:#355b85,color:#172b42;
-  classDef guide fill:#ffffff,stroke:#64748b,color:#172b42;
-  class Router skill;
-  class Software,Product,Design,Words,Media,Work guide;
-  style Guides fill:#f7f9fc,stroke:#cbd5e1,color:#172b42;
-```
-
-**Key:** the diamond asks for your desired result; rounded boxes are guide areas; the double-bordered box is an invokable skill. Arrows select a guide, not dependencies or an execution order.
-
-| I want to… | Visual routes and request examples | All options |
-| --- | --- | --- |
-| Understand, build or fix software | [Prepare a project](docs/workflows.md#understand-and-prepare-a-project), [plan/change software](docs/workflows.md#plan-and-change-software), [verify/review/deliver](docs/workflows.md#verify-review-and-deliver) | [Engineering](docs/domains/engineering.md) |
-| Evaluate a product opportunity | [Product discovery and evidence](docs/workflows.md#evaluate-a-product-opportunity) | [Product](docs/domains/product.md) |
-| Design a flow or interface | [Specify and design](docs/workflows.md#specify-and-design) | [UI/UX](docs/domains/ui-ux.md) |
-| Write or improve content | [Writing and voice](docs/workflows.md#draft-and-review-writing) | [Content](docs/domains/content.md) |
-| Produce media or capture product screens | [Produce media](docs/workflows.md#produce-media) | [Media](docs/domains/media.md) |
-| Plan, coordinate or improve work | [Explore and route](docs/workflows.md#explore-and-route), [coordinate work](docs/workflows.md#coordinate-local-project-work) | [Productivity](docs/domains/productivity.md) |
-
-To ask the router, give it your current state, desired result and stopping point. It recommends one starting skill, explains why, and names missing inputs. If you ask for options, it can explain neighboring choices; it does not run an entire workflow merely because you asked for a route.
-
-```text
-$choose-skill We have a reviewed spec but no implementation plan. Show the next skill and a small graph of the alternatives. Recommend only.
-```
-
-Already know the skill? Invoke it directly with your task. See [installation and invocation](#install) below. Graphs also render in Markdown viewers with Mermaid support; the linked tables remain usable without it.
-
 ## Install
 
 From your project directory, list the skills and install a selection:
@@ -120,12 +72,14 @@ Each catalog lists skills by category, with their outputs and boundaries.
 
 See [routes by situation](docs/workflows.md#routes-by-situation) for more examples, including greenfield setup, agent preparation, planning, interface copy, documentation and handoffs.
 
+<a id="find-your-next-skill"></a>
+
 ## From idea to delivery
 
 A spec defines **required behavior**; phases group **deliverable outcomes**; tasks name **executable work and checks**. Start at the next missing result and stop at the requested output.
 
 <details>
-<summary>View the feature workflow</summary>
+<summary>Software feature: idea → specification → implementation → verified delivery</summary>
 
 **Key:** double-bordered boxes name individual skills; rounded boxes are inputs/results; diamonds are decisions; frames group stages. Arrows are possible handoffs. A fork alone does not establish parallel readiness.
 
@@ -178,7 +132,7 @@ Select every required design/review branch and reconcile its result before conti
 
 </details>
 
-The [workflow guide](docs/workflows.md) covers [product discovery](docs/workflows.md#evaluate-a-product-opportunity), sequential and parallel work, review loops and context passed between skills. Recommendations do not authorize additional work.
+For other outcomes, use the [workflow index](docs/workflows.md): [product decisions](docs/workflows/product.md), [interface design](docs/workflows/ui-ux.md), [writing](docs/workflows/content.md), [video and other media](docs/workflows/media.md), or [work coordination](docs/workflows/productivity.md). Each guide shows concrete inputs, skill handoffs and where to finish.
 
 ## Questions
 
