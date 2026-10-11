@@ -8,6 +8,7 @@ Use the existing result record and the requested scope. Checked means demonstrat
 - [ ] The actual requested artifact is present: full wording and visual beats through the ending for a script, scoped options for a hook request, or the requested outline; advice/placeholders do not substitute for it.
 - [ ] Requested destination/surface variants contain the needed adapted words and complete endings while preserving the accepted purpose.
 - [ ] Material questions and story feedback are recorded; the concept/message/payoff is confirmed or explicitly delegated before dependent production, otherwise clearly proposed.
+- [ ] Intent and creative choices needed to write this draft were answered or explicitly delegated first; unanswered questions did not become assumed answers. Wording review is kept separate from unresolved direction.
 - [ ] Claims have sources or clear fiction/hypothesis labels; missing demonstrations remain gaps.
 - [ ] Title/cover or opening-frame expectations match what the piece can deliver.
 

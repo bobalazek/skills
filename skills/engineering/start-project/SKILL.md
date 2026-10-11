@@ -15,6 +15,8 @@ Use `design-architecture` for unresolved foundational choices or `implement-chan
 
 Inspect the requested destination and existing work. Resolve only missing decisions that materially change setup. Identify the first supported behavior, required runtime boundaries and accepted constraints before creating files.
 
+When the goal, users, first behavior or foundational constraints are unclear, ask a short group of questions and wait before scaffolding. Read-only inspection and requested options can continue; proposing a default does not approve it. Keep questions, answers, accepted or explicitly delegated choices and blocked setup steps in the existing brief/conversation, reusing settled answers.
+
 Retain the original outcome and accepted target choices in the existing brief or README, with links to the requirements. Use web only as an explicit provisional default for an otherwise unspecified new app; mobile and desktop need their actual required capabilities and distribution/validation path. Resolve a consequential target ambiguity before scaffolding, and preserve supplied platform choices.
 
 Before dependent setup, settle the first path's hosting/environments, internal frontend/API/worker boundaries, required dependencies and their operating responsibilities: local or managed databases/caches/queues, file storage/transfer, hosting/network/delivery services, API/AI integrations, MCP/tool services and material runtime/build dependencies. Reuse the accepted design and configuration contracts. Unknowns that change the foundation need architecture discovery; optional services remain absent and an unresolved choice is not permission to provision.

@@ -2,6 +2,8 @@
 
 Use for an open brief or a change that alters the intended video. Reuse answered questions and project conventions. Ask the next small group of consequential questions, then adapt to the answers; do not dump the whole guide as a questionnaire or decide a personal creative preference silently.
 
+For each open choice, make clear what answer is needed and which next step waits for it. Do not ask a question and start the dependent work in the same turn using your own answer. Preserve the user's reply in the existing brief/conversation, reflect any changed direction, and resume only the work it resolves. Requested exploratory options can remain proposals; an unanswered question, a labeled assumption or elapsed time does not approve a choice.
+
 ## Purpose: what must this accomplish?
 
 Clarify why this video should exist now and what success means to its owner. Does the viewer need to learn, decide, act, feel something or simply enjoy it? Which message or experience must survive every revision, and what would make the piece fail? Distinguish an editorial objective from a measurable outcome; if performance matters, identify the available signal and its limits rather than guaranteeing views or conversions.
