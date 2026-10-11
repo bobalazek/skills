@@ -27,6 +27,8 @@ Choose placement, class/module boundaries and naming from written repository con
 
 Order contracts, schemas, and foundations before their consumers. Confirm the graph is acyclic. Show which tasks could run together after their prerequisites are accepted, and which are ready now. Parallel execution needs isolated writes, compatible shared state/data, and suitable verification environments; otherwise serialize it. A parallel batch contains only currently ready tasks. A broader execution sequence may include dependent successors, but they cannot start before their prerequisites are accepted. Declare the acceptance evidence and remaining external inputs; dependency-free does not mean ready when access or a consequential decision is missing.
 
+When a blocker closes, recheck the affected tasks against current criteria, accepted prerequisites, access/authority and ownership before marking them ready. Record the closure evidence and resulting readiness; an answered question or completed human action does not complete the dependent work.
+
 When branching matters, show these dependencies in a compact Mermaid or the destination's existing graph, including integration and independent acceptance after the contributing outputs. Keep task IDs and phase exits consistent with the records. Check the rendered view when available and report a rendering gap; a diagram is an aid to inspecting the same task graph, not a second task store.
 
 ### PR groups
