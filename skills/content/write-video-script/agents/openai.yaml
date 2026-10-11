@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write video script"
+  short_description: "Write video hooks, story beats and earned payoffs"
+  default_prompt: "Use $write-video-script to turn this brief and evidence into a video script with a clear hook, storyline and payoff."

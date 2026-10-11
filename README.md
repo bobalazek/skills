@@ -1,6 +1,6 @@
 # Skills
 
-65 skills for developing software, evaluating products, coordinating work, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
+68 skills for developing software, evaluating products, coordinating work, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
 
 Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear. The collection is under active development; [releases](https://github.com/bobalazek/skills/releases) record reviewed snapshots and evaluation limits.
 
@@ -39,8 +39,8 @@ From a checkout, you can also ask a filesystem-capable agent to use `skills/engi
 | [Product · 6 skills](docs/domains/product.md) | Evaluate ideas, synthesize feedback, compare alternatives, define success measures, plan experiments, and analyze product usage |
 | [Productivity · 12 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose and coordinate work, route requests, improve prompts and team workflows, report status, and transfer context |
 | [UI/UX · 8 skills](docs/domains/ui-ux.md) | Capture design references, map flows and navigation, wireframe and design screens, write interface messages, build shared systems, review interfaces, and test usability |
-| [Content · 5 skills](docs/domains/content.md) | Define a writing voice, plan page content, write website copy and blog posts, and review prose for clarity and supported meaning |
-| [Media · 6 skills](docs/domains/media.md) | Create motion videos, edit recorded footage, record narration, capture product screens, build presentation decks and produce social carousels |
+| [Content · 6 skills](docs/domains/content.md) | Define a writing voice, plan page content, write website copy, blog posts and video scripts, and review prose for clarity and supported meaning |
+| [Media · 8 skills](docs/domains/media.md) | Plan video concepts and storyboards, render motion graphics, edit footage, record narration, capture product screens, build decks and produce carousels |
 
 Each catalog lists skills by category, with their outputs and boundaries.
 
@@ -56,7 +56,10 @@ Each catalog lists skills by category, with their outputs and boundaries.
 | Plan what a product page needs to say and prove | [plan-landing-page](skills/content/plan-landing-page/SKILL.md) |
 | Write or revise the words on a website | [write-website-copy](skills/content/write-website-copy/SKILL.md) |
 | Turn source material into a blog post | [write-blog-post](skills/content/write-blog-post/SKILL.md) |
-| Create a motion graphic or explainer video | [create-motion-video](skills/media/create-motion-video/SKILL.md) |
+| Develop video ideas and choose a format | [plan-video](skills/media/plan-video/SKILL.md) |
+| Write a video script, hook or ending | [write-video-script](skills/content/write-video-script/SKILL.md) |
+| Turn a script into shots and an asset plan | [create-storyboard](skills/media/create-storyboard/SKILL.md) |
+| Create a code-driven motion graphic or explainer video | [create-motion-video](skills/media/create-motion-video/SKILL.md) |
 | Cut, reframe or caption recorded footage | [edit-video](skills/media/edit-video/SKILL.md) |
 | Record or generate the narration for a video | [create-voiceover](skills/media/create-voiceover/SKILL.md) |
 | Capture product screenshots for marketing or docs | [capture-product-screens](skills/media/capture-product-screens/SKILL.md) |
@@ -151,6 +154,8 @@ See the [maintainer guide](docs/authoring.md) for package conventions, evaluatio
 ## Acknowledgments
 
 This independent collection grows out of workflows I have used internally for several months. Public inspirations include:
+
+- [Kallaway](https://www.youtube.com/@kallawaymarketing): clear hooks and useful continuation, script progression and earned payoffs, adapted from his public [hook](https://www.youtube.com/watch?v=2byPP_9F0-Q), [scriptwriting](https://www.youtube.com/watch?v=7I50PECz7SU) and [storytelling](https://www.youtube.com/watch?v=t5Z-Q1bg1tU) teaching. These are craft options, not reach or retention guarantees. Research used public transcripts and articles; visual examples were not watched. Internal Corco and Fortuna Matata workflows also informed the production handoffs.
 
 - [Matt Pocock's skills](https://github.com/mattpocock/skills): focused questioning and planning, domain vocabulary and decisions, and PR explanations with evidence and risk.
 - [HumanLayer's skills](https://github.com/humanlayer/skills): visual PR explanations and concise agent instructions that load detail when needed.

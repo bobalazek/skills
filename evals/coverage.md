@@ -148,3 +148,51 @@ All five candidate-only attempts completed within their 300-second bound on Code
 The independent result is four passing cases and 23 of 24 passing criteria, with the failed PR boundary preserved. Both high-risk review trials first encountered a read-only restriction on heredoc temporary files, then used safe `python3 -B -c` probes; the failed commands are retained. All observed project checks were synthetic/local. The external skill read is a host contamination/authority failure, not a directed action in the changed package, and prevents a clean five-case pass.
 
 Package/type/lint checks, 97 tests with 1,105 assertions and diff checks passed. A clean installation at `33d281d` verified 65 packages / 221 identical files and Codex 0.162.1 / OpenCode 1.18.31 discovery. No baseline, automatic activation, real cloud/provider/MCP operation, production deployment, concurrent execution, restore rehearsal, native application or whole-domain reliability is established. Inherited host instructions may influence these bounded results; raw host context remains private.
+
+## 2026-10-11 — Video development and production handoffs
+
+This local, uncommitted pass adds `plan-video`, `write-video-script` and `create-storyboard`, narrows motion production's overlapping responsibilities, and adds concrete production checklists and flexible narration timing. The [case catalog](cases.json) now has 55 read-only cases; this pass adds 11 video cases and the writable [human story handoff](workflows/video-human-story-handoff.json). Fixture definitions are not themselves passing evidence.
+
+The fixed production baseline is `017d73eee0c58eeab64b4e2f7464a58c5a217c16`. Complete candidate package digests identify dirty working snapshots, not that commit: initial `5518b2314b4c856853db327eb6f920b54f0dbd88ffdddcc1e97a8ad87b43c4db`; corrected rendering reference `fd3c5b1b321a811681acfb4dac0b9f5b34a4b6a20e2882b663c2351bc783a36e`; final discovery clarification `dd57469540cda1f1c38b2a971079fdd38dacea24c48d98694fae440e881f139a`. Independent snapshot comparisons confirmed the unchanged relevant leaves and scoped affected rechecks.
+
+Codex CLI 0.162.1 ran 19 read-only attempts with a 180-second limit and one writable resumed-feedback attempt with a 300-second limit. Captured native sessions report `gpt-6.1-sol`. All 20 exited zero without timeout; the 19 read-only fixtures remained unchanged, and an independent before/after hash comparison found only the authorized `brief.md` and `script.md` edits in the writable trial. These are execution and mutation observations, separate from the behavioral judgment.
+
+Independent reviewer `/root/review_video_skills` returned source and criterion-level assessments: all **12 distinct current-candidate scenarios** pass within their fixed scope. Across 20 retained attempts, 63 criterion rows pass and one historical discovery row is partial; its unchanged-criteria rerun closes that omission. This is not a reliability percentage. Six baseline production attempts also pass, so those comparisons show bounded compatibility, not general superiority. New skills have direct verification rather than a no-skill control.
+
+| Scenario | Observed result |
+| --- | --- |
+| Discovery and concept brainstorming | Questions establish type, purpose, audience and constraints; distinct ideas retain human selection. The corrected discovery response explicitly preserves answers and choices in the conversation. |
+| Hook-only writing and silent story outline | Unsupported promises are narrowed to evidence; continuation and payoff stay aligned. Silent reflective work remains silent and scoped, with no forced CTA or production. |
+| Storyboard action coverage | Shots distinguish opening/action/ending states and missing footage; described stills do not prove falling/rebuilding actions. Both requested layouts remain in scope. |
+| Continuous narration and ambiguous provider job | Continuous takes and stable spans survive; script/actual-word differences, direction tags and anchored cues are handled explicitly. An uncertain submitted job is reconciled before another paid request. |
+| Edit and motion acceptance from notes | Missing native speech, source/output caption timing, lost qualifiers, stale narration cues, absent variants and unobserved playback/review remain concrete open checks. |
+| Motion cue handoff | Supplied 1s/7s/11s cues and fixed anchors survive a scoped pickup; no mandatory line files or invented listening proof. |
+| Implicit script route | Actual local reads selected `write-video-script` without loading prohibited production skills for a bounded opening rewrite. This is one activation case. |
+| Writable human story handoff | Owner answers supersede an unaccepted promotional proposal; original intent and stable IDs survive. A silent 45-second script covers pin/unpin with estimated timing, records checks and gaps, and asks for wording confirmation before storyboarding. Visual direction stays open. |
+
+Two findings were corrected and independently rechecked: the rendering reference still mandated sequential per-line audio despite the new continuous/anchored contract; the first discovery response omitted where decisions would be retained. The failed initial discovery coverage is preserved. The writable trial uses the pre-clarification planning leaf but begins with supplied answers, after opening discovery; its script leaf matches the final candidate.
+
+Local raw records remain in `/tmp/skills-video-new-20261011`, `/tmp/skills-video-production-20261011`, `/tmp/skills-video-render-recheck-20261011`, `/tmp/skills-video-discovery-recheck-20261011` and `/tmp/skills-video-handoff-20261011`. Returned assessments are `/tmp/skills-video-source-review-20261011.md`, `/tmp/skills-video-behavior-review-20261011.md` and its JSON criterion/digest ledger. They are local evidence, not public attachments; raw host context is not published.
+
+Package/metadata/resource/link/checklist checks pass for 68 skills and 105 reachable resources; type/lint checks, 97 tests with 1,181 assertions and diff whitespace checks pass. No new dependency, production helper or release was introduced.
+
+Limits: synthetic notes and document work do not establish filming, provider generation, real playback/listening, readability, product behavior or audience impact. New leaves were copied and discovered in Codex fixtures; a new full installer/OpenCode smoke check was not run. Three nested review bodies were unavailable despite native spawn/completion evidence (both edit-note variants and the baseline cue trial); their contents remain unverified, rather than treated as fabricated or accepted media review. Resumed supplied feedback is not live human research or proof of every future conversation path. Everything remains local for user review; nothing was committed, pushed or published in this pass.
+
+### Full scripts and channel discovery follow-up — 2026-10-11
+
+The user subsequently authorized verification, commit, push and an open PR. This follow-up makes purpose, audience, narrative format and destination/surface explicit in discovery, and requires complete requested script words through the ending. The catalog now has 59 read-only cases. Four new fixed cases challenge those additions; the preceding attempts, corrections and limits remain retained.
+
+The complete 241-file candidate package digest is `6f37ab068cdd8ac2ff96ee9f8053a49c10c1c62a43d2f52d31dd0890ef15c9f3`, independently matched to current source and both runner snapshots. It identifies the working package contents based on `017d73eee0c58eeab64b4e2f7464a58c5a217c16`, not that baseline commit. Codex CLI 0.162.1/native `gpt-6.1-sol` completed all four attempts within their 180/240-second bounds, without timeouts or fixture changes.
+
+Independent reviewer `/root/review_video_delivery` assessed complete outputs and tool/native records: **four cases and all 14 fixed criteria pass**. Reviewer model identity is unknown. These are actual output assessments, separate from successful process exits.
+
+| Case | Observed result |
+| --- | --- |
+| `video-purpose-channel-brainstorm` | Three distinct personal/product concepts, channel/surface tradeoffs and grouped discovery questions; a bounded pilot and retained human choices without inventing acceptance. |
+| `video-full-youtube-script` | Complete seven-beat product tutorial with 207 spoken words, separate visual directions and plausible estimated two-minute delivery; unsupported features and capture claims excluded. |
+| `video-personal-channel-scripts` | Two complete personal-story drafts: narrated TikTok and silent Instagram Reel, each with actual words, progression and payoff. Timing estimates and human wording confirmation remain explicit. |
+| `video-motion-script-fallback` | A standalone motion leaf returns complete five-part narration and matched visual beats for a queue explainer, preserving one worker, ordering and visible failure without invented retries or production. |
+
+The reviewer also rechecked changed source, matched all 84 prior raw-artifact hashes and retained unchanged-case evidence. Together these passes cover 16 distinct video scenarios across 24 attempts, including baseline and historical attempts; they do not establish general reliability across all 68 skills. Package/resource checks pass for 68 skills and 105 resources; TypeScript/Biome, 97 tests with 1,209 assertions and whitespace checks pass.
+
+Raw follow-up records remain local in `/tmp/skills-video-pr-planning-20261011` and `/tmp/skills-video-pr-scripts-20261011`; the returned assessment and criterion/hash ledger are `/tmp/skills-video-delivery-review-20261011.md` and `.json`. They are not public attachments. Full installer/OpenCode checks, actual media generation, rendering/listening, provider integration and audience impact remain untested here. Human acceptance of draft creative work remains separate; merge and release are outside this delivery target.

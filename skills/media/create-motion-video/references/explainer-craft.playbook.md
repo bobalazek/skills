@@ -12,13 +12,13 @@ A short product explainer usually needs five beats. Merge or drop beats when the
 | Problem in the viewer's terms | Name the cost or friction as the viewer experiences it, in their words | A feature list, internal jargon, or a problem defined as "you lack our product" |
 | The product working | Show the product doing the job on real screens: one or two cause-and-effect moments | A tour of every module; screens that sit still while the voice lists features |
 | One memorable proof | A single supported fact or moment the viewer can repeat: a number read off the capture, a before/after, a quote with permission | Stacked claims, invented metrics or a testimonial without consent |
-| Call to action | One action that matches the page or channel the video sits on | Several actions, or an action the destination does not offer |
+| Payoff and optional action | Deliver the promised result; offer a relevant next action when the brief calls for it | A sales request replacing the answer, or an action the destination does not offer |
 
-Write the narration before the visuals, then read it aloud at speaking pace. Each line should carry one thought the viewer could restate. If a line needs "and also", split it or cut half. Show the product working for roughly half the running time; the problem and proof support that section rather than compete with it.
+Develop words and visible proof together; fixed footage can determine what the script can honestly say. Read narration at speaking pace when possible, reporting the method actually used. Give each beat a clear job and enough room to understand the product working. Treat screen time as a decision based on the brief, not a required fraction.
 
 ## Length and script size
 
-Keep the skill's 30–60 second default for a landing page unless the brief says otherwise. Social cut-downs usually run shorter; a tutorial can run longer because the viewer chose to learn. Length follows from the five beats, not from the number of features available.
+For an unspecified short landing-page explainer, 30–60 seconds can be a starting proposal. Social cut-downs usually run shorter; a tutorial can run longer because the viewer chose to learn. Length follows the needed explanation and available proof, not a fixed beat count.
 
 As a rule of thumb, unhurried English narration runs about 130–160 words a minute, so 45 seconds holds roughly 90–110 words once pauses are included. Rates differ by language, voice and delivery. A scratch read gives a better estimate than a word count, and the measured final recording decides the timing. When the script runs long, cut words before asking for a faster read. Leave a short silence before the first line and after the last, and give a beat of pause between ideas; around a third of a second to a second is common.
 
@@ -63,11 +63,11 @@ Avoid devices that move without explaining anything: constant drift on every sho
 
 Time visual events to the words they illustrate. A change landing a few frames before its word tends to read as intentional; one landing late reads as lag. Write cues relative to narration lines, as the rendering playbook describes, so a new recording re-times the piece.
 
-Hold a finished state while the narration is still talking about it, and move on when the narration does. Entrances of roughly half a second with an ease-out, and slightly faster exits, are a common starting point; nothing should move while added text needs reading. Vary beat lengths, and give the proof a short breath before the call to action. End each beat on a stable frame; those frames double as stills, poster candidates and review checkpoints.
+Hold a finished state while the narration is still talking about it, and move on when the narration does. Entrances of roughly half a second with an ease-out, and slightly faster exits, are a common starting point; avoid motion that competes with reading. Vary beat lengths, and give the proof a short breath before the ending. Stable frames can double as stills, poster candidates and review checkpoints.
 
 ## End card
 
-Hold the end card for a few seconds after the final line, long enough to read it twice. Show the name or wordmark, one line restating the promise, and the single action with the destination's actual wording and address. Keep it static or settling to static, since a stopped player often rests on the last frame. Keep text clear of where player controls appear at the destination. Do not introduce a new claim at the end. Choose the poster frame separately, usually a frame showing the product working, so the page does not open on the end card.
+When an end card fits the brief, hold it long enough to read. Show the name or wordmark and the supported result; include an action and address only when useful to the requested purpose. Keep it static or settling to static, since a stopped player often rests on the last frame. Keep text clear of player controls and do not introduce a new claim at the end. Choose the poster separately, usually a frame showing the product working.
 
 ## Anti-patterns
 

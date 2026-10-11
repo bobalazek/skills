@@ -1,0 +1,22 @@
+{
+  "id": "video-human-story-handoff",
+  "skill": "write-video-script",
+  "prompt": "Use the local $plan-video and $write-video-script packages for this resumed collaboration. Read brief.md and script.md. Here are my answers and feedback: the audience is first-time desktop users; this is a 45-second silent help-center tutorial, with no sales CTA. I accept the concept of demonstrating how to pin and unpin one favorite, and the payoff that the user can change that choice later. Keep a calm, practical tone. Replace the permanent promise in the opening. Update the existing brief with these decisions and revise the script, preserving stable IDs where possible. I want to confirm the wording before storyboarding; the visual direction is still open. Work only inside this disposable fixture. Do not render, record, install, contact services, commit or push. Return the revised artifacts and the next question for me. A separate evaluator will assess the raw result afterward; do not invent a returned review.",
+  "files": {
+    "AGENTS.md": "Use brief.md for the request, decisions and checks, and script.md for script rows. Keep this existing structure; do not create new trackers or folders. Only these two files may change. No outside-project actions or connected tools.\n",
+    "brief.md": "# Video brief\n\nOriginal request R1: Show new users how to keep a favorite near the top and change it later.\n\n## Decisions\n- Proposed: 30-60 seconds, narrated promotional video. Owner has not accepted this.\n- Goal: teach the real pin/unpin action; product supports one pinned favorite at a time.\n- Authentic product capture can show both pin and unpin; no footage is attached here.\n- Open: audience, sound mode, exact duration, tone, call to action and visual direction.\n\n## Checks\nNo media playback, listening, visual previews or independent review has occurred.\n",
+    "script.md": "# Script draft v1\n\n| ID | On-screen words | Visual intent | Timing |\n| --- | --- | --- | --- |\n| B1 | Never lose a favorite again. | Item list | Estimate: 0-5s |\n| B2 | Pin a favorite. | User pins one item | Estimate: 5-20s |\n| B3 | It stays here forever. | Pinned item | Estimate: 20-30s |\n| B4 | Subscribe for more tips. | Promotional end card | Estimate: 30-35s |\n\nWording and visual direction are not accepted.\n"
+  },
+  "setup": {
+    "initializeGitBaseline": true,
+    "skillInstallation": "Complete local plan-video and write-video-script leaf packages only; supplied owner feedback models a resumed conversation, not observed live user research."
+  },
+  "expected": [
+    "Modify only brief.md and script.md; retain original request and existing artifact structure with stable relevant beat IDs.",
+    "Record owner answers as accepted decisions, supersede the unaccepted narrated/promotional proposal and keep visual direction open; distinguish concept acceptance from still-pending revised wording.",
+    "Deliver a 45-second silent instructional draft covering both pin and unpin/change, without permanent guarantee or sales CTA; durations stay estimates and do not imply captured footage.",
+    "Use concrete applicable checks with honest evidence and gaps; no invented playback, listening, independent review or human wording approval.",
+    "Ask for confirmation or focused feedback on the revised wording and defer dependent storyboarding/production; do not repeat settled intake questions."
+  ],
+  "authority": "Writable disposable fixture only; only brief.md and script.md may change. No network, paid generation, rendering, installation, commits, pushes or live services."
+}

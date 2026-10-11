@@ -1,19 +1,19 @@
 ---
 name: create-voiceover
-description: "Record or generate narration from an accepted script as one clip per line, a voice stem and a timing manifest, with checked pronunciation, loudness and listening. Use for voice-over audio, not script writing, a writing-voice guide or editing footage."
+description: "Record or generate narration from an accepted script as selected recordings, a voice stem and a measured timing manifest, with checked pronunciation, loudness and listening. Use for voice-over audio, not script writing, a writing-voice guide or editing footage."
 ---
 
 # Create voiceover
 
-Produce narration audio for an accepted script: one trimmed clip per line, a voice stem, and a timing manifest with each line's ID, text, clip length and position, which a motion video, edit or deck consumes. Add a music bed only when asked, delivered as separate voice, music and mix files. Reuse the existing script file, recordings, voice choice and pronunciation list before creating equivalents. A scratch-pacing request finishes with labeled scratch audio, and an audition request with the auditions.
+Produce narration audio for an accepted script: selected clips or continuous takes, a voice stem, and a timing manifest mapping stable script IDs and actual words to measured source/output spans, which a motion video, edit or deck consumes. Add a music bed only when asked, delivered as separate voice, music and mix files. Reuse the existing script file, recordings, voice choice and pronunciation list before creating equivalents. A scratch-pacing request finishes with labeled scratch audio, and an audition request with the auditions.
 
-The script's wording stays with its owner: `create-motion-video`, `edit-video` or `create-presentation` for media scripts, or the relevant writing skill when available. This skill adds spoken-form respellings without changing meaning and returns wording problems to that owner. A writing-voice guide belongs to `define-writing-voice`, not here. Placing the audio against picture, sound effects, music cut to picture, and captions built into a video stay with the consuming media skill.
+The script's wording stays with its owner: `write-video-script` for standalone video writing, or `create-motion-video`, `edit-video` or `create-presentation` for integrated media scripts, or the relevant writing skill when available. This skill adds spoken-form respellings without changing meaning and returns wording problems to that owner. A writing-voice guide belongs to `define-writing-voice`, not here. Placing the audio against picture, sound effects, music cut to picture, and captions built into a video stay with the consuming media skill.
 
 ## Establish the job
 
 Read project instructions, the accepted script and what the consumer needs. Establish the language and accent, audience, destination and playback (sound-on, or muted with captions), delivery format, names to pronounce, deadline and requested fidelity: auditions, scratch pacing or final narration. Ask only about consequential gaps, which usually include the voice source, its cost and how the owner says their own names. When the requester asked you to proceed, take routine defaults and report them.
 
-Split the script into lines that each carry one thought, and give them stable IDs so a consumer's cues survive later edits. Use [the narration manifest](references/narration-manifest.template.md) unless the project already keeps an equivalent script and timing file.
+Keep stable IDs for meaningful script units so consumer cues survive edits. Recording units may be individual lines, paragraphs or continuous takes; choose from performance continuity, existing material, provider limits and pickup needs. IDs do not require separate files. Use [the narration manifest](references/narration-manifest.template.md) unless the project already keeps an equivalent script and timing file.
 
 ## Choose the source and the voice
 
@@ -27,13 +27,15 @@ List brand and product names, people, places, acronyms, numbers, dates and addre
 
 ## Record or generate takes
 
-Produce one clip per line, never one long file to slice later, so a changed line can be redone alone. Record or generate two or three takes of lines carrying the hook, the proof, names or the call to action; routine lines may need one. Select by listening for stress on the right word, pronunciation, pace and consistency with neighboring lines. Record the selected take and keep alternates until acceptance. Keep the voice, model and settings fixed across lines and later pickups.
+Reuse acceptable supplied takes. For new work, line clips can simplify pickups, while longer passages can preserve natural delivery. Keep originals and measure source ranges when extracting selected passages. Additional takes should resolve an actual performance or pronunciation choice within the authorized budget; one usable take can suffice. Keep canonical dialogue separate from direction tags, emotion cues and pronunciation aliases, passing controls only through features the chosen source supports. Select by listening for stress on the right word, pronunciation, pace and consistency with neighboring lines. Record the selected take and keep alternates until acceptance. Keep the voice, model and settings fixed across lines and later pickups.
 
 ## Finish and measure
 
-For trimming, building the stem, loudness, a requested music bed, listening and the measurement commands, load [the audio finishing guide](references/audio-finishing.playbook.md). Trim silence and distracting breaths without clipping words. Place each line from measured clip lengths: the lead-in, then each line after the previous clip plus its pause. Measure loudness and true peak and match them to the destination's verified requirements; there is no universal target, and an unverified destination leaves a stated assumption. Add music only when asked, with rights covering the destination, ducked under the voice; deliver the voice stem, ducked music and mix as separate files and name each in the manifest.
+For trimming, building the stem, loudness, a requested music bed, listening and the measurement commands, load [the audio finishing guide](references/audio-finishing.playbook.md). Trim silence and distracting breaths without clipping words. For sequential clips, place each from measured duration plus its intended pause. For continuous or anchored material, map selected source spans to their actual stem positions rather than assuming every unit has its own file or moves with its predecessor. Measure loudness and true peak and match them to the destination's verified requirements; there is no universal target, and an unverified destination leaves a stated assumption. Add music only when asked, with rights covering the destination, ducked under the voice; deliver the voice stem, ducked music and mix as separate files and name each in the manifest.
 
 ## Verify by listening
+
+Apply [narration checks](references/completion.checklist.md) to the requested fidelity in the existing manifest/result. Check only demonstrated items with evidence; failures and unavailable checks stay unchecked with consequence and next action, and exclusions need a reason.
 
 Listen to every line at normal speed before acceptance, and corroborate with measurements, following the listening and measurement checks in [the audio finishing guide](references/audio-finishing.playbook.md). Speech recognition can corroborate words and timing against the script, but it is not a listening review: it tends to transcribe a misread brand name as the intended word. Lines nobody heard stay unchecked; if the host cannot play audio, report that gap and who must listen. A successful generation call or encode proves only that a file exists.
 
@@ -43,4 +45,4 @@ Before acceptance, have a separate agent in fresh context challenge the raw scri
 
 Return the clips, the voice stem (plus the music and mix files when a bed was requested) and the manifest, with the pronunciation list, source and voice details, authorization and disclosure notes, rights for any music, measurements, listening coverage and exact gaps. Distinguish scratch, generated, listened and accepted lines.
 
-A new or changed recording invalidates every dependent cue, caption and export check from its first changed line onward, because later lines move. Pass the manifest, stem and first changed line ID to `create-motion-video`, `edit-video` or `create-presentation` when available. Otherwise state the plain action: re-derive cue times from the manifest, rebuild captions from its text and timing, and recheck sync in the exported result. Stop at the requested delivery, and continue already-authorized work without an extra permission loop.
+A new or changed recording invalidates affected cue, caption, sync and export evidence. In a sequential assembly, later positions may move; anchored units need their actual dependencies checked. Pass the revised manifest, stem, changed IDs and affected intervals to `create-motion-video`, `edit-video` or `create-presentation` when available. Otherwise state the plain action: re-derive cue times from the manifest, rebuild captions from the actual spoken words and final timeline, and recheck sync in the exported result. Stop at the requested delivery, and continue already-authorized work without an extra permission loop.
