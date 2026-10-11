@@ -23,10 +23,10 @@ The user also requires deeper review of high-risk flows: billing, invoices, paym
 
 ## Pass 2 — Concrete engineering checklists and app targets
 
-- [ ] Give implementation and review each concrete, evidence-backed checkbox items across every requested category, using Corco's relevant prompts.
-- [ ] Preserve original intent and accepted changes through intake, specs, tasks, implementation, verification and delivery.
-- [ ] Carry explicit web/mobile/desktop targets and their validation limits through those stages without adding unrequested applications.
-- [ ] Validate realistic cases for intent drift, category omissions, native-target boundaries and proportionate small-task coverage; independently assess observed behavior.
+- [x] Give implementation and review each concrete, evidence-backed checkbox items across every requested category, using Corco's relevant prompts.
+- [x] Preserve original intent and accepted changes through intake, specs, tasks, implementation, verification and delivery.
+- [x] Carry explicit web/mobile/desktop targets and their validation limits through those stages without adding unrequested applications.
+- [x] Validate and independently assess the four intent/category/target cases; retain the global-skill boundary failure and native/session evidence limits in [coverage](../evals/coverage.md).
 - [ ] Review, publish, wait for CI, merge and verify this pass.
 
 ## Pass 3 — Infrastructure, explanation and review depth
