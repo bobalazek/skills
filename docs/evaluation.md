@@ -75,7 +75,7 @@ Run the automated consumer check against a clean checkout of the expected source
 
 ```bash
 bun run check:install /absolute/path/to/candidate /absolute/path/to/candidate /tmp/skills-candidate-check
-bun run check:install https://github.com/bobalazek/skills/tree/v0.3.0 /absolute/path/to/reviewed-source /tmp/skills-published-check
+bun run check:install https://github.com/bobalazek/skills/tree/v0.3.1 /absolute/path/to/reviewed-source /tmp/skills-published-check
 ```
 
 This pins skills CLI 1.7.0, installs all packages as project-local copies into a disposable Git repository, compares every package file, and verifies Codex names/locations and OpenCode names/locations/loaded bodies. The repository boundary prevents ancestor project skills from shadowing the installation. It requires installed Codex and OpenCode CLIs and network access for the installer or remote source. Client versions are observed and retained; their diagnostic output formats are compatibility boundaries that can change. A failed command, changed source, ignored/untracked package file, wrong file or missing discovery fails the check. No dependency or client is installed into the consuming project.
