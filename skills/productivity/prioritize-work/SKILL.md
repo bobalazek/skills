@@ -19,6 +19,8 @@ For each item, check its outcome, remaining effort, uncertainty, dependencies, a
 
 ## Compare and select
 
+Label actionable findings and fixes with the project's priority labels and meanings. Otherwise use P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), or P3 low (minor or optional improvement). Give the evidence-based impact/urgency rationale and next action; mark uncertain ratings provisional. Keep priority separate from severity, confidence and readiness. Preserve finding IDs and priority through rechecks; explain changes using new evidence or an accepted decision. Priority does not authorize extra work or waive required checks.
+
 Compare goal contribution, delay consequence, risk, confidence, remaining cost and enabled work. Use the team's established method when it fits, or a simple explanation. Do not invent inputs to complete a formula or convert incompatible effort bands, points and elapsed waits into guessed hours.
 
 For capacity limits, competing commitments or shared prerequisites, use [the selection playbook](references/selection.playbook.md). Include preparation, integration, review and acceptance. Count a shared prerequisite once, allocate its work to the correct role, and avoid counting the same benefit through duplicate candidates. Team capacity is not interchangeable across specialties.

@@ -60,6 +60,8 @@ A finding needs an affected scenario, located evidence, consequence, and actiona
 
 ## Reconcile and return the assessment
 
+Label actionable findings and fixes with the project's priority labels and meanings. Otherwise use P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), or P3 low (minor or optional improvement). Give the evidence-based impact/urgency rationale and next action; mark uncertain ratings provisional. Keep priority separate from severity, confidence and readiness. Preserve finding IDs and priority through rechecks; explain changes using new evidence or an accepted decision. Priority does not authorize extra work or waive required checks.
+
 Use [the report shape](references/review-report.template.md). State priority based on impact and credible likelihood, cite the inspected location, and explain whether a finding blocks the requested next step. Distinguish urgent failures, required corrections, and optional adjacent observations; omit unsupported nitpicks. Include coverage, commands/observations, and unavailable checks. A clean inspected area is not proof that uninspected code is correct.
 
 Reconcile evidenced disagreements and deduplicate findings; agreement cannot override a demonstrated defect. Retain each returned assessment with reviewer/session identity, evaluated revision, findings and coverage before claiming review. An attempted delegation, empty wait or author check is not an independent assessment.

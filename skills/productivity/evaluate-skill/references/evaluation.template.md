@@ -22,5 +22,6 @@ Record duration and host-reported tokens when available. Preserve failed attempt
 - Per-case improvement, regression, unchanged behavior or non-comparability.
 - Independent evaluator/session, model or unknown, exact artifacts assessed, findings and coverage; otherwise unreviewed.
 - Remaining gaps, bounded conclusion, proposed correction and affected cases to rerun.
+- Actionable finding IDs, project priority or P0–P3, impact/urgency rationale and next action; preserve prior ratings and explain changes during rechecks. Priority does not replace pass/fail/not-checked criterion outcomes.
 
 Small selected trials support only the observed scenarios. They do not establish production acceptance, automatic activation, every client/model, or a general reliability percentage.

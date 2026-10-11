@@ -16,14 +16,16 @@ For a PR or consequential change, include a concise risk and reversibility state
 
 For each confirmed finding, give priority, concise problem, affected scenario/preconditions, file/symbol location, evidence, consequence, and the smallest useful correction or investigation. Cite the requirement or accepted convention when the finding depends on it. Order findings by demonstrated impact and credible likelihood, and deduplicate root causes across symptoms.
 
-Use the repository's severity scheme when established. Otherwise use plain descriptions that explain urgency and the next-step consequence:
+Use the repository's work-priority labels and meanings when established. Otherwise label actionable findings using this scale, with a short rationale and next action:
 
-| Treatment | Evidence needed |
+| Priority | Meaning and evidence |
 | --- | --- |
-| Urgent | A demonstrated active or readily reachable serious exposure, data loss, or similarly severe failure needing prompt attention; explain the reachable conditions and impact |
-| Blocks the requested next step | A confirmed defect violates a material accepted requirement, or a required check/proof is missing or failed; identify exactly what must change or be demonstrated |
-| Bounded follow-up | An evidenced problem has narrower impact or conditions and can follow the requested step under the applicable policy/accepted decision; state remaining risk without accepting it on the owner's behalf |
-| Optional improvement | A useful adjacent simplification or polish item with concrete benefit; keep it separate and omit low-value preferences |
+| P0 — critical | Act immediately: credible active or imminent severe harm needs immediate attention; explain reachability, affected users/data and the urgent containment or investigation |
+| P1 — high | Address next: significant supported impact or time sensitivity makes this the next correction; state the affected outcome and why delay matters |
+| P2 — normal | Schedule a correction: an evidenced bounded problem merits planned work; state impact, conditions and prerequisites |
+| P3 — low | Minor or optional improvement with a concrete benefit; omit unsupported preferences and filler |
+
+Keep stable finding IDs separate from priority labels, for example `F-01 [P1]`. Carry IDs, ratings, rationale and disposition through repairs and rechecks; retain the previous rating and reason when evidence or an accepted decision changes it. Mark uncertain ratings provisional instead of inventing impact. Report whether the specific next step is blocked separately from priority; missing mandatory proof can block delivery without establishing a critical defect.
 
 Severity and readiness answer different questions. A serious existing issue may fall outside a PR's change scope yet still need escalation; a missing mandatory check can block a release without proving a code defect. Describe both accurately. Do not use security, performance, or architecture labels to inflate a hypothetical concern. Nitpicks and personal naming preferences do not become blockers unless an applicable requirement establishes the violation and gate.
 

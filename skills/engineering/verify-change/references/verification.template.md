@@ -11,9 +11,9 @@ Use the project's existing result or PR format. Include only sections that suppo
 - Demonstrated behavior, failures, and required checks still unavailable.
 - Independent evaluator, candidate reviewed, counterexamples checked, findings and resolution; keep human approval separate.
 
-| Criterion | Check and expected observation | Actual observation | Result | Evidence | Next action if unresolved |
+| Criterion | Check and expected observation | Actual observation | Result | Evidence | Priority / next action if unresolved |
 | --- | --- | --- | --- | --- | --- |
-| Existing criterion ID or behavior | Runnable command or reproducible interaction | Observed output, state, or value | Demonstrated / failed / not checked | Inline excerpt or verified artifact/run link | Consequence, smallest correction or missing prerequisite, then the affected recheck |
+| Existing criterion ID or behavior | Runnable command or reproducible interaction | Observed output, state, or value | Demonstrated / failed / not checked | Inline excerpt or verified artifact/run link | Project label or P0–P3 with rationale; consequence, smallest correction or missing prerequisite, then the affected recheck |
 
 Use this table as the completion checklist, including relevant items selected from the loaded checklists. Adapt it to the project's existing format; a short result can use the same information inline. Reconcile all material criteria and selected items before reporting completion. Do not fill it with planned checks presented as results. A criterion may need several evidence types; one valid observation may cover several criteria. Record inapplicable checks with their reason outside the required-criterion rows. Missing access does not make a required criterion inapplicable.
 

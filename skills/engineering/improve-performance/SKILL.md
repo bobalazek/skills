@@ -37,6 +37,8 @@ Before acceptance, have a separate agent in fresh context challenge the result a
 
 ## Return the result
 
+Label actionable findings and fixes with the project's priority labels and meanings. Otherwise use P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), or P3 low (minor or optional improvement). Give the evidence-based impact/urgency rationale and next action; mark uncertain ratings provisional. Keep priority separate from severity, confidence and readiness. Preserve finding IDs and priority through rechecks; explain changes using new evidence or an accepted decision. Priority does not authorize extra work or waive required checks.
+
 Match the requested audience, tone and depth, then project conventions. Report the outcome and purpose, baseline/candidate revisions, procedure, units, observed values and spread, preserved behavior, failed or unavailable checks, and limits of extrapolation. Distinguish measurements from estimates. Keep durable findings in their existing authorized home. Include useful redacted proof and independent findings when opening an authorized PR, with accessible links or concise inline results; label local-only artifacts and refresh affected evidence after edits.
 
 ## Next steps

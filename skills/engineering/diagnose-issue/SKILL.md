@@ -11,6 +11,8 @@ Establish the cause of an observed failure and verify a repair when requested. R
 
 ## Build the feedback loop
 
+Label actionable findings and fixes with the project's priority labels and meanings. Otherwise use P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), or P3 low (minor or optional improvement). Give the evidence-based impact/urgency rationale and next action; mark uncertain ratings provisional. Keep priority separate from severity, confidence and readiness. Preserve finding IDs and priority through rechecks; explain changes using new evidence or an accepted decision. Priority does not authorize extra work or waive required checks.
+
 Collect expected versus observed behavior, environment/version, inputs, timing, recent changes, and available traces. Inspect the relevant code and callers. Preserve original logs or artifacts with secrets and sensitive data removed from reusable outputs.
 
 Use existing monitoring, logs, traces, error reports, or metrics when they help correlate the symptom with the deployed revision and request/job. State sampling, retention, or access limits; absence of an alert is not proof of health. Read-only diagnosis does not authorize installing a monitoring provider or exporting customer data. Use `configure-monitoring` when configuring missing detection or alert routes is the requested result, carrying the observed gap and target environment.

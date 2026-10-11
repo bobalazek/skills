@@ -229,3 +229,24 @@ The foundation attempt also read the globally installed Ponytail entrypoint outs
 Evidence uses Codex CLI 0.162.1 and native `gpt-6.1-sol`, with 240-second bounds. Reviewer model identity is unknown. Initial records are private in `/tmp/skills-clarity-{media,engineering,ready}-20261011`; corrected records are in `/tmp/skills-clarity-{brainstorm,evaluation}-recheck-20261011`. The returned assessment and exact criterion/session ledger are `/tmp/skills-clarity-review-20261011.md` and `/tmp/skills-clarity-criterion-ledger-20261011.json`, with initial versions preserved separately. These local files are not public attachments.
 
 Package checks cover 68 skills / 105 resources; TypeScript/Biome, 97 tests with 1,244 assertions and whitespace checks pass. Four changed skills have bounded behavior evidence; the other nine entrypoints have source review only. This pass does not establish live answer capture across sessions, automatic activation, a previous-version comparison, media production or provider integration. Exact installation, final CI and published release proof belong in the delivery PR.
+
+
+## 2026-10-11 — Priorities through reviews and fixes
+
+This patch applies repository-defined priority labels and meanings, falling back to P0 critical, P1 high, P2 normal and P3 low for actionable findings and repairs. It preserves finding IDs, ratings and rationale through rechecks and handoffs, records evidence-based reprioritization, and keeps priority separate from severity, confidence, readiness and authority. Conditional critique/repair guidance leaves clean copy and media free of issue lists. Five fixed cases bring the read-only catalog to 69.
+
+Independent reviewer `/root/review_priority_conventions` found one P2 source omission: five explicit standalone critique/repair owners lacked the convention. `write-website-copy`, `write-interface-copy`, `edit-video`, `create-motion-video` and `improve-team-workflow` were corrected and independently rechecked. The final source review has no remaining blocker. All **five text cases / 16 fixed criteria pass**, with complete native calls/results inspected independently of the author. Reviewer model identity is unknown; executor sessions report Codex CLI 0.162.1 / `gpt-6.1-sol`.
+
+| Case | Observed result |
+| --- | --- |
+| `priority-review-defaults` | Unsupported plan promise is P1; bounded wording polish is P3; rationale and correction follow supplied facts. |
+| `priority-feedback-local-scale` | NOW/LATER and finding IDs survive; claimed patch completion does not close the required export check or grant execution authority. |
+| `priority-revisit-evidence` | F-07 retains its former P1 and recommends P3 from the corrected impact/workaround, without claiming tracker changes or performed validation. |
+| `priority-website-critique` | Standalone website critique returns bounded P1 findings and corrections; headline/CTA share a cause, while unsupported reassurance is distinct. No replacement hero or publication. |
+| `priority-media-repair` | Required negation repair remains F-01/P1 ahead of optional F-02/P3 pacing; actual playback and post-fix review stay pending. No media execution. |
+
+The base is released commit `675932745577dd5339e624fd47023c0a76710d28`. Package snapshots: initial `3ef84cdd8dc6c3e2a9cd73fa62bbd0676c37bf7aedb9297c1d00dde1a1d685dc`; website correction `c393629a603ee21aeef85b4dc2da3919d0cd69473eb4aa78d961c4aa81e1d60c`; final `7ef2f0ce0f2d8b3ce66637fa1193fb4c40be969b6eff51e357e01f6553ca18f8`. These identify dirty package contents, not the base commit. The reviewer matched all tested leaves and unchanged criteria to final source. All five executions completed within their 240-second bounds, without timeouts, fixture changes or observed boundary violations.
+
+Private evidence remains in `/tmp/skills-priority-{defaults,local-scale,website,media}-20261011`; the returned assessment and criterion/digest ledger are `/tmp/skills-priority-review-20261011.md` and `/tmp/skills-priority-criterion-ledger-20261011.json`. They are local evidence, not public attachments. Package/type/lint checks pass for 68 packages / 105 resources; 97 tests pass with 1,285 assertions, and whitespace/title checks pass. A direct Biome command on the fixture JSON processed no files because that path is outside its configured scope; the normal check and fixture integrity tests passed.
+
+Five changed leaves have behavioral evidence; the remaining changed entrypoints have source review only. No baseline comparison, general reliability rate, automatic activation, live media/provider operation or production acceptance is established. Exact installation, CI, merged-source and published-release verification are recorded separately in the delivery PR.

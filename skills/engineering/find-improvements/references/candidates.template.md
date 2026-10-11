@@ -2,9 +2,9 @@
 
 Use the existing backlog or review's adjacent-opportunities section. Record the scope, goal, inspected revision, evidence sources, and uninspected surfaces once.
 
-| Candidate | Current evidence and cost | Proposed treatment | Dependencies and preservation risks | Proof needed | Disposition |
-| --- | --- | --- | --- | --- | --- |
-| Concrete change or investigation | Locations, observed failure/friction, affected users/callers | A simpler form, bounded repair, guard, or experiment | Contracts/data to preserve; relevant existing decision or work item | Observable success and meaningful regressions | Ready for selection / investigate / defer / duplicate / no change |
+| Candidate | Priority and rationale | Current evidence and cost | Proposed treatment | Dependencies and preservation risks | Proof needed | Disposition |
+| --- | --- | --- | --- | --- | --- | --- |
+| Stable ID and concrete change or investigation | Project label or P0–P3; why it matters now | Locations, observed failure/friction, affected users/callers | A simpler form, bounded repair, guard, or experiment | Contracts/data to preserve; relevant existing decision or work item | Observable success and meaningful regressions | Ready for selection / investigate / defer / duplicate / no change |
 
 Keep existing task IDs and link a duplicate to its owner. A TODO can be stale or intentional; a clone match can be harmless repetition; a suspected bottleneck needs measurement. Note why a strong-looking lead was rejected when that prevents repeated investigation.
 

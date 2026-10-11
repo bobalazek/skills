@@ -54,6 +54,7 @@ Every package in this collection includes `agents/openai.yaml` for Codex discove
 | Context | Read applicable project instructions and relevant conventions; inspect actual code/behavior before trusting stale docs |
 | Reuse and simplicity | Choose the smallest complete solution for present requirements; inspect existing owners before adding code, abstractions, dependencies or workflow artifacts. Consolidate matching responsibilities, preserve required safeguards and local conventions, and link authoritative guidance instead of copying it |
 | Facts and decisions | Distinguish observed facts, documented intent, inference, assumptions, proposals, and accepted choices |
+| Finding priority | For actionable review findings, repairs and revisited work, preserve the project's priority scale; otherwise use P0 critical (act immediately), P1 high (address next), P2 normal (schedule), P3 low (minor/optional). Include impact/urgency rationale and next action, keep severity/confidence/readiness separate, and retain finding IDs and ratings through handoffs. Explain reprioritization from new evidence or an accepted decision; labels grant no authority |
 | New/existing work | Establish missing foundations for new projects; preserve behavior/data/contracts and useful conventions in existing systems |
 | Scope | Finish the requested outcome; adjacent findings do not authorize unrelated cleanup |
 | Questions | Inspect discoverable facts first; ask about consequential choices that cannot be inferred safely |

@@ -37,6 +37,8 @@ Return one recommended version unless alternatives are requested or a material c
 
 ## Verify and return
 
+For critique or repair findings, use the project's priority labels and meanings; otherwise P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), P3 low (minor or optional). Include impact/urgency rationale and next action, keeping uncertain ratings provisional and separate from readiness. Preserve finding IDs and ratings through edits/rechecks, explaining any change from new evidence or an accepted decision. Keep these findings outside publishable copy; a writing-only request needs no issue list.
+
 Check the final wording against the raw request, source facts, audience, offer and destination. Trace material claims to support, check that the opening's promise is delivered, and read headings and actions together for ambiguity. Recheck changed numbers, qualifications and preserved legal meaning. State unresolved facts beside the affected copy rather than hiding them in a general disclaimer.
 
 With rendering access, inspect the changed content in its actual page and relevant supported surfaces for wrapping, truncation, missing context and misleading action labels. Exercise destinations when claiming they work; screenshots alone cannot establish that. Record the inspected revision, locale and surface. A draft-only request can finish with stated rendering limits; requested integration or rendered verification remains incomplete without its required proof. Expert checks do not demonstrate user comprehension or conversion lift.

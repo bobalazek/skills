@@ -19,6 +19,8 @@ A task owns one reviewable outcome. Split work when ownership, acceptance, or de
 
 ## Make tasks executable
 
+Carry finding/task IDs, priority labels and their rationale into the existing record and next handoff. Preserve the project’s scale; explain any reprioritization with changed evidence or an accepted decision. Priority does not establish dependency readiness or expand execution authority.
+
 Use [the task template](references/task.template.md). Carry the relevant criteria into each task, with source IDs and artifact references. State owned writes, preserved contracts, prerequisites, applicable checks, and a falsifiable “done when.” File locations can be investigative pointers rather than guesses presented as mandatory paths.
 
 Choose placement, class/module boundaries and naming from written repository conventions, then maintained surrounding code; use language/framework practices only where neither settles the choice. Link useful rule sources or local code in the task. Keep paths provisional where responsibility is unsettled, and resolve only consequential gaps before marking dependent tasks ready.

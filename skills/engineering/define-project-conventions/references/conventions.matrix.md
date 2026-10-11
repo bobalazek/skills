@@ -112,6 +112,8 @@ Put project-specific guidance in the existing convention source. A portable supp
 
 ## Check usability and adoption
 
+For review and repair workflows, establish the project's work-priority labels, meanings and finding/task identity convention. Preserve existing policy. Without one, use P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), and P3 low (minor or optional improvement), with an impact/urgency rationale and next action. Keep priority separate from severity, confidence, readiness and authorization. Carry IDs and ratings through fixes, boards and rechecks, recording why changed evidence or an accepted decision alters a priority. A missing required check can block delivery without being a P0 defect. Keep this rule in the existing contributor guide; no new tracker or scoring system is needed.
+
 Walk representative additions through the proposed rules: place a feature/file, name a function and domain value, and, where applicable, add a model/column or public field. Exercise a relevant collection edge case, failed operation, or dependency compatibility choice when adopting those rules. Can a contributor find the owning rule, an example, exceptions, and a check without reconstructing the whole repository?
 
 Run the existing scoped checks that establish the rules being claimed. Check that examples match actual APIs and configuration. Mark rules checked by human review honestly; do not add an enforcement claim because CI is green. For legacy inconsistencies, document whether the rule applies to new code, touched code, or a separately approved migration. Keep mass renaming and reformatting outside convention authoring unless requested.

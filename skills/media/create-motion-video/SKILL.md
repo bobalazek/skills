@@ -37,6 +37,8 @@ Run file, asset, decode and stream checks first. Inspect a contact sheet coverin
 
 ## Evaluate and return
 
+For actionable critique or repair findings, use the project's priority labels and meanings; otherwise P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), P3 low (minor or optional). Include impact/urgency rationale and next action; mark uncertain ratings provisional. Preserve finding IDs and ratings through fixes/rechecks and explain changes from new evidence or an accepted decision. Priority is separate from readiness and grants no extra authority. Keep this in the existing result record; a clean deliverable needs no issue list.
+
 Apply [completion checks](references/completion.checklist.md) to the requested scope in the existing record. Check demonstrated criteria with evidence; failures and unavailable checks stay unchecked with consequence and next action. Explain exclusions.
 
 Before acceptance, obtain a separate fresh-context assessment of the raw brief, source/board and actual export or scoped preview evidence. Retain the returned reviewer identity, artifact/revision, findings and coverage. Fix defects and independently recheck affected results; without a returned assessment, label the result unreviewed. Review grants no publication authority.

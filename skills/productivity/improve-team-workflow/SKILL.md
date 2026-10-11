@@ -39,6 +39,8 @@ Recommend adoption, adjustment, a specific further observation or stopping. Smal
 
 ## Result and verification
 
+For actionable critique or repair findings, use the project's priority labels and meanings; otherwise P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), P3 low (minor or optional). Include impact/urgency rationale and next action; mark uncertain ratings provisional. Preserve finding IDs and ratings through fixes/rechecks and explain changes from new evidence or an accepted decision. Priority is separate from readiness and grants no extra authority. Keep this in the existing result record; a clean deliverable needs no issue list.
+
 Return the problem, supporting records, trial contract or observed outcome, limitations and next action at the requested audience and depth. Use the project's existing format. For authorized PR work, include safe relevant proof and independent findings, refreshing affected evidence after edits.
 
 Before acceptance, have a separate agent in fresh context challenge the raw request, candidate and source records without the author's conversation or preferred answer. It should test alternative causes, comparison validity and preserved controls. Retain its returned reviewer/session identity, evaluated artifact or revision, findings and coverage. Reconcile defects and independently recheck affected results after changes. Without that assessment, label the result unreviewed; without trial observations, do not claim measured improvement.

@@ -33,6 +33,8 @@ The `video-` cases cover intake questions and human decisions, distinct concepts
 
 The `clarify-` cases check that unresolved intent, practical constraints and evaluation scope prompt useful questions and block dependent work. Pair them with accepted or explicitly delegated requests to catch repeated approval loops. Inspect actual question calls, proposed versus accepted choices, and required outputs; a question followed by work based on an invented answer does not pass.
 
+The `priority-` cases check labeled actionable findings, repository priority overrides, retention through fix verification, and evidence-based reprioritization. Priority is separate from criterion outcomes, readiness and authority; these fixtures must not turn a label into permission or a missing check into a pass.
+
 No model calls run in ordinary CI. Invoke behavioral trials deliberately using the existing authorized host; keep raw transcripts outside the repository and put a redacted result summary in the PR. The portable `evaluate-skill` package also works with another project's cases and execution tools.
 
 ## Repeatable local runner
@@ -79,7 +81,7 @@ Run the automated consumer check against a clean checkout of the expected source
 
 ```bash
 bun run check:install /absolute/path/to/candidate /absolute/path/to/candidate /tmp/skills-candidate-check
-bun run check:install https://github.com/bobalazek/skills/tree/v0.3.3 /absolute/path/to/reviewed-source /tmp/skills-published-check
+bun run check:install https://github.com/bobalazek/skills/tree/v0.3.4 /absolute/path/to/reviewed-source /tmp/skills-published-check
 ```
 
 This pins skills CLI 1.7.0, installs all packages as project-local copies into a disposable Git repository, compares every package file, and verifies Codex names/locations and OpenCode names/locations/loaded bodies. The repository boundary prevents ancestor project skills from shadowing the installation. It requires installed Codex and OpenCode CLIs and network access for the installer or remote source. Client versions are observed and retained; their diagnostic output formats are compatibility boundaries that can change. A failed command, changed source, ignored/untracked package file, wrong file or missing discovery fails the check. No dependency or client is installed into the consuming project.

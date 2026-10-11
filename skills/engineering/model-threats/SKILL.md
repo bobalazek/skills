@@ -23,6 +23,8 @@ Ground each threat in a plausible actor, prerequisite and path to an asset or in
 
 ## Decide responses and checks
 
+Label actionable findings and fixes with the project's priority labels and meanings. Otherwise use P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), or P3 low (minor or optional improvement). Give the evidence-based impact/urgency rationale and next action; mark uncertain ratings provisional. Keep priority separate from severity, confidence and readiness. Preserve finding IDs and priority through rechecks; explain changes using new evidence or an accepted decision. Priority does not authorize extra work or waive required checks.
+
 Prioritize by credible impact, feasibility and exposure; avoid invented numeric precision. For each material threat, identify an existing protection, a proposed mitigation, removal of the risky behavior, or an unresolved risk decision with its owner. Do not accept risk on someone else's behalf or present a proposed control as deployed.
 
 For each mitigation, specify both an abuse rejection check and a successful legitimate-use check. Use the same control assumptions for both and confirm that the mechanism can produce the expected outcomes; checks depending on undecided controls remain conditional. Check that added prerequisites preserve accepted workflows; unsettled tradeoffs need an owner decision. Prefer controls at the actual enforcement boundary; prose, client-side checks or a diagram do not establish authorization. Keep unresolved assumptions and recovery limits visible. Use [the threat-model template](references/threat-model.template.md) when the project has no suitable format.
