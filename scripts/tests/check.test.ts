@@ -133,3 +133,20 @@ test("requires catalog coverage and catches whitespace", () => {
   expect(errors).toContain("absent from domain catalogs");
   expect(errors).toContain("whitespace");
 });
+
+test.each([
+  ["- [ ] Verify the result.\n", undefined],
+  [
+    "1. [ ] Verify the result.\n\nExplanation.\n\n| Choice | Reason |\n| --- | --- |\n| A | Existing convention |\n\n~~~text\n- [x] Completed example.\n~~~\n",
+    undefined,
+  ],
+  ["- Verify the result.\n", "checklist needs unchecked task items"],
+  ["~~~text\n- [ ] Example only.\n~~~\n", "checklist needs unchecked task items"],
+  ["- [ ] Pending.\n- [x] Already done.\n", "reusable checklist contains prechecked task items"],
+])("validates reusable checklist task state: %s", (content, error) => {
+  write(entry, valid + "\n[checks](references/review.checklist.md)\n");
+  write(join(dirname(entry), "references/review.checklist.md"), content);
+  const errors = audit(root).errors;
+  if (error) expect(errors.join("\n")).toContain(error);
+  else expect(errors).toEqual([]);
+});

@@ -25,6 +25,7 @@ Use [the convention matrix](references/conventions.matrix.md) for authority, fol
 
 | Condition | Reference |
 | --- | --- |
+| Project setup, contributor workflow, branch/commit/PR naming, or merge policy | [Git workflow conventions](references/git-workflow.checklist.md) |
 | Typed code, component frameworks, or rendered websites | [Web and typed-code conventions](references/web-conventions.checklist.md) |
 | Domain models, stored schemas, invariants, migrations, or integration lifecycle | [Data model and schema conventions](references/data-contracts.checklist.md) |
 | HTTP endpoints, REST CRUD, API consumers, or request/response policy | [HTTP and API conventions](references/http-api.checklist.md) |

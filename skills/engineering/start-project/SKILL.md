@@ -19,6 +19,8 @@ Inspect any proposed template, generator, or software factory before use. Check 
 
 Before creating source files, follow any repository conventions and maintained code. For greenfield choices they do not settle, use the selected language/framework's idiomatic layout, module/class model and naming. Create only the structure needed by the first supported path.
 
+Establish the contributor Git workflow before the first commit: branch/base, message format, PR titles, merge strategy and required checks. Use `define-project-conventions` when available for unresolved choices. Otherwise preserve local rules; without guidance, prefer short-lived branches and Conventional Commits, checking the final squash message or retained commits. Git Flow's extra branches need a release/support requirement. Record only the relevant decisions in the existing contributor guide.
+
 ## Build the first complete path
 
 Use the selected tooling's current documented setup and compatible versions. Keep credentials out of generated files; document required variable names and safe setup. Inspect scripts before running them, especially hooks that provision services or alter data. Provisioning, remote repository creation and publication need their actual authority.

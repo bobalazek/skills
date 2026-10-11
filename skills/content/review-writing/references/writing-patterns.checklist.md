@@ -33,7 +33,7 @@ These examples are synthetic. Their facts are supplied here solely to demonstrat
 
 ## Recheck the whole passage
 
-Read the original and candidate side by side. Preserve factual scope, qualifications, useful detail and authorial intent. Check that the continuation fulfills the opening, that headings describe their sections and that repetition was removed without flattening the voice. A passage can need no edits. Return exact findings or the requested revision, never an authorship verdict.
+- [ ] Read the original and candidate side by side. Preserve factual scope, qualifications, useful detail and authorial intent. Check that the continuation fulfills the opening, that headings describe their sections and that repetition was removed without flattening the voice. A passage can need no edits. Return exact findings or the requested revision, never an authorship verdict.
 
 ## Inspiration
 

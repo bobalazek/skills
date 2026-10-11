@@ -149,6 +149,17 @@ export function audit(inputRoot: string) {
       fail(path, "whitespace or final newline");
     }
     if ((content.match(/^```/gm)?.length ?? 0) % 2) fail(path, "unclosed code fence");
+    if (path.endsWith(".checklist.md")) {
+      let pending = 0;
+      Bun.markdown.render(content, {
+        listItem(children, meta) {
+          if (meta?.checked === false) pending++;
+          if (meta?.checked === true) fail(path, "reusable checklist contains prechecked task items");
+          return children;
+        },
+      });
+      if (!pending) fail(path, "checklist needs unchecked task items");
+    }
     for (const target of targets(path)) {
       if (!inside(root, target) || !existsSync(target)) fail(path, `broken/outside local link: ${target}`);
     }
@@ -164,7 +175,7 @@ if (import.meta.main) {
     process.exitCode = 1;
   } else {
     console.log(
-      `PASS: ${result.packages} skill packages, ${result.resources} reachable resources; metadata, local links, standalone boundaries, catalog coverage`,
+      `PASS: ${result.packages} skill packages, ${result.resources} reachable resources; metadata, local links, standalone boundaries, catalog coverage, checklist format`,
     );
   }
 }
