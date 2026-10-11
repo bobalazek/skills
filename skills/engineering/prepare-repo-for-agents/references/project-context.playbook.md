@@ -40,6 +40,8 @@ Instructions should tell an agent where to read next, which unusual local constr
 
 Include only rows the repository needs. Do not copy a full tree, every memory entry, entire checklists, general engineering advice, or standards text into the agent entry point. A link needs enough context to say when to follow it. Nested instructions should add local differences and point to shared rules without repeating them.
 
+Make accepted simplicity and reuse rules discoverable before planning, coding and review: find the current owner, meet the present requirement with the smallest complete change, and preserve required safeguards when consolidating shared behavior. Point to the canonical rule and local example instead of duplicating a decision ladder in every instruction file. If no rule exists, distinguish a proposed convention from existing policy; do not introduce speculative layers or new instruction machinery while preparing the repository.
+
 For a representative task, map the instruction scope to the authoritative coding standard, relevant local example, exceptions, and a command or behavior check. Distinguish accepted rules from observed practice and enforcement. A formatter, linter, compiler, contract check, and behavior test cover different properties; a green command proves only what it inspected.
 
 ## Make memory indexes useful
@@ -62,6 +64,6 @@ Recurring violations may justify an automated guard after the invariant is accep
 
 ## Walk the result
 
-Trace a representative task using only the revised entry points: find the owning code, applicable standards, current decision or lesson, preserved contract, and safe feedback loop. Include a nested surface if scope changes there. Check that links resolve and that obsolete records cannot look authoritative. Run relevant available checks and report their actual results and gaps.
+Trace a representative task using only the revised entry points: find the owning code and reusable behavior, applicable standards, current decision or lesson, preserved contract, and safe feedback loop. Confirm the task can reach the simplicity rule without loading unrelated guidance. Include a nested surface if scope changes there. Check that links resolve and that obsolete records cannot look authoritative. Run relevant available checks and report their actual results and gaps.
 
 A useful result can be a few repaired pointers. Add a document only when it has distinct content and an audience or lifecycle the existing home cannot serve. Keep the instructions short enough that the task's code and evidence remain the main context.

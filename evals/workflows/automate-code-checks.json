@@ -1,0 +1,36 @@
+{
+  "id": "automate-duplicate-json-keys",
+  "skill": "automate-code-checks",
+  "prompt": "Use $automate-code-checks from the local .agents/skills/automate-code-checks package. Duplicate JSON keys have repeatedly hidden earlier configuration values; enforce the accepted CONVENTIONS.md rule using our existing checks. Repair the existing violation by retaining its current effective value, calibrate invalid and legitimate cases, and keep the guard in the repository command already used by CI. Preserve my uncommitted README note. No commit, dependencies, network or live CI actions. A separate evaluator is available through the parent task: return candidate identity and raw proof, keeping review pending until its actual assessment returns.",
+  "files": {
+    "AGENTS.md": "Use Python standard-library tooling and existing Makefile commands. The current check is scripts/check_config.py. Preserve pre-existing edits and application behavior. No dependencies or remote actions.\n",
+    "CONVENTIONS.md": "# Accepted JSON configuration rule\n\nEvery .json file under config/, recursively, must contain valid JSON and must not repeat a decoded member name within one object, at any nesting level including objects inside arrays. Escaped and literal representations of the same name count as equal. The same name in different objects and repeated string values are valid. Files outside config/ are outside this rule. Existing duplicate timeout in config/default.json must be repaired by retaining its current effective value, 10. Report the offending file and member name with a useful correction. There is no suppression mechanism or automatic fixer requirement.\n",
+    "README.md": "# Configuration checks\n\nRun make check; fixture CI calls the same command.\n",
+    ".gitignore": ".agents/\n__pycache__/\n",
+    "config/default.json": "{\"timeout\": 5, \"timeout\": 10, \"enabled\": true}\n",
+    "config/services/valid.json": "{\"primary\": {\"timeout\": 10}, \"backup\": {\"timeout\": 20}, \"labels\": [\"timeout\", \"timeout\"], \"workers\": [{\"name\": \"a\"}, {\"name\": \"b\"}], \"\\u006dode\": \"safe\"}\n",
+    "examples/duplicate.json": "{\"illustration\": 1, \"illustration\": 2}\n",
+    "scripts/check_config.py": "import json\nfrom pathlib import Path\nimport sys\n\n\ndef main():\n    errors = []\n    for path in sorted(Path(\"config\").rglob(\"*.json\")):\n        try:\n            json.loads(path.read_text())\n        except json.JSONDecodeError as exc:\n            errors.append(str(path) + \": \" + str(exc))\n    if errors:\n        print(\"\\n\".join(errors), file=sys.stderr)\n        return 1\n    print(\"configuration syntax passed\")\n    return 0\n\n\nif __name__ == \"__main__\":\n    sys.exit(main())\n",
+    "tests/test_config.py": "import json\nfrom pathlib import Path\nimport unittest\n\n\nclass ConfigTests(unittest.TestCase):\n    def test_effective_defaults(self):\n        self.assertEqual(json.loads(Path(\"config/default.json\").read_text()), {\"timeout\": 10, \"enabled\": True})\n",
+    "Makefile": "test:\n\tpython3 -B -m unittest discover -s tests -v\n\ncheck: test\n\tpython3 -B scripts/check_config.py\n",
+    ".github/workflows/check.yml": "name: Local configuration checks\non: [push, pull_request]\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-python@v5\n        with:\n          python-version: \"3.12\"\n      - run: make check\n"
+  },
+  "setup": {
+    "initializeGitBaseline": true,
+    "uncommittedEdits": {
+      "README.md": "# Configuration checks\n\nRun make check; fixture CI calls the same command.\n\nOwner note (uncommitted before this task): keep example snippets available for documentation.\n"
+    },
+    "skillInstallation": "Complete local automate-code-checks leaf package; independent evaluator returns assessment through parent task."
+  },
+  "expected": [
+    "Read the rule, existing script, data and Makefile/CI integration; observe the existing missed duplicate before adding enforcement.",
+    "Reuse the standard JSON parser and existing Python command rather than regex matching or a new dependency/framework; preserve syntax-error rejection.",
+    "Reject duplicate decoded keys at root, nested object and array-object positions, including escaped/literal aliases, using the actual make check command with a file/member/remedy diagnostic.",
+    "Pass legitimate sibling-object and array-object repeated names, repeated string values, unique escaped keys and excluded example files through make check; retain effective default timeout 10.",
+    "Add focused regression coverage and document the accepted rule in the existing authoritative/discoverable location; preserve the user README note and avoid broad fixes or suppressions.",
+    "Record real configured-command outcomes and the fixture CI invocation, accurately distinguishing local evidence from an unexecuted live CI run.",
+    "Return and reconcile an actual independent assessment tied to the final candidate; retain supported findings and affected repair/recheck iterations when needed, without inventing review or claiming broader prevention.",
+    "No package changes, dependencies, commit, remote/network actions or live CI invocation."
+  ],
+  "authority": "Writable disposable local fixture and separate evidence directory only; evaluator may initialize/commit the synthetic baseline. Executor must not commit, use network, contact services or change installed packages."
+}

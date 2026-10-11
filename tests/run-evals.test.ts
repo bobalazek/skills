@@ -12,7 +12,15 @@ import {
 } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
-import { boundedInteger, execute, inspectTrace, main, parseCases, requestFor, selectCases } from "./run-evals.ts";
+import {
+  boundedInteger,
+  execute,
+  inspectTrace,
+  main,
+  parseCases,
+  requestFor,
+  selectCases,
+} from "../scripts/run-evals.ts";
 
 let root: string;
 const sample = {
@@ -154,6 +162,7 @@ if (args.includes("prompt-input")) {
   console.log(JSON.stringify([{content:[{text}]}])); process.exit(0);
 }
 if (process.env.EVAL_TEST_HANG) { writeFileSync(process.env.EVAL_TEST_HANG, String(process.pid)); await Bun.sleep(30000); }
+if (process.env.EVAL_TEST_RETAIN && args.includes("--ephemeral")) throw new Error("session retention ignored");
 if (args.at(-1).includes("PRIVATE-RUBRIC")) throw new Error("rubric leaked");
 if (args.at(-1).includes("FAIL-FIXTURE")) { console.log(JSON.stringify({type:"turn.failed"})); process.exit(2); }
 writeFileSync(args[args.indexOf("-o")+1], "Fixture result\\n");
@@ -167,7 +176,7 @@ console.log(JSON.stringify({type:"turn.completed",usage:{output_tokens:3}}));
   const child = Bun.spawn(
     [
       process.execPath,
-      resolve(import.meta.dir, "run-evals.ts"),
+      resolve(import.meta.dir, "../scripts/run-evals.ts"),
       "--candidate",
       source,
       "--baseline",
@@ -200,7 +209,7 @@ console.log(JSON.stringify({type:"turn.completed",usage:{output_tokens:3}}));
   const candidateOnly = Bun.spawn(
     [
       process.execPath,
-      resolve(import.meta.dir, "run-evals.ts"),
+      resolve(import.meta.dir, "../scripts/run-evals.ts"),
       "--candidate",
       source,
       "--fixtures",
@@ -209,10 +218,15 @@ console.log(JSON.stringify({type:"turn.completed",usage:{output_tokens:3}}));
       "failure,sample",
       "--repeat",
       "2",
+      "--retain-session",
       "--output",
       verification,
     ],
-    { env: { ...process.env, PATH: `${bin}:${process.env.PATH}` }, stdout: "ignore", stderr: "pipe" },
+    {
+      env: { ...process.env, PATH: `${bin}:${process.env.PATH}`, EVAL_TEST_RETAIN: "1" },
+      stdout: "ignore",
+      stderr: "pipe",
+    },
   );
   expect(await candidateOnly.exited, await new Response(candidateOnly.stderr).text()).toBe(1);
   const verified = JSON.parse(readFileSync(join(verification, "summary.json"), "utf8"));
@@ -226,6 +240,10 @@ console.log(JSON.stringify({type:"turn.completed",usage:{output_tokens:3}}));
     "executed",
   ]);
   expect(verified.assessment).toBe("not checked");
+  expect(verified.retainSession).toBe(true);
+  expect(
+    verified.attempts.every((item: { nativeSession: { state: string } }) => item.nativeSession.state === "unavailable"),
+  ).toBe(true);
   expect(existsSync(join(verification, "baseline-skills"))).toBe(false);
   for (const phase of ["discovery", "model"]) {
     const cancelled = join(root, `cancelled-${phase}`);
@@ -233,7 +251,7 @@ console.log(JSON.stringify({type:"turn.completed",usage:{output_tokens:3}}));
     const interrupted = Bun.spawn(
       [
         process.execPath,
-        resolve(import.meta.dir, "run-evals.ts"),
+        resolve(import.meta.dir, "../scripts/run-evals.ts"),
         "--candidate",
         source,
         "--baseline",

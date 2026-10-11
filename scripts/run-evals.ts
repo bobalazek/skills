@@ -1,7 +1,9 @@
 import { createHash } from "node:crypto";
 import { closeSync, cpSync, mkdirSync, openSync, readFileSync, realpathSync, writeFileSync } from "node:fs";
+import { homedir } from "node:os";
 import { basename, dirname, isAbsolute, join, resolve } from "node:path";
 import { parseArgs } from "node:util";
+import { captureSession } from "./lib/codex-session.ts";
 import { manifest, verifyCodex } from "./lib/skill-packages.ts";
 
 export type EvalCase = {
@@ -234,12 +236,13 @@ export async function main(args = Bun.argv.slice(2)) {
       repeat: { type: "string", default: "1" },
       timeout: { type: "string", default: "180" },
       model: { type: "string" },
+      "retain-session": { type: "boolean", default: false },
     },
     strict: true,
   });
   if (!values.candidate || !values.cases || !values.output)
     fail(
-      "Usage: bun run eval --candidate <source> --cases <id,id> --output <new-directory> [--baseline <source>] [--repeat 1..3] [--timeout 1..600] [--model <id>] [--fixtures <file>]",
+      "Usage: bun run eval --candidate <source> --cases <id,id> --output <new-directory> [--baseline <source>] [--repeat 1..3] [--timeout 1..600] [--model <id>] [--fixtures <file>] [--retain-session]",
     );
   const sources: Record<string, string> = values.baseline
     ? { baseline: values.baseline, candidate: values.candidate }
@@ -267,6 +270,7 @@ export async function main(args = Bun.argv.slice(2)) {
     repeat,
     timeoutMs,
     requestedModel: values.model ?? "host default",
+    retainSession: values["retain-session"],
     attempts,
   };
   const save = () => json(join(output, "summary.json"), report);
@@ -340,7 +344,7 @@ export async function main(args = Bun.argv.slice(2)) {
               "-C",
               project,
               "exec",
-              "--ephemeral",
+              ...(values["retain-session"] ? [] : ["--ephemeral"]),
               "--json",
               "-o",
               join(directory, "result.md"),
@@ -350,8 +354,16 @@ export async function main(args = Bun.argv.slice(2)) {
             const execution = await execute(argv, project, join(directory, "events"), timeoutMs);
             record.execution = execution;
             record.interrupted = execution.interrupted;
-            const trace = inspectTrace(readFileSync(join(directory, "events.stdout"), "utf8"), bodies);
+            const rawEvents = readFileSync(join(directory, "events.stdout"), "utf8");
+            const trace = inspectTrace(rawEvents, bodies);
             record.trace = trace;
+            if (values["retain-session"])
+              record.nativeSession = captureSession(
+                rawEvents,
+                project,
+                join(directory, "session.jsonl"),
+                join(process.env.CODEX_HOME ?? join(homedir(), ".codex"), "sessions"),
+              );
             record.fixtureUnchanged = digest(before) === digest(manifest(project));
             record.state =
               !execution.timedOut &&

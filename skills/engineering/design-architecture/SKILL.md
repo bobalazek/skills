@@ -27,6 +27,10 @@ Load [technology selection](references/technology-selection.matrix.md) when choo
 
 For structure, assign ownership of behavior and state, define the interfaces consumers need, and walk representative success/failure paths. Hide real complexity behind useful boundaries; avoid services, adapters, queues, or caches without a current requirement. Make transaction, consistency, retry, authorization, and recovery behavior explicit where applicable.
 
+Apply YAGNI while planning: reuse existing ownership and platform capabilities before adding a boundary, option or dependency. Name the present constraint that earns each addition and choose the simplest design that meets it; hypothetical consumers or scale do not justify flexibility. Preserve required safeguards and repository conventions when simplifying.
+
+When current consumers need the same rule or flow, identify the shared implementation and how each consumer reaches it; naming the same module or its low-level helpers alone does not prevent duplicate logic. Keep intentional contract differences explicit instead of forcing them through a configurable abstraction.
+
 Before decomposition, map responsibilities to folder/package ownership, dependency directions and public boundaries. Follow written repository conventions, then maintained surrounding code; use language/framework practices only where neither settles the choice. Resolve consequential conflicts without inventing layers or a speculative file tree.
 
 Load [cost and obligation checks](references/cost-and-obligations.checklist.md) when these constrain the choice. Use `model-threats` when a dedicated threat model is needed, carrying the system boundaries and accepted security constraints; otherwise keep relevant threat/control checks in this design. For an AI capability or agent workflow, load [AI architecture](references/ai-architecture.checklist.md) for access boundaries, orchestration, evaluation, cost, and recovery.

@@ -152,6 +152,7 @@ This independent collection grows out of workflows I have used internally for se
 
 - [Matt Pocock's skills](https://github.com/mattpocock/skills): focused questioning and planning, domain vocabulary and decisions, and PR explanations with evidence and risk.
 - [HumanLayer's skills](https://github.com/humanlayer/skills): visual PR explanations and concise agent instructions that load detail when needed.
+- [Ponytail](https://github.com/DietrichGebert/ponytail): an ordered simplicity and reuse decision process, YAGNI, and reviews that justify complexity against current requirements. These principles are adapted into the existing skills; the plugin's hooks and runtime are not bundled.
 - [Impeccable](https://github.com/pbakaus/impeccable): deliberate visual direction, redesign boundaries and rendered typography and layout checks.
 - [Taste Skill](https://github.com/Leonxlnx/taste-skill): comparing an accepted image comp with its implementation and checking rendered media, adapted to the project's constraints.
 - [Design with Intent](https://github.com/ghaida/intent): purposeful wireframes, interaction states and concrete accessibility and deceptive-design checks.

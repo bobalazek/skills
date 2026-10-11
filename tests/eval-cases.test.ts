@@ -2,14 +2,16 @@ import { expect, test } from "bun:test";
 import { existsSync } from "node:fs";
 import { isAbsolute, resolve } from "node:path";
 import cases from "../evals/cases.json";
+import automation from "../evals/workflows/automate-code-checks.json";
+import diagnosis from "../evals/workflows/diagnose-issue.json";
 import implementation from "../evals/workflows/implement-change.json";
-import { parseCases } from "./run-evals.ts";
+import { parseCases } from "../scripts/run-evals.ts";
 
 test("regression cases retain usable raw inputs, separate expectations and existing skill owners", () => {
   const root = resolve(import.meta.dir, "..");
   const seen = new Set<string>();
   const packages = [...new Bun.Glob("skills/*/*/SKILL.md").scanSync(root)];
-  for (const item of parseCases([...cases, implementation])) {
+  for (const item of parseCases([...cases, implementation, diagnosis, automation])) {
     expect(item.id).toMatch(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
     expect(seen.has(item.id)).toBe(false);
     seen.add(item.id);

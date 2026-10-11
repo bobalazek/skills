@@ -15,7 +15,7 @@ Perform this verification in a separate agent with fresh context from the work's
 
 Read the request, acceptance criteria, local checks, change diff and existing evidence. Identify the baseline and candidate revision, including uncommitted changes. Tie each material criterion to an observable result.
 
-Track those criteria and applicable items from the skill's checklists in the existing task, PR or result record. Record actual outcomes and evidence; mark skipped or inapplicable checks with reasons. Use this as the completion checklist rather than creating another document or requiring every possible check.
+Track those criteria and applicable items from the skill's checklists in the existing task, PR or result record, preserving existing criterion IDs. Record actual outcomes and evidence; mark skipped or inapplicable checks with reasons. A required check with missing access remains not checked, not inapplicable. Use this as the completion checklist rather than creating another document or requiring every possible check.
 
 Inspect the project's actual command definitions and CI rules for required lint/format checks, type checking, static analysis, builds and tests. Run missing applicable checks and reuse valid results for the candidate. Record unavailable checks and justified exclusions; a skipped check is not a pass. Use check-only modes where available so verification does not silently rewrite the candidate. Results from static checks take precedence over subjective judgments for the rules they cover; use them before manual review, alongside the required behavior evidence.
 
@@ -49,7 +49,9 @@ Choose a timeout appropriate to the command; omit `--timeout-ms` for an unbounde
 
 ## Decide what the evidence establishes
 
-For each criterion, report demonstrated, failed, or not checked, with its evidence and limitations. A failed or missing required check blocks readiness; an optional uninspected surface limits the claim. Do not convert a risk acceptance or tool failure into a pass. When fixes are requested, repair the cause and rerun affected checks; otherwise report the finding within scope.
+For each criterion, report demonstrated, failed, or not checked, with its evidence and limitations. For a failed or unchecked requirement, explain the consequence, smallest correction or missing prerequisite, and specific recheck needed. A failed or missing required check blocks readiness; an optional uninspected surface limits the claim. Do not convert a risk acceptance or tool failure into a pass. When fixes are requested, repair the cause and rerun affected checks; otherwise report the finding within scope.
+
+Before returning the result, reconcile the record against every material accepted criterion and selected checklist item. Check execution claims against actual command or interaction evidence, including failed attempts; omit unsupported execution-history details. A completed checklist row requires its observed result, not merely a planned command or an author's claim that it ran.
 
 Record the tested revision and any dirty diff. Later edits require an impact check before reusing evidence; a changed artifact or behavior invalidates its proof. Keep the result in the existing task, PR, or handoff rather than creating a parallel report by default.
 

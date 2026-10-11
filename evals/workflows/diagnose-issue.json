@@ -1,0 +1,41 @@
+{
+  "id": "diagnose-shared-currency-cache",
+  "skill": "diagnose-issue",
+  "prompt": "Use $diagnose-issue from the local .agents/skills/diagnose-issue package. After quoting widget in USD, quoting widget in EUR through the export endpoint still returns the USD price. Diagnose and repair this local failure against REQUIREMENTS.md. Preserve my uncommitted README note and both public response formats. Run the configured checks and retain the original failure, cause evidence and repaired outcome. No commit, network or live service actions. A separate evaluator is available through the parent task: return the candidate identity and raw proof, keeping review pending until its actual assessment returns.",
+  "files": {
+    "AGENTS.md": "Use the Python standard library and existing Makefile commands. Trace both public callers before changing the shared price cache. Preserve pre-existing edits. No dependencies or remote actions.\n",
+    "REQUIREMENTS.md": "# Accepted price contract\n\nThe finite catalog maps (sku, currency) pairs to integer prices. Currency codes in the current contract are uppercase. PriceCache.price must return the price for the requested pair, independent of prior calls, and retain repeated-call caching. Missing pairs raise KeyError. Zero prices are valid. Neither catalog nor caller inputs may be modified. quote and export_price must agree and preserve their existing return shapes.\n\nNo live provider is available in this fixture; live-provider parity remains unverified.\n",
+    "README.md": "# Local price quotes\n\nRun make check for syntax and tests, or make catalog for the catalog-only check.\n",
+    ".gitignore": ".agents/\n__pycache__/\n",
+    "src/__init__.py": "",
+    "src/prices.py": "class PriceCache:\n    def __init__(self, catalog):\n        self.catalog = catalog\n        self.cache = {}\n\n    def price(self, sku, currency):\n        if sku not in self.cache:\n            self.cache[sku] = self.catalog[(sku, currency)]\n        return self.cache[sku]\n",
+    "src/quotes.py": "def quote(cache, sku, currency):\n    return {\"sku\": sku, \"currency\": currency, \"price\": cache.price(sku, currency)}\n",
+    "src/exports.py": "def export_price(cache, sku, currency):\n    return currency + \",\" + str(cache.price(sku, currency))\n",
+    "src/catalog.py": "def currency_count(catalog):\n    return len({currency for sku, currency in catalog})\n",
+    "tests/test_prices.py": "import unittest\n\nfrom src.prices import PriceCache\nfrom src.quotes import quote\nfrom src.exports import export_price\n\n\nclass PriceTests(unittest.TestCase):\n    def test_same_currency_callers(self):\n        cache = PriceCache({(\"widget\", \"USD\"): 120, (\"widget\", \"EUR\"): 90})\n        self.assertEqual(quote(cache, \"widget\", \"USD\"), {\"sku\": \"widget\", \"currency\": \"USD\", \"price\": 120})\n        self.assertEqual(export_price(cache, \"widget\", \"USD\"), \"USD,120\")\n\n    def test_zero_and_missing(self):\n        cache = PriceCache({(\"free\", \"USD\"): 0})\n        self.assertEqual(cache.price(\"free\", \"USD\"), 0)\n        with self.assertRaises(KeyError):\n            cache.price(\"missing\", \"USD\")\n",
+    "tests/test_catalog.py": "import unittest\n\nfrom src.catalog import currency_count\n\n\nclass CatalogTests(unittest.TestCase):\n    def test_distinct_currency_count(self):\n        self.assertEqual(currency_count({(\"widget\", \"USD\"): 120, (\"widget\", \"EUR\"): 90, (\"free\", \"USD\"): 0}), 2)\n        self.assertEqual(currency_count({}), 0)\n",
+    "Makefile": "test:\n\tpython3 -B -m unittest discover -s tests -v\n\ncatalog:\n\tpython3 -B -m unittest discover -s tests -p test_catalog.py -v\n\ncheck: test\n\tpython3 -B -c 'import ast; from pathlib import Path; [ast.parse(p.read_text(), filename=str(p)) for folder in (\"src\", \"tests\") for p in Path(folder).glob(\"*.py\")]; print(\"syntax passed\")'\n"
+  },
+  "setup": {
+    "initializeGitBaseline": true,
+    "uncommittedEdits": {
+      "README.md": "# Local price quotes\n\nRun make check for syntax and tests, or make catalog for the catalog-only check.\n\nOwner note (uncommitted before this task): preserve the supplied currency label in each response.\n"
+    },
+    "skillInstallation": "Complete local diagnose-issue leaf package; independent evaluator returns assessment through parent task.",
+    "correctionTurn": {
+      "design": "Predetermined second accepted requirement, supplied only after the initial candidate has actually been reviewed. The evaluator appends the new contract, records a failing probe on the old candidate, then returns that finding for repair. This is a deliberate workflow test, not a naturally discovered first-turn defect.",
+      "requirementsAppend": "\nAccepted follow-up: currency identifiers are case-insensitive for price lookup, including mixed case. Uppercase catalog keys remain authoritative. Responses retain the currency spelling supplied by the caller. Equivalent currency spellings must share a cached lookup. All earlier requirements remain in force.\n",
+      "prompt": "The initial assessment remains evidence for its recorded candidate. REQUIREMENTS.md now contains an accepted follow-up making currency lookup case-insensitive, while responses preserve the supplied spelling. Repair the independently observed follow-up failure and obtain affected rechecks and a returned assessment for the changed candidate. Preserve applicable unchanged catalog proof, the original failed evidence and the live-provider gap. Do not certify the new candidate using the earlier review. Continue within the same local authority."
+    }
+  },
+  "expected": [
+    "Read the current skill, accepted contract and both actual callers; preserve and reproduce the cross-currency failure before editing.",
+    "Demonstrate why cache state rather than catalog values or response formatting causes the wrong price; repair the shared owner and retain the same failing input as passing evidence.",
+    "Preserve zero prices, missing-pair KeyError even after another currency is cached, repeated-call caching, independent SKUs, caller formats and catalog inputs; add a meaningful regression and pass configured checks.",
+    "Preserve the complete pre-existing README edit and unrelated catalog source/test; no dependency, commit, network or live-service action.",
+    "Obtain and retain an actual independent initial assessment tied to candidate identity; keep review pending before the assessment returns.",
+    "For the predetermined accepted second turn, retain the observed old-candidate failure; normalize case for shared lookup and caching while preserving caller labels; refresh affected runtime proof and obtain an actual returned independent final assessment.",
+    "Reconcile the old and new candidate identities without treating stale passing tests or review as proof for changed behavior. Carry forward applicable unchanged catalog proof and keep live-provider parity explicitly unverified."
+  ],
+  "authority": "Writable disposable local fixture and separate evidence directory only. Evaluator may initialize/commit the synthetic baseline and apply the predetermined accepted requirement. Executor must not commit, use network, contact services or change installed packages."
+}
