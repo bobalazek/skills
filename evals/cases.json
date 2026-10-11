@@ -587,5 +587,65 @@
       "Propose a focused standard-library guard through the existing make check/CI path, calibrated with missing, stale and legitimate optional cases rather than a new linter or prose-mention scanner.",
       "Limit proof to inventory relationships; do not claim runtime delivery or live CI verification, perform edits, or invent independent review."
     ]
+  },
+  {
+    "id": "spec-original-intent-targets",
+    "skill": "write-spec",
+    "installedSkills": [
+      "write-spec"
+    ],
+    "prompt": "Draft a concise specification from docs/request.md and docs/notes.md in our existing brief format. Planning only: keep files unchanged, use local evidence, and do not delegate or claim an accepted review. Identify consequential unanswered questions without choosing them for us.",
+    "files": {
+      "docs/request.md": "# Original request, owner message R1\nHelp independent tutors collect availability from students and choose a lesson time. The tutor needs to see which students cannot attend before confirming; success is an informed scheduling decision, not merely collecting forms. No application platform or hosting has been selected.\n\n# Accepted clarification R2\nStudents respond through a link without creating accounts. Tutors may correct a proposed time before confirmation. Do not add payments, chat or calendar synchronization.\n",
+      "docs/notes.md": "# Generated implementation notes (not accepted requirements)\nBuild separate web, iOS and desktop clients. AC-1: save a response. AC-2: display a response count. The notes have not been reconciled with the owner messages.\n",
+      "docs/brief.md": "# Brief\nSource and accepted changes:\nAudience/outcome:\nScope and exclusions:\nCriteria:\nOpen decisions:\n"
+    },
+    "expected": [
+      "Preserve original R1 outcome and accepted R2 meaning/source in the existing brief draft; distinguish unaccepted generated notes from owner requirements.",
+      "Include the tutor decision scenario and visibility of students who cannot attend, anonymous link responses and correction before confirmation; response count alone is insufficient.",
+      "Use web only as a provisional default for the unspecified app target, make the assumption visible, and avoid committing to three clients, hosting, payment, chat or calendar integration.",
+      "Return proportionate testable criteria and consequential open choices with draft/unreviewed status; no edits, external actions or fabricated acceptance."
+    ]
+  },
+  {
+    "id": "review-intent-category-coverage",
+    "skill": "review-code",
+    "installedSkills": [
+      "review-code"
+    ],
+    "prompt": "Review the supplied candidate against our request. Use local read-only inspection and harmless local probes if useful. Report the findings and review coverage with evidence; do not edit, call services or delegate. The fixture has no rendered app or device access.",
+    "files": {
+      "REQUEST.md": "# Owner request R1\nIn our installed desktop receipt application, export only the receipts I explicitly select. Never silently include unselected receipts. Preserve the existing local CSV format.\n# Accepted clarification R2\nAn empty selection exports a header only. Keep data local; no upload service or public website is requested.\n",
+      "SPEC.md": "# Generated implementation criteria (not owner-approved)\nAC-1: export all available receipts. AC-2: empty store has a header.\n",
+      "AGENTS.md": "Use function-based Python modules; CSV header and row order are public contracts. No new packages. This fixture represents a focused shared export-rule change, not a whole application audit.\n",
+      "src/export.py": "def export_csv(receipts, selected_ids):\n    return \"id,amount\\n\" + \"\".join(f\"{r[\"id\"]},{r[\"amount\"]}\\n\" for r in receipts)\n",
+      "PROOF.md": "Supplied author claims, not execution logs: AC-1 and AC-2 tests passed. Static check passed. Browser preview looked correct. No renderer source, native application, installer, device or interaction traces are supplied.\n"
+    },
+    "expected": [
+      "Find selection leakage and empty-selection behavior against R1/R2, with a concrete input/result or source trace; do not accept generated ACs or author green-check claims as intent proof.",
+      "Apply local function/format conventions and propose the smallest shared-rule correction preserving order/header without unrelated layers or dependencies.",
+      "Account for all review categories with relevant concrete item evidence, findings, reasoned exclusions or missing proof; same-reason exclusions may be grouped instead of producing unsupported all-pass coverage.",
+      "Keep desktop rendered/input or packaged evidence untested where required, distinguish browser preview from installed-app proof, and exclude public SEO for the local private app with a reason.",
+      "Keep read-only scope and evidence provenance; separate a confirmed behavior defect from missing validation and do not invent execution or independent assessment."
+    ]
+  },
+  {
+    "id": "verify-app-target-proof",
+    "skill": "verify-change",
+    "installedSkills": [
+      "verify-change"
+    ],
+    "prompt": "Reconcile the supplied acceptance and evidence into a concise verification report with next actions. Read-only; no project commands, service access, edits or delegation. Local file reads are allowed. Use the record we have without inventing results.",
+    "files": {
+      "REQUEST.md": "Owner request R1: ship an installed desktop notes app that opens saved notes offline and preserves edits after restart. Accepted clarification R2: keyboard-only use is required. This release has no web or mobile app.\n",
+      "CRITERIA.md": "C1: existing syntax/type checks pass on revision abc123. C2: selected note opens offline in the packaged desktop app. C3: edit survives packaged app restart. C4: keyboard can open, edit and save. C5: native update preserves saved data. Selected checklist items: intent, stored-data compatibility, relevant desktop UX/accessibility, recovery, update safety and verification.\n",
+      "EVIDENCE.md": "Supplied evidence for revision abc123: command log reports configured syntax/type check exit 0. A browser preview screenshot shows a note. A simulator session for an unrelated mobile prototype opened a note. An automated unit check on abc123 reloads a temporary saved record and passes. No packaged desktop execution, offline interaction, keyboard walkthrough, update test or independent assessment is available. No public web surface exists.\n"
+    },
+    "expected": [
+      "Preserve R1/R2, C1-C5 and revision/provenance; record C1 as supplied passing evidence without claiming new execution.",
+      "Do not mark C2-C5 passed from browser, unrelated simulator or pure unit evidence; retain the unit result only for its actual storage boundary.",
+      "Keep applicable missing desktop/keyboard/restart/update proof unchecked with concrete closing observations and readiness consequences; do not relabel it inapplicable or assert an observed runtime bug.",
+      "Explain web/mobile/SEO exclusions by accepted target scope, keep required independent assessment missing, and obey the no-project-command/no-mutation boundary."
+    ]
   }
 ]

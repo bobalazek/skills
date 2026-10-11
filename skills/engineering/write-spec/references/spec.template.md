@@ -5,7 +5,9 @@ Use the sections that affect this change. Keep an existing project format where 
 ## Goal and scope
 
 - **Outcome:** Who needs what result and why it matters.
+- **Original request:** Source reference and faithful material wording/summary; accepted clarifications and later scope changes with their provenance, separate from assumptions.
 - **Scope and non-goals:** What this change includes and excludes.
+- **Targets:** Supported web/browser, mobile and desktop surfaces, relevant OS/device/input/version constraints, and explicit exclusions. Distinguish responsive web from installed apps; keep a provisional web default visible until consequential target choices are settled.
 - **Basis:** Relevant alternatives, current behavior, and evidence behind material claims.
 
 ## Current and desired behavior
@@ -28,6 +30,8 @@ Replace these illustrative CSV-import rows with the accepted requirements. Parti
 | AC-02 | Reconfirming the same completed import does not duplicate its completed effects | Repeat confirmation using the agreed import identity; compare persisted effects with the first confirmation |
 
 Name the evidence needed to judge material criteria: relevant UI states/viewports, baseline/comparison conditions for measured changes, or expected behavior/check output. Define success before implementation; planned checks are not observed results. Keep evidence proportional to the claim.
+
+Trace each material part of the original request and accepted changes into these criteria. Include the actual user's entry-to-outcome scenario, target surfaces and preservation needs; a checklist derived solely from a proposed implementation can miss the original goal.
 
 These rows describe required behavior, not separate phases or PRs.
 

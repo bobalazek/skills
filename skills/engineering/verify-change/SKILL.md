@@ -15,6 +15,8 @@ Perform this verification in a separate agent with fresh context from the work's
 
 Read the request, acceptance criteria, local checks, change diff and existing evidence. Identify the baseline and candidate revision, including uncommitted changes. Tie each material criterion to an observable result.
 
+Follow the original request and accepted clarifications through the current spec/tasks to the actual user outcome. Check the source scenario as well as derived tests; agreement between code and a narrowed spec cannot establish intent alignment. Carry supported app targets and selected development/review checks into the existing evidence record rather than dropping them at handoff.
+
 Track those criteria and applicable items from the skill's checklists in the existing task, PR or result record, preserving existing criterion IDs. Record actual outcomes and evidence; mark skipped or inapplicable checks with reasons. A required check with missing access remains not checked, not inapplicable. Use this as the completion checklist rather than creating another document or requiring every possible check.
 
 Inspect the project's actual command definitions and CI rules for required lint/format checks, type checking, static analysis, builds and tests. Run missing applicable checks and reuse valid results for the candidate. Record unavailable checks and justified exclusions; a skipped check is not a pass. Use check-only modes where available so verification does not silently rewrite the candidate. Results from static checks take precedence over subjective judgments for the rules they cover; use them before manual review, alongside the required behavior evidence.

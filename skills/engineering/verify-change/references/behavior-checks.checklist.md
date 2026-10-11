@@ -2,6 +2,18 @@
 
 Use the requested feature, user journey, or release scope and its acceptance criteria. Select applicable rows; a small leaf change does not require an application-wide audit.
 
+## Intent and target coverage
+
+- [ ] Locate the original requested outcome and accepted clarifications, then trace them into current criteria. Preserve legitimate changes to scope; flag a derived spec that quietly narrows the goal instead of validating only its easier tests.
+- [ ] Walk the actual requested user scenario through the candidate on its supported target. Reconcile selected development/review checklist items with observed results; leave missing source intent or runtime evidence untested.
+- [ ] Establish the relevant browser/OS/device/version and input matrix. Responsive web, installed mobile and desktop are distinct targets; source inspection or a simulator cannot prove every supported device or distribution path.
+
+## Platform checks, when affected
+
+- [ ] Web: exercise relevant browser/navigation/history, responsive/input, session/cache and network-failure behavior. For public pages, check intended indexability, metadata, redirects and links; private/native surfaces need an explicit SEO applicability reason.
+- [ ] Mobile: check relevant permissions and revocation, app links, foreground/background or interruption/resume, offline/sync conflicts and older-client compatibility. Identify emulator/simulator versus physical-device evidence and unavailable distribution checks.
+- [ ] Desktop: exercise relevant windows/input, filesystem access, local secrets and process/IPC permissions, offline/restart recovery and packaged install/update paths. A browser-rendered view or development build does not establish native-shell or installed-app behavior.
+
 ## Select the test boundaries
 
 - [ ] Map each material acceptance criterion and regression risk to the smallest reliable check that can disprove it. Follow the existing harness and test locations; do not install another framework merely to complete a list. Select layers by the boundary being claimed, not by a fixed ratio or coverage percentage.

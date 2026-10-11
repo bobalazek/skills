@@ -6,6 +6,8 @@ Use the parts needed for the requested review. Lead with material findings or an
 
 State reviewed revision/baseline, intended behavior or review question, relevant sources, surfaces, and the specific next step being assessed. Record whether accepted requirements are sufficiently clear. Missing intent limits alignment review; it does not license invented requirements.
 
+Link the original request and accepted clarifications and state alignment: aligned behavior, necessary supporting work, missing requested outcome, added scope or unresolved intent. Record supported app targets and evidence limits. Derived tasks/tests cannot replace the source intent; later accepted changes must remain distinguishable from implementation assumptions.
+
 Identify the independent evaluator and evaluated candidate. Without a separate reviewer or clean context from the author, label the result unreviewed rather than verified or ready. State blocking defects and required proof gaps separately. Source review alone cannot establish deployment, production data integrity, or runtime performance.
 
 ## Findings and priority
@@ -35,7 +37,7 @@ Map material criteria and risks to observed evidence. A compact table is useful 
 | --- | --- | --- | --- |
 | Accepted behavior or invariant | Actual location and candidate | Command/runtime observation/source trace, with environment where relevant | Unchecked path, failed or unavailable required check, or none |
 
-Include relevant high-risk paths, security, performance, architecture/maintainability, behavior, design/conventions, and duplication where they apply. Do not add empty category rows to imply a comprehensive audit. Explain material exclusions and uninspected areas; distinguish not applicable from not checked.
+Account for each category in the selected review checklist with `reviewed`, `not applicable` or `untested`, its observed result/evidence or the reason it was excluded or could not be checked. Use the existing table or a concise category summary; group exclusions with the same scope reason instead of adding empty rows. Within applicable categories, reconcile selected concrete checklist items and material criteria. `Reviewed` is coverage, not a passing verdict. Missing runtime/device access is an untested gap, not inapplicability. Include the original-intent walkthrough and relevant user journeys, not only code findings.
 
 For parallel or staged review, identify each reviewer's bounded question and tested revision, coverage still pending, and the combined assessment of interactions. Record the reviewer/session and host-reported model if exposed; otherwise mark the model unknown. State whether any required cross-model review was fulfilled. Record which branch results the verdict depends on. After fixes or integration, distinguish refreshed proof from retained evidence and explain why retained evidence still applies.
 

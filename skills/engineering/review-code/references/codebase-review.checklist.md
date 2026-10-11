@@ -12,7 +12,7 @@ Define the surface and question first: a critical flow, package boundary, archit
 
 ## Select risk by actual behavior
 
-- [ ] Use the applicable sections of [the review checklist](change-review.checklist.md) for high-risk flows, security, performance/reliability, architecture/maintainability, duplication, design/conventions, and verification. These checks also apply without a diff; do not force a comparison baseline that does not exist.
+- [ ] Account for the categories and concrete applicable items in [the review checklist](change-review.checklist.md), including original intent, contracts, experience, supported app targets, operation, dependencies/docs and verification. Mark reviewed, inapplicable with a scope reason, or untested with missing proof. These checks also apply without a diff; do not force a comparison baseline that does not exist.
 
 - [ ] Prioritize critical flows whose failure exposes data, crosses tenant or privilege boundaries, changes money or entitlements, loses durable data, or makes a migration unrecoverable. Trace relevant auth/session/permission paths, sensitive records, destructive operations, jobs/integrations, and migrations end to end. Identify real preconditions and accepted invariants before claiming a risk. A search hit, absent filename, or generic best practice does not establish one.
 

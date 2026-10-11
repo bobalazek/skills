@@ -15,6 +15,8 @@ Use `design-architecture` for unresolved foundational choices or `implement-chan
 
 Inspect the requested destination and existing work. Resolve only missing decisions that materially change setup. Identify the first supported behavior, required runtime boundaries and accepted constraints before creating files.
 
+Retain the original outcome and accepted target choices in the existing brief or README, with links to the requirements. Use web only as an explicit provisional default for an otherwise unspecified new app; mobile and desktop need their actual required capabilities and distribution/validation path. Resolve a consequential target ambiguity before scaffolding, and preserve supplied platform choices.
+
 Inspect any proposed template, generator, or software factory before use. Check capability fit, licensing, maintenance/update strategy, extension boundaries, setup hooks, and inherited operating responsibilities. Adopt useful existing auth, billing, storage, or UI capabilities by configuration and verification. Do not assume a particular starter is installed or approved.
 
 Before creating source files, follow any repository conventions and maintained code. For greenfield choices they do not settle, use the selected language/framework's idiomatic layout, module/class model and naming. Create only the structure needed by the first supported path.

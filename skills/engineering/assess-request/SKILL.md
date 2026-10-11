@@ -13,6 +13,8 @@ Triage an incoming request into an evidenced next action, project-defined priori
 
 Read the request, prior discussion, related items, current status, and relevant repository evidence. Check whether the claimed behavior exists, which version/environment is involved, who is affected, and whether the request duplicates known work. Distinguish a reproducible defect, feature request, support question, unclear report, and an already resolved issue.
 
+Preserve the original requested outcome and source in the existing brief/issue or returned handoff, separating accepted clarifications from assumptions. Include affected app targets and versions where they change scope; a mobile browser, native mobile app and desktop app are different surfaces. Do not create another intent document or publish private conversation content without authority.
+
 ## Select the next action
 
 Assess impact, urgency, confidence, prerequisites, and ownership using the project's existing priority system. Do not invent severity from tone or assume a reported cause is correct. Inspect discoverable facts before asking for missing reproduction steps or a consequential product choice.

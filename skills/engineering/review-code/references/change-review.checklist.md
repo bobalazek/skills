@@ -1,14 +1,30 @@
 # Change review
 
-Start from the fixed candidate, its comparison baseline, accepted behavior, and applicable instructions. Inspect existing docs and local conventions before judging the patch. Trace affected consumers beyond changed lines. Select the checks below by the actual surface; record material uninspected paths and missing proof.
+Start from the fixed candidate, its comparison baseline, original request, accepted clarifications, and applicable instructions. Inspect existing docs and local conventions before judging the patch. Trace affected consumers beyond changed lines. Account for each category as reviewed, inapplicable with a scope reason, or untested with its missing proof. Within applicable categories, track relevant items in the existing review record; check an item only after its actual inspection/check is evidenced. Reviewed does not mean passed. A small change may group exclusions with the same reason.
 
-## Behavior and contracts
+## Requirements and intent alignment
 
-- [ ] Map material requirements to the implementation and supplied checks. Confirm the intended outcome, excluded behavior, supported inputs, and observable error states. If intent is missing, identify the question instead of inventing a product requirement.
+- [ ] Locate the original requested outcome and later accepted clarifications in their authoritative issue, brief or spec. Preserve source meaning and acceptance history; a generated task or the author's implementation summary is not independent evidence of intent.
+
+- [ ] Map material requirements to actual behavior and proof, then walk the original entry-to-outcome scenario. Check that the derived spec/tests did not omit the user's real goal, supported targets, roles or constraints. If intent is unavailable, leave alignment untested instead of inferring it from the patch.
+
+- [ ] Distinguish aligned work, necessary supporting changes, missing requested behavior, added scope and unresolved choices. Cite the source for a requirements finding; later accepted changes may supersede earlier intent, while incidental implementation choices cannot.
+
+## Correctness and regressions
 
 - [ ] Follow entry points through callers, shared helpers, data/state changes, and external effects. Include alternate routes, workers, imports, and admin tools where they share the affected behavior. Check boundary values, empty/missing states, partial success, retry, cancellation, and concurrency when the flow can encounter them. Confirm that a protective check is on the real path and cannot be bypassed through a sibling caller.
 
+- [ ] Check normal and rejected inputs against domain meaning, including valid zero/false/empty values and state transitions. Follow error propagation and cleanup; fallback data or a logged error must not disguise failure of a required operation.
+
+- [ ] Inspect the affected existing consumers and preserved workflows. For a refactor or repair, compare meaningful baseline and candidate behavior, including failure/recovery paths; unchanged types do not prove unchanged behavior.
+
+## Data, API and compatibility
+
 - [ ] Inspect compatibility of public APIs, events, serialized fields, schemas, package exports, persisted state, and supported old/new deployed versions. A locally correct function can still break a consumer or rollout sequence.
+
+- [ ] Trace actual validation, authorization, domain invariants, serialization and errors through consumers and alternate writers. Check schema/migration and data lifecycle changes against accepted ownership, retention and recovery rules; use [API and data depth](api-data-review.checklist.md) for affected boundaries.
+
+- [ ] Challenge contract meaning and evolution with current consumers and any accepted next use. Check mixed-version clients/workers/schema, unknown fields or enum values and deprecation commitments. Require a cohesive supported contract, not speculative generic interfaces or a versioning layer for hypothetical features.
 
 ## High-risk flows
 
@@ -56,15 +72,61 @@ When a row applies, trace the full affected flow and its state transitions, not 
 
 - [ ] For collection/transformation changes, check lookup/grouping semantics, duplicate keys, ordering, key identity, memory and shared nested references. Maps, sets and shallow copies are tools with tradeoffs, not mandatory rewrites. Guard clauses must retain authorization, existence privacy and cleanup; mutable preconditions need protection at the write. Catch-and-log must not report success for a failed required operation. Before adding a dependency, check suitable native or already-installed support and target compatibility; dependency upgrades need the scoped compatibility evidence required by the project.
 
-## Design and convention consistency
+## Conventions and consistency
 
 - [ ] Locate accepted root/surface rules, formatter/linter/type configuration, representative code, and documented exceptions. Distinguish mandatory policy from observed practice or a proposed preference. Check relevant folder/file/package placement; names for symbols, classes, functions, variables, models, tables/columns; API/data conventions; and framework-specific structure. Cite the applicable rule and effect of a violation rather than importing a house style.
 
 - [ ] Check class/module boundaries and filenames against written repository rules, then maintained surrounding code. Use language/framework defaults only where neither settles the choice; do not demand restructuring to satisfy a shared preference.
 
-- [ ] For a visible change, inspect the rendered result against accepted design, shared tokens/components, supported responsive states, semantics, keyboard/focus behavior, and loading/error/empty states. Include content or route metadata when the request touches them. A screenshot supports visible appearance in that state; it does not prove interaction, accessibility, or data correctness.
-
 - [ ] Use configured static checks before subjective convention judgments. Keep mechanical feedback in the tool that covers it and add practical guards for recurring detectable issues within an authorized fix scope. Do not inflate style preferences into blocking findings or repeat the same automated failure as many comments.
+
+## Design and user experience
+
+- [ ] Resolve the surface's design/UX contract, shared tokens/components and supported platforms before judging consistency. Inspect actual layout, hierarchy, density and states; a personal aesthetic preference is not convention drift.
+
+- [ ] Follow the primary user journey and its highest-risk or highest-commitment step from entry to outcome. Check navigation, action meaning, status, loading/empty/disabled/error/success states and recovery. Correct code or an isolated screenshot alone does not establish a usable flow.
+
+- [ ] Observe relevant responsive/window and input behavior, including text/content fit and interrupted actions. Ground a UX finding in what the user sees, cannot do or must work around, with a concrete correction and validation signal. Missing rendered or interaction evidence remains untested; use `review-interface` for deeper experience assessment when available.
+
+## Behavioral design and decisions
+
+- [ ] Inspect orientation, decision effort, useful defaults and truthful progress at important decisions. Check whether users can understand and change defaults and resume interrupted work; a shorter form can still impose more decisions or external lookups.
+
+- [ ] Check value before commitment, meaningful ownership/personalization, and factual cost/consequence comparisons where relevant. Treat these as task-dependent hypotheses, not required persuasion tactics or evidence of improved conversion.
+
+- [ ] Compare committing with declining, cancelling, correcting or undoing. Flag observed hidden costs, misleading urgency, preselected consequential choices or obstructed refusal; require evidence of the choice problem rather than an assumed psychological effect.
+
+## Accessibility, SEO and content
+
+- [ ] Inspect relevant semantic names/roles, keyboard or assistive input, focus order/visibility, error announcements, contrast, text scaling/reflow and reduced motion on the supported target. Automated results and screenshots cover only what they actually observe.
+
+- [ ] For public web surfaces, check titles/headings, indexability, canonical URLs, redirects, links and relevant structured data against intended discoverability. Protect authenticated/private content; native apps do not inherit website SEO checks without a public web surface.
+
+- [ ] Check task language, factual claims, placeholders, media alternatives and accepted localization/RTL behavior. Inspect long or missing content and relevant responsive states; neither code quality nor metadata alone proves readable, accurate output.
+
+## Operability, observability and release safety
+
+- [ ] Trace a meaningful operation or failure into the actual logs, metrics or traces. Check safe payloads, useful correlation, signal freshness and relevant volume/cardinality; a logging call or quiet dashboard alone does not prove diagnosability.
+
+- [ ] Check process startup/readiness, shutdown/draining and unfinished-work recovery where affected. Inspect alert/action routes, operating instructions and ownership that actually exist; leave missing access or untested notification delivery explicit.
+
+- [ ] Examine review/rollout shape and sequencing across schema, API, workers, clients, configuration and support. Identify independent chunks that should be separated and steps whose order preserves compatibility. Recovery and post-release signals need evidence, not just a deployment command.
+
+## Dependencies, tooling and documentation
+
+- [ ] Check the purpose of dependency additions against existing or platform support, supported runtime targets, relevant license/security/maintenance constraints and transitive cost. Upgrades need actual compatibility/migration evidence; an installed package is not automatically a justified dependency.
+
+- [ ] Inspect manifest/lockfile consistency, local versus CI commands, generated artifacts and safe environment/setup examples. Check newly required variables and manual steps; do not accept undocumented author-only setup or infer a runnable check from its name.
+
+- [ ] Compare affected product, API, architecture, contributor and operating docs with the candidate. Check canonical inventories and links, accepted decision changes and material learnings; retain historical meaning and avoid competing copies of the same rule.
+
+## Supported application targets
+
+- [ ] Confirm the accepted target matrix and exclusions. Apply a provisional web default only to otherwise unspecified greenfield planning; do not apply it over a mobile/desktop requirement or infer installed-app coverage from viewport size.
+
+- [ ] For web, inspect supported browsers, responsive/input behavior, navigation/history and relevant session/cache/network boundaries. For installed mobile, inspect relevant device/OS permissions, app links, foreground/background transitions, interruption, offline/sync and older-client compatibility; identify simulator versus physical-device evidence.
+
+- [ ] For desktop, inspect relevant OS/window/input behavior, local files/secrets, renderer/native process or IPC trust boundaries, offline/restart recovery and installer/sign/update/uninstall behavior. Browser rendering or a development launch cannot establish a packaged application's permissions or update safety.
 
 ## Verification and delivery evidence
 
@@ -78,6 +140,6 @@ When a row applies, trace the full affected flow and its state transitions, not 
 
 - [ ] Check whether the chosen unit, integration, contract and viable end-to-end boundaries actually support acceptance. Pure mocked tests cannot establish a real query, transaction or middleware path; a broad end-to-end test may miss an important domain edge case. Acceptance criteria can reuse these layers without duplicate suites. Inspect assertions, fixtures, isolation, asynchronous readiness, failed attempts and disclosed provider substitutions. Ask for missing proof of a material behavior, not every test type for every edit; test-first order and a coverage percentage are not acceptance criteria unless explicitly required by the project.
 
-- [ ] Check rollout/recovery needs, configuration/setup changes, logging or monitoring, and relevant documentation for the affected surface. Inspect command definitions and environment assumptions before trusting operational instructions. Required missing proof is a readiness gap; do not relabel it as a proven runtime defect.
+- [ ] Reconcile all material intent/acceptance criteria and selected checklist items against current proof, including relevant target surfaces. Record failed, unperformed and inapplicable items distinctly with their consequence or scope reason. Required missing proof is a readiness gap; do not relabel it as a proven runtime defect.
 
 - [ ] Rank confirmed findings by impact and credible likelihood. Separate an urgent exposure from a blocker for the requested next step, a bounded follow-up, and an optional suggestion. Do not expand the review into unrelated legacy cleanup or generate nitpicks to fill an empty findings list.

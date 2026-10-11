@@ -7,6 +7,7 @@ Stable task ID and a user-visible result or required technical prerequisite.
 ## Context
 
 - **Sources:** Relevant spec criteria/phase, accepted decisions, current-state evidence, and links.
+- **Intent and targets:** Original requested outcome and accepted clarifications through their authoritative source; supported app surfaces and versions this task must satisfy or preserve.
 - **Validity:** Source versions or snapshots that could invalidate the task; compare them with authoritative inputs before execution.
 - **Conventions:** Applicable authoritative rules and exceptions for placement, class/module boundaries and naming; include only those this task needs.
 
