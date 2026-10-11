@@ -33,19 +33,19 @@ The final clarification extends the inventory to **any relevant dependency**, in
 
 ## Pass 3 — Infrastructure, explanation and review depth
 
-- [ ] Audit architecture and explanation owners for missing or duplicate guidance after passes 1 and 2 are complete.
-- [ ] Clarify goals, hosting/environments, operating ownership, internal API/frontend/worker processes and deployment boundaries before consequential greenfield choices.
-- [ ] Inventory actual database/cache/queue, object/file-transfer storage, external API/AI/gateway services, trust boundaries, data flows, configuration and failure/recovery responsibilities.
-- [ ] Provide scoped architecture/deployment and request/data-flow diagrams for existing-codebase explanations, distinguishing implemented, deployed, proposed and unverified facts.
-- [ ] Cover relevant threats, privacy, workload/capacity, bottlenecks, dependency failure and recovery without speculative infrastructure.
-- [ ] Review oversized PRs by responsibility, dependency and risk; propose shared-contract/foundation, backend and frontend increments where independently testable/deployable, with compatibility and integration gates.
-- [ ] Deepen financial/commercial review for calculations, state transitions, authorization, concurrency, retries, external effects, auditability and reconciliation across actual callers.
-- [ ] Deepen identity and ownership review for authentication versus authorization, tenant/object boundaries, grants/revocation, recovery and impersonation through alternate entry points.
-- [ ] Deepen sensitive-data and lifecycle review for PII, import/export selection, retention/deletion scope, established compliance requirements and irreversible effects.
-- [ ] Deepen migration, destructive cleanup and decision-driving analytics review for mixed versions, resumability, reconciliation, units/source/provenance and consequences of incorrect results.
-- [ ] Deepen background/admin/workflow review for effective actor and authority, duplicate/partial execution, replay, recovery and operator visibility.
-- [ ] Verify the affected skills with realistic fixtures, independent review and the repository's delivery checks.
-- [ ] Reconcile all three expanded request groups against changed guidance and observed proof, preserving every missing or untested requirement before the final report.
+- [x] Audit architecture and explanation owners for missing or duplicate guidance after passes 1 and 2 are complete.
+- [x] Clarify goals, hosting/environments, operating ownership, internal API/frontend/worker processes and deployment boundaries before consequential greenfield choices.
+- [x] Inventory actual database/cache/queue, object/file-transfer storage, external API/AI/gateway services, trust boundaries, data flows, configuration and failure/recovery responsibilities.
+- [x] Provide scoped architecture/deployment and request/data-flow diagrams for existing-codebase explanations, distinguishing implemented, deployed, proposed and unverified facts.
+- [x] Cover relevant threats, privacy, workload/capacity, bottlenecks, dependency failure and recovery without speculative infrastructure.
+- [x] Review oversized PRs by responsibility, dependency and risk; propose shared-contract/foundation, backend and frontend increments where independently testable/deployable, with compatibility and integration gates.
+- [x] Deepen financial/commercial review for calculations, state transitions, authorization, concurrency, retries, external effects, auditability and reconciliation across actual callers.
+- [x] Deepen identity and ownership review for authentication versus authorization, tenant/object boundaries, grants/revocation, recovery and impersonation through alternate entry points.
+- [x] Deepen sensitive-data and lifecycle review for PII, import/export selection, retention/deletion scope, established compliance requirements and irreversible effects.
+- [x] Deepen migration, destructive cleanup and decision-driving analytics review for mixed versions, resumability, reconciliation, units/source/provenance and consequences of incorrect results.
+- [x] Deepen background/admin/workflow review for effective actor and authority, duplicate/partial execution, replay, recovery and operator visibility.
+- [x] Verify affected guidance with five realistic cases, returned independent source/behavior review, package/type/lint checks, 97 tests and clean installation/discovery. Retain the failed host boundary and runtime limits in [coverage](../evals/coverage.md); current PR/merge CI remains part of delivery.
+- [x] Reconcile all three expanded request groups and the final dependency clarification in the map below. All requested guidance has an owner; untested deployment/provider/native behavior, diagram rendering and host isolation remain explicit in coverage rather than being reported as passing.
 
 ## Request-to-guidance map
 
