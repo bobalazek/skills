@@ -39,6 +39,8 @@ Do not commit, push, send messages, mutate production data or deploy unless the 
 
 Follow the local module, data-access, typing, error, logging, dependency, and UI patterns. Before adding a function, helper, component, layer or dependency, look for an existing owner and inspect its contract, callers and tests. Reuse or extend it when the responsibility fits; similar syntax alone does not justify coupling unrelated behavior. Check accepted work and existing issues before creating parallel implementations or duplicate tasks. Fix the shared cause rather than patching only the reported caller. Keep adjacent cleanup out unless it is necessary to leave a coherent result.
 
+Apply YAGNI: each new option, abstraction and artifact needs a current requirement. After checking existing ownership, prefer suitable language/standard-library/platform facilities, then installed dependencies, then a small clear local implementation, subject to repository conventions. A new dependency needs a demonstrated gap. Choose the least necessary code and machinery, not the shortest expression; preserve validation, error handling, security, accessibility and all affected contracts when simplifying. Do not add flexibility for hypothetical consumers.
+
 For AI or agent behavior, implement the accepted data/tool permissions in trusted code, validate outputs at use, bound retries and spend, and preserve cancellation and recovery. Exercise required approval/evaluation gates on the actual action path; a prompt or declared workflow node is not enforcement. Retain relevant model, prompt, tool and evaluation versions with the result.
 
 ## Verify the actual result

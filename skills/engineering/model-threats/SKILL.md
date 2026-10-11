@@ -25,7 +25,7 @@ Ground each threat in a plausible actor, prerequisite and path to an asset or in
 
 Prioritize by credible impact, feasibility and exposure; avoid invented numeric precision. For each material threat, identify an existing protection, a proposed mitigation, removal of the risky behavior, or an unresolved risk decision with its owner. Do not accept risk on someone else's behalf or present a proposed control as deployed.
 
-For each mitigation, specify both an abuse rejection check and a successful legitimate-use check. Check that added prerequisites preserve accepted workflows; unsettled tradeoffs need an owner decision. Prefer controls at the actual enforcement boundary; prose, client-side checks or a diagram do not establish authorization. Keep unresolved assumptions and recovery limits visible. Use [the threat-model template](references/threat-model.template.md) when the project has no suitable format.
+For each mitigation, specify both an abuse rejection check and a successful legitimate-use check. Use the same control assumptions for both and confirm that the mechanism can produce the expected outcomes; checks depending on undecided controls remain conditional. Check that added prerequisites preserve accepted workflows; unsettled tradeoffs need an owner decision. Prefer controls at the actual enforcement boundary; prose, client-side checks or a diagram do not establish authorization. Keep unresolved assumptions and recovery limits visible. Use [the threat-model template](references/threat-model.template.md) when the project has no suitable format.
 
 ## Verify and deliver
 
@@ -33,8 +33,8 @@ Check the applicable items against evidence:
 
 - The modeled scope and source revision are explicit; observed and proposed behavior are distinguishable.
 - Material assets and trust boundaries are connected to plausible threats, including existing controls.
-- Each material threat has a response or open owner decision and an observable check.
-- Unknowns, untested controls and residual risks remain visible; no unsupported vulnerability or security guarantee is claimed.
+- Each material threat has a response or open owner decision; every mitigation has its own abuse rejection and successful legitimate-use checks.
+- Unknowns, untested controls and residual risks remain visible; any accepted risk cites an existing explicit owner decision. Without that decision it remains open, including in table cells. No unsupported vulnerability or security guarantee is claimed.
 
 For a drafting request, deliver the scoped model after these checks and state that it is unreviewed unless a valid independent assessment already exists. Do not hold a completed draft open for an acceptance workflow the user did not request.
 

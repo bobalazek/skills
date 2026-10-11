@@ -10,5 +10,5 @@
     "resolveJsonModule": true,
     "skipLibCheck": true
   },
-  "include": ["scripts/**/*.ts", "skills/**/scripts/**/*.ts"]
+  "include": ["scripts/**/*.ts", "tests/**/*.ts", "skills/**/scripts/**/*.ts"]
 }

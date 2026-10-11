@@ -61,6 +61,15 @@ Use the project's class/module model and keep responsibilities cohesive. Without
 
 Use these prompts for recurring decisions, then document only relevant adopted rules and exceptions. Preserve equivalent local styles; brevity or a favored language feature alone does not justify churn.
 
+Prefer the smallest complete solution: the least code and supporting machinery that satisfies the current contract clearly. Apply YAGNI (you aren't going to need it) before planning a new boundary or writing code. In the order allowed by local conventions:
+
+1. Establish the present requirement. Omit speculative features, options, layers and documents; a possible future caller is not a requirement.
+2. Inspect the existing owner, callers and checks. Reuse or extend matching behavior, fixing a shared rule once across affected consumers.
+3. Check suitable language/standard-library/platform facilities, then already-installed dependencies. Preserve a house abstraction when the repository requires it.
+4. If none fits, write the smallest clear local implementation. Add a dependency or shared abstraction only for a demonstrated gap whose cost it earns.
+
+Count necessary complexity, not lines: compressed expressions, forced reuse and moving duplication into configurable wrappers can make maintenance worse. Preserve validation, error handling, security, accessibility and all requested behavior. Consolidate the same responsibility and contract; keep deliberate variants separate. Recheck affected callers when moving or merging code. Apply the same restraint to planning artifacts, agent instructions and tooling.
+
 | Choice | Guidance and evidence |
 | --- | --- |
 | Reuse before adding | Inspect existing helpers/components and their callers, then language, standard-library, platform, and already-installed facilities. Reuse a matching contract; do not contort a near-match or create a general abstraction for hypothetical callers. A small local implementation can be clearer than a new dependency. |

@@ -8,9 +8,11 @@ System/change, source revision, assets and invariants, intended actors, data flo
 
 ## Threats and responses
 
-| Threat | Actor, prerequisite and abuse path | Affected asset / impact | Existing control and evidence | Response / owner / status | Verification criterion |
-| --- | --- | --- | --- | --- | --- |
-| Stable ID | Entry through boundary to consequence | Supported impact and priority rationale | Observed, documented or untested | Proposed mitigation, open decision or evidenced acceptance | Abuse rejected; legitimate behavior preserved |
+| Threat | Actor, prerequisite and abuse path | Affected asset / impact | Existing control and evidence | Response / owner / decision evidence | Abuse rejection check | Successful legitimate-use check |
+| --- | --- | --- | --- | --- | --- | --- |
+| Stable ID | Entry through boundary to consequence | Supported impact and priority rationale | Observed, documented or untested | Proposed response or open decision; link an existing owner decision if supplied | Input and expected rejection at the enforcing boundary | Allowed workflow and expected successful outcome under that mitigation |
+
+Keep both checks attached to each mitigation, using separate lines if a table becomes unwieldy. Give proposed alternatives their own assumptions and paired checks, or leave mitigation selection as an open decision. A general happy-path check for the whole system does not establish that each mitigation preserves its legitimate workflow. These are planned criteria until exercised evidence exists.
 
 ## Remaining decisions and coverage
 
