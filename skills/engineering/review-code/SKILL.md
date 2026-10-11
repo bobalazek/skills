@@ -26,6 +26,7 @@ Load resources by the selected scope:
 - For a PR, diff or branch comparison, use [change review](references/change-review.checklist.md).
 - For a bounded codebase question, use [codebase review](references/codebase-review.checklist.md); do not load both entry checklists by habit.
 - When HTTP APIs, queries, schemas or storage scaling are involved, add [API and data review](references/api-data-review.checklist.md), including real consumers and alternate writers.
+- When financial/commercial, identity/ownership, sensitive-data, migration/reconciliation, decision-driving analytics or privileged/background behavior is affected, use [high-risk flow investigation](references/high-risk-flow.checklist.md). Trace full affected paths and alternate consumers, not only the changed guard; keep material missing proof visible in the readiness decision.
 
 Account for every category in the selected checklist using concrete applicable items, observed results and evidence. Mark categories reviewed, inapplicable with a scope reason, or untested with the missing proof; reviewed can include failures. Record this in the existing review/PR, grouping exclusions with the same reason for a small task. Do not claim complete coverage from a category name or checked box. User-facing code requires design, behavioral UX and applicable accessibility/content checks as well as source review; SEO applies to relevant public web surfaces.
 

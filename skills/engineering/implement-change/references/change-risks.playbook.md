@@ -40,6 +40,13 @@ Inspect the deployed compatibility window and migration workflow. Prefer additiv
 
 ## Stateful and integration boundaries
 
+Use deeper tracing when the affected behavior changes financial/commercial commitments (including quotes, pricing and metering), identity/grants/recovery or tenant/object ownership, sensitive records/imports/exports/retention, migrations/destructive repair, reconciliation/decision-driving analytics, or background/admin/impersonation workflows. Check the actual risk, not just a module name; keep unrelated paths outside a local edit.
+
+- [ ] Identify the accepted invariant, every relevant entry point/shared caller, effective actor and durable/external effect before editing. Locate the existing rule and recovery owner rather than adding a guard only at the reported front door.
+- [ ] Select meaningful valid/rejected, boundary/stale, duplicate/concurrent and partial-failure scenarios. For money or analytics, trace units, rounding, source/grain/time window and authoritative values; for ownership/data lifecycle, trace the actual selected records and alternate writers.
+- [ ] Preserve transaction/constraint, operation identity, retry/reconciliation and audit contracts through the affected flow. Check what remains after an external success/local failure, restart, replay or mixed-version deployment where relevant.
+- [ ] Use controlled fixtures and actual boundary evidence for material claims. Keep required unavailable provider/migration/recovery proof open for independent review and delivery; never test destructive live effects just to check a box.
+
 For an API-backed feature, trace the accepted request through validation, action/object/field permissions, domain state transitions, query and transaction boundaries, serialization and error handling. Preserve supported methods, status/media types, caching, pagination and client versions. Apply tenant scope and supported filtering, ordering, projection and pagination at the data store before materializing growing collections. Validate dynamic query fields and values rather than concatenating client input. Keep bounded local transformations explicit. Check real success and rejection paths, duplicate/concurrent writes and affected consumers; update the existing contract documentation when behavior changes.
 
 Check input validation, authorization, ownership/tenancy, duplicate delivery, retries/timeouts, partial failure, concurrency, and error visibility where these properties exist. Do not log secrets or sensitive payloads for convenience. A retry must have a safe repetition contract.

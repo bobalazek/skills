@@ -28,19 +28,9 @@ Start from the fixed candidate, its comparison baseline, original request, accep
 
 ## High-risk flows
 
-When a row applies, trace the full affected flow and its state transitions, not only the added guard. Identify the accepted invariant, every relevant actor/entry point, durable writes and external effects, and the check that can disprove the claimed protection. These are review prompts; report a defect only when evidence establishes an affected scenario.
-
-| Trigger | Trace and challenge |
-| --- | --- |
-| Authentication or account recovery | Identity/session creation, validation, expiry/revocation, recovery and privilege changes; rejected/expired credentials and alternate entry points |
-| Authorization, tenant data, admin actions | Actor, resource ownership, tenant scope, roles and privileged overrides across reads/writes, joins, exports, jobs, caches, and direct object access; a cross-user or cross-tenant attempt |
-| Money, billing, balances, entitlement changes | Units/currency, precision/rounding, permitted transitions, duplicate/concurrent requests, external payment success versus local failure, reconciliation and auditability where required |
-| Deletion, overwrite, bulk import/export | Selection and scope, preview/confirmation where required, validation, partial application, retention and recovery, retries; the record set actually affected and an interrupted operation |
-| Schema migrations and backfills | Old/new reader and writer compatibility, constraints/defaults, deploy order, locking/runtime, partial progress/restart, destructive cleanup, and demonstrated recovery limits |
-| Jobs, webhooks, queues, external writes | Authenticity, duplicate/out-of-order delivery, idempotency scope, retries/timeouts, concurrent execution, poison items, partial external effects and recovery ownership |
-| Sensitive records or secrets | Authorized access, transport/storage handling, logs/errors/exports, retention/deletion obligations actually established for this system |
-
-- [ ] Use a safe test environment, source trace, or existing trustworthy evidence. Do not exercise destructive operations or real payments in production to establish a review claim. If a material path cannot be checked, state the missing proof and its readiness impact.
+- [ ] Check whether the affected behavior touches financial/commercial decisions, identity/ownership, sensitive data/lifecycle, migrations/reconciliation, decision-driving analytics or privileged/background work. Use [the high-risk investigation](high-risk-flow.checklist.md) for applicable families; a harmless edit near such code does not require an unrelated system audit.
+- [ ] Trace the complete affected flow and relevant alternate/shared entry points, durable state and external effects. Account for missing paths and proof before deciding readiness; a module name, one guard or green happy-path test is insufficient.
+- [ ] Keep inspections and tests within a safe authorized environment. Do not create real payments, destructive production changes or sensitive exports to establish a review claim. Material unavailable proof stays untested and affects the requested next-step decision.
 
 ## Security and privacy
 
@@ -111,6 +101,13 @@ When a row applies, trace the full affected flow and its state transitions, not 
 - [ ] Check process startup/readiness, shutdown/draining and unfinished-work recovery where affected. Inspect alert/action routes, operating instructions and ownership that actually exist; leave missing access or untested notification delivery explicit.
 
 - [ ] Examine review/rollout shape and sequencing across schema, API, workers, clients, configuration and support. Identify independent chunks that should be separated and steps whose order preserves compatibility. Recovery and post-release signals need evidence, not just a deployment command.
+
+## Change size and delivery sequence
+
+- [ ] Assess reviewability by coherent outcomes, domain/module ownership, dependency edges, risk and proof. Separate unrelated cleanup, generated churn or independent behavior when it obscures the change; file or line counts are clues, not universal limits.
+- [ ] When a change is too broad, propose concrete increments with owned scope, prerequisite outputs and acceptance checks. A shared contract/foundation may precede backend support and frontend adoption; retain integrated vertical work where splitting by layer would leave broken or unverifiable states.
+- [ ] Check each proposed increment's supported old/new schema, API, worker and client combinations, merge/deploy order, exposure and recovery boundary. Distinguish independently reviewable, mergeable and deployable; use the existing stacking/flag/migration workflow only when warranted. Do not introduce abstraction or infrastructure solely to manufacture independence.
+- [ ] Keep remaining user criteria, cross-increment integration, rollout and post-deploy observations visible. One merged prerequisite PR does not complete the feature; document coupling when independent deployment is not viable and block unsafe consumers.
 
 ## Dependencies, tooling and documentation
 

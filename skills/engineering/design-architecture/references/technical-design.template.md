@@ -29,6 +29,8 @@ Trace the relevant synchronous request, background job or inbound event through 
 
 Existing versus proposed hosting/services, managed/self-hosted responsibilities, environments, access/secrets, capacity limits, backups/restore, release/migration order, observation signals and recovery ownership. Link comparable cost scenarios. For AI behavior, include tool/data authority, orchestration gates, memory lifecycle, evaluation and spend/latency bounds.
 
+Link or include the scoped dependency inventory from discovery: internal frontend/API/worker processes; local, self-hosted or externally managed databases/caches/queues; file storage/transfer; hosting/network/delivery services; APIs, AI providers/gateways, MCP/tool services and material runtime/build dependencies that actually apply. Map each to its hosting/environment and operator, configuration names, data/trust boundary, contract, capacity assumption, failure and validation path. Show implemented, deployed, proposed and unverified states separately in the deployment and request/data-flow views; source or infrastructure declarations alone do not establish a running deployment.
+
 For affected long-running processes, distinguish startup, readiness and graceful shutdown/draining from an individual request's lifecycle. State where durable state lives and what a restart or lost dependency can lose, including accepted but unfinished work. Separate build-time configuration from runtime configuration when that changes deployment or secret exposure.
 
 ## Decisions

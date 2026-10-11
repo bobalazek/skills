@@ -14,6 +14,8 @@ The next architecture pass must clarify infrastructure and hosting at greenfield
 
 The user also requires deeper review of high-risk flows: billing, invoices, payments/refunds, subscriptions, credits, taxes/discounts/pricing/metering and commercial bids/quotes/proposals/estimates; authentication, authorization, tenant/object ownership, grants and account recovery; sensitive records/PII, imports/exports, deletion/retention and established compliance obligations; migrations/backfills, destructive cleanup and reconciliation; decision-driving financial/analytics calculations; and background, privileged admin, impersonation or automated workflows. Trace their full affected execution and failure paths rather than treating a module name or one guard as sufficient review.
 
+The final clarification extends the inventory to **any relevant dependency**, including external/managed databases, cloud or self-hosted infrastructure, hosted application platforms, storage, networking/delivery services, APIs, AI, MCP/tool services and material runtime/build dependencies. Ownership and trust are separate from hosting location. Recheck the full request history after implementation.
+
 ## Pass 1 — Template-inspired project guidance
 
 - [x] Compare the template with current skill owners and preserve local-convention priority.
@@ -27,7 +29,7 @@ The user also requires deeper review of high-risk flows: billing, invoices, paym
 - [x] Preserve original intent and accepted changes through intake, specs, tasks, implementation, verification and delivery.
 - [x] Carry explicit web/mobile/desktop targets and their validation limits through those stages without adding unrequested applications.
 - [x] Validate and independently assess the four intent/category/target cases; retain the global-skill boundary failure and native/session evidence limits in [coverage](../evals/coverage.md).
-- [ ] Review, publish, wait for CI, merge and verify this pass.
+- [x] Review and merge [PR #49](https://github.com/bobalazek/skills/pull/49); merged revision `536b09a` matches the reviewed tree and passed main CI run `38137260452`.
 
 ## Pass 3 — Infrastructure, explanation and review depth
 
@@ -44,6 +46,23 @@ The user also requires deeper review of high-risk flows: billing, invoices, paym
 - [ ] Deepen background/admin/workflow review for effective actor and authority, duplicate/partial execution, replay, recovery and operator visibility.
 - [ ] Verify the affected skills with realistic fixtures, independent review and the repository's delivery checks.
 - [ ] Reconcile all three expanded request groups against changed guidance and observed proof, preserving every missing or untested requirement before the final report.
+
+## Request-to-guidance map
+
+This maps the expanded requests to their authoritative skill resources. Behavioral coverage remains bounded by the cases and limits in the evaluation record.
+
+| Requested outcome | Owning guidance |
+| --- | --- |
+| Template-inspired product/PRD, decisions/learnings/incidents and human blocker records | [Project knowledge](../skills/engineering/document-project/references/knowledge-records.playbook.md), [task sources and human actions](../skills/engineering/create-tasks/references/task.template.md), [runtime and deployment design](../skills/engineering/design-architecture/references/technical-design.template.md) |
+| Original request, accepted clarifications and supported web/mobile/desktop targets through delivery | [Spec](../skills/engineering/write-spec/SKILL.md), [implementation](../skills/engineering/implement-change/SKILL.md), [verification](../skills/engineering/verify-change/SKILL.md), [delivery gates](../skills/engineering/ship-change/references/delivery.checklist.md); intake, tasks and foundation carry the same source links |
+| Multiple concrete checks for every requested engineering category, local conventions and evidence over claims | [Implementation completion](../skills/engineering/implement-change/references/completion.checklist.md) and [change review](../skills/engineering/review-code/references/change-review.checklist.md), also used by scoped codebase review |
+| Early infrastructure/hosting questions, internal processes and **all relevant dependencies**, including managed databases, MCP and delivery/build services | [Architecture discovery and inventory](../skills/engineering/design-architecture/references/architecture-discovery.playbook.md), [technical design](../skills/engineering/design-architecture/references/technical-design.template.md), [foundation setup](../skills/engineering/start-project/SKILL.md) and spec intake |
+| Useful existing-system infrastructure/deployment and request/data-flow diagrams; facts versus declared/proposed/unknown | [System explanation checks](../skills/engineering/explain-codebase/references/system-map.checklist.md) and architecture views in discovery |
+| Threat, privacy, capacity, external failure and recovery questions without speculative infrastructure | Architecture discovery, [development risk checks](../skills/engineering/implement-change/references/change-risks.playbook.md), and the review checklists |
+| Reviewable PR scope and viable foundation/contracts, backend and frontend increments with compatibility and integration gates | [Change-size review](../skills/engineering/review-code/references/change-review.checklist.md), [PR explanation](../skills/engineering/explain-pr/SKILL.md), [phase sequencing](../skills/engineering/plan-phases/SKILL.md) and task delivery grouping |
+| Finance and commercial commitments; identity, tenant/project/object authority; sensitive lifecycle; migrations/destructive repair; decision-driving analytics; privileged/background workflows | [High-risk investigation](../skills/engineering/review-code/references/high-risk-flow.checklist.md), with complete affected path, family-specific checks and evidence/readiness gates; development risk checks prepare the same relevant boundaries |
+
+The skill ownership audit keeps distinct deliverables: architecture chooses the design, explanation maps the current system, review judges evidence/readiness, PR explanation communicates the change, and phase/task planning owns sequencing. No duplicate deliverable justified merging or adding a skill. High-risk detail has one review reference, and the existing review checklist routes to it instead of retaining a second trigger table.
 
 ## Completion evidence
 

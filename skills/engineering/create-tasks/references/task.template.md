@@ -55,6 +55,8 @@ For an ongoing batch, update the existing task record with its actual dispositio
 
 Name a proposed PR/group only when useful, with the task criteria it covers, merge prerequisites, and remaining integration or rollout checks. Keep these annotations in the task record; the optional graph-check JSON below has a fixed schema. Task, phase, and PR IDs express different boundaries and need not match.
 
+Assess a broad change by cohesive outcome, module ownership, dependencies and risk rather than a line threshold. Where viable, separate shared contracts/foundations, compatible backend support and frontend adoption with their own checks and recovery boundaries. Record old/new compatibility and deploy order; independently reviewable does not imply independently deployable. Preserve integrated work when a layer split would break behavior, and keep remaining criteria open until integration is demonstrated.
+
 Example relationships for an agreed CSV import; actual tasks still need their own ownership and isolation checks:
 
 | Task outcome | Required accepted outputs | Contribution to the milestone |

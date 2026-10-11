@@ -29,6 +29,8 @@ Use a compact Mermaid or existing tracker graph when branches matter, showing de
 
 A phase, task, and PR are different boundaries. One milestone can require several tasks and PRs; a shared prerequisite task can support more than one milestone. A PR groups a coherent reviewable change and may contain several tasks or one independently useful part of a larger task, with remaining work still open. Do not number milestones as PRs or infer milestone completion from one merged PR. Preserve traceability to the phase exits and spec criteria when grouping work.
 
+For broad cross-layer changes, consider shared contracts/foundations before compatible backend support and client adoption. Give viable increments independent checks and deployment/recovery boundaries, preserving old/new consumers through the sequence. Keep genuinely coupled work together, name unavoidable deployment coupling and retain the final integration gate; a layer split or smaller diff alone does not create a safe release.
+
 Use [the phase-plan template](references/phases.template.md) for a durable plan. Do not estimate dates or effort without assumptions about scope, staffing, and dependencies. Unknown feasibility becomes a bounded investigation; it does not become a supposedly executable build phase.
 
 ## Verify and return the plan
