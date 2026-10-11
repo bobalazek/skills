@@ -12,7 +12,7 @@ import {
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 
-const runner = resolve(import.meta.dir, "../skills/engineering/verify-change/scripts/run-check.ts");
+const runner = resolve(import.meta.dir, "../../skills/engineering/verify-change/scripts/run-check.ts");
 let root: string;
 let cwd: string;
 let output: string;

@@ -11,7 +11,7 @@ import {
 } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { manifest, verifyCodex, verifyCopies, verifyOpenCode } from "../scripts/lib/skill-packages.ts";
+import { manifest, verifyCodex, verifyCopies, verifyOpenCode } from "../lib/skill-packages.ts";
 
 let root: string;
 let expected: string;
@@ -109,7 +109,7 @@ test("the CLI refuses ignored source files absent from its recorded commit", asy
   expect(git("status", "--porcelain", "--untracked-files=all")).toBe("");
   const output = join(root, "evidence");
   const child = Bun.spawn(
-    [process.execPath, join(import.meta.dir, "../scripts/check-install.ts"), expected, expected, output],
+    [process.execPath, join(import.meta.dir, "../check-install.ts"), expected, expected, output],
     {
       stdout: "pipe",
       stderr: "pipe",
