@@ -12,7 +12,16 @@ import {
 } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
-import { boundedInteger, execute, inspectTrace, main, parseCases, requestFor, selectCases } from "../run-evals.ts";
+import {
+  boundedInteger,
+  execute,
+  inspectTrace,
+  loadCases,
+  main,
+  parseCases,
+  requestFor,
+  selectCases,
+} from "../run-evals.ts";
 
 let root: string;
 const sample = {
@@ -55,6 +64,30 @@ test("validates raw fixture paths and rejects settings, traversal and duplicate 
   }
   expect(() => selectCases([sample], "sample,missing")).toThrow();
   expect(() => selectCases([sample], "sample,sample")).toThrow();
+});
+
+test("loads domain collections and preserves custom single-file fixtures", () => {
+  const directory = join(root, "cases");
+  mkdirSync(directory);
+  writeFileSync(join(directory, "b.json"), JSON.stringify([{ ...sample, id: "second" }]));
+  writeFileSync(join(directory, "a.json"), JSON.stringify([sample]));
+  writeFileSync(join(directory, "README.md"), "Maintainer notes, not cases.");
+  expect(loadCases(directory).map((item) => item.id)).toEqual(["sample", "second"]);
+  expect(loadCases(join(directory, "a.json"))).toEqual([sample]);
+  expect(selectCases(loadCases(directory), "second,sample").map((item) => item.id)).toEqual(["second", "sample"]);
+});
+
+test("rejects duplicate IDs across files and invalid or empty collections", () => {
+  const directory = join(root, "cases");
+  mkdirSync(directory);
+  expect(() => loadCases(directory)).toThrow("nonempty");
+  writeFileSync(join(directory, "a.json"), JSON.stringify([sample]));
+  writeFileSync(join(directory, "b.json"), JSON.stringify([sample]));
+  expect(() => loadCases(directory)).toThrow("duplicate");
+  writeFileSync(join(directory, "b.json"), "{}");
+  expect(() => loadCases(directory)).toThrow("nonempty");
+  writeFileSync(join(directory, "b.json"), "not JSON");
+  expect(() => loadCases(directory)).toThrow();
 });
 
 test("keeps assertions out of requests and does not name implicit or unavailable skills", () => {

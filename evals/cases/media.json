@@ -1,0 +1,181 @@
+[
+  {
+    "id": "video-discovery-human-decisions",
+    "skill": "plan-video",
+    "installedSkills": [
+      "plan-video"
+    ],
+    "prompt": "I want to make a video for my new project. Help me work out what it should be. Start by asking me the questions that matter; I want to choose the direction together before you write a story.",
+    "files": {},
+    "expected": [
+      "Ask targeted questions establishing purpose, audience, video type, destination and material constraints without silently choosing a promotional format.",
+      "Work with the human on the direction and leave unprovided answers or concept acceptance open; do not write a full script or initiate production.",
+      "Keep the next step manageable and indicate how answers and accepted decisions carry into the brief, without requiring a new tracking system."
+    ]
+  },
+  {
+    "id": "video-distinct-concepts",
+    "skill": "plan-video",
+    "installedSkills": [
+      "plan-video"
+    ],
+    "prompt": "Using brief.md, brainstorm three genuinely different video ideas and recommend one. I will choose afterward. Keep this to concepts and formats, not full scripts or a production batch.",
+    "files": {
+      "brief.md": "Goal: help first-time tenants understand where a tap leak comes from. Audience: adults with no plumbing knowledge. 60-90 seconds for a help page, captions needed. Available: authentic footage identifying a loose tap handle, a dripping spout and a plumber explaining when to stop and call for help. No footage of a successful repair. No budget for new footage this week. Calm, practical voice. We must not promise viewers can fix every leak.\n"
+    },
+    "expected": [
+      "Offer three different premises/rewards or approaches, distinguishing format from layout and cosmetic variants.",
+      "Use available material and qualify missing repair evidence instead of promising a demonstrated fix or fabricated performance metrics.",
+      "Recommend with reasons while keeping human selection open; preserve scope and do not demand answers already in the brief."
+    ]
+  },
+  {
+    "id": "video-storyboard-action-coverage",
+    "skill": "create-storyboard",
+    "installedSkills": [
+      "create-storyboard"
+    ],
+    "prompt": "Create a written shot plan from brief.md and assets.md. Descriptions are enough for this pass. Identify what I still need to produce; do not generate images or video. I will choose the visual direction afterward.",
+    "files": {
+      "brief.md": "Accepted script: an illustrator tries to stack three blocks, the tower falls, then rebuilds a wider base and it stays upright. Child-friendly, no speech, 20-30 seconds. End on the stable tower. We need both 16:9 and 9:16. No visual direction accepted yet.\n",
+      "assets.md": "Available files described by owner: illustrator-portrait.png (identity reference, chest-up), tower-standing.png (completed narrow tower, still). No media inspected in this fixture. No falling or rebuilding footage. These are descriptions only, not attached images.\n"
+    },
+    "expected": [
+      "Map beats to opening/action/ending states, framing, sound mode and asset dependencies with stable shot references.",
+      "Identify missing fall/rebuild/wide-base result coverage; portraits or recrops do not establish those actions.",
+      "Distinguish described versus inspected files, estimated timing and written versus visual proof; preserve human visual-direction choice and no-production scope.",
+      "Keep both requested layouts and useful handoff dependencies without forcing speech or claiming actual images exist in the workspace."
+    ]
+  },
+  {
+    "id": "video-continuous-narration",
+    "skill": "create-voiceover",
+    "installedSkills": [
+      "create-voiceover"
+    ],
+    "prompt": "Review the supplied narration plan in narration.md and tell me the smallest handoff correction. Preserve the continuous take; do not record or call a provider. No audio file is attached here.",
+    "files": {
+      "narration.md": "Accepted script IDs: L1=\"Meet Arlo.\" L2=\"Check your appointments.\" Owner notes: continuous take voice-t7.wav, 12 seconds. L1 source [1,3), L2 source [7,9), selected stem keeps the original timeline. Accepted pronunciation: AR-loh. Actual L2 in take: \"Check your next appointments.\" No listening proof supplied. Captions currently copied from intended script, including [warm] from a direction field. An anchored music sting is at 11 seconds. A future L1 pickup will replace [1,3) without moving other anchors. The project uses one shared source file and per-unit ranges.\n"
+    },
+    "expected": [
+      "Preserve the continuous take and existing schema, using stable IDs and source/output spans rather than requiring new per-line audio files.",
+      "Identify the spoken/script mismatch and direction-tag leak; captions must follow selected speech with proper spellings and final timing, while meaning changes return to the script owner.",
+      "Do not invent measured/listened proof from supplied notes; distinguish anchored dependency rechecks from assuming all later units move.",
+      "Remain a bounded handoff correction without provider calls, new takes or unrelated music work."
+    ]
+  },
+  {
+    "id": "video-narration-ambiguous-job",
+    "skill": "create-voiceover",
+    "installedSkills": [
+      "create-voiceover"
+    ],
+    "prompt": "The speech request timed out. Should we just submit it again? Advise from job.md only; do not contact the provider or generate anything.",
+    "files": {
+      "job.md": "Provider accepted job vo-742 for script L1-L3 before the client timed out. Dashboard status has not been checked. Budget authorized one job, and a second submission may charge again. No output has been downloaded or listened to.\n"
+    },
+    "expected": [
+      "Advise reconciling the existing job identity/status/output before a new submission; do not assume timeout means failure or authorize duplicate spending.",
+      "Retain unresolved completion, no playback/listening proof, and the exact missing observation.",
+      "Only advise from supplied facts; no external contact or claimed execution."
+    ]
+  },
+  {
+    "id": "video-edit-proof-and-tracks",
+    "skill": "edit-video",
+    "installedSkills": [
+      "edit-video"
+    ],
+    "prompt": "Review edit-notes.md for readiness and tell me what needs fixing before this can be accepted. This is a read-only review of notes; no source media or player is available.",
+    "files": {
+      "edit-notes.md": "Brief: preserve the interview meaning, use its native speech and add captions; deliver landscape and vertical. Source quote at 10-14s: \"This can help, but only if you keep a backup.\" Edit uses 10-12s, dropping the qualifier. Source 20-24s is at 2x, output 2-4s; a word at source 21s has its caption at output 3s. The render uses -an but no later audio mix. Notes mark sound and all variants checked because FFmpeg exited zero; only a landscape contact sheet was inspected. Source and export files are not included.\n"
+    },
+    "expected": [
+      "Identify lost qualification, missing intended native speech and the incorrect caption mapping (the supplied map puts source 21 at output 2.5 seconds).",
+      "Separate supplied notes and still inspection from actual export, listening and variant proof; do not declare acceptance or independent review complete.",
+      "Give concrete corrections/rechecks for the scoped edit without inventing playback or rewriting the whole video."
+    ]
+  },
+  {
+    "id": "video-motion-evidence-gaps",
+    "skill": "create-motion-video",
+    "installedSkills": [
+      "create-motion-video"
+    ],
+    "prompt": "Can we accept this animation from production.md? Review only the record and tell me the remaining gates. Do not render anything.",
+    "files": {
+      "production.md": "Accepted goal: demonstrate opening a modal and saving a setting. Landscape plus vertical, narration and captions. Current source r4 uses narration r3 timings, but a new selected voice r4 is two seconds longer. The modal opens in the board; there is no shot of save confirmation. Only the landscape export exists. Encode exited 0; no normal-speed playback, listening or reviewer return is available. Author marked every checklist complete because a contact sheet looked good.\n"
+    },
+    "expected": [
+      "Identify stale dependent timing/captions, missing saved-state coverage and missing vertical export.",
+      "Reject unsupported completed playback, listening and independent-review checks despite exit zero/contact-sheet evidence.",
+      "Return actionable remaining gates tied to actual supplied evidence and scope; do not render or claim human approval."
+    ]
+  },
+  {
+    "id": "video-motion-continuous-cues",
+    "skill": "create-motion-video",
+    "installedSkills": [
+      "create-motion-video"
+    ],
+    "prompt": "Prepare the cue placement plan for this existing composition using production.md and the rendering guidance. Preserve the accepted recording and fixed anchors. Do not render or rerecord anything; I need the handoff instructions only.",
+    "files": {
+      "production.md": "Accepted silent visuals with external narration: a title appears when L1 begins, a highlight when L2 begins, and an outro at fixed 11s. One accepted continuous voice take runs 12s. Measured source and output speech spans are L1=[1,3), L2=[7,9). These are supplied measurements, not audio attached here. We will replace only L1 inside [1,3); L2 and the 11s outro remain anchored. Project keeps stable line IDs and one voice stem.\n"
+    },
+    "expected": [
+      "Use supplied source/output spans for title at 1s and highlight at 7s, retaining the 11s outro anchor and continuous stem.",
+      "Do not demand separate per-line files, sequentially move anchored cues or claim to measure/listen to absent media.",
+      "Identify affected L1 timing/sync checks and actual downstream dependencies while preserving scoped handoff-only work."
+    ]
+  },
+  {
+    "id": "video-purpose-channel-brainstorm",
+    "skill": "plan-video",
+    "installedSkills": [
+      "plan-video"
+    ],
+    "prompt": "Help me brainstorm a video direction, using notes.md. I am undecided between YouTube, TikTok and Instagram, and between a personal story and a product video. Help me understand the choices and ask what you need from me before selecting. Ideas and questions only for now.",
+    "files": {
+      "notes.md": "I make a small independent recipe app and also share stories from learning to cook with my grandfather. I have authentic app screen recordings and photos of handwritten recipes. I have one afternoon for a pilot, not a campaign. No goal, target audience, public/private choice or channel surface has been accepted. I do not want you to assume all my personal stories are ads.\n"
+    },
+    "expected": [
+      "Distinguish personal/product purpose, narrative format and channel/surface rather than treating them as interchangeable video types.",
+      "Ask targeted questions about desired outcome, viewer and material channel/surface choices; compare plausible directions for YouTube, TikTok and Instagram without claiming algorithm guarantees or selecting an accepted direction.",
+      "Keep brainstorming and human choice in plan-video, preserve the limited pilot capacity and decision record, and do not produce a full script or campaign."
+    ]
+  },
+  {
+    "id": "video-motion-script-fallback",
+    "skill": "create-motion-video",
+    "installedSkills": [
+      "create-motion-video"
+    ],
+    "prompt": "We are making the code-driven explainer in brief.md. Before rendering, write its complete short voiceover script and visual beat plan for my review. No scriptwriting sibling is installed. Do only this writing preview today; do not render or produce audio.",
+    "files": {
+      "brief.md": "Accepted purpose: explain how a local queue processes work to new support staff. 30-45 seconds, English narration, simple shape animation for an internal training page. Supported sequence: requests arrive in order, one worker handles one request at a time, successful work leaves the queue, failed work is shown as failed for an operator to inspect. No automatic retry, extra worker, guaranteed response time or external infrastructure. End on the difference between successful and failed outcomes. The production is code-driven, but this request stops at the script/beat preview.\n"
+    },
+    "expected": [
+      "Produce complete exact voiceover wording and a matched visual beat plan within the integrated production scope, rather than refusing because a sibling is missing or returning only a generic outline.",
+      "Preserve one worker, ordering and success/failure semantics without inventing retry or scale claims; distinguish estimated timing from measured audio.",
+      "Stop at the requested writing preview, identify actual approval/verification limits and do not render, call a provider or claim a finished video."
+    ]
+  },
+  {
+    "id": "priority-media-repair",
+    "skill": "edit-video",
+    "installedSkills": [
+      "edit-video"
+    ],
+    "prompt": "Revisit the remaining edit corrections in review.md using transcript.md and captions.srt. Return a repair order and evidence gaps only; do not edit, render, call providers or delegate.",
+    "files": {
+      "review.md": "Accepted scope: a 30-second tutorial with accurate captions. F-01 [P1]: the caption drops a negation and reverses the spoken instruction; this must be corrected before delivery. F-02 [P3]: a reviewer prefers a slower opening transition; the accepted pacing has no observed comprehension problem and this change is optional. Neither correction has been performed. No local priority scheme overrides these labels. No actual media, playback or independent post-fix review is available.\n",
+      "transcript.md": "Supplied source words at 00:00:04–00:00:07: Do not close this window during the upload.\n",
+      "captions.srt": "1\n00:00:04,000 --> 00:00:07,000\nDo close this window during the upload.\n"
+    },
+    "expected": [
+      "Preserve F-01/P1 and F-02/P3 with clear impact/urgency rationale and next actions; prioritize the required meaning repair without inflating the optional pacing preference into a blocker.",
+      "Use the text comparison as evidence for the negation omission while distinguishing supplied timing/transcript from actual watched or heard media.",
+      "Keep required repair and post-fix caption/playback/review evidence pending; do not claim completion, edit, render, call services or fabricate independent assessment."
+    ]
+  }
+]

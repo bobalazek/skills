@@ -152,6 +152,8 @@ For other outcomes, use the [workflow index](docs/workflows.md): [product decisi
 
 ## Working on the collection
 
+[Skill evals](evals/README.md) explains the custom Bun/Codex runner, deterministic tests, scenario recipes and historical behavioral evidence.
+
 See the [maintainer guide](docs/authoring.md) for package conventions, evaluation, deprecation and releases. With Bun 1.3.9 or newer, run `bun install --frozen-lockfile`, `bun run check` and `bun test`. The pinned development tools provide type, lint and format checks; installed skill packages do not require those maintainer dependencies. See [evaluation](docs/evaluation.md) for explicitly invoked behavioral trials.
 
 ## Acknowledgments

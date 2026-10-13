@@ -1,0 +1,145 @@
+[
+  {
+    "id": "video-hook-scope-and-payoff",
+    "skill": "write-video-script",
+    "installedSkills": [
+      "write-video-script"
+    ],
+    "prompt": "Give me two opening options only for the accepted brief in brief.md. Include the first visual and the immediate continuation so I can judge them. Keep the body unchanged. My draft hook is: This app eliminates every scheduling conflict forever.",
+    "files": {
+      "brief.md": "Accepted goal: explain the new conflict warning to existing users. Audience knows the calendar. 45-second narrated product demo for the help center. Actual feature: warns about overlapping bookings in the current calendar; it cannot inspect other calendars, and the user may override the warning. Footage shows a warning and the user choosing a different slot. Ending: the chosen slot saves; no claim that all conflicts are impossible. Body and format already accepted.\n"
+    },
+    "expected": [
+      "Produce two bounded openings with first visual and useful continuation, without rewriting the whole body or starting production.",
+      "Narrow the unsupported universal claim to the demonstrated warning and preserve meaningful limits.",
+      "Tie curiosity and continuation to real proof and the accepted ending; no forced CTA or claimed retention gain."
+    ]
+  },
+  {
+    "id": "video-silent-story-outline",
+    "skill": "write-video-script",
+    "installedSkills": [
+      "write-video-script"
+    ],
+    "prompt": "Write only a beat outline for the accepted brief in brief.md. I want to discuss the story before deciding on the final script.",
+    "files": {
+      "brief.md": "A quiet 90-second fictional animation for adults who enjoy reflective stories. No speech, no on-screen text, no sales goal. One character unsuccessfully tries to grow a plant in a dark corner, notices a patch of light, moves the pot, and eventually sees a new leaf. The passage of time should be clear. Gentle tone, room for observation; no slapstick or rapid cuts. We will choose the detailed visual treatment after discussing the story.\n"
+    },
+    "expected": [
+      "Use visible actions and causal progression in an outline, preserving the silent reflective format and intended time passage.",
+      "Resolve the promised change without compulsory narration, captions of nonexistent speech, CTA or arbitrary rapid-cut formula.",
+      "Keep detailed visual choices proposed for human discussion and timings estimated; do not claim audio playback or production-ready approval."
+    ]
+  },
+  {
+    "id": "video-route-script",
+    "skill": "write-video-script",
+    "invocation": "implicit",
+    "installedSkills": [
+      "plan-video",
+      "write-video-script",
+      "create-storyboard",
+      "create-motion-video",
+      "edit-video",
+      "create-voiceover"
+    ],
+    "shouldLoad": [
+      "write-video-script"
+    ],
+    "shouldNotLoad": [
+      "create-motion-video",
+      "create-voiceover",
+      "edit-video"
+    ],
+    "prompt": "Rewrite just the opening hook of this video script, leaving everything else alone. It is a 30-second silent tutorial for first-time users; on-screen text currently starts \"Welcome to this tutorial\" and the next shot shows how to pin a favorite item. End text already says \"Your favorite stays at the top.\" Give me two on-screen opening options only. No audio or production.",
+    "files": {},
+    "expected": [
+      "Select and actually load the scriptwriting skill, not production skills, for the bounded wording request.",
+      "Return two truthful on-screen openings compatible with the supplied action and payoff; no full storyboard, narration or repeated intake."
+    ]
+  },
+  {
+    "id": "video-full-youtube-script",
+    "skill": "write-video-script",
+    "installedSkills": [
+      "write-video-script"
+    ],
+    "prompt": "Write the complete narrated script and visual beats from brief.md, not an outline or a process recommendation. This draft is for me to review before storyboarding. You can make routine wording choices; the brief is accepted. Do not record, generate visuals or publish.",
+    "files": {
+      "brief.md": "Accepted: a roughly two-minute YouTube watch-page product tutorial for new desktop users of a focus timer called Interval. Goal: show one supported workflow. The user creates a 25-minute focus session, starts it, pauses it for an interruption, then resumes the remaining time. Supported facts: pausing stops the countdown; resuming continues the remaining time; it does not block websites, synchronize devices or guarantee productivity. Demo capture is planned but not supplied. Calm conversational English, useful opening, minimal screen text and exact voiceover words separate from stage directions. End by showing the resumed timer and explaining the user can pause again if needed. No sales CTA, testimonials or invented performance claims. Script wording still needs my confirmation.\n"
+    },
+    "expected": [
+      "Deliver a complete usable narration draft with exact words and visual beats across opening, useful continuation, body and resolved ending; no empty template, outline-only answer or deferral to another skill.",
+      "Correctly cover create/start/pause/resume and supported behavior without inventing features, UI labels or performance proof.",
+      "Keep narration separate from screen text/performance directions, with plausible explicitly estimated timing for the requested approximate length and room for demonstration.",
+      "Preserve accepted YouTube tutorial purpose and known answers, keep planned capture and wording confirmation open, and perform no production/publication."
+    ]
+  },
+  {
+    "id": "video-personal-channel-scripts",
+    "skill": "write-video-script",
+    "installedSkills": [
+      "write-video-script"
+    ],
+    "prompt": "Write both complete script drafts requested in brief.md, including exact spoken or on-screen words, visual beats and an ending. I will approve the words afterward. Do not just tell me how to adapt them.",
+    "files": {
+      "brief.md": "Accepted personal story, not advertising or expert advice. Owner source: I stopped painting for two years. Last month I found my old blue sketchbook. Last week I tried ten-minute sketches on three evenings and enjoyed painting again. Assets available according to owner: the sketchbook and three finished drawings; no footage of the two-year gap or the original discovery. Draft A: a roughly 40-second narrated TikTok post, gentle and conversational. Draft B: a roughly 30-second silent Instagram Reel with on-screen text carrying the story. Same honest payoff: enjoying a small return to painting. No follow/subscribe/sales CTA, health or habit guarantees, fabricated backstory or fake before/after footage. Framing is vertical for both; all timings are estimates until production.\n"
+    },
+    "expected": [
+      "Deliver two actual complete drafts, each with its own opening, progression, payoff and visual beats; do not relabel one generic script as both outputs.",
+      "TikTok has exact natural spoken wording; the Instagram Reel works silently through actual on-screen wording and visible beats, without forced narration.",
+      "Preserve the personal source facts and modest emotional payoff; identify staged/planned visuals and unavailable past footage without inventing biographical events, measured benefits or a sales CTA.",
+      "Keep requested timing approximate with a stated basis, maintain pending human wording approval and stop before production."
+    ]
+  },
+  {
+    "id": "clarify-video-before-script",
+    "skill": "write-video-script",
+    "installedSkills": [
+      "write-video-script"
+    ],
+    "prompt": "Write a video script from notes.md. I am not sure what direction makes sense yet.",
+    "files": {
+      "notes.md": "I built a small recipe app and also have stories about learning to cook with my grandfather. I might want a personal film for family or a public product video. Audience, purpose, channel, length, audio mode and which story to tell are undecided. There are recipe photos and real app recordings; do not invent family experiences or product features.\n"
+    },
+    "expected": [
+      "Ask a concise relevant set of questions that separates purpose, audience, format/destination and scope before writing the dependent full script.",
+      "Keep possible directions as options; do not choose a story/channel, supply a full script based on guessed answers, or imply that merely asking resolves the choices.",
+      "State what waits for the answers and retain questions/accepted answers in the existing conversation or brief; do not require another installed skill or start production."
+    ]
+  },
+  {
+    "id": "priority-review-defaults",
+    "skill": "review-writing",
+    "installedSkills": [
+      "review-writing"
+    ],
+    "prompt": "Review copy.md against facts.md. Return only supported findings and useful corrections, without rewriting the document or publishing. Use the supplied files only; no delegation.",
+    "files": {
+      "copy.md": "Every plan includes unlimited exports. The dashboard keeps completed exports in one place. This is very very useful.\n",
+      "facts.md": "Accepted product facts: Basic permits three exports per month; Plus permits ten. Neither permits unlimited exports. The dashboard lists completed exports. There is no house priority scale.\n"
+    },
+    "expected": [
+      "Label actionable findings with the fallback P0–P3 scale and an impact/urgency rationale plus next action; do not invent a critical P0 incident from a draft-copy defect.",
+      "Identify the unsupported unlimited-exports promise from supplied facts and prioritize its correction ahead of any supported minor wording issue; no filler finding is required.",
+      "Keep source evidence, proposed corrections and review limits clear; do not rewrite files, publish or fabricate independent review."
+    ]
+  },
+  {
+    "id": "priority-website-critique",
+    "skill": "write-website-copy",
+    "installedSkills": [
+      "write-website-copy"
+    ],
+    "prompt": "Critique the website hero in copy.md against brief.md. Report supported problems and useful corrections only; do not write a replacement hero, edit files, delegate or publish.",
+    "files": {
+      "copy.md": "Start your free trial instantly — no card or sales call needed.\nButton: Start free trial\nDestination: /book-demo\n",
+      "brief.md": "Accepted audience: small-team coordinators assessing the product. The actual offer is a scheduled sales demonstration. /book-demo opens a request form and creates no account or trial. No free-trial offer exists. Keep the tone direct. No project priority scheme has been established. This is a supplied copy draft; no rendered site is available.\n"
+    },
+    "expected": [
+      "Label supported website-copy findings with fallback P0–P3 priorities, rationale and next correction; do not require the absent review-writing sibling or invent a P0 live incident.",
+      "Identify the promise/CTA mismatch with the actual sales-demo destination, deduplicating its shared cause and using only supplied offer facts.",
+      "Deliver a bounded critique without a replacement hero, file edits, publication, fabricated rendering/interaction proof or independent-review claims."
+    ]
+  }
+]
