@@ -20,6 +20,8 @@ Validate cue order and bounds against the measured recording; recognition timest
 
 ## Capture and encode
 
+For a looping delivery, apply [loop-boundary checks](motion-direction.playbook.md#check-the-loop-boundary). Check state and movement across the wrap, encoded audio padding and actual GIF delays when relevant. Adjacent last/first frames need continuity; requiring identical images can introduce a held frame.
+
 Render exactly the expected indexed frames into a fresh run directory. Check missing/duplicate frames, capture errors and file validity; do not mix stale tails from a previous longer render. Reuse valid frames only when their inputs and indices still match. Check every subprocess status and the tool's reported findings, not only its exit code.
 
 For a compatible H.264 delivery, this is an example after substituting verified parameters; it is not a universal platform preset:

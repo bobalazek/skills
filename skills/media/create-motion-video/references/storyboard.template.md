@@ -16,4 +16,6 @@ Reuse accepted script and measured audio. Mark scratch/estimated cues; update de
 
 ## Animation handoff
 
+For a directed motion beat, record the dominant action, travel/scale, anticipation, curve or spring, settle time and frames around its peak. When music or SFX drives timing, give the visual and audio cue a shared event ID/time with an explicit offset; changing the event invalidates both consumers and their export evidence. Narration cues remain tied to the measured recording. These fields are optional when they do not affect the requested piece.
+
 Pass the brief, script/audio versions, frame ranges, layout/style rules, assets and exit states. Independent scenes need separate ownership/output paths. Final assembly waits for required inputs and checks every join. The storyboard is a preview artifact, not export or audio-sync proof.

@@ -17,6 +17,8 @@ Read the authoritative design contract, implemented tokens/themes/components, su
 
 Identify the recurring need, its owner and the smallest shared responsibility. Keep domain behavior in its feature unless sharing has a concrete purpose; a system should not accumulate hypothetical variants or abstraction layers.
 
+For external source, inspect the selected code, dependencies and intended-use licence before adoption. Fit its tokens/API to existing consumers and check keyboard/focus, touch, responsive and reduced-motion behavior. Preserve required notices. A component gallery, paid kit or vendor skill does not by itself justify a second theme, runtime or primitive layer.
+
 ## Define and build the contracts
 
 Define token meanings, component responsibilities, supported variants/states and usage rules. Introduce semantic names where themes or consumers need the distinction. Include content constraints, accessibility behavior, relevant controlled/uncontrolled behavior and supported platform differences.

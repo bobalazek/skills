@@ -31,6 +31,8 @@ For product screens, use authentic captures with demo data and a reproducible vi
 
 Read [the rendering playbook](references/code-rendering.playbook.md) for deterministic capture and assembly. Derive frames from explicit time/frame, configuration and a fixed seed rather than wall-clock playback. Preview a short section with a transition before a costly full render. Compose each requested aspect ratio deliberately.
 
+For directed product shots, UI morphs, character loops or music/SFX timing, read [motion direction](references/motion-direction.playbook.md). It covers numeric choreography, shared visual/audio events, beat rounding, loop closure and frame-specific repairs without imposing a new engine or soundtrack.
+
 Scenes may proceed independently only when shared timing, style, assets and entry/exit states are settled, with isolated ownership/output paths and an integration owner. Final assembly waits for required inputs. After a change, rerender affected frames where valid and invalidate dependent cues, captions, exports and evidence.
 
 Run file, asset, decode and stream checks first. Inspect a contact sheet covering all beats and boundaries, then play the actual encode at normal speed and destination size. Check readable holds, continuity, explanation and captions; listen to applicable pronunciation, sync and mix. Repair concrete defects and repeat affected checks within budget. A successful command or still image cannot establish unobserved playback or audio quality.
