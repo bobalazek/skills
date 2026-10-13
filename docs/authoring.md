@@ -115,7 +115,7 @@ For PR work, include the independent review and criterion-linked proof when open
 
 Every workflow needs a way to evaluate its own result. A planning workflow can walk scenarios and check decision readiness; a code fix needs observed behavior; a visible change needs rendered inspection; a measured improvement needs a comparable baseline. Declare the useful signal and report its actual outcome. Do not require screenshots, benchmarks, or a separate report where they cannot establish the claim. For changed behavior, preserve useful evidence during the work and carry it into review or delivery. Reassess evidence after edits instead of publishing stale results.
 
-Use `evaluate-skill` for behavioral comparisons. The checked-in [regression cases](../evals/cases.json) and [trial procedure](evaluation.md) cover known failures and boundaries; execute affected cases before acceptance, keeping expected outcomes out of the executor context.
+Use `evaluate-skill` for behavioral comparisons. The checked-in [regression cases](../evals/cases/README.md) and [trial procedure](evaluation.md) cover known failures and boundaries; execute affected cases before acceptance, keeping expected outcomes out of the executor context.
 
 Compare against the agent without the skill or a fixed previous version when claiming an improvement. Validate scripts with meaningful failure cases. Verify client discovery/installation independently; do not infer compatibility from a valid Markdown file or advertise untested client support.
 

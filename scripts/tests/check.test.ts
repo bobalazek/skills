@@ -126,6 +126,13 @@ test("rejects mismatched names and invalid YAML", () => {
   expect(audit(root).errors.join("\n")).toContain("invalid YAML");
 });
 
+test("checks eval documentation links and accepts their repaired targets", () => {
+  write(join(root, "evals/README.md"), "[recipes](cases/README.md)\n");
+  expect(audit(root).errors.join("\n")).toContain("evals/README.md: broken/outside local link");
+  write(join(root, "evals/cases/README.md"), "# Recipes\n");
+  expect(audit(root).errors).toEqual([]);
+});
+
 test("requires catalog coverage and catches whitespace", () => {
   write(join(root, "docs/domains/engineering.md"), "# Catalog\n");
   write(entry, valid + "trailing space \n");

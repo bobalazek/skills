@@ -4,7 +4,7 @@ This tests a real persisted Codex session after source changes. It does not simu
 
 ## Raw fixture and requests
 
-Reuse the `resume-feedback-assessment` case in [the catalog](../cases.json), but omit `HANDOFF.md`. Before the first turn, replace `src/total.py` with:
+Reuse the `resume-feedback-assessment` case in [the catalog](../cases/README.md), but omit `HANDOFF.md`. Before the first turn, replace `src/total.py` with:
 
 ```python
 def total(items):

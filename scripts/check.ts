@@ -136,9 +136,12 @@ export function audit(inputRoot: string) {
   for (const entry of packages) {
     if (!catalogTargets.has(realpathSync(entry))) fail(entry, "absent from domain catalogs");
   }
-  const markdown = [join(root, "README.md"), ...files(join(root, "docs")), ...allSkillFiles].filter(
-    (path) => extname(path) === ".md",
-  );
+  const markdown = [
+    join(root, "README.md"),
+    ...files(join(root, "docs")),
+    ...files(join(root, "evals")),
+    ...allSkillFiles,
+  ].filter((path) => extname(path) === ".md");
   for (const path of markdown) {
     if (!existsSync(path)) {
       fail(path, "missing document");

@@ -1,5 +1,15 @@
 import { createHash } from "node:crypto";
-import { closeSync, cpSync, mkdirSync, openSync, readFileSync, realpathSync, writeFileSync } from "node:fs";
+import {
+  closeSync,
+  cpSync,
+  mkdirSync,
+  openSync,
+  readdirSync,
+  readFileSync,
+  realpathSync,
+  statSync,
+  writeFileSync,
+} from "node:fs";
 import { homedir } from "node:os";
 import { basename, dirname, isAbsolute, join, resolve } from "node:path";
 import { parseArgs } from "node:util";
@@ -75,6 +85,17 @@ export function parseCases(value: unknown): EvalCase[] {
       fail(`Contradictory activation criteria: ${item.id}`);
   }
   return value as EvalCase[];
+}
+
+export function loadCases(path: string): EvalCase[] {
+  const paths = statSync(path).isDirectory()
+    ? readdirSync(path)
+        .filter((name) => name.endsWith(".json"))
+        .sort()
+        .map((name) => join(path, name))
+    : [path];
+  const cases = paths.flatMap((file) => parseCases(JSON.parse(readFileSync(file, "utf8"))));
+  return parseCases(cases);
 }
 
 export function selectCases(cases: EvalCase[], selection: string) {
@@ -232,7 +253,7 @@ export async function main(args = Bun.argv.slice(2)) {
       baseline: { type: "string" },
       cases: { type: "string" },
       output: { type: "string" },
-      fixtures: { type: "string", default: resolve(import.meta.dir, "../evals/cases.json") },
+      fixtures: { type: "string", default: resolve(import.meta.dir, "../evals/cases") },
       repeat: { type: "string", default: "1" },
       timeout: { type: "string", default: "180" },
       model: { type: "string" },
@@ -242,12 +263,12 @@ export async function main(args = Bun.argv.slice(2)) {
   });
   if (!values.candidate || !values.cases || !values.output)
     fail(
-      "Usage: bun run eval --candidate <source> --cases <id,id> --output <new-directory> [--baseline <source>] [--repeat 1..3] [--timeout 1..600] [--model <id>] [--fixtures <file>] [--retain-session]",
+      "Usage: bun run eval --candidate <source> --cases <id,id> --output <new-directory> [--baseline <source>] [--repeat 1..3] [--timeout 1..600] [--model <id>] [--fixtures <file-or-directory>] [--retain-session]",
     );
   const sources: Record<string, string> = values.baseline
     ? { baseline: values.baseline, candidate: values.candidate }
     : { candidate: values.candidate };
-  const selected = selectCases(parseCases(JSON.parse(readFileSync(values.fixtures, "utf8"))), values.cases);
+  const selected = selectCases(loadCases(values.fixtures), values.cases);
   const repeat = boundedInteger(values.repeat, 3);
   const timeoutMs = boundedInteger(values.timeout, 600) * 1000;
   if (selected.length * repeat * Object.keys(sources).length > 60)
