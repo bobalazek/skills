@@ -1,0 +1,4 @@
+interface:
+  display_name: "Define brand positioning"
+  short_description: "Ground brand positioning in audience and offer evidence"
+  default_prompt: "Use $define-brand-positioning to compare positioning options from these offer facts and audience sources, then prepare a brief with the promise, proof limits and unresolved choices."

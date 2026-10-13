@@ -34,6 +34,11 @@ For a software feature, expand the [idea-to-delivery preview](../README.md#from-
 - [Design a flow or interface](workflows/ui-ux.md#specify-and-design): accepted behavior → user flow → screen structure → visual detail → rendered assessment. Start at the missing result.
 - [Plan a website across content and design](workflows/content.md#plan-and-write-a-product-page): page purpose and facts → reconciled copy and layout → implementation when requested.
 
+## Brand — define positioning and visual identity
+
+- [Define or refine a brand](workflows/brand.md): actual offer and audience evidence → positioning; accepted meaning and retained assets → requested visual identity.
+- [Continue into writing or interfaces](workflows/brand.md#continue-into-writing-or-interfaces): accepted brand decisions → the next requested voice, page or shared-system output.
+
 ## Content — write and improve the words
 
 <a id="plan-and-write-a-product-page"></a>

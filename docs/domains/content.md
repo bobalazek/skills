@@ -15,6 +15,8 @@ This domain owns audience-facing messages, writing-voice conventions and written
 
 ## Boundaries and use
 
+[Brand](brand.md) owns positioning and visual identity. `define-writing-voice` captures language conventions from accepted context and representative writing; it does not choose the brand's market position or create visual assets.
+
 `define-writing-voice` captures reusable style from supplied text, blog posts, a blog or social account and explicit preferences. It asks for missing representative sources, reports inspected coverage, and keeps observed traits separate from proposed or accepted choices. Reuse an existing guide or save in the consuming project's `docs/voice.md`; link it from the docs index rather than copying it into agent instructions. Traits such as dry, witty, sarcastic or professional need examples and boundaries. Tone adapts to the audience, channel, language and situation.
 
 `plan-landing-page` settles what a page needs to say and prove. `write-website-copy` produces the requested words, including a small rewrite that needs no new plan. Reuse accepted product facts and content; a content draft cannot establish demand, user comprehension or conversion lift.

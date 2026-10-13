@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design brand identity"
+  short_description: "Develop visual identity and usable brand asset rules"
+  default_prompt: "Use $design-brand-identity to develop the requested visual identity from this accepted brief, preserving retained assets and checking the actual uses and exports in scope."

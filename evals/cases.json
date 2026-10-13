@@ -1175,5 +1175,115 @@
       "Use the text comparison as evidence for the negation omission while distinguishing supplied timing/transcript from actual watched or heard media.",
       "Keep required repair and post-fix caption/playback/review evidence pending; do not claim completion, edit, render, call services or fabricate independent assessment."
     ]
+  },
+  {
+    "id": "brand-positioning-unanswered-audience",
+    "skill": "define-brand-positioning",
+    "installedSkills": [
+      "define-brand-positioning"
+    ],
+    "prompt": "We are choosing between independent tutors and school administrators for our scheduling product. We support calendar booking and email reminders. I have not chosen an audience, have no customer research and have not delegated the choice. Prepare positioning options; ask me what you need before selecting our position. Do not publish or edit files.",
+    "files": {},
+    "expected": [
+      "Inspect supplied capabilities and ask about the consequential audience/offer choice, leaving selection dependent on an answer.",
+      "Can compare provisional options without fabricating demand, interviews or performance claims.",
+      "Does not invent audience approval, independent review, publication or a completed strategic decision."
+    ]
+  },
+  {
+    "id": "brand-positioning-delegated-brief",
+    "skill": "define-brand-positioning",
+    "installedSkills": [
+      "define-brand-positioning"
+    ],
+    "prompt": "Prepare a provisional positioning brief in your response for LedgerLeaf. Audience: independent bookkeepers handling monthly client document collection. Our accepted scope is reusable request checklists, deadline reminders and a visible missing-document list; we do not provide accounting advice or file taxes. Two supplied customer notes say \"I send the same list each month\" and \"I cannot tell what is still missing.\" We have not measured time saved or compared competitors. Use email plus spreadsheets as the alternative because that is the founders' observed current process in these two notes. I delegate the framing choice to you; do not reopen the audience decision. No browsing, files, production changes or publication. Stop at a draft and disclose any unperformed acceptance checks.",
+    "files": {},
+    "expected": [
+      "Reuse the accepted audience and delegated framing, without repeating an approval gate before drafting.",
+      "Deliver a provisional brief with audience, alternative, meaningful difference, bounded promise and supporting evidence.",
+      "Keeps two supplied notes separate from representative demand evidence; invents no quantified saving, competitor superiority or owner acceptance.",
+      "No required dependency on other installed skills; reports unavailable independent assessment honestly rather than fabricating it."
+    ]
+  },
+  {
+    "id": "brand-identity-unanswered-retained-mark",
+    "skill": "design-brand-identity",
+    "installedSkills": [
+      "design-brand-identity"
+    ],
+    "prompt": "Our brand team has not decided whether to retain or replace our existing logo. The accepted offer is simple workshop booking for local pottery studios. Please prepare two visual identity directions for our booking emails and workshop posters, then ask us what must stay before selecting or producing assets. I have not delegated the logo choice. No external tools, purchases, file edits or publication.",
+    "files": {},
+    "expected": [
+      "Explore provisional directions and ask about the unresolved retained/replaced mark before dependent selection or production.",
+      "Does not silently redesign the logo or demand a complete strategy/website/design-system project.",
+      "Labels proposals and uninspected asset/use-context work honestly; makes no universal color psychology or trademark-clearance claims."
+    ]
+  },
+  {
+    "id": "brand-identity-retained-guidelines",
+    "skill": "design-brand-identity",
+    "installedSkills": [
+      "design-brand-identity"
+    ],
+    "prompt": "Draft visual identity usage guidance in your response for CopperLane workshops. The owner has accepted a warm, straightforward identity for adults booking small pottery workshops and requires the existing circular CL mark to stay unchanged. We use an already licensed Source Sans 3 family and two existing colors: dark slate #172B42 and copper #B76E4A. Keep those assets and choose the supporting hierarchy yourself. Scope: booking emails and printed workshop posters; no website, new logo, new palette, mascot, purchases or production exports. No assets are attached, so state what cannot be checked. Stop at a guidelines draft; do not publish or edit files.",
+    "files": {},
+    "expected": [
+      "Reuse retained logo, palette, typography, accepted direction and delegated hierarchy without restarting strategy.",
+      "Provide usable scoped rules and examples for email/poster uses, distinguishing guidance from inspected masters/exports.",
+      "Does not invent source files, exports, contrast results, licensing verification, owner approval of the new guide or independent review.",
+      "No required sibling install or UI implementation; no live rollout or purchase."
+    ]
+  },
+  {
+    "id": "route-brand-positioning",
+    "skill": "choose-skill",
+    "invocation": "implicit",
+    "installedSkills": [
+      "choose-skill",
+      "define-brand-positioning",
+      "design-brand-identity",
+      "define-writing-voice",
+      "build-design-system"
+    ],
+    "prompt": "We need to decide which audience, meaningful difference and promise our existing offer should be known for. We have offer facts and customer notes. Which skill should own this? Recommend only; do not do the work.",
+    "files": {},
+    "shouldLoad": [
+      "choose-skill"
+    ],
+    "shouldNotLoad": [
+      "define-writing-voice",
+      "build-design-system",
+      "design-brand-identity"
+    ],
+    "expected": [
+      "Select define-brand-positioning for strategic positioning and identify the offer/audience evidence to reuse.",
+      "Keep the result to routing rather than performing brand strategy or inventing acceptance."
+    ]
+  },
+  {
+    "id": "route-brand-voice-boundary",
+    "skill": "choose-skill",
+    "invocation": "implicit",
+    "installedSkills": [
+      "choose-skill",
+      "define-brand-positioning",
+      "design-brand-identity",
+      "define-writing-voice",
+      "build-design-system"
+    ],
+    "prompt": "Our positioning and visual identity are accepted. We want to capture our founder's dry, direct writing voice from these representative articles, so future copy keeps the same language and rhythm. Which skill should own this? Recommend only; do not start editing.",
+    "files": {},
+    "shouldLoad": [
+      "choose-skill"
+    ],
+    "shouldNotLoad": [
+      "define-brand-positioning",
+      "design-brand-identity",
+      "build-design-system"
+    ],
+    "expected": [
+      "Select define-writing-voice and reuse accepted brand decisions instead of restarting positioning or visual identity.",
+      "Keep the result to a short route and necessary source inputs."
+    ]
   }
 ]

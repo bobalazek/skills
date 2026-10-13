@@ -2,7 +2,7 @@
 
 Choose the next missing result, then read the relevant domain below. Names identify packages in this collection; availability depends on the installed selection. No sibling package is required to read this map.
 
-[Productivity](#productivity) · [Product](#product) · [Engineering](#engineering) · [UI/UX](#uiux) · [Content](#content) · [Media](#media)
+[Productivity](#productivity) · [Product](#product) · [Engineering](#engineering) · [Brand](#brand) · [UI/UX](#uiux) · [Content](#content) · [Media](#media)
 
 ## Productivity
 
@@ -88,6 +88,13 @@ Choose the next missing result, then read the relevant domain below. Names ident
 | A video script, outline, hook or ending | `write-video-script` | Develop supported words, story progression and payoff; stop at the requested writing scope, before recording or rendering |
 | Writing-quality findings or a requested prose cleanup | `review-writing` | Quote concrete problems or make the requested edits while preserving meaning and voice; no AI-authorship verdict |
 
+## Brand
+
+| Requested result | Skill | Boundary |
+| --- | --- | --- |
+| An evidence-grounded audience, difference and brand promise | `define-brand-positioning` | Define strategic positioning; a coherent brief does not prove demand or replace writing-voice work |
+| Visual identity, usage rules or requested brand assets | `design-brand-identity` | Reuse accepted meaning and retained assets; screen composition and shared UI foundations have separate owners |
+
 ## Media
 
 | Requested result | Skill | Boundary |
@@ -113,6 +120,7 @@ Use these when several outputs could fit. Alternatives are not a mandatory seque
 | "Make this project AI-friendly" | `prepare-repo-for-agents` for discoverable existing guidance; `document-project` for missing factual knowledge; `design-architecture` when the request is an AI product capability |
 | "Design this feature" | `model-domain` for unclear business concepts; `design-architecture` for technical boundaries; `map-user-flows` for the journey; `create-wireframes` for unresolved screen structure; `design-interface` for visual detail; shared repeated needs can justify `build-design-system` |
 | "Improve this product landing page" | `plan-landing-page` for unsettled message/content needs; `write-website-copy` for the words; `design-interface` for visual detail; `analyze-product-usage` for interpreting existing website observations |
+| "Define our brand" | `define-brand-positioning` for audience, difference and promise; `design-brand-identity` for visual identity and asset rules; `define-writing-voice` for reusable language conventions. Reuse accepted parts rather than restarting strategy |
 | "Write a social post" | `create-carousel` only for an exported panel sequence. A text-only post has no dedicated drafting package: describe the plain action. `review-writing` can assess existing prose |
 | "Run a software factory from our accepted backlog" | `manage-project-board` for ongoing coordination and bounded ready pickup; `create-tasks` for missing task contracts. Actual workers, isolation and execution authority come from the host |
 | "Review this" | `challenge-proposal` for unresolved proposal choices; `review-code` for code findings; `review-interface` for rendered experience; `review-writing` for prose quality; `explain-pr` for an explanation rather than an assessment |

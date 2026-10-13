@@ -24,6 +24,8 @@ Include relevant choices for perspective (`I`, `we`, audience address), vocabula
 
 ## Tone by situation
 
+When a founder and company both publish, keep the speaker and applicable profile explicit. Distinguish the person's experience/opinion from an authorized company claim or commitment; maintain shared facts while adapting tone. A joint brand story does not authorize invented first-person anecdotes or disclosure of private material.
+
 | Audience/channel/situation | Useful adjustment | Meaning or behavior to protect |
 | --- | --- | --- |
 | Blog, social post, product page, support, error or other relevant situation | How direct, warm, playful or formal to be, with an example when useful | Factual limits, reader needs, supported recovery, approved legal text |

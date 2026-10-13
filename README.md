@@ -1,6 +1,6 @@
 # Skills
 
-68 skills for developing software, evaluating products, coordinating work, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
+70 skills for developing software, evaluating products, coordinating work, defining brands, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
 
 Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear. The collection is under active development; [releases](https://github.com/bobalazek/skills/releases) record reviewed snapshots and evaluation limits.
 
@@ -38,6 +38,7 @@ From a checkout, you can also ask a filesystem-capable agent to use `skills/engi
 | [Engineering · 28 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, monitor, and maintain it |
 | [Product · 6 skills](docs/domains/product.md) | Evaluate ideas, synthesize feedback, compare alternatives, define success measures, plan experiments, and analyze product usage |
 | [Productivity · 12 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose and coordinate work, route requests, improve prompts and team workflows, report status, and transfer context |
+| [Brand · 2 skills](docs/domains/brand.md) | Define evidence-grounded positioning and develop visual identity, usage rules and requested assets |
 | [UI/UX · 8 skills](docs/domains/ui-ux.md) | Capture design references, map flows and navigation, wireframe and design screens, write interface messages, build shared systems, review interfaces, and test usability |
 | [Content · 6 skills](docs/domains/content.md) | Define a writing voice, plan page content, write website copy, blog posts and video scripts, and review prose for clarity and supported meaning |
 | [Media · 8 skills](docs/domains/media.md) | Plan video concepts and storyboards, render motion graphics, edit footage, record narration, capture product screens, build decks and produce carousels |
@@ -53,6 +54,8 @@ Each catalog lists skills by category, with their outputs and boundaries.
 | Begin working in an inherited project | [onboard-codebase](skills/engineering/onboard-codebase/SKILL.md) |
 | Establish folder structure, naming and Git conventions before planning or coding | [define-project-conventions](skills/engineering/define-project-conventions/SKILL.md) |
 | Define a feature's required behavior | [write-spec](skills/engineering/write-spec/SKILL.md) |
+| Define an offer's brand position and supporting proof | [define-brand-positioning](skills/brand/define-brand-positioning/SKILL.md) |
+| Develop or refine visual identity and brand assets | [design-brand-identity](skills/brand/design-brand-identity/SKILL.md) |
 | Plan what a product page needs to say and prove | [plan-landing-page](skills/content/plan-landing-page/SKILL.md) |
 | Write or revise the words on a website | [write-website-copy](skills/content/write-website-copy/SKILL.md) |
 | Turn source material into a blog post | [write-blog-post](skills/content/write-blog-post/SKILL.md) |

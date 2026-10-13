@@ -27,6 +27,8 @@ For a detailed handoff, use [screen and state requirements](references/screen.te
 
 Reuse existing components and patterns before proposing additions. Identify a shared need without turning one screen into a new design system. If implementation is requested, follow local code conventions and verify the rendered result.
 
+When an external component or pattern would fill a specific gap, [component sources](references/component-sources.playbook.md) lists task-specific candidates and adoption checks. Use it for discovery; preserve the target's framework, tokens and component behavior.
+
 When motion is requested or needed to explain a consequential transition, read [motion decisions and checks](references/motion.playbook.md). Define its purpose, repetition and interruption behavior before selecting an effect; keep state and task completion usable with reduced or unavailable motion.
 
 When the requested fidelity allows it, a small local HTML/CSS prototype with SVG can be an editable fallback. Use synthetic data and only interactions needed for the design question, reusing product components where applicable. Label static controls, simulated services and native/platform behavior it cannot establish. Connected drawings alone do not demonstrate navigation, validation or recovery.
