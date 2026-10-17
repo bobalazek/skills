@@ -35,6 +35,8 @@ For phased or parallel work, verify accepted prerequisite outputs before their c
 
 Use [evidence selection and reporting](references/verification.template.md) when choosing or recording the evidence types. For feature, journey or release QA, add [test boundaries and risk checks](references/behavior-checks.checklist.md) to select unit, integration, contract and viable end-to-end proof. Acceptance can reuse these checks without a duplicate suite. Derive coverage from the product and changed risks, not a fixed website checklist; missing access or unclear expected behavior remains explicit.
 
+For a launch, production-readiness assessment or selected hardening finding, use [production-readiness checks](references/production-readiness.checklist.md) as the comprehensive owner. Select only product/contract/risk-applicable criteria and record their outcomes, evidence, owners and gaps in the existing result. Ordinary leaf changes retain their scoped behavior checks; this catalog does not require new enterprise features, services or a purchase.
+
 Record the actual command or interaction, prerequisites, input/state, environment, observation and result. Keep failed attempts and changed conditions distinguishable from final results. Compare like with like: fixture, role, viewport, workload and configuration where they affect the claim. Explain unavoidable differences, repeat noisy measurements enough to assess variation, and preserve failures and important neighboring behavior.
 
 ### Optional command evidence
