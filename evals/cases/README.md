@@ -1,6 +1,6 @@
 # Read-only case inventory
 
-Each JSON file contains an array of requests, minimal input files and evaluator expectations for skills in its owning domain. All case IDs and content are retained from the former `evals/cases.json` catalog.
+Each JSON file contains an array of requests, minimal input files and evaluator expectations for skills in its owning domain. The original 75 case IDs and contents are retained from the former `evals/cases.json` catalog; new recipes are added by domain.
 
 | Domain | Recipes | Distinct owning skills |
 | --- | --- | --- |
