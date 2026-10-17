@@ -177,5 +177,73 @@
       "Use the text comparison as evidence for the negation omission while distinguishing supplied timing/transcript from actual watched or heard media.",
       "Keep required repair and post-fix caption/playback/review evidence pending; do not claim completion, edit, render, call services or fabricate independent assessment."
     ]
+  },
+  {
+    "id": "video-buyer-outcome-and-proof",
+    "skill": "plan-video",
+    "installedSkills": [
+      "plan-video"
+    ],
+    "prompt": "Prepare one recommended concept with a title/thumbnail idea and a compact production brief from brief.md. The goal and buyer are accepted; choose routine creative details and explain the tradeoff. Include how we should judge the pilot. No full script, production, paid distribution, upload or outreach.",
+    "files": {
+      "brief.md": "Accepted goal: get qualified demo requests from support operations leads who supervise at least five agents and need to inspect overdue requests. Product: the fictional Queueboard app filters existing requests by owner and overdue status. Available: authentic screen recording of those filters and a presenter who can explain the workflow. No measured time saved, revenue data, customer case studies or credentials. Two hours available for this pilot. English, roughly 45 seconds, a public professional feed, conversational and specific. Actual next action: a demo request form at the supplied relative route /request-demo; it is not a free trial or immediate signup. We can count form submissions and record qualifying answers, but have no CRM revenue attribution yet. Owner inspiration says chase maximum views and establish expertise with a 4x result screenshot or impressive costume; these are suggestions, not available evidence.\n"
+    },
+    "expected": [
+      "Choose a buyer-relevant question, objection or decision and feasible proof from the actual filtering workflow; broader reach can be diagnostic but cannot displace the accepted qualified-demo goal.",
+      "Give complementary honest title/image intent, an opening that confirms the premise, useful continuation and a feasible payoff without claiming finished assets or writing the entire script.",
+      "Use the supplied demo-request action accurately; do not invent a 4x result, case study, credentials, costume-based authority, free trial or revenue attribution.",
+      "Define qualified submission measurement using the supplied criteria and keep unavailable revenue attribution unknown; bound the pilot to capacity and preserve no-production/no-outreach authority."
+    ]
+  },
+  {
+    "id": "video-entertainment-original-format",
+    "skill": "plan-video",
+    "installedSkills": [
+      "plan-video"
+    ],
+    "prompt": "Suggest three genuinely different short entertainment concepts using brief.md, recommend one and give a useful way to judge the pilot. Keep this to concepts, format and payoff. I will choose afterward. No scripts, generation, production, publication or messaging.",
+    "files": {
+      "brief.md": "Accepted goal: entertain people who enjoy small visual jokes; no sales objective. Subject: an ordinary pencil. A roughly 20-second silent feed video with optional readable on-screen text. Available clips described by owner: a pencil rolling off a desk, a blank notebook lying on the desk, and a hand lifting the notebook to reveal another pencil underneath. We may shoot simple additional tabletop actions in one afternoon. No actors or paid assets. A comic resolution should make sense in one viewing. Suggestions from a trend note: copy a celebrity catchphrase and provoke comment wars because the algorithm pushes them. These are reference suggestions, not accepted direction or verified performance evidence. We can inspect completion and sharing after publication but have no audience baseline yet.\n"
+    },
+    "expected": [
+      "Offer distinct comic situations, questions or rewards within feasible formats rather than three titles/crops for the same concept, and recommend based on fit and production cost while leaving owner choice open.",
+      "Use the mundane object and an original reveal, contrast or action as material; do not require product promotion, expert teaching or a CTA.",
+      "Keep celebrity imitation, copied distinctive language and manufactured controversy out of the proposed mechanism; do not assert algorithm preference, dopamine effects or guaranteed virality.",
+      "Keep owner-described footage separate from inspected media, preserve one-viewing resolution and capacity, and propose observed completion/sharing as limited pilot signals rather than existing measured success."
+    ]
+  },
+  {
+    "id": "carousel-teaching-payoff-without-cta",
+    "skill": "create-carousel",
+    "installedSkills": [
+      "create-carousel"
+    ],
+    "prompt": "Write the exact ordered copy and visual intent for a five-panel teaching carousel from source.md. This is a general layout outline, not a destination-ready export; I will choose the tool and platform later. Keep it complete without a follow, save, signup or sales CTA. Include per-panel text alternatives. Do not render, publish or contact anyone.",
+    "files": {
+      "source.md": "Accepted audience: first-time users of the fictional photo app Pinboard. Supported workflow: create an empty album using New album, name it, then add existing photos using Add photos. Adding photos requires an existing album. The original files stay in their existing folder; this album only groups their references. Album names can be changed later. No evidence about time saved or productivity. Intended result: a named album with the chosen photos and a clear understanding that originals have not moved. Owner tone: plain and friendly. No CTA or download offer exists.\n"
+    },
+    "expected": [
+      "Deliver exactly five panels with actual ordered copy, useful visual intent and text alternatives, at outline fidelity without claiming rendered readability or destination compatibility.",
+      "Use a truthful cover and make the first content panel start useful explanation/action rather than repeat the cover teaser; preserve album creation before adding photos.",
+      "Close with the promised grouping result and the original-file limit; no arbitrary best-point-second order, unsupported performance claim or forced final action.",
+      "Remain usable with only the carousel package and the supplied facts, with no mandatory video planning, separate voice guide or production tool."
+    ]
+  },
+  {
+    "id": "video-short-cut-qualified-payoff",
+    "skill": "edit-video",
+    "installedSkills": [
+      "edit-video"
+    ],
+    "prompt": "Give me the smallest edit selection plan for a self-contained 25-35 second teaching clip from transcript.md. Source times are owner supplied, not measured by you. Select ranges and explain how opening, useful continuation and ending work. Only a transcript is available, so do not claim to have watched, heard, encoded or verified an export. Do not write new narration, produce media, publish or message anyone.",
+    "files": {
+      "transcript.md": "Owner-described single source file tutorial.mp4, seconds from source start. [0,5) Welcome and logo. [5,11) Select the Requests dataset before filtering, because each dataset has its own fields. [11,18) Choose status Open to show only open requests. [18,23) Export CSV writes only the rows in this filtered view. [23,30) The CSV is a snapshot: later source changes do not update it. [30,36) A different dataset may expose different filters. [36,41) Subscribe and follow for more tutorials. Accepted clip purpose: show new users one complete filtering/export workflow with its snapshot limit. No marketing CTA. No playback or actual media attached. The owner wants a brisk edit but enough time to see each action.\n"
+    },
+    "expected": [
+      "Provide a bounded traceable selection plan with explicit owner-supplied source ranges and estimated output placement/duration, not an export or invented inspection proof.",
+      "Preserve dataset selection before filtering before export and keep the CSV snapshot qualification with the result; neither the fastest opening nor a teaser justifies removing the teaching prerequisite or limit.",
+      "Describe an intelligible opening, first useful action and complete ending at a feasible estimated 25-35 seconds; exclude the unrequested follow CTA without recutting unrelated content.",
+      "Name unavailable playback, sound, join, framing and caption checks as applicable production gaps; do not start media work or require installing sibling packages."
+    ]
   }
 ]

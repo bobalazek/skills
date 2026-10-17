@@ -4,6 +4,7 @@ Use the existing record at the requested fidelity. Checked means demonstrated wi
 
 ## Intent and coverage
 
+- [ ] Opening words/picture/text establish one supported promise; the first useful continuation and payoff map to actual shots or named gaps without repeated empty teasers.
 - [ ] Video type, goal, audience, destination and accepted script/brief are preserved; material missing choices were raised.
 - [ ] Each shot has a narrative job and identifiable opening, action and ending states.
 - [ ] All important actions, proof and payoff beats have coverage or explicit production gaps; reframing does not conceal missing events.

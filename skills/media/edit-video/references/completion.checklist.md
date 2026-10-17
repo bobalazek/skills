@@ -8,6 +8,7 @@ Use the existing edit record and requested scope; a caption repair need not reop
 - [ ] Originals and source identities are preserved; actual tracks, timing basis, orientation and duration were inspected.
 - [ ] Selected passages retain meaning, context and qualifiers, with unambiguous source occurrences.
 - [ ] Every required action, demonstration and payoff has inspected coverage or a named gap.
+- [ ] The opening/packaging promise, first useful continuation and complete ending agree; tightening or teasing has not removed prerequisites, proof conditions or the payoff.
 
 ## Timeline and sound
 

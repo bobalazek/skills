@@ -7,6 +7,7 @@ Apply to the requested scope in the existing result record. Check only demonstra
 - [ ] The original request, intended viewer/reward and stopping point remain intact.
 - [ ] Proposed concepts differ in premise or reward; variants are identified as variants.
 - [ ] The recommendation explains its fit and main constraint without inventing acceptance.
+- [ ] Topic, depth and payoff serve the accepted primary goal; any proposed performance measure distinguishes that outcome from attention or engagement proxies.
 - [ ] Material discovery questions were answered, explicitly delegated or left open; the human's concept/promise choice is recorded before dependent work.
 - [ ] Open questions identify the script, board or production step that must wait; asking has not been treated as receiving an answer.
 - [ ] The brief preserves useful options, rationale, accepted changes and the next unresolved checkpoint without duplicating private chat.
