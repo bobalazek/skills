@@ -6,6 +6,7 @@ This is an index of recorded behavioral evidence. It is not code coverage, a cur
 
 | Record | Scope and limits |
 | --- | --- |
+| [Development readiness, 17 October 2026](results/development-readiness-2026-10-17.md) | Two focused `verify-change` and two Corco synthetic candidate-only trials; source-loaded execution and independent assessment, without automatic-activation, client or compliance claims |
 | [Social content, 17 October 2026](results/social-content-2026-10-17.md) | Six synthetic candidate-only draft/plan trials; 23 original criteria pass and one non-material partial remains; corrected timing count and failed CLI startup are retained |
 | [Runner smoke, 13 October 2026](results/runner-smoke-2026-10-13.md) | Two selected read-only Codex cases; six criteria independently assessed, with exact runner identity and retained trace limits |
 | [Engineering, 10–11 October 2026](results/engineering-2026-10-10-11.md) | Selected routing, evaluation and engineering trials; retains failures, corrections, source identities and untested scope |
