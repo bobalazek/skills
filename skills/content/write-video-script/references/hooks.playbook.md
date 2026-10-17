@@ -8,7 +8,7 @@ Write down what the viewer expects from the title/cover or opening frame, and wh
 
 ## 2. Make the hook understandable
 
-Give the viewer an intelligible subject, a reason it matters to them and a credible reason to continue. Remove delayed context, ambiguous references, irrelevant stakes and curiosity with no substance. Prefer concrete action or language to a credential introduction. Curiosity may come from an unanswered question, an action in progress, a useful demonstration or a supported contrast.
+Give the viewer an intelligible subject, a reason it matters to them and a credible reason to continue. Lead with what is happening and why this viewer would care; add who/how when real proof or explanation helps, and setting when it matters. Remove delayed context, ambiguous references, irrelevant stakes and curiosity with no substance. Prefer concrete action or language to a credential introduction. Curiosity may come from an unanswered question, an action in progress, a useful demonstration or a supported contrast. Match the speed to the piece rather than imposing universal two-second or twenty-second gates.
 
 | Opening choice | Use when | What must be real |
 | --- | --- | --- |
@@ -26,6 +26,19 @@ Write the first visual, spoken opening and optional on-screen text together. The
 ## 4. Write the immediate continuation
 
 After attracting attention, show why staying is worthwhile. Deliver a first useful step, real proof, a consequence or necessary context. A tutorial can go straight into the first step; a story can follow the opening action's consequence. Avoid restarting the hook, stretching a credential preamble or chaining empty teasers. Address a real objection if it blocks understanding, without inventing an objection merely to use a formula.
+
+Choose the continuation that the material can support:
+
+| Available substance | Useful continuation | Check |
+| --- | --- | --- |
+| A demonstrated result | Show the relevant evidence or begin the test that establishes it. | Preserve conditions, source and limits; a proposed screenshot or invented number is not proof. |
+| A desired experience | Make the change concrete through an observable action or honest personal account. | An emotional possibility does not become a guaranteed outcome. |
+| A supported contrast | Show the practical difference between two approaches. | Both approaches are represented fairly; a compulsory “but” adds nothing. |
+| A useful method | Name it plainly and show the first operation. | An invented label does not substitute for explanation or outside validation. |
+| A real objection | Resolve the specific constraint that blocks the next step. | Keep any remaining limit visible. |
+| A simple premise worth clarifying | Restate it more concretely, then act on it. | Stronger wording does not enlarge the underlying claim. |
+
+The title/cover promise should become recognizable in the opening and receive its actual answer later or progressively. In a tutorial, delivering the answer immediately can be the right opening; curiosity does not require withholding it.
 
 ## 5. Compare and repair
 

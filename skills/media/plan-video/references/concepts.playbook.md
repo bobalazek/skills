@@ -12,6 +12,18 @@ A topic is an area; a concept describes a question, event or experience with an 
 
 Keep each option compact: premise, viewer reward, possible ending, evidence/assets and main constraint. Variants change the presentation of a chosen premise. A request for three concepts needs three different reasons to watch, not three hooks for one premise.
 
+## Match the concept to its purpose
+
+Use the accepted primary goal to choose the subject, depth and payoff. Mixed goals can have a secondary signal; personal, artistic or private work can keep its own objective.
+
+| Primary goal | Topic and treatment | Useful signal when available |
+| --- | --- | --- |
+| Sell or qualify demand | Address a specific buyer's decision or objection. Show expertise through a supported demonstration or relevant case. Use language the buyer understands and explain the next unfamiliar step. A wider industry topic still needs a clear connection to that buyer. | Qualified inquiries, accepted opt-ins or attributable sales; define qualification and attribution before interpreting totals. Views help diagnose distribution. |
+| Teach or build understanding | Answer a real task or question at the viewer's knowledge level. Show the method and its application with necessary prerequisites. A narrow practical question can be more useful than an unsupported life-changing promise. | Demonstrated task completion or comprehension; saves, substantive questions and returning viewers are supporting observations rather than proof of learning. |
+| Entertain or invite discovery | Choose an original situation inside a recognizable format, such as a challenge, reaction or reveal. Build toward an emotional or comic resolution. A familiar object in an unusual situation can supply contrast; a product appears only when it belongs in the story. | Completion, sharing or returning viewers, interpreted alongside the response to the actual story and available distribution context. |
+
+Do not infer credentials from costume, invent results to establish authority or manufacture arguments for comments. Familiar formats and dramatic contrast are creative options; neither establishes algorithm preference or guaranteed reach. Retention formulas and claims about dopamine or conditioning need evidence before being stated as mechanisms.
+
 ## Format: choose how the reward unfolds
 
 | Format | Useful when | Required material or decision |
@@ -33,10 +45,10 @@ Name what this piece adds: a demonstrated result, useful explanation, perspectiv
 
 ## Packaging: set an honest expectation
 
-For browse-driven work, draft a title and thumbnail concept. For a feed, consider the first frame and visible opening. State the expectation they create and where the piece delivers it. Distinguish a planned visual from an available asset; do not imply a staged or hypothetical result was observed. Revise packaging when the evidence or ending changes.
+For browse-driven work, draft a title and thumbnail concept. Give them complementary jobs: the title names the question or outcome while the image makes the relevant subject, contrast or result visible. Simplify competing elements until the promise reads at actual display size; a fixed element count is a heuristic, not a requirement. For a feed, consider the first frame and visible opening. State the expectation they create and where the piece delivers it. Distinguish a planned visual from an available asset; do not imply a staged or hypothetical result was observed. Revise packaging when the evidence or ending changes.
 
 ## Series and batches: repeat the promise, vary the story
 
 A series needs a recognizable audience reward and enough different premises to sustain it. Reuse character/set references only when continuity matters. Choose a small pilot whose assets, permissions, production effort and review time fit the brief. Mark shared assets and dependencies, keep concepts separate from visual or hook variants, and avoid multiplying combinations into an unauthorized batch.
 
-After publication, use real comparable observations to choose a next experiment: metric definition, date/window, denominator, distribution conditions and actual cost where known. Unknown cost is not zero. A different topic, distribution or measurement window limits causal conclusions; editorial preference is not demonstrated audience impact.
+When performance matters, name a primary outcome tied to the purpose and a diagnostic signal before the pilot. After publication, use real comparable observations to choose a next experiment: metric definition, source, date/window, denominator, distribution conditions and actual cost where known. Unknown cost is not zero. Change one meaningful creative choice when feasible and state the hypothesis; a different topic, distribution or measurement window limits causal conclusions. Editorial preference is not demonstrated audience impact, and a watch-time improvement alone does not establish more qualified sales or better learning.

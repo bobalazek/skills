@@ -5,6 +5,7 @@ Use the project's existing format. Retain only fields needed for this handoff; d
 - Original request, accepted clarifications and requested stopping point:
 - Viewer, prior knowledge and intended reward:
 - Purpose: personal, product, educational, entertainment or the owner's actual objective:
+- When performance matters: primary outcome, diagnostic signal, definition/source and comparison window; unavailable data stays unknown:
 - For marketing content when relevant: accepted theme, audience/awareness stage, available proof, intended next behavior and measure; person/company account and applicable voice. Reuse the marketing brief without imposing funnel stages on unrelated videos.
 - Selected or proposed concept; why it fits; alternatives parked:
 - Format, angle and intended payoff:

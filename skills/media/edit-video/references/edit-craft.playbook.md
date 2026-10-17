@@ -29,7 +29,9 @@ When a cut inside a talking passage produces a visible jump, cover it with foota
 
 ## Open short-form clips with a hook
 
-Short-form viewers often decide within the first second or two whether to stay. Open on the strongest line or moment in the passage, not on a greeting, a self-introduction or a logo. The hook must keep its meaning in context. When a line is pulled forward as a teaser, the clip still plays its full context later. For muted viewing, put a few words on the first frame that frame the clip's point, consistent with what is said. End on a complete line; when the player loops, a clean ending that flows back into the opening helps.
+Choose an opening that makes this clip's subject and reason to continue clear. A strong line, visible result or action can do this; preserve a quiet opening when it serves the accepted purpose. Keep the title/first-frame promise consistent with the selected passage. A pulled-forward teaser must retain the setup, qualifications and result needed to understand it, without forcing repetition of the same line. Let the next beat supply useful progress rather than another teaser. For muted viewing, picture and optional first-frame text should make the point understandable without covering the evidence. End with a self-contained answer or resolution; when the player loops, one viewing must still feel complete.
+
+For a tutorial, preserve the prerequisite and meaningful action before its result. For sales material, keep the conditions attached to any proof; decorative b-roll cannot replace them. Entertainment can build toward a reveal without inventing reactions or changing the source's meaning. Retain a CTA only when it belongs to the requested edit and the actual offer; do not append one by default. Compare variants using observed results and their measurement conditions, not an assumed retention gain from faster cuts.
 
 ## Reframe for vertical
 

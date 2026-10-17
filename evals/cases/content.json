@@ -141,5 +141,24 @@
       "Identify the promise/CTA mismatch with the actual sales-demo destination, deduplicating its shared cause and using only supplied offer facts.",
       "Deliver a bounded critique without a replacement hero, file edits, publication, fabricated rendering/interaction proof or independent-review claims."
     ]
+  },
+  {
+    "id": "video-teaching-substance-over-formula",
+    "skill": "write-video-script",
+    "installedSkills": [
+      "write-video-script"
+    ],
+    "prompt": "Write a complete roughly 70-second narrated teaching script with visual beats from brief.md and facts.md. The brief is accepted and routine wording is delegated; I will review the draft before production. Use inspiration.md only where it helps this lesson. Do not record, render, browse, publish or contact anyone.",
+    "files": {
+      "brief.md": "Accepted audience: first-time users of the fictional report app Ledgerlight. Goal: teach exporting a filtered report accurately, not selling the app. Help-center video, calm English narration, minimal screen text, no sales or follow CTA. Show the completed export and its limits. Product capture is planned, not attached. The exact words remain a draft for my review. All timing must be estimated until recording.\n",
+      "facts.md": "Supported workflow: first select the Requests dataset; only then is its status filter available. Choose status Open, then choose Export CSV. The CSV includes the filtered rows at export time. Later source changes do not update that exported file. No documented speed improvement, revenue result, testimonial, automatic sync or other feature.\n",
+      "inspiration.md": "Editorial suggestions from a supplied content blueprint: second-best point first and best point second; hook with context, contrast and a surprising answer; name a magic-box method; make the ending release validation dopamine; repeat the promise boldly. These suggestions are not product facts or evidence about audience behavior.\n"
+    },
+    "expected": [
+      "Deliver actual spoken words, visual beats, immediate useful continuation and a complete ending at the requested scope, with a stated estimated timing basis and pending wording review.",
+      "Preserve dataset selection before filtering before export; teaching value includes the specific actions and what the exported snapshot does, without moving prerequisites to satisfy ranked-point advice.",
+      "Connect the opening promise to the demonstrated filtered CSV and retain the no-auto-update limit; do not invent proof, neuroscience, a named authority method, compulsory contradiction or a CTA.",
+      "Label planned captures as planned and stop before production, external actions or claims of observed learning/retention."
+    ]
   }
 ]

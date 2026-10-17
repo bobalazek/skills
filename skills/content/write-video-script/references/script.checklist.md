@@ -17,12 +17,14 @@ Use the existing result record and the requested scope. Checked means demonstrat
 - [ ] The opening makes the subject and relevance intelligible without unnecessary delay or empty curiosity.
 - [ ] Spoken words, first visual and optional screen text support the same honest promise.
 - [ ] The next beat gives useful progress rather than another unsupported teaser.
+- [ ] Any proof, contrast or objection used to earn continuation is supported; a named method or stronger repetition has not replaced actual substance.
 
 ## Body and payoff
 
 - [ ] Each substantive beat adds explanation, evidence, action or consequence.
 - [ ] Learning prerequisites, causal order and material qualifications are preserved.
 - [ ] The ending fulfills the precise promise; any CTA or loop leaves a complete experience on one viewing.
+- [ ] A requested CTA helps the same task, points to a real supplied destination and has a feasible fulfillment path; no action was added to content that needs none.
 
 ## Performance and handoff
 
