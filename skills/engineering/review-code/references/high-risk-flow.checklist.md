@@ -22,12 +22,13 @@ Applies to billing, invoices, payments, refunds, subscriptions, credits, taxes, 
 
 - [ ] Distinguish authentication from authorization through sessions, recovery, invitations, role/permission grants and revocation. Check expiry, replay and effective privileges after changes using the actual supported identity mechanism.
 - [ ] Trace tenant, project, object and field ownership through reads/writes, joins, caches, exports/imports, jobs and alternate API/admin paths. Try relevant wrong-user/wrong-tenant/wrong-role access and legitimate owner access; hidden UI controls are not enforcement.
+- [ ] For federated login, identify which claims the validated signature covers and check the protocol's accepted issuer, recipient/audience, request/replay and initiating-browser bindings before provisioning or linking accounts. Check tenant mapping and existing-account membership policy separately from provider authentication. Exercise supported browser transport and legitimate provider claims; SDK validation alone does not establish these application bindings.
 - [ ] Examine account recovery, support overrides and impersonation: who authorizes the action, whose authority executes it, scope/duration, actor attribution and session termination. Verify established audit and notification rules without assuming every admin may bypass ownership.
 
 ## Sensitive records and lifecycle
 
 - [ ] Follow sensitive records/PII through selection, serialization, logs/errors, downloads, caches, files and external recipients. Confirm field-level minimization and access on the actual data path, including bulk and background variants.
-- [ ] Check import/export scope, validation and partial application; deletion/overwrite selection, retention, backups/replicas and downstream copies. Repeated or interrupted operations must preserve accepted recovery and privacy boundaries; a UI confirmation alone does not establish correct scope.
+- [ ] Check import/export scope, validation and partial application; deletion/overwrite selection, retention, backups/replicas and downstream copies. Repeated or interrupted operations must preserve accepted recovery and privacy boundaries; a UI confirmation alone does not establish correct scope. Include concurrent producers and delayed jobs: retain cleanup locators until external deletion is acknowledged, and check that completion/audit writes do not recreate erased sensitive data.
 - [ ] Apply the system's established consent, retention, deletion, audit and compliance obligations with their authoritative source. Separate missing policy decisions from proven violations; identify irreversible disclosure/deletion and the actual limits of repair.
 
 ## Migrations, backfills and destructive repair
