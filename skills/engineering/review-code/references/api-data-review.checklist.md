@@ -27,7 +27,7 @@ Authentication must lead to server-side action, object and field authorization. 
 
 - [ ] Check parameterized values and allowlisted dynamic identifiers/operators; validation must cover query parameters, path values and bodies, including writable properties. Bound request sizes, search cost, page/batch sizes, upload handling and expensive operations. Evaluate rate limits using the actual identity, proxy trust and failure behavior; do not invent a universal rate.
 
-- [ ] For direct or signed uploads, trace which validated constraints the storage service actually enforces; accepting declared size or MIME metadata alone does not enforce the transferred object. Exercise accepted uploads and relevant size/type violations at the storage boundary, then inspect persisted state. Preserve intentionally different caller contracts.
+- [ ] For direct or signed uploads, trace which validated constraints the storage service actually enforces; accepting declared size or MIME metadata alone does not enforce the transferred object. Exercise accepted uploads and relevant size/type violations at the storage boundary, then inspect persisted state. For an exact-size contract, include validly framed shorter, exact and longer bodies and check which objects remain. Preserve intentionally different caller contracts.
 
 - [ ] Inspect content-type handling, content negotiation, relevant cache policy, validators and conditional requests where used. Confirm sensitive data is not shared through caches or diagnostic headers. Inspect responses from the real application/proxy boundary, including errors; a middleware declaration does not prove a header reaches the client.
 
