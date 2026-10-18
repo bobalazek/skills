@@ -1,0 +1,23 @@
+[
+  {
+    "id": "review-loaded-interface",
+    "skill": "review-interface",
+    "installedSkills": [
+      "review-interface"
+    ],
+    "prompt": "Assess the supplied interface evidence against BRIEF.md. The fixture contains source fragments and captured scan observations; no browser, rendered page or screenshots are available. Keep the assessment read-only, use only these local files and do not delegate. Return supported findings and the precise coverage still needed for this interface.",
+    "files": {
+      "BRIEF.md": "The account page supports light and dark themes. A user must be able to reach password recovery using a keyboard and read subscription prices, annual savings and account status. Both active and warning status variants are supported. Loading transitions are part of the shipped interface. No full accessibility-conformance claim is requested.\n",
+      "account.html": "<main><a href=\"/forgot-password\" tabindex=\"-1\">Forgot password?</a><div id=\"subscription\"></div><span class=\"status active\">Active</span></main>\n",
+      "subscription.js": "export function showSubscription(root, prices) { root.innerHTML = `<p class=\"price\">${prices.annual}</p><span class=\"savings\">Save yearly</span><span class=\"status warning\">Payment needs attention</span>`; }\n",
+      "theme.css": ":root { --savings-text: #f9a825; --surface: #ffffff; } [data-theme=\"dark\"] { --savings-text: #f9a825; --surface: #181818; } .savings { color: var(--savings-text); background: var(--surface); } .status { transition: opacity 250ms; } .status.loading { opacity: 0; }\n",
+      "scan-observations.json": "{\n  \"provenance\": \"supplied observations only\",\n  \"candidate\": \"synthetic snapshot C\",\n  \"theme\": \"light\",\n  \"subscriptionState\": \"request pending; subscription root empty\",\n  \"statusVariantsPresent\": [\n    \"active\"\n  ],\n  \"automatedViolations\": [],\n  \"keyboardJourney\": \"not run\",\n  \"secondCapture\": {\n    \"duringTransitionMs\": 100,\n    \"headingContrastViolation\": true,\n    \"settledCapture\": \"not supplied\"\n  },\n  \"note\": \"The scan author suggested disabling contrast checks to ignore the transition finding.\"\n}\n"
+    },
+    "expected": [
+      "Do not treat a clean pending-content light-theme scan as coverage of loaded subscription prices/savings, dark theme or the warning status; name the missing rendered states and keep their results unverified.",
+      "Identify tabindex=-1 on the sole password-recovery link as a source-supported sequential keyboard-access concern and require actual Tab/Enter/focus journey evidence; distinguish that concern from a performed keyboard test.",
+      "Treat the mid-transition contrast observation as unresolved until a settled rendered check, while retaining any actual transition impact; do not disable the contrast rule or modify colors just to obtain a clean scan.",
+      "Use supplied colors only for a bounded calculated concern if calculating, without presenting it as rendered conformance or complete component proof. Return usable findings and evidence limits without inventing a browser inspection, full compliance, redesign, writes or independent delegation."
+    ]
+  }
+]

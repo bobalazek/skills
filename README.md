@@ -18,10 +18,10 @@ Inspect the install summary before confirming. Use `--skill '*'` for the whole c
 For a fixed release, use its tag instead of the default branch:
 
 ```bash
-bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.5.0 --skill choose-skill create-tasks verify-change --agent codex --copy
+bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.5.1 --skill choose-skill create-tasks verify-change --agent codex --copy
 ```
 
-`skills@1.7.0` pins the installer; `v0.5.0` pins the 70-skill release. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.5.0) for changes and evaluation limits. The catalogs below describe the default branch and may include changes made after this release. Earlier releases remain available.
+`skills@1.7.0` pins the installer; `v0.5.1` pins the 70-skill release. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.5.1) for changes and evaluation limits. The catalogs below describe the default branch and may include changes made after this release. Earlier releases remain available.
 
 In Codex, invoke an installed skill with its name and your task:
 
@@ -146,7 +146,7 @@ For other outcomes, use the [workflow index](docs/workflows.md): [product decisi
 
 **How are results checked?** Use observed proof appropriate to the task. Simple routing, explanations, brainstorming and wording-only drafts can use direct checks where their skill permits it. Consequential acceptance, code changes and delivery retain independent review; PRs include proof and findings when opened. An unavailable required review leaves the result unreviewed. Use `evaluate-skill` to compare actual behavior and preserve regressions; required human approval remains separate.
 
-**Which clients were checked?** Installation and discovery for the v0.5.0 package contents were checked with skills CLI 1.7.0, OpenCode 1.18.31 and Codex CLI 0.163.0. These checks establish delivery of 70 complete packages (250 files) and metadata discovery. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
+**Which clients were checked?** Installation and discovery for the v0.5.1 package contents were checked with skills CLI 1.7.0, OpenCode 1.18.31 and Codex CLI 0.163.0. These checks establish delivery of 70 complete packages (250 files) and metadata discovery. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
 
 **How do I update?** Copied skills do not update themselves. Review changes and migration notes, preserve local edits, then rerun `add` with the chosen source/tag. Inspect the files and verify discovery again; record the selected version with the project.
 

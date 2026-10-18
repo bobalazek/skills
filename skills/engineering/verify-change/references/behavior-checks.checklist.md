@@ -30,6 +30,8 @@ Use the requested feature, user journey, or release scope and its acceptance cri
 
 - [ ] Keep test state isolated and cleanup limited to run-owned fixtures. Control clock, randomness and asynchronous readiness where needed; do not hide a race with arbitrary sleeps. Use authorized test services and prevent real charges/messages or destructive shared cleanup. Inspect failed attempts and flakes; a retry or quarantined test is not a silent pass. Run affected existing tests as well as new checks, and report unavailable required environments as gaps. Test-first ordering is optional.
 
+- [ ] Inspect assertions for false passes: require the fixture/precondition that reaches the target path, use current contract fields, and check the expected rejection or persisted result rather than any error or successful request. When changing shared fixture helpers, inspect their callers. Where repeatability matters, rerun affected checks against retained run-owned state; keep uniqueness after field-length constraints and preserve the real throttle or permission invariant instead of weakening it to pass.
+
 - [ ] For the PR, record criterion, selected layer/check, expected and observed outcome, tested revision/environment, relevant mocks/fixtures, command/steps and proof. Identify omitted layers with the scoped reason, and keep failed or unrun required checks visible. A new test file, test count or coverage number alone does not establish acceptance.
 
 ## Select the risk scenarios
@@ -46,6 +48,8 @@ Use the requested feature, user journey, or release scope and its acceptance cri
 | AI and agent workflows | Representative and adversarial inputs, retrieval permissions, unsafe tool requests, malformed output, cost/iteration bounds, cancellation, approval gates and recovery | Observe actual trusted-code enforcement and action parameters; a prompt, declared gate, evaluator vote or plausible answer is not proof. Record model/prompt/tool/data versions and distinguish mocked from provider behavior |
 | Interface and accessibility | Supported viewports/input methods, keyboard and focus, validation feedback, content fit, relevant assistive semantics | Inspect the rendered surface and interactions; automated scans alone do not establish conformance |
 | Runtime and delivery | Actual entry-point wiring, configuration assumptions, user-visible smoke path, failure signal and recovery owner | Check dependency readiness under the relevant configuration and observe the affected path; a green build or health endpoint alone does not establish it |
+
+- [ ] When flags or policy alternatives change behavior, exercise the materially different supported configurations and confirm the running application observes each value. Account for browser, server and persistent fetch caches; process restart alone may retain old state. Keep fixture/cache resets confined to the test environment and preserve production caching semantics.
 
 - [ ] For existing software, preserve important neighboring flows, supported clients, and data contracts. For new software, check the implemented path and its explicit requirements; do not invent compatibility obligations or claim unfinished flows work.
 

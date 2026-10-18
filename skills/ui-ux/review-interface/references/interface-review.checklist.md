@@ -6,6 +6,7 @@ Select checks for actual tasks and supported surfaces. Inspect a suspected patte
 - [ ] Navigation and content: labels, information structure, back/exit paths, and instructions match the task and domain language.
 - [ ] Interaction: controls behave as signaled; validation, loading, progress, success, and recovery are clear; repeated or interrupted actions are handled.
 - [ ] Accessibility: inspect relevant semantics/names, keyboard access, focus order/visibility, error communication, contrast, zoom/reflow, and motion preferences with suitable tools.
+- [ ] For affected shared components, inspect loaded content, supported themes and consequential hover/selection/status variants; a page fixture may omit a failing variant. Let finite transitions settle before scanning, without suppressing the rule or changing colors to obtain a pass. Exercise essential actions with actual keyboard navigation as well as automated checks; isolate class-pair evidence from whole-component coverage.
 - [ ] Responsive/platform behavior: verify real layout, overflow, density, input, navigation, and state changes on supported surfaces.
 - [ ] Visual consistency: typography, spacing, alignment, tokens, and component states serve a coherent hierarchy; preferences require a stated rationale.
 - [ ] Trust and consequences: permissions, costs, destructive actions, and data handling are understandable; avoid manipulative or misleading interaction.

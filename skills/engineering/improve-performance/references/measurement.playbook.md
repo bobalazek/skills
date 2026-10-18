@@ -22,6 +22,8 @@ Separate cold-start and warm behavior when both matter. Use enough repeated samp
 
 Pair speed with useful-work correctness and completion. Check representative inputs, output/ordering invariants, authorization boundaries, freshness, retry/failure behavior, and newly introduced cache or concurrency risks as applicable. If a queue moves work out of a request, measure time to the result users actually need. If processing fewer requests lowers latency, retain the error rate and completed throughput in the comparison.
 
+When moving filtering or normalization into a data store, compare representative outputs for accepted Unicode/case/collation semantics and ordering ties. A diagnostic plan with forced index use can establish index applicability; it does not establish representative latency or capacity.
+
 ## Report the result
 
 | Criterion | Baseline | Candidate | Conditions and coverage | Outcome |
