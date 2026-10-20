@@ -31,6 +31,8 @@ Generate the requested number of genuinely distinct concepts before refining var
 
 ## Choose the format and prepare the brief
 
+For a narrated-short production plan or hosted-platform choice, read [the production handoffs](references/narrated-short.playbook.md). For vendor capabilities, billing units and API gaps, also read [the dated platform comparison](references/video-platforms.matrix.md) and recheck the relevant official sources. Keep this to the requested planning result; continue into script, narration or editing only when that work is already authorized.
+
 Choose a narrative format that delivers the reward with available material. Keep purpose, narrative format and destination separate: a personal story or product demo can have several channel treatments. Distinguish the primary video from requested adaptations; do not assume one cut fits every destination. Separate production method, visual style and layout too. Plan title/cover or opening-frame promises early enough to test whether the piece can fulfill them; finished packaging is not a prerequisite for an outline. Do not promise a result absent from the evidence or assets.
 
 Use [the brief template](references/brief.template.md) only when a handoff needs it and no project equivalent exists. Keep scope proportional: one concept may need a paragraph; a longer production needs beats, sources, asset gaps and responsibilities. For a series, preserve its recurring audience promise while varying the actual story. For a batch, bound the pilot by production, cost and review capacity; do not assume volume or paid generation is authorized.
