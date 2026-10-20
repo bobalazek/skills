@@ -19,6 +19,8 @@ Start at the first missing result: **idea → script → storyboard → producti
 
 Filming and generating new footage require the actual capture/provider tools and authorized inputs. A shot plan can expose those dependencies; the collection does not bundle those tools or imply that a code renderer produces every kind of video.
 
+For an idea-to-export narrated short, the [production playbook](../../skills/media/plan-video/references/narrated-short.playbook.md) connects the handoffs and repairs. The optional [platform comparison](../../skills/media/plan-video/references/video-platforms.matrix.md) covers Vid.AI, Crayo, SendShort, AutoShorts, Short.ai, Revid and OpusClip with dated prices and access gaps. These references add production and selection guidance; they do not install tools or account integrations.
+
 ## Produce media
 
 | Example request | First skill | Result and conditional continuation |
