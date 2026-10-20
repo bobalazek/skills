@@ -1,8 +1,6 @@
 # Produce a narrated short
 
-Use for an end-to-end short with an idea or script, narration, visuals, captions and a finished video. Reuse accepted inputs and stop at the requested artifact. A script-only request needs no generation, and a caption repair needs no new concept.
-
-For hosted alternatives, read the dated [video platform comparison](video-platforms.matrix.md). A product that assembles a complete video and a model that generates one visual clip serve different stages.
+Produce the short with our own agent, model APIs and local editing tools: idea → script → scene assets → voice → timed captions → editable video → checked export. Reuse accepted inputs and stop at the requested artifact. A script-only request needs no generation, and a caption repair needs no new concept.
 
 ## Choose the production route
 
@@ -13,7 +11,45 @@ For hosted alternatives, read the dated [video platform comparison](video-platfo
 | A recurring faceless series | Save the accepted audience promise, voice, visual rules and destination; vary each episode's story | A reusable template still needs fresh evidence and review |
 | Real product UI, exact figures or branded typography | Capture the real screen or render deterministic layers, with generated material only where useful | UI, numbers and marks match the source |
 
-Choose hosted software when its editor and available API cover the required handoffs. Choose a composable workflow when local assets, exact layouts, repair control or editable source matter. Record which stages are actually executable in the available environment; a collection of generation commands does not establish a complete video pipeline.
+Keep the brief, script, assets, audio, timing, captions and editable composition in the project. The agent owns the handoffs and invokes the available generation and editing tools. Record missing execution capabilities explicitly; a collection of generation commands does not establish a complete video pipeline.
+
+## Run the feature flows
+
+### Idea to narrated video
+
+1. Turn the brief and supported facts into the opening promise, causal beats and payoff. Write spoken text separately from directions; retain scene IDs when editing.
+2. Select the voice and generate the accepted narration. Listen, correct pronunciation and measure the selected audio before setting final scene lengths.
+3. Transcribe/align that audio. Correct the words and retain segment/word times; derive captions from what was actually spoken.
+4. Map each spoken beat to a visual purpose. Retrieve suitable owned/licensed footage or capture real screens first. Generate missing illustrative images; animate selected images only when the action needs motion.
+5. Build the local timeline from measured audio and selected scene assets. Add deliberate crops, overlays, readable captions and any licensed music mix; keep the editable source.
+6. Export and inspect the complete video with sound and muted. Correct the affected source, then rebuild its dependent captions, scenes or exports.
+
+### Recording to short clips
+
+1. Transcribe the supplied recording with source times. Find self-contained moments that deliver a useful statement or story; a selection score is only a ranking aid.
+2. Choose source ranges that preserve qualifiers, complete sentences and the payoff. Retain the source-to-output time mapping through cuts and removed pauses.
+3. Reframe around the active speaker/action and relevant evidence. Add B-roll only where it clarifies the spoken beat; preserve the underlying source meaning.
+4. Derive captions from the final cut's speech and timing. Review crop, speaker continuity, caption placement and the complete opening/payoff before exporting each clip.
+
+### Episode to repeatable series
+
+Reuse an accepted series brief, voice, recurring character references, visual rules and output settings. Give every episode its own supported script, scene records and selected assets. Produce and review one pilot, then apply the same flow to the requested batch within its budget. Resume completed scenes; route failed scenes back to their own generation/edit step. Recurrence does not authorize automatic publication.
+
+## Select the models and tools
+
+The following bindings were checked against official schemas on **2026-10-20**. They are a concrete starting recipe for the supported input shapes. Preserve an accepted project model or voice, and change a binding when the task requires another supported capability. Check availability, schema, rights and cost before charging a job; store the exact requested identifier and returned version when available.
+
+| Stage | Starting selection | Required inputs and output |
+| --- | --- | --- |
+| Idea and script | The active writing agent, using the accepted brief and factual sources | Separate spoken words from directions; stable scene IDs and a supported payoff |
+| Scene images | FLUX.2 through `fal-ai/flux-2` ([schema](https://fal.ai/models/fal-ai/flux-2/api)) | Text prompt, explicit image size and optional seed; PNG scene assets. Use real captures for product UI, exact figures and marks |
+| Motion from a scene image | `fal-ai/kling-video/v2.5-turbo/pro/image-to-video` ([schema](https://fal.ai/models/fal-ai/kling-video/v2.5-turbo/pro/image-to-video/api)) | Prompt, start image, optional end image, 5- or 10-second clip. Source image supplies framing; this route does not accept an aspect-ratio field |
+| Motion without a source frame | `fal-ai/kling-video/v2.5-turbo/pro/text-to-video` ([schema](https://fal.ai/models/fal-ai/kling-video/v2.5-turbo/pro/text-to-video/api)) | Prompt, 5- or 10-second clip and aspect ratio; use only where exact character/product continuity is unnecessary |
+| Narration | OpenAI `gpt-4o-mini-tts`, an accepted voice such as `coral` ([guide](https://developers.openai.com/api/docs/guides/text-to-speech)); an existing ElevenLabs `eleven_v3` voice can remain in use ([models](https://elevenlabs.io/docs/overview/models)) | Accepted spoken text and voice, audio output and measured timing. Only expose delivery/voice controls that the selected adapter implements |
+| Timed transcription | Soniox `stt-async-v5` ([models](https://soniox.com/docs/stt/models)) or the project's verified transcription route | Actual narration audio, language hints and timed words/segments; correct them against the recording before caption export |
+| Captions and assembly | Local caption rendering plus the project's FFmpeg or code-driven composition | Corrected timed text, selected scenes and measured audio; editable composition, clean/captioned MP4 and requested SRT/VTT |
+
+For every generated scene, retain provider, model/endpoint, prompt, supported settings, source images, voice where relevant, job ID, selected take and actual charge. A different `model` string does not adapt the request schema. Add or update the adapter when the required inputs differ. Missing credentials block generation; they do not justify claiming a placeholder was generated.
 
 ## Carry the story through production
 
@@ -45,18 +81,25 @@ Keep narration, directions and displayed text separate. A note such as “show t
 
 Save provider project/job IDs, selected asset references and failures before retrying. Follow the transport's documented polling and recovery rules, including its idempotency support. Reconcile an uncertain job before resubmitting a chargeable request. Reuse accepted assets and manual corrections; retrying an entire video for one bad scene increases cost and loses edits.
 
-## Compare the real cost
+## Implement the complete production job
 
-Record subscription billing period, currency, included units, add-ons, actual charge, rejected attempts and review time. “Videos,” source minutes, export minutes, narration seconds, motion credits and scheduled posts cannot be compared as equal units.
+The production owner must connect the stages, not leave the user with unrelated generated files. Reuse the project's existing job and scene records. A complete job needs:
 
-For plans with separate allowances, usable capacity is limited by the first exhausted allowance: video generation, export duration, voice duration, images, storage or posting quota. For a shared credit pool, add all stage charges before dividing the available credits; do not count each advertised maximum as a separate entitlement. Track one series/channel versus the whole account, and weekly limits versus monthly limits.
+- A brief and script-to-scene map with exact model/tool bindings and an agreed spending ceiling.
+- Independent asset jobs with saved IDs and outputs; resume accepted work without charging it again.
+- Measured narration, corrected timed captions and an editable assembly driven by those times.
+- Scene-specific regeneration, caption correction, target crops and export checks that invalidate only affected outputs.
 
-Compare cost per **accepted finished video** at the requested length, including repairs and localisation. For a composable route, include generation, transcription, music/stock licences, rendering and storage. An annual monthly equivalent still commits the annual amount. Confirm account entitlements, credit expiry, failed-job charging, asset retention and download rights before buying or integrating.
+Complete one checked short before adding a batch or series controller. Keep capability status explicit: a written recipe is guidance, a passing mocked request is a contract check, and a watched/listened-to render is production evidence. If orchestration, caption export or assembly is missing, name that implementation gap instead of claiming the whole pipeline exists.
 
-## Test before choosing a platform
+## Budget and verify
 
-Use the same supported script and assets for an original-short comparison, and the same source recording for a clipping comparison. Keep those tests separate. Start with one representative output per viable route within authorized spend; record the date, plan, settings and permitted tuning.
+Estimate scene images, generated video seconds, voice usage, transcription, rendering and expected repairs before paid work. Track rejected attempts and actual charges against the job's spending ceiling; compare cost per accepted finished video at its measured length. Preserve accepted assets and regenerate only failed scenes.
 
-Inspect factual/visual accuracy, complete sentences, voice pronunciation, caption errors and timing, crop/safe areas, music balance, rights/disclosure, editability and final playback. Record elapsed time, manual repair time and estimated versus actual charges. Treat missing tests as unknown. Vendor samples, “virality” scores and monetization promises do not establish output quality or audience results.
+When changing a model, use the same supported script and source assets to check the required capability. Start with one representative scene within authorized spend, then run the full accepted production once the inputs work.
 
-Return a recommendation tied to the tested job and its limits. Keep publication separate from export: a finished file or a subscription does not authorize uploading to an account, scheduling a series or spending beyond the agreed budget.
+Inspect factual/visual accuracy, complete sentences, voice pronunciation, caption errors and timing, crop/safe areas, music balance, rights/disclosure, editability and final playback. Record elapsed time, manual repair time and estimated versus actual charges. Treat missing tests as unknown; a successful generation or encode does not establish playback quality.
+
+Return the requested production artifacts and observed checks. Keep publication separate from export: a finished file does not authorize uploading to an account, scheduling a series or spending beyond the agreed budget.
+
+For an explicit service comparison, the existing [platform feature research](video-platforms.matrix.md) remains available. Own production uses the flows and model bindings above.
