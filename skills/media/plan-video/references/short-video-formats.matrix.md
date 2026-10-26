@@ -1,0 +1,199 @@
+# Short-video format catalogue
+
+**Researched 2026-10-26.** This covers 41 recurring formats for TikTok, Instagram Reels and YouTube Shorts. It is meant for planning before any media exists: what each format needs, what AI can make, how much work it is and whether anyone is still making it. Effort figures and typical lengths are our estimates. Origins, rules and popularity signals carry their source and date. To choose formats for a person or brand, use [the persona-to-format playbook](persona-to-format.playbook.md); this file is its lookup table.
+
+## How to read the numbers
+
+**Effort** is our estimate in minutes, not a measurement. It assumes one person with a phone and a free editor, making one finished video in a format they have made before. Filming time excludes the underlying activity: the renovation in a before-and-after or the hours of a real day. A first attempt takes longer. Rank formats by these figures and budget a pilot with them, then replace them with the user's measured times once they exist.
+
+| Field | Values |
+| --- | --- |
+| Prep | Finding, gathering or writing what the video needs before the camera rolls |
+| Film | Camera or screen capture time, including retakes |
+| Edit | Cutting, captions, overlays, sync and export |
+| Board | Storyboard complexity. `low`: one setup, a shot list fits in a line. `med`: 3 to 8 planned shots, matched framing or timing to audio. `high`: several setups with scripted performance and continuity |
+| AI | `none`: nothing worth generating. `assist`: AI drafts script, captions, hooks, shot list or voice. `heavy`: AI can produce most of the finished asset (script, voice, images, chat screens, b-roll) |
+| Length | Typical finished length in seconds. Inferred from beat structure; no platform or report publishes per-format lengths. Check platform maximums on the destination's current help pages |
+
+**Source** says what must exist before production: `own` footage of the creator or their world, `screen` recording, `stills`, `text` only, or `remix` (someone else's post used through the platform's own Duet, Stitch, Remix or Green Screen tool).
+
+**Status** records the newest dated evidence of the format in use. It comes from curated trackers and platform reports, which show that a variant is being made, not how many videos or views it gets. Check it again before production (see [checking popularity](persona-to-format.playbook.md#check-popularity-before-you-commit)).
+
+| Status | Meaning |
+| --- | --- |
+| `live` | A named variant appears in a dated tracker entry from October 2026 |
+| `active-2026` | Dated 2026 tracker entries or a 2025-2026 platform report name the format or a variant |
+| `evergreen` | A platform feature or long-standing category with no current volume data |
+| `past-peak` | A dated peak earlier in 2026 and absence from the October 2026 lists |
+| `unverified` | No 2025-2026 evidence found in this research |
+
+## Planner table
+
+| Id | Format | Source | Prep | Film | Edit | Board | AI | Length | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `talking-head` | Talking head | own | 10-15 | 5-15 | 15-25 | low | assist | 20-90 | active-2026 |
+| `unpopular-opinion` | Unpopular opinion | own or text | 5-15 | 3-10 | 5-15 | low | assist | 10-40 | unverified |
+| `advice-list` | Things I wish I knew, age-centred advice | own or text | 10 | 5-15 | 15-20 | low | assist | 15-60 | active-2026 |
+| `storytime` | Storytime | own | 5-10 | 5-15 | 15-25 | low | assist | 45-180 | unverified |
+| `reply-to-comment` | Reply to a comment | own, screen | 5-15 | 5-15 | 10-20 | low | assist | 15-60 | evergreen |
+| `green-screen` | Green screen commentary | own, stills | 10-20 | 5-10 | 10-20 | low | assist | 20-90 | active-2026 |
+| `reaction` | My reaction to | own, remix | 5-10 | 5-10 | 5-15 | low | none or assist | 15-45 | live |
+| `duet-stitch-remix` | Duet, Stitch, Remix | own, remix | 5 | 5-10 | 5-15 | low | none or assist | 10-60 | evergreen |
+| `top-n-list` | Top N, N things | own, stills, screen | 10-15 | 10-20 | 15-30 | low | assist or heavy | 15-60 | active-2026 |
+| `tier-list` | Tier list | screen, stills | 15 | 10 | 15-20 | low | assist or heavy | 30-90 | active-2026 |
+| `this-or-that` | This or that, would you rather | stills, own | 10-20 | 0-15 | 10-20 | low | assist | 5-45 | unverified |
+| `caption-this` | Caption this | own | 2-5 | 0-5 | 2-5 | low | none or assist | 5-10 | unverified |
+| `grwm` | Get ready with me | own | 5 | 20-40 | 20-30 | low | assist | 30-90 | live |
+| `day-in-the-life` | Day in the life | own | 10 | 30-60 | 30-45 | med | assist | 20-90 | live |
+| `timestamp-vlog` | Timestamp vlog | own | 0-10 | 30-60 | 30-60 | low | assist | 25-60 | live |
+| `aesthetic-vlog` | Lifestyle or aesthetic vlog | own | 10-20 | 20-45 | 30-60 | med | assist | 15-60 | active-2026 |
+| `routine-reset` | Routine or reset | own | 5-10 | 20-60 | 20-30 | low | assist | 20-90 | active-2026 |
+| `ootd` | OOTD, outfit transitions | own | 20-45 | 15-40 | 20-45 | med | none or assist | 7-30 | live |
+| `whats-in-my-bag` | What's in my bag | own | 10-20 | 10-20 | 20-30 | low | assist | 30-60 | unverified |
+| `recent-flops` | Recent flops recap | own, stills, screen | 15-30 | 5-15 | 20-40 | low | assist | 20-45 | active-2026 |
+| `tutorial` | Tutorial or how-to | own or screen | 10-20 | 15-30 | 20-40 | med | assist | 30-90 | active-2026 |
+| `unboxing` | Unboxing | own | 5-15 | 10-20 | 20-40 | low | assist | 20-60 | active-2026 |
+| `haul` | Haul, worth the money | own | 10 | 15-30 | 20-30 | low | assist | 30-90 | active-2026 |
+| `before-after` | Before and after | own or stills | 5-15 | 10-30 | 15-30 | low | assist | 10-45 | active-2026 |
+| `behind-the-scenes` | Behind the scenes | own | 5-10 | 20-60 | 20-40 | low | assist | 20-60 | active-2026 |
+| `asmr-process` | ASMR, satisfying process | own | 10-20 | 15-30 | 15-30 | low | none or assist | 10-60 | evergreen |
+| `street-interview` | Street interview | own | 10 | 45-120 | 30-45 | med | assist | 20-90 | active-2026 |
+| `text-over-footage` | Text over existing footage | own or stock, text | 5-10 | 0-5 | 10-20 | low | assist | 7-60 | active-2026 |
+| `nobody-meme` | Nobody, absolutely nobody | own | 2-5 | 2-10 | 3-5 | low | assist | 5-12 | unverified |
+| `money-cant-buy` | Money can't buy happiness, but | own | 2-5 | 5-10 | 5-10 | low | assist | 6-15 | unverified |
+| `where-are-you-texts` | Where are you texts | own, text | 3-5 | 2-10 | 5-15 | low | assist | 6-15 | unverified |
+| `expectation-reality` | Expectation vs reality | own, stills | 5-20 | 10-20 | 10-20 | low | assist or heavy | 7-20 | unverified |
+| `pov-skit` | POV skit | own | 5-10 | 10-20 | 10-15 | low | assist | 7-30 | live |
+| `fake-text-story` | Fake text conversation | text, stock | 10-20 | 0 | 5-60 | med | heavy | 30-90 | unverified |
+| `faceless-explainer` | Faceless narrated explainer | text, stock, screen | 20-40 | 0 | 30-45 | med | heavy | 30-90 | unverified |
+| `photo-slideshow` | Photo slideshow, carousel | stills, text | 10-20 | 0-10 | 15-25 | low | heavy | 4-10 slides | live |
+| `beat-drop-reveal` | Beat-drop reveal | own | 10-30 | 15-30 | 20-45 | med | assist | 7-20 | live |
+| `trend-sound-lipsync` | Trend-sound lip-sync or transition | own | 5-10 | 10-30 | 10-20 | low or med | none | 7-20 | live |
+| `parody-product-review` | Parody product review or infomercial | own | 20-40 | 20-45 | 30-60 | med | heavy | 20-45 | unverified |
+| `fake-apology` | Fake apology video | own | 10-20 | 5-15 | 10-20 | low | assist | 15-45 | unverified |
+| `netflix-doc-parody` | Netflix-documentary parody | own | 5-30 | 5-30 | 5-60 | low or med | assist or heavy | 7-45 | past-peak |
+
+Edit for `fake-text-story` is 5-15 minutes with a chat-story generator and 30-60 by hand. `netflix-doc-parody` ranges from the one-shot meme (about 5 minutes per stage) to a narrated mock documentary (15-60).
+
+## Formats
+
+Beats are our timing for a typical cut. "Real" lists what must be captured; anything presented as having happened has to have happened. "Risk" names the flag to resolve, with the deciding owner linked under [rules that change the choice](#rules-that-change-the-choice).
+
+### Talking and opinion
+
+**`talking-head`.** The creator speaks straight to the lens with little b-roll. Everything rests on the first sentence and on delivery, so jump cuts and burned-in captions carry retention, and a stated position draws comments. Beats: thesis in one line with matching text (0-3 s), context (3-10), two or three points with a punch-in on each (10-40), conclusion, question to viewers. Real: face and voice. Risk: defamation or misinformation when naming people or giving health or money advice; a synthetic presenter is a different format with its own disclosure duties. Evidence: Later's Reels tracker lists talking variants "Age-centered content" (2026-09-25) and "Girl to girl" (2026-01-02) ([Later](https://www.later.com/blog/instagram-reels-trends), updated 2026-10-23). TikTok Next 2026's "Reali-TEA" trend favours real stories over polish ([TikTok Newsroom](https://newsroom.tiktok.com/introducing-tiktok-next-2026-our-trend-forecast-for-marketers-for-the-year-ahead?lang=en), 2026-01-14).
+
+**`unpopular-opinion`.** "Unpopular opinion:" followed by the take, then a short defence. The label promises conflict, and disagreement is the comment engine. Withholding the take past the first two seconds loses the viewer. Beats: label and take in one sentence (0-2 s), two or three reasons (2-15), concession or doubling down, "am I wrong?". Real: the opinion is the creator's own. Risk: takes on health, elections or crises fall under misinformation rules; group-targeted takes under hate rules. Evidence: forum and image-macro history from 2006, and the TikTok #NoNuanceNovember wave from 2020-11-02 ([Know Your Meme](https://knowyourmeme.com/memes/unpopular-opinions), accessed 2026-10-26). No 2025-2026 evidence found.
+
+**`advice-list`.** Lived advice aimed at an identity: "things I wish I knew at 22", "girl to girl", "this is your sign to". The identity hook makes viewers send it to a friend. Beats: identity and promise (0-2 s), one lesson per cut, "send this to someone who". Real: the experience behind the lessons; AI can draft wording but invented lessons lose credibility. Risk: financial, health or legal advice. Evidence: Later Reels entries "Age-centered content" and "This is your sign" (both 2026-09-25).
+
+**`storytime`.** A personal story told to camera, often while doing something else (makeup, cooking, driving). The first line is a cliffhanger and the viewer stays for the ending; long stories split into parts and drive follows. Beats: cliffhanger (0-3 s), who and where, escalation, climax, resolution or "part 2". Real: the story, if told as true. Risk: privacy and defamation of people in the story. Evidence: Later lists "Recent Flops" as a candid confessional (2026-08-28); no storytime-specific data found.
+
+**`reply-to-comment`.** A video answer to a viewer comment, with the comment shown as a sticker. The question arrives pre-validated by the audience. TikTok added it on 2020-06-18 ([TikTok Newsroom](https://newsroom.tiktok.com/en-us/product-tutorial-reply-to-comments-with-video)); Instagram added Reels visual replies in December 2021; on YouTube, Reply then Create opens the Shorts editor with the comment attached and notifies the commenter ([YouTube Help](https://support.google.com/youtube/answer/12816427), accessed 2026-10-26). Beats: sticker and restated question (0-2 s), answer or demo, invite more questions. Real: the comment; never fabricate one. Plan: the sticker is attached in-app, so a planner prepares the answer, not the composite. Risk: putting a hostile commenter's handle on screen invites a pile-on.
+
+**`green-screen`.** The creator is keyed over a screenshot, headline, photo or video. The background is the hook in frame one, and the creator's take holds attention. TikTok's effect launched 2019-10-22 ([TikTok Newsroom](https://newsroom.tiktok.com/green-screen-effect-on-tik-tok?lang=en)); YouTube offers Remix then Green Screen over eligible videos with automatic credit ([YouTube Help](https://support.google.com/youtube/answer/10623810), accessed 2026-10-26). Beats: background, pointing gesture and hook line (0-2 s), highlight the key part, the take with a background per point, conclusion. Real: face; backgrounds can be stills or AI images for illustration, never for news. Risk: copyright on others' images, screenshots of private individuals, originality ranking when commentary is thin. Evidence: Later lists an "iPhone green screen" GRWM (2026-03-27).
+
+**`reaction`.** The creator reacts to someone else's clip, image or product, as green screen, picture-in-picture, Duet or Stitch. It borrows the original's hook and adds a second face, and the verdict is the payoff. Beats: source moment or "wait for it" face (0-2 s), setup line, source plays with live reaction and pauses, verdict, question. Real: the reaction. Risk: reuse policies require meaningful commentary (see rules); use in-app tools for others' posts; off-platform rips skip the creator's permission. Evidence: Later's TikTok tracker lists "My reaction", a face-only ranking clip (2026-10-16, [Later](https://later.com/blog/tiktok-trends/)).
+
+**`duet-stitch-remix`.** A new video built on someone else's post through the platform tool: Duet (side by side), Stitch (up to five seconds of the original, then the response; [TikTok Newsroom](https://newsroom.tiktok.com/en-us/new-on-tiktok-introducing-stitch), 2020-09-03), YouTube Remix with Sound, Green Screen, Cut (1-5 s) and Collab ([YouTube Help](https://support.google.com/youtube/answer/10623810)). Instagram public accounts are remixable by default and private ones are not ([Instagram Help](https://help.instagram.com/792438641600810), read via search summary). Beats: original ends on a question or claim, immediate answer, elaboration, callback. Plan: the source does not exist until one is chosen, so a planner proposes the response and a search brief. Risk: the original creator can disable reuse, and a deleted YouTube original deletes video remixes. Status: evergreen; no 2025-2026 usage data found.
+
+### Lists and rankings
+
+**`top-n-list`.** A numbered countdown: "my top 10", "5 things I find chic", "worth the money". The number sets an expectation, viewers stay for number one, and the order starts arguments. Beats: "N things that" with the first visual (0-2 s), items N to 1 at 5-10 s each with a numbered overlay, number one and "what's yours?". Real: personal picks if presented as personal. Risk: affiliate links need disclosure; posters and product images carry rights. Evidence: Later Reels "My top 10" (2026-05-22) and "Worth the money" (2026-07-24).
+
+**`tier-list`.** Items dragged onto an S-to-D board with commentary. Every placement is a small payoff and the board is built to be argued with. YouTube counted more than 1B views of videos with "tier list" in the title from January to June 2025 and named Shorts as a fit for quick takes ([YouTube Culture & Trends](https://blog.youtube/culture-and-trends/tier-list/), 2025-08-01). Beats: board and a contested first placement (0-2 s), 5 to 10 placements, final board and "fight me". Real: the opinions. Risk: logos and third-party images; ranking real people invites harassment complaints.
+
+**`this-or-that`.** Two options side by side; viewers vote in comments or with a native poll sticker. Choosing costs nothing, and multi-round versions hold viewers to see every pair. Beats: "pick one" with both visible (0-2 s), rounds of 2-3 s, hardest pair last, "comment your picks". Real: the products or places if the account sells them. Risk: celebrity photos and third-party product images. Evidence: secondary 2026 roundups mention interactive pick formats without numbers; treat as unverified.
+
+**`caption-this`.** An odd clip or still posted with "caption this" and little else. It makes the comment section the content, and the best reply can seed a `reply-to-comment` follow-up. Beats: overlay and the odd moment (0-1 s), the moment plays or freezes, loop. Real: the moment. Risk: someone else's image. Evidence: none found; no documented origin.
+
+### Lifestyle and personal
+
+**`grwm`.** The creator does makeup, hair or an outfit while talking, usually telling a story ("GRWM while I tell you why I quit"). Two threads run at once, the transformation and the story, and viewers stay for both endings. Know Your Meme dates the earliest apparent GRWM to 2011-01-14 ([Know Your Meme](https://knowyourmeme.com/memes/get-ready-with-me-grwm)); Fortune reported #grwm passing 157 billion TikTok views ([Fortune](https://fortune.com/2023/11/27/get-ready-with-me-videos-tiktok-157-billion-views-users-prepare-dates-getting-fired), 2023-11-27). Beats: hook line and occasion over the bare start (0-3 s), first step and story setup, middle steps as the story rises, look revealed on the story's payoff, full-look check and "part 2?". Real: the person and the routine. Risk: gifted products need disclosure; skincare result claims. Evidence: Later Reels "Daily GRWM loading" (2026-10-02).
+
+**`day-in-the-life`.** Clips across one day framed by an identity ("a day as an ER nurse"). Identity plus curiosity is the hook; quick scene changes hold attention and job, pay and city questions fill the comments. Know Your Meme traces it to 2008 YouTube vlogs ([Know Your Meme](https://knowyourmeme.com/memes/day-in-the-life-vlogs)). Beats: identity on screen with a strong first visual (0-2 s), morning in two or three clips, core activity in four to eight clips, evening, reflection or question. Real: the day. Risk: coworkers, patients and workplace confidentiality; children; real-time location. Evidence: Later Reels "Vlog timestamps" (2026-10-23) and "Interactive calendar" (2026-07-17).
+
+**`timestamp-vlog`.** A day-in-the-life where each clip carries the clock time ("6:42am gym"). The timestamps work as a progress bar, and an unusual first time ("4:50am") is the hook. Beats: earliest time with a striking action (0-2 s), 8 to 15 labelled clips of 2-4 s, end-of-day shot and a line. Real: footage and times; clip metadata can supply the times. Risk: location and routine privacy. Evidence: Later Reels "Vlog timestamps" (2026-10-23).
+
+**`aesthetic-vlog`.** Mood-led footage of everyday life (coffee, rain, slow cooking), carried by grade, ambient sound and a line of text. A beautiful first frame hooks, calm pacing loops, aspiration drives saves. Beats: hero shot and text (0-2 s), five to ten slow clips, one small moment, closing shot. Real: the b-roll; generated b-roll contradicts the premise. Risk: bystanders, gifted homeware. Evidence conflicts by platform: TikTok Next 2026 says users now see #romanticizing as avoidant, while Later keeps listing aesthetic Reels such as "Whimsymaxxing" (2026-08-28). Prefer it for Reels and test it before committing on TikTok.
+
+**`routine-reset`.** A sequenced routine (morning, night, Sunday reset) or one split by timeframe ("once a day, once a week, once a month"). Progression is satisfying and viewers save it to copy. Beats: messy start or the timeframe label (0-2 s), 6 to 12 steps with text, finished state. Real: the routine. Risk: household members on camera; wellness claims. Evidence: Later lists "Once a day, once a week, once a month" on TikTok (2026-09-18) and Reels (2026-09-25).
+
+**`ootd`.** Today's outfit, or several outfits joined by a motion that hides the cut (fan wipe, shoe toss, jump). Each change is a reveal and "where is it from?" fills the comments. Beats: base look (0-1 s), trigger motion, three to six outfits landing on beats, favourite held. Real: the clothes and the wearer; AI try-on is realistic edited content that needs a label. Film: matching position across takes is the time sink. Risk: gifted or affiliate clothing; trending audio on business accounts. Evidence: New Engen's October 2026 TikTok list includes "Fan Transition" ([New Engen](https://newengen.com/insights/tiktok-trends/), updated 2026-10-14); Later Reels "Fan transition" (2026-10-09).
+
+**`whats-in-my-bag`.** The creator empties a bag item by item. Each item is a small reveal, it says something about identity, and product questions follow. Nylon traced bag tours to a 1945 magazine and the TikTok revival to late September 2023, when #WhatsInMyBag had over 3 billion views ([Nylon](https://nylon.com/fashion/whats-in-my-bag-culture-and-putting-identity-on-display), 2023-10-26). Beats: bag and a teased odd item (0-2 s), 6 to 12 items at about 3 s, weirdest item and "what's in yours?". Real: the items. Risk: medication and ID cards in shot; gifted items. Evidence: nothing newer than early 2024 found.
+
+**`recent-flops`.** A list of recent failures: posts that tanked, products that did not sell, recipes that went wrong. Admitting failure is the hook, and viewers answer with their own. Beats: "my flops this month" with the worst one visible (0-2 s), three to five flops with a number each ("sold 0"), the lesson or the one that worked, "tell me yours". Real: the flops and their numbers; invented numbers make it misleading. Risk: customer data in screenshots. Evidence: Later Reels "Recent Flops" (2026-08-28); TikTok Next 2026's "Reali-TEA" describes people sharing low points.
+
+### Product, process and proof
+
+**`tutorial`.** Step-by-step instruction with a visible result. Showing the result or naming the problem in the first second hooks; the steps hold; usefulness drives saves and search discovery. TikTok Next 2026 recommends "comparisons, demos, and how-tos" ([TikTok Next](https://ads.tiktok.com/business/en/next), accessed 2026-10-26). Beats: result or problem (0-2 s), what you need, one step per cut with a number, result beside the start, "save this". Real: the process and result, or a real screen recording. Risk: safety, medical or financial instructions; gifted tools. Status: active-2026.
+
+**`unboxing`.** Opening a product on camera through first use. Anticipation, packaging sound and a stand-in for the viewer's own purchase. It is one of the four shoppable styles in TikTok Shop's creator guidance, which puts the hook in the first 3-6 seconds ([PPC Land on TikTok Shop Academy](https://ppc.land/tiktok-shops-shoppable-video-content-guide-tells-creators-what-actually-works/), 2026-05-20; Academy page not opened). Beats: sealed box and a claim or question (0-3 s), opening, product and what's included, first use, verdict. Real: product and opening. Risk: gifted or PR product disclosure.
+
+**`haul`.** Several purchases with a quick verdict each, now often tied to shop affiliate links. Item count builds anticipation and each item is a reveal. Beats: the pile and "I spent X so you don't have to" (0-2 s), five to eight items with verdicts, best and worst. Real: products and opinions. Risk: gifted items and affiliate commission are both material connections. Evidence: Later Reels "Worth the money" (2026-07-24) and a shopping-haul edit (2025-12-04); no haul volume data.
+
+**`before-after`.** Problem state, optional process, result from the same angle. Tension resolves in the "after", and useful results are saved. Also a TikTok Shop shoppable style (2026-05-20, as above). Beats: before at its worst, or a flash of the after (0-2 s), sped-up process, after with a result caption. Real: both states; an AI-improved "after" used to sell is deceptive. Risk: efficacy claims must be typical and substantiated; TikTok restricts before-and-after imagery that promotes weight-loss and muscle-gain products (rules in effect from 2024-05-17, reported by [TechXplore](https://techxplore.com/news/2024-04-tiktok-content-disordered-dangerous-weight.html)). Evidence: active-2026 through the shop guidance; no format volume data.
+
+**`behind-the-scenes`.** How the product, shoot, event or business actually runs. It markets without looking like marketing and the footage comes from work that happens anyway. TikTok Next 2026 mentions "BTS moments". Beats: finished result or an intriguing mid-process shot (0-2 s), four to eight process steps with people and tools, result or team moment. Real: all of it; an AI-made BTS defeats the point. Risk: consent of staff, clients and guests; confidential screens and whiteboards; venue filming rules.
+
+**`asmr-process`.** Close-up, sound-led making, cutting, pouring or cleaning, usually without talking. A sensory hook from the first frame, loops cleanly and needs no language. YouTube reported about 90 billion views of ASMR-related videos in 2022 ([YouTube Culture & Trends](https://blog.youtube/culture-and-trends/international-asmr-day-2023/), 2023). Beats: close-up and first sound (0-1 s), three to six tight shots of one process, end frame that loops. Real: footage and recorded sound. Risk: mass-produced AI ASMR meets YouTube's inauthentic-content policy. Status: evergreen; no 2026 platform data.
+
+**`street-interview`.** One question to passers-by, answers cut together. The question is the hook and unscripted answers supply surprise. Brands adopted it widely, according to NoGood's interviews with marketers ([NoGood](https://nogood.io/blog/man-on-the-street-interviews), accessed 2026-10-26). Beats: question and the best answer (0-2 s), four to eight answers, standout or twist, question to the comments. Real: the people; never fabricate an interviewee. Film: finding willing people dominates the time. Risk: releases from interviewees (EU and UK image rights are stricter), no minors without a guardian, edits that misrepresent. Evidence: Later TikTok "Replacing questions" (2026-08-21).
+
+### Text and meme templates
+
+**`text-over-footage`.** A story, tip list or opinion told in on-screen text over ambient footage (driving, walking, hands cooking, scenery). The motion makes it a video and the text carries the content; viewers stay to finish reading and it works muted. Beats: hook line (0-2 s), three to six text cards of 2-3 s, twist or payoff card, optional question. Real: rights to the footage, and the story if told as true. Risk: someone else's clip as backdrop meets reuse rules and Content ID. Evidence: Later Reels "This is your sign" uses b-roll with on-screen text (2026-09-25).
+
+**`nobody-meme`.** "Nobody:" then "Me:" over an unprompted behaviour. The template signals a joke in under a second and pays off within a few. Earliest tweets go back to 2018-09-01 and TikTok added a "Nobody" effect in May 2019 ([Know Your Meme](https://knowyourmeme.com/memes/nobody), accessed 2026-10-26). Beats: "Nobody:" over a neutral beat, "Me:" label, the escalating action, loop. Real: the action. Risk: low. Evidence: nothing after 2019; treat as a dated template that suits self-aware brand humour.
+
+**`money-cant-buy`.** "Money can't buy happiness, but it can buy [X]", then a joyful reveal of X. A familiar proverb sets up the turn in under two seconds. The proverb is in print by 1821 ([Barry Popik](https://barrypopik.com/blog/money_cant_buy_happiness)); no meme or trend origin was found. Beats: proverb over a flat shot (0-2 s), "but it can buy" (on a beat drop if using audio), reveal, optional montage. Real: X. Risk: financial-product brands may be making a financial promotion; trending audio on business accounts.
+
+**`where-are-you-texts`.** An incoming "where are you??" text over footage of where the creator really is. The gap between where someone thinks you are and where you are is the joke; the reply bubble is the second punchline. No origin found; the nearest documented relative is the "she sent me her location" meme from 2022 ([Know Your Meme](https://knowyourmeme.com/memes/she-sent-me-her-location-bruh-tf-is-this)). Beats: incoming bubble with a sender label (0-2 s), the actual place, the reply, optional escalation. Real: the place. Risk: real names or numbers in bubbles; broadcasting a live location.
+
+**`expectation-reality`.** An idealised version cut against the real outcome. The "expectation" frame sets up the punchline instantly. Know Your Meme credits a split-screen scene in (500) Days of Summer (2009) ([Know Your Meme](https://knowyourmeme.com/memes/expectation-vs-reality)). Beats: "Expectation" over a polished shot (0-2 s), hard cut on the beat to "Reality", optional two to four more pairs. Real: the reality half; AI can make the expectation half. Risk: a brand's ad as the expectation is a copyright and disparagement risk; realistic AI expectation images need a label.
+
+**`pov-skit`.** "POV: [scenario]" roleplay with the viewer placed in the scene. The caption is the whole setup and the relatable scenario gets shared to the friend it describes. Know Your Meme dates POV videos to TikTok around 2019 ([Know Your Meme](https://knowyourmeme.com/memes/pov-memes)). Beats: caption and opening expression (0-1 s), escalating scenario, twist. Real: the performance. Risk: stereotypes; trending audio. Evidence: Later TikTok "Taking one for the team" role skit (2026-10-16).
+
+**`fake-text-story`.** An animated chat screen plays a scripted story, often with a synthetic voice and gameplay or satisfying footage underneath. Every bubble is a small cliffhanger and twist endings bring rewatches. Tools such as Crayo sell this workflow (see [the platform comparison](video-platforms.matrix.md)). Beats: provocative first message (0-2 s), escalation at a bubble or two per second, twist, "part 2". Real: nothing except rights to the background footage. Risk: the highest policy exposure here. TikTok makes "unoriginal or reused material without anything new" ineligible for For You ([TikTok Community Guidelines](https://www.tiktok.com/community-guidelines/en/integrity-authenticity), effective 2026-09-24), and YouTube's "inauthentic content" rule targets mass-produced templates. A chat presented as a real leak, or one using real people's names, is impersonation. Label it as a story. Evidence: vendor pages only.
+
+**`faceless-explainer`.** Voiceover over stock, screen recordings, images or gameplay with nobody on camera. A question or surprising fact hooks and visuals change every few seconds. It is the easiest format to batch and the most exposed to monetisation rules. Beats: question or fact as text and voice (0-2 s), three to five points with a visual change every 2-3 s, payoff. Real: facts, which must be checked; everything else can be generated. Risk: YouTube renamed repetitious content to "inauthentic content" on 2025-07-15 ([YouTube Help](https://support.google.com/youtube/answer/1311392), accessed 2026-10-26); give each video a human perspective; realistic synthetic visuals need labels; stock and gameplay licences. For our own pipeline, see [the narrated-short playbook](narrated-short.playbook.md).
+
+**`photo-slideshow`.** Swipeable images with music and text: TikTok Photo Mode or an Instagram carousel. Slide one is the hook, swiping is self-paced and it needs no video at all. Fanpage Karma's analysis found TikTok carousels drew far more engagement than videos, though its English and German write-ups give different figures (about 81% more versus "almost twice as high"; [Fanpage Karma](https://www.fanpagekarma.com/insights/carousel-vs-video-performance-tiktok-instagram/)). Beats: hook slide, one point per slide, payoff and question. Real: photos when the claim is personal ("my trip"). Risk: platform-licensed music; realistic AI images. Evidence: Later TikTok "Kinda chic" slideshow (2026-08-21) and Reels "Plan ABC" (2026-06-19). Produce it with the `create-carousel` skill when installed.
+
+### Sound and reveal
+
+**`beat-drop-reveal`.** The build in the music carries the "before" and the reveal lands exactly on the drop. The audio sets up the payoff and the sync rewards rewatching. Beats: build matched to the song's build (3-8 s), hard cut to the reveal on the drop frame, two to six seconds of reveal shots on beats. Real: footage. Risk: the music is the format, so licensing decides the platform version (see rules). Evidence: New Engen's October 2026 list includes "Ramalama Costume Walk", a slow walk building to a costume reveal.
+
+**`trend-sound-lipsync`.** Lip-sync or gestures matched to a trending sound, often with a transition. Recognition of the sound is the hook and the sound's page is a discovery surface. Beats: sound start and first pose (0-1 s), lip-sync build, beat-synced transition, hold and loop. Real: performance. Film: hitting sync takes retakes. Risk: business accounts and cross-posting (see rules); trends turn over within weeks. Evidence: Later TikTok "Upside down" transition (2026-10-02), Reels "Leg swipe transition" (2026-09-04).
+
+### Parody
+
+Parody formats need fictional subjects, an on-screen parody or skit label, and no real person's name, face or voice. Platform rules give parody no blanket exemption (see rules).
+
+**`parody-product-review`.** A mock ad, review or infomercial for an absurd or fictional product ("are you tired of..."). Viewers recognise ad grammar instantly and the absurd product is the joke. Beats: staged problem (0-2 s), reveal, absurd demos and fake testimonials, "but wait", fake price. Real: the performance; AI can supply the announcer voice, graphics and product b-roll. Risk: it must never review a real product the account sells or present a testimonial as genuine, which is a fabricated review. The FTC's rule on consumer reviews and testimonials covers AI-generated reviews and reviews from people who do not exist ([FTC](https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials), 2024-08-14). NewsGuard documented edited Shark Tank clips used as fake promotions for real shop products ([NewsGuard](https://www.newsguardrealitycheck.com/p/tiktok-hosts-deceptive-shark-tank-clips-for-profit), accessed 2026-10-26). Evidence: #Doop dupe parodies had 80M views in January 2023 ([Inquirer](https://inquirer.com/news/dupe-doop-tiktok-trend-explained-20230127.html)); nothing current.
+
+**`fake-apology`.** A parody of the solemn creator apology (plain hoodie, bare wall, long sigh) for a trivial offence. The grammar is instantly recognisable and the triviality is the punchline. Know Your Meme records parodies from at least 2015 ([Know Your Meme](https://knowyourmeme.com/memes/youtube-apology-videos)). Beats: sombre framing and sigh (0-3 s), over-serious wind-up, trivial offence, "taking some time off" or a sudden sponsor read. Real: performance. Risk: an account with a real controversy reads as mocking; never parody a specific real creator's apology.
+
+**`netflix-doc-parody`.** The creator prepares for an interview chair as if for their own documentary ("Preparing for my Netflix documentary when the group chat leaks"), or a mock-documentary narration over mundane life. The documentary grammar is legible in a second and the caption carries the joke. Know Your Meme dates it to a 2026-06-16 video, with spread from 2026-06-30 ([Know Your Meme](https://knowyourmeme.com/memes/preparing-for-my-netflix-documentary), added 2026-07-13, status "Submission"); YPulse listed it on 2026-07-10 ([YPulse](https://www.ypulse.com/article/2026/07/10/gen-zs-netflix-documentary-on-the-viral-list/)). Beats (meme): sit, mime the mic clip with caption (0-2 s), fidget as the music builds, look to camera. Beats (narrated): cold open, title card, three or four slow-motion beats with narration, mundane reveal. Real: the creator. Risk: evoke the genre, never the brand. Do not use the N logo, the red title styling or the "ta-dum" sound; it was registered as a Canadian motion-and-sound mark in February 2026 ([CIPO 2103699](https://ised-isde.canada.ca/cipo/trademark-search/2103699)) and is reported as a US sound mark. Do not clone a real narrator's voice. Status: past-peak; absent from New Engen's October 2026 list.
+
+## Rules that change the choice
+
+These facts move a format up or down the list before anything is made. Recheck each against its source before publishing.
+
+- **Music on business accounts.** TikTok says businesses "cannot use the general music library for commercial usage" and should use the Commercial Music Library for all commercial activity, organic posts, duets and stitches included ([TikTok Ads Help](https://ads.tiktok.com/help/article/commercial-music-library?lang=en), updated July 2025). A trending sound is therefore off the table for a brand account unless it is cleared for business use. Check licence scope for each asset and destination; a library licence on one platform does not carry over to a repost elsewhere.
+- **Length on Shorts.** "Shorts longer than one minute that have an active Content ID claim, regardless of the policy, will be blocked" ([YouTube Help](https://support.google.com/youtube/answer/15424877), accessed 2026-10-26). Keep any Short with third-party music or footage under a minute.
+- **Length on Reels.** Instagram recommends videos of 3 minutes or less to people who do not follow the account ([Instagram Creators FAQ](https://creators.instagram.com/faq), accessed 2026-10-26).
+- **Originality.** TikTok excludes unoriginal reused material from For You (guidelines effective 2026-09-24). Instagram recommends original content and says third-party watermarks may reduce reach (Creators FAQ). Meta's 2025-07-14 policy says stitching clips together or adding a watermark is not meaningful enhancement ([Meta for Creators](https://creators.facebook.com/blog/combating-unoriginal-content), read via search summary). YouTube monetisation requires meaningful added value for reaction, compilation and reused content ([YouTube Help](https://support.google.com/youtube/answer/1311392)). This affects `reaction`, `green-screen`, `text-over-footage`, `fake-text-story` and `faceless-explainer`.
+- **AI labels.** TikTok requires labels on "AI-generated or significantly edited content that shows realistic-looking scenes or people". YouTube and Meta have equivalent disclosure, and EU AI Act Article 50(4) applies to deepfakes from 2026-08-02 with a lighter duty for evident satire. Decide labels against the destination's current rules before publishing.
+- **Gifted, paid and affiliate products.** `grwm`, `ootd`, `whats-in-my-bag`, `unboxing`, `haul`, `before-after` and `top-n-list` often involve a material connection. Each platform has a commercial-content toggle, and the FTC says platform tools may not be enough on their own.
+- **Impersonation and fake endorsement.** TikTok groups impersonation and fake reviews under deceptive behaviour. YouTube treats AI copies of a person's voice or likeness that imply endorsement as impersonation ([YouTube Help](https://support.google.com/youtube/answer/2801947)). None of the three platforms has a blanket parody exemption, so the parody conditions above apply.
+- **People on camera.** `street-interview`, `day-in-the-life`, `behind-the-scenes` and event footage need consent for the people shown. Record consent with the asset.
+
+## Known gaps
+
+- No TikTok Creative Center figures. Detail views need a login and none were captured, so no status above rests on hashtag volume.
+- TikTok's own help pages for upload length and Duet/Stitch settings did not load; those details rest on third-party guides.
+- Thirteen formats have no 2025-2026 evidence (`unverified`). They may still work; nobody tracked them.
+- Reels length studies disagree depending on the metric: Socialinsider's H1 2026 sample of 9.77M Reels found the highest engagement at 45-60 s ([Socialinsider](https://socialinsider.io/blog/instagram-reels-length/), updated 2026-10-20), while a smaller study favoured 15-30 s. None is a per-format length.
+- Re-research this file when a status is older than three months or a platform changes a rule listed above.

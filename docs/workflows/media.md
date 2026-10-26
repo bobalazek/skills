@@ -19,6 +19,8 @@ Start at the first missing result: **idea → script → storyboard → producti
 
 Filming and generating new footage require the actual capture/provider tools and authorized inputs. A shot plan can expose those dependencies; the collection does not bundle those tools or imply that a code renderer produces every kind of video.
 
+To choose short-form formats for a person or brand before media exists, the [persona-to-format playbook](../../skills/media/plan-video/references/persona-to-format.playbook.md) ranks the [short-video format catalogue](../../skills/media/plan-video/references/short-video-formats.matrix.md): 41 TikTok, Reels and Shorts formats with required material, estimated effort, dated status and risks.
+
 For our own idea-to-export narrated short, the [production playbook](../../skills/media/plan-video/references/narrated-short.playbook.md) defines the generation and editing flows, concrete model bindings, caption timing and scene-specific repairs. It also covers source-recording clips and reuse of the accepted production setup across episodes. The optional [platform comparison](../../skills/media/plan-video/references/video-platforms.matrix.md) covers Vid.AI, Crayo, SendShort, AutoShorts, Short.ai, Revid and OpusClip with dated prices and access gaps. These references add production and selection guidance; they do not install tools or account integrations.
 
 ## Produce media
