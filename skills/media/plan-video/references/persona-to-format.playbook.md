@@ -12,7 +12,7 @@ Ask only for what is missing; reuse the brand record, past posts and earlier ans
 | Primary goal, plus at most two secondary | Picks the format family and the success measure (step 3) |
 | On camera: face, voice only, hands only, nobody | Removes whole families of formats |
 | Real material available now | Products, a workplace, a process, past shoots, customers who agreed to appear, screen recordings |
-| Time per week | Caps total effort per video |
+| Time per week and posts per week | Time divided by posts is the budget for one video |
 | Account type per platform | A business account changes the music available (catalogue rules) |
 | Platforms | TikTok, Reels or Shorts; each has its own audio and length rules |
 | Sector constraints | Health, finance, weight loss, alcohol, children, client confidentiality |
@@ -24,24 +24,24 @@ When the user wants help deciding, offer the choice with a reason rather than de
 
 Remove a format from the catalogue when any of these is true:
 
-- It needs a face or voice the persona will not show. `grwm`, `talking-head`, `storytime`, `pov-skit` and the parodies need a face; `faceless-explainer`, `text-over-footage`, `photo-slideshow`, `fake-text-story`, `asmr-process` and `tier-list` need none.
+- Its **Cam** value asks for more than the persona will show. A persona who shows only hands keeps `hands`, `none` and `any` formats; voice only keeps `voice`, `none` and `any`; `others` needs people willing to appear.
 - Its **Real** material does not exist and cannot be obtained this week. An unboxing without a product or a before-and-after without a project is a plan for later, not a suggestion now.
-- Its total effort (prep + film + edit, upper bound) is larger than one week's budget for a single video.
+- Its total effort (prep + film + edit, upper bound) is larger than the budget for one video.
 - The account is a business account and the format depends on a trending sound that is not cleared for business use (`trend-sound-lipsync`, often `beat-drop-reveal`).
 - A sector constraint rules it out, for example weight-loss before-and-after on TikTok, or an `unpopular-opinion` about health.
 - The persona will not accept the risk: parody, opinion and meme formats for a conservative brand.
 
 ## 3. Match the goal to format families
 
-Pick from the families that serve the primary goal. Name the measure before the pilot so the result can be read honestly.
+Pick from the families that serve the primary goal. The lists are starting points: any format can serve a goal when the idea does. Name the measure before the pilot so the result can be read honestly.
 
 | Primary goal | Start with | Measure |
 | --- | --- | --- |
-| Sell or qualify demand | `tutorial`, `before-after`, `unboxing`, `behind-the-scenes`, `reply-to-comment` answering buyer questions | Qualified inquiries, opt-ins or attributable sales; views only explain distribution |
-| Teach | `tutorial`, `advice-list`, `top-n-list`, `green-screen`, `faceless-explainer`, `photo-slideshow` | Saves and substantive questions as signals, not proof of learning |
-| Entertain or be discovered | `pov-skit`, `nobody-meme`, `expectation-reality`, `beat-drop-reveal`, parodies, `trend-sound-lipsync` | Completion, shares and returning viewers |
-| Build community | `reply-to-comment`, `caption-this`, `this-or-that`, `tier-list`, `unpopular-opinion`, `duet-stitch-remix` | Comments and replies that continue the thread |
-| Show the person behind it | `day-in-the-life`, `timestamp-vlog`, `grwm`, `recent-flops`, `storytime`, `behind-the-scenes` | Follows and returning viewers |
+| Sell or qualify demand | `tutorial`, `before-after`, `unboxing`, `haul`, `behind-the-scenes`, `reply-to-comment` answering buyer questions, teaching formats aimed at a buyer's decision | Qualified inquiries, opt-ins or attributable sales; views only explain distribution |
+| Teach | `tutorial`, `talking-head`, `advice-list`, `top-n-list`, `green-screen`, `faceless-explainer`, `photo-slideshow`, `text-over-footage` | Saves and substantive questions as signals, not proof of learning |
+| Entertain or be discovered | `pov-skit`, `nobody-meme`, `money-cant-buy`, `where-are-you-texts`, `expectation-reality`, `beat-drop-reveal`, `asmr-process`, `street-interview`, `fake-text-story`, parodies, `trend-sound-lipsync` | Completion, shares and returning viewers |
+| Build community | `reply-to-comment`, `reaction`, `caption-this`, `this-or-that`, `tier-list`, `unpopular-opinion`, `duet-stitch-remix` | Comments and replies that continue the thread |
+| Show the person behind it | `day-in-the-life`, `timestamp-vlog`, `grwm`, `ootd`, `routine-reset`, `aesthetic-vlog`, `whats-in-my-bag`, `recent-flops`, `storytime`, `behind-the-scenes` | Follows and returning viewers |
 
 Settle on three to five recurring pillars, each one persona need crossed with what the brand can credibly show, and give each pillar one or two formats ([Sprout Social](https://sproutsocial.com/insights/social-media-content-pillars/), accessed 2026-10-26, recommends three to five pillars mapped from goals to personas and revisited every few months).
 
@@ -50,7 +50,7 @@ Settle on three to five recurring pillars, each one persona need crossed with wh
 Do not invent a weighted score. Order the remaining formats with these rules, each one breaking ties in the one before:
 
 1. The **Real** material exists today.
-2. Lower total effort for the persona's budget.
+2. Total effort fits the budget for one video. Among formats that fit, prefer the one that serves the strongest pillar over the cheapest.
 3. Status: `live`, then `active-2026`, `evergreen`, `unverified`, `past-peak`. A `past-peak` format only makes sense when the persona has a sharp angle on it.
 4. Fewer risk flags under the catalogue's rules.
 
@@ -110,7 +110,7 @@ Suggested cadence, our judgement rather than published decay data: sound and mem
 
 **Wedding photographer, wants more inquiries.** Face on camera is fine but brief; real material is past shoots with couples' consent and a weekly shoot; three hours a week; creator account on Instagram, business account on TikTok. The business account takes `trend-sound-lipsync` off TikTok. Ranked: `before-after` (raw versus edited frame, material exists, about an hour), `behind-the-scenes` (filmed during Saturday's shoot), `reply-to-comment` answering "how far ahead should we book?". Pillars: proof of craft, the wedding day from the inside, planning answers.
 
-**B2B SaaS founder, no face, brand account.** Wants qualified demo requests; can record the product screen; two hours a week. Face formats and trending audio are out. Ranked: `tutorial` as a screen recording of one job the buyer does weekly, `faceless-explainer` on a buyer decision with sources, `photo-slideshow` of the same explainer for Instagram and TikTok Photo Mode. `fake-text-story` was filtered: it reaches entertainment viewers, not buyers, and carries the highest originality risk.
+**B2B SaaS founder, no face, brand account.** Wants qualified demo requests; can record the product screen; two hours a week. Face formats and trending audio are out. Ranked: `tutorial` as a screen recording of one job the buyer does weekly, then two teaching formats aimed at a buyer decision: `faceless-explainer` with sources, `photo-slideshow` of the same explainer for Instagram and TikTok Photo Mode. `fake-text-story` was filtered: it reaches entertainment viewers, not buyers, and carries the highest originality risk.
 
 ## Limits
 

@@ -11,6 +11,7 @@
 | Prep | Finding, gathering or writing what the video needs before the camera rolls |
 | Film | Camera or screen capture time, including retakes |
 | Edit | Cutting, captions, overlays, sync and export |
+| Cam | Who or what must appear on camera. `face`: the creator's face. `hands`: hands or body without the face. `voice`: voice without the face. `others`: other people. `none`: nobody. `any`: works with whatever the persona allows |
 | Board | Storyboard complexity. `low`: one setup, a shot list fits in a line. `med`: 3 to 8 planned shots, matched framing or timing to audio. `high`: several setups with scripted performance and continuity |
 | AI | `none`: nothing worth generating. `assist`: AI drafts script, captions, hooks, shot list or voice. `heavy`: AI can produce most of the finished asset (script, voice, images, chat screens, b-roll) |
 | Length | Typical finished length in seconds. Inferred from beat structure; no platform or report publishes per-format lengths. Check platform maximums on the destination's current help pages |
@@ -29,51 +30,51 @@
 
 ## Planner table
 
-| Id | Format | Source | Prep | Film | Edit | Board | AI | Length | Status |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `talking-head` | Talking head | own | 10-15 | 5-15 | 15-25 | low | assist | 20-90 | active-2026 |
-| `unpopular-opinion` | Unpopular opinion | own or text | 5-15 | 3-10 | 5-15 | low | assist | 10-40 | unverified |
-| `advice-list` | Things I wish I knew, age-centred advice | own or text | 10 | 5-15 | 15-20 | low | assist | 15-60 | active-2026 |
-| `storytime` | Storytime | own | 5-10 | 5-15 | 15-25 | low | assist | 45-180 | unverified |
-| `reply-to-comment` | Reply to a comment | own, screen | 5-15 | 5-15 | 10-20 | low | assist | 15-60 | evergreen |
-| `green-screen` | Green screen commentary | own, stills | 10-20 | 5-10 | 10-20 | low | assist | 20-90 | active-2026 |
-| `reaction` | My reaction to | own, remix | 5-10 | 5-10 | 5-15 | low | none or assist | 15-45 | live |
-| `duet-stitch-remix` | Duet, Stitch, Remix | own, remix | 5 | 5-10 | 5-15 | low | none or assist | 10-60 | evergreen |
-| `top-n-list` | Top N, N things | own, stills, screen | 10-15 | 10-20 | 15-30 | low | assist or heavy | 15-60 | active-2026 |
-| `tier-list` | Tier list | screen, stills | 15 | 10 | 15-20 | low | assist or heavy | 30-90 | active-2026 |
-| `this-or-that` | This or that, would you rather | stills, own | 10-20 | 0-15 | 10-20 | low | assist | 5-45 | unverified |
-| `caption-this` | Caption this | own | 2-5 | 0-5 | 2-5 | low | none or assist | 5-10 | unverified |
-| `grwm` | Get ready with me | own | 5 | 20-40 | 20-30 | low | assist | 30-90 | live |
-| `day-in-the-life` | Day in the life | own | 10 | 30-60 | 30-45 | med | assist | 20-90 | live |
-| `timestamp-vlog` | Timestamp vlog | own | 0-10 | 30-60 | 30-60 | low | assist | 25-60 | live |
-| `aesthetic-vlog` | Lifestyle or aesthetic vlog | own | 10-20 | 20-45 | 30-60 | med | assist | 15-60 | active-2026 |
-| `routine-reset` | Routine or reset | own | 5-10 | 20-60 | 20-30 | low | assist | 20-90 | active-2026 |
-| `ootd` | OOTD, outfit transitions | own | 20-45 | 15-40 | 20-45 | med | none or assist | 7-30 | live |
-| `whats-in-my-bag` | What's in my bag | own | 10-20 | 10-20 | 20-30 | low | assist | 30-60 | unverified |
-| `recent-flops` | Recent flops recap | own, stills, screen | 15-30 | 5-15 | 20-40 | low | assist | 20-45 | active-2026 |
-| `tutorial` | Tutorial or how-to | own or screen | 10-20 | 15-30 | 20-40 | med | assist | 30-90 | active-2026 |
-| `unboxing` | Unboxing | own | 5-15 | 10-20 | 20-40 | low | assist | 20-60 | active-2026 |
-| `haul` | Haul, worth the money | own | 10 | 15-30 | 20-30 | low | assist | 30-90 | active-2026 |
-| `before-after` | Before and after | own or stills | 5-15 | 10-30 | 15-30 | low | assist | 10-45 | active-2026 |
-| `behind-the-scenes` | Behind the scenes | own | 5-10 | 20-60 | 20-40 | low | assist | 20-60 | active-2026 |
-| `asmr-process` | ASMR, satisfying process | own | 10-20 | 15-30 | 15-30 | low | none or assist | 10-60 | evergreen |
-| `street-interview` | Street interview | own | 10 | 45-120 | 30-45 | med | assist | 20-90 | active-2026 |
-| `text-over-footage` | Text over existing footage | own or stock, text | 5-10 | 0-5 | 10-20 | low | assist | 7-60 | active-2026 |
-| `nobody-meme` | Nobody, absolutely nobody | own | 2-5 | 2-10 | 3-5 | low | assist | 5-12 | unverified |
-| `money-cant-buy` | Money can't buy happiness, but | own | 2-5 | 5-10 | 5-10 | low | assist | 6-15 | unverified |
-| `where-are-you-texts` | Where are you texts | own, text | 3-5 | 2-10 | 5-15 | low | assist | 6-15 | unverified |
-| `expectation-reality` | Expectation vs reality | own, stills | 5-20 | 10-20 | 10-20 | low | assist or heavy | 7-20 | unverified |
-| `pov-skit` | POV skit | own | 5-10 | 10-20 | 10-15 | low | assist | 7-30 | live |
-| `fake-text-story` | Fake text conversation | text, stock | 10-20 | 0 | 5-60 | med | heavy | 30-90 | unverified |
-| `faceless-explainer` | Faceless narrated explainer | text, stock, screen | 20-40 | 0 | 30-45 | med | heavy | 30-90 | unverified |
-| `photo-slideshow` | Photo slideshow, carousel | stills, text | 10-20 | 0-10 | 15-25 | low | heavy | 4-10 slides | live |
-| `beat-drop-reveal` | Beat-drop reveal | own | 10-30 | 15-30 | 20-45 | med | assist | 7-20 | live |
-| `trend-sound-lipsync` | Trend-sound lip-sync or transition | own | 5-10 | 10-30 | 10-20 | low or med | none | 7-20 | live |
-| `parody-product-review` | Parody product review or infomercial | own | 20-40 | 20-45 | 30-60 | med | heavy | 20-45 | unverified |
-| `fake-apology` | Fake apology video | own | 10-20 | 5-15 | 10-20 | low | assist | 15-45 | unverified |
-| `netflix-doc-parody` | Netflix-documentary parody | own | 5-30 | 5-30 | 5-60 | low or med | assist or heavy | 7-45 | past-peak |
+| Id | Format | Source | Cam | Prep | Film | Edit | Board | AI | Length | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `talking-head` | Talking head | own | face | 10-15 | 5-15 | 15-25 | low | assist | 20-90 | active-2026 |
+| `unpopular-opinion` | Unpopular opinion | own or text | face or none | 5-15 | 3-10 | 5-15 | low | assist | 10-40 | unverified |
+| `advice-list` | Things I wish I knew, age-centred advice | own or text | face or none | 10 | 5-15 | 15-20 | low | assist | 15-60 | active-2026 |
+| `storytime` | Storytime | own | face | 5-10 | 5-15 | 15-25 | low | assist | 45-180 | unverified |
+| `reply-to-comment` | Reply to a comment | own, screen | face | 5-15 | 5-15 | 10-20 | low | assist | 15-60 | evergreen |
+| `green-screen` | Green screen commentary | own, stills | face | 10-20 | 5-10 | 10-20 | low | assist | 20-90 | active-2026 |
+| `reaction` | My reaction to | own, remix | face | 5-10 | 5-10 | 5-15 | low | none or assist | 15-45 | live |
+| `duet-stitch-remix` | Duet, Stitch, Remix | own, remix | face | 5 | 5-10 | 5-15 | low | none or assist | 10-60 | evergreen |
+| `top-n-list` | Top N, N things | own, stills, screen | any | 10-15 | 10-20 | 15-30 | low | assist or heavy | 15-60 | active-2026 |
+| `tier-list` | Tier list | screen, stills | voice or none | 15 | 10 | 15-20 | low | assist or heavy | 30-90 | active-2026 |
+| `this-or-that` | This or that, would you rather | stills, own | none | 10-20 | 0-15 | 10-20 | low | assist | 5-45 | unverified |
+| `caption-this` | Caption this | own | none | 2-5 | 0-5 | 2-5 | low | none or assist | 5-10 | unverified |
+| `grwm` | Get ready with me | own | face | 5 | 20-40 | 20-30 | low | assist | 30-90 | live |
+| `day-in-the-life` | Day in the life | own | face | 10 | 30-60 | 30-45 | med | assist | 20-90 | live |
+| `timestamp-vlog` | Timestamp vlog | own | any | 0-10 | 30-60 | 30-60 | low | assist | 25-60 | live |
+| `aesthetic-vlog` | Lifestyle or aesthetic vlog | own | hands or none | 10-20 | 20-45 | 30-60 | med | assist | 15-60 | active-2026 |
+| `routine-reset` | Routine or reset | own | hands or face | 5-10 | 20-60 | 20-30 | low | assist | 20-90 | active-2026 |
+| `ootd` | OOTD, outfit transitions | own | face | 20-45 | 15-40 | 20-45 | med | none or assist | 7-30 | live |
+| `whats-in-my-bag` | What's in my bag | own | hands | 10-20 | 10-20 | 20-30 | low | assist | 30-60 | unverified |
+| `recent-flops` | Recent flops recap | own, stills, screen | any | 15-30 | 5-15 | 20-40 | low | assist | 20-45 | active-2026 |
+| `tutorial` | Tutorial or how-to | own or screen | hands or voice | 10-20 | 15-30 | 20-40 | med | assist | 30-90 | active-2026 |
+| `unboxing` | Unboxing | own | hands | 5-15 | 10-20 | 20-40 | low | assist | 20-60 | active-2026 |
+| `haul` | Haul, worth the money | own | face | 10 | 15-30 | 20-30 | low | assist | 30-90 | active-2026 |
+| `before-after` | Before and after | own or stills | none | 5-15 | 10-30 | 15-30 | low | assist | 10-45 | active-2026 |
+| `behind-the-scenes` | Behind the scenes | own | any | 5-10 | 20-60 | 20-40 | low | assist | 20-60 | active-2026 |
+| `asmr-process` | ASMR, satisfying process | own | hands | 10-20 | 15-30 | 15-30 | low | none or assist | 10-60 | evergreen |
+| `street-interview` | Street interview | own | others | 10 | 45-120 | 30-45 | med | assist | 20-90 | active-2026 |
+| `text-over-footage` | Text over existing footage | own or stock, text | none | 5-10 | 0-5 | 10-20 | low | assist | 7-60 | active-2026 |
+| `nobody-meme` | Nobody, absolutely nobody | own | face | 2-5 | 2-10 | 3-5 | low | assist | 5-12 | unverified |
+| `money-cant-buy` | Money can't buy happiness, but | own | none | 2-5 | 5-10 | 5-10 | low | assist | 6-15 | unverified |
+| `where-are-you-texts` | Where are you texts | own, text | none | 3-5 | 2-10 | 5-15 | low | assist | 6-15 | unverified |
+| `expectation-reality` | Expectation vs reality | own, stills | any | 5-20 | 10-20 | 10-20 | low | assist or heavy | 7-20 | unverified |
+| `pov-skit` | POV skit | own | face | 5-10 | 10-20 | 10-15 | low | assist | 7-30 | live |
+| `fake-text-story` | Fake text conversation | text, stock | none | 10-20 | 0 | 5-60 | med | heavy | 30-90 | unverified |
+| `faceless-explainer` | Faceless narrated explainer | text, stock, screen | voice or none | 20-40 | 0 | 30-45 | med | heavy | 30-90 | unverified |
+| `photo-slideshow` | Photo slideshow, carousel | stills, text | none | 10-20 | 0-10 | 15-25 | low | heavy | 4-10 slides | active-2026 |
+| `beat-drop-reveal` | Beat-drop reveal | own | face | 10-30 | 15-30 | 20-45 | med | assist | 7-20 | live |
+| `trend-sound-lipsync` | Trend-sound lip-sync or transition | own | face | 5-10 | 10-30 | 10-20 | low or med | none | 7-20 | live |
+| `parody-product-review` | Parody product review or infomercial | own | face | 20-40 | 20-45 | 30-60 | med | heavy | 20-45 | unverified |
+| `fake-apology` | Fake apology video | own | face | 10-20 | 5-15 | 10-20 | low | assist | 15-45 | unverified |
+| `netflix-doc-parody` | Netflix-documentary parody | own | face | 5-30 | 5-30 | 5-60 | low or med | assist or heavy | 7-45 | past-peak |
 
-Edit for `fake-text-story` is 5-15 minutes with a chat-story generator and 30-60 by hand. `netflix-doc-parody` ranges from the one-shot meme (about 5 minutes per stage) to a narrated mock documentary (15-60).
+Edit for `fake-text-story` is 5-15 minutes with a chat-story generator and 30-60 by hand. `photo-slideshow` is measured in slides, not seconds. `netflix-doc-parody` ranges from the one-shot meme (about 5 minutes per stage) to a narrated mock documentary (15-60).
 
 ## Formats
 
@@ -115,7 +116,7 @@ Beats are our timing for a typical cut. "Real" lists what must be captured; anyt
 
 **`timestamp-vlog`.** A day-in-the-life where each clip carries the clock time ("6:42am gym"). The timestamps work as a progress bar, and an unusual first time ("4:50am") is the hook. Beats: earliest time with a striking action (0-2 s), 8 to 15 labelled clips of 2-4 s, end-of-day shot and a line. Real: footage and times; clip metadata can supply the times. Risk: location and routine privacy. Evidence: Later Reels "Vlog timestamps" (2026-10-23).
 
-**`aesthetic-vlog`.** Mood-led footage of everyday life (coffee, rain, slow cooking), carried by grade, ambient sound and a line of text. A beautiful first frame hooks, calm pacing loops, aspiration drives saves. Beats: hero shot and text (0-2 s), five to ten slow clips, one small moment, closing shot. Real: the b-roll; generated b-roll contradicts the premise. Risk: bystanders, gifted homeware. Evidence conflicts by platform: TikTok Next 2026 says users now see #romanticizing as avoidant, while Later keeps listing aesthetic Reels such as "Whimsymaxxing" (2026-08-28). Prefer it for Reels and test it before committing on TikTok.
+**`aesthetic-vlog`.** Mood-led footage of everyday life (coffee, rain, slow cooking), carried by grade, ambient sound and a line of text. A beautiful first frame hooks and calm pacing invites loops. Beats: hero shot and text (0-2 s), five to ten slow clips, one small moment, closing shot. Real: the b-roll; generated b-roll contradicts the premise. Risk: bystanders, gifted homeware. Evidence conflicts by platform: TikTok Next 2026 says users now see #romanticizing as avoidant, while Later keeps listing aesthetic Reels such as "Whimsymaxxing" (2026-08-28). Prefer it for Reels and test it before committing on TikTok.
 
 **`routine-reset`.** A sequenced routine (morning, night, Sunday reset) or one split by timeframe ("once a day, once a week, once a month"). Progression is satisfying and viewers save it to copy. Beats: messy start or the timeframe label (0-2 s), 6 to 12 steps with text, finished state. Real: the routine. Risk: household members on camera; wellness claims. Evidence: Later lists "Once a day, once a week, once a month" on TikTok (2026-09-18) and Reels (2026-09-25).
 
@@ -127,7 +128,7 @@ Beats are our timing for a typical cut. "Real" lists what must be captured; anyt
 
 ### Product, process and proof
 
-**`tutorial`.** Step-by-step instruction with a visible result. Showing the result or naming the problem in the first second hooks; the steps hold; usefulness drives saves and search discovery. TikTok Next 2026 recommends "comparisons, demos, and how-tos" ([TikTok Next](https://ads.tiktok.com/business/en/next), accessed 2026-10-26). Beats: result or problem (0-2 s), what you need, one step per cut with a number, result beside the start, "save this". Real: the process and result, or a real screen recording. Risk: safety, medical or financial instructions; gifted tools. Status: active-2026.
+**`tutorial`.** Step-by-step instruction with a visible result. Showing the result or naming the problem in the first second hooks, and usefulness drives saves and search discovery. TikTok Next 2026 recommends "comparisons, demos, and how-tos" ([TikTok Next](https://ads.tiktok.com/business/en/next), accessed 2026-10-26). Beats: result or problem (0-2 s), what you need, one step per cut with a number, result beside the start, "save this". Real: the process and result, or a real screen recording. Risk: safety, medical or financial instructions; gifted tools. Status: active-2026.
 
 **`unboxing`.** Opening a product on camera through first use. Anticipation, packaging sound and a stand-in for the viewer's own purchase. It is one of the four shoppable styles in TikTok Shop's creator guidance, which puts the hook in the first 3-6 seconds ([PPC Land on TikTok Shop Academy](https://ppc.land/tiktok-shops-shoppable-video-content-guide-tells-creators-what-actually-works/), 2026-05-20; Academy page not opened). Beats: sealed box and a claim or question (0-3 s), opening, product and what's included, first use, verdict. Real: product and opening. Risk: gifted or PR product disclosure.
 
@@ -159,7 +160,7 @@ Beats are our timing for a typical cut. "Real" lists what must be captured; anyt
 
 **`faceless-explainer`.** Voiceover over stock, screen recordings, images or gameplay with nobody on camera. A question or surprising fact hooks and visuals change every few seconds. It is the easiest format to batch and the most exposed to monetisation rules. Beats: question or fact as text and voice (0-2 s), three to five points with a visual change every 2-3 s, payoff. Real: facts, which must be checked; everything else can be generated. Risk: YouTube renamed repetitious content to "inauthentic content" on 2025-07-15 ([YouTube Help](https://support.google.com/youtube/answer/1311392), accessed 2026-10-26); give each video a human perspective; realistic synthetic visuals need labels; stock and gameplay licences. For our own pipeline, see [the narrated-short playbook](narrated-short.playbook.md).
 
-**`photo-slideshow`.** Swipeable images with music and text: TikTok Photo Mode or an Instagram carousel. Slide one is the hook, swiping is self-paced and it needs no video at all. Fanpage Karma's analysis found TikTok carousels drew far more engagement than videos, though its English and German write-ups give different figures (about 81% more versus "almost twice as high"; [Fanpage Karma](https://www.fanpagekarma.com/insights/carousel-vs-video-performance-tiktok-instagram/)). Beats: hook slide, one point per slide, payoff and question. Real: photos when the claim is personal ("my trip"). Risk: platform-licensed music; realistic AI images. Evidence: Later TikTok "Kinda chic" slideshow (2026-08-21) and Reels "Plan ABC" (2026-06-19). Produce it with the `create-carousel` skill when installed.
+**`photo-slideshow`.** Swipeable images with music and text: TikTok Photo Mode or an Instagram carousel. Slide one is the hook, swiping is self-paced and it needs no video at all. Stackinfluence, citing Fanpage Karma, reports TikTok carousels drew about 81% more engagements than videos ([Stackinfluence](https://stackinfluence.com/blog/tiktoks-photo-post-comeback)); Fanpage Karma's own German post says "almost twice as high" ([Fanpage Karma](https://www.fanpagekarma.com/insights/carousel-vs-video-performance-tiktok-instagram/)). Beats: hook slide, one point per slide, payoff and question. Real: photos when the claim is personal ("my trip"). Risk: platform-licensed music; realistic AI images. Evidence: Later TikTok "Kinda chic" slideshow (2026-08-21) and Reels "Plan ABC" (2026-06-19). Produce it with the `create-carousel` skill when installed.
 
 ### Sound and reveal
 
