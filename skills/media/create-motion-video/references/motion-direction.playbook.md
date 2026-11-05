@@ -37,6 +37,16 @@ This is an illustrative creative record, not a renderer API or a mandated new sc
 
 Compute each musical beat from absolute time: `time_s = beatIndex * 60 / BPM`, then `frame = round(time_s * fps)` for a frame-based consumer. At 128 BPM and 30 FPS, beat index 32 lands on frame 450; repeatedly adding a rounded 14-frame interval lands on 448. Validate event/cue order, duration and bounds against the agreed clip before rendering; an event outside the clip needs a resolved timing change, not silent wrapping or extension. Audio sample positions can use the unrounded time. Tempo, sound offsets and loudness follow the brief and destination; there is no universal one-frame delay or mandatory soundtrack.
 
+## Measure generated sound
+
+An agent that synthesizes audio cannot listen to it. Check the decoded file, not the synthesis code:
+
+- **Sync.** Find each hit's largest waveform peak and compare its sample position with the event's. A waveshaper, or an oscillator that starts at zero phase, can push the peak several milliseconds late. A tonal hit that starts in cosine phase with a short attack peaks where it was scheduled. Check that a later lobe or an overlapping tail is not bigger than the first peak.
+- **Level over the bed.** Compare each hit stem with the bed stem over the hit's first tens of milliseconds, K-weighted. "Audible over the music" then becomes a margin you can read; take the target from the brief.
+- **Destination band.** Measure loudness again in the band the destination device actually plays. Small speakers reproduce little sub-bass, so a mix can meet its integrated loudness target and still be quiet on a phone.
+- **Signal hygiene.** Remove DC offset from looped material. Read limiter gain reduction at each hit: a limiter that flattens one hit changes its level against the others.
+- **After encoding.** Decode the delivered file and measure true peak and alignment again. Lossy encoding can raise true peak above the master's. AAC adds priming and padding samples, which can show up as silence or a hard step at a loop seam.
+
 ## Check the loop boundary
 
 For `N` frames at `fps`, render indices `0` through `N - 1`, sampled at `i / fps`; the loop period is `N / fps`. Check equivalent state at the period boundary and motion on both sides of the wrap. The last encoded frame and frame 0 are adjacent samples, so requiring identical images can introduce a held frame. Periodic camera, lighting and procedural variation need closure as well as object transforms; looping noise can be sampled along a closed path.
@@ -51,8 +61,17 @@ Rerender the affected samples and dependent outputs after a change. If the same 
 
 For optional subframe motion blur, record shutter interval and sample count, keep scene evaluation deterministic at fractional times, and wrap samples at the loop boundary. Use the renderer's established color handling rather than adding an unverified blending pipeline.
 
+## Measure what stills hide
+
+- **Read state, not only pixels.** When the brief states numbers (landing frames, label times, squash scales, contact with a surface), have the renderer report scene state for every frame and compare it with the brief. A per-frame audit catches a move one frame late or a foot hovering above its pad, which a contact sheet can miss.
+- **Isolate one contribution.** Render the same frame with one light, reflection or effect on and off, then count the pixels that change and see where they are. A glint that lights a whole face or a reflection that floods a flat panel shows up as a number.
+- **Put timing in the frame while iterating.** A frame counter, a playhead, or labels that switch on at their planned frame make lateness visible in any still. Remove them and recapture before final delivery.
+- **Count held frames around a beat.** A spring that starts at rest exactly on the beat frame leaves that frame in the held pose, so an anticipation hold can run one frame long. Count the held frames, motion-blur subframes included.
+
 ## Sources
 
 - [Motion Lab](https://x.com/flxrnc/status/2105311836190978392), supplied by the user on 2026-10-13, inspired the frame-specific direction and repair patterns. Author-reported quality, costs and model comparisons are not our benchmarks.
 - [Remotion frames](https://www.remotion.dev/docs/use-current-frame), [springs](https://www.remotion.dev/docs/spring), and [motion blur](https://www.remotion.dev/docs/motion-blur) document the renderer primitives. Checked 2026-10-13; verify the installed version.
 - [Browser font readiness](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/ready) and [GIF89a delay fields](https://www.w3.org/Graphics/GIF/spec-gif89a.txt) support readiness and timing checks.
+- [ITU-R BS.1770](https://www.itu.int/rec/R-REC-BS.1770) defines K-weighted loudness and true-peak measurement.
+- [Apple TN2258](https://developer.apple.com/library/archive/technotes/tn2258/_index.html) documents AAC encoder delay (priming) and padding.
