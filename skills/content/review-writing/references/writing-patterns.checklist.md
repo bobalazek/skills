@@ -7,6 +7,7 @@ Use on prose whose clarity or voice needs review. Read the whole passage first. 
 | Pattern | What to inspect | Useful repair |
 | --- | --- | --- |
 | Broad praise | Could the sentence describe any product while telling this reader nothing? | Name a supported capability or remove it. Ordinary labels such as "Contact" can be generic and useful. |
+| Interchangeable promotion | Would a real competitor's name fit the complete promotional passage with no meaningful change? | Identify the exact supported claim or example that stops fitting after substitution. If none does, flag the missing substance; do not invent differentiation. Shared labels and required disclosures can stay generic. |
 | Inflated significance | Does the passage announce importance without showing a consequence? | Give the established change and its effect. Leave the effect unknown when it has not been observed. |
 | Borrowed authority | Is "experts agree" hiding an absent source or overstating one? | Identify the source and its actual scope, narrow the statement or flag the evidence gap. |
 | Delayed subject | Does the opening spend the reader's attention announcing what it will discuss? | Start at the useful point. Keep a scene, story or question that does real work for this audience. |
