@@ -53,6 +53,7 @@ For a software feature, expand the [idea-to-delivery preview](../README.md#from-
 <a id="create-motion-video"></a>
 
 - [Develop a video](workflows/media.md#develop-the-video): audience/goal and ideas → script with hook, storyline and payoff → storyboard → the needed production method.
+- [Prepare a launch video](workflows/media.md#prepare-a-launch-video): supported product difference → feasible concept and proof → the requested script or production handoff, with launch owners and a measurement plan.
 - [Make a narrated product video](workflows/media.md#from-script-to-checked-video): script and shot list → checked narration and captures → timed animation → inspected export.
 - [Edit footage, make slides or produce other media](workflows/media.md#produce-media): choose the owner from the requested artifact; reuse accepted assets and finish at the requested fidelity.
 

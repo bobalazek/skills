@@ -23,7 +23,21 @@ To choose short-form formats for a person or brand before media exists, the [per
 
 For our own idea-to-export narrated short, the [production playbook](../../skills/media/plan-video/references/narrated-short.playbook.md) defines the generation and editing flows, concrete model bindings, caption timing and scene-specific repairs. It also covers source-recording clips and reuse of the accepted production setup across episodes. The optional [platform comparison](../../skills/media/plan-video/references/video-platforms.matrix.md) covers Vid.AI, Crayo, SendShort, AutoShorts, Short.ai, Revid and OpusClip with dated prices and access gaps. These references add production and selection guidance; they do not install tools or account integrations.
 
+For code-driven or music-led production, carry the accepted timing authority, sound and loop intent into `create-motion-video`; its [motion direction](../../skills/media/create-motion-video/references/motion-direction.playbook.md) owns shared visual/audio events and measured frame, decoded-sound and loop checks. Narration-led timing follows the measured recording. `edit-video` owns source-preserving footage edits and requested editor interchange. Check the actual delivered files; a contact sheet cannot establish playback, sound or round-trip compatibility, and unavailable observations remain explicit gaps.
+
 ## Produce media
+
+### Prepare a launch video
+
+Start with the accepted audience, offer, proof and campaign objective. Use `define-brand-positioning` only if the meaningful difference is unresolved; a settled brief can go straight to `plan-video`. Choose the primary destination from audience evidence and production capacity. A launch does not require every platform or a particular social network.
+
+In `plan-video`, compare concepts by the difference they demonstrate, plausible sharing/return value and feasibility. Run the whole-concept substitution check before approving production effort. Record one editorial owner, the anchor asset's date and readiness dependencies, useful lead-in material, and who handles questions and follow-up. A missing proof asset changes the concept or launch readiness; louder wording cannot repair it.
+
+Pass the accepted concept and proof limits to `write-video-script`, then `create-storyboard` when a shot plan is needed. Use `create-motion-video` for a code-driven composition or `edit-video` for footage assembly. Skip stages already settled and check skill availability; missing tools or material remain explicit dependencies. An ideas-only request ends with concepts. A planning request ends with the requested brief, without starting production.
+
+Before interpreting launch results, define the intended audience action, its destination, a primary outcome, available diagnostic signals, measurement source/window and review date. Qualified inquiries or activation can matter more than raw views; saves and shares remain diagnostics. After authorized publication, compare observed results and effort with the original hypothesis and carry the supported learning into the next brief. Planning and production do not authorize publication, outreach, coordinated engagement or provider spend.
+
+### Choose the production owner
 
 | Example request | First skill | Result and conditional continuation |
 | --- | --- | --- |

@@ -21,6 +21,8 @@ Evaluate materially different positions only where the choice is open. For each,
 
 Check the promise against actual delivery limits and available proof. Mark comparative or outcome claims that lack an appropriate baseline or source; use narrower factual wording or keep them as hypotheses. An empty category or competitor-map quadrant is not evidence of demand. Keep competitor observations dated and separate from judgments about how customers perceive them.
 
+For a promotional promise, substitute a real alternative's name and identify the supported capability or customer situation that stops fitting. If only the name changes, sharpen the meaningful difference before intensifying the wording. A successful substitution test shows specificity; it does not establish uniqueness, customer preference or demand. Preserve useful category language and ordinary labels.
+
 Recommend the position supported by the evidence, explaining the trade-off and the fact that would change the choice. When the user requested options only, leave them as options. Carry material uncertainties into a specific next investigation instead of presenting a confident decision without support.
 
 ## Produce and check the brief
