@@ -9,6 +9,7 @@
 | Invalid data or request shape | Existing schema/contract validation at the owning boundary | Presence of a schema is not proof every entry path uses it |
 | Repeated behavioral regression | Focused test through the real public boundary | Do not encode only today's implementation details or omit meaningful failure cases |
 | Stable risky code pattern unsupported by current rules | A small analyzer using the existing parser/rule API | Text search can produce false positives for comments, strings, aliases, or intentional variants |
+| Complexity or churn repeatedly obscures a maintained path | Existing complexity/static-analysis tooling, calibrated against current code and valid exceptions | A score alone does not prove a defect; verify tool/version semantics and use scoped adoption rather than an invented universal threshold |
 | Copied business logic that drifts | Consolidated ownership plus relevant behavior checks | Clone detection is an investigation signal; repeated syntax alone does not justify shared abstractions |
 
 An automated guard need not be a static rule. Pick the mechanism that can distinguish the failure from legitimate code at acceptable maintenance cost.

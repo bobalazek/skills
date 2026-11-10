@@ -1,6 +1,6 @@
 # Skills
 
-70 skills for developing software, evaluating products, coordinating work, defining brands, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
+71 skills for developing software, evaluating products, coordinating work, defining brands, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
 
 Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear. The collection is under active development; [releases](https://github.com/bobalazek/skills/releases) record reviewed snapshots and evaluation limits.
 
@@ -18,10 +18,10 @@ Inspect the install summary before confirming. Use `--skill '*'` for the whole c
 For a fixed release, use its tag instead of the default branch:
 
 ```bash
-bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.6.0 --skill choose-skill create-tasks verify-change --agent codex --copy
+bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.7.0 --skill choose-skill create-tasks verify-change --agent codex --copy
 ```
 
-`skills@1.7.0` pins the installer; `v0.6.0` pins the 70-skill release. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.6.0) for changes and evaluation limits. The catalogs below describe the default branch and may include changes made after this release. Earlier releases remain available.
+`skills@1.7.0` pins the installer; `v0.7.0` pins the 71-skill release. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.7.0) for changes and evaluation limits. The catalogs below describe the default branch and may include changes made after this release. Earlier releases remain available.
 
 In Codex, invoke an installed skill with its name and your task:
 
@@ -37,7 +37,7 @@ From a checkout, you can also ask a filesystem-capable agent to use `skills/engi
 | --- | --- |
 | [Engineering · 28 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, monitor, and maintain it |
 | [Product · 6 skills](docs/domains/product.md) | Evaluate ideas, synthesize feedback, compare alternatives, define success measures, plan experiments, and analyze product usage |
-| [Productivity · 12 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose and coordinate work, route requests, improve prompts and team workflows, report status, and transfer context |
+| [Productivity · 13 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose and coordinate work, route requests, improve prompts and team workflows, report status, and transfer context |
 | [Brand · 2 skills](docs/domains/brand.md) | Define evidence-grounded positioning and develop visual identity, usage rules and requested assets |
 | [UI/UX · 8 skills](docs/domains/ui-ux.md) | Capture design references, map flows and navigation, wireframe and design screens, write interface messages, build shared systems, review interfaces, and test usability |
 | [Content · 6 skills](docs/domains/content.md) | Define a writing voice, plan page content, write website copy, blog posts and video scripts, and review prose for clarity and supported meaning |
@@ -52,6 +52,7 @@ Each catalog lists skills by category, with their outputs and boundaries.
 | Compare directions for an idea | [brainstorm-ideas](skills/productivity/brainstorm-ideas/SKILL.md) |
 | Decide whether a product or feature idea merits further investment | [validate-product-idea](skills/product/validate-product-idea/SKILL.md) |
 | Begin working in an inherited project | [onboard-codebase](skills/engineering/onboard-codebase/SKILL.md) |
+| Turn recurring code, commit and agent-session lessons into checks or project-local skills | [create-project-skill](skills/productivity/create-project-skill/SKILL.md) |
 | Establish folder structure, naming and Git conventions before planning or coding | [define-project-conventions](skills/engineering/define-project-conventions/SKILL.md) |
 | Define a feature's required behavior | [write-spec](skills/engineering/write-spec/SKILL.md) |
 | Define an offer's brand position and supporting proof | [define-brand-positioning](skills/brand/define-brand-positioning/SKILL.md) |
@@ -146,7 +147,7 @@ For other outcomes, use the [workflow index](docs/workflows.md): [product decisi
 
 **How are results checked?** Use observed proof appropriate to the task. Simple routing, explanations, brainstorming and wording-only drafts can use direct checks where their skill permits it. Consequential acceptance, code changes and delivery retain independent review; PRs include proof and findings when opened. An unavailable required review leaves the result unreviewed. Use `evaluate-skill` to compare actual behavior and preserve regressions; required human approval remains separate.
 
-**Which clients were checked?** Installation and discovery for the v0.6.0 package contents were checked with skills CLI 1.7.0, OpenCode 1.18.31 and Codex CLI 0.164.0. These checks establish delivery of 70 complete packages (254 files) and metadata discovery. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
+**Which clients were checked?** Installation and discovery for the v0.7.0 package contents were checked with skills CLI 1.7.0, OpenCode 1.18.31 and Codex CLI 0.166.0. These checks establish delivery of 71 complete packages (257 files) and metadata discovery. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
 
 **How do I update?** Copied skills do not update themselves. Review changes and migration notes, preserve local edits, then rerun `add` with the chosen source/tag. Inspect the files and verify discovery again; record the selected version with the project.
 

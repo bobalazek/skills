@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create project skill"
+  short_description: "Turn recurring project work into tested local skills"
+  default_prompt: "Use $create-project-skill to inspect this project's code, commits and available agent sessions, recommend checks, and create a justified project-local skill."

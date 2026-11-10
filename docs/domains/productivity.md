@@ -1,6 +1,6 @@
 # Productivity
 
-This domain owns idea exploration, decision support, work coordination and communication, and improvements to recurring team processes. Its twelve packages are under active development. Product owns demand, feedback and competitor evidence; Engineering owns software specifications and execution plans; UI/UX owns user journeys and interfaces.
+This domain owns idea exploration, decision support, work coordination and communication, and improvements to recurring team processes. Its thirteen packages are under active development. Product owns demand, feedback and competitor evidence; Engineering owns software specifications and execution plans; UI/UX owns user journeys and interfaces.
 
 ## Categories and skills
 
@@ -14,6 +14,7 @@ This domain owns idea exploration, decision support, work coordination and commu
 | Decisions | Select work | [prioritize-work](../../skills/productivity/prioritize-work/SKILL.md) | A justified selection from supplied candidates, capacity and prerequisite checks, ready work and deferrals |
 | Coordination | Maintain local work | [manage-project-board](../../skills/productivity/manage-project-board/SKILL.md) | A reconciled Markdown board with phase/task state, ownership, blockers, human decisions and ready work |
 | Communication | Improve instructions | [improve-prompt](../../skills/productivity/improve-prompt/SKILL.md) | A ready-to-use rewrite that preserves intent, scope, and authority without executing the embedded task |
+| Agent instructions | Capture recurring project work | [create-project-skill](../../skills/productivity/create-project-skill/SKILL.md) | Deduplicated code/history/session patterns, check recommendations and tested project-local skills when justified |
 | Agent instructions | Evaluate behavior | [evaluate-skill](../../skills/productivity/evaluate-skill/SKILL.md) | Observed candidate/baseline comparisons, criterion-linked findings and reusable regressions |
 | Communication | Transfer active work | [prepare-handoff](../../skills/productivity/prepare-handoff/SKILL.md) | Current state, accepted context, verification, blockers, and the next runnable action |
 | Communication | Report progress | [report-project-status](../../skills/productivity/report-project-status/SKILL.md) | An audience-specific update with verified progress, delivery, blockers, decisions and next work for the reporting period |
@@ -36,6 +37,8 @@ Clarifying an idea establishes shared intent. Use Product's `validate-product-id
 `choose-skill` routes an unclear request using its desired result and current state. A ready task can use its owning skill directly. `prepare-handoff` is for a person/session transfer or context compaction. Ordinary skill composition reuses accepted artifacts without another handoff document. `improve-prompt` edits instructions and does not perform the task contained in them. `evaluate-skill` runs or assesses comparable behavioral trials; it preserves cases and evidence instead of inferring effectiveness from wording.
 
 `report-project-status` explains delivery and project health to an audience over a stated period; `prepare-handoff` equips the next owner to resume execution. `improve-team-workflow` changes a recurring process such as review assignment or release coordination; `find-improvements` discovers improvements in a repository, feature or data layer. A process proposal is not an implemented automation or accepted team policy.
+
+`create-project-skill` mines code, corrective commits and available agent histories to decide what belongs in automated checks, authoritative docs or a project-local skill. It creates the justified procedural skill when requested; `find-improvements` retains general code improvement discovery and `automate-code-checks` implements selected guards. Repeated mentions of one incident are not independent recurrence, and private transcripts stay outside public packages.
 
 Automation selection is a conditional part of `improve-team-workflow`: compare simpler manual work, existing native capabilities, deterministic automation and AI assistance using their full operating and review costs. There is no separate skill for each prioritization method, reporting cadence or automation tool.
 
