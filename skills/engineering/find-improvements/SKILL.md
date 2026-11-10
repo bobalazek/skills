@@ -50,6 +50,7 @@ Include useful evidence, independent findings and limitations in authorized PRs 
 Carry the selected finding, evidence and missing prerequisite to its owner:
 
 - `diagnose-issue` for an unresolved failure; `improve-performance` for a bottleneck needing measurement.
+- `create-project-skill` when the requested outcome is procedural skills learned from code, commits and agent sessions.
 - `automate-code-checks` for an accepted recurring guard; `plan-migration` for compatibility/data transitions.
 - `write-spec` for unsettled behavior; `create-tasks` for accepted larger scope; `implement-change` for a bounded ready change.
 - `prioritize-work` when selection among these and other supplied candidates needs a capacity decision.

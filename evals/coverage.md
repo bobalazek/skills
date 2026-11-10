@@ -25,3 +25,7 @@ The new brand packages have a returned local draft review and manual text trials
 Add or update a result record only from an actual returned assessment. Record source identity, host/model or unknown, case IDs, attempt/failure state, criterion outcomes and limits. Preserve unsuccessful attempts. Link public evidence where available; local raw traces are private artifacts, not downloadable attachments.
 
 See [the eval front door](README.md) for the file roles and [the procedure](../docs/evaluation.md) for execution and assessment.
+
+## Project-local skill creation, 2026-11-10
+
+[The bounded trial record](results/project-skill-2026-11-10.md) covers code/check/session evidence classification, incident deduplication, a corrected metadata-first boundary, local skill creation and independent generated-skill use. Synthetic exports and explicit invocation do not establish native-history coverage, automatic routing or measured improvement.

@@ -38,6 +38,7 @@ The output contains source snapshots, prompts, `criteria.json`, execution record
 
 - [Shared-rule implementation](workflows/implement-change.json) and [intent/selection correction](workflows/implement-intent-selection.json).
 - [Diagnosis and correction](workflows/diagnose-issue.json) and [automated guard](workflows/automate-code-checks.json).
+- [Project-local skill creation](workflows/create-project-skill.json).
 - [Video collaboration](workflows/video-human-story-handoff.json).
 - [Feedback correction](workflows/feedback-correction.md) and [saved-session continuation](workflows/session-continuation.md).
 
