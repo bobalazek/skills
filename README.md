@@ -147,7 +147,7 @@ For other outcomes, use the [workflow index](docs/workflows.md): [product decisi
 
 **How are results checked?** Use observed proof appropriate to the task. Simple routing, explanations, brainstorming and wording-only drafts can use direct checks where their skill permits it. Consequential acceptance, code changes and delivery retain independent review; PRs include proof and findings when opened. An unavailable required review leaves the result unreviewed. Use `evaluate-skill` to compare actual behavior and preserve regressions; required human approval remains separate.
 
-**Which clients were checked?** Installation and discovery for the v0.6.0 package contents were checked with skills CLI 1.7.0, OpenCode 1.18.31 and Codex CLI 0.164.0. These checks establish delivery of 70 complete packages (254 files) and metadata discovery. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
+**Which clients were checked?** Installation and discovery for the v0.7.0 package contents were checked with skills CLI 1.7.0, OpenCode 1.18.31 and Codex CLI 0.166.0. These checks establish delivery of 71 complete packages (257 files) and metadata discovery. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
 
 **How do I update?** Copied skills do not update themselves. Review changes and migration notes, preserve local edits, then rerun `add` with the chosen source/tag. Inspect the files and verify discovery again; record the selected version with the project.
 
