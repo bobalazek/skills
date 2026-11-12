@@ -188,6 +188,17 @@ export function audit(inputRoot: string) {
       }
     }
   }
+  const prTemplate = join(root, "skills/engineering/explain-pr/references/pr-description.template.md");
+  const githubTemplate = join(root, ".github/pull_request_template.md");
+  if (
+    existsSync(prTemplate) &&
+    (!existsSync(githubTemplate) || !statSync(githubTemplate).isFile() || read(prTemplate) !== read(githubTemplate))
+  ) {
+    fail(
+      githubTemplate,
+      "PR template must match explain-pr/references/pr-description.template.md; copy the canonical template",
+    );
+  }
   const markdown = [
     join(root, "README.md"),
     ...(existsSync(join(root, "AGENTS.md")) ? [join(root, "AGENTS.md")] : []),
