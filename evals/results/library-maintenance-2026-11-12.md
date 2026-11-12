@@ -114,3 +114,11 @@ The canonical template was actually loaded in the description trials. Independen
 The seven final examples use short bullets and selective emphasis, with focused diff/tree views and five Mermaid flows. Source review corrected an unconditional cleanup arrow to optional cleanup. The diagrams rendered with Mermaid CLI 12.2.0 in Chrome; initial wide renders were replaced with vertical AI/API layouts and checked again. This validates diagram syntax/layout, not the fictional systems or runtime behavior.
 
 These results establish bounded instruction behavior and template consistency. They do not establish automatic activation, example-file influence on generated output, live provider charges, deployment, production observation or rehearsed data recovery. Earlier results and unsuccessful attempts above retain their original limits.
+
+### Final release rechecks
+
+Two fresh candidate-only trials used the [merged corrections](https://github.com/bobalazek/skills/commit/5a476e19a16fa80c70858419aa914fe761af2bf7), whose skill files match the v0.7.1 preparation. Each ran once with a 240-second bound under Codex CLI 0.167.2; native records identify `gpt-6.1-sol`. Independent raw-output/trace assessment returned **6/6 criterion passes**: two for `pr-description-small-doc-required-applicability` and four for `pr-metered-cost-and-resource-risk`.
+
+Both traces show local reads of the current entrypoint, canonical template and final worked examples; no provider or deployment actions occurred. These observations establish example-file loading and compliant output for these two prompts only, without a baseline or automatic-activation claim. The earlier snapshot limits above remain historical facts.
+
+Clean candidate and merged-source installation checks each delivered **71 packages / 259 identical files** using skills CLI 1.7.0, Codex CLI 0.167.2 and OpenCode 1.18.31, with discovery passing. Installation/discovery remains separate from behavior and live operation.
