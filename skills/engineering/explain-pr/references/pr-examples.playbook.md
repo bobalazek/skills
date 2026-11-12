@@ -88,7 +88,7 @@ flowchart LR
   Schema["Add nullable column"] --> Contract["Shared contracts"]
   Contract --> Backend["Compatible backend"]
   Backend --> Frontend["Frontend adoption"]
-  Frontend --> Cleanup["Later cleanup after migration"]
+  Frontend -.-> Cleanup["Cleanup only if needed"]
 ```
 
 ## Evidence and testing
