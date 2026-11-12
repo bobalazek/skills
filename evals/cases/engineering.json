@@ -883,5 +883,37 @@
       "Reuse accepted scope and local PR policy, omit nonexistent database/backend work, and identify type-check plus arithmetic regression outcomes without fabricating executions.",
       "Keep this to the proposed executable work/grouping; do not create trackers, change code, require a new phase plan or reopen settled behavior."
     ]
+  },
+  {
+    "id": "pr-description-preserve-rollout-recovery",
+    "skill": "explain-pr",
+    "installedSkills": [
+      "explain-pr"
+    ],
+    "prompt": "Write a concise reviewer-facing PR title and description for the change in change.md. No project PR template is available. Do not post, execute checks, merge or deploy anything.",
+    "files": {
+      "change.md": "# Booking-note frontend\nWhy: staff cannot see the optional note captured during booking. Before: booking details omit the note. After: the existing details screen shows the optional note for users already authorized to see the booking; no new role is introduced. This PR is the frontend consumer. Additive database/shared-contract work is already merged in PR12. Backend support is in PR13, still open and not deployed. Backend must be available before frontend exposure. Existing clients must continue working.\n\nSupplied checks: typecheck passed; component checks passed for absent and present notes; the existing permission-denial check passed. Integration with the real backend and visual/screen-reader checks have not run. Reviewer-accessible CI links were not supplied. Required integration check and PR13 must complete before merge. No screenshot or recording is supplied.\n\nRisk: showing a note outside its authorized booking context or exposing the UI before the backend supports it. Rollout: backend first, frontend after verified compatibility. Recovery: revert or disable the frontend display through the existing release mechanism. This does not remove notes already stored; no data deletion is intended. Recovery has not been rehearsed. All records are synthetic.\n"
+    },
+    "expected": [
+      "Include concise summary/approach and meaningful before/after behavior, not only a list of tests or process labels.",
+      "Preserve evidence/testing: distinguish supplied passed checks from unperformed integration, visual/accessibility and recovery checks; do not invent CI links, screenshots, personal execution or end-to-end success.",
+      "Explicitly state merge prerequisites, backend-before-frontend rollout, affected authorization/compatibility risks, conditional reversibility and the limit that UI rollback does not erase stored notes. Missing required integration must remain a blocker.",
+      "Cover summary, changes, evidence/testing, merge prerequisites, rollout and risk/recovery as the default description contract; keep the content concise, with no local paths, document-hash inventory or unrelated agent metadata."
+    ]
+  },
+  {
+    "id": "pr-description-small-doc-required-applicability",
+    "skill": "explain-pr",
+    "installedSkills": [
+      "explain-pr"
+    ],
+    "prompt": "Draft a brief PR description for the documentation correction in change.md. No project template exists. Return text only.",
+    "files": {
+      "change.md": "One README spelling correction: reponse becomes response in an explanatory sentence. No command, link, API, runtime, data or generated output changes. Supplied check: git diff --check passed. No CI link is available. No special merge dependency or separate deployment is required beyond the repository normal review/check gates. A normal source revert restores the text. No rollback exercise was performed.\n"
+    },
+    "expected": [
+      "Keep the description brief and proportional while retaining summary/changes, actual check results, normal merge prerequisites, rollout applicability and reversibility. A short applicability sentence can cover an irrelevant concern.",
+      "Do not invent a migration, feature flag, screenshots, deployed behavior, confidence score, extensive recovery ceremony or personally run tests. Preserve that supplied diff check passed and no recovery rehearsal occurred."
+    ]
   }
 ]

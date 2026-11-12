@@ -21,9 +21,9 @@ For a broad or coupled diff, explain whether it is one coherent reviewable outco
 
 Give a short before/after control-flow explanation when the mechanism matters: where the user or system enters, the changed condition or decision, calls and state changes, then the visible result or failure. Use an arrow sequence or small diagram only when clearer than prose. For a tiny change, an exact relevant diff excerpt can show it directly; do not paste a large patch or let the snippet replace the consequence. Identify shared callers beyond the edited file when they inherit the behavior.
 
-Follow the requested audience, tone and depth, then the project's PR template and writing conventions. Use a specific title describing the actual change, not an internal agent process. Default to a short problem/result explanation plus relevant testing results; expand for a requested walkthrough or a consequential mechanism a reviewer needs to assess. Include why only when established by requirements or recorded decisions. Link detailed design/ADRs rather than copying them. Explain unfamiliar terms, keep exact identifiers where they aid inspection, and omit conversational history and unsupported praise.
+Follow the requested audience, tone and depth, then the project's PR template and writing conventions. Use a specific title describing the actual change, not an internal agent process. Keep the description concise while covering summary, changes, evidence/testing, merge prerequisites, rollout and risk/recovery; expand for a consequential mechanism or requested walkthrough. Include why only when established by requirements or recorded decisions. Link detailed design/ADRs rather than copying them. Explain unfamiliar terms, keep exact identifiers where they aid inspection, and omit conversational history and unsupported praise.
 
-### Testing and useful comparisons
+### Evidence
 
 When the explanation needs substantive prose cleanup, use `review-writing` if available, carrying the fixed diff, draft and evidence. Otherwise cut filler and repetition locally. Preserve risk, reversibility and verification gaps; editorial polish cannot upgrade a result or replace correctness review.
 
@@ -33,23 +33,43 @@ When asked to write a PR description, lead with the problem and resulting behavi
 
 Keep internal traceability separate from the description. Preserve the assessment and source identity in the working record; omit local paths, document hashes, agent/session identifiers, model details and review ceremony from human-facing text unless the user explicitly asks for them. Summarize actionable findings, their resolution and material untested behavior. A relevant commit, CI link or public comparison can identify the changed code without reproducing internal bookkeeping.
 
-### Risks and rollout when relevant
+### Risk and reversibility
 
-Explain consequential compatibility, authorization, tenant/data, concurrency or external-effect changes and the affected callers. Include migration/deployment order, failure detection and recovery conditions when they affect adoption. A code revert may not undo stored writes or external actions; describe that limit where applicable. Omit a separate risk section when it adds nothing beyond the change explanation; do not invent risks or claim an untested recovery works.
+Include risk and reversibility at the depth the change needs: the credible worst failure, affected users/data/consumers, how it would be detected, and the recovery action with its conditions and evidence. Distinguish reverting code from undoing accepted writes or external effects. State whether recovery is demonstrated, conditional, irreversible for some effects, or unverified; name the point after which the old behavior or data cannot be restored. A short sentence can cover a stateless presentation change, while a destructive migration needs its data-loss limits, recovery owner and observed rehearsal or explicit proof gap. Do not infer low risk from a small diff or reversibility from the file type, a feature flag, a down migration, or the presence of a backup.
+
+State the blast radius in concrete terms: affected roles or tenants, entry points, shared components/services and data or external recipients as relevant. Explain what contains the impact and what evidence supports that boundary; unknown reach stays unknown. When concurrency is material, summarize the effective transaction isolation or consistency guarantee and its failure/locking/retry implications from the reviewed evidence. Keep that separate from tenant isolation and reviewer independence. A claim that a flag, transaction or deployment isolates effects needs proof of the actual scope.
+
+### Merge prerequisites and rollout
+
+State the checks, approvals, prerequisite PRs/contracts and environment or data conditions that must be satisfied before merge. Distinguish passed, pending, blocked and not applicable; do not treat a planned check as completed or an agent review as human approval. For a stack, show the accepted merge order and any separate deployment order.
+
+Describe how the change reaches its consumers: migration/backfill, shared contract, backend and client ordering where applicable; exposure controls only when actually used; post-rollout observations and the condition for stopping or recovering. A merged PR is not a deployed or verified rollout. Identify unperformed rollout or recovery checks and their consequence. A small documentation change can explain applicability in one sentence instead of omitting these concerns.
 
 ### Description shape
 
-Follow the project's template. Otherwise use the following as a guide, collapsing a small change into a paragraph when clearer. Expand with a before/after example or reviewer guidance when the mechanism needs explanation.
+Follow the project's PR template. Otherwise cover the following, keeping each part concise and grounded in the actual change. Brevity must not remove verification, merge prerequisites, rollout or recovery. For a small change, a one-line applicability reason is enough where a concern does not apply.
 
 ```markdown
 ## Summary
-[What changed, the problem it solves, and why this approach fits.]
+[Problem, purpose and resulting behavior.]
 
-## Testing
-[Relevant checks and observed results; material behavior not tested.]
+## Changes
+[Approach and a concrete before/after example or flow; affected consumers and compatibility.]
+
+## Evidence and testing
+[Checks and observed results, before/after proof and reviewer-accessible links; material failures or untested behavior. Include labeled screenshots/recording for visual claims.]
+
+## Merge prerequisites
+[Required checks, approvals, dependent PRs and data/environment conditions; current status.]
+
+## Rollout
+[Merge versus deployment/adoption order, exposure and post-rollout checks, or a brief applicability reason.]
+
+## Risk and recovery
+[Reversibility, credible failure and blast radius, detection, recovery action/conditions and irreversible effects; actual proof or remaining limits.]
 ```
 
-Add risks, rollout or screenshots only when they help assess the actual change. Keep related code, tests and documentation together; splitting a coherent change solely to satisfy an outline makes review harder.
+Keep the independent assessment and source traceability available in the working record. The PR should expose the substantive findings, confidence limits and useful proof, without copying private logs, machine-specific paths or unrelated review metadata. Keep related code, tests and documentation together; splitting a coherent change solely to satisfy an outline makes review harder.
 
 ## Verify and return
 
