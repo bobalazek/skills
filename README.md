@@ -43,7 +43,7 @@ From a checkout, you can also ask a filesystem-capable agent to use `skills/engi
 | [Content · 6 skills](docs/domains/content.md) | Define a writing voice, plan page content, write website copy, blog posts and video scripts, and review prose for clarity and supported meaning |
 | [Media · 8 skills](docs/domains/media.md) | Plan video concepts and storyboards, render motion graphics, edit footage, record narration, capture product screens, build decks and produce carousels |
 
-Each catalog lists skills by category, with their outputs and boundaries.
+Each catalog lists skills by category, with their outputs and boundaries. The [complete skill map](skills/productivity/choose-skill/references/skill-map.matrix.md) maps every package to its requested result and nearest boundary, including ambiguous requests. The [workflow guides](docs/workflows.md) show examples and conditional handoffs.
 
 ## Common starting points
 

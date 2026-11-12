@@ -36,6 +36,23 @@ Use the structure that makes the skill's decisions easy to find; do not add empt
 
 A separate “When to use” or “Critical rules” section helps only when it makes a real boundary easier to find. Keep critical constraints in the entrypoint when they apply to every run. A related-skills list should explain when to switch or continue, rather than repeat the catalog. The router owns collection-wide selection; each skill owns its closest boundaries.
 
+### Keep discovery synchronized
+
+The packages under `skills/<domain>/<skill>/` are the inventory. For every addition, removal, rename or behavior/boundary change, check these locations and update the affected entries in the same change:
+
+| Location | Keep current |
+| --- | --- |
+| `skills/<domain>/<skill>/SKILL.md` and `agents/openai.yaml` | Name, description, display metadata, output boundary and supported invocation |
+| `docs/domains/<domain>.md` | Owning catalog entry, result and nearest boundaries |
+| `skills/productivity/choose-skill/references/skill-map.matrix.md` | One primary row per package under its owning domain, including `choose-skill`, plus affected ambiguous-request routes |
+| `README.md` | Current total/domain counts, relevant starting points and discovery links; preserve historical release counts |
+| `docs/workflows.md` and `docs/workflows/<domain>.md` | Affected examples, handoffs, diagram nodes and completion boundaries |
+| Neighboring `SKILL.md` files and relevant `references/*.matrix.md` | Changed handoffs, prerequisites, resource links and specialist decisions; specialist matrices need not list every package |
+| `evals/cases/*.json`, `evals/workflows/` and `evals/cases/README.md` | Affected behavioral recipes, owners and recipe counts; retain useful old cases |
+| `evals/coverage.md` and `evals/results/` | New assessed evidence and its source/limits when trials run; preserve historical observations and never count recipes as passes |
+
+`bun run check:skills` enforces owning-catalog coverage, router inventory/domain parity and current README counts. It does not establish that descriptions or handoffs are correct: compare each changed route with the actual entrypoint, accepted inputs, requested output and stopping boundary. Include a neighboring request or unavailable-skill case where the boundary could be confused. Keep [recipe counts](../evals/cases/README.md) current and distinguish new cases from [executed evidence](../evals/coverage.md).
+
 For prose, use direct wording, consistent terms and supported claims; remove empty praise and repeated explanations while preserving useful voice and qualifications. `review-writing` owns the collection's reusable writing-pattern checks. Refer to it by name when a content workflow needs that pass, with a brief standalone fallback rather than copied lists or required sibling paths. Ordinary small edits need no added workflow. A writing assessment can contribute to an existing independent review, but cannot replace the owning skill's factual or behavioral checks.
 
 Project-specific voice conventions belong in the consuming project's existing guide or `docs/voice.md`, with evidence and acceptance status. `define-writing-voice` owns their capture; writing skills discover and apply that guide rather than embedding a personal voice in portable packages. Keep agent entry points to conditional pointers.
@@ -99,7 +116,7 @@ Reusable checklists describe available checks; use the existing task or PR to re
 
 Make discovery actionable in each affected standalone skill: inspect supplied facts, ask concise questions about unresolved intent, requirements or preferences, and wait before work that depends on the answers. State what waits; asking and then acting on a guessed answer is not clarification. Keep answers and accepted/delegated decisions in the existing record and reuse them at handoff. Requested options and independent inspection can continue; do not turn brainstorming into a chosen design, prototype or production job. Test both an unanswered-choice case and a settled or explicitly delegated case so this gate neither disappears nor becomes repeated approval for ready work.
 
-Maintain executable tooling in TypeScript and run it with Bun. Install pinned development tools with `bun install --frozen-lockfile`. Run `bun run check` for package validation, TypeScript checks and Biome lint/format checks; these precede subjective review. `bun run check:skills` checks frontmatter, package names, Codex interface metadata, links, resource reachability, standalone-resource boundaries and catalog coverage. Run `bun test` for executable helpers and fixtures. CI runs the same checks without model calls. Biome covers TypeScript helpers and tooling configuration; it preserves the existing non-null assertions and string concatenation policy. For later edits, use `bunx --no-install biome check --write <changed-files>` rather than formatting unrelated files. Mermaid diagrams should also parse/render in a real supported renderer when changed.
+Maintain executable tooling in TypeScript and run it with Bun. Install pinned development tools with `bun install --frozen-lockfile`. Run `bun run check` for package validation, TypeScript checks and Biome lint/format checks; these precede subjective review. `bun run check:skills` checks frontmatter, package names, Codex interface metadata, links, resource reachability, standalone-resource boundaries, owning-domain catalog and router coverage, and current README counts. Run `bun test` for executable helpers and fixtures. CI runs the same checks without model calls. Biome covers TypeScript helpers and tooling configuration; it preserves the existing non-null assertions and string concatenation policy. For later edits, use `bunx --no-install biome check --write <changed-files>` rather than formatting unrelated files. Mermaid diagrams should also parse/render in a real supported renderer when changed.
 
 Keep CLI entrypoints in `scripts/`, reusable maintainer components in `scripts/lib/`, and their tests in `scripts/tests/`, grouped by responsibility. `bun test` discovers the test directory; TypeScript and Biome cover it too. Package inspection is shared by installation and behavioral evaluation. Portable helpers stay inside their owning skill so installed packages remain self-contained. Extract shared behavior when consumers justify it; avoid a generic utility file or a separate file for every small function.
 

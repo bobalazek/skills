@@ -1,0 +1,92 @@
+[
+  {
+    "id": "product-feedback-duplicate-identities",
+    "skill": "analyze-user-feedback",
+    "installedSkills": ["analyze-user-feedback"],
+    "prompt": "Summarize the needs supported by feedback.md for our invoice export workflow. Include supported corpus counts, contrary evidence and source locators. Keep this to feedback synthesis in your response; do not create a roadmap, edit records or contact anyone. These are fictional research records, and no independent assessment has been supplied.",
+    "files": {
+      "feedback.md": "# Invoice export feedback, 1–7 November 2026\nScope: all five rows in this supplied support/review export; not all customers. Person and account IDs below come from our permitted support identity mapping.\n\n| Row | Source | Person | Account | Context and wording |\n| --- | --- | --- | --- | --- |\n| F1 | ticket T10, message 1 | P1 | A1 | Export job J8. 'I cannot tell whether the invoice file is still being prepared. Add a red resend button.' |\n| F2 | weekly summary, quoted ticket T10/message 1 | P1 | A1 | Exact copied excerpt of F1, not a new customer message. |\n| F3 | ticket T10, message 2 | P1 | A1 | Same job J8, later that day. 'Still waiting for that same file; I am afraid another click will create a second export.' |\n| F4 | ticket T11, message 1 | P2 | A1 | Different export J9. 'The email arrived quickly. I do not need another status screen.' |\n| F5 | public review R7, 7 November | unknown | unknown | 'I cannot tell whether the invoice file is still being prepared.' No permitted identifier links this reviewer to a support person or account. |\n\nNo event logs, interview follow-ups or population-wide survey were provided.\n"
+    },
+    "expected": [
+      "Collapse F2 into F1 while retaining both locators; distinguish four non-copy records from unique people, accounts and incidents. F3 is follow-up on J8, not another person or a demonstrated second export.",
+      "Count P1 at most once per affected-person theme and A1 at most once per affected-account theme. Keep R7 unresolved rather than merging it by wording or counting it as a verified additional person/account; any percentages must expose their eligible denominator and corpus scope.",
+      "Derive a traceable need concerning export progress/outcome uncertainty without converting the requested red resend button into an accepted solution or asserting an unobserved technical cause. Preserve P2's opposing experience.",
+      "Return synthesis only, without invented customer prevalence, roadmap commitments, contact, record changes or independent-review claims."
+    ]
+  },
+  {
+    "id": "product-competitors-comparable-price",
+    "skill": "analyze-competitors",
+    "installedSkills": ["analyze-competitors"],
+    "prompt": "Compare the supplied alternatives in alternatives.md for our team's reminder service decision. We need five staff accounts and 300 reminders every month for twelve months; annual prepayment is acceptable and the annual service budget is EUR 400 before tax. Include the current manual approach. Use only these archived fictional source extracts, do not browse or contact vendors, and keep unavailable facts explicit. Return a bounded comparison, not a purchase or demand assessment.",
+    "files": {
+      "alternatives.md": "# Supplied source extracts\nSelection: the team's shortlist, not a market survey. All vendors and extracts are fictional. Region EU; prices EUR before tax. Extracted 1 November 2026. No hands-on service observations supplied.\n\n## S1: Atlas official pricing snapshot, section Annual and Monthly\nAnnual plan: EUR 9 per staff seat per month, billed for twelve months in advance; minimum five seats. Includes 500 reminders per organization per month. Monthly contract: EUR 12 per seat per month with the same minimum and allowance.\n\n## S2: Beacon official pricing snapshot, section Team Annual\nEUR 180 per organization per year, annual prepayment, unlimited staff seats. Includes 200 reminders per month; additional reminders cost EUR 0.10 each. No setup charge. No other required add-on is listed for the stated workflow.\n\n## S3: Cinder official plan snapshot, section Organization\nSupports at least five staff and 300 reminders per month. Price and minimum commitment: contact sales. No quote supplied.\n\n## S4: Current workflow observation, owner note, 31 October 2026\nFive staff use an existing spreadsheet and send reminder emails manually. Owner estimates two staff hours per week on this task. Existing email and spreadsheet subscriptions continue regardless of this decision. No marginal service charge or labor valuation was measured. No switching test or delivery-reliability measurement was supplied for any alternative.\n"
+    },
+    "expected": [
+      "Normalize the same five-seat, 300-reminder monthly scenario over twelve months: Atlas annual is EUR 540; Beacon is EUR 300 including EUR 120 annual overage. Distinguish Atlas annual-prepayment equivalents from its EUR 720 monthly-contract total if the latter is discussed.",
+      "Identify Beacon as within the supplied EUR 400 service-price cap and Atlas as above it, while leaving Cinder's price and budget fit unknown. Do not convert a missing quote into zero cost, feature absence or a definitive overall winner.",
+      "Include the manual status quo, separating existing subscriptions and the supplied effort estimate from unpriced labor, unmeasured reliability and switching costs. Do not invent annual savings from an unknown labor rate.",
+      "Tie material claims to S1–S4 and their dates, distinguishing archived vendor claims from observations. Bound conclusions to the shortlist and snapshots; claim neither a current market survey, customer demand nor completed review/purchase."
+    ]
+  },
+  {
+    "id": "product-metrics-deadline-boundaries",
+    "skill": "define-product-metrics",
+    "installedSkills": ["define-product-metrics"],
+    "prompt": "Draft a measurement contract for the accepted outcome in measurement.md. Preserve its settled eligibility and deadline choices; I delegate routine presentation choices. Include a small worked check using the supplied synthetic rows and show the no-eligible-account result. This is definition work only: do not instrument anything, analyze real performance, select a provider or invent targets. Return the contract in your response with unperformed checks stated.",
+    "files": {
+      "measurement.md": "# Accepted measurement brief\nDecision: whether newly created customer accounts receive a first usable report promptly. Owner: product lead. Unit: customer account, not person, session or report job. Exclude staff/test accounts. An account qualifies once when its first confirmed report completes in the first 72 elapsed hours after account creation; completion exactly at the 72-hour deadline is late. Only accounts whose full 72-hour window has elapsed at the observation cutoff belong in the mature-account rate. Use UTC and event occurrence time.\n\nThe existing dictionary's signup-v1 counts created accounts; it has no completion condition and existing reports still use it. Source schema proposal: account_id, created_at, staff_test, job_id, report_status, occurred_at. Completed job rows may be redelivered with the same job_id. No production instrumentation or source-quality checks have been demonstrated. Baseline, target and harm threshold have not been chosen.\n\nSynthetic observation cutoff: 2026-11-05T00:00:00Z.\nAccounts:\nA: created 2026-11-01T00:00:00Z; staff_test=false.\nB: created 2026-11-01T00:00:00Z; staff_test=false.\nC: created 2026-11-01T00:00:00Z; staff_test=true.\nD: created 2026-11-04T00:00:00Z; staff_test=false.\nJob rows:\nJ1, A, complete, 2026-11-03T23:59:00Z.\nJ1, A, complete, 2026-11-03T23:59:00Z (redelivery).\nJ2, B, complete, 2026-11-04T00:00:00Z.\nJ3, C, complete, 2026-11-02T00:00:00Z.\nJ4, D, pending, 2026-11-04T01:00:00Z.\nFor a separate empty-population check, use a fixture containing only account C and its job.\n"
+    },
+    "expected": [
+      "Deliver a computable account-level contract preserving the accepted UTC elapsed-time deadline, confirmed completion, staff/test exclusion and mature-window denominator; do not reopen settled choices as mandatory approvals.",
+      "The synthetic check counts A once despite J1 redelivery, treats B's exact-deadline completion as late, excludes C and keeps D immature. It yields one qualifying account among two mature eligible accounts, with immature observation reported separately; the C-only fixture has no eligible denominator, not a zero-percent or successful outcome.",
+      "Give the new outcome definition a distinct identity/version and preserve signup-v1 and its consumers rather than silently changing historical signup meaning. Keep a proposed contract, available instrumentation and accepted target status distinct.",
+      "Keep baseline and thresholds unknown; specify useful source-quality checks with expected result, owner and failure response. Distinguish worked synthetic checks from production evidence and report unavailable independent assessment without fabricating acceptance."
+    ]
+  },
+  {
+    "id": "product-usage-maturity-and-event-change",
+    "skill": "analyze-product-usage",
+    "installedSkills": ["analyze-product-usage"],
+    "prompt": "Using usage.md, give the eligible pooled day-7 retention result and assess whether we can say retention improved after the November release. Explain what can be compared and what remains unavailable. Use only the supplied snapshot, keep this read-only and return the analysis in your response. No raw event access, provider tools or independent assessment is available.",
+    "files": {
+      "usage.md": "# Reconciled synthetic usage snapshot\nExtracted 2026-11-20T00:00:00Z. The complete source for this exercise is the following aggregate export, not raw events. Counts are distinct customer accounts within each cohort; accounts belong to exactly one cohort. Staff/test accounts and duplicate deliveries have already been removed. All dates and calendar intervals use UTC.\n\nAccepted retention-v1: entry is first successful report save; day-7 return is at least one confirmed report save during the calendar interval [entry-date + 7 days, entry-date + 8 days). Count only cohorts whose entire return interval has ended by the cutoff. Ingestion is complete through the cutoff for the reported event versions.\n\n| Entry date | Entered accounts | Recorded day-7 return accounts so far | Return event version |\n| --- | --- | --- | --- |\n| 2026-11-01 | 10 | 4 | v1 |\n| 2026-11-04 | 5 | 3 | v1 |\n| 2026-11-12 | 10 | 8 | v2 |\n| 2026-11-18 | 20 | 0 | v2 |\n\nRelease note, 12 November: entry logging remains confirmed first save. The event used for return logging changed from server-confirmed report save (v1) to clicking the Save control (v2), including clicks that later fail. No mapping, result-status field or independent server-save count is supplied for v2. The product and acquisition campaign also changed that day.\n"
+    },
+    "expected": [
+      "For the two mature v1 cohorts, pool compatible counts as 7/15, approximately 46.7%, with numerator, denominator and UTC observation conditions. Do not average 40% and 60% into an unsupported pooled 50%.",
+      "Keep the November 18 cohort outside mature day-7 retention rather than counting twenty failures or treating its current zero as observed non-return; its return interval has not begun at the cutoff.",
+      "Do not pool v2 click-based returns with v1 confirmed saves or call the mature v2 8/10 a demonstrated improvement in retention-v1. Name missing confirmation/mapping evidence and retain the instrumentation break.",
+      "Keep release and acquisition changes separate from causal conclusions. Preserve aggregate-source and raw-tracing limits, distinguish actual arithmetic checks from unavailable review and avoid tracking changes, rollout decisions or invented statistical significance."
+    ]
+  },
+  {
+    "id": "product-experiment-shared-unit-and-stopping",
+    "skill": "plan-product-experiment",
+    "installedSkills": ["plan-product-experiment"],
+    "prompt": "Assess the proposed experiment in experiment.md and prepare a usable protocol draft or the specific feasibility gaps preventing one. The team has delegated routine design recommendations to you, but no launch or implementation is authorized. Use only these fictional local facts; do not run a test, contact users or calculate sample size from invented assumptions. Stop at the planning result and identify unperformed acceptance checks.",
+    "files": {
+      "experiment.md": "# Proposed queue experiment, before any exposure\nDecision owner: product lead. Proposed change: replace chronological queue ordering with a priority ranking. Hypothesis: more assigned cases will be completed within 24 elapsed hours. Control: current chronological ordering. Safety concern: urgent cases waiting longer than 24 hours. Neither a worthwhile effect nor an acceptable urgent-case harm threshold has been chosen.\n\nPopulation: six customer workspaces, ten staff in each. All staff in a workspace read and change the same shared queue; completing a case removes it for everyone. Some staff belong to two of these workspaces. The snapshot counts 600 queue interactions per day, but gives no eligible arrival count, baseline completion rate, variance or cross-workspace membership mapping.\n\nDraft allocation: flip a fresh 50/50 coin for every browser session, including returning staff. Draft analysis: compare completion among sessions that clicked a case in their assigned interface. Draft duration: fourteen days maximum. Check p < 0.05 every afternoon and stop on the first positive result; if not positive on day fourteen, continue until it becomes positive. No analysis method, power calculation, stable assignment/exposure log, operational safety responder or stop mechanism has been specified.\n"
+    },
+    "expected": [
+      "Identify shared-queue interference, cross-workspace staff and session rerandomization as validity problems. Separate assignment, exposure and analysis units, proposing stable allocation only with explicit assumptions and unresolved cross-workspace contamination addressed.",
+      "Do not use 600 interactions as 600 independent randomized units or claim a powered fourteen-day experiment from missing baseline, effect, dependence and arrival inputs. Six workspaces alone establish neither adequate power nor universal impossibility; retain a specific feasibility gap.",
+      "Challenge the treatment-selected engaged-session comparison and repeated fixed-threshold peeking/extension. Propose a predeclared analysis and valid stopping approach or leave the required choices unresolved, without calling the existing draft confirmatory or launch-ready.",
+      "Carry primary, urgent-case harm and data-quality criteria into the draft, with invalid/inconclusive outcomes and safety ownership gaps visible. Do not invent an accepted harm threshold, completed assignment checks, review or launch authority."
+    ]
+  },
+  {
+    "id": "product-validation-enthusiasm-and-commitment",
+    "skill": "validate-product-idea",
+    "installedSkills": ["validate-product-idea"],
+    "prompt": "Should we commit six months and EUR 60000 to build the workshop scheduling idea described in evidence.md? Assess the supplied evidence and recommend the bounded next decision. You may propose the smallest useful next investigation and routine design details, but no outreach, new data collection, payments, publication or building is authorized. Keep the result in your response and disclose missing acceptance checks.",
+    "files": {
+      "evidence.md": "# Fictional founder evidence packet, 1 November 2026\nProposed product: scheduling and reminder service for independent pottery workshop owners. The founders believe manual booking causes enough disruption to support EUR 30 per month. The next proposed commitment is six months of development costing EUR 60000; no approved smaller build exists.\n\nE1: Eight founder friends answered 'Wouldn't a simple booking app save you time?' Seven said yes; one said their spreadsheet is enough. Two are pottery workshop owners; the notes do not identify which answers were theirs. No recent booking incident, current spending, switching behavior or purchasing authority was recorded.\nE2: A landing-page export contains 42 email submissions. There is no deduplication, visitor count, target-audience qualification or source breakdown. No trial product was offered.\nE3: Two workshop owners each paid EUR 30 for a described manual scheduling pilot. One requested and received a full refund before the pilot began. The other has not supplied a workshop date or used the service after three weeks. No completed service outcome or renewal exists.\nE4: A founder says competitors seem too complicated, but supplied no dated comparison or customer switching evidence.\nNo independent assessment, additional interviews, usage records or cost model beyond the proposed development cost is supplied.\n"
+    },
+    "expected": [
+      "Distinguish prompted convenience-sample enthusiasm, unqualified email submissions, payments, refunds and actual use. Preserve the dissenting spreadsheet response and the unobserved target-audience subset; do not report 7/8 as representative buyer demand or 42 verified customers.",
+      "Preserve the two EUR 30 payments and one full refund accurately while recognizing that the remaining payment without service use or renewal does not establish retained demand or sustainable economics. Do not transform competitor speculation into evidence of a market gap.",
+      "Explain why the supplied evidence does not establish demand sufficient for the requested six-month commitment, retaining uncertainty rather than declaring the whole idea validated or disproved. Recommend a bounded next decision tied to the riskiest assumption.",
+      "If proposing an investigation, state the claim, relevant audience, observable commitment or behavior, scope and success/failure/inconclusive decision criteria with rationale; identify required authority and absent observations. Do not execute the investigation, invent universal validation quotas or claim independent acceptance."
+    ]
+  }
+]

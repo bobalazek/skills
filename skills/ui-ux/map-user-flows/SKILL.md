@@ -11,6 +11,8 @@ Use this for a usable map of actors, entry points, actions, states, outcomes and
 
 For existing software, inspect the actual journey and preserve useful familiar behavior. For a new product, label assumptions about users and their context rather than treating them as observed needs.
 
+Ask about consequential actor, outcome, permission or recovery choices that the request and available evidence leave unresolved. Record the open decision and wait before mapping dependent branches as agreed behavior; independent inspection or requested options can continue. Reuse accepted choices and explicit delegation without asking again.
+
 ## Trace paths and decisions
 
 Map the primary path and relevant branches: missing input, validation, permission, loading/empty/error/success states, cancellation, repeated actions and recovery. Add offline, background, cross-device or multi-actor behavior only where the capability requires it. Describe what the user sees and can do at each meaningful state.
