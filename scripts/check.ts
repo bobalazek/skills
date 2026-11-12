@@ -177,7 +177,10 @@ export function audit(inputRoot: string) {
     if (Number(content.match(/^(\d+) skills?\b/m)?.[1]) !== packages.length) {
       fail(readme, `summary must report ${packages.length} skills`);
     }
-    for (const domain of domains) {
+    const listedDomains = [...content.matchAll(/^\|.*\]\(docs\/domains\/([a-z0-9-]+)\.md\)/gm)].map(
+      (match) => match[1],
+    );
+    for (const domain of new Set([...domains, ...listedDomains])) {
       const count = packages.filter((entry) => dirname(dirname(entry)) === join(root, "skills", domain)).length;
       const row = content.split("\n").find((line) => line.includes(`](docs/domains/${domain}.md)`));
       if (Number(row?.match(/· (\d+) skills?\]/)?.[1]) !== count) {

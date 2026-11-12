@@ -215,6 +215,18 @@ test("leaves historical release counts outside the current inventory check", () 
   expect(audit(root).errors).toEqual([]);
 });
 
+test.each([0, 6])("checks listed domain counts after its last skill is removed: %i", (count) => {
+  const readme = join(root, "README.md");
+  write(join(root, "docs/domains/product.md"), "# Product\n");
+  write(
+    readme,
+    readFileSync(readme, "utf8") + `| [Product · ${count} skills](docs/domains/product.md) | Retained catalog |\n`,
+  );
+  const errors = audit(root).errors;
+  if (count === 0) expect(errors).toEqual([]);
+  else expect(errors.join("\n")).toContain("domain catalog row must report 0 product skills");
+});
+
 test.each([
   ["- [ ] Verify the result.\n", undefined],
   [
