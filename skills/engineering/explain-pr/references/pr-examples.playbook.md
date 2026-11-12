@@ -2,6 +2,8 @@
 
 Read only the scenario relevant to the change. The [default template](pr-description.template.md) owns the fields; these examples illustrate concise content, not additional rules. All systems, numbers, dates and check results below are fictional. Replace them with the project's actual observations; never publish these example results as your verification or invent an attachment.
 
+Explanation patterns draw on [Matt Pocock's PR skill](https://github.com/mattpocock/skills/blob/5863806dd4e15c63174bee4e7515a4256792ecfa/skills/engineering/pr/SKILL.md) and [HumanLayer's visual PR template](https://github.com/humanlayer/skills/blob/4d69d20f6e9b57b4fcf0d501ccfb1be961f0f329/plugins/visual-pr/skills/visual-pr/references/pr_description_template.md), checked 12 November 2026: show the smallest useful explanation and concrete evidence, with meaningful reversibility and impact. Our template also retains the required merge, observation and recovery concerns; these fictional examples are written for this collection.
+
 ## Documentation only
 
 ```markdown
@@ -84,33 +86,71 @@ Duplicate and cross-tenant fixture checks passed. The first affected production 
 Required CI/review, confirmed target population, working job signals and an assigned operator. No unrelated schema change is required.
 
 ## Rollout and monitoring
-Effect starts at the next 02:00 Europe/Ljubljana run. The operator checks completion by 03:00, then reconciles counts by 08:00. Observe failures, duplicate deliveries, queue age, CPU/memory and provider-call volume against the previous comparable run. A quiet hour after a midday deployment proves nothing about this job.
+- Effect starts at the next 02:00 Europe/Ljubljana run; the operator checks completion by 03:00 and reconciles counts by 08:00.
+- Compare failures, duplicate deliveries, queue age, CPU/memory and provider-call volume with the previous comparable run. A quiet hour after a midday deployment proves nothing about this job.
 
 ## Risk and recovery
-Bad grouping could affect the estimated cohort or increase memory and paid delivery calls. Missing completion, mismatched counts or breached agreed resource limits stop further runs. Correct and replay only unsent work through the existing runbook; already sent messages cannot be recalled. Recovery is not yet rehearsed.
+- Bad grouping could affect the estimated cohort or increase memory and paid delivery calls. Missing completion, mismatched counts or breached agreed resource limits stop further runs.
+- Correct and replay only unsent work through the existing runbook; already sent messages cannot be recalled. Recovery is not yet rehearsed.
 ```
 
 ## Metered API or AI feature
 
 ```markdown
 ## Summary
-Enable optional AI summaries for a 50-account pilot.
+Introduce optional summaries from a new AI provider for a 50-account pilot.
 
 ## Changes
-Only the approved server-side cohort can request a summary. Estimated 500–1,000 requests/day; actual token distribution and production unit cost are still unknown. Retries can add billable calls.
+- Gate requests behind the existing server-side feature flag and approved cohort; default off.
+- Estimated 500–1,000 requests/day; actual token distribution and production unit cost are still unknown. Retries can add billable calls.
 
 ## Evidence and testing
 Authorization, duplicate-request and bounded-retry checks passed with a fake provider. Those checks establish neither production quality nor the provider bill. Live cost and cancellation behavior remain unverified.
 
 ## Merge prerequisites
-Required CI/review and proof the pilot stays disabled by default. Exposure is blocked until the owner accepts the spend basis, enforced limits and monitoring access; an informational budget alert does not cap spending.
+- Before merge: required CI/review and proof the pilot stays disabled by default.
+- Before exposure: owner acceptance of provider/data handling, server-side credentials, spend basis, enforced limits and monitoring access. An informational budget alert does not cap spending.
 
 ## Rollout and monitoring
-Enable the pilot only after those gates. The operating owner watches request/token counts, retries, latency, serverless duration/concurrency and errors for the first hour and again after the first 100 requests, then checks the bill at the next provider refresh. This example assumes a 24-hour billing delay; confirm the actual provider delay. Use the accepted budget/thresholds; no universal “safe” price or watch duration is assumed.
+- Enable the pilot flag only after those gates. The operating owner checks request/token counts, retries, latency, serverless duration/concurrency and errors for the first hour and again after the first 100 requests.
+- Check the bill at the next provider refresh. This example assumes a 24-hour billing delay; confirm the actual delay and accepted budget/thresholds.
 
 ## Risk and recovery
-Retries or abuse could raise API, serverless, logging or egress charges. Disable new requests and apply the existing quotas when limits are exceeded; verify whether in-flight requests can actually be cancelled. Reverting code does not refund charges or remove saved summaries. Real spend remains an open check.
+- Retries or abuse could raise API, serverless, logging or egress charges. Disable the flag and apply existing quotas when limits are exceeded; verify whether in-flight requests can actually be cancelled.
+- Provider output and data handling remain risks outside fake-provider checks. Reverting code does not refund charges, retract transmitted data or remove saved summaries. Real spend remains an open check.
 ```
+
+## New third-party API integration
+
+````markdown
+## Summary
+Add optional address validation before label purchase, initially disabled.
+
+## Changes
+- Put the new provider behind the existing server-side integration flag; retain manual review when validation is unavailable.
+- Keep credentials on the server and send only the address fields needed for validation.
+
+```text
+Before: shipping form → manual review → label purchase
+After:  shipping form → flagged validation → result or manual review → label purchase
+```
+
+## Evidence and testing
+- Sandbox checks passed for valid/invalid addresses, timeout and rate-limit responses; no label purchase occurs in these checks.
+- Live credentials, provider limits, production latency, charges and data-retention terms remain unverified.
+
+## Merge prerequisites
+- Before merge: required CI/review and proof the flag defaults off without changing the existing purchase path.
+- Before exposure: accept provider/data terms, verify credentials and retry/rate/concurrency limits, and assign an operator with signal access. Confirm quota exhaustion leaves manual review available.
+
+## Rollout and monitoring
+- Enable only for the approved 20-account cohort. Estimate 200 validations/day from current shipping volume, assuming one validation per address; confirm provider pricing and retry amplification before exposure.
+- The integration owner compares errors, rate limits, latency and call counts with the existing flow for the first hour and first 100 validations. Check charges at the confirmed billing refresh; stop new calls if agreed limits or privacy conditions fail.
+
+## Risk and recovery
+- A provider outage, incorrect result or exhausted quota could delay shipping; retries could raise the bill. Keep validation separate from label purchase and verify the fallback before exposure.
+- Disable the integration flag and verify manual review still works. Sent addresses and incurred charges cannot be recalled by reverting code; provider deletion and in-flight cancellation remain conditional on verified capabilities.
+````
 
 ## Date- or flag-triggered activation
 

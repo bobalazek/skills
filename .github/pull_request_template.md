@@ -1,12 +1,14 @@
 <!-- Canonical default PR template for explain-pr; the repository GitHub template mirrors this file. -->
+<!-- Use short bullets when a section has several independent checks, prerequisites, rollout steps or risks; a single point can stay a sentence. -->
 
 ## Summary
 
-<!-- What problem does this solve, why, and what changes for the user or contributor? -->
+<!-- What problem does this solve, why, and what is the resulting user or contributor behavior? -->
 
 ## Changes
 
-<!-- Brief approach and a useful before/after example or flow. Note affected consumers and compatibility. -->
+<!-- Important changes, grouped by behavior or responsibility, without repeating the summary. Add a useful before/after example or flow and affected consumers/compatibility.
+Name files only when they explain a consequence or guide review; do not repeat the full changed-file list. -->
 
 ## Evidence and testing
 
