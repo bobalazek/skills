@@ -98,6 +98,18 @@ Next-step guidance belongs in the portable skill itself. Recommend from the actu
 
 In workflow diagrams, use one exact skill name per double-bordered box, rounded boxes for scenario work or inputs/results, diamonds for decisions, and labeled outer frames for stages/phases. Include a key and state whether arrows are possible handoffs or required dependencies. Never combine several skill names in one invocation node. Keep request examples consistent with the router's output boundaries, and link detailed scenarios from the README instead of turning it into the full catalog.
 
+## Use the collection to maintain itself
+
+Use the relevant skills in this checkout when working on this repository. Read their current entrypoints and applicable references rather than relying on an older installed copy or mentioning a skill without applying its decisions. Select by the requested result, reuse completed work and valid evidence, and skip stages that add no useful result.
+
+For PR work, apply [explain-pr](../skills/engineering/explain-pr/SKILL.md) to the reviewer-facing description and [ship-change](../skills/engineering/ship-change/SKILL.md) to delivery. Use [review-code](../skills/engineering/review-code/SKILL.md) for an outstanding correctness assessment and [verify-change](../skills/engineering/verify-change/SKILL.md) for missing proof; do not duplicate an already valid review or trial. If a required capability is unavailable, report the exact gap and use only a supported fallback.
+
+Before opening a PR, check that its opening explains the concrete problem, affected users or agent decisions, and resulting behavior. Follow with a useful before/after example or control flow, affected consumers and compatibility, then criterion-linked evidence, independent findings, limitations and recovery. Scale this to the change: a small documentation fix can use a paragraph; a broad behavior change needs enough detail to assess its mechanism. The headings in `explain-pr` are an outline, not evidence that those questions were answered.
+
+Choose proof for the claim: labeled before/after screenshots or video for changed visible states; comparable measured values for performance or data claims; and observed command results, synthetic input/output comparisons or scenario traces for tooling and skill instructions. Link verified CI runs and reviewer-accessible artifacts directly in the PR. Explain a material missing comparison or artifact; private local paths are not attachments. Do not manufacture screenshots, benchmarks or behavioral passes for a prose-only change.
+
+If using our own guidance exposes an omission or contradiction, correct its authoritative owner with supporting evidence rather than creating a competing procedure. Repository instructions should link that owner and carry only collection-specific rules. Dogfooding neither grants new authority nor waives independent review, verification or delivery gates.
+
 ## Git workflow
 
 Use short-lived `type/short-description` branches from `main` and deliver through a PR. Keep this repository's existing flow; no `develop` branch is needed. Use lowercase [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for authored commits, PR titles and the final squash message: `type(scope): description`, with scope and a breaking `!` marker optional. Types are `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore` and `revert`; use a scope only when it identifies a useful owner.
