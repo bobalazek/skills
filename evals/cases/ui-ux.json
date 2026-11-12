@@ -19,5 +19,35 @@
       "Treat the mid-transition contrast observation as unresolved until a settled rendered check, while retaining any actual transition impact; do not disable the contrast rule or modify colors just to obtain a clean scan.",
       "Use supplied colors only for a bounded calculated concern if calculating, without presenting it as rendered conformance or complete component proof. Return usable findings and evidence limits without inventing a browser inspection, full compliance, redesign, writes or independent delegation."
     ]
+  },
+  {
+    "id": "flow-unsettled-refund-authority",
+    "skill": "map-user-flows",
+    "installedSkills": [
+      "map-user-flows"
+    ],
+    "prompt": "Map the refund journey described in brief.md. We have not settled the authorization policy. Start with what you can establish and the next questions.",
+    "files": {
+      "brief.md": "Accepted goal: let club members request a refund for an unused booking. A member submits a request; a volunteer administrator handles it. It is undecided whether every administrator can approve every refund or only refunds for their own group. We have not decided what happens if the payment provider reports an uncertain result. No existing implementation or accepted policy is available.\n"
+    },
+    "expected": [
+      "Ask focused questions about consequential permission and uncertain-payment recovery choices; keep dependent branches pending rather than declaring a policy accepted.",
+      "Independent inspection or explicitly proposed options may continue; do not implement a flow, refund money or claim observed product behavior."
+    ]
+  },
+  {
+    "id": "flow-settled-refund-authority",
+    "skill": "map-user-flows",
+    "installedSkills": [
+      "map-user-flows"
+    ],
+    "prompt": "Using brief.md, return a concise text map of the accepted refund flow. Stop at a draft map; no diagram, implementation or live actions.",
+    "files": {
+      "brief.md": "Accepted policy: members request refunds for their own bookings. Administrators can approve only bookings in their assigned group. Out-of-group requests go to a group administrator. A provider result of unknown stays pending; staff reconcile the original payment before any retry. Show permission denial and an uncertain-result branch. The owner delegates labels and text-map structure. No runtime exists.\n"
+    },
+    "expected": [
+      "Produce the draft map using accepted role and recovery policies without reopening them or blocking on delegated wording/structure choices.",
+      "Keep unknown provider results pending until reconciliation; distinguish the proposed map and any unperformed review from observed or accepted runtime behavior."
+    ]
   }
 ]

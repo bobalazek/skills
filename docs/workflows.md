@@ -1,6 +1,6 @@
 # Workflows
 
-Pick the result you need below. Each category has its own short guide with request examples, skill handoffs and completion checks. Categories organize responsibilities; a real workflow can cross them, such as content → interface design → engineering.
+Pick the result you need below. Each category has its own short guide with request examples, skill handoffs and completion checks. The [complete skill map](../skills/productivity/choose-skill/references/skill-map.matrix.md) lists every package and its nearest boundary; these guides illustrate how to use them. Categories organize responsibilities; a real workflow can cross them, such as content → interface design → engineering.
 
 For a software feature, expand the [idea-to-delivery preview](../README.md#from-idea-to-delivery). For a narrated explainer, see the [script-to-video diagram](workflows/media.md#from-script-to-checked-video).
 

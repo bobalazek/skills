@@ -182,5 +182,57 @@
       "Select define-writing-voice and reuse accepted brand decisions instead of restarting positioning or visual identity.",
       "Keep the result to a short route and necessary source inputs."
     ]
+  },
+  {
+    "id": "route-project-skill-learning",
+    "skill": "choose-skill",
+    "installedSkills": [
+      "choose-skill",
+      "create-project-skill",
+      "find-improvements",
+      "automate-code-checks",
+      "improve-prompt",
+      "evaluate-skill"
+    ],
+    "prompt": "Our agent keeps rediscovering the same project-specific procedure. We want to inspect our code, corrective commits and available agent sessions and create a local skill if the evidence supports it. Which skill owns that? Recommend only.",
+    "files": {},
+    "expected": [
+      "Select create-project-skill for evidence-based project-local skill creation, distinguishing automated guards from procedural knowledge.",
+      "Keep the answer to a route and needed inputs; do not read sessions, install packages or create a skill from a recommendation-only request."
+    ]
+  },
+  {
+    "id": "route-narration-wording",
+    "skill": "choose-skill",
+    "installedSkills": [
+      "choose-skill",
+      "write-video-script",
+      "create-voiceover",
+      "define-writing-voice",
+      "create-motion-video"
+    ],
+    "prompt": "We have a video outline and need only the spoken narration rewritten for clarity. We do not want audio generated, a voice guide or a video produced. Which skill fits? Recommend only.",
+    "files": {},
+    "expected": [
+      "Select write-video-script for standalone narration wording, preserving the existing outline.",
+      "Do not route to audio generation, writing-voice profiling or media production, and do not execute the rewrite."
+    ]
+  },
+  {
+    "id": "route-collection-maintenance",
+    "skill": "choose-skill",
+    "installedSkills": [
+      "choose-skill",
+      "create-project-skill",
+      "improve-prompt",
+      "evaluate-skill",
+      "implement-change"
+    ],
+    "prompt": "Our shared skill library has stale catalogue counts and an incomplete router matrix. We need the existing documentation and its checks repaired, not project history mining or a new skill. Which skill or plain action should own it? Recommend only.",
+    "files": {},
+    "expected": [
+      "Describe scoped repository documentation and validation repair, or use implement-change for that ready change, instead of creating a project-local skill or claiming wording review proves behavior.",
+      "Keep this to a route and prerequisites; do not edit, install or start evaluation runs."
+    ]
   }
 ]

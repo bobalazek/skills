@@ -8,6 +8,7 @@ Choose the next missing result, then read the relevant domain below. Names ident
 
 | Requested result | Skill | Boundary |
 | --- | --- | --- |
+| The next fitting skill and its prerequisites | `choose-skill` | Route from the desired result and accepted work; recommend without executing when only a route was requested |
 | Different approaches to an idea | `brainstorm-ideas` | Explore before choosing a direction |
 | Questions that challenge an idea, spec, or plan | `challenge-proposal` | Resolve consequential choices and edge cases through focused questions; do not manufacture agreement |
 | An evidence-backed answer | `research-topic` | Answer the specific uncertainty |
@@ -127,10 +128,11 @@ Use these when several outputs could fit. Alternatives are not a mandatory seque
 | "Review this" | `challenge-proposal` for unresolved proposal choices; `review-code` for code findings; `review-interface` for rendered experience; `review-writing` for prose quality; `explain-pr` for an explanation rather than an assessment |
 | "Summarize our work" | `report-project-status` for a period/audience update; `prepare-handoff` for continuation context; `explain-pr` for one fixed code comparison |
 | "Improve how we work" | `improve-team-workflow` for a recurring process; `find-improvements` for codebase candidates; `automate-code-checks` for an agreed recurring coding rule |
+| "Improve our skills" | `improve-prompt` for editing supplied shared instructions; `evaluate-skill` for observed behavioral comparison; `create-project-skill` for mining recurring project work into local skills. Maintaining this collection's catalogs, router and counts is repository work, not a reason to create another skill |
 | "Plan our next work" | `prioritize-work` to select supplied candidates within capacity; `find-improvements` to discover candidates; `plan-phases` for milestones; `create-tasks` to decompose accepted scope |
 | "Capture screenshots" | `capture-product-screens` for the user's own product in marketing, docs or media; `capture-design-reference` for analyzing other interfaces; `verify-change` for screenshots that serve as evidence a change works; visual regression baselines stay with the project's tests |
 | "Make a video" | `plan-video` when goal, audience or concept is unresolved; `write-video-script` for words and story; `create-storyboard` for the visual plan; `create-motion-video` for code-driven rendering; `edit-video` for assembling existing footage. Do not require every stage or assume a production tool exists |
-| "Add a voice to this" | `create-voiceover` for narration audio from an accepted script; `define-writing-voice` for a written style guide; the owning media skill for script wording and placement |
+| "Add a voice to this" | `create-voiceover` for narration audio from an accepted script; `define-writing-voice` for a written style guide; `write-video-script` for standalone narration wording; the owning media skill for wording and placement within an already-requested production workflow |
 | "Turn this article into media" | `create-presentation` for a deck; `create-carousel` for social panels; `create-motion-video` for generated animation. Reuse the accepted article. Use `edit-video` when the input is recorded footage |
 
 A known failure can go straight to `diagnose-issue`; an accepted bounded fix can go to `implement-change`. Choose one next owner and name only justified follow-ups. A domain or diagram group is not an installable skill. Routing supplies neither missing evidence nor new authority.

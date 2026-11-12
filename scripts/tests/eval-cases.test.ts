@@ -26,3 +26,23 @@ test("regression cases retain usable raw inputs, separate expectations and exist
     }
   }
 });
+
+test("read-only case inventory counts match the domain recipes", () => {
+  const root = resolve(import.meta.dir, "../..");
+  const inventory = readFileSync(resolve(root, "evals/cases/README.md"), "utf8");
+  const cases = loadCases(resolve(root, "evals/cases"));
+  for (const path of new Bun.Glob("evals/cases/*.json").scanSync(root)) {
+    const domain = path
+      .split("/")
+      .at(-1)!
+      .replace(/\.json$/, "");
+    const recipes = loadCases(resolve(root, path));
+    const owners = new Set(recipes.map((item) => item.skill));
+    expect(inventory).toContain(`| [${domain}](${domain}.json) | ${recipes.length} | ${owners.size} |`);
+  }
+  const owners = new Set(cases.map((item) => item.skill));
+  const implicit = cases.filter((item) => item.invocation === "implicit").length;
+  expect(inventory).toContain(`There are ${cases.length} read-only recipes across ${owners.size} owning skills.`);
+  expect(inventory).toContain(`${implicit} use implicit requests`);
+  expect(inventory).toContain(`the other ${cases.length - implicit} explicitly invoke`);
+});

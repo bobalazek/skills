@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, test } from "bun:test";
-import { mkdirSync, mkdtempSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { audit } from "../check";
@@ -22,8 +22,15 @@ beforeEach(() => {
   root = mkdtempSync(join(tmpdir(), "skills-check-"));
   entry = join(root, "skills/engineering/example/SKILL.md");
   agentFile = join(dirname(entry), "agents/openai.yaml");
-  write(join(root, "README.md"), "# Example\n");
+  write(
+    join(root, "README.md"),
+    "# Example\n\n1 skill for examples.\n\n| [Engineering · 1 skill](docs/domains/engineering.md) | Examples |\n",
+  );
   write(join(root, "docs/domains/engineering.md"), "[example](../../skills/engineering/example/SKILL.md)\n");
+  write(
+    join(root, "skills/productivity/choose-skill/references/skill-map.matrix.md"),
+    "# Skill map\n\n## Engineering\n\n| Requested result | Skill | Boundary |\n| --- | --- | --- |\n| An example | `example` | Examples only |\n",
+  );
   write(entry, valid);
   write(agentFile, Bun.YAML.stringify({ interface: agentInterface }));
 });
@@ -133,12 +140,79 @@ test("checks eval documentation links and accepts their repaired targets", () =>
   expect(audit(root).errors).toEqual([]);
 });
 
+test("checks repository agent-instruction links when the file exists", () => {
+  write(join(root, "AGENTS.md"), "Read [authoring](docs/authoring.md).\n");
+  expect(audit(root).errors.join("\n")).toContain("AGENTS.md: broken/outside local link");
+  write(join(root, "docs/authoring.md"), "# Authoring\n");
+  expect(audit(root).errors).toEqual([]);
+});
+
 test("requires catalog coverage and catches whitespace", () => {
   write(join(root, "docs/domains/engineering.md"), "# Catalog\n");
   write(entry, valid + "trailing space \n");
   const errors = audit(root).errors.join("\n");
-  expect(errors).toContain("absent from domain catalogs");
+  expect(errors).toContain("absent from its owning domain catalog");
   expect(errors).toContain("whitespace");
+});
+
+test("requires a skill in its own catalog even if another catalog links it", () => {
+  write(join(root, "docs/domains/engineering.md"), "# Engineering\n");
+  write(join(root, "docs/domains/product.md"), "[example](../../skills/engineering/example/SKILL.md)\n");
+  expect(audit(root).errors.join("\n")).toContain("absent from its owning domain catalog");
+});
+
+test.each([
+  ["| An example | `example` | Examples only |\n", "", "missing routed skill: example"],
+  ["`example`", "`removed-skill`", "unknown routed skill: removed-skill"],
+  ["## Engineering", "## Product", "routed skill in wrong domain: example"],
+  [
+    "Examples only |",
+    "Examples only |\n| Another result | `example` | Same owner |",
+    "duplicate routed skill: example",
+  ],
+])("rejects routing inventory drift: %s", (before, after, error) => {
+  const router = join(root, "skills/productivity/choose-skill/references/skill-map.matrix.md");
+  write(router, readFileSync(router, "utf8").replace(before, after));
+  expect(audit(root).errors.join("\n")).toContain(error);
+});
+
+test("requires the routing map and ignores skill mentions outside its inventory rows", () => {
+  const router = join(root, "skills/productivity/choose-skill/references/skill-map.matrix.md");
+  write(router, readFileSync(router, "utf8") + "\nA boundary can mention `example` or a non-skill `third-party`.\n");
+  expect(audit(root).errors).toEqual([]);
+  rmSync(router);
+  expect(audit(root).errors.join("\n")).toContain("missing skill routing map");
+});
+
+test.each([
+  ["|Historical|`removed-skill`|Stale owner|", "unknown routed skill: removed-skill"],
+  ["|Again|`example`|Same owner|", "duplicate routed skill: example"],
+])("checks compact Markdown routing rows: %s", (row, error) => {
+  const router = join(root, "skills/productivity/choose-skill/references/skill-map.matrix.md");
+  write(router, readFileSync(router, "utf8").trimEnd() + "\n" + row + "\n");
+  expect(audit(root).errors.join("\n")).toContain(error);
+});
+
+test.each(["```markdown", "~~~markdown"])("does not count fenced examples as routing inventory: %s", (fence) => {
+  const router = join(root, "skills/productivity/choose-skill/references/skill-map.matrix.md");
+  const content = readFileSync(router, "utf8");
+  write(router, "# Skill map\n\n" + fence + "\n" + content + fence.slice(0, 3) + "\n");
+  expect(audit(root).errors.join("\n")).toContain("missing routed skill: example");
+});
+
+test.each([
+  ["1 skill for", "2 skills for", "summary must report 1 skills"],
+  ["Engineering · 1 skill", "Engineering · 2 skills", "domain catalog row must report 1 engineering skills"],
+])("rejects current README count drift: %s", (before, after, error) => {
+  const readme = join(root, "README.md");
+  write(readme, readFileSync(readme, "utf8").replace(before, after));
+  expect(audit(root).errors.join("\n")).toContain(error);
+});
+
+test("leaves historical release counts outside the current inventory check", () => {
+  const readme = join(root, "README.md");
+  write(readme, readFileSync(readme, "utf8") + "\nThe previous release contained 70 skills.\n");
+  expect(audit(root).errors).toEqual([]);
 });
 
 test.each([

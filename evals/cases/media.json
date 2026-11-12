@@ -245,5 +245,81 @@
       "Describe an intelligible opening, first useful action and complete ending at a feasible estimated 25-35 seconds; exclude the unrequested follow CTA without recutting unrelated content.",
       "Name unavailable playback, sound, join, framing and caption checks as applicable production gaps; do not start media work or require installing sibling packages."
     ]
+  },
+  {
+    "id": "carousel-unsettled-delivery",
+    "skill": "create-carousel",
+    "installedSkills": [
+      "create-carousel"
+    ],
+    "prompt": "Turn source.md into a carousel. I have not decided where it will go or whether we need separate images or a swipe document. Start with the next useful step.",
+    "files": {
+      "source.md": "A volunteer club wants to explain three signup steps: choose a shift, confirm attendance, contact the coordinator if plans change. Audience: new volunteers. Facts and wording are accepted. No existing template or brand assets.\n"
+    },
+    "expected": [
+      "Ask about material destination/artifact choices and wait before dependent layout/export decisions; source inspection and proposed options can proceed.",
+      "Do not silently pick a platform, page dimensions or image/PDF format, render a batch, upload or claim completed exports."
+    ]
+  },
+  {
+    "id": "carousel-delegated-outline",
+    "skill": "create-carousel",
+    "installedSkills": [
+      "create-carousel"
+    ],
+    "prompt": "Use source.md to draft a four-panel carousel outline and companion text transcript. This is for a general draft, with no destination compatibility claim. I delegate headings and sequence to you; do not render or publish.",
+    "files": {
+      "source.md": "Accepted audience: new volunteer club members. Accepted facts: choose a shift in the existing rota, confirm attendance in the club chat, contact the coordinator if plans change. Required output now: text-only four-panel outline, not images or PDF. No brand or design decisions are needed.\n"
+    },
+    "expected": [
+      "Return the four-panel text outline and transcript, preserving supplied facts and using delegated judgment without repeated approval.",
+      "Stop at the requested draft; do not require export format, production tools or platform choice and do not claim visual inspection or independent acceptance."
+    ]
+  },
+  {
+    "id": "presentation-unsettled-delivery",
+    "skill": "create-presentation",
+    "installedSkills": [
+      "create-presentation"
+    ],
+    "prompt": "Make a deck from source.md. We have not decided whether someone presents it live or people read it alone, or which editable format we need. Start with what needs resolving.",
+    "files": {
+      "source.md": "A volunteer club needs to explain its annual rota update to coordinators. Accepted content: shift assignments, confirmation process and the next planning date. No numeric results or charts. No template or existing deck.\n"
+    },
+    "expected": [
+      "Ask about unresolved delivery and format choices and wait before dependent slide composition or exports; source inspection and requested options can continue.",
+      "Do not silently choose a talk or reading-deck density, produce a deck in an assumed format, upload or claim compatible final files."
+    ]
+  },
+  {
+    "id": "presentation-delegated-outline",
+    "skill": "create-presentation",
+    "installedSkills": [
+      "create-presentation"
+    ],
+    "prompt": "Using source.md, give a concise three-slide text outline for an asynchronous reading deck. I delegate titles and order. This request ends at the outline: no authoring, rendering or publication.",
+    "files": {
+      "source.md": "Accepted audience: volunteer club coordinators reading alone. Required content: shift assignments live in the shared rota, volunteers confirm attendance in the existing chat, coordinators review unfilled shifts every Friday. No claims about past performance. Output now: text outline only.\n"
+    },
+    "expected": [
+      "Return three slides with enough context for asynchronous reading, applying accepted delivery mode and delegated title/order choices without repeated approval.",
+      "Stop at the outline without requiring authoring format, rendering, independent deck acceptance or live sharing."
+    ]
+  },
+  {
+    "id": "shorts-cleared-versus-claimed",
+    "skill": "plan-video",
+    "installedSkills": [
+      "plan-video"
+    ],
+    "prompt": "Review these two proposed 90-second YouTube Shorts in brief.md for planning constraints only. Do not cut, upload or dispute anything. Identify what is supported and what needs checking.",
+    "files": {
+      "brief.md": "Both videos are vertical, intended for a standard channel, with licensed third-party footage. A uses royalty-free music downloaded from the official YouTube Audio Library; no active claim is reported. B has an active Content ID claim on its music. We have not supplied a target upload observation or the licenses. The planned narration is already accepted.\n"
+    },
+    "expected": [
+      "Distinguish active-claim handling from third-party provenance: do not impose a blanket one-minute limit on A solely because of outside assets.",
+      "Identify the over-one-minute active-claim blocking issue for B and verify or qualify current official rules, actual claim status and asset rights.",
+      "Do not say a shorter edit automatically clears rights, manufacture upload checks, or perform production, publication or a dispute."
+    ]
   }
 ]

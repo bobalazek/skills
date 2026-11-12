@@ -128,16 +128,66 @@ export function audit(inputRoot: string) {
     }
   }
 
-  const catalogTargets = new Set(
-    files(join(root, "docs/domains"))
-      .filter((path) => extname(path) === ".md")
-      .flatMap(targets),
-  );
+  const domains = new Set(packages.map((entry) => relative(join(root, "skills"), entry).split(/[\\/]/)[0]));
   for (const entry of packages) {
-    if (!catalogTargets.has(realpathSync(entry))) fail(entry, "absent from domain catalogs");
+    const domain = relative(join(root, "skills"), entry).split(/[\\/]/)[0];
+    const catalog = join(root, "docs/domains", `${domain}.md`);
+    if (!existsSync(catalog) || !targets(catalog).includes(realpathSync(entry))) {
+      fail(entry, "absent from its owning domain catalog");
+    }
+  }
+  const router = join(root, "skills/productivity/choose-skill/references/skill-map.matrix.md");
+  if (!existsSync(router)) {
+    fail(router, "missing skill routing map");
+  } else {
+    const routed = new Set<string>();
+    let domain = "";
+    let cells: string[] = [];
+    Bun.markdown.render(read(router), {
+      heading(children, meta) {
+        if (meta.level === 2) domain = children.toLowerCase().replace(/[^a-z0-9]/g, "");
+        return children;
+      },
+      td(children) {
+        cells.push(children.trim());
+        return children;
+      },
+      tr(children) {
+        if (cells.length === 3) {
+          const name = cells[1];
+          if (!names.has(name)) fail(router, `unknown routed skill: ${name}`);
+          if (routed.has(name)) fail(router, `duplicate routed skill: ${name}`);
+          routed.add(name);
+          const entry = packages.find((path) => dirname(path).split(/[\\/]/).at(-1) === name);
+          if (entry && dirname(dirname(entry)).split(/[\\/]/).at(-1)?.replace(/-/g, "") !== domain) {
+            fail(router, `routed skill in wrong domain: ${name}`);
+          }
+        }
+        cells = [];
+        return children;
+      },
+    });
+    for (const name of names) {
+      if (!routed.has(name)) fail(router, `missing routed skill: ${name}`);
+    }
+  }
+  const readme = join(root, "README.md");
+  if (existsSync(readme)) {
+    const content = read(readme);
+    if (Number(content.match(/^(\d+) skills?\b/m)?.[1]) !== packages.length) {
+      fail(readme, `summary must report ${packages.length} skills`);
+    }
+    for (const domain of domains) {
+      const count = packages.filter((entry) => dirname(dirname(entry)) === join(root, "skills", domain)).length;
+      const row = content.split("\n").find((line) => line.includes(`](docs/domains/${domain}.md)`));
+      if (Number(row?.match(/· (\d+) skills?\]/)?.[1]) !== count) {
+        fail(readme, `domain catalog row must report ${count} ${domain} skills`);
+      }
+    }
   }
   const markdown = [
     join(root, "README.md"),
+    ...(existsSync(join(root, "AGENTS.md")) ? [join(root, "AGENTS.md")] : []),
     ...files(join(root, "docs")),
     ...files(join(root, "evals")),
     ...allSkillFiles,
@@ -178,7 +228,7 @@ if (import.meta.main) {
     process.exitCode = 1;
   } else {
     console.log(
-      `PASS: ${result.packages} skill packages, ${result.resources} reachable resources; metadata, local links, standalone boundaries, catalog coverage, checklist format`,
+      `PASS: ${result.packages} skill packages, ${result.resources} reachable resources; metadata, local links, standalone boundaries, catalog/router coverage, README counts, checklist format`,
     );
   }
 }

@@ -1,18 +1,20 @@
 # Brand workflows
 
+[All workflows](../workflows.md) · [All brand skills](../domains/brand.md)
+
 Start at the missing result and reuse accepted strategy, visual direction and source assets. These routes describe possible handoffs, not a requirement to rebuild the whole brand.
 
 ## Define a position
 
 “Help us choose what this offer should be known for, using these customer notes and actual capabilities.”
 
-Use `define-brand-positioning` to inspect audience situations, alternatives, meaningful differences and proof. Open consequential choices wait for answers; explicitly delegated choices can proceed. Finish at the requested brief or options, with supported claims, proposal/acceptance status and a concrete investigation for missing evidence. Use `validate-product-idea` when the requested decision is whether demand merits further investment.
+Use [define-brand-positioning](../../skills/brand/define-brand-positioning/SKILL.md) to inspect audience situations, alternatives, meaningful differences and proof. Open consequential choices wait for answers; explicitly delegated choices can proceed. Finish at the requested brief or options, with supported claims, proposal/acceptance status and a concrete investigation for missing evidence. Use `validate-product-idea` when the requested decision is whether demand merits further investment.
 
 ## Design or refine an identity
 
 “We have accepted positioning and a logo we must keep. Prepare palette, typography and usage guidance for these touchpoints.”
 
-Use `design-brand-identity` with the accepted brief, retained source assets and actual uses. Finish at the requested direction, guidelines or checked production assets. A guidelines-only request need not create a new logo, interface or design system.
+Use [design-brand-identity](../../skills/brand/design-brand-identity/SKILL.md) with the accepted brief, retained source assets and actual uses. Finish at the requested direction, guidelines or checked production assets. A guidelines-only request need not create a new logo, interface or design system.
 
 ## Continue into writing or interfaces
 
