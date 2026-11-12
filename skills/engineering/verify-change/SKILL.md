@@ -67,7 +67,7 @@ As the independent evaluator, try relevant counterexamples and inspect raw proof
 
 Match the requested audience, tone and depth, then project conventions. Report the outcome and purpose, criterion-linked observations, method, independent findings and exact gaps. Update durable facts in the existing authorized knowledge location rather than another summary. Keep failures visible and refresh affected claims and artifacts after edits.
 
-Include reviewer-accessible artifacts or concise inline results in the PR when PR work is authorized. Upload only through an approved repository or host mechanism; verify the returned location and intended access. A local screenshot path is not a PR attachment. If upload is unavailable, keep the local evidence, include useful textual observations and reproduction steps, and state the attachment gap.
+Include reviewer-accessible artifacts or concise inline results in the PR when PR work is authorized. Upload only through an approved repository or host mechanism; verify the returned location and intended access. A local screenshot path is not a PR attachment. Keep local records and reviewer/source bookkeeping internally. Report useful observations and reproduction steps; omit local paths, document hashes and agent/session metadata from PR text. If a required observation is missing, explain the unverified behavior and its consequence.
 
 ## Next steps
 

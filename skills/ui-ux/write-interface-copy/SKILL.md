@@ -43,7 +43,7 @@ With rendering access, inspect actual candidate states and supported surfaces fo
 
 Before acceptance, have a separate agent in fresh context challenge the raw request, accepted behavior, terminology, candidate strings and state evidence without the author's conversation or preferred answer. It must test misleading promises, unsupported recovery, missing context and coverage claims. Retain its returned reviewer/session identity, evaluated artifact/revision, findings and coverage. Resolve defects and independently recheck affected strings/states after fixes. Without that assessment, report unreviewed rather than ready; human approval remains separate.
 
-Return strings, behavior/terminology constraints, verified coverage and unresolved choices at the requested audience/depth. Keep accepted copy in its authorized source. For authorized PR work, include safe before/after proof and the actual assessment, refreshed after affected edits.
+Return strings, behavior/terminology constraints, verified coverage and unresolved choices at the requested audience/depth. Keep accepted copy in its authorized source. For authorized PR work, include safe before/after proof and material review findings, refreshed after affected edits; keep review metadata internal.
 
 ## Next steps
 

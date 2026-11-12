@@ -105,7 +105,7 @@ Start from the fixed candidate, its comparison baseline, original request, accep
 ## Change size and delivery sequence
 
 - [ ] Assess reviewability by coherent outcomes, domain/module ownership, dependency edges, risk and proof. Separate unrelated cleanup, generated churn or independent behavior when it obscures the change; file or line counts are clues, not universal limits.
-- [ ] When a change is too broad, propose concrete increments with owned scope, prerequisite outputs and acceptance checks. A shared contract/foundation may precede backend support and frontend adoption; retain integrated vertical work where splitting by layer would leave broken or unverifiable states.
+- [ ] When a change is too broad, propose concrete increments with owned scope, prerequisite outputs and acceptance checks. Without accepted local rules, substantial cross-layer work defaults to compatible schema/domain foundations, shared contracts/types, backend support and frontend adoption, with destructive cleanup after consumer migration; retain integrated vertical work where splitting by layer would leave broken or unverifiable states.
 - [ ] Check each proposed increment's supported old/new schema, API, worker and client combinations, merge/deploy order, exposure and recovery boundary. Distinguish independently reviewable, mergeable and deployable; use the existing stacking/flag/migration workflow only when warranted. Do not introduce abstraction or infrastructure solely to manufacture independence.
 - [ ] Keep remaining user criteria, cross-increment integration, rollout and post-deploy observations visible. One merged prerequisite PR does not complete the feature; document coupling when independent deployment is not viable and block unsafe consumers.
 

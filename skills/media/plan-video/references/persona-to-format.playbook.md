@@ -43,35 +43,35 @@ Pick from the families that serve the primary goal. The lists are starting point
 | Build community | `reply-to-comment`, `reaction`, `caption-this`, `this-or-that`, `tier-list`, `unpopular-opinion`, `duet-stitch-remix` | Comments and replies that continue the thread |
 | Show the person behind it | `day-in-the-life`, `timestamp-vlog`, `grwm`, `ootd`, `routine-reset`, `aesthetic-vlog`, `whats-in-my-bag`, `recent-flops`, `storytime`, `behind-the-scenes` | Follows and returning viewers |
 
-Settle on three to five recurring pillars, each one persona need crossed with what the brand can credibly show, and give each pillar one or two formats ([Sprout Social](https://sproutsocial.com/insights/social-media-content-pillars/), accessed 2026-10-26, recommends three to five pillars mapped from goals to personas and revisited every few months).
+For a requested recurring series or content slate, propose a few pillars from persona needs and what the brand can credibly show; three to five is a planning option, not a requirement for a bounded idea request ([Sprout Social](https://sproutsocial.com/insights/social-media-content-pillars/), accessed 2026-10-26, recommends three to five pillars mapped from goals to personas and revisited every few months).
 
 ## 4. Rank what is left
 
 Do not invent a weighted score. Order the remaining formats with these rules, each one breaking ties in the one before:
 
 1. The **Real** material exists today.
-2. Total effort fits the budget for one video. Among formats that fit, prefer the one that serves the strongest pillar over the cheapest.
+2. Total effort fits the budget for one video. Among formats that fit, prefer the one that serves the requested goal or accepted series pillar over the cheapest.
 3. Status: `live`, then `active-2026`, `evergreen`, `unverified`, `past-peak`. A `past-peak` format only makes sense when the persona has a sharp angle on it.
 4. Fewer risk flags under the catalogue's rules.
 
-Propose three formats unless asked for more, with one sentence each on why it fits this persona. Mix at least one low-effort format the person can make this week with one that builds the stronger pillar.
+Honor the requested number and fidelity of ideas. Choose only enough formats to make that selection meaningfully different, explaining each fit briefly; do not multiply a requested total by the number of formats. When useful, include a feasible low-effort option and a stronger recurring direction without requiring a series plan.
 
 ## 5. Turn each format into concrete ideas
 
 A format is a container. An idea names what happens: format + a subject only this persona has + the real asset + the payoff for the viewer. "Tutorial about lighting" is a topic; "how I light a dark reception hall with one flash, shown on last Saturday's wedding" is an idea.
 
-- Give each format three ideas with three different reasons to watch, not three hooks for one premise.
+- Give the requested total number of ideas, with distinct reasons to watch rather than several hooks for the same premise. A larger slate can explore several ideas per format when requested.
 - Seed subjects from real demand: questions in comments and DMs, customer emails, YouTube Studio's Trends tab ("Top searches" and "Content gaps for Shorts", last 28 days; [YouTube Help](https://support.google.com/youtube/answer/11962757), accessed 2026-10-26) and search suggestions.
 - Mark every idea that depends on an unconfirmed asset, person or result. A staged or hypothetical result is never presented as observed.
 - If an idea adds nothing beyond a familiar list, change the idea rather than sell it harder. [Concept development](concepts.playbook.md) covers substance and the reward once an idea is chosen.
 
 ## 6. Draft the hook from the format's first beat
 
-Every catalogue entry's first beat is where its hook lives: the comment sticker, the "POV:" caption, the sealed box, the worst "before". Draft one or two openings per idea that make the promise visible and audible in that beat. TikTok's creative guidance asks for the proposition within the first 3 seconds and the hook within the first 6 ([TikTok Ads Help](https://ads.tiktok.com/help/article/creative-best-practices), updated June 2025). Final wording, on-screen text and the first proof beat belong to the script; use `write-video-script` when installed, and `review-writing` for generic phrasing.
+Every catalogue entry's first beat is where its hook lives: the comment sticker, the "POV:" caption, the sealed box, the worst "before". When hooks or a production brief are requested, draft one or two openings per idea that make the promise visible and audible in that beat. An ideas-only request can stop before hook writing. TikTok's creative guidance asks for the proposition within the first 3 seconds and the hook within the first 6 ([TikTok Ads Help](https://ads.tiktok.com/help/article/creative-best-practices), updated June 2025). Final wording, on-screen text and the first proof beat belong to the script; use `write-video-script` when installed, and `review-writing` for generic phrasing.
 
 ## 7. Return a suggestion record
 
-One record per proposed idea, so an app can store it and a person can approve it:
+For ordinary brainstorming, return concise human-readable ideas. Use one structured record per idea only when the user requests app/storage integration or a machine-readable deliverable:
 
 ```yaml
 format: tutorial              # catalogue id

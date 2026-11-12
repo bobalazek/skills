@@ -25,7 +25,7 @@ Use [the convention matrix](references/conventions.matrix.md) for authority, fol
 
 | Condition | Reference |
 | --- | --- |
-| Project setup, contributor workflow, branch/commit/PR naming, or merge policy | [Git workflow conventions](references/git-workflow.checklist.md) |
+| Project setup, PR size and dependency sequencing, contributor workflow, branch/commit naming, or merge policy | [Git workflow conventions](references/git-workflow.checklist.md) |
 | Typed code, component frameworks, or rendered websites | [Web and typed-code conventions](references/web-conventions.checklist.md) |
 | Domain models, stored schemas, invariants, migrations, or integration lifecycle | [Data model and schema conventions](references/data-contracts.checklist.md) |
 | HTTP endpoints, REST CRUD, API consumers, or request/response policy | [HTTP and API conventions](references/http-api.checklist.md) |
@@ -40,6 +40,8 @@ For each useful rule, record:
 - Scope, source, and accepted/observed/proposed status.
 - Preferred pattern, short local example, and valid exceptions.
 - Actual enforcement or human check, plus the adoption approach.
+
+For substantial cross-layer work without accepted PR rules, use the Git workflow reference’s default schema → shared contracts/types → backend → frontend sequence, with compatible intermediate states and a later cleanup step when needed. In a brownfield repository, adopt missing defaults for new/touched work within the granted scope; preserve valid local alternatives and make a changed convention explicit.
 
 Resolve contradictions explicitly; frequent code and stale memory do not establish policy. Avoid arbitrary line limits, a layer per noun, or naming changes without a maintenance benefit.
 
