@@ -1,5 +1,6 @@
 <!-- Canonical default PR template for explain-pr; the repository GitHub template mirrors this file. -->
 <!-- Use short bullets when a section has several independent checks, prerequisites, rollout steps or risks; a single point can stay a sentence. -->
+<!-- Bold important results, quantities, deadlines, blockers and recovery limits selectively. Use a focused diagram, flow or diff where it explains the change. -->
 
 ## Summary
 

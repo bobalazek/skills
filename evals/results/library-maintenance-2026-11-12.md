@@ -111,4 +111,6 @@ The independent evaluator assessed the raw requests, criteria, outputs and trace
 
 The canonical template was actually loaded in the description trials. Independent source review found a missing UI-example observation window/checkpoint; the example was corrected to a bounded check within 30 minutes of deployment. The mirror guard rejects missing, non-file and divergent mirrors and accepts the exact copy. Coordinator checks passed `bun run check`, **118 tests / 1,670 assertions** and `git diff --check`.
 
+The seven final examples use short bullets and selective emphasis, with focused diff/tree views and five Mermaid flows. The diagrams rendered with Mermaid CLI 12.2.0 in Chrome; initial wide renders were replaced with vertical AI/API layouts and checked again. This validates diagram syntax/layout, not the fictional systems or runtime behavior.
+
 These results establish bounded instruction behavior and template consistency. They do not establish automatic activation, example-file influence on generated output, live provider charges, deployment, production observation or rehearsed data recovery. Earlier results and unsuccessful attempts above retain their original limits.
