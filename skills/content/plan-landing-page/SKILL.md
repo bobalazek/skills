@@ -37,7 +37,7 @@ Walk each intended arrival through the proposed content to its actual destinatio
 
 Before acceptance, have a separate agent in fresh context challenge the raw request, product sources, candidate plan and destination evidence without the author's conversation or preferred answer. Retain its returned reviewer/session identity, assessed revision, findings and coverage. Resolve defects and independently recheck affected claims or paths. Without that assessment, label the plan unreviewed. Required human approval remains separate.
 
-Return the plan, consequential choices, proof gaps and observed checks at the requested depth. Keep it in the existing authorized project location; drafting does not authorize publishing, buying traffic or contacting customers. Include safe before/after evidence and the returned assessment when an authorized PR contains the work.
+Return the plan, consequential choices, proof gaps and observed checks at the requested depth. Keep it in the existing authorized project location; drafting does not authorize publishing, buying traffic or contacting customers. Include safe before/after evidence and material review findings when an authorized PR contains the work; keep review metadata internal.
 
 ## Next steps
 

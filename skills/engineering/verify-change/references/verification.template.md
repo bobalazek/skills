@@ -37,6 +37,8 @@ A picture of a passing terminal adds little when a readable result or CI link ca
 
 ## PR evidence
 
+The detailed context above is a working record, not a PR description template. For human reviewers, summarize the behavior, relevant checks, findings and material gaps. Omit local paths, document hashes and agent/session/model bookkeeping unless explicitly requested.
+
 Include this evidence when opening the PR, then update it as the candidate changes. Explain the trigger and before/after behavior, observed checks, and independent review findings and resolution. Put visual comparisons together with labels; use a short before/after video when motion or an interaction matters, and include a regression test that exercises a repaired failure where suitable. Show measured comparisons with units and conditions. State whether a baseline was captured, reconstructed safely, supplied, or unavailable.
 
 Use inline text for short results and existing CI/run/artifact links for larger proof. Verify that links point to the actual result for the tested revision and are usable by the intended reviewers. Note expiry or access restrictions that affect review. Do not invent upload URLs or publish private artifacts to make a link work.

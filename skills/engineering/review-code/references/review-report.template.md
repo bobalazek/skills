@@ -8,7 +8,7 @@ State reviewed revision/baseline, intended behavior or review question, relevant
 
 Link the original request and accepted clarifications and state alignment: aligned behavior, necessary supporting work, missing requested outcome, added scope or unresolved intent. Record supported app targets and evidence limits. Derived tasks/tests cannot replace the source intent; later accepted changes must remain distinguishable from implementation assumptions.
 
-Identify the independent evaluator and evaluated candidate. Without a separate reviewer or clean context from the author, label the result unreviewed rather than verified or ready. State blocking defects and required proof gaps separately. Source review alone cannot establish deployment, production data integrity, or runtime performance.
+Retain the independent evaluator and evaluated candidate in the internal assessment record. Human-facing reviews need findings, code locations, relevant checks and material limitations, not local paths, document hashes, session identifiers or model metadata unless requested. Without a separate reviewer or clean context from the author, label the result unreviewed rather than verified or ready. State blocking defects and required proof gaps separately. Source review alone cannot establish deployment, production data integrity, or runtime performance.
 
 ## Findings and priority
 
@@ -43,9 +43,9 @@ Account for each category in the selected review checklist with `reviewed`, `not
 
 For triggered high-risk families, retain the affected caller/state/effect map, accepted invariants, actual checked scenarios and missing paths. For an oversized or coupled change, explain concrete proposed increments, dependency/compatibility gates and what can actually deploy independently; a split suggestion does not close the remaining user criteria.
 
-For parallel or staged review, identify each reviewer's bounded question and tested revision, coverage still pending, and the combined assessment of interactions. Record the reviewer/session and host-reported model if exposed; otherwise mark the model unknown. State whether any required cross-model review was fulfilled. Record which branch results the verdict depends on. After fixes or integration, distinguish refreshed proof from retained evidence and explain why retained evidence still applies.
+For parallel or staged review, identify each reviewer's bounded question and tested revision, coverage still pending, and the combined assessment of interactions. Keep reviewer/session and available model information in the internal assessment record, without copying it into human comments. State whether any required cross-model review was fulfilled. Record which branch results the verdict depends on. After fixes or integration, distinguish refreshed proof from retained evidence and explain why retained evidence still applies.
 
-Open useful screenshot, recording, measurement, or test artifacts and state what they demonstrate. Before/after comparisons need comparable inputs, environment, and cache/state conditions. Identify stale evidence, missing baselines, and local-only artifacts. Local paths are not PR attachments, green CI does not prove unrelated behavior, and no findings in the inspected scope does not establish whole-system correctness.
+Open useful screenshot, recording, measurement, or test artifacts and state what they demonstrate. Before/after comparisons need comparable inputs, environment, and cache/state conditions. Identify stale results, material missing baselines and untested behavior. Omit local-only artifact inventories from PR text; green CI does not prove unrelated behavior, and no findings in the inspected scope does not establish whole-system correctness.
 
 For a PR, provide the human reviewer with accessible criterion-linked evidence, relevant check results, and independent findings with their resolution or remaining gaps. Preserve required human approval and requested stop points. Agent review does not grant delivery authority.
 

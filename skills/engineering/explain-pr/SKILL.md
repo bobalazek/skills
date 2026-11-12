@@ -17,40 +17,39 @@ Identify the PR/diff, base and head revision, supplied description, linked requi
 
 Group changes by behavior and responsibility rather than listing every file. Show a concrete before/after example where useful. Explain data/contract changes, compatibility or migration concerns, and which supported surfaces are affected. Keep internal implementation detail only where it helps a reviewer understand the consequence.
 
-For a broad or coupled diff, explain whether it is one coherent reviewable outcome and identify sensible splits by responsibility, prerequisites and risk. Shared contracts/foundations may precede backend support and frontend adoption, but layers are not automatic PR boundaries. Name each proposed increment's checks, old/new compatibility, merge/deploy order and remaining integration criteria; distinguish independently reviewable from independently deployable. Keep coupled work together when splitting would leave broken states, and do not impose a line-count limit or restructure code from explanation authority.
+For a broad or coupled diff, explain whether it is one coherent reviewable outcome and identify sensible splits by responsibility, prerequisites and risk. For substantial cross-layer work without accepted local rules, default to compatible database/schema changes, shared contracts/types, backend behavior and frontend/client adoption, with later cleanup where needed. Skip absent layers and keep a small vertical fix or inseparable stages together; explain the dependency and compatibility reason. Name each proposed increment's checks, old/new compatibility, merge/deploy order and remaining integration criteria; distinguish independently reviewable from independently deployable. Keep coupled work together when splitting would leave broken states, and do not impose a line-count limit or restructure code from explanation authority.
 
 Give a short before/after control-flow explanation when the mechanism matters: where the user or system enters, the changed condition or decision, calls and state changes, then the visible result or failure. Use an arrow sequence or small diagram only when clearer than prose. For a tiny change, an exact relevant diff excerpt can show it directly; do not paste a large patch or let the snippet replace the consequence. Identify shared callers beyond the edited file when they inherit the behavior.
 
-Follow the requested audience, tone and depth, then the project's PR template and writing conventions. Default to a short problem/result explanation plus relevant verification; expand for a requested walkthrough or a consequential mechanism a reviewer needs to assess. Include why only when established by requirements or recorded decisions. Link detailed design/ADRs rather than copying them. Explain unfamiliar terms, keep exact identifiers where they aid inspection, and omit conversational history and unsupported praise.
+Follow the requested audience, tone and depth, then the project's PR template and writing conventions. Use a specific title describing the actual change, not an internal agent process. Default to a short problem/result explanation plus relevant testing results; expand for a requested walkthrough or a consequential mechanism a reviewer needs to assess. Include why only when established by requirements or recorded decisions. Link detailed design/ADRs rather than copying them. Explain unfamiliar terms, keep exact identifiers where they aid inspection, and omit conversational history and unsupported praise.
 
-### Evidence
+### Testing and useful comparisons
 
 When the explanation needs substantive prose cleanup, use `review-writing` if available, carrying the fixed diff, draft and evidence. Otherwise cut filler and repetition locally. Preserve risk, reversibility and verification gaps; editorial polish cannot upgrade a result or replace correctness review.
 
-Include the checks that actually ran and what they establish, tied to the tested revision. For visible changes, include labeled screenshots of relevant states where available; for performance or data claims, show measured before/after values with units and comparable conditions. For other changes, concise observed results or a verified CI/artifact link may be sufficient. Label missing baseline, stale evidence, failed checks, and uninspected behavior. Distinguish author-stated rationale, demonstrated behavior, and unanswered questions. Do not manufacture a benefit, metric, or rejected alternative.
+Include the checks that actually ran and what they establish, for the actual candidate. For visible changes, include labeled screenshots of relevant states where available; for performance or data claims, show measured before/after values with units and comparable conditions. For other changes, concise observed results or a verified CI/artifact link may be sufficient. Label missing baseline, stale evidence, failed checks, and uninspected behavior. Distinguish author-stated rationale, demonstrated behavior, and unanswered questions. Do not manufacture a benefit, metric, or rejected alternative.
 
-When asked to write a PR description, lead with the problem and resulting behavior, then relevant verification and limitations. Embed or link useful evidence in the PR body using verified locations accessible to its intended reviewers. Redact sensitive content before an authorized upload; a local path is not an attachment. If uploading is unavailable, include useful textual results/reproduction steps and state which artifact remains local. Preserve the project's template and unrelated author content. Posting or updating the description follows the user's actual authorization.
+When asked to write a PR description, lead with the problem and resulting behavior, then relevant verification and limitations. Embed or link useful evidence in the PR body using verified locations accessible to its intended reviewers. Redact sensitive content before an authorized upload; a local path is not an attachment. If a useful upload is unavailable, summarize the observed result or reproduction steps; mention only a material verification gap, not the existence or location of local files. Preserve the project's template and unrelated author content. Posting or updating the description follows the user's actual authorization.
 
-### Risk and reversibility
+Keep internal traceability separate from the description. Preserve the assessment and source identity in the working record; omit local paths, document hashes, agent/session identifiers, model details and review ceremony from human-facing text unless the user explicitly asks for them. Summarize actionable findings, their resolution and material untested behavior. A relevant commit, CI link or public comparison can identify the changed code without reproducing internal bookkeeping.
 
-Include risk and reversibility at the depth the change needs: the credible worst failure, affected users/data/consumers, how it would be detected, and the recovery action with its conditions and evidence. Distinguish reverting code from undoing accepted writes or external effects. State whether recovery is demonstrated, conditional, irreversible for some effects, or unverified; name the point after which the old behavior or data cannot be restored. A short sentence can cover a stateless presentation change, while a destructive migration needs its data-loss limits, recovery owner and observed rehearsal or explicit proof gap. Do not infer low risk from a small diff or reversibility from the file type, a feature flag, a down migration, or the presence of a backup.
+### Risks and rollout when relevant
 
-State the blast radius in concrete terms: affected roles or tenants, entry points, shared components/services and data or external recipients as relevant. Explain what contains the impact and what evidence supports that boundary; unknown reach stays unknown. When concurrency is material, summarize the effective transaction isolation or consistency guarantee and its failure/locking/retry implications from the reviewed evidence. Keep that separate from tenant isolation and reviewer independence. A claim that a flag, transaction or deployment isolates effects needs proof of the actual scope.
+Explain consequential compatibility, authorization, tenant/data, concurrency or external-effect changes and the affected callers. Include migration/deployment order, failure detection and recovery conditions when they affect adoption. A code revert may not undo stored writes or external actions; describe that limit where applicable. Omit a separate risk section when it adds nothing beyond the change explanation; do not invent risks or claim an untested recovery works.
 
 ### Description shape
 
-When no project template applies, use the fields below, collapsing them into a short paragraph for a small change. Fill them from evidence; omit inapplicable detail rather than inventing it.
+Follow the project's template. Otherwise use the following as a guide, collapsing a small change into a paragraph when clearer. Expand with a before/after example or reviewer guidance when the mechanism needs explanation.
 
 ```markdown
-## Change
-[Problem, established purpose and resulting behavior; affected user/system entry point and short before/after flow or tiny diff when useful.]
+## Summary
+[What changed, the problem it solves, and why this approach fits.]
 
-## Evidence
-[Tested revision, observed checks/results and accessible artifacts; independent findings and exact gaps.]
-
-## Risk and recovery
-[Credible failure, blast radius and containment/isolation assumptions, detection and recovery conditions; demonstrated or unverified limits.]
+## Testing
+[Relevant checks and observed results; material behavior not tested.]
 ```
+
+Add risks, rollout or screenshots only when they help assess the actual change. Keep related code, tests and documentation together; splitting a coherent change solely to satisfy an outline makes review harder.
 
 ## Verify and return
 

@@ -35,6 +35,8 @@ When branching matters, show these dependencies in a compact Mermaid or the dest
 
 ### PR groups
 
+Apply accepted PR-size and sequencing conventions before choosing groups. For substantial cross-layer work without a local alternative, default to compatible database/schema changes, shared contracts/types, backend behavior, then frontend/client adoption; keep destructive cleanup until required consumers have migrated. Each group needs a usable intermediate state, prerequisites, checks and separate merge/deploy order. Skip absent layers, combine inseparable work and keep a small vertical fix together. Use `define-project-conventions` for missing rules when available, or record this scoped default in the existing contributor guide.
+
 Group tasks into proposed PRs only when it helps review or delivery. A phase can span several tasks and PRs; a shared prerequisite can support several phases. A PR may combine compatible tasks or deliver an independently reviewable part of a larger task, while leaving its remaining criteria open. Choose groups around coherent behavior, dependencies, verification, and recovery limits. Do not combine unrelated work just to match a milestone, or confuse a PR merge with task acceptance, milestone completion, or deployment. Publication and execution remain subject to the requested scope.
 
 ### Optional graph check

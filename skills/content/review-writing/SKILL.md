@@ -43,7 +43,7 @@ Compare the result with the raw request, original passage and source facts. Chec
 
 An independent review must run in a separate agent with fresh context from the writing process. Give it the raw request, original/candidate text, relevant sources and checks, without the author's conversation or preferred conclusion. Retain its returned reviewer/session identity, assessed artifact or revision, findings and coverage. If this skill's agent produced edits, a different fresh agent must evaluate those edits before acceptance. Resolve supported defects and independently recheck affected text. Do not recursively review a review report; independence is from the work being evaluated. Without the assessment, label the draft or author check unreviewed. Required human approval remains separate.
 
-Return the findings or edited prose, actual checks and exact gaps at the requested depth. For authorized PRs, carry useful safe before/after excerpts and the independent assessment into the existing description; no new report file is required.
+Return the findings or edited prose, actual checks and exact gaps at the requested depth. For authorized PRs, carry useful safe before/after excerpts and a concise summary of material review findings into the existing description; keep review metadata internal; no new report file is required.
 
 ## Next steps
 

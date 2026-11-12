@@ -66,6 +66,8 @@ Use [the report shape](references/review-report.template.md). State priority bas
 
 Reconcile evidenced disagreements and deduplicate findings; agreement cannot override a demonstrated defect. Retain each returned assessment with reviewer/session identity, evaluated revision, findings and coverage before claiming review. An attempted delegation, empty wait or author check is not an independent assessment.
 
+Keep review provenance and raw traces in the working record. For human review comments, explain the affected scenario, consequence and suggested fix with a code location; omit local evidence paths, document hashes, agent/session identifiers and model metadata unless requested. A clean small review can finish with a short result and meaningful limitations.
+
 Match the requested audience, tone and depth, then project conventions. Lead with material findings or a blocking proof gap, followed by purpose, method, evidence and limits. Update the existing authorized review/knowledge record rather than creating another summary. For human PR review, include useful before/after proof, checks and independent findings with their resolution or remaining gaps; refresh affected artifacts after edits. Preserve required human approval and requested stop points.
 
 ## Next steps

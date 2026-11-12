@@ -45,7 +45,7 @@ With rendering access, inspect the changed content in its actual page and releva
 
 Before acceptance, have a separate agent in fresh context challenge the raw request, source facts, original draft when relevant, candidate copy and observed evidence without the author's conversation or preferred answer. Ask it to find unsupported promises, lost meaning or voice, misleading actions and missing requested content. Retain its returned reviewer/session identity, evaluated artifact or revision, findings and coverage. Resolve supported defects and independently recheck affected copy after changes. Without that assessment, report unreviewed rather than ready; required human approval remains separate.
 
-Return the actual copy, concise reasons for material choices, checks and exact gaps at the requested depth. Keep evidence notes separate from public text. For authorized PR work, include useful safe before/after proof and the returned assessment, refreshed after affected edits. Save only to the requested or existing authoritative content location.
+Return the actual copy, concise reasons for material choices, checks and exact gaps at the requested depth. Keep evidence notes separate from public text. For authorized PR work, include useful safe before/after proof and material review findings, refreshed after affected edits; keep review metadata internal. Save only to the requested or existing authoritative content location.
 
 ## Next steps
 

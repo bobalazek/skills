@@ -1,6 +1,6 @@
 ---
 name: diagnose-issue
-description: "Reproduce and diagnose a software failure using evidence, hypothesis tests, and affected-caller tracing; verify a repair when requested. Use for defects or incidents, not prioritizing an unverified request queue."
+description: "Diagnose an observed software failure from safe reproduction or captured incident evidence, hypothesis tests and affected-caller tracing; verify a repair when requested. Use for defects or incidents, not prioritizing an unverified request queue."
 ---
 
 # Diagnose issue
@@ -17,7 +17,7 @@ Collect expected versus observed behavior, environment/version, inputs, timing, 
 
 Use existing monitoring, logs, traces, error reports, or metrics when they help correlate the symptom with the deployed revision and request/job. State sampling, retention, or access limits; absence of an alert is not proof of health. Read-only diagnosis does not authorize installing a monitoring provider or exporting customer data. Use `configure-monitoring` when configuring missing detection or alert routes is the requested result, carrying the observed gap and target environment.
 
-Choose the smallest reliable reproduction: a focused test, script, request, browser path, trace replay, or controlled harness. Confirming a diagnosis or verified repair requires an observed failing reproduction and relevant proof. For an intermittent failure, retain the actual failing attempt and conditions. If the failure is production-only and cannot be reproduced safely within authority, preserve the evidence and exact blocker; the investigation remains incomplete and must not pass diagnosis acceptance.
+Prefer the smallest safe reproduction: a focused test, script, request, browser path, trace replay or controlled harness. An observed failing attempt or trustworthy captured incident record can establish the failure; trace the conditions and affected code to distinguish a demonstrated cause from a plausible explanation. Conclusive incident records can support a diagnosis without recreating a harmful production failure. If the records cannot distinguish competing causes, keep the diagnosis provisional and name the missing observation. Preserve the actual failure and its conditions, label supplied or historical records, and never rerun a harmful operation solely to produce proof. A confirmed diagnosis does not establish that an untested repair works.
 
 ### Live-incident boundary
 
@@ -39,7 +39,7 @@ For a broader behavioral change, produce the diagnosis and propose specification
 
 ## Verify and report
 
-Report reproduced evidence, demonstrated cause or remaining uncertainty, affected consumers, repair scope when applicable, and actual verification outcomes. Carry redacted before/after evidence, independent findings and gaps into the authorized PR at creation or handoff with usable links or short inline results; identify local-only artifacts and unavailable checks. A missing check or unresolved cause remains explicit.
+Report the observed failure, demonstrated cause or remaining uncertainty, affected consumers, repair scope when applicable, and actual verification outcomes. Carry redacted before/after evidence, independent findings and gaps into the authorized PR at creation or handoff with usable links or short inline results; explain material untested behavior without listing local paths or internal review metadata. A missing check or unresolved cause remains explicit.
 
 Before acceptance, a separate agent in fresh context must challenge the cause and any repair using the accepted request, candidate revision, raw reproduction/source evidence and check access. Omit the author's conversation and preferred conclusions. Retain the returned assessment with reviewer/session identity, evaluated artifact/revision, findings and coverage. Resolve supported findings and obtain affected rechecks after fixes. Without a returned independent assessment, report unreviewed and stop before acceptance.
 

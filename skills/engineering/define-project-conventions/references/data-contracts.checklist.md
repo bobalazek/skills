@@ -58,6 +58,8 @@ An application precheck alone may race with another writer; inspect the database
 
 ## APIs and integration boundaries
 
+- [ ] For server-side requests to caller-controlled URLs, define an explicit destination/egress policy, including intentional internal integrations. Check permitted schemes, hosts/ports and actual resolved addresses; disable unnecessary redirects or revalidate each hop and subsequent resolution before connecting. Reject unauthorized loopback, private, link-local and metadata targets rather than trusting a URL prefix. Exercise both a permitted destination and a redirect or DNS change to a forbidden one. See [OWASP SSRF prevention](https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html).
+
 - [ ] Document the owner and consumers of an API, event, file format, or job contract. Follow the project's conventions for identifiers, naming, serialization, optional fields, validation, errors, pagination/order, and version/deprecation policy. Distinguish client-visible failures from internal diagnostic details. Confirm a contract against actual consumers and supported versions.
 
 - [ ] For external requests, state relevant authentication, authorization, timeouts, cancellation, retry/backoff, rate limits, and partial-failure behavior. Retries must respect the operation's effects; verify that the implementation and upstream contract honor the intended semantics, including failure after an effect but before its acknowledgement.

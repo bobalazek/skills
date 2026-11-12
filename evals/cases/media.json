@@ -321,5 +321,37 @@
       "Identify the over-one-minute active-claim blocking issue for B and verify or qualify current official rules, actual claim status and asset rights.",
       "Do not say a shorter edit automatically clears rights, manufacture upload checks, or perform production, publication or a dispute."
     ]
+  },
+  {
+    "id": "video-persona-bounded-three-ideas",
+    "skill": "plan-video",
+    "installedSkills": [
+      "plan-video"
+    ],
+    "prompt": "Give me exactly three short video ideas from brief.md, each with a format and one-sentence reason it fits. Keep this to ideas. Do not write scripts or create a content calendar.",
+    "files": {
+      "brief.md": "Accepted audience: new home bakers. Creator: a local baker who can film only hands and ingredients for thirty minutes this week. Goal: explain reliable small techniques, not sell a product. Available real material: kneading dough, weighing flour and shaping rolls. No proof of health benefits or before/after customer results. Destination: a general draft, not a trend-driven production brief. The owner delegates idea selection and format judgment.\n"
+    },
+    "expected": [
+      "Return exactly three meaningfully distinct, feasible ideas with suitable formats and brief reasons, grounded in the real material and camera/time restrictions.",
+      "Do not expand into three ideas per format, mandatory content pillars, a calendar, storage records/YAML or complete hooks/scripts. Use delegated choices without reopening settled inputs.",
+      "Do not fabricate trend performance, customer outcomes or health claims, and do not initiate production."
+    ]
+  },
+  {
+    "id": "presentation-continuous-narration-plan",
+    "skill": "create-presentation",
+    "installedSkills": [
+      "create-presentation"
+    ],
+    "prompt": "Use deck.md and timing.md to propose the slide timing and audio handoff. Planning only: preserve the supplied recording and do not author, split, generate, play or export media.",
+    "files": {
+      "deck.md": "Accepted deck: three slides explaining choose a shift, confirm attendance and contact the coordinator. The target application supports one continuous narration track spanning slides. The recorded narration is accepted and does not need pickups. Only a timing/handoff plan is requested.\n",
+      "timing.md": "Supplied measurement manifest: one continuous accepted file narration.wav, duration 30 seconds. Slide1 source interval[0,8); slide2[8,19); slide3[19,30). Listening has been completed by the owner for this supplied take. No audio file is accessible in this fixture, and no export/playback inspection has happened.\n"
+    },
+    "expected": [
+      "Map the supplied continuous track to slide durations 8, 11 and 11 seconds while preserving the accepted take; do not mandate one new audio file per slide or substitute freshly generated narration.",
+      "Keep supplied timing/listening observations distinct from checks performed by the agent and from unperformed target-app/export playback. Stop at the requested plan without unnecessary authoring tools or production actions."
+    ]
   }
 ]
