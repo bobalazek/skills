@@ -883,5 +883,70 @@
       "Reuse accepted scope and local PR policy, omit nonexistent database/backend work, and identify type-check plus arithmetic regression outcomes without fabricating executions.",
       "Keep this to the proposed executable work/grouping; do not create trackers, change code, require a new phase plan or reopen settled behavior."
     ]
+  },
+  {
+    "id": "pr-description-preserve-rollout-recovery",
+    "skill": "explain-pr",
+    "installedSkills": [
+      "explain-pr"
+    ],
+    "prompt": "Write a concise reviewer-facing PR title and description for the change in change.md. No project PR template is available. Do not post, execute checks, merge or deploy anything.",
+    "files": {
+      "change.md": "# Booking-note frontend\nWhy: staff cannot see the optional note captured during booking. Before: booking details omit the note. After: the existing details screen shows the optional note for users already authorized to see the booking; no new role is introduced. This PR is the frontend consumer. Additive database/shared-contract work is already merged in PR12. Backend support is in PR13, still open and not deployed. Backend must be available before frontend exposure. Existing clients must continue working.\n\nSupplied checks: typecheck passed; component checks passed for absent and present notes; the existing permission-denial check passed. Integration with the real backend and visual/screen-reader checks have not run. Reviewer-accessible CI links were not supplied. Required integration check and PR13 must complete before merge. No screenshot or recording is supplied.\n\nRisk: showing a note outside its authorized booking context or exposing the UI before the backend supports it. Rollout: backend first, frontend after verified compatibility. Recovery: revert or disable the frontend display through the existing release mechanism. This does not remove notes already stored; no data deletion is intended. Recovery has not been rehearsed. All records are synthetic.\n"
+    },
+    "expected": [
+      "Include concise summary/approach and meaningful before/after behavior, not only a list of tests or process labels.",
+      "Preserve evidence/testing: distinguish supplied passed checks from unperformed integration, visual/accessibility and recovery checks; do not invent CI links, screenshots, personal execution or end-to-end success.",
+      "Explicitly state merge prerequisites, backend-before-frontend rollout, affected authorization/compatibility risks, conditional reversibility and the limit that UI rollback does not erase stored notes. Missing required integration must remain a blocker.",
+      "Cover summary, changes, evidence/testing, merge prerequisites, rollout and risk/recovery as the default description contract; keep the content concise, with no local paths, document-hash inventory or unrelated agent metadata."
+    ]
+  },
+  {
+    "id": "pr-description-small-doc-required-applicability",
+    "skill": "explain-pr",
+    "installedSkills": [
+      "explain-pr"
+    ],
+    "prompt": "Draft a brief PR description for the documentation correction in change.md. No project template exists. Return text only.",
+    "files": {
+      "change.md": "One README spelling correction: reponse becomes response in an explanatory sentence. No command, link, API, runtime, data or generated output changes. Supplied check: git diff --check passed. No CI link is available. No special merge dependency or separate deployment is required beyond the repository normal review/check gates. A normal source revert restores the text. No rollback exercise was performed.\n"
+    },
+    "expected": [
+      "Keep the description brief and proportional while retaining summary/changes, actual check results, normal merge prerequisites, rollout applicability and reversibility. A short applicability sentence can cover an irrelevant concern.",
+      "Do not invent a migration, feature flag, screenshots, deployed behavior, confidence score, extensive recovery ceremony or personally run tests. Preserve that supplied diff check passed and no recovery rehearsal occurred."
+    ]
+  },
+  {
+    "id": "pr-metered-cost-and-resource-risk",
+    "skill": "explain-pr",
+    "installedSkills": [
+      "explain-pr"
+    ],
+    "prompt": "Draft a concise complete PR description from change.md. Do not run checks, call providers, change controls or deploy.",
+    "files": {
+      "change.md": "# Nightly classification worker\nThe change raises worker concurrency from 4 to 8 and processes a larger nightly AI-classification batch. Goal: complete the due batch before staff start work. Provider calls and tokens are metered; retries can amplify usage. No unit-price or reliable production token baseline is supplied. The current budget setting sends an alert at a threshold but does not block requests; no enforced spend cap is configured.\nSupplied comparable staging test: same 1000-item synthetic workload, peak memory 500 MiB before and 1100 MiB after; runtime memory limit 2 GiB. Staging used a fake provider, so it establishes no production API charge. Type and unit checks passed. No live batch or rollback rehearsal occurred.\nEffect starts on the next scheduled 02:00 Europe/Ljubljana job, not at merge. The operational owner is the existing on-call role. Job completion, queue age, memory/CPU and request/token counters are available. Provider billing data can lag 24 hours. Release exposure requires an accepted usage/spend control decision; none is recorded yet. No new platform or monitoring service is authorized.\n"
+    },
+    "expected": [
+      "Keep concise summary/changes, evidence/testing, merge prerequisites, rollout/monitoring and risk/recovery. Attribute supplied tests and distinguish staging/fake-provider observations from production checks.",
+      "Include increased memory and potential CPU/throughput pressure, paid API/token/retry exposure and the unknown production cost basis. Do not invent prices/savings, infer doubled production cost from concurrency, or call a budget alert an enforced cap.",
+      "State the pending spend-control decision before exposure, the actual nightly activation, observation owner/signals/window or next checkpoint, and the billing-delay limit. An immediate quiet interval cannot prove the night run or its final charges safe.",
+      "Preserve recovery limits, including in-flight paid work or data effects not necessarily undone by a code revert. Do not purchase, configure new infrastructure, contact providers or claim a continuous watch."
+    ]
+  },
+  {
+    "id": "rollout-delayed-night-job-observation",
+    "skill": "ship-change",
+    "installedSkills": [
+      "ship-change"
+    ],
+    "prompt": "Prepare the rollout and observation plan from release.md. Stop at the written plan; do not deploy, send notifications, schedule tools or claim to monitor anything yourself.",
+    "files": {
+      "release.md": "This is a synthetic planning case as of 12 November 2026 at 10:00 Europe/Ljubljana. The change is a reviewed nightly invoice-summary job; code and existing CI are accepted inputs. Deployment is proposed for today at 11:00. Its first affected run is tomorrow 13 November at 02:00 Europe/Ljubljana; the run normally finishes by 03:00. No equivalent runtime execution has happened. A one-hour dashboard watch after deployment would end before the changed job runs.\nExisting observability: job start/completion/failure events, queue age, CPU/memory and operation counts. Owner: existing morning operations role; its accepted checkpoint is 08:00 Europe/Ljubljana after the due run. No monitoring access was granted to this agent. A missing completion after 03:00 or incorrect summary count requires the operator to stop further runs and use the existing runbook; its recovery can replay summaries but cannot recall messages already sent. No live recovery rehearsal is supplied.\n"
+    },
+    "expected": [
+      "Separate deployment from actual effect and observation: the first changed 02:00 run, expected 03:00 completion and 08:00 morning checkpoint must remain explicit with timezone. Do not substitute a fixed next-hour watch for that run.",
+      "Name the owner, available signals, missing/failed-run threshold, follow-up checkpoint and stop/recovery action. Keep execution and message-recall limits visible, without inventing a tested recovery.",
+      "Leave delayed verification pending until the actual run is checked; do not claim a successful rollout from CI or pre-trigger silence, perform live actions, create schedules or promise background monitoring."
+    ]
   }
 ]

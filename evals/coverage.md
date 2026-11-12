@@ -6,6 +6,7 @@ This is an index of recorded behavioral evidence. It is not code coverage, a cur
 
 | Record | Scope and limits |
 | --- | --- |
+| [PR description and observation correction, 12 November 2026](results/library-maintenance-2026-11-12.md#pr-description-and-observation-correction) | Four candidate-only cases, 13 independently assessed criterion passes; delayed effects and real spend remain unverified; worked examples received source review after trial capture |
 | [Library maintenance, 12 November 2026](results/library-maintenance-2026-11-12.md) | Source review of all 71 entrypoints/metadata; 11 selected candidate-only attempts, nine completed cases with 21 independently assessed criterion passes, two retained timeouts with six criteria not checked; no baseline, automatic-activation or production-media claim |
 | [Engineering hardening, 18 October 2026](results/engineering-hardening-2026-10-18.md) | Four baseline/candidate pairs and five security rechecks; retained partial failures, source portability correction, separate assisted continuation and final blind criterion closure; no live-service or reliability claim |
 | [Development readiness, 17 October 2026](results/development-readiness-2026-10-17.md) | Two focused `verify-change` and two Corco synthetic candidate-only trials; source-loaded execution and independent assessment, without automatic-activation, client or compliance claims |

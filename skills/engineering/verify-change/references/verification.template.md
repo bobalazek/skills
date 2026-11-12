@@ -9,6 +9,7 @@ Use the project's existing result or PR format. Include only sections that suppo
 - Baseline and tested revision/artifact; identify uncommitted changes when present.
 - Environment and relevant versions, fixture, role, configuration, and observation time.
 - Demonstrated behavior, failures, and required checks still unavailable.
+- For time-dependent effects, activation trigger/time, actual observation period or run count, and the pending next checkpoint/owner. A pre-trigger check cannot establish the later outcome; use the delivery plan for follow-up instead of duplicating its procedure.
 - Independent evaluator, candidate reviewed, counterexamples checked, findings and resolution; keep human approval separate.
 
 | Criterion | Check and expected observation | Actual observation | Result | Evidence | Priority / next action if unresolved |

@@ -41,6 +41,20 @@ test("accepts a standalone package without a Markdown link to agent metadata", (
   expect(audit(root)).toEqual({ errors: [], packages: 1, resources: 0 });
 });
 
+test("keeps the GitHub PR template synchronized with its portable owner", () => {
+  const canonical = join(root, "skills/engineering/explain-pr/references/pr-description.template.md");
+  const github = join(root, ".github/pull_request_template.md");
+  write(canonical, "## Summary\n\n## Evidence and testing\n");
+  expect(audit(root).errors.join("\n")).toContain("PR template must match");
+  mkdirSync(github, { recursive: true });
+  expect(audit(root).errors.join("\n")).toContain("PR template must match");
+  rmSync(github, { recursive: true });
+  write(github, "## Summary\n");
+  expect(audit(root).errors.join("\n")).toContain("PR template must match");
+  write(github, readFileSync(canonical, "utf8"));
+  expect(audit(root).errors).toEqual([]);
+});
+
 test("requires a regular agent metadata file", () => {
   rmSync(agentFile);
   expect(audit(root).errors.join("\n")).toContain("missing regular agent metadata file");

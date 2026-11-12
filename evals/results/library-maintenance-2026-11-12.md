@@ -93,3 +93,24 @@ The owner subsequently authorized committing and merging these fixes through a s
 Fresh-context reviewer `/root/final_pr_review` independently inspected the complete candidate, raw retained evidence and guard counterexamples. It found **FPR-01 / P2**: after the last package in a domain was removed, a stale README count for its retained catalog could pass because validation visited only domains still containing packages. The correction also validates domains listed in the current README. Regressions reject a stale count of six while allowing an explicitly empty retained catalog with count zero.
 
 The reviewer independently rechecked FPR-01 as resolved, running `bun run check` and 55 focused tests with 963 assertions; no other confirmed blocker remained. The corrected checker SHA-256 is `3daa210ba32c133573c968fb2d6f7200fb5958f7a9387aa8fd426e9df4a4c69e`, and its test hash is `b1ed2b8c07d8f41b5f48f02260859a8ad17a3d5718bda2c290d3fd423196ace0`. Coordinator validation passed `bun run check`, **117 tests / 1,578 assertions**, and `git diff --check`. This maintainer-only correction changes no skill package, so the prior behavioral evidence remains applicable with its original limits, including the two timeouts. No new version or tag publication was requested.
+
+## PR description and observation correction
+
+[PR #72](https://github.com/bobalazek/skills/pull/72) reduced the default description to Summary/Testing and made substantive risk/rollout requirements optional. The corrective candidate restores those concerns, adds merge prerequisites and delayed/resource/cost observation guidance, and gives `explain-pr` one canonical template with a checked GitHub mirror and seven fictional worked examples.
+
+Four candidate-only synthetic cases ran once each with Codex CLI 0.167.2, host-default selection and a 240-second bound. Retained native records identify `gpt-6.1-sol`; all four exited successfully with unchanged fixtures. Their recorded snapshot was based on `e0ac4ed` plus the working changes introducing the portable template and monitoring/cost guidance. The retained manifests identify that snapshot separately from the commit. The worked examples, their entrypoint link, summary/change-outline clarification, a template prerequisite clarification, observation prose deduplication and criterion spacing followed capture; those additions received source review, not behavioral execution.
+
+The independent evaluator assessed the raw requests, criteria, outputs and traces, returning **13/13 criterion passes**:
+
+| Case | Observed outcome |
+| --- | --- |
+| `pr-description-preserve-rollout-recovery` | 4/4: full description, supplied versus missing proof, backend prerequisite and stored-data recovery limit retained |
+| `pr-description-small-doc-required-applicability` | 2/2: brief applicability statements without invented operational work or personally executed checks |
+| `pr-metered-cost-and-resource-risk` | 4/4: measured staging memory separated from unknown provider cost; spend decision, nightly activation, billing delay and recovery limits retained |
+| `rollout-delayed-night-job-observation` | 3/3: actual overnight run and morning checkpoint retained; delayed verification pending, with no deployment, scheduling or monitoring promise |
+
+The canonical template was actually loaded in the description trials. Independent source review found a missing UI-example observation window/checkpoint; the example was corrected to a bounded check within 30 minutes of deployment. The mirror guard rejects missing, non-file and divergent mirrors and accepts the exact copy. Coordinator checks passed `bun run check`, **118 tests / 1,670 assertions** and `git diff --check`.
+
+The seven final examples use short bullets and selective emphasis, with focused diff/tree views and five Mermaid flows. Source review corrected an unconditional cleanup arrow to optional cleanup. The diagrams rendered with Mermaid CLI 12.2.0 in Chrome; initial wide renders were replaced with vertical AI/API layouts and checked again. This validates diagram syntax/layout, not the fictional systems or runtime behavior.
+
+These results establish bounded instruction behavior and template consistency. They do not establish automatic activation, example-file influence on generated output, live provider charges, deployment, production observation or rehearsed data recovery. Earlier results and unsuccessful attempts above retain their original limits.
