@@ -18,6 +18,7 @@ For a software feature, expand the [idea-to-delivery preview](../README.md#from-
 - [Prepare a project](workflows/engineering.md#understand-and-prepare-a-project): codebase or agreed foundation → usable context, conventions and checks.
 - [Plan or implement a change](workflows/engineering.md#plan-and-change-software): accepted behavior or a ready ticket → working change.
 - [Verify, review and deliver](workflows/engineering.md#verify-review-and-deliver): candidate → observed proof → addressed findings → authorized delivery.
+- [Audit a live website](../skills/engineering/audit-website/SKILL.md): named site, purpose and permitted access → observed journeys and quality findings → prioritized action plan.
 
 ## Product — decide what is worth building
 
@@ -65,6 +66,7 @@ For a software feature, expand the [idea-to-delivery preview](../README.md#from-
 
 - [Find the next useful action](workflows/productivity.md#explore-and-route): current state and desired result → one starting skill and its needed inputs.
 - [Coordinate accepted work](workflows/productivity.md#coordinate-local-project-work): agreed tasks and proof → ready work, owners and explicit blockers.
+- [Run an accepted workflow](../skills/productivity/run-workflow/SKILL.md): definition and current evidence → ready phases, checked outputs and an actual completion or pending state.
 
 ## Use a route
 

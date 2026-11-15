@@ -1,6 +1,6 @@
 # Productivity
 
-This domain owns idea exploration, decision support, work coordination and communication, and improvements to recurring team processes. Its thirteen packages are under active development. Product owns demand, feedback and competitor evidence; Engineering owns software specifications and execution plans; UI/UX owns user journeys and interfaces.
+This domain owns idea exploration, decision support, work coordination and communication, and improvements to recurring team processes. Its fifteen packages are under active development. Product owns demand, feedback and competitor evidence; Engineering owns software specifications and execution plans; UI/UX owns user journeys and interfaces.
 
 ## Categories and skills
 
@@ -8,6 +8,7 @@ This domain owns idea exploration, decision support, work coordination and commu
 | --- | --- | --- | --- |
 | Routing | Pick the next action | [choose-skill](../../skills/productivity/choose-skill/SKILL.md) | One fitting starting skill, its expected result, and any missing input |
 | Coordination | Bounded parallel work | [delegate-to-agents](../../skills/productivity/delegate-to-agents/SKILL.md) | Self-contained briefs, host-supported ownership and independently checked integration while retaining the lead role |
+| Coordination | Execute an accepted definition | [run-workflow](../../skills/productivity/run-workflow/SKILL.md) | Observed run state, accepted dependency outputs, final artifacts or exact blockers; authoring is separate |
 | Exploration | Explore directions | [brainstorm-ideas](../../skills/productivity/brainstorm-ideas/SKILL.md) | Meaningfully different approaches, supported recommendation, assumptions, and next decision or experiment |
 | Exploration | Answer an unknown | [research-topic](../../skills/productivity/research-topic/SKILL.md) | A bounded answer with traceable evidence, freshness, uncertainty, and decision implications |
 | Decisions | Question assumptions | [challenge-proposal](../../skills/productivity/challenge-proposal/SKILL.md) | Focused human questions, tested assumptions and edge cases, an amended proposal, or a precise remaining investigation |
@@ -48,3 +49,5 @@ Automation selection is a conditional part of `improve-team-workflow`: compare s
 `manage-project-board` carries a compact location, board and state template. `choose-skill` carries the routing map. `challenge-proposal` carries conditional questioning lenses. `track-project-decisions` carries a decision template. `prioritize-work` carries guidance for capacity and shared prerequisites. `prepare-handoff` carries a compact transfer outline. Status reporting and workflow improvement carry guidance for reconciling sources and evaluating a process trial. Other workflows remain self-contained where a separate resource would not change the work.
 
 See [workflows](../workflows.md) for next-step selection and context reuse.
+
+`run-workflow` executes or resumes an accepted definition and reconciles its actual contracts and run state. `delegate-to-agents` splits bounded work and checks integration while retaining a lead; `manage-project-board` coordinates tracker ownership and readiness; `prepare-handoff` transfers responsibility. None supplies a missing runtime or grants side effects beyond the accepted request. Workflow authoring is a separate result, not an implicit repair during execution.

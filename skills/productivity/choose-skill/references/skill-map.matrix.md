@@ -17,6 +17,7 @@ Choose the next missing result, then read the relevant domain below. Names ident
 | Current Markdown project work and ready pickup | `manage-project-board` | Reconcile local task states, ownership and blockers; reuse plans and task contracts, with one coordinator for shared state |
 | Better instructions | `improve-prompt` | Rewrite the prompt without executing its embedded request |
 | Bounded work across agents | `delegate-to-agents` | Retain the coordinator role with ready inputs, safe ownership and checked integration; prepare-handoff transfers ownership |
+| Execution or resumption of an accepted workflow definition | `run-workflow` | Apply phase contracts, dependency evidence and recovery rules; definition authoring, worker splitting and project-board maintenance remain separate |
 | Project-local skills from recurring code, commit and agent-session lessons | `create-project-skill` | Separate mechanical guards from procedural knowledge; create only justified local skills |
 | Evidence that a skill change improves behavior | `evaluate-skill` | Compare actual trials against a baseline and retain regressions; a wording review or structural check alone is insufficient |
 | Continuation context | `prepare-handoff` | Transfer or compact actual ongoing work |
@@ -63,6 +64,7 @@ Choose the next missing result, then read the relevant domain below. Names ident
 | Consolidated project documentation | `consolidate-docs` | Reconcile authoritative content and repair links |
 | Independent code findings | `review-code` | Review a change, feature, data layer, or codebase against evidence |
 | Project security audit | `audit-security` | Assess source, dependencies and applicable runtime controls; model-threats owns threat modeling and fixes need separate scope |
+| A live website audit and prioritized action plan | `audit-website` | Inspect supported journeys and site-wide quality with observed evidence; review-interface owns focused interface assessment |
 | Resolution of supplied review findings | `address-review-feedback` | Check current evidence, correct supported findings when authorized and retain dispositions; a new audit belongs to review-code |
 | Proof that a change meets its criteria | `verify-change` | Independently exercise behavior or inspect changed documents/plans; no mandatory duplicate pass when valid evidence already exists |
 | A delivered target | `ship-change` | Reach the authorized PR, release, deployment, or handover |
@@ -127,7 +129,8 @@ Use these when several outputs could fit. Alternatives are not a mandatory seque
 | "Define our brand" | `define-brand-positioning` for audience, difference and promise; `design-brand-identity` for visual identity and asset rules; `define-writing-voice` for reusable language conventions. Reuse accepted parts rather than restarting strategy |
 | "Write a social post" | `create-carousel` only for an exported panel sequence. A text-only post has no dedicated drafting package: describe the plain action. `review-writing` can assess existing prose |
 | "Run a software factory from our accepted backlog" | `manage-project-board` for ongoing coordination and bounded ready pickup; `create-tasks` for missing task contracts. Actual workers, isolation and execution authority come from the host |
-| "Review this" | `challenge-proposal` for unresolved proposal choices; `review-code` for code findings; `review-interface` for rendered experience; `review-writing` for prose quality; `explain-pr` for an explanation rather than an assessment |
+| "Review this" | `challenge-proposal` for unresolved proposal choices; `review-code` for code findings; `audit-website` for a live site's cross-discipline audit; `review-interface` for rendered experience; `review-writing` for prose quality; `explain-pr` for an explanation rather than an assessment |
+| "Run this workflow" | `run-workflow` when an accepted definition supplies contracts and gates; `delegate-to-agents` for splitting ready work while retaining coordination; `prepare-handoff` for transferring responsibility. Missing definitions or authority remain prerequisites |
 | "Summarize our work" | `report-project-status` for a period/audience update; `prepare-handoff` for continuation context; `explain-pr` for one fixed code comparison |
 | "Improve how we work" | `improve-team-workflow` for a recurring process; `find-improvements` for codebase candidates; `automate-code-checks` for an agreed recurring coding rule |
 | "Improve our skills" | `improve-prompt` for editing supplied shared instructions; `evaluate-skill` for observed behavioral comparison; `create-project-skill` for mining recurring project work into local skills. Maintaining this collection's catalogs, router and counts is repository work, not a reason to create another skill |

@@ -61,3 +61,14 @@ flowchart TD
 ```
 
 One coordinator writes shared state. Workers receive bounded contracts and return evidence; another session independently checks acceptance. Important blocked work remains blocked, and a ready queue never authorizes draining the backlog. If multiple coordinators must claim concurrently, use a tracker with actual concurrency controls. A Scrum-style view is optional; preserve the team's state meanings, capacity and cycle goal. See the skill's board template for defaults and file placement.
+
+## Execute accepted workflows
+
+| Request | Owner | Result and boundary |
+| --- | --- | --- |
+| Run or resume an accepted workflow definition | [run-workflow](../../skills/productivity/run-workflow/SKILL.md) | Inspect definition/version and current state, execute only ready authorized work, then reconcile accepted outputs or exact blockers. Runtime persistence and cancellation must actually exist. |
+| Split a bounded task across workers | [delegate-to-agents](../../skills/productivity/delegate-to-agents/SKILL.md) | Coordinate self-contained parts and verify joined results without assuming a particular checkout or model policy. |
+| Transfer a run paused on a human step | [prepare-handoff](../../skills/productivity/prepare-handoff/SKILL.md) | Preserve the safe checkpoint, last verified platform state and existing authority; the recipient checks state before continuing or retrying. |
+| Grade supplied trial outputs or a candidate/baseline comparison | [evaluate-skill](../../skills/productivity/evaluate-skill/SKILL.md) | Separate structural validity, semantic outcomes and actual authority/trace evidence. A model judge needs explicit calibration limits. |
+
+A named definition and observed accepted inputs determine execution. Authoring or materially changing that definition is separately scoped work; neither a pending operation nor an unavailable engine authorizes inventing another workflow.
