@@ -1,0 +1,4 @@
+interface:
+  display_name: "Delegate to agents"
+  short_description: "Coordinate bounded agent work and verify its integration"
+  default_prompt: "Use $delegate-to-agents to split the accepted work into safe agent briefs and verify the returned result."

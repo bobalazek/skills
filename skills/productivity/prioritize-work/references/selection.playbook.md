@@ -30,7 +30,7 @@ When a necessary prerequisite is absent from the supplied set, flag it as requir
 
 ## Compare without false precision
 
-Use the simplest comparison that explains the trade-off. If the team already uses a scoring model, retain its definitions and inputs, check units and missing values, and show where a different reasonable assumption changes the order. Do not mix scores from unrelated scales or divide by labels such as small/medium/large.
+Use the simplest comparison that explains the trade-off. If the team already uses a scoring model, retain its definitions and inputs, check units and missing values, and show where a different reasonable assumption changes the order. Do not mix scores from unrelated scales or divide by labels such as small/medium/large. When uncertainty could change the selection, name the smallest investigation or owner decision that resolves it instead of inflating an effort label.
 
 Missing estimates may support qualitative ordering but not a numerical capacity total. Use explicit scenarios or ranges only when their basis is supplied or evidenced. Separate active work from external waiting time. Availability in one role cannot automatically cover work in another, and a worker count does not prove that tasks can safely run concurrently.
 

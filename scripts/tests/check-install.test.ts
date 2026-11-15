@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, expect, test } from "bun:test";
 import {
+  chmodSync,
   cpSync,
   mkdirSync,
   mkdtempSync,
@@ -11,7 +12,8 @@ import {
 } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { manifest, verifyCodex, verifyCopies, verifyOpenCode } from "../lib/skill-packages.ts";
+import { discoverOpenCodeV2 } from "../lib/opencode-discovery.ts";
+import { manifest, verifyCodex, verifyCopies, verifyOpenCode, verifyOpenCodeV2 } from "../lib/skill-packages.ts";
 
 let root: string;
 let expected: string;
@@ -91,6 +93,58 @@ test("compares OpenCode body without frontmatter and ignores unrelated global pa
     verifyOpenCode(JSON.stringify([{ ...entry, content: "Wrong body" }]), project, installed, ["example"]),
   ).toThrow("body");
   expect(() => verifyOpenCode(JSON.stringify([entry, entry]), project, installed, ["example"])).toThrow("discovery");
+});
+
+test("checks the native v2 project, IDs, paths and complete bodies", () => {
+  const entry = { id: "example", name: "example", path: join(installed, "example/SKILL.md"), content: body };
+  const response = (data = [entry], directory = project) => JSON.stringify({ location: { directory }, data });
+  verifyOpenCodeV2(response(), project, installed, ["example"]);
+  expect(() => verifyOpenCodeV2(response([], root), project, installed, ["example"])).toThrow("location");
+  expect(() => verifyOpenCodeV2(response([]), project, installed, ["example"])).toThrow("discovery");
+  expect(() => verifyOpenCodeV2(response([{ ...entry, id: "other" }]), project, installed, ["example"])).toThrow("ID");
+  expect(() => verifyOpenCodeV2(response([{ ...entry, content: "Wrong" }]), project, installed, ["example"])).toThrow(
+    "body",
+  );
+  expect(() => verifyOpenCodeV2(response([entry, entry]), project, installed, ["example"])).toThrow("discovery");
+  expect(() =>
+    verifyOpenCodeV2(response([{ ...entry, path: join(root, "other/SKILL.md") }]), project, installed, ["example"]),
+  ).toThrow("discovery");
+});
+
+test("waits for asynchronous v2 registration in an isolated private server and stops it", async () => {
+  const bin = join(root, "bin");
+  const output = join(root, "evidence");
+  mkdirSync(bin);
+  mkdirSync(output);
+  const executable = join(bin, "opencode");
+  writeFileSync(
+    executable,
+    `#!${process.execPath}
+import { writeFileSync } from "node:fs";
+let count = 0;
+const server = Bun.serve({hostname:"127.0.0.1",port:0,fetch(request) {
+  if (request.method !== "GET" || new URL(request.url).pathname !== "/api/skill") return new Response("Bad request",{status:400});
+  if (request.headers.get("Authorization") !== "Basic " + Buffer.from("opencode:"+process.env.OPENCODE_PASSWORD).toString("base64")) return new Response("Unauthorized",{status:401});
+  const data = count++ === 0 ? [] : [{id:"example",name:"example",path:${JSON.stringify(join(installed, "example/SKILL.md"))},content:${JSON.stringify(body)}}];
+  return Response.json({location:{directory:process.cwd()},data});
+}});
+writeFileSync(${JSON.stringify(join(root, "child-roots.json"))}, JSON.stringify({config:process.env.XDG_CONFIG_HOME,home:process.env.HOME}));
+process.on("SIGTERM",()=>{writeFileSync(${JSON.stringify(join(root, "stopped"))},"yes");process.exit(0)});
+console.log(JSON.stringify({url:server.url.href}));
+`,
+  );
+  chmodSync(executable, 0o700);
+  await discoverOpenCodeV2(project, output, installed, ["example"], {
+    ...process.env,
+    PATH: `${bin}:${process.env.PATH}`,
+  });
+  expect(readFileSync(join(output, "opencode-discovery.jsonl"), "utf8").trim().split("\n")).toHaveLength(2);
+  expect(JSON.parse(readFileSync(join(root, "child-roots.json"), "utf8"))).toEqual({
+    config: join(output, "opencode-config"),
+    home: process.env.HOME,
+  });
+  expect(readFileSync(join(root, "stopped"), "utf8")).toBe("yes");
+  verifyOpenCodeV2(readFileSync(join(output, "opencode.stdout"), "utf8"), project, installed, ["example"]);
 });
 
 test("the CLI refuses ignored source files absent from its recorded commit", async () => {

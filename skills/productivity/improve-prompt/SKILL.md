@@ -13,13 +13,13 @@ Reuse the accepted purpose, examples, prior failures and useful human voice. Do 
 
 ## Identify what the prompt must achieve
 
-Establish the intended result, inputs, audience/runtime and actual failure the rewrite should address. Distinguish requirements from preferences. Ask about ambiguity only when it changes the requested result; do not invent requirements to fill gaps.
+Establish the intended result, inputs, audience/runtime and actual failure the rewrite should address. Distinguish requirements from preferences. Ask about ambiguity only when it changes the requested result; do not invent requirements to fill gaps. Fix only identified faults; a simple prompt may need one sentence changed.
 
 Check what the target environment can access before relying on a tool, model, plugin or referenced resource. Keep private details out of reusable examples unless necessary and authorized.
 
 ## Rewrite for decisions and checks
 
-Replace vague instructions with an observable outcome, relevant context and decision criteria. Separate source facts from task instructions. State side-effect authority and stopping conditions where they affect the work; preserve existing permissions without expanding them.
+Replace vague instructions with an observable outcome, relevant context and decision criteria. Separate source facts from task instructions. Preserve accepted language, output constraints and explicit tool/model choices. State side-effect authority and stopping conditions where they affect the work, retaining granted permissions and required stops; do not add an approval step or reopen a settled choice without a concrete reason.
 
 Keep always-needed instructions concise. Reference substantial conditional material only when the target can access it. Remove repeated commands, role theater, unnecessary process and promises the runtime cannot enforce. Preserve meaningful choices and voice instead of making every prompt sound alike.
 

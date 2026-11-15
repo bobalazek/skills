@@ -7,6 +7,7 @@ This domain owns idea exploration, decision support, work coordination and commu
 | Category | Subcategory | Skill | Expected result |
 | --- | --- | --- | --- |
 | Routing | Pick the next action | [choose-skill](../../skills/productivity/choose-skill/SKILL.md) | One fitting starting skill, its expected result, and any missing input |
+| Coordination | Bounded parallel work | [delegate-to-agents](../../skills/productivity/delegate-to-agents/SKILL.md) | Self-contained briefs, host-supported ownership and independently checked integration while retaining the lead role |
 | Exploration | Explore directions | [brainstorm-ideas](../../skills/productivity/brainstorm-ideas/SKILL.md) | Meaningfully different approaches, supported recommendation, assumptions, and next decision or experiment |
 | Exploration | Answer an unknown | [research-topic](../../skills/productivity/research-topic/SKILL.md) | A bounded answer with traceable evidence, freshness, uncertainty, and decision implications |
 | Decisions | Question assumptions | [challenge-proposal](../../skills/productivity/challenge-proposal/SKILL.md) | Focused human questions, tested assumptions and edge cases, an amended proposal, or a precise remaining investigation |

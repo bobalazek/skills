@@ -15,6 +15,7 @@ This domain covers the software lifecycle, including requirements, architecture,
 | Domain design | Language and rules | [model-domain](../../skills/engineering/model-domain/SKILL.md) | Consistent concepts, relationships, valid states, invariants, and representative scenarios |
 | Architecture | Technology and structure | [design-architecture](../../skills/engineering/design-architecture/SKILL.md) | Selected stack/technical choices, boundaries, state ownership, contracts, failure behavior, and trade-offs |
 | Security design | Threat modeling | [model-threats](../../skills/engineering/model-threats/SKILL.md) | Traceable threats, existing controls, mitigation decisions and observable verification criteria |
+| Quality | Project security audit | [audit-security](../../skills/engineering/audit-security/SKILL.md) | Bounded source, dependency and applicable runtime-control findings with evidence, severity and coverage gaps |
 | Planning | Milestones | [plan-phases](../../skills/engineering/plan-phases/SKILL.md) | Outcome-based phases with inputs, outputs, dependencies, and exit evidence |
 | Planning | Executable work | [create-tasks](../../skills/engineering/create-tasks/SKILL.md) | A dependency graph of bounded tasks with ownership, acceptance, verification, and readiness |
 | Planning | System or data transition | [plan-migration](../../skills/engineering/plan-migration/SKILL.md) | An ordered compatibility, transfer, cutover, recovery, and retirement plan for an accepted target |

@@ -7,7 +7,7 @@ description: "Choose the next available skill for an engineering, product, produ
 
 ## Use this skill
 
-Use this when the next owner or starting point is unclear. Return one best starting skill and the input it needs. A clear task can start directly with its owning skill. Route only to an actual package in the map; a domain name does not imply coverage of every task within it.
+Use this when the next owner or starting point is unclear. Return one best starting skill and the input it needs. A clear task can start directly with its owning skill. Answer a trivial direct question without a skill when no specialized procedure is needed. Route only to an actual package in the map; a domain name does not imply coverage of every task within it.
 
 Reuse accepted artifacts, decisions and current work. An existing specification, ready task or reviewed candidate should change the starting point.
 
@@ -15,7 +15,7 @@ Reuse accepted artifacts, decisions and current work. An existing specification,
 
 Read the request and available project context. Establish what exists and what the user wants next: alternatives, agreed behavior, executable work, a diagnosis, evidence or delivery. Preserve useful existing conventions and commitments; identify only missing foundations for a new project. Ask only when the answer changes the route.
 
-Consult the relevant domain section of [the skill map](references/skill-map.matrix.md); use its boundary cases only when several outputs could fit. Match the desired result rather than a keyword: explaining a PR and reviewing its correctness are different tasks. A social carousel is an exported media set; a website carousel is an interface. Add a short sequence only when the request spans distinct results, with the accepted prerequisite for each transition.
+Consult the relevant domain section of [the skill map](references/skill-map.matrix.md); use its boundary cases only when several outputs could fit. Match the desired result rather than a keyword: explaining a PR and reviewing its correctness are different tasks. A social carousel is an exported media set; a website carousel is an interface. Add a short sequence only when the request spans distinct results, with the accepted prerequisite for each transition. `delegate-to-agents` retains a coordinator for bounded parts; `prepare-handoff` transfers responsibility to another owner or session.
 
 ## Check availability and readiness
 

@@ -15,7 +15,7 @@ Perform the assessment independently of the interface's author, in a separate ag
 
 Identify the target URL/app/artifact, available revision, user tasks, accepted behavior/design and supported surfaces. Inspect through available browser/native tools. Source and design documents support the review but cannot prove layout, focus, keyboard or runtime behavior. Limit static-mockup claims to visible evidence.
 
-Select task-relevant lenses from [interface review checks](references/interface-review.checklist.md). Establish which routes, roles, states and input methods will be inspected, and preserve unknown coverage.
+Select task-relevant lenses from [interface review checks](references/interface-review.checklist.md). Establish which routes, roles, states and input methods will be inspected, and preserve unknown coverage. For a public website assessment, use its conditional website checks to connect the supported offer and primary journey with observed search and performance evidence; keep missing business facts and unmeasured outcomes explicit.
 
 ## Exercise consequential paths
 

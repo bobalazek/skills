@@ -49,5 +49,44 @@
       "Produce the draft map using accepted role and recovery policies without reopening them or blocking on delegated wording/structure choices.",
       "Keep unknown provider results pending until reconciliation; distinguish the proposed map and any unperformed review from observed or accepted runtime behavior."
     ]
+  },
+  {
+    "id": "review-website-supported-journey",
+    "skill": "review-interface",
+    "installedSkills": [
+      "review-interface"
+    ],
+    "prompt": "Assess the public website evidence in this fixture against BRIEF.md. Use only these local supplied captures; no browser, network, participant study or edits are authorized. Return the supported findings and useful next checks, with clear coverage limits. Do not delegate.",
+    "files": {
+      "BRIEF.md": "Accepted audience: independent studios seeking repairs to an existing brochure website. Accepted offer: request a scoped audit; the team confirms the scope later. The primary action should request that audit, not promise a confirmed booking. No prices, margins, conversion data or local-rate evidence are supplied. This is a partial evidence review, not a launch or conformance decision.\n",
+      "page.html": "<!doctype html><html><head><title>Home</title></head><body><main><h1>Repairs for existing studio websites</h1><a href=\"/enquiry\">Book your audit instantly</a></main></body></html>\n",
+      "captured-journey.json": "{\"provenance\": \"supplied synthetic capture; reviewer has not independently replayed it\", \"revision\": \"snapshot-C\", \"path\": [\"/\", \"/enquiry\"], \"submissionMessage\": \"Request received. Our team will contact you to confirm the audit scope.\", \"viewport\": \"desktop\", \"keyboardJourney\": \"not captured\", \"screenshots\": \"not supplied\"}\n",
+      "performance-summary.json": "{\"provenance\": \"supplied synthetic Lighthouse summary\", \"route\": \"/\", \"device\": \"desktop\", \"network\": \"simulated fast 4G\", \"performanceScore\": 84, \"captureDate\": \"2026-11-15\", \"mobile\": \"not run\", \"fieldData\": \"not supplied\"}\n",
+      "robots.txt": "User-agent: *\nAllow: /\n"
+    },
+    "expected": [
+      "Identify the instant-booking promise versus later scope-confirmation mismatch, locating source/capture evidence and relating it to the accepted request-audit goal; do not claim to have replayed the journey.",
+      "Keep financial benefit, inquiry lift, conversion causation, margins and local rates unknown; no fixed effort, universal click-count or target-size findings without a supported requirement.",
+      "Keep the supplied desktop score limited to that capture; no claimed mobile/field performance, live timing, rendering, keyboard or complete conformance result.",
+      "Do not treat the allowed robots file or metadata as proof of indexing/ranking. Return prioritized supported findings and relevant missing checks without writing files or contacting services."
+    ]
+  },
+  {
+    "id": "review-website-missing-runtime-proof",
+    "skill": "review-interface",
+    "installedSkills": [
+      "review-interface"
+    ],
+    "prompt": "Use review-interface to assess what the supplied website files support. The owner asks whether the redesign made mobile visits faster and increased inquiries. No rendered capture, browser access, performance trace, analytics or participant evidence is available. Stay read-only and local; do not delegate. Give the smallest useful assessment and the evidence needed to answer the owner.",
+    "files": {
+      "brief.md": "Accepted purpose: a public studio repairs website whose primary action requests an audit. Only this source snapshot is available; there is no before-version capture or observed visitor data.\n",
+      "index.html": "<main><h1>Website repairs for independent studios</h1><a href=\"/request-audit\">Request an audit</a><img src=\"studio.webp\" alt=\"Studio workspace\"></main>\n",
+      "claims.md": "The owner wonders whether switching the image filename to WebP proves faster mobile visits and a 20% inquiry increase. This is a question, not an established result.\n"
+    },
+    "expected": [
+      "Distinguish source-supported purpose/action wording from unobserved rendering, loading, input/accessibility or destination behavior; do not claim a live site assessment passed.",
+      "Reject the proposed mobile-speed and inquiry-lift conclusions as unestablished by a filename/source snapshot; do not turn the question into a fact or invent a score, visit count or revenue estimate.",
+      "Name bounded next evidence appropriate to the two questions, such as comparable device/network before-after measurements and comparable inquiry/visit records; keep causal attribution separate and perform no production actions."
+    ]
   }
 ]

@@ -1,0 +1,20 @@
+# Checks by project type
+
+Choose rows from the actual entry points, data and accepted contracts. Types can overlap; they do not impose every mechanism on every project. Record scope exclusions separately from unavailable proof.
+
+| Surface | Investigate | Evidence boundary |
+| --- | --- | --- |
+| Source, packages and generated output | Relevant secret/configuration exposure, dependency versions/advisories and reachable use, debug/admin surfaces, sensitive logging and third-party code | A scanner hit needs confirmation; ignored files, sample values, a lockfile or a passing build alone prove no absence of leaks or vulnerabilities |
+| Static/browser delivery | Built client assets, third-party script trust, applicable CSP/frame policy, content types, referrer/feature policies, HTTPS redirects and certificate/renewal ownership | Evaluate the response types and supported browsers. Live success/error/proxy responses can differ from source configuration; missing runtime access stays unchecked |
+| Server, API or authenticated app | Accepted input/domain constraints, safe query/output boundaries, session/provider guarantees, CSRF where ambient browser credentials make it relevant, permissions and object/field ownership | Follow the chosen shared controls through real consumers. Parameter binding can protect handwritten SQL; authentication does not establish tenant/object authorization |
+| Multi-tenant or privileged flows | Tenant/role scope across lists, direct IDs, exports, caches, imports, jobs and admin actions; revocation and audit behavior required by the project | Check both denied and legitimate access safely. Application filters, database controls or another established mechanism may enforce the invariant; status codes follow the accepted disclosure/API contract |
+| Uploads and external transfers | Accepted type/size/name constraints, actual byte transfer/storage enforcement, untrusted metadata, processing and safe serving, ownership and cleanup | A client-declared size or MIME type is not proof of enforced content limits. Inspect the provider boundary and permitted file types; do not require the same processor for every upload |
+| Native/mobile/desktop | Actual platform storage and permissions, secrets/logging, update/distribution trust, links and process/file boundaries | Select the supported OS/runtime and threat context; web behavior or a simulator cannot establish every installed-platform control |
+
+For managed authentication, confirm what the actual provider validates and what application policy remains. Apply current [OWASP authentication guidance](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html) to the selected mechanism rather than inventing universal password lengths, cookie fields or reauthentication rules.
+
+For query inputs, distinguish bound data values from dynamic query structure; inspect applicable bindings and allowlisted structural choices using [OWASP SQL injection prevention](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html). For permissions and alternate callers, use [OWASP authorization guidance](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html).
+
+Header choices depend on consumers and response types. A supported CSP frame policy may provide the intended framing control without duplicating a legacy header; verify the actual policy and compatibility using [OWASP HTTP headers](https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html). Review [CSRF defenses](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html) for the real credential/transport model; SameSite alone is not a universal substitute. Use [file-upload guidance](https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html) for applicable validation, storage and serving risks.
+
+Legal retention, payment-card scope and assurance commitments require their authoritative requirements and accountable owner. The audit can describe observed controls and gaps; it cannot invent a policy or grant compliance certification.

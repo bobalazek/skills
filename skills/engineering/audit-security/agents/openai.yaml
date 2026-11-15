@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit security"
+  short_description: "Audit evidenced security risks and coverage gaps"
+  default_prompt: "Use $audit-security to assess this project's scoped security risks."
