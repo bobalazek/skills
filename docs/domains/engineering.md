@@ -1,6 +1,6 @@
 # Engineering
 
-This domain covers the software lifecycle, including requirements, architecture, coding, quality, delivery, monitoring, and maintenance. Its 28 packages are under active development; links open their actual instructions. Use the narrowest result that matches the request. UI/UX owns user journeys and interface decisions; productivity owns idea exploration and decision support.
+This domain covers the software lifecycle, including requirements, architecture, coding, quality, delivery, monitoring, and maintenance. Its 30 packages are under active development; links open their actual instructions. Use the narrowest result that matches the request. UI/UX owns user journeys and interface decisions; productivity owns idea exploration and decision support.
 
 ## Categories and skills
 
@@ -15,6 +15,7 @@ This domain covers the software lifecycle, including requirements, architecture,
 | Domain design | Language and rules | [model-domain](../../skills/engineering/model-domain/SKILL.md) | Consistent concepts, relationships, valid states, invariants, and representative scenarios |
 | Architecture | Technology and structure | [design-architecture](../../skills/engineering/design-architecture/SKILL.md) | Selected stack/technical choices, boundaries, state ownership, contracts, failure behavior, and trade-offs |
 | Security design | Threat modeling | [model-threats](../../skills/engineering/model-threats/SKILL.md) | Traceable threats, existing controls, mitigation decisions and observable verification criteria |
+| Quality | Public website audit | [audit-website](../../skills/engineering/audit-website/SKILL.md) | Evidence-backed assessment across the primary conversion journey, content, design, search basics, performance and accessibility, with a prioritized action plan |
 | Quality | Project security audit | [audit-security](../../skills/engineering/audit-security/SKILL.md) | Bounded source, dependency and applicable runtime-control findings with evidence, severity and coverage gaps |
 | Planning | Milestones | [plan-phases](../../skills/engineering/plan-phases/SKILL.md) | Outcome-based phases with inputs, outputs, dependencies, and exit evidence |
 | Planning | Executable work | [create-tasks](../../skills/engineering/create-tasks/SKILL.md) | A dependency graph of bounded tasks with ownership, acceptance, verification, and readiness |
@@ -87,7 +88,8 @@ Resources are bundled with their owning package and loaded conditionally. They a
 | Monitoring and alerting | `configure-monitoring` carries signal selection, ownership/routing, bounded collection and firing/delivery/recovery checks using existing tools |
 | PR and codebase review | `review-code` has separate conditional checklists and one report shape |
 | Risk and reversibility | PR explanation, review, implementation and delivery carry credible worst impact, affected consumers/state, detection, recovery conditions and proof; reverting code does not necessarily undo data or external effects |
-| Result evaluation and PR evidence | `verify-change` carries evidence selection, comparison conditions, criterion results, reviewer-accessible reporting, conditional journey/security/reliability checks, and an optional command runner that records actual outcomes |
+| Website assessment | `audit-website` carries a nine-lens site inspection procedure, representative journey sampling and a findings/coverage/action-plan template; focused interface and security reviews keep their own boundaries |
+| Result evaluation and PR evidence | `verify-change` carries evidence selection, comparison conditions, criterion results, reviewer-accessible reporting, conditional journey/security/reliability checks, runtime observation and first-run scenario procedures, and an optional command runner that records actual outcomes |
 | Delivery | `ship-change` has PR/merge, package, deployment, and handover checks |
 
 Cost analysis and legal applicability are scoped engineering inputs, with current primary evidence when used. They do not become invented budgets or compliance assurances. A dedicated specialist skill is justified when its independent recurring output requires a fuller procedure.

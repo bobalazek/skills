@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit website"
+  short_description: "Audit site quality and the primary conversion journey"
+  default_prompt: "Use $audit-website to assess this site's quality, primary journey and evidence gaps."

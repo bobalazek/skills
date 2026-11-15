@@ -1,6 +1,6 @@
 # Skills
 
-73 skills for developing software, evaluating products, coordinating work, defining brands, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
+75 skills for developing software, evaluating products, coordinating work, defining brands, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
 
 Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear. The collection is under active development; [releases](https://github.com/bobalazek/skills/releases) record reviewed snapshots and evaluation limits.
 
@@ -35,9 +35,9 @@ From a checkout, you can also ask a filesystem-capable agent to use `skills/engi
 
 | Catalog | What it covers |
 | --- | --- |
-| [Engineering · 29 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, monitor, and maintain it |
+| [Engineering · 30 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, monitor, and maintain it |
 | [Product · 6 skills](docs/domains/product.md) | Evaluate ideas, synthesize feedback, compare alternatives, define success measures, plan experiments, and analyze product usage |
-| [Productivity · 14 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose and coordinate work, route requests, improve prompts and team workflows, report status, and transfer context |
+| [Productivity · 15 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose and coordinate work, run accepted workflows, route requests, improve prompts and team workflows, report status, and transfer context |
 | [Brand · 2 skills](docs/domains/brand.md) | Define evidence-grounded positioning and develop visual identity, usage rules and requested assets |
 | [UI/UX · 8 skills](docs/domains/ui-ux.md) | Capture design references, map flows and navigation, wireframe and design screens, write interface messages, build shared systems, review interfaces, and test usability |
 | [Content · 6 skills](docs/domains/content.md) | Define a writing voice, plan page content, write website copy, blog posts and video scripts, and review prose for clarity and supported meaning |
@@ -72,9 +72,11 @@ Each catalog lists skills by category, with their outputs and boundaries. The [c
 | Add visual detail to settled screen structure | [design-interface](skills/ui-ux/design-interface/SKILL.md) |
 | Choose which supplied work fits the available capacity | [prioritize-work](skills/productivity/prioritize-work/SKILL.md) |
 | Coordinate ready work across available agents | [delegate-to-agents](skills/productivity/delegate-to-agents/SKILL.md) |
+| Execute or resume an accepted workflow definition | [run-workflow](skills/productivity/run-workflow/SKILL.md) |
 | Establish the cause of a known failure | [diagnose-issue](skills/engineering/diagnose-issue/SKILL.md) |
 | Model security threats before implementation | [model-threats](skills/engineering/model-threats/SKILL.md) |
 | Audit a project's source, dependencies and applicable runtime security | [audit-security](skills/engineering/audit-security/SKILL.md) |
+| Audit a live website and prioritize evidenced improvements | [audit-website](skills/engineering/audit-website/SKILL.md) |
 | Address supplied review findings | [address-review-feedback](skills/engineering/address-review-feedback/SKILL.md) |
 | Review code for evidenced defects | [review-code](skills/engineering/review-code/SKILL.md) |
 | Prepare or publish a GitHub release and its notes | [ship-change](skills/engineering/ship-change/SKILL.md) |
@@ -149,7 +151,7 @@ For other outcomes, use the [workflow index](docs/workflows.md): [product decisi
 
 **How are results checked?** Use observed proof appropriate to the task. Simple routing, explanations, brainstorming and wording-only drafts can use direct checks where their skill permits it. Consequential acceptance, code changes and delivery retain independent review; PRs include proof and findings when opened. An unavailable required review leaves the result unreviewed. Use `evaluate-skill` to compare actual behavior and preserve regressions; required human approval remains separate.
 
-**Which clients were checked?** Installation and discovery for the v0.8.0 package contents were checked with skills CLI 1.7.0, OpenCode 2.3.0 and Codex CLI 0.167.2. These checks establish delivery of 73 complete packages (268 files), Codex metadata discovery and OpenCode loaded-body equality. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
+**Which clients were checked?** Installation and discovery for the 75-package candidate contents were checked with skills CLI 1.7.0, OpenCode 2.3.0 and Codex CLI 0.167.2. These checks establish delivery of 75 complete packages (281 files), Codex metadata discovery and OpenCode loaded-body equality. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
 
 **How do I update?** Copied skills do not update themselves. Review changes and migration notes, preserve local edits, then rerun `add` with the chosen source/tag. Inspect the files and verify discovery again; record the selected version with the project.
 

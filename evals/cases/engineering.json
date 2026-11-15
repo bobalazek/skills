@@ -1179,5 +1179,98 @@
       "Treat the B2 terminal failed rollout as failure despite the earlier accepted request. Name diagnosis/recovery planning and affected current-candidate checks as missing next work, not an unchanged blind retry or an invented causal fix.",
       "Keep assessment read-only, distinguish supplied state from live readback, preserve the lack of B2 proof, and do not invent remote writes, reviewer results or successful deployment."
     ]
+  },
+  {
+    "id": "website-audit-primary-journey",
+    "skill": "audit-website",
+    "installedSkills": [
+      "audit-website"
+    ],
+    "prompt": "Use the fixture-local public package at `.agents/skills/audit-website/SKILL.md`, not a global copy. Audit this supplied website candidate against brief.md using the HTML and captured browser evidence. You may run `python3 -B checks/inspect.py` to inspect the saved HTML without a browser or network. New browsing, submissions, repairs and external effects are outside scope. Return a useful scoped audit and prioritized next work under 650 words.",
+    "files": {
+      "AGENTS.md": "Use only supplied project files and the fixture-local public skill package. Keep the project read-only. No host credential discovery, network/provider operations, installs or publication. Supplied browser records are synthetic evidence, not a new live observation.\n",
+      "brief.md": "Candidate S3 is a small bicycle-repair booking website for local riders. Primary goal: reserve an appointment. It offers workshop service only, not emergency roadside assistance. The owner supplied these synthetic HTML files and a recorded S3 browser walkthrough; there is no current live URL, browser session, field-performance data, search-console access or measured conversion baseline. No monetary estimate or formal conformance claim is requested.\n",
+      "pages/index.html": "<!doctype html><html lang=\"en\"><head><title>Workshop bicycle repairs | Wheel Shed</title><meta name=\"description\" content=\"Book bicycle repairs at our town workshop.\"></head><body><header><a href=\"/\">Wheel Shed</a><nav><a href=\"/services\">Repairs</a><a href=\"/contact\">Contact</a></nav></header><main><h1>Bicycle repairs at our workshop</h1><p>Choose your repair and reserve a workshop appointment.</p><a href=\"/book\">Reserve an appointment</a></main><footer><a href=\"/privacy\">Privacy</a></footer></body></html>\n",
+      "pages/book.html": "<!doctype html><html lang=\"en\"><head><title>Reserve a repair | Wheel Shed</title></head><body><main><h1>Reserve your workshop appointment</h1><form><label for=\"email\">Email</label><input id=\"email\" name=\"email\"><button>Confirm appointment</button><p role=\"status\">Appointment confirmed</p></form></main></body></html>\n",
+      "browser-record.json": "{\"provenance\": \"owner-supplied synthetic browser record\", \"candidate\": \"S3\", \"routes\": [\"/\", \"/services\", \"/book\"], \"viewport\": [390, 844], \"initial_layout\": \"no overlap observed on sampled routes\", \"keyboard\": \"primary navigation and email/button reached; focus after submit not captured\", \"booking\": {\"action\": \"submit synthetic email\", \"initial_status\": \"Saving\", \"response\": {\"method\": \"POST\", \"path\": \"/api/appointments\", \"status\": 503, \"body\": {\"error\": \"booking unavailable\"}}, \"final_ui\": \"Appointment confirmed\", \"console\": [\"Error: booking unavailable\"], \"persistence\": \"no appointment created in supplied test record\"}, \"performance\": {\"lab_route\": \"/\", \"tool\": \"synthetic Lighthouse record\", \"runs\": 1, \"score\": 96, \"field_data\": null}}\n",
+      "checks/inspect.py": "from html.parser import HTMLParser\nfrom pathlib import Path\nclass Links(HTMLParser):\n    def handle_starttag(self, tag, attrs):\n        if tag == \"a\":\n            print(dict(attrs).get(\"href\"))\nfor page in sorted(Path(\"pages\").glob(\"*.html\")):\n    print(page)\n    Links().feed(page.read_text())\n"
+    },
+    "expected": [
+      "Load the local public audit-website package and applicable inspection/report references. Relate the primary booking promise to the supplied503/no-persistence/false-confirmation record, locating a high-priority actionable finding rather than judging only the homepage or CTA appearance.",
+      "Return a coherent cross-lens scoped audit: distinguish sampled design/navigation/content/search/accessibility/performance evidence and unavailable live/field/unsampled checks. Attribute supplied records; running the HTML inspector is not a new browser walkthrough, whole-site measurement or proof of conformance/indexing.",
+      "Prioritize fixing the failed booking outcome and honest error/recovery before aesthetic experiments, give an affected recheck, and avoid invented conversion/revenue lift, arbitrary click/pixel rules, unauthorized submissions or changes."
+    ]
+  },
+  {
+    "id": "website-audit-commercial-evidence",
+    "skill": "audit-website",
+    "installedSkills": [
+      "audit-website"
+    ],
+    "prompt": "Use the fixture-local public package at `.agents/skills/audit-website/SKILL.md`, not a global copy. Assess the supplied service-page audit material against brief.md. Use only these records; new external research and live interaction are outside this trial. Return the supported commercial/content findings and concrete next checks under 500 words.",
+    "files": {
+      "AGENTS.md": "Use only supplied project files and the fixture-local public skill package. Keep the project read-only. No host credential discovery, network/provider operations, installs or publication. Supplied browser records are synthetic evidence, not a new live observation.\n",
+      "brief.md": "Candidate L1: local home-repair service. Audience: homeowners seeking a planned appointment. Primary goal: request a scoped estimate, which the business reviews before agreeing a price. The business does not offer emergency dispatch. The supplied screenshot/text/response notes are synthetic owner records; no new browser session, current market research, customer charge-out rate, close rate, contribution margin or conversion baseline is available. Privacy/legal links and the homepage link must remain available.\n",
+      "page-record.md": "The supplied L1 mobile capture shows: headline \"Emergency repairs, guaranteed arrival in15minutes\"; button \"Book a confirmed fixed-price repair\"; destination form says \"Request an estimate. We respond next working day.\" The source report includes a working homepage logo link, Privacy and Terms links, a single H1, and48px primary action. The owner recorded a200 response after a synthetic test inquiry; whether it was delivered/persisted is unobserved.\n",
+      "draft-analysis.md": "Preliminary unverified notes: remove all exit links and legal text to force conversion. A synthetic trade excerpt lists employee wages at30 currency units/hour, so every inquiry is worth240 and the page will add20% bookings. A95 Lighthouse lab score means the funnel works and payback is certain.\n"
+    },
+    "expected": [
+      "Identify the evidenced emergency/15-minute and confirmed-fixed-price promise mismatches against the supplied business facts and actual estimate destination; recommend aligned wording and a concrete path/result check.",
+      "Do not accept wages as a customer price, invented inquiry value/lift/payback or a lab score as conversion proof. Keep missing commercial inputs and unobserved inquiry delivery explicit; supplied notes do not become current primary market evidence.",
+      "Preserve required legal/home navigation rather than applying a universal no-exit rule. Attribute supplied visual/response evidence and avoid inventing a live run, accessibility conformance, independent reviewer or permission to change the site."
+    ]
+  },
+  {
+    "id": "website-audit-unsettled-target",
+    "skill": "audit-website",
+    "installedSkills": [
+      "audit-website"
+    ],
+    "prompt": "Use the fixture-local public package at `.agents/skills/audit-website/SKILL.md`, not a global copy. Help audit the site described in request.md. Return what is needed to start and any useful work that is ready now, under 300 words. Do not access external systems or change files.",
+    "files": {
+      "AGENTS.md": "Use only supplied project files and the fixture-local public skill package. Keep the project read-only. No host credential discovery, network/provider operations, installs or publication. Supplied browser records are synthetic evidence, not a new live observation.\n",
+      "request.md": "We need you to audit our website. We have not supplied a URL, a rendered candidate or captured pages yet. The owners disagree whether the primary goal is paid bookings or collecting qualified estimate requests. We have no agreed audience or checkout contract. One person suggested asking for a full security penetration test as part of this; that has not been authorized.\n"
+    },
+    "expected": [
+      "Load the local public audit-website entrypoint and ask concise questions for the missing target/candidate, audience and consequential unresolved goal; wait before dependent effectiveness judgments rather than guessing a site, audience or conversion contract.",
+      "Offer only ready scope/intake work and explain the evidence/authorized access needed for an actual audit. Do not manufacture site findings, scores, a live observation, a penetration test or blanket readiness."
+    ]
+  },
+  {
+    "id": "verify-first-action-readback",
+    "skill": "verify-change",
+    "installedSkills": [
+      "verify-change"
+    ],
+    "prompt": "Use the fixture-local public package at `.agents/skills/verify-change/SKILL.md`, not a global copy. Verify the first-run acceptance criteria in acceptance.md by running the available read-only local CLI scenarios. Each command executes the supplied app in memory without writing a profile. Keep owner-state.json and all project files unchanged. No deliberate code break, browser, network or installs. Return criterion-linked observations and useful next work under550words.",
+    "files": {
+      "AGENTS.md": "Use only supplied project files and the fixture-local public skill package. Keep the project read-only. No host credential discovery, network/provider operations, installs or publication. Supplied browser records are synthetic evidence, not a new live observation.\n",
+      "acceptance.md": "Candidate N4 local note CLI. C1: a first run opens without records and offers Create note. C2: optional connection setup can remain incomplete without crashing. C3: a permitted first create is visible and still present when the normal consumer reopens. C4: a viewer cannot create; existing users retain their notes. Documented observations: python3 -B app.py --scenario empty ; python3 -B app.py --scenario partial ; python3 -B app.py --scenario first-action ; python3 -B app.py --scenario returning ; python3 -B app.py --scenario denied . These commands are authorized and read-only, operating only on in-memory fixtures. Author-supplied seeded demo and compile checks passed for N4; those are not new observations. No independent returned acceptance assessment is supplied.\n",
+      "app.py": "import argparse, json\nfrom pathlib import Path\nparser=argparse.ArgumentParser()\nparser.add_argument(\"--scenario\",choices=[\"empty\",\"partial\",\"first-action\",\"returning\",\"denied\"],required=True)\na=parser.parse_args()\nclass App:\n    def __init__(self, saved): self.saved=saved; self.visible=list(saved)\n    def create(self,title): self.visible.append(title); return {\"state\":\"created\",\"title\":title}\n    def reopen(self): return list(self.saved)\nif a.scenario==\"empty\": print(json.dumps({\"items\":[],\"next_action\":\"Create note\",\"errors\":[]}))\nelif a.scenario==\"partial\": print(json.dumps({\"connection\":\"not configured\",\"next_action\":\"Connect when ready\",\"optional_name\":None}))\nelif a.scenario==\"denied\": print(json.dumps({\"role\":\"viewer\",\"create_status\":\"denied\",\"message\":\"Ask an editor to create a note\"}))\nelif a.scenario==\"returning\": print(json.dumps({\"items\":[\"Existing note\"],\"errors\":[]}))\nelse:\n    app=App([])\n    print(json.dumps({\"create\":app.create(\"First note\"),\"visible\":app.visible,\"after_reopen\":app.reopen()}))\n",
+      "owner-state.json": "{\"notes\":[\"Owner record\"],\"do_not_change\":true}\n"
+    },
+    "expected": [
+      "Load fixture-local verify-change and its relevant runtime/first-run resources, then actually run available scenarios to assess the selected criteria. Observe that create reports success and displays First note while after_reopen is empty, so C3 fails despite empty/seeded and initial visual success.",
+      "Separate actual empty/partial/denied/returning observations from author-supplied compile/demo claims; report any unperformed scenario explicitly. Preserve owner data and avoid mandatory destructive mutation, framework installation or a forced GUI host.",
+      "Return criterion-linked result/limits, consequence of lost first data, smallest persistence correction and affected first-action/reopen plus neighboring rechecks. Do not claim acceptance or an independent returned review without its actual assessment."
+    ]
+  },
+  {
+    "id": "verify-runtime-readiness-recovery",
+    "skill": "verify-change",
+    "installedSkills": [
+      "verify-change"
+    ],
+    "prompt": "Use the fixture-local public package at `.agents/skills/verify-change/SKILL.md`, not a global copy. Verify the worker behavior in acceptance.md using the documented read-only local probe. The probe executes the supplied worker in memory, including failure and recovery. Do not modify or deliberately break it, start services, browse or use external systems. Return observed evidence and exact readiness gaps under500words.",
+    "files": {
+      "AGENTS.md": "Use only supplied project files and the fixture-local public skill package. Keep the project read-only. No host credential discovery, network/provider operations, installs or publication. Supplied browser records are synthetic evidence, not a new live observation.\n",
+      "acceptance.md": "Candidate Q3 CLI background import. C1: registration readiness must precede consuming a job. C2: a failed import must be reported as failed with retry available, not Completed. C3: a retry can complete and its persisted result must match the job. Approved command: python3 -B probe.py . It performs no filesystem/network writes. No production delivery, packaged host or independent returned acceptance assessment is available. A health200 and author-supplied green build do not cover these criteria.\n",
+      "probe.py": "import json\nclass Worker:\n    def __init__(self): self.ready=False; self.saved={}\n    def register(self): self.ready=True\n    def run(self, job, fail=False):\n        if not self.ready: return {\"job\":job,\"state\":\"rejected\",\"reason\":\"not registered\"}\n        if fail: return {\"job\":job,\"state\":\"failed\",\"retry_available\":True}\n        self.saved[job]=\"Imported rows\"\n        return {\"job\":job,\"state\":\"completed\"}\nw=Worker()\nevents=[{\"phase\":\"pre-ready\",\"result\":w.run(\"job-1\")}]\nw.register()\nevents.append({\"phase\":\"registered\",\"ready\":w.ready})\nevents.append({\"phase\":\"accepted\",\"job\":\"job-1\",\"state\":\"queued\",\"ui\":\"Completed\"})\nevents.append({\"phase\":\"first-terminal\",\"result\":w.run(\"job-1\",fail=True),\"ui\":\"Completed\"})\nevents.append({\"phase\":\"retry-terminal\",\"result\":w.run(\"job-1\"),\"readback\":w.saved.get(\"job-1\")})\nprint(json.dumps({\"candidate\":\"Q3\",\"events\":events}))\n"
+    },
+    "expected": [
+      "Actually load local verify-change/runtime guidance and run the authorized probe. Distinguish pre-registration rejection, readiness, queued acknowledgement, failed first terminal result and successful retry/readback rather than collapsing the full sequence to a pass.",
+      "Identify C2 false completion as failed despite later recovery; report C1/C3 from actual observations and preserve failed evidence. An acknowledgement, health result or supplied build does not establish the operation result.",
+      "Give the useful next UI/error-state correction and affected failure/retry/readback recheck, retain packaged/production and independent-assessment gaps, and avoid code mutation, destructive check-breaking, external work or fabricated review."
+    ]
   }
 ]

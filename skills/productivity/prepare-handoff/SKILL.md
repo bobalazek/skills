@@ -23,6 +23,8 @@ Carry finding/task IDs, priority labels and their rationale into the existing re
 
 When assembling the transfer block or record, use [the handoff template](references/handoff.template.md), adapting it to the project's existing format. Link authoritative material rather than copying documents. Retain the goal, constraints, authority, criterion status, source versions, blockers and useful file/symbol pointers.
 
+For work paused on a human interaction or uncertain external effect, use [human-step continuation](references/human-step-resume.playbook.md) to retain a safe checkpoint, existing authority and receipt limits. The handoff records the continuation; it does not execute the underlying workflow.
+
 Name the next runnable action and what makes it ready. For a pending remote operation, include its actual identifier and observed state so the recipient can inspect before retrying. Keep changed assumptions and rejected approaches only when they prevent a repeated mistake.
 
 During compaction, remove search noise and duplicate logs before removing continuation facts. Keep temporary session state separate from durable project knowledge; update an existing authorized record rather than creating a competing one.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Run workflow"
+  short_description: "Execute accepted workflow contracts and reconcile run state"
+  default_prompt: "Use $run-workflow to execute or resume this accepted definition, preserve its authority and return the observed result or blockers."

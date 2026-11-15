@@ -29,6 +29,8 @@ Capture the actual output, artifacts, relevant tool events, exit/timeout state a
 
 ## Assess observed behavior
 
+When selecting different graders or using a model judge, use [grading and calibration](references/grading-calibration.matrix.md) to separate validity, meaning and authority and retain calibration limits.
+
 Run deterministic checks first for objectively checkable artifacts and invariants. Then assess decisions, scope, questions, side effects and completion claims against the case's criteria. Inspect the trace as well as the final answer; a correct answer can still contain unsupported intermediate claims or unauthorized actions.
 
 For any claim that independent review happened, locate an actual returned assessment from a distinct reviewer/session tied to the evaluated artifact, with findings and coverage. A requested delegation, empty wait, fabricated reviewer name or author's self-check does not satisfy that claim. If evidence is missing, fail that criterion or mark it not checked when the trace itself is incomplete; never infer a pass from silence. Do not manufacture a review merely to complete the evaluation record.

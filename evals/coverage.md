@@ -6,6 +6,7 @@ This is an index of recorded behavioral evidence. It is not code coverage, a cur
 
 | Record | Scope and limits |
 | --- | --- |
+| [Portable methods, 15 November 2026](results/portable-methods-2026-11-15.md) | Ten candidate cases, four semantic-parity comparisons, corrected transient-retry rule and retained child command traces; synthetic runtime, host and pre-correction source limits remain explicit |
 | [Engineering and productivity, 15 November 2026](results/engineering-productivity-2026-11-15.md) | Twenty-two selected synthetic cases, seven baseline comparisons showing parity, retained original partial and affected correction; native host/global-context limits remain explicit |
 | [PR description and observation correction, 12 November 2026](results/library-maintenance-2026-11-12.md#pr-description-and-observation-correction) | Four candidate-only cases with 13 assessed criterion passes, then two final-source rechecks with six; final template/example loading observed, without live effects or real-spend verification |
 | [Library maintenance, 12 November 2026](results/library-maintenance-2026-11-12.md) | Source review of all 71 entrypoints/metadata; 11 selected candidate-only attempts, nine completed cases with 21 independently assessed criterion passes, two retained timeouts with six criteria not checked; no baseline, automatic-activation or production-media claim |
