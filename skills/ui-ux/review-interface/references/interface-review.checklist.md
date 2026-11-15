@@ -31,6 +31,15 @@ Record actual observations and limits. Do not report a checklist item as passed 
 
 These are diagnostic prompts, not automatic severity scores. Rank by the affected task, actual consequence, reach and available recovery. Aesthetic preference needs an explicit brief or rationale. A dark-pattern concern needs the observable choice/information problem; this review alone does not establish a legal violation.
 
+## Public website assessments
+
+Use these when the requested scope includes a public site's quality or conversion journey. Select relevant checks from the accepted audience, offer and primary action; a product-screen review needs only its affected paths.
+
+- [ ] Compare the stated offer, eligibility, proof and primary action with the actual destination and supplied business facts. Locate unsupported claims or promise/result mismatches. Keep unknown commercial facts unknown; do not invent local rates, inquiry lift, margins or payback.
+- [ ] Inspect relevant page titles, content structure, link destinations and available indexing directives using actual page evidence. State which routes and technical checks remain uninspected. A screenshot, metadata count or valid robots file cannot establish rankings or indexing coverage; use current [Search Essentials](https://developers.google.com/search/docs/essentials) for a requested search check.
+- [ ] Separate observed loading, layout shift or interaction problems from timing measurements and causal hypotheses. For measured results record the tool, route, device/network and capture conditions; a [Lighthouse performance score](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring) is not conversion evidence or a whole-site result. Without runtime evidence, retain the performance gap and the next useful check.
+- [ ] Rank supported findings by affected task, reach and recovery. Keep proposed effort and expected benefit separate from measured facts; do not assign fixed click, pixel or time-budget rules without an applicable requirement, standard or justified estimate.
+
 ## Decision and evidence
 
 - [ ] For each material concern, ask what the user is trying to understand or do, what information is available at that moment, what effort the interface demands, and how they can recover. A proposed psychological explanation remains a hypothesis until appropriate participant or behavioral evidence exists. Do not infer confusion, trust or motivation merely from a screenshot or metric.

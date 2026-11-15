@@ -56,7 +56,7 @@ Evaluate the credible worst failure and reversibility separately from likelihood
 
 Try to disprove material behavior claims. Choose a plausible counterexample within supported inputs and conditions, then trace the actual path or run a safe focused check. For example, a successful sequential retry does not prove that concurrent retries cannot duplicate a write. Check the intended result as well as the failure; do not invent requirements to produce findings.
 
-A finding needs an affected scenario, located evidence, consequence, and actionable correction or investigation. Confirm suspected issues against code and available behavior. Keep unresolved material suspicions separate, with the evidence missing and a check that could settle them. Do not report speculative concerns, generic style advice, duplicate symptoms, or already-handled failures as established defects.
+A finding needs an affected scenario, located evidence, consequence, and actionable correction or investigation. Confirm suspected issues against code and available behavior. Search hits, absent matches and file counts are leads; check applicability, documented exceptions and the actual enforcement path before calling a control missing. Keep unresolved material suspicions separate, with the evidence missing and a check that could settle them. Do not report speculative concerns, generic style advice, duplicate symptoms, or already-handled failures as established defects.
 
 ## Reconcile and return the assessment
 

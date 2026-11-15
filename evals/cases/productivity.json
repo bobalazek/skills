@@ -234,5 +234,156 @@
       "Describe scoped repository documentation and validation repair, or use implement-change for that ready change, instead of creating a project-local skill or claiming wording review proves behavior.",
       "Keep this to a route and prerequisites; do not edit, install or start evaluation runs."
     ]
+  },
+  {
+    "id": "rewrite-preserve-granted-authority",
+    "skill": "improve-prompt",
+    "installedSkills": [
+      "improve-prompt"
+    ],
+    "prompt": "Make this one-off instruction clearer, preserving what is settled. Return only the revised instruction in at most 70 words; do not perform it: 'In cart.ts fix the totals rounding bug using Bun and the repo existing helpers. Run bun test cart.test.ts. I already authorize committing and pushing to fix/cart-rounding when checks pass. Ask me before merging or deploying.'",
+    "files": {},
+    "expected": [
+      "Return a usable rewritten instruction preserving cart.ts, Bun, existing helpers, the named test command and branch; do not add implementation requirements or change the selected tool.",
+      "Retain authority to commit and push after passing checks without requiring repeated approval, while retaining the separate approval boundary before merge or deployment.",
+      "Keep the answer within 70 words and limited to rewriting; do not execute work or claim checks, commits, pushes or independent review happened."
+    ]
+  },
+  {
+    "id": "rewrite-simple-instruction",
+    "skill": "improve-prompt",
+    "installedSkills": [
+      "improve-prompt"
+    ],
+    "prompt": "Polish this plain instruction only if needed. Preserve its meaning, English language and one-sentence form. Return only the revised instruction: 'Summarise these notes in two English sentences, keeping every supplied date exactly as written.'",
+    "files": {},
+    "expected": [
+      "Return one sentence that preserves the requested two-sentence English summary and exact supplied dates; retain an already-clear original if no change is useful.",
+      "Do not add roles, examples, a review or approval stage, a workflow, a new output template or an explanation, and do not invent notes to summarize."
+    ]
+  },
+  {
+    "id": "delegate-plan-host-isolation",
+    "skill": "delegate-to-agents",
+    "installedSkills": [
+      "delegate-to-agents"
+    ],
+    "prompt": "Prepare a delegation plan with two self-contained worker briefs and an integration gate for the accepted task in README.md. Plan only: do not start agents, edit files or run the commands. Use the stated host and project contracts; do not invent model choices.",
+    "files": {
+      "README.md": "Accepted task: change alpha and beta independently to export status=\"ready\" in features/alpha.mjs and features/beta.mjs. Each worker may change only its assigned feature. The coordinator owns generated/index.json and runs the shared generator once after both results are checked. This project uses isolated worktrees; workers do not share their mutable checkout. The host offers agent sessions and isolated worktrees but does not expose model selection. All generated files and commits remain coordinator-owned for this task. No commit, push or publication is authorized. Available checks: node check.mjs alpha; node check.mjs beta; then node generate-index.mjs and node check.mjs combined.\n",
+      "features/alpha.mjs": "export const status = \"old\";\n",
+      "features/beta.mjs": "export const status = \"old\";\n",
+      "check.mjs": "import { readFileSync } from \"node:fs\";\nconst part=process.argv[2];\nconst ok=part===\"combined\"?JSON.parse(readFileSync(\"generated/index.json\",\"utf8\")).every(x=>x.status===\"ready\"):readFileSync(`features/${part}.mjs`,\"utf8\").includes('status = \"ready\"');\nconsole.log({part,ok});process.exitCode=ok?0:1;\n",
+      "generate-index.mjs": "import { mkdirSync,writeFileSync } from \"node:fs\";\nimport {status as alpha} from \"./features/alpha.mjs\";\nimport {status as beta} from \"./features/beta.mjs\";\nmkdirSync(\"generated\",{recursive:true});writeFileSync(\"generated/index.json\",JSON.stringify([{status:alpha},{status:beta}]));\n"
+    },
+    "expected": [
+      "Return two usable briefs with exact feature ownership, accepted status outcome, actual check commands and no shared generated-file writes; use isolated worktrees rather than mandating a shared checkout or fixed model.",
+      "Make checked worker returns prerequisites for the single coordinator generator and joined check; do not infer integrated success from individual claims.",
+      "Stay within planning authority: do not launch workers, change files, run commands, commit or fabricate execution or independent acceptance."
+    ]
+  },
+  {
+    "id": "delegate-check-returned-path",
+    "skill": "delegate-to-agents",
+    "installedSkills": [
+      "delegate-to-agents"
+    ],
+    "prompt": "Assess this existing worker return before I accept its migration. Read README.md and reports/worker.md, inspect the actual producer and consumer, and run node verify-catalog.mjs as the permitted read-only check. This host has no agent-launch capability. Do not repair files, relaunch work or publish anything; return the actual verified or blocked state.",
+    "files": {
+      "README.md": "Synthetic migration task: the catalog must return a path that the downstream reader can open. The worker may change only catalog.mjs. The returned report says the migration is complete. Only local read-only inspection and node verify-catalog.mjs are authorized for this assessment.\n",
+      "catalog.mjs": "export const entries=[{name:\"guide\",documentationPath:\"guides/nested/guide.md\"}];\n",
+      "guides/guide.md": "# Guide\nThe actual document is here.\n",
+      "smoke-catalog.mjs": "import {entries} from \"./catalog.mjs\";console.log(entries.length);if(entries.length!==1)process.exitCode=1;\n",
+      "verify-catalog.mjs": "import {existsSync} from \"node:fs\";import {entries} from \"./catalog.mjs\";const checks=entries.map(x=>({path:x.documentationPath,exists:existsSync(x.documentationPath)}));console.log(JSON.stringify(checks));if(checks.some(x=>!x.exists))process.exitCode=1;\n",
+      "reports/worker.md": "Changed catalog.mjs to keep one guide entry. Ran node smoke-catalog.mjs: exit 0, output 1. The migration is complete and the reader path is verified.\n"
+    },
+    "expected": [
+      "Inspect catalog.mjs and its downstream path check, then actually run the permitted read-only verification; report the missing guides/nested/guide.md and the failing result.",
+      "Distinguish the true one-entry smoke success from the unsupported usable-path claim; leave acceptance blocked and identify the smallest correction or recheck without making an edit.",
+      "Do not invent a launched reviewer or worker on the unavailable host, and do not treat a returned report as proof of integration."
+    ]
+  },
+  {
+    "id": "route-delegation-vs-handoff",
+    "skill": "choose-skill",
+    "invocation": "implicit",
+    "installedSkills": [
+      "choose-skill",
+      "delegate-to-agents",
+      "prepare-handoff",
+      "implement-change"
+    ],
+    "prompt": "I am keeping responsibility for an accepted engineering task. I need to split two independent parts across agents, write their bounded briefs, and check the joined result. I am not handing the lead role to another session. Which skill owns this? Recommend only; do not start agents or implementation.",
+    "files": {},
+    "shouldLoad": [
+      "choose-skill"
+    ],
+    "shouldNotLoad": [
+      "delegate-to-agents",
+      "prepare-handoff",
+      "implement-change"
+    ],
+    "expected": [
+      "Select delegate-to-agents for coordinating bounded parts while retaining the lead role; distinguish prepare-handoff as responsibility transfer and implement-change as the implementation owner.",
+      "Return a route and relevant prerequisites only, without launching workers or claiming integration or verification."
+    ]
+  },
+  {
+    "id": "prioritize-bands-and-blocked-inputs",
+    "skill": "prioritize-work",
+    "installedSkills": [
+      "prioritize-work"
+    ],
+    "prompt": "Give a provisional ranking and next ready choice from backlog.md. Use only the supplied candidates and capacity facts. Do not convert effort bands into hours, commit dates, update a tracker, start work or launch reviewers. Clearly mark any acceptance limit.",
+    "files": {
+      "backlog.md": "Goal: restore reliable customer imports. Horizon: this week. There is one engineering work slot; the specialist who owns authentication is unavailable this week. No duration basis for effort bands is supplied. A: fix repeat-import deduplication; impact high; effort M; high confidence; ready; needs one routine review included in its scope. B: replace auth flow; impact high; effort S; low confidence because the identity policy is undecided; blocked on the unavailable specialist and an owner decision. C: improve help text; impact low; effort S; high confidence; ready. The owner asks to compare benefit/effort, but has not supplied numeric scores or effort durations. None has a required deadline.\n"
+    },
+    "expected": [
+      "Prefer a supported qualitative ranking and identify A as the next ready goal-relevant choice; keep B important but blocked by the actual specialist and identity decision.",
+      "Do not divide by S/M labels, invent hours or duration totals, automatically inflate a low-confidence item into a larger house band, or turn a ranking into a feasible dated commitment.",
+      "Name the consequential uncertainty and its unlocking investigation/owner decision, preserve review in remaining work, give a reason to defer C, and label required independent acceptance as unavailable rather than claiming it occurred."
+    ]
+  },
+  {
+    "id": "project-skill-already-enforced-pattern",
+    "skill": "create-project-skill",
+    "installedSkills": [
+      "create-project-skill"
+    ],
+    "prompt": "Assess whether this project needs a new local skill for the import problem. Use only the supplied files and incident notes; no host-session search. Recommendations only: do not create files, change rules or run agents. Check whether a smaller existing treatment already addresses it.",
+    "files": {
+      "README.md": "This project requires explicit .mjs extensions in local imports. The current check command is node scripts/check-imports.mjs. Incident notes summarize two independent earlier import failures. Both were corrected, and the current check was then wired into CI.\n",
+      "incidents.md": "Incident A: an extensionless import failed on first run; fixed by using ./helper.mjs. Incident B, a separate task: an extensionless export failed; fixed the same way. The current source and CI below are the later prevention, not the original failure. No recurring multi-step recovery procedure has been established.\n",
+      "src/main.mjs": "import {value} from \"./helper.mjs\";console.log(value);\n",
+      "src/helper.mjs": "export const value=1;\n",
+      "scripts/check-imports.mjs": "import {readFileSync} from \"node:fs\";const s=readFileSync(\"src/main.mjs\",\"utf8\");if(/from [\"']\\.\\/[^\"'.]+[\"']/.test(s))process.exitCode=1;\n",
+      ".github/workflows/check.yml": "name: check\non: [push]\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n      - run: node scripts/check-imports.mjs\n"
+    },
+    "expected": [
+      "Corroborate the supplied incident pattern against current source, check and CI, recognizing that automatic prevention now exists rather than treating historical recurrence as an unfixed need.",
+      "Recommend no new skill for remembering this mechanically checked rule; retain the distinction between a guard or authoritative convention and a distinct multi-step procedural skill.",
+      "Limit evidence to supplied project records and avoid host-history discovery, generated files, new dependencies, global installation or unsupported all-agent coverage claims."
+    ]
+  },
+  {
+    "id": "project-skill-package-privacy-boundary",
+    "skill": "create-project-skill",
+    "installedSkills": [
+      "create-project-skill"
+    ],
+    "prompt": "Using only the supplied project files and sanitized incident summaries, propose the minimum local skill package for the repeated snapshot-restore procedure. Draft its outline and privacy checks only; do not create or run it, inspect host sessions, install anything globally or publish. Keep existing host conventions and distinguish declared commands from a tested restore.",
+    "files": {
+      "README.md": "Project-local skills live in .agents/skills/. Existing skill: deploy-service, which deploys an application binary and never restores data. Three independent accepted maintenance tasks needed the same bounded procedure: select an approved test snapshot, confirm target staging-test, restore it, then verify the expected tables. The command definitions are in package.json. Restoring production or unapproved data is outside scope.\n",
+      "incidents.md": "Sanitized summaries: maintenance task R1 needed source/target checks; separate R2 repeated the same checks; separate R3 repeated restore plus verification. Private raw records contain customer identifiers, workstation paths and fake example tokens; those raw details are not needed to perform the procedure and must remain outside a reusable package.\n",
+      "package.json": "{\"scripts\": {\"restore:staging\": \"node tools/restore.mjs --target staging-test\", \"verify:restore\": \"node tools/check-restore.mjs --target staging-test\"}}\n",
+      "tools/restore.mjs": "const target=process.argv[process.argv.indexOf(\"--target\")+1];if(target!==\"staging-test\")throw Error(\"test target required\");console.log(\"Fixture command definition only; no database is configured\");\n",
+      "tools/check-restore.mjs": "console.log(\"Fixture command definition only; no live restore evidence\");\n"
+    },
+    "expected": [
+      "Propose a focused project-local restore package only because the supplied independent tasks establish a distinct repeated procedure; keep deploy-service separate and use .agents/skills/ rather than a global or public destination.",
+      "Include supported entry conditions, exact declared commands and working-directory assumptions, target/data authority, failure boundaries and observable verification; use source pointers rather than copying unrelated manuals or mandatory house metadata.",
+      "Exclude private raw records, customer identifiers, workstation paths and token values from the package; retain only sanitized procedural knowledge and keep private provenance outside it.",
+      "State that command definitions were inspected but no live restore, generated package or independent acceptance was executed; do not broaden this outline into execution or publication."
+    ]
   }
 ]

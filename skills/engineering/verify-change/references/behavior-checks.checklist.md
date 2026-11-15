@@ -8,9 +8,12 @@ Use the requested feature, user journey, or release scope and its acceptance cri
 - [ ] Walk the actual requested user scenario through the candidate on its supported target. Reconcile selected development/review checklist items with observed results; leave missing source intent or runtime evidence untested.
 - [ ] Establish the relevant browser/OS/device/version and input matrix. Responsive web, installed mobile and desktop are distinct targets; source inspection or a simulator cannot prove every supported device or distribution path.
 
+- [ ] For first-run, onboarding or installation claims, exercise the documented entry point with an isolated fresh profile/storage and required setup, using synthetic data. Record empty and partial configuration separately from seeded or returning-user states; do not reset the owner's data to create the fixture.
+
 ## Platform checks, when affected
 
 - [ ] Web: exercise relevant browser/navigation/history, responsive/input, session/cache and network-failure behavior. For public pages, check intended indexability, metadata, redirects and links; private/native surfaces need an explicit SEO applicability reason.
+- [ ] For an affected browser journey, correlate the visible result with relevant console/server errors and actual network responses or terminal state. Use an available authorized browser/probe and record its limits; a rendered shell or successful page load cannot establish a later request's result.
 - [ ] Mobile: check relevant permissions and revocation, app links, foreground/background or interruption/resume, offline/sync conflicts and older-client compatibility. Identify emulator/simulator versus physical-device evidence and unavailable distribution checks.
 - [ ] Desktop: exercise relevant windows/input, filesystem access, local secrets and process/IPC permissions, offline/restart recovery and packaged install/update paths. A browser-rendered view or development build does not establish native-shell or installed-app behavior.
 

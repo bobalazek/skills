@@ -8,7 +8,7 @@ Start from the fixed candidate, its comparison baseline, original request, accep
 
 - [ ] Map material requirements to actual behavior and proof, then walk the original entry-to-outcome scenario. Check that the derived spec/tests did not omit the user's real goal, supported targets, roles or constraints. If intent is unavailable, leave alignment untested instead of inferring it from the patch.
 
-- [ ] Distinguish aligned work, necessary supporting changes, missing requested behavior, added scope and unresolved choices. Cite the source for a requirements finding; later accepted changes may supersede earlier intent, while incidental implementation choices cannot.
+- [ ] Distinguish aligned work, necessary supporting changes, missing requested behavior, added scope and unresolved choices. Cite the source for a requirements finding; later accepted changes may supersede earlier intent, while incidental implementation choices cannot. Lead with a demonstrated outcome mismatch when the candidate solves a different problem; keep harmless extras in alignment notes unless they introduce supported product, release or maintenance risk.
 
 ## Correctness and regressions
 
@@ -17,6 +17,8 @@ Start from the fixed candidate, its comparison baseline, original request, accep
 - [ ] Check normal and rejected inputs against domain meaning, including valid zero/false/empty values and state transitions. Follow error propagation and cleanup; fallback data or a logged error must not disguise failure of a required operation.
 
 - [ ] Inspect the affected existing consumers and preserved workflows. For a refactor or repair, compare meaningful baseline and candidate behavior, including failure/recovery paths; unchanged types do not prove unchanged behavior.
+
+- [ ] For configuration or definition transformations, enumerate supported shapes and dispatch branches, including nested forms and intentional empty overrides. Verify that each reaches its consumer with the required per-item context; one representative shape does not cover the others.
 
 ## Data, API and compatibility
 
@@ -116,6 +118,8 @@ Start from the fixed candidate, its comparison baseline, original request, accep
 - [ ] Inspect manifest/lockfile consistency, local versus CI commands, generated artifacts and safe environment/setup examples. Check newly required variables and manual steps; do not accept undocumented author-only setup or infer a runnable check from its name.
 
 - [ ] Compare affected product, API, architecture, contributor and operating docs with the candidate. Check canonical inventories and links, accepted decision changes and material learnings; retain historical meaning and avoid competing copies of the same rule.
+
+- [ ] Where code loads external resources, verify the configured catalog or deployment root at the consuming runtime. Check a supported layout whose resource root differs from the engine/source location; a valid source-local path does not establish the selected packaged or relocated path.
 
 ## Supported application targets
 

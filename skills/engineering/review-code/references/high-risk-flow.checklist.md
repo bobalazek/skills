@@ -37,6 +37,8 @@ Applies to billing, invoices, payments, refunds, subscriptions, credits, taxes, 
 - [ ] Exercise representative partial progress, restart, duplicate work, changed source data and concurrent writes in a safe environment. Check checkpoint/selection semantics, bounded batches and reconciliation counts or invariants; equal row counts alone do not establish correct values.
 - [ ] Verify destructive cleanup eligibility, retained data, recovery prerequisites and operator authority. Distinguish reverting code, restoring a tested backup, replaying later writes and forward repair; report unproven restore/data-loss limits explicitly.
 
+- [ ] If cleanup can encounter symlinks or junctions, distinguish removing the link entry from traversing its backing tree. Exercise linked and ordinary entries safely, checking preserved backing files and local state.
+
 ## Reconciliation and decision-driving analytics
 
 - [ ] Trace a ledger, financial report, forecast or decision-driving metric to its source, grain, units/currency, timezone/window, filters/joins and calculation/version provenance. Identify who acts on the result and the consequence of wrong or stale values.

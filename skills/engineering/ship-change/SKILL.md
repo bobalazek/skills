@@ -61,7 +61,7 @@ Wait for required asynchronous jobs and inspect their result. Confirm the target
 
 After a fix or new commit, reassess which evidence is still valid, rerun affected checks, and update stale PR claims or artifacts before delivery. Keep failures and unavailable required checks visible. A merge result needs target verification even when source-branch checks passed.
 
-If delivery fails, preserve evidence and use the authorized recovery path. Report the exact reached state and blocker; do not claim completion for a partial target.
+When delivery is blocked or fails, preserve evidence and use the authorized recovery path. Report the exact reached state, blocker and next scoped diagnosis, repair or proof check, including evidence to refresh for the current candidate. For report-only work, recommend the next action without executing it. Do not claim completion for a partial target.
 
 ## Return the reached result
 
