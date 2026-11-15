@@ -92,3 +92,20 @@ export function verifyOpenCode(raw: string, project: string, installed: string, 
     if (typeof item.content !== "string" || item.content.trim() !== body) fail(`Wrong OpenCode body: ${item.name}`);
   }
 }
+
+/** The v2 GET /api/skill contract includes the resolved project and filesystem path. */
+export function verifyOpenCodeV2(raw: string, project: string, installed: string, names: string[]) {
+  const response = JSON.parse(raw);
+  if (
+    typeof response?.location?.directory !== "string" ||
+    realpathSync(response.location.directory) !== realpathSync(project) ||
+    !Array.isArray(response.data)
+  )
+    fail("Unexpected OpenCode v2 skill location or format.");
+  const entries = response.data.map((item: { id?: unknown; name?: unknown; path?: unknown; content?: unknown }) => {
+    if (typeof item.path === "string" && inside(project, resolve(item.path)) && item.id !== item.name)
+      fail("OpenCode v2 skill ID differs from installed package name.");
+    return { name: item.name, location: item.path, content: item.content };
+  });
+  verifyOpenCode(JSON.stringify(entries), project, installed, names);
+}

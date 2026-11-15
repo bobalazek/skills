@@ -1,5 +1,6 @@
 import { closeSync, mkdirSync, openSync, readFileSync, realpathSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
+import { discoverOpenCodeV2 } from "./lib/opencode-discovery.ts";
 import { inside, verifyCodex, verifyCopies, verifyOpenCode } from "./lib/skill-packages.ts";
 
 function fail(message: string): never {
@@ -74,10 +75,11 @@ async function main() {
       await run("ignored", ["git", "ls-files", "--others", "--ignored", "--exclude-standard", "--", "skills"], expected)
     )
       fail("Expected skill packages contain ignored files absent from the revision.");
+    const opencodeVersion = await run("opencode-version", ["opencode", "--version"]);
     report.versions = {
       installer: "1.7.0",
       codex: await run("codex-version", ["codex", "--version"]),
-      opencode: await run("opencode-version", ["opencode", "--version"]),
+      opencode: opencodeVersion,
     };
     // A repository boundary prevents ancestor project skills shadowing the copies.
     await run("project", ["git", "-c", "init.templateDir=", "init", "--quiet"]);
@@ -109,7 +111,12 @@ async function main() {
       installed,
       copied.names,
     );
-    verifyOpenCode(await run("opencode", ["opencode", "debug", "skill"]), project, installed, copied.names);
+    if (Number(opencodeVersion.match(/^opencode v?(\d+)\./)?.[1]) >= 2) {
+      report.opencodeDiscovery = "v2 private server, isolated XDG roots, GET /api/skill";
+      await discoverOpenCodeV2(project, output, installed, copied.names, env);
+    } else {
+      verifyOpenCode(await run("opencode", ["opencode", "debug", "skill"]), project, installed, copied.names);
+    }
     if (
       (await run("final-revision", ["git", "rev-parse", "HEAD"], expected)) !== report.revision ||
       (await run("final-status", ["git", "status", "--porcelain", "--untracked-files=all"], expected)) ||
