@@ -9,10 +9,10 @@ Each JSON file contains an array of requests, minimal input files and evaluator 
 | [engineering](engineering.json) | 69 | 20 |
 | [media](media.json) | 22 | 7 |
 | [product](product.json) | 6 | 6 |
-| [productivity](productivity.json) | 27 | 9 |
+| [productivity](productivity.json) | 28 | 9 |
 | [ui-ux](ui-ux.json) | 5 | 2 |
 
-There are 142 read-only recipes across 49 owning skills. 10 use implicit requests to investigate routing/activation; the other 132 explicitly invoke the owning skill when present. These are inventory counts, not executions, passed criteria or percentages of behavioral coverage. Other skills may appear as installed siblings or writable-scenario owners.
+There are 143 read-only recipes across 49 owning skills. 10 use implicit requests to investigate routing/activation; the other 133 explicitly invoke the owning skill when present. These are inventory counts, not executions, passed criteria or percentages of behavioral coverage. Other skills may appear as installed siblings or writable-scenario owners.
 
 The runner loads all top-level JSON arrays by default and selects cases by ID; selection order remains the requested order. Adding an owner/domain does not require changing a hardcoded registry. Global duplicate IDs and invalid inputs fail before model execution. `bun test` also discovers every JSON scenario in `evals/workflows/`, including the video handoff fixture.
 

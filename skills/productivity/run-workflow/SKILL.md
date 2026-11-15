@@ -31,7 +31,7 @@ Capture actual commands or interactions, results and artifact locations. Apply t
 
 For an interrupted run, pending operation, changed contract or failed branch, use [resume and recovery](references/resume-and-recovery.playbook.md). Inspect existing state before retrying any uncertain write. Honor prior approval within its actual scope without treating a new target, effect or material decision as covered.
 
-Retain failed attempts and partial outputs. Bound retries by the accepted policy and change the cause or input before repeating a known failure. Cancellation stops only what the host confirms it stopped; it does not undo already accepted effects. Preserve unrelated work and report incomplete cleanup or unavailable recovery.
+Retain failed attempts and partial outputs. Follow the accepted retry bounds and idempotency contract; a permitted transient retry can reuse the same input. Correct a known deterministic cause before repeating its failed step. Cancellation stops only what the host confirms it stopped; it does not undo already accepted effects. Preserve unrelated work and report incomplete cleanup or unavailable recovery.
 
 ## Return the reached state
 

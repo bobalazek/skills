@@ -26,7 +26,7 @@ For a human step, retain the safe checkpoint, expected observable outcome and ex
 
 ## Repair, retry and cancel
 
-Use the accepted retry limit and existing recovery path. Change the failed approach or input before retrying a known error, and refresh the affected checks. Keep unaffected accepted work; do not reset the entire run to hide a failed attempt.
+Use the accepted retry limit and existing recovery path. Preserve the same payload and idempotency key when the policy permits a transient retry; do not replay an uncertain write without readback. Correct a known deterministic cause before repeating its failed step, and refresh affected checks. Keep unaffected accepted work; do not reset the entire run to hide a failed attempt.
 
 Cancellation and rollback are separate effects. Observe which workers, jobs and external operations actually stopped; report in-flight effects that remain. Reversing accepted side effects, deleting outputs or changing shared source data needs its own authority and a verified recovery procedure.
 
