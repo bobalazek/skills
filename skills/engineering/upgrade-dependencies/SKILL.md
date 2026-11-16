@@ -15,9 +15,13 @@ Use `find-improvements` to select maintenance work, `design-architecture` to cho
 
 Read repository instructions, the upgrade goal, accepted scope, manifests, lockfiles, relevant configuration, and CI/runtime requirements. Record the baseline and dirty work; preserve unrelated changes. Identify the actual package manager and version, resolved direct/transitive dependencies, workspace relationships, and supported environments. Manifest ranges alone do not establish the installed version.
 
+For repository-wide requests, use the [dependency inventory checklist](references/inventory.checklist.md) to establish every independently managed dependency graph and its checks. “Update all” authorizes investigating the whole inventory; it does not establish that every latest major is compatible.
+
 Inspect relevant engine, peer, plugin, module-format, native-build, and platform constraints before selecting a target. For a new project or template, distinguish adopting its existing compatible set from upgrading inherited dependencies; do not invent an installed or deployed baseline.
 
 Use current primary release notes, migration guides, and advisories for the proposed change. Check that their affected versions, features, and runtime conditions apply to this resolution. Distinguish an advisory match from demonstrated exploitability. If evidence or a target remains unavailable, identify the decision or check it blocks rather than inventing compatibility.
+
+When security is part of the request, use the [security remediation playbook](references/security-remediation.playbook.md) to trace vulnerable resolutions, select coupled fixes and report what remains.
 
 ## Apply a compatible increment
 
