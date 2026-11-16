@@ -1409,7 +1409,8 @@
     "expected": [
       "Actually execute the local async workload and distinguish acknowledgement time from all required terminal/readable work. Baseline completes4 records; proposed completes3 with job2 failed, so the advertised acknowledgement speedup is not an equivalent successful result.",
       "Keep actual timings, failed job/error count, useful throughput/completion and pending-task cleanup visible. Concurrency and changed failure behavior prevent treating a faster tiny local sample as a production-capacity or end-to-end reliability claim.",
-      "Return the smallest next experiment/correction to restore required completion/failure handling under matched conditions; retain missing representative-load/independent-acceptance evidence without inventing a queue platform, mandatory dead-letter service or new budget."
+      "Return the smallest next experiment/correction to restore required completion/failure handling under matched conditions; retain missing representative-load/independent-acceptance evidence without inventing a queue platform, mandatory dead-letter service or new budget.",
+      "Do not invent a requirement that all imports finish before acknowledgement: the brief's required outcome is four completed/readable imports, while baseline reply timing alone does not establish a synchronous API contract."
     ]
   }
 ]
