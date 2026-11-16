@@ -6,6 +6,7 @@ This is an index of recorded behavioral evidence. It is not code coverage, a cur
 
 | Record | Scope and limits |
 | --- | --- |
+| [Dependency inventory, 16 November 2026](results/dependency-upgrade-2026-11-16.md) | One candidate-only synthetic assessment, four independently assessed criterion passes; no baseline, writable upgrade, service or platform claim |
 | [Portable methods, 15 November 2026](results/portable-methods-2026-11-15.md) | Ten candidate cases, four semantic-parity comparisons, corrected transient-retry rule and retained child command traces; synthetic runtime, host and pre-correction source limits remain explicit |
 | [Engineering and productivity, 15 November 2026](results/engineering-productivity-2026-11-15.md) | Twenty-two selected synthetic cases, seven baseline comparisons showing parity, retained original partial and affected correction; native host/global-context limits remain explicit |
 | [PR description and observation correction, 12 November 2026](results/library-maintenance-2026-11-12.md#pr-description-and-observation-correction) | Four candidate-only cases with 13 assessed criterion passes, then two final-source rechecks with six; final template/example loading observed, without live effects or real-spend verification |
