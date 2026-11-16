@@ -46,6 +46,7 @@ For a software feature, expand the [idea-to-delivery preview](../README.md#from-
 <a id="draft-and-review-writing"></a>
 
 - [Plan and write a page](workflows/content.md#plan-and-write-a-product-page): offer, audience and evidence → content needs → actual copy.
+- [Plan editorial work](../skills/content/plan-content-strategy/SKILL.md): inventory and reader evidence → prioritized gaps; [brief an accepted topic](../skills/content/write-content-brief/SKILL.md) before drafting when a writer-ready assignment is needed.
 - [Draft or review writing](workflows/content.md#draft-and-review-writing): source notes or existing prose → requested outline, draft, findings or revision.
 
 ## Media — produce a usable artifact

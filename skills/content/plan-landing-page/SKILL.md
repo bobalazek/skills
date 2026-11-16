@@ -7,6 +7,8 @@ description: "Plan the audience, message, proof and content sequence for a produ
 
 ## Establish the page's job
 
+Use `plan-content-strategy` when the requested result is choosing and prioritizing content across a collection, or `write-content-brief` for a writer-ready assignment for a selected piece. Check availability or perform that plain task; a single-page plan needs neither stage by default.
+
 Produce a content plan connecting the visitor's arrival expectations to an informed next action. Reuse accepted product research, offer details, existing page content and project conventions. Record their sources and freshness. A new product needs honest capability evidence; an existing page needs inspection of its current promise, destinations and useful content before replacement.
 
 Reuse the applicable voice guide, commonly `docs/voice.md`, when proposing language. Use `define-writing-voice` for a separately requested reusable profile; a page's content structure does not require one. Pass available voice examples and unsettled preferences into the copy handoff.

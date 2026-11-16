@@ -88,6 +88,8 @@ Choose the next missing result, then read the relevant domain below. Names ident
 | Requested result | Skill | Boundary |
 | --- | --- | --- |
 | A landing page's message and content sequence | `plan-landing-page` | Connect visitor questions, supported claims, proof and next action; leave actual wording and screen layout to their owners |
+| Editorial themes and priorities across a content inventory | `plan-content-strategy` | Select reader needs and supported content gaps; one page's argument and drafting have separate owners |
+| A writer-ready assignment for an accepted topic | `write-content-brief` | Specify angle, source needs, outline and acceptance; reuse settled strategy and stop before drafting or publishing |
 | Reusable personal or brand language conventions | `define-writing-voice` | Analyze representative writing and explicit preferences into a voice guide; leave single drafts, edits and brand positioning to their owners |
 | Actual website page or section wording | `write-website-copy` | Write or revise public page copy from accepted purpose and facts; interface states and unresolved page strategy stay separate |
 | A blog post, article, tutorial or its requested outline | `write-blog-post` | Develop editorial content from supported sources; drafting does not authorize publication |

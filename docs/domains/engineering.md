@@ -80,9 +80,9 @@ Resources are bundled with their owning package and loaded conditionally. They a
 | Agent-friendly project knowledge | `prepare-repo-for-agents` carries guidance for README, agent instructions, current facts, standards, decisions, learnings, incidents, and task state |
 | Institutional knowledge and memory | `document-project` reconstructs facts and recorded intent from code/history, populates canonical records and indexes, preserves uncertainty, and promotes evidenced lessons through their appropriate owner |
 | Repeated manual fixes | `automate-code-checks` selects existing lint, type, schema, or behavior mechanisms, with false-positive checks and visible legacy debt |
-| Improvement backlog | `find-improvements` records confirmed candidates and scope/coverage; TODOs and duplicated text are investigation leads, not automatic tasks |
-| Upgrades and transitions | `upgrade-dependencies` checks compatibility boundaries; `plan-migration` covers coexistence, backfill, cutover, new writes, and recovery limits |
-| Performance | `improve-performance` defines representative measurements, causal evidence, preserved correctness, and comparable results |
+| Improvement backlog | `find-improvements` carries an evidence sweep and refactor decision matrix, including dynamic consumers, complexity relocation and rejected leads; TODOs and duplicated text are investigation leads, not automatic tasks |
+| Upgrades and transitions | `upgrade-dependencies` checks compatibility boundaries; `plan-migration` carries staged schema/backfill procedures with committed checkpoints, concurrent-write and engine-specific index failure handling, plus consumer-retirement and post-write recovery decisions |
+| Performance | `improve-performance` connects backend and frontend trace evidence to bounded probes, preserved correctness and comparable results |
 | Change safety | `implement-change` covers refactors, migrations, shared interfaces, stateful boundaries, and recovery |
 | Incident diagnosis | `diagnose-issue` carries containment/evidence/recovery checks for live failures |
 | Monitoring and alerting | `configure-monitoring` carries signal selection, ownership/routing, bounded collection and firing/delivery/recovery checks using existing tools |

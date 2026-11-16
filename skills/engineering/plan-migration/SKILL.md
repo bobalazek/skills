@@ -23,6 +23,8 @@ Describe only the stages this change needs. For each, identify prerequisites, ow
 
 Load [transition safety checks](references/transition-safety.checklist.md) when persistent state, concurrent writes, version coexistence, or a live cutover makes those decisions relevant.
 
+For live schema changes, backfills or indexes, use the [schema transition procedure](references/schema-transition.playbook.md) to choose compatible stages, committed checkpoints, concurrent-write reconciliation and engine-specific failure handling. For changed interfaces or restore/retirement decisions, use [consumer and recovery checks](references/consumer-recovery.matrix.md) to establish the actual consumer window and recovery after new writes. Load only the applicable method; retain project policy and engine/version differences.
+
 Where data moves, define mapping, bounded transfer/backfill, restart/retry behavior, reconciliation, and handling of changes made during the move. Identify the source of truth at each stage. Select mechanisms from actual system capabilities; do not prescribe dual writes or assume retries are safe.
 
 Separate reversal from forward recovery. State what remains reversible before and after cutover, what new writes or contracts prevent returning to the old state, and how those changes would be preserved or reconciled. Restoring an old backup or application version is not a complete rollback if it loses subsequent writes.

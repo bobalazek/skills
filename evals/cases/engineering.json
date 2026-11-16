@@ -206,7 +206,7 @@
       "TASKS.md": "T1 accepted: shared import contract, existing acceptance evidence retained.\nT2 pending, depends on T1: implement row validation in src/import.py; done when valid rows remain accepted and invalid rows return structured errors.\nT3 pending, depends on T1: map structured errors to clear messages in src/import.py; done when each error has the agreed message and valid preview remains unchanged.\nT4 pending, no dependencies: add export encoding support; owner encoding choice is missing.\nT5 pending, depends on T2 and T3: verify the integrated preview, validation and messages against the accepted import scope.\n"
     },
     "expected": [
-      "Preserve existing IDs T1\u2013T5, accepted T1 and valid criteria; do not restart discovery or invent an encoding choice.",
+      "Preserve existing IDs T1–T5, accepted T1 and valid criteria; do not restart discovery or invent an encoding choice.",
       "Identify T2/T3 shared-write conflict and their producer/consumer relationship; serialize or isolate appropriately, with T5 after both. Do not claim both are currently safe to execute in parallel.",
       "Keep T4 blocked on the missing owner decision despite having no graph dependency; return a draft with the real review gap and no writes or execution."
     ]
@@ -700,7 +700,7 @@
       "current.md": "Owner update for revision B: the export code was patched, but the required representative export check has not run and no run evidence is available. The label concern still applies; it affects clarity, not data or access. No decision accepts either residual risk. This is supplied status, not independent runtime evidence.\n"
     },
     "expected": [
-      "Preserve NOW and LATER with the original finding IDs and rationale; use the project scale without replacing or duplicating it with P0\u2013P3.",
+      "Preserve NOW and LATER with the original finding IDs and rationale; use the project scale without replacing or duplicating it with P0–P3.",
       "Keep F-01 validation and resolution open despite the claimed patch, retain its urgency and give the concrete missing export check; low effort or missing access does not justify downgrading.",
       "Give F-02 a useful bounded disposition and next action without turning its optional label repair into a delivery blocker or executing fixes.",
       "Distinguish supplied status from observed proof and do not invent independent review, remote resolution or deployment authority."
@@ -1292,6 +1292,124 @@
       "Separate the deprecation notice from vulnerability evidence and retain the missing independent audit/runtime proof.",
       "Treat the removed persistent-data integration as a material migration decision, not permission to remove it or force the latest major.",
       "Respect read-only and no-network scope; provide a bounded next action without invented verification."
+    ]
+  },
+  {
+    "id": "migration-backfill-checkpoint-writes",
+    "skill": "plan-migration",
+    "installedSkills": [
+      "plan-migration"
+    ],
+    "prompt": "Use the fixture-local public package at `.agents/skills/plan-migration/SKILL.md`, not a global copy. Plan the accepted transition in brief.md. Run `python3 -B checks/rehearse.py` to inspect the available in-memory SQLite rehearsal before returning stages, defects in the proposal, cutover/recovery conditions and exact remaining evidence, under 650 words. This is planning with an authorized local rehearsal, not permission to repair or perform a live migration.",
+    "files": {
+      "AGENTS.md": "Use only supplied project files and the fixture-local public skill package. Keep the project read-only. Only the documented Python standard-library probes are authorized; their SQLite databases and state are in memory. No host credentials, external services, installs, production data, file edits or publication. Report actual executed proof separately from planned checks and supplied claims.\n",
+      "brief.md": "Accepted target: replace old_value with an uppercase new_value while current readers, old writers and queued jobs remain supported until explicitly retired. Preserve every acknowledged update; no post-cutover data loss is accepted. The proposed batch runner saves its cursor before committing data and restarts strictly after that cursor. It copies values selected earlier without checking their current version. Its cutover test is equal row counts; it then drops old_value immediately. Old queued jobs may run weekly; the supplied one-day log shows none. The proposed recovery restores the pre-cutover backup. No actual production engine/version, lock/load rehearsal, retirement window or live owner decision has been supplied. The fixture uses SQLite solely to exercise these application semantics.\n",
+      "checks/rehearse.py": "import json, sqlite3\n\ndef database():\n    db = sqlite3.connect(':memory:', isolation_level=None)\n    db.executescript('CREATE TABLE records(id INTEGER PRIMARY KEY, old_value TEXT, new_value TEXT); INSERT INTO records VALUES(1,\"alpha\",NULL),(2,\"beta\",NULL),(3,\"gamma\",NULL);')\n    return db\n\n# The recorded checkpoint survives, but the data transaction rolls back.\ndb = database()\nselected = db.execute('SELECT id, old_value FROM records WHERE id <= 2 ORDER BY id').fetchall()\ncheckpoint = selected[-1][0]\ndb.execute('BEGIN')\nfor key, value in selected:\n    db.execute('UPDATE records SET new_value=? WHERE id=?', (value.upper(), key))\ndb.execute('ROLLBACK')\nfor key, value in db.execute('SELECT id,old_value FROM records WHERE id>? ORDER BY id', (checkpoint,)).fetchall():\n    db.execute('UPDATE records SET new_value=? WHERE id=?', (value.upper(), key))\ncheckpoint_result = {'saved_cursor': checkpoint, 'unfilled_ids': [r[0] for r in db.execute('SELECT id FROM records WHERE new_value IS NULL ORDER BY id')]}\n\n# A writer commits a valid replacement after the selection but before backfill.\ndb = database()\nselected = db.execute('SELECT id,old_value FROM records ORDER BY id').fetchall()\ndb.execute('UPDATE records SET old_value=?,new_value=? WHERE id=1', ('newer', 'NEWER'))\nfor key, value in selected:\n    db.execute('UPDATE records SET new_value=? WHERE id=?', (value.upper(), key))\ndb.execute('UPDATE records SET old_value=? WHERE id=2', ('late-old-writer',))\nrows = db.execute('SELECT id,old_value,new_value FROM records ORDER BY id').fetchall()\n\n# The old backup and reader cannot preserve a new-only post-cutover value.\nbackup = sqlite3.connect(':memory:')\ndb.backup(backup)\ndb.execute('INSERT INTO records VALUES(4,NULL,?)', ('NEW-ONLY',))\nprint(json.dumps({'engine': 'SQLite', 'version': sqlite3.sqlite_version,\n 'checkpoint_after_rollback_and_resume': checkpoint_result,\n 'interleaved_rows': rows, 'counts_match': len(rows) == 3,\n 'semantic_mismatch_ids': [key for key, old, new in rows if old.upper() != new],\n 'post_cutover': {'accepted_id': 4, 'new_reader': db.execute('SELECT new_value FROM records WHERE id=4').fetchone()[0],\n 'old_reader': db.execute('SELECT old_value FROM records WHERE id=4').fetchone()[0],\n 'backup_contains_accepted_id': backup.execute('SELECT COUNT(*) FROM records WHERE id=4').fetchone()[0] == 1}}))\nbackup.close()\ndb.close()\n"
+    },
+    "expected": [
+      "Load local plan-migration and relevant staged/backfill/consumer-recovery methods, actually execute the authorized SQLite rehearsal, and use its observed unfilled IDs1/2 after rollback/resume and stale mismatches1/2 after interleaved writes. Equal counts do not establish semantic reconciliation.",
+      "Plan compatible expansion/write ownership, data-plus-checkpoint commit or safe replay ordering, write-time eligibility/version protection and reconciliation of late/old writers before read switch. Carry deterministic batching, rejects, pause/resume and measured stop conditions without inventing production thresholds or claiming actual engine locks were tested.",
+      "Keep weekly queued consumers and unknown support/recovery windows as retirement prerequisites; do not drop originals immediately or assume one quiet day proves no consumers. Explain that the accepted new-only write is absent from the backup and unreadable by the old reader, so a backup/code revert cannot meet the no-loss requirement without additional preservation/replay/forward repair.",
+      "Return an actionable plan and specific rehearsal/owner gaps, with observations distinguished from proposed checks and no live execution or invented accepted review."
+    ]
+  },
+  {
+    "id": "migration-index-engine-boundary",
+    "skill": "plan-migration",
+    "installedSkills": [
+      "plan-migration"
+    ],
+    "prompt": "Use the fixture-local public package at `.agents/skills/plan-migration/SKILL.md`, not a global copy. Review the proposed index stage and return a corrected plan under 550 words. Run `python3 -B checks/index_rehearsal.py`, which uses SQLite in memory. The target is PostgreSQL18, but no PostgreSQL server or network access is available. Use the supplied target notes and local skill references; do not claim target-engine runtime verification or execute proposal.sql.",
+    "files": {
+      "AGENTS.md": "Use only supplied project files and the fixture-local public skill package. Keep the project read-only. Only the documented Python standard-library probes are authorized; their SQLite databases and state are in memory. No host credentials, external services, installs, production data, file edits or publication. Report actual executed proof separately from planned checks and supplied claims.\n",
+      "target.md": "Accepted target: a unique SKU index on PostgreSQL18 while normal writes remain available. The runner wraps every SQL file in one transaction. No operator has selected resource/lock stop thresholds. The source table may contain duplicate SKU values. The supplied local SQLite probe is a diagnostic of local semantics, not a PostgreSQL concurrent-build rehearsal. PostgreSQL18 official documentation: CREATE INDEX CONCURRENTLY cannot run inside a transaction block; failure can leave an invalid index, and a failed concurrent unique build can continue enforcing uniqueness. These are version-specific documented conditions, not observed target catalog state. Sources: https://www.postgresql.org/docs/18/sql-createindex.html and https://www.postgresql.org/docs/18/sql-altertable.html .\n",
+      "proposal.sql": "BEGIN;\nCREATE UNIQUE INDEX CONCURRENTLY IF NOT EXISTS inventory_sku_unique ON inventory(sku);\nCOMMIT;\n-- Retry this same file on every error; an existing name proves completion.\n",
+      "checks/index_rehearsal.py": "import json, sqlite3\n\ndb = sqlite3.connect(':memory:')\ndb.executescript('CREATE TABLE inventory(id INTEGER PRIMARY KEY, sku TEXT, location TEXT); INSERT INTO inventory VALUES(1,\"same\",\"A\"),(2,\"same\",\"B\");')\ntry:\n    db.execute('CREATE UNIQUE INDEX inventory_sku_unique ON inventory(sku)')\n    error = None\nexcept sqlite3.IntegrityError as exc:\n    error = str(exc)\nindex_rows = db.execute(\"SELECT name,sql FROM sqlite_master WHERE type='index'\").fetchall()\ndb.execute('CREATE INDEX lookup_existing ON inventory(location)')\ndb.execute('CREATE INDEX IF NOT EXISTS lookup_existing ON inventory(sku)')\nexisting = db.execute(\"SELECT sql FROM sqlite_master WHERE name='lookup_existing'\").fetchone()[0]\nprint(json.dumps({'engine':'SQLite','version':sqlite3.sqlite_version,\n 'failed_unique_build':{'error':error,'remaining_indexes':index_rows},\n 'if_not_exists_actual_definition':existing,\n 'duplicates':db.execute('SELECT sku,COUNT(*) FROM inventory GROUP BY sku HAVING COUNT(*)>1').fetchall()}))\ndb.close()\n"
+    },
+    "expected": [
+      "Execute the actual local probe and distinguish its SQLite uniqueness failure/no remaining index and unchanged existing location-index definition from unobserved PostgreSQL behavior. Do not describe a PostgreSQL concurrent index as actually tested.",
+      "Identify the incompatible transaction wrapper, stage the target concurrent build through supported outside-transaction execution, and require duplicate/invariant reconciliation and documented failure/catalog inspection. A present name or IF NOT EXISTS does not establish the desired definition, validity or usable index.",
+      "Plan controlled retry/cleanup or rebuild based on actual target state and cause, including invalid unique enforcement risk, measured write-availability/resource limits and operator stop conditions. Keep target rehearsal and readiness gaps explicit; no universal ORM, CI-only or zero-lock claim."
+    ]
+  },
+  {
+    "id": "improvement-configured-consumer-drift",
+    "skill": "find-improvements",
+    "installedSkills": [
+      "find-improvements"
+    ],
+    "prompt": "Use the fixture-local public package at `.agents/skills/find-improvements/SKILL.md`, not a global copy. Find and rank worthwhile improvements in this small application using brief.md and current code. Run `python3 -B checks/probe.py` to exercise the supplied actual consumer paths. Discovery only: no edits, cleanup or tracker writes. Return a few supported candidates and rejected leads with preservation checks, under 550 words.",
+    "files": {
+      "AGENTS.md": "Use only supplied project files and the fixture-local public skill package. Keep the project read-only. Only the documented Python standard-library probes are authorized; their SQLite databases and state are in memory. No host credentials, external services, installs, production data, file edits or publication. Report actual executed proof separately from planned checks and supplied claims.\n",
+      "brief.md": "Scope: export loading, fee-rule ownership and customer/staff view variants. Accepted fee rule is max(100,subtotal//10) for both HTTP and background invoices. Customer views must expose only that tenant; authorized staff views intentionally expose all tenants. The monthly export is selected by jobs.json through importlib, not a static source import. A preliminary scanner called the plugin unused and recommended merging every similar view; those notes are unverified. No size/count threshold or refactor scoring policy has been adopted.\n",
+      "jobs.json": "{\"monthly_export\":\"plugins.monthly:run\"}\n",
+      "plugins/__init__.py": "",
+      "plugins/monthly.py": "def run():\n    return {\"job\":\"monthly_export\",\"rows\":3}\n",
+      "api.py": "def fee(subtotal):\n    return max(100,subtotal//10)\n",
+      "worker.py": "def fee(subtotal):\n    return subtotal//10\n",
+      "views.py": "def customer_rows(tenant,rows):\n    return [row for row in rows if row[\"tenant\"]==tenant]\n\ndef staff_rows(rows):\n    return [row for row in rows]\n",
+      "checks/probe.py": "import importlib, json, sys\nfrom pathlib import Path\n\nsys.path.insert(0, str(Path(__file__).resolve().parents[1]))\nconfig = json.loads(Path('jobs.json').read_text())\nmodule, symbol = config['monthly_export'].split(':')\nexport = getattr(importlib.import_module(module), symbol)\nfrom api import fee as api_fee\nfrom worker import fee as worker_fee\nfrom views import customer_rows, staff_rows\nprint(json.dumps({'configured_export':export(),\n 'same_fee_contract':{'api':api_fee(40),'worker':worker_fee(40)},\n 'intentional_views':{'customer':customer_rows('red',[{'tenant':'red','id':1},{'tenant':'blue','id':2}]),\n 'staff':staff_rows([{'tenant':'red','id':1},{'tenant':'blue','id':2}])}}))\n"
+    },
+    "expected": [
+      "Actually execute the configured export and fee/view probe. Retain the concrete same-contract fee drift as a supported candidate, using observed100 versus4 results and accepted business rule; give a shared owner or equivalent bounded treatment with regression through both consumers.",
+      "Reject deleting plugins/monthly.py from static-import absence because jobs.json and the runtime loader exercise it. Preserve intentional customer/staff access differences rather than merging superficially similar loops into an unverified shared policy.",
+      "Rank the evidenced problem and meaningful next proof without arbitrary duplicate counts, file-size thresholds, invented savings/formula scores or edits. State inspected scope and any missing callers/review; do not invent an independent returned assessment."
+    ]
+  },
+  {
+    "id": "improvement-complexity-relocation",
+    "skill": "find-improvements",
+    "installedSkills": [
+      "find-improvements"
+    ],
+    "prompt": "Use the fixture-local public package at `.agents/skills/find-improvements/SKILL.md`, not a global copy. Assess the refactor proposals in brief.md using current code and `python3 -B checks/probe.py`. Return the smallest useful supported improvement, preservation boundaries and rejected/uncertain proposals under 550 words. No edits or new abstraction implementation are authorized.",
+    "files": {
+      "AGENTS.md": "Use only supplied project files and the fixture-local public skill package. Keep the project read-only. Only the documented Python standard-library probes are authorized; their SQLite databases and state are in memory. No host credentials, external services, installs, production data, file edits or publication. Report actual executed proof separately from planned checks and supplied claims.\n",
+      "brief.md": "A draft proposes deleting documents_for because it has one caller, and introducing a generic operation framework for two transport users. The accepted document contract requires tenant-scoped reads plus one audit entry. Transport resources must close on success and failure. Both existing caller functions have the same documented validation operation. This is a bounded discovery request, not a rewrite or a preference for fewer files.\n",
+      "service.py": "def documents_for(actor,db,audit):\n    rows=db.execute(\"SELECT id,title FROM documents WHERE tenant=? ORDER BY id\",(actor[\"tenant\"],)).fetchall()\n    audit.append({\"tenant\":actor[\"tenant\"],\"count\":len(rows)})\n    return rows\n",
+      "transport.py": "class Transport:\n    def __init__(self): self.opened=False\n    def open(self): self.opened=True\n    def perform(self,fail=False):\n        if fail: raise ValueError(\"invalid input\")\n        return \"done\"\n    def close(self): self.opened=False\n\ndef first_caller(port,fail=False):\n    port.open()\n    result=port.perform(fail)\n    port.close()\n    return result\n\ndef second_caller(port,fail=False):\n    port.open()\n    result=port.perform(fail)\n    port.close()\n    return result\n",
+      "checks/probe.py": "import json, sqlite3, sys\nfrom pathlib import Path\nsys.path.insert(0, str(Path(__file__).resolve().parents[1]))\nfrom service import documents_for\nfrom transport import Transport, first_caller, second_caller\n\ndb=sqlite3.connect(':memory:')\ndb.executescript('CREATE TABLE documents(id INTEGER,tenant TEXT,title TEXT); INSERT INTO documents VALUES(1,\"red\",\"Red\"),(2,\"blue\",\"Blue\");')\naudit=[]\nvisible=documents_for({'tenant':'red'},db,audit)\nfailures=[]\nfor caller in (first_caller,second_caller):\n    port=Transport()\n    try: caller(port,fail=True)\n    except ValueError: pass\n    failures.append({'caller':caller.__name__,'open_after_failure':port.opened})\nprint(json.dumps({'one_caller_boundary':{'visible':visible,'audit':audit},'caller_failures':failures}))\ndb.close()\n"
+    },
+    "expected": [
+      "Actually run the SQLite/document and transport probes. Explain what documents_for hides: tenant boundary and audit contract. One caller alone is insufficient deletion evidence; identify where that complexity would move and what must remain checked.",
+      "Retain the observed open resource after each caller failure as a supported opportunity for owning cleanup through the smallest existing boundary/finally/context mechanism. Preserve legitimate success, error propagation and closed-resource behavior; do not require a generic framework or speculative adapters.",
+      "Return a calibrated candidate and meaningful regression/preservation checks, not size/scoring dogma or source-only speculation; keep discovery authority, unknown wider consumers and actual independent-review status explicit."
+    ]
+  },
+  {
+    "id": "performance-query-work-equivalence",
+    "skill": "improve-performance",
+    "installedSkills": [
+      "improve-performance"
+    ],
+    "prompt": "Use the fixture-local public package at `.agents/skills/improve-performance/SKILL.md`, not a global copy. Investigate the proposed optimization against brief.md. Run `python3 -B checks/query_workload.py`, using real SQLite in memory, and report measured work, correctness and the next bounded experiment under 600 words. Investigation only: do not repair, add indexes/dependencies or contact a database outside this probe.",
+    "files": {
+      "AGENTS.md": "Use only supplied project files and the fixture-local public skill package. Keep the project read-only. Only the documented Python standard-library probes are authorized; their SQLite databases and state are in memory. No host credentials, external services, installs, production data, file edits or publication. Report actual executed proof separately from planned checks and supplied claims.\n",
+      "brief.md": "Goal: reduce cost of the red-tenant parent-summary path while preserving all requested parents, including those with no lines, tenant isolation, totals and ID order. The probe compares an existing per-parent query path and a proposed single join for4 and12 requested parents,7 local repetitions each. It records actual SQL statement counts and perf_counter_ns durations. The fixture is intentionally small; no production throughput, network, p95 target or representative-load budget is available. The proposer calls any lower query count and one faster sample an accepted performance win.\n",
+      "checks/query_workload.py": "import json, sqlite3, statistics, time\n\ndef setup():\n    db=sqlite3.connect(':memory:')\n    db.executescript('CREATE TABLE parents(tenant TEXT,id INTEGER,PRIMARY KEY(tenant,id)); CREATE TABLE lines(tenant TEXT,parent_id INTEGER,amount INTEGER);')\n    db.executemany('INSERT INTO parents VALUES(?,?)',[('red',i) for i in range(1,13)])\n    db.executemany('INSERT INTO lines VALUES(?,?,?)',[('red',i,i*10) for i in range(1,12)]+[('blue',1,900)])\n    return db\n\ndef baseline(db,limit):\n    parents=db.execute('SELECT id FROM parents WHERE tenant=? ORDER BY id LIMIT ?',('red',limit)).fetchall()\n    return [(key,db.execute('SELECT COALESCE(SUM(amount),0) FROM lines WHERE tenant=? AND parent_id=?',('red',key)).fetchone()[0]) for key, in parents]\n\ndef proposed(db,limit):\n    return db.execute('SELECT p.id,SUM(l.amount) FROM parents p JOIN lines l ON p.id=l.parent_id WHERE p.tenant=? GROUP BY p.id ORDER BY p.id LIMIT ?',('red',limit)).fetchall()\n\nresults=[]\nfor limit in (4,12):\n    measures={}\n    for name,fn in [('baseline',baseline),('proposed',proposed)]:\n        db=setup();samples=[];queries=[];rows=None\n        for _ in range(7):\n            statements=[];db.set_trace_callback(statements.append)\n            start=time.perf_counter_ns();rows=fn(db,limit);samples.append(time.perf_counter_ns()-start)\n            queries.append(len([s for s in statements if s.startswith('SELECT')]))\n        measures[name]={'rows':rows,'query_counts':queries,'samples_ns':samples,'median_ns':statistics.median(samples)}\n        db.close()\n    results.append({'parent_limit':limit,'measurements':measures,'outputs_equal':measures['baseline']['rows']==measures['proposed']['rows']})\nprint(json.dumps({'engine':'SQLite','version':sqlite3.sqlite_version,'runtime_clock':'perf_counter_ns','scope':'small local fixture, no network or capacity measurement','results':results}))\n"
+    },
+    "expected": [
+      "Execute the workload and identify the growing baseline statement count (5 then13), using actual consumer query evidence rather than generic N+1 advice. Separate local query-count/profile evidence from noisy tiny-duration samples or unmeasured production capacity.",
+      "Reject equivalent improvement for the proposed join: red parent1 includes a blue line amount, and parent12 disappears because the inner join drops no-line parents. Fewer statements or faster samples cannot establish preserved useful work.",
+      "Propose a bounded tenant-scoped batching/appropriate join experiment preserving missing-parent totals/order and compare the same workload/repetitions with correctness, errors and resource trade-offs. No production latency, percentile, fixed budget or accepted repair/review claim; no unauthorized changes."
+    ]
+  },
+  {
+    "id": "performance-acknowledgement-terminal-cost",
+    "skill": "improve-performance",
+    "installedSkills": [
+      "improve-performance"
+    ],
+    "prompt": "Use the fixture-local public package at `.agents/skills/improve-performance/SKILL.md`, not a global copy. Assess the proposed speedup for the accepted workload in brief.md. Run `python3 -B checks/completion_workload.py` to observe actual bounded local async execution. Return useful-work comparison, preserved or failed requirements and the next useful experiment under 500 words. No edits, live services or new harness are authorized.",
+    "files": {
+      "AGENTS.md": "Use only supplied project files and the fixture-local public skill package. Keep the project read-only. Only the documented Python standard-library probes are authorized; their SQLite databases and state are in memory. No host credentials, external services, installs, production data, file edits or publication. Report actual executed proof separately from planned checks and supplied claims.\n",
+      "brief.md": "The user needs all four imports completed and readable, not merely accepted. The baseline completes them before returning. The proposed implementation concurrently schedules jobs and reports acknowledgement immediately, then observes terminal results. One proposed job fails. The probe uses the real Python event loop and bounded sleep, no network/storage; it records actual local acknowledgement and terminal time, outcomes, saved records and leftover tasks. The proposer advertises acknowledgement-only speedup as whole-workload improvement. No production rate, retry policy or percentile target is accepted.\n",
+      "checks/completion_workload.py": "import asyncio, json, time\n\nasync def process(job, saved, fail=False):\n    await asyncio.sleep(0.003)\n    if fail: return {'id':job,'state':'failed'}\n    saved[job]='stored-'+str(job)\n    return {'id':job,'state':'completed'}\n\nasync def workload(queued):\n    saved={};jobs=list(range(4));start=time.perf_counter_ns()\n    if queued:\n        tasks=[asyncio.create_task(process(job,saved,fail=(job==2))) for job in jobs]\n        acknowledgement=time.perf_counter_ns()-start\n        outcomes=await asyncio.gather(*tasks)\n    else:\n        outcomes=[await process(job,saved) for job in jobs]\n        acknowledgement=time.perf_counter_ns()-start\n    terminal=time.perf_counter_ns()-start\n    return {'jobs':jobs,'acknowledgement_ns':acknowledgement,'terminal_ns':terminal,'outcomes':outcomes,'saved':saved,'completed':len(saved),'pending_tasks':sum(not task.done() for task in asyncio.all_tasks() if task is not asyncio.current_task())}\n\nasync def main():\n    print(json.dumps({'runtime':'Python asyncio, real bounded waits','target':'all four requested imports completed and readable',\n      'baseline':await workload(False),'proposed':await workload(True)}))\nasyncio.run(main())\n"
+    },
+    "expected": [
+      "Actually execute the local async workload and distinguish acknowledgement time from all required terminal/readable work. Baseline completes4 records; proposed completes3 with job2 failed, so the advertised acknowledgement speedup is not an equivalent successful result.",
+      "Keep actual timings, failed job/error count, useful throughput/completion and pending-task cleanup visible. Concurrency and changed failure behavior prevent treating a faster tiny local sample as a production-capacity or end-to-end reliability claim.",
+      "Return the smallest next experiment/correction to restore required completion/failure handling under matched conditions; retain missing representative-load/independent-acceptance evidence without inventing a queue platform, mandatory dead-letter service or new budget."
     ]
   }
 ]

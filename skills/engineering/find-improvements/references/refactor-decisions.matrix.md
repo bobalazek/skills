@@ -1,0 +1,18 @@
+# Refactor evidence and decisions
+
+Use when a smell or structural concern needs calibration. These are investigation patterns, not size/count rules or a universal refactoring score.
+
+| Lead | Evidence that can justify action | Useful probe / alternative treatment | Preserve or reject when |
+| --- | --- | --- | --- |
+| Copied business rule | One accepted rule changed while a reachable copy kept old behavior, or repeated synchronized edits cause real friction. | Compare actual outputs for the same contract; identify a shared owner and regression through each consumer. | Similar syntax serves different contracts or is stable with no demonstrated cost. |
+| Bare values / repeated validation | Real misuse crosses units, identity, tenant or lifecycle boundaries. | Trace a value through writers and consumers; consider an existing validated type or boundary rather than a parallel hierarchy. | The local type/validator already enforces the invariant; speculative misuse alone does not justify new objects. |
+| Large manager / scattered concept | A concrete change spans unrelated responsibilities, creates repeated conflicts or obscures ownership. | Trace that change and propose cohesive ownership with a smaller caller contract. | Splitting by line count moves the same complexity into imports, flags or orchestration. |
+| Prop/parameter plumbing | A supported change forces irrelevant layers to know and retransmit details, or argument confusion produces a real defect. | Trace the actual consumer path; compare named inputs, closer ownership or existing context mechanisms. | Explicit parameters make dependencies clearer; a store would broaden lifetime/hidden coupling. |
+| Leaky wrapper / forced call order | Callers duplicate setup/retry/cleanup or must know private state to avoid failure. | Run the relevant misuse and legitimate path; propose an interface that owns the invariant. | Removing the wrapper exposes necessary policy, data protection or a genuine external seam. |
+| Inheritance or repeated dispatch | A real subtype/kind change misses consumers or breaks distant behavior. | Enumerate supported variants and their tests; compare a bounded dispatch table/composition only for the common responsibility. | Intended variants differ in authorization, lifecycle or output, and merging would hide those distinctions. |
+| Apparently dead code | Static absence plus configured/exported/dynamic consumers ruled out within stated coverage. | Inspect registry/config, entry points, builds and a safe representative load. | A scheduled job, plugin or public consumer still calls it; incomplete caller evidence means investigate. |
+| Stale comments / workaround | Current behavior and accepted intent contradict the text, or a documented dependency issue is now resolved. | Verify the source/issue and distinguish obsolete instructions from durable rationale. | A comment records an important accepted constraint absent from the code. |
+
+Before recommending shared-code deletion or relocation, identify relevant callers and affected data/contracts. Unknown consumers reduce readiness rather than simply adding an invented risk number. State how the change helps the next known operation and how a check would catch lost behavior.
+
+Rank confirmed candidates against actual reach, recurring cost, urgency, implementation/review/rollout effort and blast radius. Explain why a small ready guard may precede a broad refactor, or why preserving a working variant is better for this request. Keep estimated savings and uncertain effort labeled; measured performance work belongs to profiling before optimization.

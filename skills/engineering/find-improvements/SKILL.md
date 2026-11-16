@@ -17,6 +17,8 @@ Read local conventions, relevant history, existing backlog, and accepted decisio
 
 Treat TODO/FIXME comments, scanner warnings, slow-looking code, and clone matches as leads. Confirm current relevance, prior resolution, intent, and affected behavior before turning them into candidates. Keep a comment sweep bounded by the requested scope; do not mechanically convert every match into a task.
 
+For a repository or feature sweep, use the [evidence sweep procedure](references/evidence-sweep.playbook.md) to sample paths, challenge leads and trace where complexity would move. For a specific smell or shared-boundary proposal, use the [refactor decision matrix](references/refactor-decisions.matrix.md) to choose a meaningful probe, preservation boundary and justified treatment. These methods do not make size/count thresholds or speculative savings into defects.
+
 ## Find the useful change
 
 Look for repeated business rules that drift, changes scattered across owners, unused facilities with consumer evidence, weak checks around recurring failures, costly contributor steps, or demonstrated user/operational friction. Explain the actual maintenance or behavior cost. A long file, old dependency, unfamiliar style, or repeated syntax alone is insufficient.
