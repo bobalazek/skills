@@ -160,5 +160,104 @@
       "Connect the opening promise to the demonstrated filtered CSV and retain the no-auto-update limit; do not invent proof, neuroscience, a named authority method, compulsory contradiction or a CTA.",
       "Label planned captures as planned and stop before production, external actions or claims of observed learning/retention."
     ]
+  },
+  {
+    "id": "content-strategy-inventory-evidence",
+    "skill": "plan-content-strategy",
+    "installedSkills": [
+      "plan-content-strategy"
+    ],
+    "prompt": "Use the supplied inventory and evidence to recommend what to update, keep or commission next. Audience and support-reduction goal are accepted. We can complete one substantial item this week; recommend within that capacity and show deferred or blocked work. No calendar, finished articles, site changes or new analytics research.",
+    "files": {
+      "inventory.md": "Accepted audience: administrators setting up a shared calendar. Goal: reduce avoidable setup support. /setup is accurate but lacks permission prerequisites; /setup-old duplicates it and documents a retired interface but still has external links. /billing lists current approved prices and must remain accessible. /export is current; no usage tracking exists for it. /blog/tips repeats /setup topics. Content maintainer can update one guide this week. No deletion or redirects authorized.\n",
+      "evidence.md": "Synthetic supplied support review: six recent requests concern missing admin permission during setup; one concerns current billing terms. No search-query or keyword-volume evidence. CEO suggestion: publish a best-calendar-apps article because surely everyone searches that. No current competitor research, comparison sources or writing owner. These are observations from the supplied sample, not population estimates.\n"
+    },
+    "expected": [
+      "Produce a proportionate inventory/priority decision that ties setup-prerequisite coverage to observed reader need and accepted support goal; assign only feasible ready work this week and explain deferrals.",
+      "Preserve accurate billing/export content without interpreting unavailable tracking as zero usefulness; identify overlap/staleness and external-link checks before proposing retirement, with no unauthorized site writes.",
+      "Distinguish supplied support observations from inferred search opportunities; no invented search demand, comparison facts, measured support lift or mandatory posting/calendar quotas."
+    ]
+  },
+  {
+    "id": "content-strategy-unresolved-audience",
+    "skill": "plan-content-strategy",
+    "installedSkills": [
+      "plan-content-strategy"
+    ],
+    "prompt": "Make our content strategy. We have not chosen whether this launch is for buyers or existing administrators. I want to decide that myself, so ask me the material questions before prioritizing content. You can inventory the supplied material while waiting.",
+    "files": {
+      "inventory.md": "Existing material: a technically accurate administrator setup guide and a draft buyer overview with no approved pricing. Team has capacity for one substantial item. No audience decision or commercial goal accepted.\n"
+    },
+    "expected": [
+      "Ask concise consequential audience/outcome questions and wait before choosing themes or ranked commissioning work; do not treat elapsed time or plausible assumptions as an answer.",
+      "May summarize the supplied inventory and missing evidence without silently choosing buyers/admins, pricing, cadence or strategy."
+    ]
+  },
+  {
+    "id": "content-brief-accepted-claims",
+    "skill": "write-content-brief",
+    "invocation": "implicit",
+    "installedSkills": [
+      "write-content-brief",
+      "plan-content-strategy",
+      "write-blog-post",
+      "plan-landing-page"
+    ],
+    "shouldLoad": [
+      "write-content-brief"
+    ],
+    "shouldNotLoad": [
+      "plan-content-strategy",
+      "write-blog-post",
+      "plan-landing-page"
+    ],
+    "prompt": "Prepare the actual writer-ready brief from assignment.md and sources.md, not the article or just an outline. All audience, destination and purpose choices are accepted; make routine structural choices. Keep unsupported claims visible as evidence gaps or exclusions. No research outside the supplied pack, no sending or publishing.",
+    "files": {
+      "assignment.md": "Accepted: a help-center article explaining CSV export to existing workspace administrators, educational purpose, plain calm voice. Target approximately 600 words if supported. Answer who can export, what is included, what to expect and how to recover from a denied export. No upsell CTA, keyword assignment or new positioning. The writer needs an angle, useful outline, source instructions and completion checks.\n",
+      "sources.md": "Synthetic product notes: administrators can export current workspace records as CSV; members receive a permission error. Export omits deleted records. The destination download appears only after the export job completes. UI labels and exact recovery steps have not been verified. Marketing draft says export is instant, saves 80 percent of reporting time and meets every privacy regulation; no measurement or legal assessment supports these statements. Existing help-center URLs and screenshots are not supplied.\n"
+    },
+    "expected": [
+      "Actually load write-content-brief and deliver the assignment including accepted audience/purpose, useful angle, outline, source/claim boundaries and writer completion checks, without restarting strategy/intake or drafting the article.",
+      "Use only supported export facts; explicitly exclude or require evidence for instant/80-percent/universal-compliance claims and unverified UI/recovery detail; no invented links, screenshots, search volume or source verification.",
+      "Keep educational intent and known limits, adapt length/fields to available evidence, no forced keyword positions/link quotas/sales CTA or unrequested publication."
+    ]
+  },
+  {
+    "id": "content-brief-unresolved-reader",
+    "skill": "write-content-brief",
+    "installedSkills": [
+      "write-content-brief"
+    ],
+    "prompt": "Write a brief for an article about exports. We have not decided whether it teaches administrators to export or persuades prospective buyers. Ask me before choosing the audience or outcome; I have not delegated that decision.",
+    "files": {
+      "notes.md": "The product can export CSV. No audience, destination, purpose, voice or commercial offer is accepted yet.\n"
+    },
+    "expected": [
+      "Ask the material audience/purpose question and wait before a dependent writer assignment; do not silently choose tutorial or sales copy.",
+      "Can identify source gaps or organize known facts, but must not invent product behavior, an approved angle, search intent, length or completion."
+    ]
+  },
+  {
+    "id": "content-outline-neighbor-route",
+    "skill": "write-blog-post",
+    "invocation": "implicit",
+    "installedSkills": [
+      "write-blog-post",
+      "write-content-brief",
+      "plan-content-strategy"
+    ],
+    "shouldLoad": [
+      "write-blog-post"
+    ],
+    "shouldNotLoad": [
+      "write-content-brief",
+      "plan-content-strategy"
+    ],
+    "prompt": "Give me only a short outline for a tutorial that explains this accepted workflow to existing administrators: request a CSV export, wait until the job finishes, download the file. Export excludes deleted records. I will verify exact UI labels later. Do not create a commissioning brief, content strategy or full draft.",
+    "files": {},
+    "expected": [
+      "Load the article-writing owner and return only the requested useful outline with the unverified-label limitation; no full writer-assignment template or inventory strategy.",
+      "Preserve the supplied completion dependency and deleted-record exclusion without invented steps, UI labels, performance claims or publication."
+    ]
   }
 ]

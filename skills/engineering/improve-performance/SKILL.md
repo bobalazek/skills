@@ -23,6 +23,8 @@ Use [the measurement playbook](references/measurement.playbook.md) when selectin
 
 Trace where time or resources are spent across the real path, including waiting, queries, dependencies, rendering, and background work where relevant. Test a specific hypothesis before choosing a fix. A slow function in isolation may contribute little to the user's delay; a faster response that defers the same required work needs an end-to-end completion check.
 
+When the measured path points to queries, pools, dependencies, caching or payloads, use [backend evidence-to-probe guidance](references/backend-probes.matrix.md) to test the actual constraint. For loading/rendering/interaction, use [frontend probes](references/frontend-probes.playbook.md) to separate discovery, transfer, main-thread and visible-result delays. Select the relevant experiment; do not apply a catalog of common fixes without evidence.
+
 Prefer the smallest change supported by the profile: remove unnecessary work, reduce transferred or retained data, or fix the demonstrated access path. Evaluate batching, concurrency, caching, scheduling, or infrastructure changes only when the observed constraint justifies them. Preserve ordering, permissions, freshness, durability, and failure semantics. For a shared change, check affected consumers and boundary cases.
 
 Change one meaningful factor at a time where practical. Preserve the benchmark procedure and workload; if they must change, rerun the baseline under those conditions. Do not report a faster sample caused by dropped requests, missing work, stale data, reduced quality, or smaller inputs as an equivalent improvement.

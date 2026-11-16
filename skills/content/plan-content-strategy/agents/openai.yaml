@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan content strategy"
+  short_description: "Prioritize evidence-grounded editorial content"
+  default_prompt: "Use $plan-content-strategy to turn this inventory and audience evidence into a prioritized editorial plan."

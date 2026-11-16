@@ -1,6 +1,6 @@
 # Skills
 
-75 skills for developing software, evaluating products, coordinating work, defining brands, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
+77 skills for developing software, evaluating products, coordinating work, defining brands, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
 
 Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear. The collection is under active development; [releases](https://github.com/bobalazek/skills/releases) record reviewed snapshots and evaluation limits.
 
@@ -18,10 +18,10 @@ Inspect the install summary before confirming. Use `--skill '*'` for the whole c
 For a fixed release, use its tag instead of the default branch:
 
 ```bash
-bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.8.0 --skill choose-skill create-tasks verify-change --agent codex --copy
+bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.9.0 --skill choose-skill create-tasks verify-change --agent codex --copy
 ```
 
-`skills@1.7.0` pins the installer; `v0.8.0` pins the 73-skill release. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.8.0) for changes and evaluation limits. The catalogs below describe the default branch and may include changes made after this release. Earlier releases remain available.
+`skills@1.7.0` pins the installer; `v0.9.0` pins the 75-skill release. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.9.0) for changes and evaluation limits. The catalogs below describe the default branch and may include changes made after this release. Earlier releases remain available.
 
 In Codex, invoke an installed skill with its name and your task:
 
@@ -40,7 +40,7 @@ From a checkout, you can also ask a filesystem-capable agent to use `skills/engi
 | [Productivity · 15 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose and coordinate work, run accepted workflows, route requests, improve prompts and team workflows, report status, and transfer context |
 | [Brand · 2 skills](docs/domains/brand.md) | Define evidence-grounded positioning and develop visual identity, usage rules and requested assets |
 | [UI/UX · 8 skills](docs/domains/ui-ux.md) | Capture design references, map flows and navigation, wireframe and design screens, write interface messages, build shared systems, review interfaces, and test usability |
-| [Content · 6 skills](docs/domains/content.md) | Define a writing voice, plan page content, write website copy, blog posts and video scripts, and review prose for clarity and supported meaning |
+| [Content · 8 skills](docs/domains/content.md) | Define a writing voice, plan editorial priorities and page content, brief writers, write website copy, blog posts and video scripts, and review prose for clarity and supported meaning |
 | [Media · 8 skills](docs/domains/media.md) | Plan video concepts and storyboards, render motion graphics, edit footage, record narration, capture product screens, build decks and produce carousels |
 
 Each catalog lists skills by category, with their outputs and boundaries. The [complete skill map](skills/productivity/choose-skill/references/skill-map.matrix.md) maps every package to its requested result and nearest boundary, including ambiguous requests. The [workflow guides](docs/workflows.md) show examples and conditional handoffs.
@@ -58,6 +58,8 @@ Each catalog lists skills by category, with their outputs and boundaries. The [c
 | Define an offer's brand position and supporting proof | [define-brand-positioning](skills/brand/define-brand-positioning/SKILL.md) |
 | Develop or refine visual identity and brand assets | [design-brand-identity](skills/brand/design-brand-identity/SKILL.md) |
 | Plan what a product page needs to say and prove | [plan-landing-page](skills/content/plan-landing-page/SKILL.md) |
+| Prioritize editorial gaps across a site or content portfolio | [plan-content-strategy](skills/content/plan-content-strategy/SKILL.md) |
+| Prepare an accepted topic as a writer-ready assignment | [write-content-brief](skills/content/write-content-brief/SKILL.md) |
 | Write or revise the words on a website | [write-website-copy](skills/content/write-website-copy/SKILL.md) |
 | Turn source material into a blog post | [write-blog-post](skills/content/write-blog-post/SKILL.md) |
 | Develop video ideas and choose a format | [plan-video](skills/media/plan-video/SKILL.md) |
@@ -151,7 +153,7 @@ For other outcomes, use the [workflow index](docs/workflows.md): [product decisi
 
 **How are results checked?** Use observed proof appropriate to the task. Simple routing, explanations, brainstorming and wording-only drafts can use direct checks where their skill permits it. Consequential acceptance, code changes and delivery retain independent review; PRs include proof and findings when opened. An unavailable required review leaves the result unreviewed. Use `evaluate-skill` to compare actual behavior and preserve regressions; required human approval remains separate.
 
-**Which clients were checked?** Installation and discovery for the 75-package candidate contents were checked with skills CLI 1.7.0, OpenCode 2.3.0 and Codex CLI 0.167.2. These checks establish delivery of 75 complete packages (281 files), Codex metadata discovery and OpenCode loaded-body equality. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
+**Which clients were checked?** Installation and discovery for the 77-package candidate contents were checked with skills CLI 1.7.0, OpenCode 2.3.0 and Codex CLI 0.169.0. These checks establish delivery of 77 complete packages (295 files), Codex metadata discovery and OpenCode loaded-body equality. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
 
 **How do I update?** Copied skills do not update themselves. Review changes and migration notes, preserve local edits, then rerun `add` with the chosen source/tag. Inspect the files and verify discovery again; record the selected version with the project.
 

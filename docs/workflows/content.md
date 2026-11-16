@@ -4,6 +4,18 @@
 
 Start from the page purpose, source material or existing draft. These routes show when wording hands off to design and when a writing task can finish on its own. Double-bordered boxes name skills; rounded boxes show inputs, work or results; diamonds are decisions. Reuse completed stages and follow only the branches your result needs.
 
+## Choose content and commission a piece
+
+| Example request | First skill | Result and conditional continuation |
+| --- | --- | --- |
+| "Which content should we update or create from this inventory and reader evidence?" | [plan-content-strategy](../../skills/content/plan-content-strategy/SKILL.md) | Prioritized treatments and editorial themes with source limits, capacity and readiness; no draft, calendar or deletion unless requested |
+| "Prepare a writer brief for the accepted topic; flag claims that need proof." | [write-content-brief](../../skills/content/write-content-brief/SKILL.md) | An executable assignment with angle, outline, claim boundaries and completion checks; ready sections can proceed while unsupported claims stay blocked |
+| "The topic and brief are agreed; write the article." | [write-blog-post](../../skills/content/write-blog-post/SKILL.md) | The requested draft from accepted context, without restarting strategy or briefing |
+| "Give me only an outline for this tutorial." | [write-blog-post](../../skills/content/write-blog-post/SKILL.md) | A bounded outline, with relevant evidence needs; no mandatory full assignment |
+| "Plan the argument and section order for this one landing page." | [plan-landing-page](../../skills/content/plan-landing-page/SKILL.md) | A supported page plan; collection-wide prioritization is unnecessary |
+
+These are conditional handoffs, not a compulsory sequence. An existing accepted assignment can start with its writing owner. A strategy does not establish search demand or conversion lift, and a writer brief does not authorize publication. Reuse accepted voice and business facts, label proposed priorities and preserve unavailable evidence. Content removal, redirects and technical migration require their own authorized implementation and checks.
+
 ## Plan and write a product page
 
 | Example request | First skill | Result and conditional continuation |

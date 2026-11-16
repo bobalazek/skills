@@ -9,6 +9,8 @@ description: "Write, revise or critique public website copy, including page sect
 
 Produce the requested wording or wording critique for a homepage, product/service page, landing page or selected section. Reuse the accepted purpose and content plan; a small rewrite needs no new brief. `plan-landing-page` owns an unresolved page argument and section plan, `write-interface-copy` owns labels and state messages tied to product behavior, and `design-interface` owns visual composition. Advertising campaigns, editorial articles and video scripts are outside this package.
 
+Use `write-content-brief` when only a writer assignment is requested, and `plan-content-strategy` for priorities across a content inventory; check availability or perform the plain action. An accepted brief can go directly to wording without another planning pass.
+
 Establish whether the result is a draft, a copy handoff or authorized edits to existing website content. Writing copy does not itself authorize publishing, changing the offer or redesigning the page.
 
 ## Establish the facts that affect wording
