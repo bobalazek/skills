@@ -7,7 +7,7 @@ description: "Independently assess a rendered interface against user tasks, visu
 
 ## Use this skill
 
-Use this for a scoped expert assessment of an actual interface. Reuse accepted requirements, candidate identity and valid prior evidence. `test-usability` supplies participant task evidence; `design-interface` creates a design; `capture-design-reference` analyzes reusable patterns from a reference. Use `audit-website` for an integrated public-site assessment across the commercial journey, content, search basics and performance; this skill owns the focused rendered-experience review. If that skill is unavailable, scope those additional audit checks explicitly.
+Use this for a scoped expert assessment of an actual interface. Reuse accepted requirements, candidate identity and valid prior evidence. Participant task evidence needs a separate usability study; `design-interface` creates a design. Use `audit-website` for an integrated public-site assessment across the commercial journey, content, search basics and performance; this skill owns the focused rendered-experience review. If that skill is unavailable, scope those additional audit checks explicitly.
 
 Perform the assessment independently of the interface's author, in a separate agent or fresh context with raw requirements, candidate and check access, without the author's conversation or preferred conclusions. If you authored the interface, delegate it. Without an independent assessor, label the result unreviewed and not ready. This assessment can itself satisfy the independent review requirement; it does not require another review of the review.
 
@@ -41,6 +41,6 @@ For authorized PR work, include useful redacted findings, captures, interaction 
 
 ## Next steps
 
-Use `design-interface` for an agreed design revision, `diagnose-issue` for an unclear runtime cause, `implement-change` for selected authorized fixes, or `verify-change` for missing acceptance proof. Use `test-usability` when the unresolved question needs actual participant behavior. A ready candidate can proceed to `ship-change` only when delivery is authorized.
+Use `design-interface` for an agreed design revision, `diagnose-issue` for an unclear runtime cause, `implement-change` for selected authorized fixes, or `verify-change` for missing acceptance proof. When the unresolved question needs actual participant behavior, recommend a bounded usability study. A ready candidate can proceed to `ship-change` only when delivery is authorized.
 
 Pass the candidate, inspected states, findings and exact prerequisite. Check availability or describe the plain action. A review-only request ends with the assessment; continue only ready work already included in the user's authority.

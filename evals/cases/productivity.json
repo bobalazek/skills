@@ -132,15 +132,14 @@
     ]
   },
   {
-    "id": "route-brand-positioning",
+    "id": "route-out-of-scope-positioning",
     "skill": "choose-skill",
     "invocation": "implicit",
     "installedSkills": [
       "choose-skill",
-      "define-brand-positioning",
-      "design-brand-identity",
-      "define-writing-voice",
-      "build-design-system"
+      "brainstorm-ideas",
+      "research-topic",
+      "design-interface"
     ],
     "prompt": "We need to decide which audience, meaningful difference and promise our existing offer should be known for. We have offer facts and customer notes. Which skill should own this? Recommend only; do not do the work.",
     "files": {},
@@ -148,25 +147,22 @@
       "choose-skill"
     ],
     "shouldNotLoad": [
-      "define-writing-voice",
-      "build-design-system",
-      "design-brand-identity"
+      "design-interface"
     ],
     "expected": [
-      "Select define-brand-positioning for strategic positioning and identify the offer/audience evidence to reuse.",
-      "Keep the result to routing rather than performing brand strategy or inventing acceptance."
+      "State that no installed package owns brand positioning and describe the equivalent plain action, reusing the offer facts and customer notes; research-topic or brainstorm-ideas may support a named sub-question, but neither is presented as the positioning owner.",
+      "Do not invent a positioning skill, route to interface design, or perform the strategy work."
     ]
   },
   {
-    "id": "route-brand-voice-boundary",
+    "id": "route-out-of-scope-writing-voice",
     "skill": "choose-skill",
     "invocation": "implicit",
     "installedSkills": [
       "choose-skill",
-      "define-brand-positioning",
-      "design-brand-identity",
-      "define-writing-voice",
-      "build-design-system"
+      "improve-prompt",
+      "design-interface",
+      "document-project"
     ],
     "prompt": "Our positioning and visual identity are accepted. We want to capture our founder's dry, direct writing voice from these representative articles, so future copy keeps the same language and rhythm. Which skill should own this? Recommend only; do not start editing.",
     "files": {},
@@ -174,13 +170,11 @@
       "choose-skill"
     ],
     "shouldNotLoad": [
-      "define-brand-positioning",
-      "design-brand-identity",
-      "build-design-system"
+      "design-interface"
     ],
     "expected": [
-      "Select define-writing-voice and reuse accepted brand decisions instead of restarting positioning or visual identity.",
-      "Keep the result to a short route and necessary source inputs."
+      "State that no installed package owns writing-voice capture and describe the plain action from the representative articles, without restarting the accepted positioning or identity.",
+      "Do not reframe the request as a prompt rewrite or interface design, and keep the result to a short route."
     ]
   },
   {
@@ -202,20 +196,19 @@
     ]
   },
   {
-    "id": "route-narration-wording",
+    "id": "route-out-of-scope-narration",
     "skill": "choose-skill",
     "installedSkills": [
       "choose-skill",
-      "write-video-script",
-      "create-voiceover",
-      "define-writing-voice",
-      "create-motion-video"
+      "improve-prompt",
+      "explain-pr",
+      "prepare-handoff"
     ],
     "prompt": "We have a video outline and need only the spoken narration rewritten for clarity. We do not want audio generated, a voice guide or a video produced. Which skill fits? Recommend only.",
     "files": {},
     "expected": [
-      "Select write-video-script for standalone narration wording, preserving the existing outline.",
-      "Do not route to audio generation, writing-voice profiling or media production, and do not execute the rewrite."
+      "State that no installed package owns narration writing and describe the plain rewrite action, preserving the existing outline; improve-prompt edits agent instructions and is not the owner.",
+      "Do not invent a media or scriptwriting skill, and do not execute the rewrite."
     ]
   },
   {
@@ -329,22 +322,6 @@
     ]
   },
   {
-    "id": "prioritize-bands-and-blocked-inputs",
-    "skill": "prioritize-work",
-    "installedSkills": [
-      "prioritize-work"
-    ],
-    "prompt": "Give a provisional ranking and next ready choice from backlog.md. Use only the supplied candidates and capacity facts. Do not convert effort bands into hours, commit dates, update a tracker, start work or launch reviewers. Clearly mark any acceptance limit.",
-    "files": {
-      "backlog.md": "Goal: restore reliable customer imports. Horizon: this week. There is one engineering work slot; the specialist who owns authentication is unavailable this week. No duration basis for effort bands is supplied. A: fix repeat-import deduplication; impact high; effort M; high confidence; ready; needs one routine review included in its scope. B: replace auth flow; impact high; effort S; low confidence because the identity policy is undecided; blocked on the unavailable specialist and an owner decision. C: improve help text; impact low; effort S; high confidence; ready. The owner asks to compare benefit/effort, but has not supplied numeric scores or effort durations. None has a required deadline.\n"
-    },
-    "expected": [
-      "Prefer a supported qualitative ranking and identify A as the next ready goal-relevant choice; keep B important but blocked by the actual specialist and identity decision.",
-      "Do not divide by S/M labels, invent hours or duration totals, automatically inflate a low-confidence item into a larger house band, or turn a ranking into a feasible dated commitment.",
-      "Name the consequential uncertainty and its unlocking investigation/owner decision, preserve review in remaining work, give a reason to defer C, and label required independent acceptance as unavailable rather than claiming it occurred."
-    ]
-  },
-  {
     "id": "project-skill-already-enforced-pattern",
     "skill": "create-project-skill",
     "installedSkills": [
@@ -387,44 +364,6 @@
     ]
   },
   {
-    "id": "workflow-ready-readonly-dependencies",
-    "skill": "run-workflow",
-    "installedSkills": [
-      "run-workflow"
-    ],
-    "prompt": "Execute the accepted workflow.json against these local fixtures and return its final report and reached run state. There is no workflow engine or durable run record here; the definition explicitly permits a manual read-only run using the provided Node commands. Do not install an engine, launch agents, write files or call external services. Carry actual accepted outputs between phases.",
-    "files": {
-      "workflow.json": "{\"id\": \"inspect-records\", \"version\": \"1\", \"accepted\": true, \"mode\": \"manual-read-only\", \"authority\": \"Read supplied files and run inspect.mjs/report.mjs only; return outputs inline, no persisted state\", \"phases\": [{\"id\": \"inspect\", \"needs\": [], \"command\": \"node inspect.mjs\", \"acceptance\": \"Exit 0 and an observed JSON object with recordCount and digest from records.json\"}, {\"id\": \"report\", \"needs\": [\"inspect accepted\"], \"command\": \"node report.mjs <observed recordCount> <observed digest>\", \"acceptance\": \"Exit 0 and observed report text that matches the supplied data\"}], \"completion\": \"Both phases accepted through their deterministic checks; return the actual report inline and disclose manual/non-durable tracking\"}\n",
-      "records.json": "[{\"id\":\"a\"},{\"id\":\"b\"}]\n",
-      "inspect.mjs": "import {readFileSync} from \"node:fs\";import {createHash} from \"node:crypto\";const raw=readFileSync(\"records.json\",\"utf8\");console.log(JSON.stringify({recordCount:JSON.parse(raw).length,digest:createHash(\"sha256\").update(raw).digest(\"hex\").slice(0,8)}));\n",
-      "report.mjs": "import {readFileSync} from \"node:fs\";import {createHash} from \"node:crypto\";const raw=readFileSync(\"records.json\",\"utf8\");const count=JSON.parse(raw).length;const digest=createHash(\"sha256\").update(raw).digest(\"hex\").slice(0,8);if(Number(process.argv[2])!==count||process.argv[3]!==digest){console.error(\"Unaccepted dependency values\");process.exit(1);}console.log(`Report: ${count} records inspected; digest ${digest}.`);\n"
-    },
-    "expected": [
-      "Use the installed public workflow action and the accepted local definition without requiring Corco, Pi or another engine; inspect the inputs and actually execute inspect.mjs followed by report.mjs with the observed dependency values.",
-      "Distinguish accepted deterministic outputs from a worker or process claim, return the observed final report and state, and disclose that this manual run supplies no durable runtime state.",
-      "Respect the read-only and no-external-effect boundary; do not create records, install tooling, launch workers or invent independent approval or publication."
-    ]
-  },
-  {
-    "id": "workflow-pending-operation-resume",
-    "skill": "run-workflow",
-    "installedSkills": [
-      "run-workflow"
-    ],
-    "prompt": "Resume the accepted workflow from run.json for one bounded state inspection. Read workflow.json, then inspect the existing operation using node operation.mjs status op-17. That single status read is authorized; do not replay the submit command, poll repeatedly, create state files, cancel work or contact any real service. Return the actual next condition and reached state.",
-    "files": {
-      "workflow.json": "{\"id\": \"publish-sandbox-artifact\", \"version\": \"1\", \"accepted\": true, \"phases\": [{\"id\": \"submit\", \"command\": \"node submit.mjs\", \"acceptance\": \"Observed terminal success for the original operation, not only acknowledgement\"}, {\"id\": \"verify\", \"needs\": [\"submit accepted\"], \"command\": \"Inspect sandbox target only after the first phase is accepted\"}], \"authority\": \"Original one-time sandbox submission was approved; this resumed turn permits one local status inspection only\", \"completion\": \"Accepted submission and observed target verification\"}\n",
-      "run.json": "{\"workflow_id\": \"publish-sandbox-artifact\", \"workflow_version\": \"1\", \"execution_mode\": \"supplied runtime snapshot\", \"tasks\": {\"submit\": {\"state\": \"submitted\", \"operation_id\": \"op-17\", \"last_observation\": \"acknowledged, terminal result not observed\", \"approval_ref\": \"owner-approved-sandbox-submission\"}, \"verify\": {\"state\": \"blocked\", \"requires\": \"submit accepted\"}}}\n",
-      "operation.mjs": "if(process.argv[2]!==\"status\"||process.argv[3]!==\"op-17\")throw Error(\"Unknown read\");console.log(JSON.stringify({operationId:\"op-17\",state:\"pending\",terminal:false,target:\"sandbox\"}));\n",
-      "submit.mjs": "console.error(\"Replay is outside this resumed turn authority\");process.exitCode=19;\n"
-    },
-    "expected": [
-      "Actually inspect the existing op-17 once using the permitted read-only command and retain its observed pending/non-terminal state.",
-      "Do not replay submission, poll repeatedly, cancel or run its dependent verification; acknowledgement does not establish accepted completion.",
-      "Return an incomplete/blocked run with the exact terminal-success observation needed before the dependent phase can start, preserving existing approval without inventing a new requirement or claiming delivery."
-    ]
-  },
-  {
     "id": "evaluate-schema-vs-judge-calibration",
     "skill": "evaluate-skill",
     "installedSkills": [
@@ -459,23 +398,6 @@
       "Return a usable transfer record preserving cp-7, its still-unresolved challenge, op-17, original scope/authority and the latest supplied evidence; the person saying done is not observed authentication or publication.",
       "Name the recipient next checks: inspect actual access state, then the existing operation/target before any write. Retain pending/unknown receipt state and avoid a second checkpoint or replaying publication merely because the session changed.",
       "Do not add a blanket new publication-approval stop for the unchanged already-authorized action, ask for codes or session material, perform the workflow, or claim independent acceptance that did not occur."
-    ]
-  },
-  {
-    "id": "workflow-bounded-idempotent-transient-retry",
-    "skill": "run-workflow",
-    "installedSkills": [
-      "run-workflow"
-    ],
-    "prompt": "Execute the accepted workflow.json using the provided in-memory retry API and return observed attempts and the reached state. Read the files and use one Node process to import retry-probe.mjs and perform the bounded calls. This is a synthetic, manual read-only run: no engine, file writes, agents or external service calls. Preserve the accepted payload, idempotency key and retry limit.",
-    "files": {
-      "workflow.json": "{\"id\": \"bounded-transient-retry\", \"version\": \"1\", \"accepted\": true, \"mode\": \"manual-read-only\", \"authority\": \"Read supplied files and run the in-memory API in one Node process; no persisted record, network or other writes\", \"phase\": {\"id\": \"submit-fixture\", \"payload\": {\"record\": \"demo\"}, \"idempotencyKey\": \"approved-fixture-key\", \"retryPolicy\": \"A 503 with state not-applied permits exactly one retry with the identical payload and key; no other retry is allowed\", \"acceptance\": \"Observed status 200, state complete and fixture receipt after at most two calls; return actual calls and disclose the synthetic, non-durable run\"}}\n",
-      "retry-probe.mjs": "export const calls=[];\nexport function submit(payload,key){\nif(JSON.stringify(payload)!==JSON.stringify({record:\"demo\"})||key!==\"approved-fixture-key\")throw new Error(\"Changed accepted payload or idempotency key\");\nif(calls.length>=2)throw new Error(\"Retry budget exceeded\");\ncalls.push({payload:{...payload},key});\nreturn calls.length===1?{status:503,state:\"not-applied\"}:{status:200,state:\"complete\",receipt:\"fixture-receipt\"};\n}\n"
-    },
-    "expected": [
-      "Read the accepted definition and installed public workflow action, then actually execute the provided in-memory API rather than inventing its observations.",
-      "Honor the accepted transient retry without requiring a changed payload or new approval: make at most two calls with identical payload and idempotency key, observe the first not-applied 503 and terminal 200 receipt.",
-      "Return the observed calls and actual reached state while disclosing this synthetic manual run supplies no live provider or durable state; do not write files, install tooling, launch agents or call external services."
     ]
   }
 ]

@@ -1,6 +1,6 @@
 # Skills
 
-77 skills for developing software, evaluating products, coordinating work, defining brands, designing interfaces, writing content and producing media. Each produces a concrete result, such as a specification, working change, review or media artifact. Run one on its own or continue from another skill's accepted output.
+43 skills for developing software, coordinating work and designing interfaces. Each produces a concrete result, such as a specification, working change, review or interface design. Run one on its own or continue from another skill's accepted output.
 
 Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear. The collection is under active development; [releases](https://github.com/bobalazek/skills/releases) record reviewed snapshots and evaluation limits.
 
@@ -18,10 +18,10 @@ Inspect the install summary before confirming. Use `--skill '*'` for the whole c
 For a fixed release, use its tag instead of the default branch:
 
 ```bash
-bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.9.0 --skill choose-skill create-tasks verify-change --agent codex --copy
+bunx skills@1.7.0 add https://github.com/bobalazek/skills/tree/v0.10.0 --skill choose-skill create-tasks verify-change --agent codex --copy
 ```
 
-`skills@1.7.0` pins the installer; `v0.9.0` pins the 75-skill release. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.9.0) for changes and evaluation limits. The catalogs below describe the default branch and may include changes made after this release. Earlier releases remain available.
+`skills@1.7.0` pins the installer; `v0.10.0` pins the 77-skill release, the last one that includes the 34 brand, content, media, product, productivity and UI/UX skills removed afterwards. See the [release notes](https://github.com/bobalazek/skills/releases/tag/v0.10.0) for changes and evaluation limits. The catalogs below describe the default branch and may include changes made after this release. Earlier releases remain available.
 
 In Codex, invoke an installed skill with its name and your task:
 
@@ -36,12 +36,8 @@ From a checkout, you can also ask a filesystem-capable agent to use `skills/engi
 | Catalog | What it covers |
 | --- | --- |
 | [Engineering · 30 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, monitor, and maintain it |
-| [Product · 6 skills](docs/domains/product.md) | Evaluate ideas, synthesize feedback, compare alternatives, define success measures, plan experiments, and analyze product usage |
-| [Productivity · 15 skills](docs/domains/productivity.md) | Explore ideas, research decisions, choose and coordinate work, run accepted workflows, route requests, improve prompts and team workflows, report status, and transfer context |
-| [Brand · 2 skills](docs/domains/brand.md) | Define evidence-grounded positioning and develop visual identity, usage rules and requested assets |
-| [UI/UX · 8 skills](docs/domains/ui-ux.md) | Capture design references, map flows and navigation, wireframe and design screens, write interface messages, build shared systems, review interfaces, and test usability |
-| [Content · 8 skills](docs/domains/content.md) | Define a writing voice, plan editorial priorities and page content, brief writers, write website copy, blog posts and video scripts, and review prose for clarity and supported meaning |
-| [Media · 8 skills](docs/domains/media.md) | Plan video concepts and storyboards, render motion graphics, edit footage, record narration, capture product screens, build decks and produce carousels |
+| [Productivity · 9 skills](docs/domains/productivity.md) | Explore ideas, research and challenge decisions, route requests, coordinate agents, improve prompts and skills, and transfer context |
+| [UI/UX · 4 skills](docs/domains/ui-ux.md) | Map flows and navigation, wireframe and design screens with their states and messages, and review rendered interfaces |
 
 Each catalog lists skills by category, with their outputs and boundaries. The [complete skill map](skills/productivity/choose-skill/references/skill-map.matrix.md) maps every package to its requested result and nearest boundary, including ambiguous requests. The [workflow guides](docs/workflows.md) show examples and conditional handoffs.
 
@@ -50,31 +46,13 @@ Each catalog lists skills by category, with their outputs and boundaries. The [c
 | What you want | Start with |
 | --- | --- |
 | Compare directions for an idea | [brainstorm-ideas](skills/productivity/brainstorm-ideas/SKILL.md) |
-| Decide whether a product or feature idea merits further investment | [validate-product-idea](skills/product/validate-product-idea/SKILL.md) |
 | Begin working in an inherited project | [onboard-codebase](skills/engineering/onboard-codebase/SKILL.md) |
 | Turn recurring code, commit and agent-session lessons into checks or project-local skills | [create-project-skill](skills/productivity/create-project-skill/SKILL.md) |
 | Establish folder structure, naming and Git conventions before planning or coding | [define-project-conventions](skills/engineering/define-project-conventions/SKILL.md) |
 | Define a feature's required behavior | [write-spec](skills/engineering/write-spec/SKILL.md) |
-| Define an offer's brand position and supporting proof | [define-brand-positioning](skills/brand/define-brand-positioning/SKILL.md) |
-| Develop or refine visual identity and brand assets | [design-brand-identity](skills/brand/design-brand-identity/SKILL.md) |
-| Plan what a product page needs to say and prove | [plan-landing-page](skills/content/plan-landing-page/SKILL.md) |
-| Prioritize editorial gaps across a site or content portfolio | [plan-content-strategy](skills/content/plan-content-strategy/SKILL.md) |
-| Prepare an accepted topic as a writer-ready assignment | [write-content-brief](skills/content/write-content-brief/SKILL.md) |
-| Write or revise the words on a website | [write-website-copy](skills/content/write-website-copy/SKILL.md) |
-| Turn source material into a blog post | [write-blog-post](skills/content/write-blog-post/SKILL.md) |
-| Develop video ideas and choose a format | [plan-video](skills/media/plan-video/SKILL.md) |
-| Write a video script, hook or ending | [write-video-script](skills/content/write-video-script/SKILL.md) |
-| Turn a script into shots and an asset plan | [create-storyboard](skills/media/create-storyboard/SKILL.md) |
-| Create a code-driven motion graphic or explainer video | [create-motion-video](skills/media/create-motion-video/SKILL.md) |
-| Cut, reframe or caption recorded footage | [edit-video](skills/media/edit-video/SKILL.md) |
-| Record or generate the narration for a video | [create-voiceover](skills/media/create-voiceover/SKILL.md) |
-| Capture product screenshots for marketing or docs | [capture-product-screens](skills/media/capture-product-screens/SKILL.md) |
-| Review generic or unclear writing while preserving voice | [review-writing](skills/content/review-writing/SKILL.md) |
 | Sketch screen structure from an understood flow | [create-wireframes](skills/ui-ux/create-wireframes/SKILL.md) |
 | Add visual detail to settled screen structure | [design-interface](skills/ui-ux/design-interface/SKILL.md) |
-| Choose which supplied work fits the available capacity | [prioritize-work](skills/productivity/prioritize-work/SKILL.md) |
 | Coordinate ready work across available agents | [delegate-to-agents](skills/productivity/delegate-to-agents/SKILL.md) |
-| Execute or resume an accepted workflow definition | [run-workflow](skills/productivity/run-workflow/SKILL.md) |
 | Establish the cause of a known failure | [diagnose-issue](skills/engineering/diagnose-issue/SKILL.md) |
 | Model security threats before implementation | [model-threats](skills/engineering/model-threats/SKILL.md) |
 | Audit a project's source, dependencies and applicable runtime security | [audit-security](skills/engineering/audit-security/SKILL.md) |
@@ -83,7 +61,7 @@ Each catalog lists skills by category, with their outputs and boundaries. The [c
 | Review code for evidenced defects | [review-code](skills/engineering/review-code/SKILL.md) |
 | Prepare or publish a GitHub release and its notes | [ship-change](skills/engineering/ship-change/SKILL.md) |
 
-See [routes by situation](docs/workflows.md#routes-by-situation) for more examples, including greenfield setup, agent preparation, planning, interface copy, documentation and handoffs.
+See [routes by situation](docs/workflows.md#routes-by-situation) for more examples, including greenfield setup, agent preparation, planning, interface design, documentation and handoffs.
 
 <a id="find-your-next-skill"></a>
 
@@ -145,15 +123,15 @@ Select every required design/review branch and reconcile its result before conti
 
 </details>
 
-For other outcomes, use the [workflow index](docs/workflows.md): [product decisions](docs/workflows/product.md), [interface design](docs/workflows/ui-ux.md), [writing](docs/workflows/content.md), [video and other media](docs/workflows/media.md), or [work coordination](docs/workflows/productivity.md). Each guide shows concrete inputs, skill handoffs and where to finish.
+For other outcomes, use the [workflow index](docs/workflows.md): [interface design](docs/workflows/ui-ux.md) or [work coordination](docs/workflows/productivity.md). Each guide shows concrete inputs, skill handoffs and where to finish.
 
 ## Questions
 
 **Do I need every skill or stage?** No. Install the skills you need. Each package is self-contained, loads relevant references as needed and recommends a follow-up only when another result is useful.
 
-**How are results checked?** Use observed proof appropriate to the task. Simple routing, explanations, brainstorming and wording-only drafts can use direct checks where their skill permits it. Consequential acceptance, code changes and delivery retain independent review; PRs include proof and findings when opened. An unavailable required review leaves the result unreviewed. Use `evaluate-skill` to compare actual behavior and preserve regressions; required human approval remains separate.
+**How are results checked?** Use observed proof appropriate to the task. Simple routing, explanations, brainstorming and prompt rewrites can use direct checks where their skill permits it. Consequential acceptance, code changes and delivery retain independent review; PRs include proof and findings when opened. An unavailable required review leaves the result unreviewed. Use `evaluate-skill` to compare actual behavior and preserve regressions; required human approval remains separate.
 
-**Which clients were checked?** Installation and discovery for the 77-package candidate contents were checked with skills CLI 1.7.0, OpenCode 2.3.0 and Codex CLI 0.169.0. These checks establish delivery of 77 complete packages (295 files), Codex metadata discovery and OpenCode loaded-body equality. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
+**Which clients were checked?** Each release records its installation and discovery check in its release notes. For v0.10.0, skills CLI 1.7.0, OpenCode 2.3.0 and Codex CLI 0.169.0 established delivery of 77 complete packages (295 files), Codex metadata discovery and OpenCode loaded-body equality. Behavioral trials are bounded; automatic routing and other client/model combinations remain unverified.
 
 **How do I update?** Copied skills do not update themselves. Review changes and migration notes, preserve local edits, then rerun `add` with the chosen source/tag. Inspect the files and verify discovery again; record the selected version with the project.
 
@@ -167,8 +145,6 @@ See the [maintainer guide](docs/authoring.md) for package conventions, evaluatio
 
 This independent collection grows out of workflows I have used internally for several months. Public inspirations include:
 
-- [Kallaway](https://www.youtube.com/@kallawaymarketing): clear hooks and useful continuation, script progression and earned payoffs, adapted from his public [hook](https://www.youtube.com/watch?v=2byPP_9F0-Q), [scriptwriting](https://www.youtube.com/watch?v=7I50PECz7SU) and [storytelling](https://www.youtube.com/watch?v=t5Z-Q1bg1tU) teaching. These are craft options, not reach or retention guarantees. Research used public transcripts and articles; visual examples were not watched. Internal Corco and Fortuna Matata workflows also informed the production handoffs.
-
 - [Matt Pocock's skills](https://github.com/mattpocock/skills): focused questioning and planning, domain vocabulary and decisions, and PR explanations with evidence and risk.
 - [HumanLayer's skills](https://github.com/humanlayer/skills): visual PR explanations and concise agent instructions that load detail when needed.
 - [Ponytail](https://github.com/DietrichGebert/ponytail): an ordered simplicity and reuse decision process, YAGNI, and reviews that justify complexity against current requirements. These principles are adapted into the existing skills; the plugin's hooks and runtime are not bundled.
@@ -176,8 +152,6 @@ This independent collection grows out of workflows I have used internally for se
 - [Taste Skill](https://github.com/Leonxlnx/taste-skill): comparing an accepted image comp with its implementation and checking rendered media, adapted to the project's constraints.
 - [Design with Intent](https://github.com/ghaida/intent): purposeful wireframes, interaction states and concrete accessibility and deceptive-design checks.
 - [Emil Kowalski's skills](https://github.com/emilkowalski/skills): motion judged by purpose, repeated use, interruption and observed behavior.
-- [Peter Yang's no-ai-slop](https://github.com/petergyang/no-ai-slop): preserving a writer's voice and grounding critiques in specific passages.
-- [Animate](https://github.com/cth9191/animate) and [Chase AI's video](https://www.youtube.com/watch?v=rscb1DgJtNg): preview-first procedural video, timed storyboards and frame/export inspection. This collection supplies original instructions and templates; it does not bundle Animate's runtime.
 
 ## License
 

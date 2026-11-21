@@ -15,9 +15,6 @@ Start from an existing codebase, agreed change or observed failure. For the comp
 | "Make our existing project guidance easy for agents to find." | [prepare-repo-for-agents](../../skills/engineering/prepare-repo-for-agents/SKILL.md) | Working entry points to authoritative context and commands; missing factual records belong to `document-project` |
 | "These docs overlap and disagree; consolidate them." | [consolidate-docs](../../skills/engineering/consolidate-docs/SKILL.md) | Reconciled content and repaired links; verify affected navigation without adding another summary document |
 | "Hand this unfinished work to another session or owner." | [prepare-handoff](../../skills/productivity/prepare-handoff/SKILL.md) | Current state, authority, evidence and next runnable action; resume from checked state instead of repeating discovery |
-| "Prepare this sprint's engineering update from our tracker and deployment evidence." | [report-project-status](../../skills/productivity/report-project-status/SKILL.md) | Verified progress, blockers and next decisions for the stated audience/period; sending requires its own authority, and an owner transfer uses `prepare-handoff` |
-| "Our PR reviews keep waiting for the wrong person; improve that process." | [improve-team-workflow](../../skills/productivity/improve-team-workflow/SKILL.md) | Current/proposed steps and a bounded trial; accepted implementation can become tasks, while a planned trial cannot claim saved time |
-| "Should we automate this recurring report with AI or use an existing feature?" | [improve-team-workflow](../../skills/productivity/improve-team-workflow/SKILL.md) | Compare credible options including review, exceptions and maintenance; a recommendation does not purchase or deploy a tool |
 
 ## Specify behavior and technical design
 
@@ -37,7 +34,6 @@ For journeys, screen structure and visual detail, continue in [UI/UX](ui-ux.md).
 
 | Example request | First skill | Result and conditional continuation |
 | --- | --- | --- |
-| "Which of these backlog items fit our next work period?" | [prioritize-work](../../skills/productivity/prioritize-work/SKILL.md) | Selection, order, deferrals and capacity/prerequisite limits; decompose selected scope with `create-tasks` or begin an accepted ready task when execution is authorized |
 | "Break this agreed project into deliverable phases." | [plan-phases](../../skills/engineering/plan-phases/SKILL.md) | Milestones with prerequisites and exits; use `create-tasks` for the selected sufficiently understood phase |
 | "Make executable tasks from this spec, with dependencies." | [create-tasks](../../skills/engineering/create-tasks/SKILL.md) | Owned tasks and checks, locally or in an authorized tracker; use `implement-change` only for a selected ready batch |
 | "The stack and scope are agreed; bootstrap the new repository." | [start-project](../../skills/engineering/start-project/SKILL.md) | A checked foundation, blank or from an accepted template; implement the first agreed capability next |
@@ -60,7 +56,6 @@ A greenfield idea may start with exploration; an agreed greenfield foundation ca
 | "Audit this project's security before launch." | [audit-security](../../skills/engineering/audit-security/SKILL.md) | Evidence-backed findings and uninspected controls; a missing runtime check is not a passed launch gate, and repairs remain separate work |
 | "Resolve these supplied review findings and recheck supported fixes." | [address-review-feedback](../../skills/engineering/address-review-feedback/SKILL.md) | Current dispositions, authorized corrections and affected rechecks; preserve finding IDs and explain disagreements rather than starting a competing audit |
 | "Audit this rendered screen's usability and accessibility." | [review-interface](../../skills/ui-ux/review-interface/SKILL.md) | Observed interaction/visual findings and limits; route concrete fixes to implementation and unclear runtime failures to diagnosis |
-| "Find out whether new users can finish this setup flow without assistance." | [test-usability](../../skills/ui-ux/test-usability/SKILL.md) | A focused study and findings from available participant observations, or a protocol with access gaps; use `map-user-flows` or `design-interface` for accepted changes and retest the relevant tasks |
 | "Explain what this PR changes and why, using the available evidence." | [explain-pr](../../skills/engineering/explain-pr/SKILL.md) | A fixed-comparison explanation; finish if that is the request, reusing valid completed correctness reviews |
 | "Take this reviewed change to the agreed PR, release or deployment target." | [ship-change](../../skills/engineering/ship-change/SKILL.md) | The authorized target and its observed checks; use `diagnose-issue` for a failure, `find-improvements` for a justified opportunity, or finish |
 | "Prepare a GitHub release description from commits and merged PRs." | [ship-change](../../skills/engineering/ship-change/SKILL.md) | Notes checked against the chosen previous release and candidate; stop at notes, a remote draft, or publication according to the requested target |

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Write content brief"
-  short_description: "Prepare a supported assignment for a writer"
-  default_prompt: "Use $write-content-brief to turn this accepted topic and source pack into a writer-ready assignment."

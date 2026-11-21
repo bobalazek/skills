@@ -1,8 +1,8 @@
 # Workflows
 
-Pick the result you need below. Each category has its own short guide with request examples, skill handoffs and completion checks. The [complete skill map](../skills/productivity/choose-skill/references/skill-map.matrix.md) lists every package and its nearest boundary; these guides illustrate how to use them. Categories organize responsibilities; a real workflow can cross them, such as content → interface design → engineering.
+Pick the result you need below. Each category has its own short guide with request examples, skill handoffs and completion checks. The [complete skill map](../skills/productivity/choose-skill/references/skill-map.matrix.md) lists every package and its nearest boundary; these guides illustrate how to use them. Categories organize responsibilities; a real workflow can cross them, such as interface design → engineering.
 
-For a software feature, expand the [idea-to-delivery preview](../README.md#from-idea-to-delivery). For a narrated explainer, see the [script-to-video diagram](workflows/media.md#from-script-to-checked-video).
+For a software feature, expand the [idea-to-delivery preview](../README.md#from-idea-to-delivery).
 
 <a id="routes-by-situation"></a>
 <a id="choose-the-result-you-need"></a>
@@ -20,44 +20,11 @@ For a software feature, expand the [idea-to-delivery preview](../README.md#from-
 - [Verify, review and deliver](workflows/engineering.md#verify-review-and-deliver): candidate → observed proof → addressed findings → authorized delivery.
 - [Audit a live website](../skills/engineering/audit-website/SKILL.md): named site, purpose and permitted access → observed journeys and quality findings → prioritized action plan.
 
-## Product — decide what is worth building
-
-<a id="evaluate-a-product-opportunity"></a>
-<a id="measure-product-outcomes"></a>
-
-- [Evaluate an opportunity](workflows/product.md#evaluate-a-product-opportunity): idea and available evidence → invest, revise, test or stop.
-- [Measure outcomes](workflows/product.md#measure-product-outcomes): accepted measures and observations → supported findings; an unrun experiment remains a plan.
-
 ## UI/UX — shape the user experience
 
 <a id="specify-and-design"></a>
 
 - [Design a flow or interface](workflows/ui-ux.md#specify-and-design): accepted behavior → user flow → screen structure → visual detail → rendered assessment. Start at the missing result.
-- [Plan a website across content and design](workflows/content.md#plan-and-write-a-product-page): page purpose and facts → reconciled copy and layout → implementation when requested.
-
-## Brand — define positioning and visual identity
-
-- [Define or refine a brand](workflows/brand.md): actual offer and audience evidence → positioning; accepted meaning and retained assets → requested visual identity.
-- [Continue into writing or interfaces](workflows/brand.md#continue-into-writing-or-interfaces): accepted brand decisions → the next requested voice, page or shared-system output.
-
-## Content — write and improve the words
-
-<a id="plan-and-write-a-product-page"></a>
-<a id="draft-and-review-writing"></a>
-
-- [Plan and write a page](workflows/content.md#plan-and-write-a-product-page): offer, audience and evidence → content needs → actual copy.
-- [Plan editorial work](../skills/content/plan-content-strategy/SKILL.md): inventory and reader evidence → prioritized gaps; [brief an accepted topic](../skills/content/write-content-brief/SKILL.md) before drafting when a writer-ready assignment is needed.
-- [Draft or review writing](workflows/content.md#draft-and-review-writing): source notes or existing prose → requested outline, draft, findings or revision.
-
-## Media — produce a usable artifact
-
-<a id="produce-media"></a>
-<a id="create-motion-video"></a>
-
-- [Develop a video](workflows/media.md#develop-the-video): audience/goal and ideas → script with hook, storyline and payoff → storyboard → the needed production method.
-- [Prepare a launch video](workflows/media.md#prepare-a-launch-video): supported product difference → feasible concept and proof → the requested script or production handoff, with launch owners and a measurement plan.
-- [Make a narrated product video](workflows/media.md#from-script-to-checked-video): script and shot list → checked narration and captures → timed animation → inspected export.
-- [Edit footage, make slides or produce other media](workflows/media.md#produce-media): choose the owner from the requested artifact; reuse accepted assets and finish at the requested fidelity.
 
 ## Productivity — choose and coordinate work
 
@@ -67,7 +34,7 @@ For a software feature, expand the [idea-to-delivery preview](../README.md#from-
 
 - [Find the next useful action](workflows/productivity.md#explore-and-route): current state and desired result → one starting skill and its needed inputs.
 - [Coordinate accepted work](workflows/productivity.md#coordinate-local-project-work): agreed tasks and proof → ready work, owners and explicit blockers.
-- [Run an accepted workflow](../skills/productivity/run-workflow/SKILL.md): definition and current evidence → ready phases, checked outputs and an actual completion or pending state.
+- [Split work across agents](../skills/productivity/delegate-to-agents/SKILL.md): ready, separable tasks → self-contained briefs and checked integration while you keep the lead.
 
 ## Use a route
 
@@ -92,3 +59,14 @@ A requested draft can finish as a draft. Continue through later stages only when
 <a id="artifacts-and-side-effects"></a>
 
 Read [shared coordination](workflows/coordination.md) when work spans phases, parallel tasks or sessions. It covers readiness, independent evaluation, retained evidence, context handoffs and authority. The host supplies actual workers, isolation and execution; a diagram does not implement them.
+
+## Removed domains
+
+<a id="evaluate-a-product-opportunity"></a>
+<a id="measure-product-outcomes"></a>
+<a id="plan-and-write-a-product-page"></a>
+<a id="draft-and-review-writing"></a>
+<a id="produce-media"></a>
+<a id="create-motion-video"></a>
+
+v0.11.0 narrowed the collection to engineering, productivity and UI/UX. The brand, content, media and product skills, plus ten productivity and UI/UX skills, are no longer distributed here (see the [migration note](authoring.md#status-and-deprecation)); [v0.10.0](https://github.com/bobalazek/skills/tree/v0.10.0) is the last release that contains them, and installing a newer version does not remove copies you already have. For those requests, `choose-skill` names the missing result and describes the plain action.

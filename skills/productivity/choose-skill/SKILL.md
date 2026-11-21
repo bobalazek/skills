@@ -1,6 +1,6 @@
 ---
 name: choose-skill
-description: "Choose the next available skill for an engineering, product, productivity, brand, UI/UX, content or media request from its desired result and accepted inputs, without restarting completed stages."
+description: "Choose the next available skill for an engineering, productivity or UI/UX request from its desired result and accepted inputs, without restarting completed stages."
 ---
 
 # Choose skill
@@ -15,11 +15,11 @@ Reuse accepted artifacts, decisions and current work. An existing specification,
 
 Read the request and available project context. Establish what exists and what the user wants next: alternatives, agreed behavior, executable work, a diagnosis, evidence or delivery. Preserve useful existing conventions and commitments; identify only missing foundations for a new project. Ask only when the answer changes the route.
 
-Consult the relevant domain section of [the skill map](references/skill-map.matrix.md); use its boundary cases only when several outputs could fit. Match the desired result rather than a keyword: explaining a PR and reviewing its correctness are different tasks. A social carousel is an exported media set; a website carousel is an interface. Add a short sequence only when the request spans distinct results, with the accepted prerequisite for each transition. `delegate-to-agents` retains a coordinator for bounded parts; `prepare-handoff` transfers responsibility to another owner or session.
+Consult the relevant domain section of [the skill map](references/skill-map.matrix.md); use its boundary cases only when several outputs could fit. Match the desired result rather than a keyword: explaining a PR and reviewing its correctness are different tasks. Add a short sequence only when the request spans distinct results, with the accepted prerequisite for each transition. `delegate-to-agents` retains a coordinator for bounded parts; `prepare-handoff` transfers responsibility to another owner or session.
 
 ## Check availability and readiness
 
-Check which selected skills are installed or otherwise available. If one is missing, name its purpose and the equivalent plain action; do not pretend to invoke it or install it silently. Do not assume tool access or start delegated implementation from a routing-only request.
+Check which selected skills are installed or otherwise available. If one is missing, or the request falls outside the collection, name its purpose and the equivalent plain action; do not pretend to invoke it or install it silently. Do not assume tool access or start delegated implementation from a routing-only request.
 
 For phased work, identify the ready phase/task and its dependencies. Distinguish work ready now from future parallel candidates; a sequence alone cannot prove readiness. If the result is already complete and no follow-up is justified, say so.
 

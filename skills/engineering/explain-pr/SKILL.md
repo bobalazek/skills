@@ -25,7 +25,7 @@ Follow the requested audience, tone and depth, then the project's PR template an
 
 ### Evidence
 
-When the explanation needs substantive prose cleanup, use `review-writing` if available, carrying the fixed diff, draft and evidence. Otherwise cut filler and repetition locally. Preserve risk, reversibility and verification gaps; editorial polish cannot upgrade a result or replace correctness review.
+When the explanation needs substantive prose cleanup, cut filler and repetition against the fixed diff, draft and evidence. Preserve risk, reversibility and verification gaps; editorial polish cannot upgrade a result or replace correctness review.
 
 Include the checks that actually ran and what they establish, for the actual candidate. For visible changes, include labeled screenshots of relevant states where available; for performance or data claims, show measured before/after values with units and comparable conditions. For other changes, concise observed results or a verified CI/artifact link may be sufficient. Label missing baseline, stale evidence, failed checks, and uninspected behavior. Distinguish author-stated rationale, demonstrated behavior, and unanswered questions. Do not manufacture a benefit, metric, or rejected alternative.
 

@@ -1,6 +1,6 @@
 # Productivity
 
-This domain owns idea exploration, decision support, work coordination and communication, and improvements to recurring team processes. Its fifteen packages are under active development. Product owns demand, feedback and competitor evidence; Engineering owns software specifications and execution plans; UI/UX owns user journeys and interfaces.
+This domain owns idea exploration, decision support, agent coordination and communication, and agent instructions. Its nine packages are under active development. Engineering owns software specifications and execution plans; UI/UX owns user journeys and interfaces.
 
 ## Categories and skills
 
@@ -8,46 +8,34 @@ This domain owns idea exploration, decision support, work coordination and commu
 | --- | --- | --- | --- |
 | Routing | Pick the next action | [choose-skill](../../skills/productivity/choose-skill/SKILL.md) | One fitting starting skill, its expected result, and any missing input |
 | Coordination | Bounded parallel work | [delegate-to-agents](../../skills/productivity/delegate-to-agents/SKILL.md) | Self-contained briefs, host-supported ownership and independently checked integration while retaining the lead role |
-| Coordination | Execute an accepted definition | [run-workflow](../../skills/productivity/run-workflow/SKILL.md) | Observed run state, accepted dependency outputs, final artifacts or exact blockers; authoring is separate |
 | Exploration | Explore directions | [brainstorm-ideas](../../skills/productivity/brainstorm-ideas/SKILL.md) | Meaningfully different approaches, supported recommendation, assumptions, and next decision or experiment |
 | Exploration | Answer an unknown | [research-topic](../../skills/productivity/research-topic/SKILL.md) | A bounded answer with traceable evidence, freshness, uncertainty, and decision implications |
 | Decisions | Question assumptions | [challenge-proposal](../../skills/productivity/challenge-proposal/SKILL.md) | Focused human questions, tested assumptions and edge cases, an amended proposal, or a precise remaining investigation |
-| Decisions | Decision tracking | [track-project-decisions](../../skills/productivity/track-project-decisions/SKILL.md) | Current open, accepted, and superseded choices, their evidence/owners, affected work, and the next ready investigation |
-| Decisions | Select work | [prioritize-work](../../skills/productivity/prioritize-work/SKILL.md) | A justified selection from supplied candidates, capacity and prerequisite checks, ready work and deferrals |
-| Coordination | Maintain local work | [manage-project-board](../../skills/productivity/manage-project-board/SKILL.md) | A reconciled Markdown board with phase/task state, ownership, blockers, human decisions and ready work |
 | Communication | Improve instructions | [improve-prompt](../../skills/productivity/improve-prompt/SKILL.md) | A ready-to-use rewrite that preserves intent, scope, and authority without executing the embedded task |
 | Agent instructions | Capture recurring project work | [create-project-skill](../../skills/productivity/create-project-skill/SKILL.md) | Deduplicated code/history/session patterns, check recommendations and tested project-local skills when justified |
 | Agent instructions | Evaluate behavior | [evaluate-skill](../../skills/productivity/evaluate-skill/SKILL.md) | Observed candidate/baseline comparisons, criterion-linked findings and reusable regressions |
 | Communication | Transfer active work | [prepare-handoff](../../skills/productivity/prepare-handoff/SKILL.md) | Current state, accepted context, verification, blockers, and the next runnable action |
-| Communication | Report progress | [report-project-status](../../skills/productivity/report-project-status/SKILL.md) | An audience-specific update with verified progress, delivery, blockers, decisions and next work for the reporting period |
-| Team processes | Improve recurring work | [improve-team-workflow](../../skills/productivity/improve-team-workflow/SKILL.md) | A current/proposed procedure and bounded trial with ownership, safeguards and comparable measures |
 
 ## Boundaries and use
 
-`brainstorm-ideas` explores alternatives. `challenge-proposal` questions a selected direction and its edge cases. `research-topic` answers a bounded uncertainty with evidence. `track-project-decisions` keeps consequential choices and their dependencies current. Each can finish usefully on its own; a clear task does not require all four.
+`brainstorm-ideas` explores alternatives. `challenge-proposal` questions a selected direction and its edge cases. `research-topic` answers a bounded uncertainty with evidence. Each can finish usefully on its own; a clear task does not require all three.
 
 `challenge-proposal` questions a project, specification, architecture, phase plan, or stated PR intent, following answers into the next consequential uncertainty. Inspect facts before asking the user, preserve settled answers, and stop when the requested result is sufficiently clear. For PRs, explanation communicates known behavior and review evaluates correctness; questioning resolves the consequential intent that remains unknown.
 
-`track-project-decisions` handles questions such as “hosting selection waits for the data-residency requirement,” including what was decided and why. `plan-phases` and `create-tasks` define delivery work once the relevant choices are sufficiently settled. Do not label uncertain product decisions as executable implementation tickets.
+`plan-phases` and `create-tasks` define delivery work once the relevant choices are sufficiently settled. Do not label uncertain product decisions as executable implementation tickets. Keep ongoing task state, ownership and blockers in the project's existing tracker; a local list does not provide atomic multi-agent claims or a scheduler.
 
-`manage-project-board` maintains ongoing work state and bounded agent pickup in the repository. Reuse existing plans, task contracts and tracker ownership; a local board does not provide atomic multi-agent claims or a scheduler. One coordinator owns shared state, and task completion needs evidence before it can unblock consumers. A phase also needs its own integrated exit proof.
-
-`prioritize-work` selects from an existing candidate set under goals and capacity. `find-improvements` discovers repository candidates; `create-tasks` decomposes accepted scope. Priority and readiness are separate: important blocked work can stay high priority while independent lower-ranked work can start.
-
-Clarifying an idea establishes shared intent. Use Product's `validate-product-idea` for evidence supporting a product commitment, or `build-prototype` for an unproven feasibility claim; agreement alone cannot supply either. Use accepted findings to gather requirements in `write-spec`, then derive phases and tasks when the work needs them. A PRD or issue is a specification format, not another productivity workflow.
+Clarifying an idea establishes shared intent. Use `research-topic` for existing evidence supporting a product commitment (collecting new demand evidence has no package here), or `build-prototype` for an unproven feasibility claim; agreement alone cannot supply either. Use accepted findings to gather requirements in `write-spec`, then derive phases and tasks when the work needs them. A PRD or issue is a specification format, not another productivity workflow.
 
 `choose-skill` routes an unclear request using its desired result and current state. A ready task can use its owning skill directly. `prepare-handoff` is for a person/session transfer or context compaction. Ordinary skill composition reuses accepted artifacts without another handoff document. `improve-prompt` edits instructions and does not perform the task contained in them. `evaluate-skill` runs or assesses comparable behavioral trials; it preserves cases and evidence instead of inferring effectiveness from wording.
 
-`report-project-status` explains delivery and project health to an audience over a stated period; `prepare-handoff` equips the next owner to resume execution. `improve-team-workflow` changes a recurring process such as review assignment or release coordination; `find-improvements` discovers improvements in a repository, feature or data layer. A process proposal is not an implemented automation or accepted team policy.
+`prepare-handoff` equips the next owner to resume execution; it is not an audience status report. `find-improvements` discovers improvements in a repository, feature or data layer.
 
 `create-project-skill` mines code, corrective commits and available agent histories to decide what belongs in automated checks, authoritative docs or a project-local skill. It creates the justified procedural skill when requested; `find-improvements` retains general code improvement discovery and `automate-code-checks` implements selected guards. Repeated mentions of one incident are not independent recurrence, and private transcripts stay outside public packages.
 
-Automation selection is a conditional part of `improve-team-workflow`: compare simpler manual work, existing native capabilities, deterministic automation and AI assistance using their full operating and review costs. There is no separate skill for each prioritization method, reporting cadence or automation tool.
+`delegate-to-agents` splits bounded work and checks integration while retaining a lead; `prepare-handoff` transfers responsibility. Neither supplies a missing runtime or grants side effects beyond the accepted request.
 
 ## Resources
 
-`manage-project-board` carries a compact location, board and state template. `choose-skill` carries the routing map. `challenge-proposal` carries conditional questioning lenses. `track-project-decisions` carries a decision template. `prioritize-work` carries guidance for capacity and shared prerequisites. `prepare-handoff` carries a compact transfer outline. Status reporting and workflow improvement carry guidance for reconciling sources and evaluating a process trial. Other workflows remain self-contained where a separate resource would not change the work.
+`choose-skill` carries the routing map. `challenge-proposal` carries conditional questioning lenses. `prepare-handoff` carries a compact transfer outline. Other workflows remain self-contained where a separate resource would not change the work.
 
 See [workflows](../workflows.md) for next-step selection and context reuse.
-
-`run-workflow` executes or resumes an accepted definition and reconciles its actual contracts and run state. `delegate-to-agents` splits bounded work and checks integration while retaining a lead; `manage-project-board` coordinates tracker ownership and readiness; `prepare-handoff` transfers responsibility. None supplies a missing runtime or grants side effects beyond the accepted request. Workflow authoring is a separate result, not an implicit repair during execution.
