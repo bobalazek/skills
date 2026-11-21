@@ -154,6 +154,16 @@ test("checks eval documentation links and accepts their repaired targets", () =>
   expect(audit(root).errors).toEqual([]);
 });
 
+test("tolerates removed targets only from historical results, never outside links", () => {
+  write(join(root, "docs/notes.md"), "[gone](../evals/workflows/removed.json)\n");
+  expect(audit(root).errors.join("\n")).toContain("docs/notes.md: broken/outside local link");
+  rmSync(join(root, "docs/notes.md"));
+  write(join(root, "evals/results/old.md"), "[gone](../workflows/removed.json)\n");
+  expect(audit(root).errors).toEqual([]);
+  write(join(root, "evals/results/old.md"), "[outside](../../../outside.md)\n");
+  expect(audit(root).errors.join("\n")).toContain("evals/results/old.md: broken/outside local link");
+});
+
 test("checks repository agent-instruction links when the file exists", () => {
   write(join(root, "AGENTS.md"), "Read [authoring](docs/authoring.md).\n");
   expect(audit(root).errors.join("\n")).toContain("AGENTS.md: broken/outside local link");

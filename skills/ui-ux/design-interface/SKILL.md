@@ -9,9 +9,9 @@ description: "Design, refine or redesign an interface with visual hierarchy, con
 
 Use this for detailed visual design at the requested fidelity. Establish whether the result is an editable design artifact, implementation handoff or implemented surface, reusing accepted flows, wireframes, content and design decisions. Existing settled screen structure can start here directly.
 
-Use `map-user-flows` when the journey or navigation is unresolved, `create-wireframes` for a low-fidelity structural decision before visual detail, `capture-design-reference` for reusable analysis of existing interfaces, or `write-interface-copy` for a dedicated set of labels/state messages. Keep routine wording within screen design. Repeated shared contracts can belong to `build-design-system`.
+Use `map-user-flows` when the journey or navigation is unresolved, or `create-wireframes` for a low-fidelity structural decision before visual detail. Keep routine labels and state messages within screen design. Repeated shared contracts belong in the project's existing design system or component library.
 
-Exported motion graphics and explainers belong to `create-motion-video` when available; this skill owns interactive UI motion and its task behavior.
+This skill owns interactive UI motion and its task behavior; exported motion graphics and explainer videos are separate media work.
 
 ## Inspect the surface and choose the format
 
@@ -45,4 +45,4 @@ Return the design/result, key decisions, editable entry point, verified state/su
 
 ## Next steps
 
-Use `build-design-system` for accepted repeated shared needs, `implement-change` for an accepted design awaiting implementation, or `review-interface` for independent evaluation of an available rendered candidate. Carry the design revision, accepted behavior, component constraints and evidence limits; check availability or describe the plain action. Continue ready authorized work without reopening settled design, or finish at the requested fidelity.
+Record accepted repeated shared needs in the project's design system; use `implement-change` for an accepted design awaiting implementation, or `review-interface` for independent evaluation of an available rendered candidate. Carry the design revision, accepted behavior, component constraints and evidence limits; check availability or describe the plain action. Continue ready authorized work without reopening settled design, or finish at the requested fidelity.

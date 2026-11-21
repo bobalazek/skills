@@ -13,15 +13,13 @@ The domain catalogs organize skills by responsibility. These stages organize a p
 | Stage | Useful skills | Ready to move on when |
 | --- | --- | --- |
 | Understand the starting point | `assess-request`, `onboard-codebase`, `explain-codebase`, `diagnose-issue` | The requested outcome and relevant baseline are understood |
-| Explore and challenge | `brainstorm-ideas`, `challenge-proposal`, `research-topic`, `capture-design-reference`, `build-prototype` | Consequential choices have answers and required premises have evidence |
-| Evaluate a product opportunity | `validate-product-idea`, `analyze-user-feedback`, `analyze-competitors` | The next commitment has relevant evidence, or the decision is to stop, revise or investigate further |
-| Define success and experiments | `define-product-metrics`, `plan-product-experiment` | Measures or an experiment protocol have their required definitions and explicit readiness gaps; a protocol alone does not authorize launch |
-| Specify and design | `write-spec`, `model-domain`, `design-architecture`, `map-user-flows`, `plan-landing-page`, `write-website-copy`, `create-wireframes`, `design-interface`, `write-interface-copy` | Behavior and the decisions needed by the selected work are accepted |
-| Plan and coordinate execution | `prioritize-work`, `plan-phases`, `create-tasks`, `manage-project-board` | The selected work fits its stated constraints and has accepted prerequisites, owners and checks |
+| Explore and challenge | `brainstorm-ideas`, `challenge-proposal`, `research-topic`, `build-prototype` | Consequential choices have answers and required premises have evidence |
+| Specify and design | `write-spec`, `model-domain`, `design-architecture`, `map-user-flows`, `create-wireframes`, `design-interface` | Behavior and the decisions needed by the selected work are accepted |
+| Plan and coordinate execution | `plan-phases`, `create-tasks`, `delegate-to-agents` | The selected work fits its stated constraints and has accepted prerequisites, owners and checks |
 | Build | `start-project`, `implement-change` and the relevant specialist skill | The selected result exists with scoped proof on its actual revision |
-| Evaluate | `verify-change`, `review-code`, `review-interface`, `review-writing`, `test-usability` | Required evidence and independent evaluation cover the selected criteria; a planned user study still awaits observations |
-| Deliver and observe | `ship-change`, `configure-monitoring`, `report-project-status` | The requested delivery, monitoring configuration or status result has its scoped evidence; none promises ongoing operation |
-| Learn and improve | `analyze-product-usage`, `find-improvements`, `improve-team-workflow`, `document-project`, `automate-code-checks` | Useful findings are recorded or become a justified next change; no follow-up is also valid |
+| Evaluate | `verify-change`, `review-code`, `review-interface`, `audit-website` | Required evidence and independent evaluation cover the selected criteria; a planned user study still awaits observations |
+| Deliver and observe | `ship-change`, `configure-monitoring`, `prepare-handoff` | The requested delivery, monitoring configuration or handoff has its scoped evidence; none promises ongoing operation |
+| Learn and improve | `find-improvements`, `document-project`, `automate-code-checks`, `create-project-skill` | Useful findings are recorded or become a justified next change; no follow-up is also valid |
 
 Start at the stage that matches the request. The table names alternatives, not a list of skills to run at every stage. Evaluation also applies to a plan or design before its consumers rely on it.
 
@@ -88,20 +86,14 @@ Before context loss or an actual session transfer, condense those facts into the
 | --- | --- | --- |
 | Idea with a consequential choice unresolved | `challenge-proposal` | Options, accepted answers and the decision that changes the outcome |
 | Proposal depends on an unsupported premise | `research-topic` or `build-prototype` | The falsifiable question and the evidence needed; resume the affected proposal afterward |
-| Product or feature commitment depends on unproven need or demand | `validate-product-idea` | Intended users, proposed commitment, existing evidence and its limits |
-| Feedback synthesis or competitor comparison | `validate-product-idea`, `prioritize-work`, or finish according to the requested decision | Source-linked findings and counterevidence; prioritization additionally needs work candidates, goals and capacity |
-| Accepted outcome needing success measures | `define-product-metrics` | Decision, user outcome, existing definitions and source constraints |
-| Product hypothesis needing a controlled comparison | `plan-product-experiment` | Accepted measures, variant behavior, eligible units and source constraints; missing feasibility inputs stay explicit |
-| Experiment observations | `analyze-product-usage` | Fixed protocol, changes after exposure, assignment and outcome data, maturity and harm rules |
-| Measurement contract with usable observations | `analyze-product-usage` | Definition/version, eligible entity and window, source/identity rules, exclusions and data-quality checks |
-| Usage finding with a consequential gap | `define-product-metrics` for unclear semantics, `implement-change` for an accepted tracking repair, or `validate-product-idea` for an investment decision | Reproducible results, source coverage, counterevidence and the unresolved question |
+| Product or feature commitment depends on unproven need or demand | `research-topic`, or a plain demand study outside this collection | Intended users, proposed commitment, existing evidence and its limits |
 | Selected idea with enough evidence | `write-spec` | Accepted direction, constraints and supporting evidence |
 | Spec with unresolved technical or journey choices | `design-architecture` or `map-user-flows` | Relevant behavior criteria; use `build-prototype` for unproven feasibility |
 | Accepted flow or existing screen with unresolved structure | `create-wireframes` | Accepted behavior, current screens/components, supported surfaces and the structural question |
 | Accepted screen structure needing visual detail | `design-interface` | Wireframes or existing layout, requirement/state links, component constraints and review evidence |
 | Accepted scope and design | `plan-phases`, or `create-tasks` directly for a small change | Criteria, preserved contracts and known dependencies |
 | Agreed phase | `create-tasks` | Its exits, accepted inputs and unresolved prerequisites; planning later tasks does not make them executable |
-| Existing local tasks needing coordination | `manage-project-board` | Canonical contracts, current owners, dependency proof and operation scope; one coordinator owns shared state |
+| Ready tasks needing several workers | `delegate-to-agents` | Canonical contracts, current owners, dependency proof and operation scope; one coordinator owns shared state |
 | Ready tasks | `start-project` if the selected task establishes a missing foundation; otherwise `implement-change` | One task or an agreed ready batch, ownership/isolation and accepted dependencies |
 | Implemented change with proof missing | `verify-change` | Candidate revision, relevant baseline, criteria and check access |
 | Verified change | `review-code` and/or `review-interface` according to risk | Fixed candidate and valid evidence; reuse an already completed independent review |

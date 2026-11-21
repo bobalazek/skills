@@ -1,4 +1,0 @@
-interface:
-  display_name: "Edit video"
-  short_description: "Cut, reframe and caption existing footage"
-  default_prompt: "Use $edit-video to tighten this recording, preserve its meaning, and verify the requested export and captions."

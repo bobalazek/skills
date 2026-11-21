@@ -7,7 +7,7 @@ description: "Find and prioritize useful improvements in a codebase, feature, or
 
 ## Use this skill
 
-Discover and rank evidenced improvement candidates in a selected codebase or feature; refactoring is one focus. Reuse the existing backlog, accepted decisions and valid findings. Use `prioritize-work` to select from an already-evidenced supplied backlog under capacity, or `implement-change` for a selected executable improvement. Discovery does not authorize every repair.
+Discover and rank evidenced improvement candidates in a selected codebase or feature; refactoring is one focus. Reuse the existing backlog, accepted decisions and valid findings. Selecting from an already-evidenced supplied backlog under capacity is a separate decision; use `implement-change` for a selected executable improvement. Discovery does not authorize every repair.
 
 ## Select the scope and evidence
 
@@ -55,6 +55,6 @@ Carry the selected finding, evidence and missing prerequisite to its owner:
 - `create-project-skill` when the requested outcome is procedural skills learned from code, commits and agent sessions.
 - `automate-code-checks` for an accepted recurring guard; `plan-migration` for compatibility/data transitions.
 - `write-spec` for unsettled behavior; `create-tasks` for accepted larger scope; `implement-change` for a bounded ready change.
-- `prioritize-work` when selection among these and other supplied candidates needs a capacity decision.
+- A capacity decision by the work's owner when these and other supplied candidates compete for the same time.
 
 Use the plain action if its skill is unavailable. Reuse accepted findings; a discovery request can finish with the list.

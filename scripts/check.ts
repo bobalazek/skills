@@ -227,8 +227,12 @@ export function audit(inputRoot: string) {
       });
       if (!pending) fail(path, "checklist needs unchecked task items");
     }
+    // Historical results describe the tree they were recorded against; a later removal must not force rewriting them.
+    const historical = inside(join(root, "evals/results"), path);
     for (const target of targets(path)) {
-      if (!inside(root, target) || !existsSync(target)) fail(path, `broken/outside local link: ${target}`);
+      if (!inside(root, target) || (!historical && !existsSync(target))) {
+        fail(path, `broken/outside local link: ${target}`);
+      }
     }
   }
   if (!packages.length) errors.push("no skill packages found");

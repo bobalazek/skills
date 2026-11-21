@@ -43,6 +43,6 @@ When required, have a separate agent in fresh context challenge the comparison u
 
 ## Next steps
 
-Pass the comparison and unresolved premise to `research-topic` for missing facts, `validate-product-idea` for evidence of product need or demand, or `build-prototype` for a bounded empirical test. Use `challenge-proposal` for material doubts about the chosen option, or `write-spec` once the direction can support behavioral requirements. Name the prerequisite that remains; check the selected skill is available or describe the equivalent action.
+Pass the comparison and unresolved premise to `research-topic` for missing facts or evidence of product need or demand, or `build-prototype` for a bounded empirical test. Use `challenge-proposal` for material doubts about the chosen option, or `write-spec` once the direction can support behavioral requirements. Name the prerequisite that remains; check the selected skill is available or describe the equivalent action.
 
 An ideas-only request ends with the comparison. Continue ready work already authorized, carrying accepted context forward without restarting discovery or treating a recommendation as new authority.

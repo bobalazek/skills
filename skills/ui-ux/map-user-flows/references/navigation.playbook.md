@@ -36,7 +36,7 @@ For example, an accepted task may be “find a previous export.” The map needs
 
 ## Handoff for user evidence
 
-When participant evidence is needed, use `test-usability` if available or prepare the equivalent bounded protocol. A tree test can examine the hierarchy and labels without visual composition; a comprehension task can examine what a label or consequence means. Choose a method for the unresolved question, not a mandatory sequence of studies.
+When participant evidence is needed, prepare a bounded study protocol. A tree test can examine the hierarchy and labels without visual composition; a comprehension task can examine what a label or consequence means. Choose a method for the unresolved question, not a mandatory sequence of studies.
 
 Pass the exact hierarchy/label revision, target audience, neutral task goals, intended destinations, acceptable alternative paths and consequential uncertainty. Do not put the navigation label being tested into the task prompt. Record which role-based view is being tested and any differences from the live product. Recruitment, sessions and publication need their actual authority; recommending a study does not mean one happened.
 

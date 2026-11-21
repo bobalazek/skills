@@ -47,7 +47,7 @@ Record lessons that change future work. Distinguish recurring causes from repeat
 
 ## Verify and report
 
-Write direct explanations with stable terminology and no unsupported praise. For substantial prose revision, use `review-writing` when available; otherwise remove filler locally while retaining technical meaning, historical context and evidence limits. Reuse accepted writing checks instead of creating a duplicate document or review stage.
+Write direct explanations with stable terminology and no unsupported praise. For substantial prose revision, remove filler and repetition while retaining technical meaning, historical context and evidence limits. Reuse accepted writing checks instead of creating a duplicate document or review stage.
 
 Check material claims against their sources, retained history against its records, and links against actual destinations. Run documented commands when their behavior is part of the requested result and safe execution is available; distinguish a command definition from a successful observed run.
 
@@ -59,4 +59,4 @@ The requested knowledge must be populated, evidence-linked, discoverable, and cl
 
 ## Next steps
 
-Pass the evidenced gap and relevant records to `define-project-conventions` for disputed rules, `track-project-decisions` for unresolved choices, `prepare-repo-for-agents` for instruction discovery, or `automate-code-checks` for an accepted prevention rule. Use `consolidate-docs` only for a broader requested cleanup. If a skill is unavailable, describe the plain action. Keep valid records and stop when the requested documentation is complete.
+Pass the evidenced gap and relevant records to `define-project-conventions` for disputed rules, `challenge-proposal` for unresolved choices, `prepare-repo-for-agents` for instruction discovery, or `automate-code-checks` for an accepted prevention rule. Use `consolidate-docs` only for a broader requested cleanup. If a skill is unavailable, describe the plain action. Keep valid records and stop when the requested documentation is complete.
