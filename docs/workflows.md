@@ -69,4 +69,4 @@ Read [shared coordination](workflows/coordination.md) when work spans phases, pa
 <a id="produce-media"></a>
 <a id="create-motion-video"></a>
 
-v0.11.0 narrowed the collection to engineering, productivity and UI/UX. The brand, content, media and product skills are no longer distributed here; [v0.10.0](https://github.com/bobalazek/skills/tree/v0.10.0) is the last release that contains them, and installing a newer version does not remove copies you already have. For those requests, `choose-skill` names the missing result and describes the plain action.
+v0.11.0 narrowed the collection to engineering, productivity and UI/UX. The brand, content, media and product skills, plus ten productivity and UI/UX skills, are no longer distributed here (see the [migration note](authoring.md#status-and-deprecation)); [v0.10.0](https://github.com/bobalazek/skills/tree/v0.10.0) is the last release that contains them, and installing a newer version does not remove copies you already have. For those requests, `choose-skill` names the missing result and describes the plain action.

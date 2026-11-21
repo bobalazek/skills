@@ -17,13 +17,13 @@ UI/UX owns the journey, screen structure and behavior-dependent interface string
 
 `map-user-flows` defines how users reach an outcome and recover from meaningful failures. `create-wireframes` resolves screen, full-page or website hierarchy and content/state placement before visual detail. `design-interface` develops the selected structure into detailed visual design and complete states, distinguishing refinement from an agreed replacement of the visual direction. Reuse accepted flows or existing screens; skip wireframing when structure is settled. `review-interface` evaluates the actual rendered experience against tasks and supported surfaces.
 
-Routine labels, messages, help and recovery instructions stay within `design-interface`. Copy must reflect actual behavior, including what is saved, sent, reversible or still pending. A draft string does not prove fit or accessibility in the rendered interface.
+Labels, messages, help and recovery instructions stay within `design-interface`; a copy-only request does not authorize redesign. Copy must reflect actual behavior, including what is saved, sent, reversible or still pending. A draft string does not prove fit or accessibility in the rendered interface.
 
 Navigation work stays in `map-user-flows`: inventory destinations and access rules, propose grouping and labels, and preserve search, deep links and return paths. When findability needs participant evidence, prepare a bounded study with the proposed hierarchy and its label version. A neat sitemap alone cannot establish that users can find the right destination.
 
 For new products, derive flows and components from actual intended behavior. For existing products, inspect the current experience, component consumers, design contract, and user expectations before changing them. Template adaptation starts by retaining useful tokens and components.
 
-Technical architecture owns module/service boundaries and data contracts. Shared interface contracts belong in the project's existing design system. UI/UX owns interactive carousels and interface transitions; exported videos, narration and social media are outside this collection.
+Technical architecture owns module/service boundaries and data contracts. Shared interface contracts belong in the project's existing design system when one exists. UI/UX owns interactive carousels and interface transitions; exported videos, narration and social media are outside this collection.
 
 `review-interface` provides an expert assessment and cannot stand in for participant evidence. Neither a simulation nor agreement on a study plan demonstrates usability.
 
