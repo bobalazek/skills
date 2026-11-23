@@ -6,16 +6,16 @@ Use this reference when a task spans stages, workers or sessions. For a single b
 
 ## Stages and project phases
 
-Research, planning, implementation, verification, delivery and operation are lifecycle stages. A **delivery phase** is a milestone inside a particular project, such as “users can preview an import.” `plan-phases` creates those project milestones; it does not require a task to traverse every lifecycle stage. `create-tasks` creates work items, not skills.
+Research, planning, implementation, verification, delivery and operation are lifecycle stages. A **delivery phase** is a milestone inside a particular project, such as “users can preview an import.” `plan-phases` creates those project milestones; it does not require a task to traverse every lifecycle stage. Its task breakdown creates work items, not skills. `deliver-feature` runs these stages in order for one agreed feature when several are missing.
 
 The domain catalogs organize skills by responsibility. These stages organize a particular piece of work, so a stage can use skills from more than one domain:
 
 | Stage | Useful skills | Ready to move on when |
 | --- | --- | --- |
-| Understand the starting point | `assess-request`, `onboard-codebase`, `explain-codebase`, `diagnose-issue` | The requested outcome and relevant baseline are understood |
+| Understand the starting point | `assess-request`, `explain-codebase`, `diagnose-issue` | The requested outcome and relevant baseline are understood |
 | Explore and challenge | `brainstorm-ideas`, `challenge-proposal`, `research-topic`, `build-prototype` | Consequential choices have answers and required premises have evidence |
-| Specify and design | `write-spec`, `model-domain`, `design-architecture`, `map-user-flows`, `create-wireframes`, `design-interface` | Behavior and the decisions needed by the selected work are accepted |
-| Plan and coordinate execution | `plan-phases`, `create-tasks`, `delegate-to-agents` | The selected work fits its stated constraints and has accepted prerequisites, owners and checks |
+| Specify and design | `write-spec`, `design-architecture`, `map-user-flows`, `design-interface` | Behavior and the decisions needed by the selected work are accepted |
+| Plan and coordinate execution | `plan-phases`, `delegate-to-agents` | The selected work fits its stated constraints and has accepted prerequisites, owners and checks |
 | Build | `start-project`, `implement-change` and the relevant specialist skill | The selected result exists with scoped proof on its actual revision |
 | Evaluate | `verify-change`, `review-code`, `review-interface`, `audit-website` | Required evidence and independent evaluation cover the selected criteria; a planned user study still awaits observations |
 | Deliver and observe | `ship-change`, `configure-monitoring`, `prepare-handoff` | The requested delivery, monitoring configuration or handoff has its scoped evidence; none promises ongoing operation |
@@ -23,13 +23,13 @@ The domain catalogs organize skills by responsibility. These stages organize a p
 
 Start at the stage that matches the request. The table names alternatives, not a list of skills to run at every stage. Evaluation also applies to a plan or design before its consumers rely on it.
 
-A spec can include intended delivery slices and known dependencies when they explain scope or rollout. `plan-phases` owns the detailed milestone graph; `create-tasks` owns executable dependencies. During brainstorming, ordering and parallelism are hypotheses until the relevant behavior and shared contracts are agreed. Reuse one authoritative document or tracker where possible, rather than copying the same requirements into several files.
+A spec can include intended delivery slices and known dependencies when they explain scope or rollout. `plan-phases` owns the detailed milestone graph and, in its task breakdown, executable dependencies. During brainstorming, ordering and parallelism are hypotheses until the relevant behavior and shared contracts are agreed. Reuse one authoritative document or tracker where possible, rather than copying the same requirements into several files.
 
 ## Sequential and parallel work
 
 Sequence work when one result determines another task's input. Required domain rules precede dependent contracts; shared schemas/foundations precede consumers; accepted behavior precedes its executable tasks; integration and relevant verification precede delivery.
 
-`plan-phases` identifies which milestones can overlap and what closes each one. `create-tasks` preserves those dependencies while splitting a selected phase into owned, verifiable work. Distinguish work that could run together after named prerequisites from work ready now. A phase may start only when its own prerequisites hold; a task inside it may still wait on another task. Publish to the requested project-management destination only after checking existing work and granted write authority; reconcile uncertain writes before retrying and confirm stored results before claiming synchronization.
+`plan-phases` identifies which milestones can overlap and what closes each one. Its task breakdown preserves those dependencies while splitting a selected phase into owned, verifiable work. Distinguish work that could run together after named prerequisites from work ready now. A phase may start only when its own prerequisites hold; a task inside it may still wait on another task. Publish to the requested project-management destination only after checking existing work and granted write authority; reconcile uncertain writes before retrying and confirm stored results before claiming synchronization.
 
 Parallel work needs ready inputs, independently checkable outputs, and isolated writes/state/data/verification environments. Different filenames alone do not establish independence. Read-only specialist investigations or reviews can run together on a fixed baseline. UI and technical design can run together once shared behavior is clear, with reconciliation before their consumers are implemented.
 
@@ -66,7 +66,7 @@ flowchart TD
 
 The server and screen tasks are parallel candidates after P1 is accepted. The screen can use contract fixtures while the server is built, provided workspaces, shared files and test state do not conflict. If both tasks edit the same generated client or reset the same database, assign that shared change to one owner or serialize it. P2 exits only after both branches integrate and their combined behavior is independently accepted; fixture-based checks cannot replace that evidence.
 
-`create-tasks` makes the same dependencies concrete inside each selected phase: a migration precedes queries that require its schema; two read-only reviews of a fixed revision can overlap; a PR requiring both branches waits for their integrated evidence. Planning a future parallel branch does not make it ready to run today.
+The `plan-phases` task breakdown makes the same dependencies concrete inside each selected phase: a migration precedes queries that require its schema; two read-only reviews of a fixed revision can overlap; a PR requiring both branches waits for their integrated evidence. Planning a future parallel branch does not make it ready to run today.
 
 The coordinator owns shared decisions, reconciliation, integration, and readiness. Use host-supported workers/workspaces when available; Markdown instructions do not implement a scheduler. Small work remains sequential when delegation adds no useful independence.
 
@@ -78,7 +78,7 @@ A worker may not receive the parent conversation. Give it a bounded question or 
 
 Pass the accepted objective, relevant artifacts and their versions where material, decisions, scope, repository revision/baseline, unresolved prerequisites, and verification evidence. Reconcile copied task criteria with authoritative inputs after a change; retain unaffected discoveries. For partial batches, preserve each task's outputs and actual disposition, stop dependent work when its prerequisite fails, and resume from observed state. Integration needs evidence for the combined revision.
 
-Finish with the next useful action, the skill that owns it, the input to carry forward, and any unmet prerequisite. Select the next missing result instead of reciting the whole pipeline. For example: "P1's import contract is accepted; run `create-tasks` for P2 using its preview/confirm criteria. Implementation waits until the required test environment is available." If the requested result is complete and no follow-up is justified, say so.
+Finish with the next useful action, the skill that owns it, the input to carry forward, and any unmet prerequisite. Select the next missing result instead of reciting the whole pipeline. For example: "P1's import contract is accepted; run the `plan-phases` task breakdown for P2 using its preview/confirm criteria. Implementation waits until the required test environment is available." If the requested result is complete and no follow-up is justified, say so.
 
 Before context loss or an actual session transfer, condense those facts into the existing work record or a short continuation block, retaining pending operation IDs and useful file/symbol pointers. Remove repeated logs and search noise; retain authority, blockers and unchecked criteria. On resumption, reload applicable instructions and compare against current sources/state. Summaries guide that check; they do not replace evidence or require a new document or session.
 
@@ -89,16 +89,16 @@ Before context loss or an actual session transfer, condense those facts into the
 | Product or feature commitment depends on unproven need or demand | `research-topic`, or a plain demand study outside this collection | Intended users, proposed commitment, existing evidence and its limits |
 | Selected idea with enough evidence | `write-spec` | Accepted direction, constraints and supporting evidence |
 | Spec with unresolved technical or journey choices | `design-architecture` or `map-user-flows` | Relevant behavior criteria; use `build-prototype` for unproven feasibility |
-| Accepted flow or existing screen with unresolved structure | `create-wireframes` | Accepted behavior, current screens/components, supported surfaces and the structural question |
+| Accepted flow or existing screen with unresolved structure | `design-interface` at wireframe fidelity | Accepted behavior, current screens/components, supported surfaces and the structural question |
 | Accepted screen structure needing visual detail | `design-interface` | Wireframes or existing layout, requirement/state links, component constraints and review evidence |
-| Accepted scope and design | `plan-phases`, or `create-tasks` directly for a small change | Criteria, preserved contracts and known dependencies |
-| Agreed phase | `create-tasks` | Its exits, accepted inputs and unresolved prerequisites; planning later tasks does not make them executable |
+| Accepted scope and design | `plan-phases`, going straight to its task breakdown for a small change | Criteria, preserved contracts and known dependencies |
+| Agreed phase | `plan-phases` task breakdown | Its exits, accepted inputs and unresolved prerequisites; planning later tasks does not make them executable |
 | Ready tasks needing several workers | `delegate-to-agents` | Canonical contracts, current owners, dependency proof and operation scope; one coordinator owns shared state |
 | Ready tasks | `start-project` if the selected task establishes a missing foundation; otherwise `implement-change` | One task or an agreed ready batch, ownership/isolation and accepted dependencies |
 | Implemented change with proof missing | `verify-change` | Candidate revision, relevant baseline, criteria and check access |
 | Verified change | `review-code` and/or `review-interface` according to risk | Fixed candidate and valid evidence; reuse an already completed independent review |
 | Review findings | `address-review-feedback` | Original findings, reviewed/current revisions and fix authority; reconcile dispositions and independently recheck supported corrections |
-| Reviewed change and delivery authority | `ship-change`; `explain-pr` only when an explanation is needed | Final candidate, observed proof, recovery limits and requested target |
+| Reviewed change and delivery authority | `ship-change`; `explain-codebase` only when a change explanation is needed | Final candidate, observed proof, recovery limits and requested target |
 | Delivery observed | `diagnose-issue` for failures, `configure-monitoring` for requested coverage changes, `find-improvements` for evidenced opportunities, or finish | Actual target signals, operating constraints and existing decisions/learnings; do not restart settled planning |
 | Monitoring configured | `verify-change` for missing independent proof; `ship-change` for a requested delivery target; otherwise finish | Exact configuration/environment, signal and route evidence, owner, recovery action and live verification gaps |
 

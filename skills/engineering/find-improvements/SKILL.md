@@ -54,7 +54,7 @@ Carry the selected finding, evidence and missing prerequisite to its owner:
 - `diagnose-issue` for an unresolved failure; `improve-performance` for a bottleneck needing measurement.
 - `create-project-skill` when the requested outcome is procedural skills learned from code, commits and agent sessions.
 - `automate-code-checks` for an accepted recurring guard; `plan-migration` for compatibility/data transitions.
-- `write-spec` for unsettled behavior; `create-tasks` for accepted larger scope; `implement-change` for a bounded ready change.
+- `write-spec` for unsettled behavior; `plan-phases` to break accepted larger scope into tasks; `implement-change` for a bounded ready change.
 - A capacity decision by the work's owner when these and other supplied candidates compete for the same time.
 
 Use the plain action if its skill is unavailable. Reuse accepted findings; a discovery request can finish with the list.

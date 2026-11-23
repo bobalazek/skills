@@ -1,4 +1,4 @@
 interface:
   display_name: "Explain codebase"
-  short_description: "Explain code paths, data flow, and ownership"
+  short_description: "Explain code, a PR or diff, or onboard a contributor"
   default_prompt: "Use $explain-codebase to trace this feature from its entry point through its data flow."

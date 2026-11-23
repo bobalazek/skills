@@ -9,7 +9,7 @@ description: "Prepare an owner/session transfer or context compaction with check
 
 Use this when work must continue with another owner or session, or after context compaction/reset. Carry the current task record and accepted artifacts forward; a concise context block may be enough. Routine phases in one active session do not each need a handoff.
 
-An audience-and-period status update is a separate report; use `explain-pr` to explain a fixed code comparison. A handoff's defining requirement is that someone can resume the actual work.
+An audience-and-period status update is a separate report; use `explain-codebase` to explain a fixed code comparison. A handoff's defining requirement is that someone can resume the actual work.
 
 ## Inspect the current state
 

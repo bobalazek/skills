@@ -37,4 +37,4 @@ Before acceptance, a separate agent in fresh context must challenge the triage u
 
 ## Next steps
 
-Carry the brief and unresolved prerequisite to `diagnose-issue` for a failure, `write-spec` for undefined behavior, or `create-tasks` for agreed scope needing decomposition. Answer support questions directly when the evidence suffices. Use the plain action if the skill is unavailable; continue only within the request's authority. Triage alone can finish the request.
+Carry the brief and unresolved prerequisite to `diagnose-issue` for a failure, `write-spec` for undefined behavior, or `plan-phases` for agreed scope needing task decomposition. Answer support questions directly when the evidence suffices. Use the plain action if the skill is unavailable; continue only within the request's authority. Triage alone can finish the request.

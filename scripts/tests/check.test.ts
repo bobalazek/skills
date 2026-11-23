@@ -42,7 +42,7 @@ test("accepts a standalone package without a Markdown link to agent metadata", (
 });
 
 test("keeps the GitHub PR template synchronized with its portable owner", () => {
-  const canonical = join(root, "skills/engineering/explain-pr/references/pr-description.template.md");
+  const canonical = join(root, "skills/engineering/explain-codebase/references/pr-description.template.md");
   const github = join(root, ".github/pull_request_template.md");
   write(canonical, "## Summary\n\n## Evidence and testing\n");
   expect(audit(root).errors.join("\n")).toContain("PR template must match");

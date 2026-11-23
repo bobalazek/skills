@@ -1,4 +1,4 @@
 interface:
   display_name: "Document project"
-  short_description: "Maintain project knowledge from verified evidence"
+  short_description: "Write or consolidate project knowledge from evidence"
   default_prompt: "Use $document-project to refresh this project's architecture and decision records from current evidence."

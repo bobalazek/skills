@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deliver feature"
+  short_description: "Take an agreed feature to a merged, verified change"
+  default_prompt: "Use $deliver-feature to take this feature from spec to a merged change, asking me between stages."

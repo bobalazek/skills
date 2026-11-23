@@ -22,7 +22,7 @@ This domain owns idea exploration, decision support, agent coordination and comm
 
 `challenge-proposal` questions a project, specification, architecture, phase plan, or stated PR intent, following answers into the next consequential uncertainty. Inspect facts before asking the user, preserve settled answers, and stop when the requested result is sufficiently clear. For PRs, explanation communicates known behavior and review evaluates correctness; questioning resolves the consequential intent that remains unknown.
 
-`plan-phases` and `create-tasks` define delivery work once the relevant choices are sufficiently settled. Do not label uncertain product decisions as executable implementation tickets. Keep ongoing task state, ownership and blockers in the project's existing tracker; a local list does not provide atomic multi-agent claims or a scheduler.
+`plan-phases` defines delivery work, as phases and their task breakdown, once the relevant choices are sufficiently settled. Do not label uncertain product decisions as executable implementation tickets. Keep ongoing task state, ownership and blockers in the project's existing tracker; a local list does not provide atomic multi-agent claims or a scheduler.
 
 Clarifying an idea establishes shared intent. Use `research-topic` for existing evidence supporting a product commitment (collecting new demand evidence has no package here), or `build-prototype` for an unproven feasibility claim; agreement alone cannot supply either. Use accepted findings to gather requirements in `write-spec`, then derive phases and tasks when the work needs them. A PRD or issue is a specification format, not another productivity workflow.
 

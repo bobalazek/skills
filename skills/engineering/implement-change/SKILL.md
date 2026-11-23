@@ -7,7 +7,7 @@ description: "Implement an agreed feature, fix, refactor, or dependency-ready ta
 
 ## Use this skill
 
-Deliver working code for an agreed feature, fix, refactor or ready task batch. Reuse accepted tasks, specifications, design and valid proof; a clear local fix needs no new spec, phase plan or interview. Use `address-review-feedback` to reconcile supplied review findings when that is the requested result, `diagnose-issue` for an unknown cause, `write-spec` for unsettled behavior and `create-tasks` when decomposition is the missing result.
+Deliver working code for an agreed feature, fix, refactor or ready task batch. Reuse accepted tasks, specifications, design and valid proof; a clear local fix needs no new spec, phase plan or interview. Use `address-review-feedback` to reconcile supplied review findings when that is the requested result, `diagnose-issue` for an unknown cause, `write-spec` for unsettled behavior and `plan-phases` (its task breakdown) when decomposition is the missing result.
 
 ## Establish the working contract
 
@@ -25,7 +25,7 @@ Trace impact proportional to risk. For a leaf edit, inspect its nearest consumer
 
 Label actionable findings and fixes with the project's priority labels and meanings. Otherwise use P0 critical (act immediately), P1 high (address next), P2 normal (schedule a correction), or P3 low (minor or optional improvement). Give the evidence-based impact/urgency rationale and next action; mark uncertain ratings provisional. Keep priority separate from severity, confidence and readiness. Preserve finding IDs and priority through rechecks; explain changes using new evidence or an accepted decision. Priority does not authorize extra work or waive required checks.
 
-Select one task or the agreed ready batch. For work spanning phases, follow the accepted dependency graph and phase exits. If branches need coordination and no graph exists, record a compact dependency graph in the existing work record; use `plan-phases` or `create-tasks` when decomposition itself needs work. Keep a local fix direct.
+Select one task or the agreed ready batch. For work spanning phases, follow the accepted dependency graph and phase exits. If branches need coordination and no graph exists, record a compact dependency graph in the existing work record; use `plan-phases` when phase or task decomposition itself needs work. Keep a local fix direct.
 
 Shared contracts and migrations precede consumers. Concurrent workers require accepted prerequisites, isolated writes/state and check environments, and clear ownership; use available host isolation rather than assuming it exists. Show what is ready now separately from future parallel candidates. Integrate and verify the combined result before accepting a phase exit. Preserve unaffected outputs if a branch fails, block its consumers, and recompute ready work after accepted outputs or requirements change.
 
@@ -78,4 +78,4 @@ Update affected setup/behavior docs and material decisions or learnings in their
 
 ## Next steps
 
-Carry the current revision, criteria, evidence and blockers to `verify-change` for missing acceptance proof, `review-code` or `review-interface` for an outstanding independent assessment, `explain-pr` for a needed explanation, or `ship-change` when ready and delivery is authorized. For a continuing phase plan, identify the next ready task/batch and its accepted prerequisites. Reuse valid evidence and completed reviews. A bounded implementation request can finish here; use the plain action if its skill is unavailable.
+Carry the current revision, criteria, evidence and blockers to `verify-change` for missing acceptance proof, `review-code` or `review-interface` for an outstanding independent assessment, `explain-codebase` for a needed change explanation, or `ship-change` when ready and delivery is authorized. For a continuing phase plan, identify the next ready task/batch and its accepted prerequisites. Reuse valid evidence and completed reviews. A bounded implementation request can finish here; use the plain action if its skill is unavailable.

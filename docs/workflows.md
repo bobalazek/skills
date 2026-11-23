@@ -17,6 +17,7 @@ For a software feature, expand the [idea-to-delivery preview](../README.md#from-
 
 - [Prepare a project](workflows/engineering.md#understand-and-prepare-a-project): codebase or agreed foundation → usable context, conventions and checks.
 - [Plan or implement a change](workflows/engineering.md#plan-and-change-software): accepted behavior or a ready ticket → working change.
+- [Deliver an agreed feature end to end](../skills/engineering/deliver-feature/SKILL.md): agreed feature missing two or more stages → spec, design, plan, change, proof and review → approved delivery.
 - [Verify, review and deliver](workflows/engineering.md#verify-review-and-deliver): candidate → observed proof → addressed findings → authorized delivery.
 - [Audit a live website](../skills/engineering/audit-website/SKILL.md): named site, purpose and permitted access → observed journeys and quality findings → prioritized action plan.
 

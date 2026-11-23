@@ -1,24 +1,19 @@
 # Engineering
 
-This domain covers the software lifecycle, including requirements, architecture, coding, quality, delivery, monitoring, and maintenance. Its 30 packages are under active development; links open their actual instructions. Use the narrowest result that matches the request. UI/UX owns user journeys and interface decisions; productivity owns idea exploration and decision support.
+This domain covers the software lifecycle, including requirements, architecture, coding, quality, delivery, monitoring, and maintenance. Its 25 packages are under active development; links open their actual instructions. Use the narrowest result that matches the request. UI/UX owns user journeys and interface decisions; productivity owns idea exploration and decision support.
 
 ## Categories and skills
 
 | Category | Subcategory | Skill | Expected result |
 | --- | --- | --- | --- |
-| Understanding | Contributor onboarding | [onboard-codebase](../../skills/engineering/onboard-codebase/SKILL.md) | Verified setup/check path, current-system map, preservation constraints, and first-change route |
-| Understanding | Durable project knowledge | [document-project](../../skills/engineering/document-project/SKILL.md) | Evidence-linked architecture, conventions, decisions, learnings, incidents, and useful memory indexes in authoritative project docs |
-| Understanding | Code and flow explanation | [explain-codebase](../../skills/engineering/explain-codebase/SKILL.md) | Reader-appropriate explanation linked to actual entry points, callers, state, and behavior |
-| Understanding | Change communication | [explain-pr](../../skills/engineering/explain-pr/SKILL.md) | Established purpose and before/after behavior of a fixed comparison, with real verification evidence |
+| Understanding | Durable project knowledge and consolidation | [document-project](../../skills/engineering/document-project/SKILL.md) | Evidence-linked architecture, conventions, decisions, learnings, incidents, and useful memory indexes in authoritative project docs; in consolidate mode, clear authoritative locations, preserved useful knowledge, reduced duplication, and repaired links |
+| Understanding | Code, change and onboarding explanation | [explain-codebase](../../skills/engineering/explain-codebase/SKILL.md) | Reader-appropriate explanation linked to actual entry points, callers, state, and behavior; the established purpose and before/after behavior of a fixed PR/diff comparison with real verification evidence; or a contributor's verified setup/check path, preservation constraints and first-change route |
 | Intake | Incoming work | [assess-request](../../skills/engineering/assess-request/SKILL.md) | Evidence, duplicates, impact, missing information, and a recommended next action for a request |
-| Specification | Requirements and behavior | [write-spec](../../skills/engineering/write-spec/SKILL.md) | Agreed requirements, scenarios, constraints, non-goals, and observable criteria in a spec, PRD, or structured issue |
-| Domain design | Language and rules | [model-domain](../../skills/engineering/model-domain/SKILL.md) | Consistent concepts, relationships, valid states, invariants, and representative scenarios |
+| Specification | Requirements, behavior and domain rules | [write-spec](../../skills/engineering/write-spec/SKILL.md) | Agreed requirements, scenarios, constraints, non-goals, and observable criteria in a spec, PRD, or structured issue; when disputed, consistent domain concepts, relationships, valid states and invariants |
 | Architecture | Technology and structure | [design-architecture](../../skills/engineering/design-architecture/SKILL.md) | Selected stack/technical choices, boundaries, state ownership, contracts, failure behavior, and trade-offs |
-| Security design | Threat modeling | [model-threats](../../skills/engineering/model-threats/SKILL.md) | Traceable threats, existing controls, mitigation decisions and observable verification criteria |
 | Quality | Public website audit | [audit-website](../../skills/engineering/audit-website/SKILL.md) | Evidence-backed assessment across the primary conversion journey, content, design, search basics, performance and accessibility, with a prioritized action plan |
-| Quality | Project security audit | [audit-security](../../skills/engineering/audit-security/SKILL.md) | Bounded source, dependency and applicable runtime-control findings with evidence, severity and coverage gaps |
-| Planning | Milestones | [plan-phases](../../skills/engineering/plan-phases/SKILL.md) | Outcome-based phases with inputs, outputs, dependencies, and exit evidence |
-| Planning | Executable work | [create-tasks](../../skills/engineering/create-tasks/SKILL.md) | A dependency graph of bounded tasks with ownership, acceptance, verification, and readiness |
+| Quality | Project security audit and threat modeling | [audit-security](../../skills/engineering/audit-security/SKILL.md) | Bounded source, dependency and applicable runtime-control findings with evidence, severity and coverage gaps; or a threat model with traceable threats, existing controls, mitigation decisions and verification criteria |
+| Planning | Milestones and executable work | [plan-phases](../../skills/engineering/plan-phases/SKILL.md) | Outcome-based phases with inputs, outputs, dependencies, and exit evidence; a dependency graph of bounded tasks with ownership, acceptance, verification, and readiness |
 | Planning | System or data transition | [plan-migration](../../skills/engineering/plan-migration/SKILL.md) | An ordered compatibility, transfer, cutover, recovery, and retirement plan for an accepted target |
 | Foundations | New project or starter | [start-project](../../skills/engineering/start-project/SKILL.md) | A minimal runnable foundation with one checked path and contributor setup |
 | Foundations | Contributor standards | [define-project-conventions](../../skills/engineering/define-project-conventions/SKILL.md) | Applicable rules, PR size and dependency sequencing, exceptions, local examples, checks and incremental adoption |
@@ -33,25 +28,26 @@ This domain covers the software lifecycle, including requirements, architecture,
 | Quality | Change or codebase review | [review-code](../../skills/engineering/review-code/SKILL.md) | Prioritized evidenced findings and explicit reviewed/unchecked coverage |
 | Quality | Review resolution | [address-review-feedback](../../skills/engineering/address-review-feedback/SKILL.md) | Evidence-backed dispositions of supplied findings, authorized corrections and affected rechecks |
 | Quality | Acceptance and evidence | [verify-change](../../skills/engineering/verify-change/SKILL.md) | Observed acceptance results with relevant screenshots, comparable measurements, or check output, ready for review or delivery |
+| Delivery | Feature journey | [deliver-feature](../../skills/engineering/deliver-feature/SKILL.md) | An agreed feature taken through spec, design, plan, build, proof and delivery by the owning skills, with questions between stages and an approval point before merge or deploy |
 | Delivery | PR, release, deploy, or handover | [ship-change](../../skills/engineering/ship-change/SKILL.md) | The authorized target reached and verified through repository automation |
 | Operations | Monitoring and alerting | [configure-monitoring](../../skills/engineering/configure-monitoring/SKILL.md) | Scoped signals and actionable alert routes with observed firing, delivery and recovery evidence, distinguishing local tests from live verification |
-| Documentation | Consolidation | [consolidate-docs](../../skills/engineering/consolidate-docs/SKILL.md) | Clear authoritative locations, preserved useful knowledge, reduced duplication, and repaired links |
 
 ## Boundaries that matter
 
 | Similar requests | Choose by the requested result |
 | --- | --- |
-| Onboard, explain, or review | Onboarding establishes a contributor's working baseline; explanation teaches current behavior; review evaluates evidenced defects and risks |
-| Document, consolidate, or track decisions | Documentation reconstructs and updates durable knowledge; consolidation reconciles overlapping sources; decision tracking resolves open choices and their dependencies |
+| Onboard, explain, or review | Onboarding (an `explain-codebase` mode) establishes a contributor's working baseline; explanation teaches current behavior; review evaluates evidenced defects and risks |
+| Document, consolidate, or track decisions | Documentation reconstructs and updates durable knowledge; consolidation (a `document-project` mode) reconciles overlapping sources; decision tracking resolves open choices and their dependencies |
 | Assess a request or diagnose a failure | Request assessment checks whether work is understood, duplicated, and ready; diagnosis traces an observed failure through safe reproduction or captured incident records to establish its cause |
-| Specification, domain model, or architecture | The spec defines required behavior; the domain model resolves business meaning/rules; architecture assigns technical structure and contracts |
-| Spec, phases, or tasks | The spec defines required behavior and acceptance; phases group deliverable outcomes and dependencies; tasks assign executable work, owned writes and checks. A bounded spec can go directly to tasks |
+| Specification, domain model, or architecture | The spec defines required behavior; its domain-model section resolves disputed business meaning/rules; architecture assigns technical structure and contracts |
+| Spec, phases, or tasks | The spec defines required behavior and acceptance; phases group deliverable outcomes and dependencies; tasks (the `plan-phases` breakdown stage) assign executable work, owned writes and checks. A bounded spec can go directly to tasks |
 | Conventions, checks, agent context, or consolidation | Conventions establish rules; automated checks enforce suitable rules; agent preparation makes applicable context/checks discoverable; consolidation removes competing documentation |
 | Find improvements, review, or implement | Discovery prioritizes useful opportunities; review investigates defects and risks; implementation performs the selected authorized change |
 | Discovery or performance investigation | Discovery identifies leads and missing measurements; performance work profiles a representative path and evaluates comparable results |
 | Architecture, migration, or delivery phases | Architecture selects a target; migration plans a safe transition from current state; phases organize the overall delivery, including that transition |
 | Explain a PR or review it | Explanation communicates established intent and behavior; review evaluates correctness and relevant risks |
-| Model threats or review code | Threat modeling identifies plausible abuse paths and needed controls in a system/design; code review establishes implementation defects and risks |
+| One step or the whole feature | A single missing step goes to its owning skill; `deliver-feature` runs two or more of spec, design, plan, build, proof and delivery in order without replacing their methods |
+| Model threats or review code | Threat modeling (an `audit-security` mode) identifies plausible abuse paths and needed controls in a system/design; code review establishes implementation defects and risks |
 | Review or address feedback | Review creates an assessment; addressing feedback reconciles supplied findings with current code and performs authorized corrections |
 | Verify or review a change | Verification demonstrates criteria with observed checks; review investigates defects and risks using that evidence and the code. Documentation and plan changes need scenario/consistency checks, not an unrelated test suite |
 | Monitoring, diagnosis, or delivery | Monitoring configures detection and alert response paths; diagnosis establishes an observed failure's cause; delivery reaches a requested target and checks available signals. None establishes a continuous watch |
@@ -60,9 +56,9 @@ This domain covers the software lifecycle, including requirements, architecture,
 
 For a new project, brainstorm the useful outcome, investigate consequential unknowns, specify behavior, and make the necessary technical decisions. Inspect available templates, generators, or software factories before rebuilding their capabilities. `start-project` configures or builds the missing foundation and verifies one complete path.
 
-For an inherited system, `onboard-codebase` establishes the runnable baseline, architecture/flow map, existing conventions, deployment context, and preservation risks. Use the actual code and observed checks to distinguish current behavior from stale documentation. Keep useful conventions; propose a rule change explicitly rather than silently modernizing the repository.
+For an inherited system, `explain-codebase` in onboarding mode establishes the runnable baseline, architecture/flow map, existing conventions, deployment context, and preservation risks. Use the actual code and observed checks to distinguish current behavior from stale documentation. Keep useful conventions; propose a rule change explicitly rather than silently modernizing the repository.
 
-Both routes converge on the same spec, phase, task, implementation, review, and delivery contracts. A known feature or ready task skips broad onboarding. Existing systems additionally need compatibility, data, consumer, and operating constraints carried through the work.
+Both routes converge on the same spec, phase, task, implementation, review, and delivery contracts; `deliver-feature` runs them in order when several are missing. A known feature or ready task skips broad onboarding. Existing systems additionally need compatibility, data, consumer, and operating constraints carried through the work.
 
 ## Supporting resources
 
@@ -70,13 +66,14 @@ Resources are bundled with their owning package and loaded conditionally. They a
 
 | Need | Resource owner and content |
 | --- | --- |
-| Consistent specifications and work items | `write-spec`, `plan-phases`, and `create-tasks` carry templates for their distinct artifacts; `create-tasks` also checks a declared task graph for invalid dependencies, ready work and ownership conflicts |
+| Consistent specifications and work items | `write-spec` (spec and domain model) and `plan-phases` (phase plan and task) carry templates for their distinct artifacts; `plan-phases` also checks a declared task graph for invalid dependencies, ready work and ownership conflicts |
 | Stack choice and architecture | `design-architecture` carries discovery for app types, workload, repository/runtime boundaries, data/services, hosting and C4 views, plus a technology-selection matrix and technical-design template |
 | AI capabilities and workflows | Architecture selects bounded calls, retrieval, workflows or agents; its conditional checklist covers data/tool authority, memory, actual runtime gates, evaluation, budgets and recovery; implementation and verification check those contracts |
 | Cost, obligations, and security constraints | Architecture's checklist covers applicable evidence, quantities/price dates, jurisdiction/data/contracts, trust boundaries, and unresolved owner decisions |
 | PR size and dependency order | `define-project-conventions` supplies reviewable-change defaults and the compatible schema → shared contracts/types → backend → frontend sequence; planning records prerequisites, review checks intermediate states, and brownfield adoption preserves valid local rules |
 | Traditional stack conventions | `define-project-conventions` carries a topic matrix, web/typed-code checks, and data/integration checks; verify actual versions and official guidance for unsettled framework details |
 | HTTP APIs and database scaling | Conventions cover resource/CRUD contracts, headers and trust boundaries, schema design, query placement, measured indexes and conditional partitioning/sharding; review checks those choices against actual consumers and evidence |
+| Threat models | `audit-security` carries a threat-model template alongside its audit report shape; a draft model is labelled unreviewed until independently assessed |
 | Agent-friendly project knowledge | `prepare-repo-for-agents` carries guidance for README, agent instructions, current facts, standards, decisions, learnings, incidents, and task state |
 | Institutional knowledge and memory | `document-project` reconstructs facts and recorded intent from code/history, populates canonical records and indexes, preserves uncertainty, and promotes evidenced lessons through their appropriate owner |
 | Repeated manual fixes | `automate-code-checks` selects existing lint, type, schema, or behavior mechanisms, with false-positive checks and visible legacy debt |

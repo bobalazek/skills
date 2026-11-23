@@ -47,4 +47,4 @@ Match the requested audience, tone and depth, then project conventions. Return t
 
 ## Next steps
 
-Use `create-tasks` when the next accepted capability needs decomposition, or `implement-change` when it is already bounded and ready. Pass established conventions, commands, decisions, working-path evidence and unresolved prerequisites. Check skill availability and describe the plain action when absent. Stop at the requested foundation or continue ready work already authorized; setup success does not authorize deployment or a new planning cycle.
+Use `plan-phases` (its task breakdown) when the next accepted capability needs decomposition, or `implement-change` when it is already bounded and ready. Pass established conventions, commands, decisions, working-path evidence and unresolved prerequisites. Check skill availability and describe the plain action when absent. Stop at the requested foundation or continue ready work already authorized; setup success does not authorize deployment or a new planning cycle.

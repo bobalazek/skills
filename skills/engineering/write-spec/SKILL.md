@@ -1,6 +1,6 @@
 ---
 name: write-spec
-description: "Write or revise a software specification from agreed intent, including behavior, constraints, scenarios, non-goals, and observable acceptance criteria. Use before decomposition when requirements need definition."
+description: "Write or revise a software specification from agreed intent, including behavior, constraints, scenarios, non-goals, observable acceptance criteria and, when disputed, the domain model: vocabulary, entities, relationships, states, invariants and business rules. Use before decomposition when requirements or domain terms need definition."
 ---
 
 # Write spec
@@ -9,7 +9,7 @@ description: "Write or revise a software specification from agreed intent, inclu
 
 Use this when agreed intent needs observable behavior, constraints, non-goals and acceptance criteria, or an existing specification needs revision. A PRD, feature brief or structured issue can serve that role; use the requested format and authoritative location with depth matched to uncertainty and risk, rather than creating all three.
 
-Reuse accepted decisions, flows and research without requiring earlier ceremonies. Use `brainstorm-ideas` to compare directions, `challenge-proposal` to probe consequential choices, or `create-tasks` when requirements are already sufficient and only executable decomposition is requested. The spec owns required behavior and acceptance, not the task queue or milestone graph.
+Reuse accepted decisions, flows and research without requiring earlier ceremonies. Use `brainstorm-ideas` to compare directions, `challenge-proposal` to probe consequential choices, or `plan-phases` (its task breakdown) when requirements are already sufficient and only executable decomposition is requested. The spec owns required behavior and acceptance, not the task queue or milestone graph. When business vocabulary or rules are disputed, [model the domain](#model-the-domain-when-it-is-disputed) as part of the spec.
 
 ## Establish the contract
 
@@ -29,6 +29,18 @@ Ask the next question whose answer could change a requirement, adapting to prior
 
 Wait for the user's answer before specifying dependent behavior as agreed or handing it to implementation. Record questions and answers alongside the original intent; a recommendation, provisional default or unanswered question is not acceptance. A requested exploratory spec may show alternatives and open decisions, while already accepted or explicitly delegated choices need no repeated approval.
 
+## Model the domain when it is disputed
+
+Load for this section: [domain-model outline](references/domain-model.template.md).
+
+Add this section when business vocabulary, ownership, relationships, states or invariants are inconsistent or not yet agreed, for a new capability or an existing system whose names have drifted. A spec whose terms are settled skips it, and a request for only the model can stop once the model is accepted. Reuse accepted definitions and decisions; reopen only what the new evidence or request affects. Database tables and class names are evidence about the model, not the model itself, and technical boundaries and storage choices belong to `design-architecture` once the model is understood.
+
+Collect the user's language, accepted requirements, examples, existing code/data, and recorded decisions. For a new domain, identify actors, ownership, lifecycle, and meaningful events. For an existing system, distinguish current implementation vocabulary from intended business meaning and compatibility constraints. Find overloaded terms, hidden synonyms, ambiguous ownership, invalid states, and rules duplicated across boundaries. Ask about choices that only the domain owner can settle; do not infer business truth solely from code.
+
+Use [the domain-model outline](references/domain-model.template.md) when recording a durable model. Keep relationships, invariants and state transitions explicit; distinguish confirmed rules, proposals and unresolved questions. Use a small diagram when it clarifies relationships or transitions.
+
+The model is done when representative scenarios, including relevant failure, permission, concurrency and lifecycle transitions, walk through the definitions without contradictions or invalid states, and an existing system's affected terms, contracts, data and migration questions are named. The independent assessment below also asks for counterexamples to definitions and invariants. Persist consequential decisions in the existing authorized decision location. Modeling does not authorize code renames, schema changes or record transformations; blocked definitions cannot become executable requirements, and an accepted model change needing a compatible transition goes to `plan-migration`.
+
 ## Define behavior
 
 Describe the primary scenarios and the failure, boundary, recovery, permission, and compatibility scenarios that could materially change the result. Cover data ownership and lifecycle, interfaces or integrations, UI states, and measurable operational requirements where relevant. Include rollout or migration constraints when users or stored data already exist.
@@ -43,14 +55,14 @@ Include lightweight delivery slices only when they clarify usable increments, st
 
 Check that scenarios and criteria agree, non-goals bound the scope, and no blocking choice is presented as settled. The result identifies the source context, decisions, and remaining questions. It does not silently create a task queue, select every technology, or start implementation.
 
-Before acceptance, have a separate agent in fresh context challenge the candidate against the raw request, accepted decisions, source behavior and scenario/criterion evidence, without the author's conversation or preferred conclusion. Ask for contradictory scenarios, invented requirements and hidden choices. Reconcile findings and independently recheck affected criteria after fixes. Retain the returned reviewer/session identity, evaluated artifact/revision, findings and coverage; an attempted delegation is not an assessment. If unavailable, label the result unreviewed and stop before acceptance. Required human approval remains separate.
+Before acceptance, have a separate agent in fresh context challenge the candidate against the raw request, accepted decisions, source behavior and scenario/criterion evidence, without the author's conversation or preferred conclusion. Ask for contradictory scenarios, invented requirements, hidden choices and, when a domain model is included, counterexamples to its definitions and invariants. Reconcile findings and independently recheck affected criteria after fixes. Retain the returned reviewer/session identity, evaluated artifact/revision, findings and coverage; an attempted delegation is not an assessment. If unavailable, label the result unreviewed and stop before acceptance. Required human approval remains separate.
 
 ## Return the result
 
-Match the requested audience, tone and depth, then project conventions. Return the specification, its purpose, scenario/criterion checks, source evidence, accepted decisions and precise readiness gaps. Update the existing authorized specification and decision records instead of creating another summary. For authorized PR work, include relevant evidence and independent findings, refreshing affected proof after edits; planned verification remains distinct from observed results.
+For a model-only request, return the accepted model, scenarios checked, compatibility implications and unresolved owner choices instead of a full specification. Match the requested audience, tone and depth, then project conventions. Return the specification, its purpose, scenario/criterion checks, source evidence, accepted decisions and precise readiness gaps. Update the existing authorized specification and decision records instead of creating another summary. For authorized PR work, include relevant evidence and independent findings, refreshing affected proof after edits; planned verification remains distinct from observed results.
 
 ## Next steps
 
-Use `design-architecture` for unresolved technical choices, `plan-phases` when milestones or coordination need their own plan, `create-tasks` for agreed work needing decomposition, or `implement-change` for an already bounded executable change. An unsupported premise may first need `research-topic` for external facts or `build-prototype` for runtime uncertainty. Pass the same specification revision, criterion IDs, accepted decisions, source evidence and blocking choice; do not label dependent work ready before that choice is settled.
+Use `design-architecture` for unresolved technical choices, `plan-phases` when milestones or coordination need their own plan or agreed work needs task decomposition, `plan-migration` when an accepted domain-model change needs a compatible transition, or `implement-change` for an already bounded executable change. An unsupported premise may first need `research-topic` for external facts or `build-prototype` for runtime uncertainty. Pass the same specification revision, criterion IDs, accepted decisions, source evidence and blocking choice; do not label dependent work ready before that choice is settled.
 
 Check skill availability and describe the plain action when absent. Stop with the requested specification or continue ready work already authorized, without restarting accepted discovery or treating specification approval as permission to publish or implement.

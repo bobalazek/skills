@@ -39,20 +39,20 @@
   },
   {
     "id": "implicit-model-threats",
-    "skill": "model-threats",
+    "skill": "audit-security",
     "invocation": "implicit",
     "prompt": "Produce a small threat model for the proposed document-sharing service in design.md. Identify plausible abuse paths, existing controls, and verification criteria. Use only the supplied design; do not implement or scan anything.",
     "files": {
       "design.md": "Proposed service: signed-in organization members upload and download documents. The API checks membership and document organization on every request. Private object storage is accessible only by the API service. Admins can revoke membership. Revocation propagation and audit retention have not been decided.\n"
     },
     "shouldLoad": [
-      "model-threats"
+      "audit-security"
     ],
     "shouldNotLoad": [
       "address-review-feedback"
     ],
     "expected": [
-      "Load model-threats without an explicit skill invocation.",
+      "Load audit-security for its threat-model mode without an explicit skill invocation.",
       "Map relevant assets, actors and trust boundaries; preserve documented controls and distinguish them from verified controls.",
       "Identify concrete threats and unresolved revocation behavior with mitigation checks; do not claim scanning, accepted risk or independent review without evidence."
     ]
@@ -70,7 +70,7 @@
       "address-review-feedback"
     ],
     "shouldNotLoad": [
-      "model-threats"
+      "audit-security"
     ],
     "expected": [
       "Load address-review-feedback for supplied feedback rather than initiate an unrelated audit.",
@@ -89,7 +89,7 @@
     "shouldNotLoad": [
       "review-code",
       "address-review-feedback",
-      "model-threats"
+      "audit-security"
     ],
     "expected": [
       "Explain the actual function without initiating review, planning or changes.",
@@ -123,7 +123,7 @@
   },
   {
     "id": "model-threats-existing-controls",
-    "skill": "model-threats",
+    "skill": "audit-security",
     "prompt": "Build a bounded threat model from design.md. Do not assume missing controls are absent, accept risks, inspect live systems or implement changes.",
     "files": {
       "design.md": "A proposed API returns invoices to signed-in members of the owning organization. Server middleware verifies sessions. Every invoice query filters by the authenticated organization ID. An internal worker exports invoices to private storage, but its identity and tenant filter are undocumented. Logs currently omit invoice contents. None of these controls has runtime test evidence in this fixture.\n"
@@ -149,7 +149,7 @@
   },
   {
     "id": "model-threats-acceptance-boundary",
-    "skill": "model-threats",
+    "skill": "audit-security",
     "prompt": "Assess whether the supplied threat model can be accepted for implementation. No independent reviewer is available for this request; do not delegate, implement, scan or contact services. Return the acceptance decision and any useful corrections to the draft.",
     "files": {
       "design.md": "The proposed API serves private documents only to members of the owning organization. Membership and document ownership are checked server-side. Controls have not been exercised.\n",
@@ -163,14 +163,14 @@
   },
   {
     "id": "model-threats-reset-draft",
-    "skill": "model-threats",
+    "skill": "audit-security",
     "invocation": "implicit",
     "prompt": "We are designing password reset. Give a short threat-model draft with the main abuse paths and checks from design.md. Keep documented protections; do not implement, test a live service or approve the design.",
     "files": {
       "design.md": "A proposed service sends a random reset link to the account email. Reset tokens are stored hashed, expire after 15 minutes, and are invalidated after one successful use. Requests return the same message whether the account exists. Request throttling is documented. Whether changing the password revokes old sessions is undecided. No controls have runtime evidence yet.\n"
     },
     "shouldLoad": [
-      "model-threats"
+      "audit-security"
     ],
     "expected": [
       "Deliver a scoped unreviewed draft rather than starting an acceptance workflow.",
@@ -199,7 +199,7 @@
   },
   {
     "id": "tasks-existing-graph",
-    "skill": "create-tasks",
+    "skill": "plan-phases",
     "prompt": "Reconcile the accepted spec with our existing tasks. Return a concise task-graph draft with preserved IDs, criteria, dependencies, ready work and blockers. Do not write files, publish tracker items, execute tasks or delegate. No independent reviewer is available; do not claim the draft accepted.",
     "files": {
       "SPEC.md": "Accepted CSV import scope: preserve preview behavior, add row validation and clear validation messages, and verify them together. Export encoding must be chosen by the owner before export work can start. No encoding has been chosen.\n",
@@ -290,7 +290,7 @@
   },
   {
     "id": "model-threats-check-pairs",
-    "skill": "model-threats",
+    "skill": "audit-security",
     "prompt": "Complete this bounded threat-model draft from design.md and draft.md. Preserve the three threat IDs and the accepted workflow. Supply useful verification criteria and remaining decisions. This is a draft only; no implementation, scanning or acceptance is requested.",
     "files": {
       "design.md": "Proposed password reset: tokens are hashed at rest, expire after ten minutes, and are single-use. Reset requests return the same public message for known and unknown addresses. Per-account and per-source throttling is proposed. A user may request a reset on one device and finish on another. Whether old sessions survive reset remains an owner decision. No controls have been exercised.\n",
@@ -442,9 +442,9 @@
   },
   {
     "id": "tasks-human-blockers",
-    "skill": "create-tasks",
+    "skill": "plan-phases",
     "installedSkills": [
-      "create-tasks"
+      "plan-phases"
     ],
     "prompt": "Reconcile the work in WORK.md against the brief and setup record. Return a small task-plan draft showing what is ready and what is blocked. Keep our task IDs. This is planning only: do not edit, execute tasks, access external services or delegate. No independent review is available in this session.",
     "files": {
@@ -654,9 +654,9 @@
   },
   {
     "id": "pr-dependency-slices",
-    "skill": "explain-pr",
+    "skill": "explain-codebase",
     "installedSkills": [
-      "explain-pr"
+      "explain-codebase"
     ],
     "prompt": "Explain the proposed PR and whether splitting it would make review and rollout easier. Use the supplied comparison and accepted requirements; return a concise recommendation only. No edits, remote actions, delegation or formal correctness approval.",
     "files": {
@@ -788,9 +788,9 @@
   },
   {
     "id": "pr-description-human-backend-fix",
-    "skill": "explain-pr",
+    "skill": "explain-codebase",
     "installedSkills": [
-      "explain-pr"
+      "explain-codebase"
     ],
     "prompt": "Draft a concise PR title and description for the change in change.md using the supplied testing notes. Return text only; do not post, execute commands or reassess the whole service.",
     "files": {
@@ -870,9 +870,9 @@
   },
   {
     "id": "tasks-small-coupled-fix-one-pr",
-    "skill": "create-tasks",
+    "skill": "plan-phases",
     "installedSkills": [
-      "create-tasks"
+      "plan-phases"
     ],
     "prompt": "Prepare a concise proposed task and PR grouping for the accepted fix in task.md. Planning only; no implementation or tracker changes.",
     "files": {
@@ -886,9 +886,9 @@
   },
   {
     "id": "pr-description-preserve-rollout-recovery",
-    "skill": "explain-pr",
+    "skill": "explain-codebase",
     "installedSkills": [
-      "explain-pr"
+      "explain-codebase"
     ],
     "prompt": "Write a concise reviewer-facing PR title and description for the change in change.md. No project PR template is available. Do not post, execute checks, merge or deploy anything.",
     "files": {
@@ -903,9 +903,9 @@
   },
   {
     "id": "pr-description-small-doc-required-applicability",
-    "skill": "explain-pr",
+    "skill": "explain-codebase",
     "installedSkills": [
-      "explain-pr"
+      "explain-codebase"
     ],
     "prompt": "Draft a brief PR description for the documentation correction in change.md. No project template exists. Return text only.",
     "files": {
@@ -918,9 +918,9 @@
   },
   {
     "id": "pr-metered-cost-and-resource-risk",
-    "skill": "explain-pr",
+    "skill": "explain-codebase",
     "installedSkills": [
-      "explain-pr"
+      "explain-codebase"
     ],
     "prompt": "Draft a concise complete PR description from change.md. Do not run checks, call providers, change controls or deploy.",
     "files": {
@@ -1411,6 +1411,88 @@
       "Keep actual timings, failed job/error count, useful throughput/completion and pending-task cleanup visible. Concurrency and changed failure behavior prevent treating a faster tiny local sample as a production-capacity or end-to-end reliability claim.",
       "Return the smallest next experiment/correction to restore required completion/failure handling under matched conditions; retain missing representative-load/independent-acceptance evidence without inventing a queue platform, mandatory dead-letter service or new budget.",
       "Do not invent a requirement that all imports finish before acknowledgement: the brief's required outcome is four completed/readable imports, while baseline reply timing alone does not establish a synchronous API contract."
+    ]
+  },
+  {
+    "id": "deliver-feature-stage-questions",
+    "skill": "deliver-feature",
+    "installedSkills": [
+      "deliver-feature",
+      "write-spec",
+      "design-architecture",
+      "plan-phases",
+      "implement-change",
+      "verify-change",
+      "review-code",
+      "address-review-feedback",
+      "ship-change"
+    ],
+    "prompt": "We agreed to add CSV export of invoices for workspace admins. Take it from here to a merged change, checking with me between stages. Nothing has been written yet. For now, run only as far as you can without my answers.",
+    "files": {
+      "AGENTS.md": "Merges to main require explicit owner approval. Deployments run automatically from main.\n",
+      "notes.md": "Agreed: workspace admins can download their workspace's invoices as CSV. Not decided: which columns, date range filtering, and whether non-admin members can export their own invoices.\n",
+      "src/invoices.py": "def list_invoices(workspace_id, db):\n    return db.query('select id, number, total, issued_at from invoices where workspace_id = ?', [workspace_id])\n"
+    },
+    "expected": [
+      "Start at the specification stage because no spec exists; do not skip to implementation or invent the undecided columns, filter or member access as settled requirements.",
+      "Ask one batch of at most four questions that change the spec, offering a derived answer first where the files support one (for example columns from the existing query). Treat the undecided columns, filtering and member access as blocking: wait rather than proceed on a guessed answer.",
+      "Stop before dependent stages until answers arrive, and state the approval point: merging needs explicit owner approval and would deploy automatically. Do not claim a merged, verified or reviewed change."
+    ]
+  },
+  {
+    "id": "deliver-feature-delegated-choices",
+    "skill": "deliver-feature",
+    "installedSkills": [
+      "deliver-feature",
+      "write-spec",
+      "design-architecture",
+      "plan-phases",
+      "implement-change",
+      "verify-change",
+      "review-code",
+      "address-review-feedback",
+      "ship-change"
+    ],
+    "prompt": "Take the agreed invoice CSV export to a ready-to-merge candidate. Use your judgment on the open spec questions; I delegate those choices to you, but do not merge.",
+    "files": {
+      "AGENTS.md": "Merges to main require explicit owner approval. Deployments run automatically from main.\n",
+      "notes.md": "Agreed: workspace admins can download their workspace's invoices as CSV. Not decided: which columns, date range filtering, and whether non-admin members can export their own invoices.\n",
+      "src/invoices.py": "def list_invoices(workspace_id, db):\n    return db.query('select id, number, total, issued_at from invoices where workspace_id = ?', [workspace_id])\n"
+    },
+    "expected": [
+      "Proceed through the spec without asking the delegated questions again, recording each choice (for example the existing query's columns, no date filter, admins only) as a labelled assumption or delegated decision in the spec.",
+      "Continue through the later stages only as far as the fixture allows and report actual verification and review status honestly; do not claim review or tests that did not run.",
+      "Stop at the approval point: do not merge or claim deployment, and name merge as the action waiting for owner approval."
+    ]
+  },
+  {
+    "id": "deliver-feature-single-step-boundary",
+    "skill": "plan-phases",
+    "invocation": "implicit",
+    "installedSkills": [
+      "deliver-feature",
+      "write-spec",
+      "design-architecture",
+      "plan-phases",
+      "implement-change",
+      "verify-change",
+      "review-code",
+      "address-review-feedback",
+      "ship-change"
+    ],
+    "prompt": "Our spec for invoice CSV export in spec.md is accepted. Break it into executable tasks with dependencies. Do not implement anything.",
+    "files": {
+      "spec.md": "# Invoice CSV export\nAC1: Workspace admins can download all workspace invoices as CSV with id, number, total and issued_at.\nAC2: Non-admins receive 403.\nAC3: An empty workspace returns a header-only CSV.\n"
+    },
+    "shouldLoad": [
+      "plan-phases"
+    ],
+    "shouldNotLoad": [
+      "deliver-feature"
+    ],
+    "expected": [
+      "Route the single missing step to the plan-phases task breakdown, not the deliver-feature journey.",
+      "Return tasks tracing AC1-AC3 with dependencies and checks, without implementing or asking stage-transition questions for later stages."
     ]
   }
 ]

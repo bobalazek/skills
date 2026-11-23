@@ -7,7 +7,7 @@ description: "Build a bounded technical or interaction experiment that answers a
 
 ## Use this skill
 
-Answer one consequential technical or interaction uncertainty through a bounded experiment. Reuse accepted requirements and existing code or starter capabilities. Inspect documentation or current behavior first when that can answer the question; use `create-wireframes` for a screen-structure proposal or `implement-change` for a settled production change. Failure can be a useful experimental result.
+Answer one consequential technical or interaction uncertainty through a bounded experiment. Reuse accepted requirements and existing code or starter capabilities. Inspect documentation or current behavior first when that can answer the question; use `design-interface` at wireframe fidelity for a screen-structure proposal or `implement-change` for a settled production change. Failure can be a useful experimental result.
 
 ## Define the experiment
 
@@ -39,4 +39,4 @@ Put useful screenshots/video, observed results, relevant test proof, independent
 
 ## Next steps
 
-Carry the experiment and its limits to `write-spec` for changed required behavior, `design-architecture` for a technical choice, `create-tasks` for an accepted approach needing decomposition, or `implement-change` for ready production work already authorized. Another experiment needs a remaining consequential question. Use the plain action if its skill is unavailable; a passing prototype does not authorize integration or deployment.
+Carry the experiment and its limits to `write-spec` for changed required behavior, `design-architecture` for a technical choice, `plan-phases` for an accepted approach needing task decomposition, or `implement-change` for ready production work already authorized. Another experiment needs a remaining consequential question. Use the plain action if its skill is unavailable; a passing prototype does not authorize integration or deployment.
