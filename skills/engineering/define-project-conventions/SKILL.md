@@ -63,4 +63,4 @@ Use the project's format and requested depth. Report changed authoritative rules
 
 ## Next steps
 
-Carry accepted rules and remaining prerequisites to `prepare-repo-for-agents` for missing discovery, `document-project` for factual knowledge gaps, `automate-code-checks` for a runnable guard, or `create-tasks` for a separately agreed adoption change. Use the plain action if its skill is unavailable; a convention decision does not authorize mass changes.
+Carry accepted rules and remaining prerequisites to `prepare-repo-for-agents` for missing discovery, `document-project` for factual knowledge gaps, `automate-code-checks` for a runnable guard, or `plan-phases` to break down a separately agreed adoption change. Use the plain action if its skill is unavailable; a convention decision does not authorize mass changes.

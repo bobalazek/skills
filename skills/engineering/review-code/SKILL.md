@@ -7,7 +7,7 @@ description: "Review a PR, diff, branch comparison, or bounded codebase for evid
 
 ## Use this skill
 
-Use this for an evidence-backed defect and engineering-risk assessment of a PR, diff, branch comparison or bounded codebase. Reuse accepted requirements and valid proof; review remains observational unless fixes are requested. Use `explain-pr` for established purpose and behavior without an audit, `verify-change` for missing acceptance proof, or `review-interface` for a rendered experience assessment.
+Use this for an evidence-backed defect and engineering-risk assessment of a PR, diff, branch comparison or bounded codebase. Reuse accepted requirements and valid proof; review remains observational unless fixes are requested. Use `explain-codebase` (its change mode) for established purpose and behavior without an audit, `verify-change` for missing acceptance proof, or `review-interface` for a rendered experience assessment.
 
 Perform the review in an agent with fresh context from the work's author. Supply raw accepted requirements, the fixed candidate, relevant sources and check access without the author's conversation or preferred conclusions. If you authored the work, delegate the review; if independence is unavailable, label the result unreviewed and do not claim the candidate verified or ready. This is the independent assessment, not a requirement for an endless review of reviewers.
 

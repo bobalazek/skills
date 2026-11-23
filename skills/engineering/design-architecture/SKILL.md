@@ -37,7 +37,7 @@ When current consumers need the same rule or flow, identify the shared implement
 
 Before decomposition, map responsibilities to folder/package ownership, dependency directions and public boundaries. Follow written repository conventions, then maintained surrounding code; use language/framework practices only where neither settles the choice. Resolve consequential conflicts without inventing layers or a speculative file tree.
 
-Load [cost and obligation checks](references/cost-and-obligations.checklist.md) when these constrain the choice. Use `model-threats` when a dedicated threat model is needed, carrying the system boundaries and accepted security constraints; otherwise keep relevant threat/control checks in this design. For an AI capability or agent workflow, load [AI architecture](references/ai-architecture.checklist.md) for access boundaries, orchestration, evaluation, cost, and recovery.
+Load [cost and obligation checks](references/cost-and-obligations.checklist.md) when these constrain the choice. Use `audit-security` (its threat-model mode) when a dedicated threat model is needed, carrying the system boundaries and accepted security constraints; otherwise keep relevant threat/control checks in this design. For an AI capability or agent workflow, load [AI architecture](references/ai-architecture.checklist.md) for access boundaries, orchestration, evaluation, cost, and recovery.
 
 ## Record and verify the design
 
@@ -51,4 +51,4 @@ Deliver the scoped design, accepted choices, open decisions, evidence, and migra
 
 ## Next steps
 
-Carry the design and exact unresolved premise to `build-prototype` for uncertain feasibility; use `plan-phases` for necessary milestone sequencing or `create-tasks` for settled work needing decomposition. Use the plain action if its skill is unavailable. Reuse accepted decisions and continue only within the authorized scope.
+Carry the design and exact unresolved premise to `build-prototype` for uncertain feasibility; use `plan-phases` for necessary milestone sequencing or task decomposition of settled work. Use the plain action if its skill is unavailable. Reuse accepted decisions and continue only within the authorized scope.

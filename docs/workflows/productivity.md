@@ -31,7 +31,7 @@ For a "software factory" using agents, start from the missing contract below. Th
 
 | Example request | First skill | Result and conditional continuation |
 | --- | --- | --- |
-| "Break this accepted scope into tasks agents can pick up." | [create-tasks](../../skills/engineering/create-tasks/SKILL.md) | Owned tasks with acceptance checks and dependencies; keep ongoing state in the project's existing tracker |
+| "Break this accepted scope into tasks agents can pick up." | [plan-phases](../../skills/engineering/plan-phases/SKILL.md) | Owned tasks with acceptance checks and dependencies; keep ongoing state in the project's existing tracker |
 | "Use agents to work through these ready tasks while I keep coordinating." | [delegate-to-agents](../../skills/productivity/delegate-to-agents/SKILL.md) | Bounded briefs, isolated work and checked integration; verify and independently review before closing tasks or delivering |
 | "Transfer this unfinished work to another owner or session." | [prepare-handoff](../../skills/productivity/prepare-handoff/SKILL.md) | Accepted context, current state, evidence, authority and the next runnable action; no repeated discovery or assumed operation success |
 
@@ -39,10 +39,8 @@ Arrows below are possible handoffs. Start with existing accepted contracts when 
 
 ```mermaid
 flowchart TD
-  Scope(["Input: accepted scope"]) --> Tasks[["create-tasks"]]
-  Scope -->|Milestones needed| Phases[["plan-phases"]]
-  Phases --> Tasks
-  Tasks --> Ready{"Authorized ready work?"}
+  Scope(["Input: accepted scope"]) -->|"Phases and/or task breakdown"| Phases[["plan-phases"]]
+  Phases --> Ready{"Authorized ready work?"}
   Existing(["Input: existing tasks, claims and proof"]) --> Ready
   Ready -->|Several separable tasks| Delegate[["delegate-to-agents"]]
   Ready -->|One bounded task or batch| Build[["implement-change"]]
@@ -51,7 +49,7 @@ flowchart TD
   Build -->|Candidate needs proof| Verify
   Verify -->|Actual evidence and independent assessment| State(["Result: reconciled task and phase state"])
   classDef skill fill:#edf5ff,stroke:#355b85,color:#172b42;
-  class Tasks,Phases,Delegate,Build,Verify skill;
+  class Phases,Delegate,Build,Verify skill;
 ```
 
 One coordinator writes shared state. Workers receive bounded contracts and return evidence; another session independently checks acceptance. Important blocked work remains blocked, and a ready queue never authorizes draining the backlog. If multiple coordinators must claim concurrently, use a tracker with actual concurrency controls.

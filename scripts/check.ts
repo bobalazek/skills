@@ -188,7 +188,7 @@ export function audit(inputRoot: string) {
       }
     }
   }
-  const prTemplate = join(root, "skills/engineering/explain-pr/references/pr-description.template.md");
+  const prTemplate = join(root, "skills/engineering/explain-codebase/references/pr-description.template.md");
   const githubTemplate = join(root, ".github/pull_request_template.md");
   if (
     existsSync(prTemplate) &&
@@ -196,7 +196,7 @@ export function audit(inputRoot: string) {
   ) {
     fail(
       githubTemplate,
-      "PR template must match explain-pr/references/pr-description.template.md; copy the canonical template",
+      "PR template must match explain-codebase/references/pr-description.template.md; copy the canonical template",
     );
   }
   const markdown = [

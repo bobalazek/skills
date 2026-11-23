@@ -1,6 +1,6 @@
 # Skills
 
-43 skills for developing software, coordinating work and designing interfaces. Each produces a concrete result, such as a specification, working change, review or interface design. Run one on its own or continue from another skill's accepted output.
+37 skills for developing software, coordinating work and designing interfaces. Each produces a concrete result, such as a specification, working change, review or interface design. Run one on its own or continue from another skill's accepted output.
 
 Start with [choose-skill](skills/productivity/choose-skill/SKILL.md) when the next action is unclear. The collection is under active development; [releases](https://github.com/bobalazek/skills/releases) record reviewed snapshots and evaluation limits.
 
@@ -10,7 +10,7 @@ From your project directory, list the skills and install a selection:
 
 ```bash
 bunx skills@1.7.0 add bobalazek/skills --list
-bunx skills@1.7.0 add bobalazek/skills --skill choose-skill create-tasks verify-change --agent codex --copy
+bunx skills@1.7.0 add bobalazek/skills --skill choose-skill plan-phases verify-change --agent codex --copy
 ```
 
 Inspect the install summary before confirming. Use `--skill '*'` for the whole collection or `--agent opencode` for OpenCode. Keep each skill's supporting files with it.
@@ -35,9 +35,9 @@ From a checkout, you can also ask a filesystem-capable agent to use `skills/engi
 
 | Catalog | What it covers |
 | --- | --- |
-| [Engineering · 30 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, monitor, and maintain it |
+| [Engineering · 25 skills](docs/domains/engineering.md) | Understand software, define requirements and architecture, plan work, implement, test, review, deliver, monitor, and maintain it |
 | [Productivity · 9 skills](docs/domains/productivity.md) | Explore ideas, research and challenge decisions, route requests, coordinate agents, improve prompts and skills, and transfer context |
-| [UI/UX · 4 skills](docs/domains/ui-ux.md) | Map flows and navigation, wireframe and design screens with their states and messages, and review rendered interfaces |
+| [UI/UX · 3 skills](docs/domains/ui-ux.md) | Map flows and navigation, wireframe and design screens with their states and messages, and review rendered interfaces |
 
 Each catalog lists skills by category, with their outputs and boundaries. The [complete skill map](skills/productivity/choose-skill/references/skill-map.matrix.md) maps every package to its requested result and nearest boundary, including ambiguous requests. The [workflow guides](docs/workflows.md) show examples and conditional handoffs.
 
@@ -46,16 +46,15 @@ Each catalog lists skills by category, with their outputs and boundaries. The [c
 | What you want | Start with |
 | --- | --- |
 | Compare directions for an idea | [brainstorm-ideas](skills/productivity/brainstorm-ideas/SKILL.md) |
-| Begin working in an inherited project | [onboard-codebase](skills/engineering/onboard-codebase/SKILL.md) |
+| Begin working in an inherited project | [explain-codebase](skills/engineering/explain-codebase/SKILL.md) |
 | Turn recurring code, commit and agent-session lessons into checks or project-local skills | [create-project-skill](skills/productivity/create-project-skill/SKILL.md) |
 | Establish folder structure, naming and Git conventions before planning or coding | [define-project-conventions](skills/engineering/define-project-conventions/SKILL.md) |
 | Define a feature's required behavior | [write-spec](skills/engineering/write-spec/SKILL.md) |
-| Sketch screen structure from an understood flow | [create-wireframes](skills/ui-ux/create-wireframes/SKILL.md) |
-| Add visual detail to settled screen structure | [design-interface](skills/ui-ux/design-interface/SKILL.md) |
+| Take an agreed feature from spec to a merged, verified change | [deliver-feature](skills/engineering/deliver-feature/SKILL.md) |
+| Sketch screen structure from an understood flow, or add visual detail to settled structure | [design-interface](skills/ui-ux/design-interface/SKILL.md) |
 | Coordinate ready work across available agents | [delegate-to-agents](skills/productivity/delegate-to-agents/SKILL.md) |
 | Establish the cause of a known failure | [diagnose-issue](skills/engineering/diagnose-issue/SKILL.md) |
-| Model security threats before implementation | [model-threats](skills/engineering/model-threats/SKILL.md) |
-| Audit a project's source, dependencies and applicable runtime security | [audit-security](skills/engineering/audit-security/SKILL.md) |
+| Model security threats before implementation, or audit a project's source, dependencies and applicable runtime security | [audit-security](skills/engineering/audit-security/SKILL.md) |
 | Audit a live website and prioritize evidenced improvements | [audit-website](skills/engineering/audit-website/SKILL.md) |
 | Address supplied review findings | [address-review-feedback](skills/engineering/address-review-feedback/SKILL.md) |
 | Review code for evidenced defects | [review-code](skills/engineering/review-code/SKILL.md) |
@@ -67,7 +66,7 @@ See [routes by situation](docs/workflows.md#routes-by-situation) for more exampl
 
 ## From idea to delivery
 
-A spec defines **required behavior**; phases group **deliverable outcomes**; tasks name **executable work and checks**. Start at the next missing result and stop at the requested output.
+A spec defines **required behavior**; phases group **deliverable outcomes**; tasks name **executable work and checks**. Start at the next missing result and stop at the requested output. When several of these stages are missing for one agreed feature, [deliver-feature](skills/engineering/deliver-feature/SKILL.md) runs them in this order with questions between stages and an approval point before merge or deploy.
 
 <details>
 <summary>Software feature: idea → specification → implementation → verified delivery</summary>
@@ -85,24 +84,19 @@ flowchart TD
     Spec[["write-spec"]] --> Need{"What design is missing?"}
     Need -->|Technical choices| Architecture[["design-architecture"]]
     Need -->|User journey| Flow[["map-user-flows"]]
-    Need -->|Screen structure| Wire[["create-wireframes"]]
-    Need -->|Visual detail| Screen[["design-interface"]]
-    Flow -->|Structure unresolved| Wire
-    Flow -->|Structure settled| Screen
-    Wire -->|Detail needed| Screen
+    Need -->|Screen structure or visual detail| Screen[["design-interface"]]
+    Flow -->|Screens needed| Screen
     Need -->|None| Agreed(["Result: required scope and design accepted"])
     Architecture --> Agreed
     Flow -->|Existing screens suffice| Agreed
-    Wire -->|Requested design complete| Agreed
     Screen --> Agreed
   end
   Agreed --> Size{"Milestones needed?"}
   subgraph Plan["Stage: Plan"]
-    Size -->|Yes| Phases[["plan-phases"]]
-    Size -->|No| Tasks[["create-tasks"]]
-    Phases --> Tasks
+    Size -->|"Yes: phases, then tasks"| Phases[["plan-phases"]]
+    Size -->|"No: tasks only"| Phases
   end
-  Tasks -->|Selected work ready| Build
+  Phases -->|Selected work ready| Build
   Ready(["Input: already-ready task"]) --> Build
   subgraph Evaluate["Stage: Build and evaluate"]
     Build[["implement-change"]] --> Verify[["verify-change"]]
@@ -116,7 +110,7 @@ flowchart TD
   Accepted -->|Delivery authorized| Ship[["ship-change"]]
   Ship --> Delivered(["Result: requested target delivered and checked"])
   classDef skill fill:#edf5ff,stroke:#355b85,color:#172b42;
-  class Idea,Challenge,Spec,Architecture,Flow,Wire,Screen,Phases,Tasks,Build,Verify,Code,UI,Ship skill;
+  class Idea,Challenge,Spec,Architecture,Flow,Screen,Phases,Build,Verify,Code,UI,Ship skill;
 ```
 
 Select every required design/review branch and reconcile its result before continuing. Failed checks return to repair and independent recheck; delivery waits. Ready tasks can skip planning. Delivery includes checking the requested target.

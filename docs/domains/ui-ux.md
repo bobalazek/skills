@@ -1,21 +1,20 @@
 # UI/UX
 
-This domain owns user journeys, wireframes, detailed interface design with its state messages, and rendered experience review. Its four packages are under active development.
+This domain owns user journeys, wireframes, detailed interface design with its state messages, and rendered experience review. Its three packages are under active development.
 
 ## Categories and skills
 
 | Category | Subcategory | Skill | Expected result |
 | --- | --- | --- | --- |
 | Experience structure | Journeys and navigation | [map-user-flows](../../skills/ui-ux/map-user-flows/SKILL.md) | Actors, paths, states and recovery; destination hierarchy, labels and findability when navigation is in scope |
-| Experience structure | Screen wireframes | [create-wireframes](../../skills/ui-ux/create-wireframes/SKILL.md) | Editable low-fidelity screen layouts with content hierarchy, state coverage and requirement links |
-| Interface design | Detailed screen design | [design-interface](../../skills/ui-ux/design-interface/SKILL.md) | A detailed interface design or implemented surface with visual hierarchy, content, states, and supported responsive behavior |
+| Interface design | Wireframes and detailed screen design | [design-interface](../../skills/ui-ux/design-interface/SKILL.md) | Editable low-fidelity screen layouts with content hierarchy, state coverage and requirement links, or a detailed interface design or implemented surface with visual hierarchy, content, states, and supported responsive behavior |
 | Quality | Rendered experience | [review-interface](../../skills/ui-ux/review-interface/SKILL.md) | Observed usability, accessibility, interaction, and visual findings with evidence and coverage |
 
 ## Boundaries and use
 
 UI/UX owns the journey, screen structure and behavior-dependent interface strings, including forms embedded in a marketing page. Website messaging and page prose are outside this collection; keep them with their owner and reconcile meaning and text fit.
 
-`map-user-flows` defines how users reach an outcome and recover from meaningful failures. `create-wireframes` resolves screen, full-page or website hierarchy and content/state placement before visual detail. `design-interface` develops the selected structure into detailed visual design and complete states, distinguishing refinement from an agreed replacement of the visual direction. Reuse accepted flows or existing screens; skip wireframing when structure is settled. `review-interface` evaluates the actual rendered experience against tasks and supported surfaces.
+`map-user-flows` defines how users reach an outcome and recover from meaningful failures. `design-interface` at wireframe fidelity resolves screen, full-page or website hierarchy and content/state placement before visual detail, then develops the selected structure into detailed visual design and complete states, distinguishing refinement from an agreed replacement of the visual direction. Reuse accepted flows or existing screens; skip wireframing when structure is settled. `review-interface` evaluates the actual rendered experience against tasks and supported surfaces.
 
 Labels, messages, help and recovery instructions stay within `design-interface`; a copy-only request does not authorize redesign. Copy must reflect actual behavior, including what is saved, sent, reversible or still pending. A draft string does not prove fit or accessibility in the rendered interface.
 

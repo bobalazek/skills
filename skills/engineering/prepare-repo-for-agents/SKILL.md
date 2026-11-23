@@ -9,7 +9,7 @@ description: "Improve a repository’s agent instructions, context navigation, a
 
 Use this when agents cannot reliably find applicable project context, instructions or feedback commands. Produce repaired entry points and a demonstrated task path while preserving application behavior and documentation ownership. Reuse existing standards, memory indexes and verified commands; useful organization need not be replaced.
 
-Use `onboard-codebase` for a contributor's orientation, `document-project` for missing factual content, or `define-project-conventions` for unsettled policy. This skill fixes how existing context is found and applied, not the product architecture or an agent platform.
+Use `explain-codebase` (its onboarding mode) for a contributor's orientation, `document-project` for missing factual content, or `define-project-conventions` for unsettled policy. This skill fixes how existing context is found and applied, not the product architecture or an agent platform.
 
 ## Inspect the current task path
 
@@ -37,4 +37,4 @@ Match the requested audience, tone and depth, then project conventions. Report t
 
 ## Next steps
 
-Use `document-project` for factual knowledge or record maintenance, `consolidate-docs` for wider overlap, `define-project-conventions` for unresolved rules, or `automate-code-checks` when an accepted rule needs enforcement. Use `implement-change` when the original task now has a ready context/check path. Pass the source revision, repaired pointers, verified commands and specific remaining gap. Check skill availability and describe the plain action when absent. Stop at the requested preparation result or continue already-authorized ready work; discovering a gap does not authorize every adjacent repair.
+Use `document-project` for factual knowledge, record maintenance or consolidating wider overlap, `define-project-conventions` for unresolved rules, or `automate-code-checks` when an accepted rule needs enforcement. Use `implement-change` when the original task now has a ready context/check path. Pass the source revision, repaired pointers, verified commands and specific remaining gap. Check skill availability and describe the plain action when absent. Stop at the requested preparation result or continue already-authorized ready work; discovering a gap does not authorize every adjacent repair.

@@ -63,7 +63,7 @@
     "shouldNotLoad": [
       "choose-skill",
       "evaluate-skill",
-      "model-threats",
+      "audit-security",
       "address-review-feedback"
     ],
     "expected": [
@@ -201,7 +201,7 @@
     "installedSkills": [
       "choose-skill",
       "improve-prompt",
-      "explain-pr",
+      "explain-codebase",
       "prepare-handoff"
     ],
     "prompt": "We have a video outline and need only the spoken narration rewritten for clarity. We do not want audio generated, a voice guide or a video produced. Which skill fits? Recommend only.",
